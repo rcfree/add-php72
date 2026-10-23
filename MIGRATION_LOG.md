@@ -390,9 +390,16 @@ bottom. Do not rewrite history; correct an entry with a follow-up note.
 - The adapter implements `runCommand()` because `ADD_Manage_Interface` is also
   absent from this checkout.
 - `ADD_Manage_Load::getOptsList()` now exposes `r`.
+- Also added `-r` to the namespaced `InstallCommand`, which is what
+  `clinicle install` actually resolves to. It returns immediately after loading
+  the module, before forms/dictionaries.
 - Verified on the VM:
 
 ```text
+$ clinicle install -r clinicle/options
+Module 'clinicle/options' loaded from /local/add/work/clinicle/options
+STATE:SUCCESS
+
 $ clinicle load -r clinicle/options
 Module 'clinicle/options' loaded from /local/add/work/clinicle/options
 STATE:SUCCESS

@@ -15,7 +15,7 @@ use ADD;
 class InstallCommand extends AbstractCommand
 {
     function getOptsList() {
-        return "m::p";
+        return "m::pr";
     }
 
     function getDescription() {
@@ -39,6 +39,11 @@ class InstallCommand extends AbstractCommand
         $module = $add->getModules()->get($modName);
         if (!$module) {
             throw new \Exception("Module '$modName' not found under ".$add->getWorkModulePath());
+        }
+
+        if ($options->has('r')) {
+            echo "Module '$modName' loaded from ".$module->getPath()."\n";
+            return;
         }
 
         $moduleInstall = new ModuleInstall();
