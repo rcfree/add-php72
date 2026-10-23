@@ -35,7 +35,7 @@ class ADD_Form_FieldContent implements ADD_Form_FieldContainerInterface {
 	public function getLastChildFieldPosition($field) {
 		$childFields = $this->getChildFields($field->getName());
 		$fieldPos = $this->_fieldPosByName[$field->getName()];
-		if(count($childFields)==0) {
+		if(!$childFields || count($childFields)==0) {
 			return $fieldPos;
 		}
 		$fields = $this->_fields;

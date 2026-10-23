@@ -35,7 +35,7 @@ class FieldChange {
     }
     function isUndeleted() {
         $obsField = $this->_formSync->getObsField($this->_field->getName());
-        if($obsField['is_deleted'] && $this->_field->getLevel()!="DEL") {
+        if($obsField && $obsField['is_deleted'] && $this->_field->getLevel()!="DEL") {
             return true;
         }
         return false;
@@ -44,7 +44,7 @@ class FieldChange {
     	
         $obsField = $this->_formSync->getObsField($this->_field->getName());
         	$fieldChanged=false;
-            if ($obsField['is_deleted'])
+            if (!$obsField || $obsField['is_deleted'])
                 return false;
             if ($this->_field -> getSettings() != $obsField['settings']) {
 				ADD::log()->debug("FIELD CHANGE '".$this->_field->getName()."' - settings from ".json_encode($obsField['settings'])." to ".json_encode($this->_field->getSettings()));

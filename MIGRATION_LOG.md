@@ -394,6 +394,27 @@ bottom. Do not rewrite history; correct an entry with a follow-up note.
     header, footer, and ILD referral tool.
 - Logged-in sessions correctly do not show the login home tool.
 
+### Full module installation
+
+- Enumerated 59 module directories with `page.ini` under `user/`.
+- Installed 58; `cdbrkr/conditions` was explicitly skipped at the owner's request.
+- `add/med` is the full READ codes medication set and can take several minutes;
+  after the data load it completed successfully.
+- PHP 8 null-offset/count fixes made while installing:
+  - `DictionaryTableDictTarget` null group;
+  - `FieldChange` missing observation fields;
+  - `DataHandler`/`FieldContent` null child-field lists;
+  - `Audit` separate-table dictionary lookup;
+  - `ADD_Component_Search` default initial search arguments.
+- `add/history` ICD-10 titles require `allow_change=1` in its dictionary config.
+- Local config additions (ignored): `[SearchDatabase]`, `theme_module=add/theme`,
+  and `dbname` last in the PDO DSN.
+- `ion_auth` resolves groups through `users_roles`/`roles_groups`/`groups`; the
+  preview admin seed now creates the `admin` role mapping. Without it,
+  `is_admin()` was false.
+- Verified authenticated `/search` returns the patient-search form
+  (`Search patients`, `terms`, `first_name`, `last_name`, `dob`).
+
 ### Next action
 
 - Local work is complete. Remaining work is VPN-only:

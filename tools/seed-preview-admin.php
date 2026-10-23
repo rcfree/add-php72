@@ -65,6 +65,39 @@ $stmt = $pdo->prepare(
 );
 $stmt->execute(array($userId, $groupIds['admin']));
 
+// ion_auth's get_users_groups() reads users_roles -> roles_groups -> groups,
+// not users_groups directly. Ensure the admin role path exists too.
+$stmt = $pdo->prepare('SELECT id FROM roles WHERE name = ? LIMIT 1');
+$stmt->execute(array('admin'));
+$roleId = $stmt->fetchColumn();
+if (!$roleId) {
+    $stmt = $pdo->prepare('INSERT INTO roles (name, groups) VALUES (?, ?)');
+    $stmt->execute(array('admin', 'admin'));
+    $roleId = $pdo->lastInsertId();
+}
+
+$stmt = $pdo->prepare(
+    'SELECT 1 FROM roles_groups WHERE role_id = ? AND group_id = ? LIMIT 1'
+);
+$stmt->execute(array($roleId, $groupIds['admin']));
+if (!$stmt->fetchColumn()) {
+    $stmt = $pdo->prepare(
+        'INSERT INTO roles_groups (role_id, group_id) VALUES (?, ?)'
+    );
+    $stmt->execute(array($roleId, $groupIds['admin']));
+}
+
+$stmt = $pdo->prepare(
+    'SELECT 1 FROM users_roles WHERE user_id = ? AND role_id = ? LIMIT 1'
+);
+$stmt->execute(array($userId, $roleId));
+if (!$stmt->fetchColumn()) {
+    $stmt = $pdo->prepare(
+        'INSERT INTO users_roles (user_id, role_id) VALUES (?, ?)'
+    );
+    $stmt->execute(array($userId, $roleId));
+}
+
 $pdo->commit();
 
-echo "Seeded user '$username' (id $userId) in group admin (id {$groupIds['admin']}).\n";
+echo "Seeded user '$username' (id $userId) in group admin (id {$groupIds['admin']}) and role admin (id $roleId).\n";

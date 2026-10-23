@@ -61,7 +61,7 @@ class ADD_Database_Audit extends ADD_Database {
         $ddb = ADD::db('dictionary');
 		if (!$add->config('audit')) return;
         $dict = $ddb->getDictionary($dictItem['dictionary_id']);
-		$dictName = $dict['name'];
+		$dictName = $dict ? $dict['name'] : $dictItem['dictionary_id'];
 		
                 $group = ADD_Util::val('dictionary_group_id',$dictItem) ? $ddb->getDictionaryGroup($dictItem['dictionary_group_id']) : null;
                 $data = array("item" => $dictItem, "dictionary" => $dictName, "group" => $group);

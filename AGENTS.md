@@ -267,8 +267,20 @@ falls back to `clinicle/web`’s `content.php`, which still has
 `#main-panel`/`#side-panel`, so home tools (including `LoginHomeTool`) are
 received but never displayed.
 
-`[Database]` must contain the PDO DSN/user/pass. `[PatientLookup]` is set to
-`MockPMI` for local work.
+`[Database]` must contain the PDO DSN/user/pass. Put `dbname` last; e.g.
+`mysql:host=127.0.0.1;charset=utf8;dbname=add_data`. `AbstractConnection::getDbName()`
+uses a greedy `dbname=(.+)` match, so parameters after `dbname` become part of
+the schema name and migrations think every table is missing.
+
+`[SearchDatabase]` is also required by `clinicle/search`; for local preview it
+can point at the same `add_data` database.
+
+`[PatientLookup]` is set to `MockPMI` for local work.
+
+`ion_auth` resolves groups through `users_roles` → `roles_groups` → `groups`,
+not directly through `users_groups`. The preview seed script now creates the
+`admin` role mapping; without it `is_admin()` is false and pages such as
+`/search` deny access.
 
 INI sections persist until the next section header. A setting appended after
 `[PatientLookup]` belongs to that section, not the root. This caused

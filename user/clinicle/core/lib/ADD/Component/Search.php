@@ -49,6 +49,16 @@ class ADD_Component_Search extends ADD_Component {
 	function generate() {
 		$add = ADD::sys();
         $page = $this->_page;
+		if (!is_array($this->args)) {
+			$this->args = array(
+				'id' => null,
+				'fname' => null,
+				'lname' => null,
+				'dob' => null,
+				'raw' => true,
+				'search_sel' => 1,
+			);
+		}
 		CLE::info("generate search component",$this->args);
 		
         $page->addJavascript("field('dob').mask('99/99/9999')");

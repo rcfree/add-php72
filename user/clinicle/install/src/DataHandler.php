@@ -73,7 +73,8 @@ class DataHandler {
             }
             
             $isContainer = is_a($field,"ADD_Field_Container");
-            $childCount = count($form->getChildFields($field));
+            $childFields = $form->getChildFields($field);
+            $childCount = $childFields ? count($childFields) : 0;
             
             if (!$field->ignoreContainerTest()) {
                 if ($isContainer) {

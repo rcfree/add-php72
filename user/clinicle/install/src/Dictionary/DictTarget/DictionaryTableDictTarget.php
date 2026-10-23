@@ -19,7 +19,7 @@ class DictionaryTableDictTarget extends AbstractDictTarget {
 		if (array_key_exists('weight',$dictItem)) $didata['weight']=$dictItem['weight'];
 		$didata['is_disabled']=Util::val('disabled',$dictItem,0);
 		$didata['is_deleted']=Util::val('deleted',$dictItem,0);
-		$didata['dictionary_group_id']=$dg['id'];
+		$didata['dictionary_group_id']=$dg ? $dg['id'] : null;
 		//CLE::log()->info("DICTIONARY ITEM created ".json_encode($didata));
 		$di = $ddb->insertDictionaryItem($didata);
 		$adb->auditDictItem("create",$di);
