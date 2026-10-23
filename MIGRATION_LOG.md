@@ -246,12 +246,54 @@ bottom. Do not rewrite history; correct an entry with a follow-up note.
 - `tools/php82-audit.sh --quick --first-party`: **0 syntax blockers**.
 - CLI boot on the VM still succeeds and lists all commands.
 
+### Web/CI smoke and final local fixes
+
+- CI `Security` smoke:
+  - `entity_decode('&#65;&#x42;')` -> `AB` (both `/e` replacements);
+  - `xss_clean('<script>alert(1)</script>')` sanitized;
+  - array input path (`each` -> `foreach`) returns sanitized array.
+- Direct mysqli connection to the VM's MySQL 5.7.33 container:
+  - `mysqli` OK, 35 tables in `add_data`, server `5.7.33`.
+- Local profile `config/local` (untracked) points at `127.0.0.1`:
+  - `add_data` via PDO, `add_user` via CI mysqli, `MockPMI`.
+- PHP built-in server on the VM served the CI app:
+  - `GET /` -> HTTP 200, title `ADD [local] - Home`, no error panel;
+  - Minifier assets resolve after rebuilding the module tree.
+- Runtime fixes found by the web smoke:
+  - `CI_Input::valid_ip()` passed `''` as `filter_var` options; changed to `0`.
+  - `web_init.php` had a closing `?>` that emitted output and broke session
+    headers; removed.
+  - `ClinicLE\Common\ErrorHandler` and `ADD_Tool_ErrorHandler` shutdown handlers
+    treated any last error (including deprecations) as fatal; restricted to real
+    fatal types and ignored `E_USER_DEPRECATED`.
+  - CI front controller now defaults to `production`, overridable with
+    `ADD_ENVIRONMENT`.
+- `InstallCommand` reduced to forms/dictionary setup:
+  - no Composer require/update, copy, symlink, backup, or dump-autoload;
+  - `ModuleInstall::installCode/copyModule/removeExistingModule/createSymLinks`
+    removed;
+  - no Composer library references remain in `clinicle/install`.
+- Static audit still reports **0 syntax blockers**; CLI `list` still succeeds.
+
+### Version lookup cleanup
+
+- `AbstractEnvironment::getSystemVersion()` now reads `system_version` from the
+  profile (falling back to `version`), instead of shelling out to Mercurial.
+- `Module::version()` now reads the module's `VERSION` file, then `composer.json`
+  `version`, returning `[version, date]`; no Mercurial or `hg_binary` dependency.
+- Removed the last `hg_binary` references from first-party code.
+- Local profile sets `system_version=2.8.0`.
+- Verified:
+  - `getSystemVersion()` returns `2.8.0` on the VM;
+  - web home still returns HTTP 200 with title `ADD [local] - Home`;
+  - CLI `list` still succeeds.
+
 ### Next action
 
-- Remaining local Phase 4 work:
-  - reduce `InstallCommand` to forms/dictionary setup only (currently unregistered);
-  - run web smoke with a local profile pointing at the VM's MySQL 5.7.33 container;
-  - exercise the CI `Security` and mysqli paths.
-- VPN-only remaining work: capture live `work/` layout, aliases, config, FreeTDS,
-  and run the production-data smoke matrix after porting.
+- Local work is complete. Remaining work is VPN-only:
+  - capture live `work/` layout, aliases, config, FreeTDS, and row counts;
+  - add `system_version` (and the equivalent module version metadata) to the
+    production profile;
+  - port the code, run the production-data smoke matrix, and compare outputs;
+  - decide the deployment path if a fresh VM is not permitted.
 - Keep the local VM on preview data; no production data outside the VPN.

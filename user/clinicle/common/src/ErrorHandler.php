@@ -13,7 +13,7 @@ class ErrorHandler {
     public static $log=true;
     static function init() {
         set_error_handler(function($errno,$errstr,$errfile,$errline) {
-            if ($errno==E_DEPRECATED) {
+            if ($errno==E_DEPRECATED || $errno==E_USER_DEPRECATED) {
                 // This error code is not included in error_reporting
                 return;
             }
@@ -43,6 +43,10 @@ class ErrorHandler {
 
 
         if( $error === NULL) return;
+
+        $fatal = E_ERROR | E_PARSE | E_CORE_ERROR | E_COMPILE_ERROR | E_USER_ERROR | E_RECOVERABLE_ERROR;
+        if (($error["type"] & $fatal) === 0) return;
+
         $errno   = $error["type"];
         $errfile = $error["file"];
         $errline = $error["line"];

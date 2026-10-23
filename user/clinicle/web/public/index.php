@@ -19,7 +19,7 @@ set_time_limit(3600);
  * NOTE: If you change these, also change the error_reporting() code below
  *
  */
-	define('ENVIRONMENT', 'development');
+	define('ENVIRONMENT', getenv('ADD_ENVIRONMENT') ?: 'production');
 /*
  *---------------------------------------------------------------
  * ERROR REPORTING

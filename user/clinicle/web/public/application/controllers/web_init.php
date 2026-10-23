@@ -52,5 +52,4 @@ function init_add_from_ci($ci) {
 	$am->setLoggedIn($apiUser ? true : $ci->ion_auth->logged_in());
 
 }
-?>
 

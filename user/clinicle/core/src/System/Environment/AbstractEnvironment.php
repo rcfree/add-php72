@@ -9,7 +9,6 @@
  * Time: 14:34
  */
 namespace ClinicLE\System\Environment;
-use ClinicLE\Common\Exception\FileNotFoundException;
 use ClinicLE\Common\Exception\NullValueException;
 use ClinicLE\Common\Config\AbstractConfig;
 use ClinicLE\System\Exception\ExecuteFailedException;
@@ -151,32 +150,11 @@ class AbstractEnvironment {
 	}
 	
 	function getSystemVersion() {
-		$path = $this->path."/vendor/clinicle/core";
-		$prevPath = getcwd();
-		chdir($this->path);
-		$output = array();
-
-        try {
-            $hgBinary = $this->config->assertSetting("hg_binary");
-            if(!file_exists($hgBinary)) {
-                throw new FileNotFoundException("Mercurial binary ".$hgBinary." does not exist");
-            }
-            if($this->config->get("live")) {
-                exec($this->config->assertSetting("hg_binary") . " parents --template '{latesttag}'", $output);
-            }
-            else {
-                exec($this->config->assertSetting("hg_binary") . " branch", $output);
-            }
-        }
-        catch(\Exception $ex) {
-            chdir($prevPath);
-            throw $ex;
-        }
-        chdir($prevPath);
-		if(!isset($output[0])) {
-		    return "v?.?.?";
-        }
-        return $output[0];
+		$version = $this->config->get("system_version");
+		if (!$version) {
+			$version = $this->config->get("version");
+		}
+		return $version ? $version : "v?.?.?";
 	}
 
     function useCleanRegistry() {

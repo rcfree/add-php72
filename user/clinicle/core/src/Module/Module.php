@@ -213,26 +213,20 @@ class Module implements \ADD_Module {
         
 	function version() {
 		$path = $this->getPath();
-		$prevPath = getcwd();
-		chdir($path);
-		$output = array();
-		$hgBinary = \CLE::sys()->config("hg_binary");
-		try {
-			if(!file_exists($hgBinary)) {
-				throw new FileNotFoundException("Mercurial binary ".$hgBinary." does not exist");
-			}
-			exec($hgBinary . " parents --template '{latesttag} {branch}'", $output);
 
+		if (is_file($path."/VERSION")) {
+			$parts = preg_split('/\s+/', trim((string) file_get_contents($path."/VERSION")));
+			return array($parts[0], isset($parts[1]) ? $parts[1] : "");
 		}
-		catch(\Exception $ex) {
-			chdir($prevPath);
-			throw $ex;
+
+		if (is_file($path."/composer.json")) {
+			$config = json_decode((string) file_get_contents($path."/composer.json"), true);
+			if (is_array($config) && !empty($config["version"])) {
+				return array($config["version"], "");
+			}
 		}
-		chdir($prevPath);
-		if(!isset($output[0])) {
-			return "?.?.?";
-		}
-		return explode(" ",$output[0]);
+
+		return array("?.?.?", "");
 	}
 	
     function getSubModules() {

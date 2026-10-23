@@ -10,8 +10,6 @@ namespace ClinicLE\Install;
 use ClinicLE\System\Service\CoreServices;
 use ADD;
 use ClinicLE\Module\Module;
-use ClinicLE\System\Initialiser;
-use ADD_Tool_Command;
 use Exception;
 use ClinicLE\Install\Event\InstallEvents;
 
@@ -19,15 +17,6 @@ class ModuleInstall {
     private $dictionariesRefreshed=false;
     private $dataUpdated=false;
     private $dryRun=false;
-    private $installInline=false;
-    
-    public function isInstallInline() {
-        return $this->installInline;
-    }
-
-    public function setInstallInline($installInline) {
-        $this->installInline = $installInline;
-    }
 
         public function isDryRun() {
         return $this->dryRun;
@@ -94,73 +83,4 @@ class ModuleInstall {
         }
     }
     
-    function installCode(Module $module) {
-        $composerContent = file_get_contents($module->getPath()."/composer.json");
-        $composerConfig = json_decode($composerContent,true);
-        $modDir = $composerConfig['name'];
-
-        $this->copyModule($module,$modDir,$this->isInstallInline());
-        $this->createSymLinks($module, $modDir);
-    }
-    
-    private function copyModule(Module $module,$modDir,$inline=false) {
-        $add = ADD::sys();
-        $log = ADD::log();
-        
-        $srcPath = $add->getSourceModulePath($module->getName());
-        
-        
-        $tgtPath = $add->getWorkModulePath($modDir);
-        
-        $this->removeExistingModule($modDir,$tgtPath);
-        
-        if($inline) {
-            $log->info("Symlinking '$modDir' module definition to $tgtPath");
-            system("ln -s $srcPath $tgtPath");
-        }
-        else {
-            $log->info("Copying '$modDir' module definition from $srcPath to $tgtPath");
-            exec("cp -r $srcPath $tgtPath");
-        }
-		
-        if (!file_exists($tgtPath)) {
-            throw new Exception("Module '$$modDir' could not be copied to '$tgtPath' for an unknown reason");
-        }
-    }
-    
-    private function removeExistingModule($moduleName, $installPath) {
-        $log = ADD::log($this);
-        
-        if (!file_exists($installPath)) {
-            return;
-        }
-        $log->info("Removing existing '$moduleName' module definition from $installPath");
-        
-        exec("rm -r ". $installPath);
-        if (file_exists($installPath)) {
-            throw new Exception("Current module '$modName' could not be removed from '$installPath' for an unknown reason");
-        }
-    }
-    public function createSymLinks($module, $modDir) {
-        $log = ADD::log($this);
-        if(!ADD::isInit()) {
-            $init = new Initialiser(getenv('ADD_PATH'),getenv('ADD_PROFILE'));
-            ADD::init($init);
-        }
-        
-        $installPath = ADD::sys()->getPath()."/modules/live/".$modDir;
-        
-        $tgtFile = ADD::sys()->getPath()."/vendor/clinicle/web/public/module/".$modDir;
-        $srcFile = "$installPath/web";
-        if(file_exists($srcFile)) {
-            ADD_Tool_Command::createSymLink($modDir,$srcFile,$tgtFile,"");
-            $log->info("Create symlink from ".$srcFile." to $tgtFile\n");
-        }
-        $tgtFile = \ADD::sys()->getWebAppPath()."views/module/".$modDir;
-        $srcFile = "$installPath/views";
-        if(file_exists($srcFile)) {
-            ADD_Tool_Command::createSymLink($modDir,$srcFile,$tgtFile,"");
-            $log->info("Create symlink from ".$srcFile." to $tgtFile\n");
-        }
-    }
 }

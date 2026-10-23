@@ -1,7 +1,7 @@
 # ADD PHP 8.3 Migration Plan
 
-Status: Phase 1 and Phase 3 complete; Phase 4 core patches applied. Remaining:
-CI/InstallCommand cleanup, web smoke, and VPN-only capture/validation.
+Status: local migration and web/CLI smoke complete. Remaining work is VPN-only
+capture, porting, and production-data validation.
 Last updated: 2026-10-23.
 
 This document records the decisions already made so the migration does not restart from
@@ -25,6 +25,7 @@ for decisions, scope, and the runbook only; do not add progress entries here.
 | Framework | CodeIgniter 2.1.3, embedded in `clinicle/web`; keep and patch, do not upgrade |
 | First-party ownership (current paths) | `modules/`, `vendor/clinicle/`, `vendor/leicrespbru/`; target is `user/` |
 | `clinicle/install` | Keep as a runtime library for dictionary/form setup and `InstallEvents`; drop the Composer installer/plugin; reduce `InstallCommand` to `installForms()`; do not install module code |
+| Version lookup | `system_version` profile setting for the system; module `VERSION`/`composer.json` for modules; no Mercurial dependency |
 | Source control | New root git monorepo; remove `.hg` directories from first-party packages |
 | Layout | Move first-party packages to `user/<vendor>/<package>`; Composer path repositories |
 | Restructure order | Restructure first, then PHP 8 changes |
@@ -187,7 +188,8 @@ Run inside the VPN, on the staging side.
    - schema-only database metadata (table definitions, row counts, `sql_mode`);
      do **not** copy production rows outside the VPN;
    - FreeTDS configuration and SQL Server/TDS version for PMI;
-   - `/local/add/config/<profile>/` contents;
+   - `/local/add/config/<profile>/` contents, including `system_version` and
+     module `VERSION` files;
    - the live `work/` tree and web/view symlink targets;
    - `page.ini` alias values for every active module;
    - cron entries and systemd units, especially resphy import and cleanup;
@@ -533,8 +535,8 @@ import production data into the local VM.
 | `composer.json` | Path repos for `user/*/*`, explicit versions, remove dead repos; no allow-plugins entry |
 | `user/clinicle/install/composer.json` | Convert to a plain library; remove plugin API, scripts, satis |
 | `user/clinicle/install/src/Composer*.php` | Delete Composer installer, plugin, and manager |
-| `user/clinicle/install/src/Command/InstallCommand.php` | Reduce to dictionary/form setup; deferred (currently unregistered) |
-| `user/clinicle/install/src/ModuleInstall.php` | Keep `installForms()`; remove or leave unreachable `installCode()`/`copyModule()`/`createSymLinks()` |
+| `user/clinicle/install/src/Command/InstallCommand.php` | Forms/dictionary setup only; no Composer, copy, symlink, or code install |
+| `user/clinicle/install/src/ModuleInstall.php` | `installForms()` only; code-install/symlink methods removed |
 | `user/add/research/composer.json` | Fix `tenickcom` typo |
 | `user/clinicle/letter/composer.json` | `phpoffice/phpword: ^1.4` |
 | `user/clinicle/letter/lib/ADD/Tool/RTF.php` | `TemplateProcessor` |
@@ -554,6 +556,8 @@ import production data into the local VM.
 | `patches/log4php-2.3.0-each.patch` | `each` -> `foreach` |
 | `tools/php82-audit.sh` | Retarget from `modules` to `user` after the move |
 | `tools/build-module-tree.sh` | Build `work/<vendor>/<package>` and web/view links from `user/` |
+| `user/clinicle/core/src/System/Environment/AbstractEnvironment.php` | `system_version` instead of Mercurial lookup |
+| `user/clinicle/core/src/Module/Module.php` | Module version from `VERSION`/`composer.json` |
 | `user/clinicle/core/src/Command/CommandRunner.php` | Ignore `E_DEPRECATED`/`E_USER_DEPRECATED`; dynamic properties are not fatal |
 | `user/clinicle/manage/src/Runner/CommandRunner.php` | Same deprecation guard |
 | `user/clinicle/core/lib/ADD/Tool/ErrorHandler.php`, `common/src/ErrorHandler.php`, `core/lib/ADD/Util.php`, `monitor/src/Monitor.php` | Remove `$php_errormsg` and `track_errors` |
