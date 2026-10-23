@@ -1,6 +1,7 @@
 # ADD PHP 8.3 Migration Plan
 
-Status: Phase 1 restructure complete locally; dependency migration next.
+Status: Phase 1 and Phase 3 complete; Phase 4 core patches applied. Remaining:
+CI/InstallCommand cleanup, web smoke, and VPN-only capture/validation.
 Last updated: 2026-10-23.
 
 This document records the decisions already made so the migration does not restart from
@@ -31,7 +32,7 @@ for decisions, scope, and the runbook only; do not add progress entries here.
 | Dependency strategy | Hybrid: upgrade maintained libraries, replace PHPExcel, pin and patch the rest |
 | PHPWord | Upgrade 0.11.1 -> 1.4.x; adapt the single template wrapper |
 | TCPDF | Upgrade 6.2.26 -> 6.11.x; keep 6.x, do not jump to 7.x |
-| FPDF | Replace `itbz/fpdf` 1.7.2 with `fpdf/fpdf` 1.8+/1.90; adapt the one subclass |
+| FPDF | Replace `itbz/fpdf` 1.7.2 with `setasign/fpdf` 1.9; adapt the one subclass |
 | Minify | Upgrade 1.3.61 -> 1.3.75 |
 | PHPExcel | Replace with PhpSpreadsheet 5.x in the two read-only adapters |
 | Symfony | Pin 2.8/3.0; verified working on PHP 8.3 with deprecation notices only |
@@ -372,9 +373,11 @@ Composer policy for this phase:
 - No application API changes expected; `write1DBarcode` is stable.
 - Compare barcode label PDFs: page count, text, and barcode readability.
 
-#### 3.3 FPDF 1.7.2 -> fpdf/fpdf 1.8/1.90
+#### 3.3 FPDF 1.7.2 -> setasign/fpdf 1.9
 
-- Change `user/clinicle/report/composer.json` from `itbz/fpdf` to `fpdf/fpdf: ^1.8`.
+- Change `user/clinicle/report/composer.json` from `itbz/fpdf` to
+  `setasign/fpdf: ^1.8`. Do not use `fpdf/fpdf`: it is a Laravel wrapper exposing
+  `Fpdf\Fpdf`, not the global `FPDF` class.
 - In `user/clinicle/report/lib/ADD/Tool/PDF.php`, remove `use fpdf\FPDF;` and extend
   the global class: `class ADD_Tool_PDF extends \FPDF`.
 - Compare report PDFs page-by-page.
@@ -530,12 +533,12 @@ import production data into the local VM.
 | `composer.json` | Path repos for `user/*/*`, explicit versions, remove dead repos; no allow-plugins entry |
 | `user/clinicle/install/composer.json` | Convert to a plain library; remove plugin API, scripts, satis |
 | `user/clinicle/install/src/Composer*.php` | Delete Composer installer, plugin, and manager |
-| `user/clinicle/install/src/Command/InstallCommand.php` | Reduce to dictionary/form setup; remove Composer/copy/symlink logic |
+| `user/clinicle/install/src/Command/InstallCommand.php` | Reduce to dictionary/form setup; deferred (currently unregistered) |
 | `user/clinicle/install/src/ModuleInstall.php` | Keep `installForms()`; remove or leave unreachable `installCode()`/`copyModule()`/`createSymLinks()` |
 | `user/add/research/composer.json` | Fix `tenickcom` typo |
 | `user/clinicle/letter/composer.json` | `phpoffice/phpword: ^1.4` |
 | `user/clinicle/letter/lib/ADD/Tool/RTF.php` | `TemplateProcessor` |
-| `user/clinicle/report/composer.json` | `fpdf/fpdf: ^1.8` |
+| `user/clinicle/report/composer.json` | `setasign/fpdf: ^1.8` |
 | `user/clinicle/report/lib/ADD/Tool/PDF.php` | Extend global `\FPDF` |
 | `user/clinicle/datafile/composer.json` | `phpoffice/phpspreadsheet: ^5.10` |
 | `user/clinicle/datafile/src/ExcelDataFile.php` | PhpSpreadsheet read adapter |
@@ -548,13 +551,13 @@ import production data into the local VM.
 | `user/clinicle/web/public/system/core/Security.php` | `each`, `/e` |
 | `user/clinicle/web/public/system/database/drivers/mysqli/mysqli_driver.php` | Remove `mysql_escape_string` fallback |
 | `config/<profile>/ci/database.php` | `mysqli`, `mysqli_report` |
-| `patches/log4php-2.3.0-each.patch` (new) | `each` -> `foreach` |
+| `patches/log4php-2.3.0-each.patch` | `each` -> `foreach` |
 | `tools/php82-audit.sh` | Retarget from `modules` to `user` after the move |
 | `tools/build-module-tree.sh` | Build `work/<vendor>/<package>` and web/view links from `user/` |
 | `user/clinicle/core/src/Command/CommandRunner.php` | Ignore `E_DEPRECATED`/`E_USER_DEPRECATED`; dynamic properties are not fatal |
 | `user/clinicle/manage/src/Runner/CommandRunner.php` | Same deprecation guard |
-| `tools/apply-patches.sh` (new) | Idempotent third-party patch application |
-| `tools/restructure-user.sh` (new) | One-time move and cleanup |
+| `user/clinicle/core/lib/ADD/Tool/ErrorHandler.php`, `common/src/ErrorHandler.php`, `core/lib/ADD/Util.php`, `monitor/src/Monitor.php` | Remove `$php_errormsg` and `track_errors` |
+| `tools/apply-patches.sh` | Idempotent third-party patch application |
 
 ## 6. Risks and open items
 

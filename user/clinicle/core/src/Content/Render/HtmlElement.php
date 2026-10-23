@@ -232,7 +232,7 @@ class HtmlElement {
         if($htmlArray && isset($html['attrs'])) {
             $this->processAttrs($html['tag'],$html['attrs']);
         }
-        $this->html[$id]=is_object($html) ? $html : $htmlArray ? $html : array("text"=>$html,"type"=>HtmlElement::MARKUP);
+        $this->html[$id]=is_object($html) ? $html : ($htmlArray ? $html : array("text"=>$html,"type"=>HtmlElement::MARKUP));
         return $id;
     }
     function addHtmlArray($html) {

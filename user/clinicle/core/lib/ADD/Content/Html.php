@@ -228,7 +228,7 @@ class ADD_Content_Html implements ADD_ContentInterface {
 		if($htmlArray && isset($html['attrs'])) {
 			$this->processAttrs($html['tag'],$html['attrs']);
 		}
-		$this->_html[$id]=is_object($html) ? $html : $htmlArray ? $html : array("text"=>$html,"type"=>ADD_Content_Html::MARKUP);
+		$this->_html[$id]=is_object($html) ? $html : ($htmlArray ? $html : array("text"=>$html,"type"=>ADD_Content_Html::MARKUP));
 		return $id;
 	}
 	function addHtmlArray($html) {

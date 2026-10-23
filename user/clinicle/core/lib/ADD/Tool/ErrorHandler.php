@@ -24,9 +24,6 @@ class ADD_Tool_ErrorHandler {
 		$errstr  = "shutdown";
 		$errno   = E_CORE_ERROR;
 		$errline = 0;
-		if(isset($php_errormsg)) {
-			ADD::log()->error($php_errormsg);
-		}
 		$error = error_get_last();
 
 

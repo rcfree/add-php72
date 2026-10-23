@@ -208,13 +208,50 @@ bottom. Do not rewrite history; correct an entry with a follow-up note.
 - `InstallCommand` remains unregistered and still contains module-install code; its
   forms-only reduction is deferred to Phase 4.
 
+### Phase 3 dependency migration completed
+
+- Minify 1.3.61 -> 1.3.75; CSS and JS minification both pass.
+- TCPDF 6.2.26 -> 6.11.4; a C39 barcode PDF (\~6.9 KB) generated successfully on
+  the VM. TCPDF 6.11 requires the curl extension at class load; the VM has it.
+- FPDF `itbz/fpdf` 1.7.2 -> `setasign/fpdf` 1.9.0.
+  - `fpdf/fpdf` was rejected: it is a Laravel wrapper exposing `Fpdf\Fpdf`, not the
+    global `FPDF` class.
+  - `ADD_Tool_PDF` now extends `\FPDF`; plain FPDF and `ADD_Tool_PDF` both produce
+    valid one-page PDFs.
+- PHPWord 0.11.1 -> 1.4.0.
+  - `ADD_Tool_RTF` uses `PhpOffice\PhpWord\TemplateProcessor`.
+  - DOCX template substitution produced `Hello World` with a valid DOCX.
+- PHPExcel 1.8.1 -> PhpSpreadsheet 5.10.0.
+  - `ExcelDataFile` reads the sample XLSX: 16 rows, 14 headings.
+  - `LRB_DataFile_Excel` reads the sample XLSX: 79 rows.
+  - Removed `phpoffice/phpexcel`; added PhpSpreadsheet and its five dependencies.
+- No pinned third-party runtime package moved during these updates. Only the
+  previously removed Composer tooling packages are absent.
+
+### Phase 4 core patches applied
+
+- Fixed the four first-party syntax blockers:
+  - `Html.php`, `HtmlElement.php`: parenthesised nested ternaries.
+  - `Log.php`: rewrote lossy debug-output expression.
+  - `Profiler.php`: corrected dynamic property access
+    (`$this->{'_compile_'.$section}`), not the phpcbf array rewrite.
+- CI 2.1.3:
+  - `Security::xss_clean` `each()` -> `foreach`.
+  - `Security::entity_decode` `/e` -> `preg_replace_callback`.
+  - removed the `mysql_escape_string` fallback from the mysqli driver.
+  - profile CI DB config switched to `mysqli` and `mysqli_report(MYSQLI_REPORT_OFF)`.
+- Removed `$php_errormsg` and `track_errors` references.
+- Added `patches/log4php-2.3.0-each.patch` and an idempotent `tools/apply-patches.sh`;
+  applied and re-run to confirm idempotency.
+- `tools/php82-audit.sh --quick --first-party`: **0 syntax blockers**.
+- CLI boot on the VM still succeeds and lists all commands.
+
 ### Next action
 
-- Phase 3 dependency migration on the restructured tree:
-  - PHPWord 0.11.1 -> 1.4.x and adapt `ADD_Tool_RTF`;
-  - TCPDF 6.2.26 -> 6.11.x;
-  - FPDF `itbz/fpdf` -> `fpdf/fpdf` 1.8/1.90 and adapt `ADD_Tool_PDF`;
-  - Minify 1.3.61 -> 1.3.75;
-  - PHPExcel -> PhpSpreadsheet 5.x in the two read adapters.
-- Then apply the Phase 4 framework/CI patches and run the smoke matrix.
-- VPN capture and production-data validation remain separate and VPN-only.
+- Remaining local Phase 4 work:
+  - reduce `InstallCommand` to forms/dictionary setup only (currently unregistered);
+  - run web smoke with a local profile pointing at the VM's MySQL 5.7.33 container;
+  - exercise the CI `Security` and mysqli paths.
+- VPN-only remaining work: capture live `work/` layout, aliases, config, FreeTDS,
+  and run the production-data smoke matrix after porting.
+- Keep the local VM on preview data; no production data outside the VPN.

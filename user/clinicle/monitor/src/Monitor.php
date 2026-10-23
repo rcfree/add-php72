@@ -92,9 +92,6 @@ class Monitor {
         $errstr  = "shutdown";
         $errno   = E_CORE_ERROR;
         $errline = 0;
-        if(isset($php_errormsg)) {
-            error_log($php_errormsg);
-        }
         $error = error_get_last();
 
         if( $error === NULL) return;

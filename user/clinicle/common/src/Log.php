@@ -33,7 +33,18 @@ class Log {
     static function outputDebug($textOnly=false) {
 	$output = "";
 	foreach (self::$debug as $debug) {
-		$output .= $debug[0] . ($debug[1] ? $textOnly ? "\n" : "<pre>" . print_r($debug[1], 1) . $textOnly ? "\n" : "<pre>" : "") . $textOnly ? "" : "<br/>";
+		if ($textOnly) {
+			$output .= $debug[0] . "\n";
+			if ($debug[1]) {
+				$output .= print_r($debug[1], 1) . "\n";
+			}
+		} else {
+			$output .= $debug[0];
+			if ($debug[1]) {
+				$output .= "<pre>" . print_r($debug[1], 1) . "</pre>";
+			}
+			$output .= "<br/>";
+		}
 	}
 	return $output;
     }

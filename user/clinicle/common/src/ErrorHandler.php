@@ -39,9 +39,6 @@ class ErrorHandler {
         $errstr  = "shutdown";
         $errno   = E_CORE_ERROR;
         $errline = 0;
-        if(isset($php_errormsg)) {
-            CLE::log()->error($php_errormsg);
-        }
         $error = error_get_last();
 
 

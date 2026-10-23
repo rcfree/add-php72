@@ -3,7 +3,6 @@
 class ADD_Util {
 	static function loadClass($module_name,$args = null,$args2=null, $args3=null) {
             
-            ini_set("track_errors","1");
 		$module_path=str_replace("_","/",$module_name).".php";
                 //if (!class_exists($module_name)) {
                     //if(!include_once($module_path)) throw new ADD_UtilException("Unable to open class '$module_path'");
