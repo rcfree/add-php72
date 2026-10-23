@@ -307,6 +307,19 @@ bottom. Do not rewrite history; correct an entry with a follow-up note.
 - Added local-only login helper at `http://127.0.0.1:8081/preview-login.html`
   (untracked, not part of the application build).
 
+### Root login form (local preview)
+
+- `tools/php-builtin-router.php` now serves `tools/preview-login.html` at `/`
+  when no `ci_session` cookie is present. After login, `/` is handed to the CI app.
+- `tools/preview-login.html` is tracked with the preview credentials; it is local-only
+  and not part of the application build.
+- Verified:
+  - curl without a cookie at `/` returns the login form;
+  - curl with a valid session at `/` returns the authenticated app;
+  - browser login from `/` switches to the authenticated header (`Options`/`Logout`).
+- If the browser already has a session, `/` goes straight to the app. Use `Logout`
+  or a private window to see the form again.
+
 ### Next action
 
 - Local work is complete. Remaining work is VPN-only:
