@@ -1,0 +1,8 @@
+HISTORY
+
+2.0.1 15/03/2016
+! Improved support for ellipsis on iPad
+
+2.0.0
++ Modified to work with separate tables in codebreaker
+* Removed codebreaker specific logic

@@ -1,0 +1,207 @@
+value,title,dictionary
+1,Full time,copd_employ_status
+2,Part time,copd_employ_status
+3,Retired,copd_employ_status
+4,Unemployed,copd_employ_status
+5,Long term sickness,copd_employ_status
+1,Lives alone,copd_social_circ
+2,Lives with spouse/partner,copd_social_circ
+3,Lives with family,copd_social_circ
+4,Other,copd_social_circ
+1,Primary care,copd_spiro_where
+2,Copd sn,copd_spiro_where
+3,Hospital database,copd_spiro_where
+1,Home,copd_admitted_from
+2,Op clinic,copd_admitted_from
+3,Lri,copd_admitted_from
+4,Lgh,copd_admitted_from
+5,Ed,copd_admitted_from
+6,Cdu,copd_admitted_from
+7,Ooc,copd_admitted_from
+8,Nursing home,copd_admitted_from
+9,Residential home,copd_admitted_from
+10,Loros,copd_admitted_from
+11,Psychiatric unit,copd_admitted_from
+CDU,CDU,copd_ward
+CCU,CCU,copd_ward
+15,15,copd_ward
+16,16,copd_ward
+17,17,copd_ward
+20,20,copd_ward
+23a,23a,copd_ward
+27,27,copd_ward
+27a,27a,copd_ward
+28,28,copd_ward
+29,29,copd_ward
+33,33,copd_ward
+33a,33a,copd_ward
+34,34,copd_ward
+1,Non infective exac (nie copd) ,copd_diagnosis
+2,Infective exac (ni copd) ,copd_diagnosis
+3,Other,copd_diagnosis
+1,Saba,copd_inhaled_meds
+2,Sama,copd_inhaled_meds
+3,Laba,copd_inhaled_meds
+4,Lama,copd_inhaled_meds
+5,Ics/laba,copd_inhaled_meds
+6,Lama/laba,copd_inhaled_meds
+7,Ics,copd_inhaled_meds
+8,Triple therapy,copd_inhaled_meds
+1,PVD,copd_comorb_vascular
+2,TIA,copd_comorb_vascular
+3,CVA,copd_comorb_vascular
+4,ED,copd_comorb_vascular
+5,CKD,copd_comorb_vascular
+6,Hypertension,copd_comorb_vascular
+7,AAA,copd_comorb_vascular
+8,AAA size,copd_comorb_vascular
+1,Diabetes I,copd_comorb_metabolic
+2,Diabetes II,copd_comorb_metabolic
+3,Obesity,copd_comorb_metabolic
+4,Hyper-Cholesterolaemia,copd_comorb_metabolic
+5,Cachexia,copd_comorb_metabolic
+6,Liver,copd_comorb_metabolic
+7,Addison's disease,copd_comorb_metabolic
+8,Hyper/hypo thyroid
+1,O/A (UL or LL),copd_comorb_muscskel
+2,R/A,copd_comorb_muscskel
+3,A/S (Ankyosing spondylitis),copd_comorb_muscskel
+4,Osteoporosis,copd_comorb_muscskel
+5,CFS (Chronic Fatigue Syndrome),copd_comorb_muscskel
+6,Fibromyalgia,copd_comorb_muscskel
+7,LBP (Lower back pain),copd_comorb_muscskel
+1,MVD,copd_comorb_cardiac
+2,MVR,copd_comorb_cardiac
+3,MI,copd_comorb_cardiac
+4,AVD,copd_comorb_cardiac
+5,AVR,copd_comorb_cardiac
+6,Cardiomyopathy,copd_comorb_cardiac
+7,Cardiac arrest,copd_comorb_cardiac
+8,Congenital Heart,copd_comorb_cardiac
+9,Pulmonary Hypertension,copd_comorb_cardiac
+10,Unstable angina,copd_comorb_cardiac
+11,Atrial fibrillation,copd_comorb_cardiac
+12,Heart Failure,copd_comorb_cardiac
+13,CHD,copd_comorb_cardiac
+14,Aortic stenosis,copd_comorb_cardiac
+15,Angina,copd_comorb_cardiac
+16,Cor pulmonale,copd_comorb_cardiac
+1,MS,copd_comorb_neurol
+2,Parkinsons,copd_comorb_neurol
+3,Epilepsy,copd_comorb_neurol
+1,TB,copd_comorb_infdis
+2,HIV,copd_comorb_infdis
+3,Hepatitis,copd_comorb_infdis
+4,MCAT (Moraxella catarrhalis),copd_comorb_infdis
+1,Reflux,copd_comorb_gi
+2,Diverticulitis,copd_comorb_gi
+3,Crohns Disease,copd_comorb_gi
+4,Hiatus hernia,copd_comorb_gi
+5,Ulcerative colitis,copd_comorb_gi
+1,Anxiety,copd_comorb_psych
+2,Depression,copd_comorb_psych
+3,Bi-polar,copd_comorb_psych
+4,Personality disorder,copd_comorb_psych
+5,Dementia/Alzheimer's,copd_comorb_psych
+1,Lisa Clinch,copd_nurse
+2,Claire Chebbout,copd_nurse
+3,Nicole Toms,copd_nurse
+4,Emma Vincent,copd_nurse
+5,Julie Jamieson,copd_nurse
+6,Chrissie Mitchell-issett,copd_nurse
+7,Tor Willott,copd_nurse
+8,Declan Tomlin,copd_nurse
+9,Zack Hawksley,copd_nurse
+10,Louise Irvine,copd_nurse
+11,Emma Chaplin,copd_nurse
+12,Sarah Ward,copd_nurse
+13,Olivia Revitt,copd_nurse
+14,Jakub Zatloukal,copd_nurse
+15,Emily Mullen,copd_nurse
+16,Sabrina Lohar,copd_nurse
+17,Carole Best,copd_nurse
+1,White,copd_sputum_colour
+2,Yellow,copd_sputum_colour
+3,Green,copd_sputum_colour
+1,Patient not interested/refused,copd_smoke_cess_dec_reason
+2,Already used service,copd_smoke_cess_dec_reason
+3,Attending local pharmacy/g.p,copd_smoke_cess_dec_reason
+4,Too far to travel,copd_smoke_cess_dec_reason
+1,Completed,copd_pr_ref_dec_reason
+2,Transport,copd_pr_ref_dec_reason
+3,Ft carer,copd_pr_ref_dec_reason
+4,Physical incapacity,copd_pr_ref_dec_reason
+5,Mental incapacity,copd_pr_ref_dec_reason
+6,Already enrolled on pr,copd_pr_ref_dec_reason
+7,Happy to self manage,copd_pr_ref_dec_reason
+1,Good technique,copd_inh_tech_understand
+2,Poor technique,copd_inh_tech_understand
+3,Needed direction,copd_inh_tech_understand
+4,Inhaler regime changed,copd_inh_tech_understand
+1,Home,copd_discharge_to
+2,Other hospital,copd_discharge_to
+3,Nursing home,copd_discharge_to
+4,Residential home,copd_discharge_to
+5,Loros,copd_discharge_to
+6,Self discharged,copd_discharge_to
+7,Died,copd_discharge_to
+8,Psychiatric unit,copd_discharge_to
+1,Patient not interested/refused,copd_op_decline_reason
+2,Ongoing investigation,copd_op_decline_reason
+3,Too far to travel,copd_op_decline_reason
+4,Physical incapacity,copd_op_decline_reason
+5,Mental incapacity,copd_op_decline_reason
+6,No transport,copd_op_decline_reason
+7,Too ill,copd_op_decline_reason
+1,Discharged to gp,copd_outcome
+2,Died,copd_outcome
+3,Admitted from clinic,copd_outcome
+4,Disch/transferred to other hospital,copd_outcome
+5,Readmitted to another hospital,copd_outcome
+6,Re-admitted with a respiratory problem,copd_outcome
+1,Social reasons,copd_readm_reason
+2,Exacerbation not resolved,copd_readm_reason
+3,Other -not copd,copd_readm_reason
+1,Cough,copd_presenting_probs
+2,Fatigue,copd_presenting_probs
+3,Muscle weakness,copd_presenting_probs
+4,Pain,copd_presenting_probs
+5,Fear/panic,copd_presenting_probs
+6,Shortness of breath,copd_presenting_probs
+7,Sputum retention,copd_presenting_probs
+8,Reduced exercise tolerance,copd_presenting_probs
+9,Low mood,copd_presenting_probs
+10,Increased sputum,copd_presenting_probs
+1,Yes,copd_o2_user
+2,No,copd_o2_user
+3,Ltot,copd_o2_user
+4,Ambulatory,copd_o2_user
+5,Regular user,copd_o2_user
+1,No previous exercise experience,copd_exerc_behaviour
+2,Currently undertakes exercise,copd_exerc_behaviour
+3,Exercised previously but not recently,copd_exerc_behaviour
+4,Previously done pr,copd_exerc_behaviour
+5,Other,copd_exerc_behaviour
+1,Liaise with g.p,copd_adm_avoidance
+2,Medication advice,copd_adm_avoidance
+3,Ics,copd_adm_avoidance
+4,Management of breathlessness,copd_adm_avoidance
+5,ICS- Home first,copd_adm_avoidance
+6,IDT,copd_adm_avoidance
+7,LTC and oxygen,copd_adm_avoidance
+1,Not suitable/too ill,copd_fo_phone_pr_dec_reason
+2,Travel,copd_fo_phone_pr_dec_reason
+3,Returned to work,copd_fo_phone_pr_dec_reason
+4,Unable to contact - letter sent,copd_fo_phone_pr_dec_reason
+5,Deceased,copd_fo_phone_pr_dec_reason
+6,No transport,copd_fo_phone_pr_dec_reason
+1,Pulmonary rehab,copd_onward_referral
+2,Dietetics,copd_onward_referral
+3,Social services,copd_onward_referral
+4,District nurses,copd_onward_referral
+5,Resp physiology,copd_onward_referral
+6,Ics,copd_onward_referral
+7,Ltc,copd_onward_referral
+8,Psychology,copd_onward_referral
+1,Good,copd_inh_tech
+0,Advice,copd_inh_tech

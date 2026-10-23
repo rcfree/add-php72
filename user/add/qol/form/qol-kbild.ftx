@@ -1,0 +1,51 @@
+Return to QoL summary..	$qol_return	:summary_page_link {parent_key=buttons}
+Date*	$kbild_date	:date {min=date_of_birth(),max=today(),default=today(),summary_obs=kbild_date}
+Record scores only	$scores_only :checkbox {condition_test[0]=1,condition_action[0]=hide,condition_target[0]=questions,condition_test[1]=1,condition_action[1]=enable,condition_target[1]=blness_score;psych_score;phys_score}
+
+$questions :tab_container
+
+	Page 1 :tab
+		:horiz_container {segments=2}
+			1. In the last 2 weeks, I have been breathless climbing stairs or walking up an incline or hill. $bless_stairs_hill_q1 :radio_buttons {dictionary=kbild_every_never}
+			5.	In the last 2 weeks have you felt in control of your lung condition? :radio_buttons {dictionary=kbild_none_all} $felt_in_lung_control_q5
+
+		:horiz_container {segments=2}
+			2.	In the last 2 weeks, because of my lung condition, my chest has felt tight. $chest_felt_tight_q2 :radio_buttons {dictionary=kbild_all_none}
+
+			6.	In the last 2 weeks, has your lung complaint made you feel fed up or down in the dumps? $fed_up_lung_q6 :radio_buttons {dictionary=kbild_all_none}
+
+
+		:horiz_container {segments=2}
+			3.	In the last 2 weeks have you worried about the seriousness of your lung complaint? $worried_about_lung_q3 :radio_buttons {dictionary=kbild_all_none}
+			7.	In the last 2 weeks, I have felt the urge to breathe, also known as ‘air hunger’. $breathe_air_hunger_q7 :radio_buttons {dictionary=kbild_all_none}
+
+		:horiz_container {segments=2}
+			4.	In the last 2 weeks have you avoided doing things that make you breathless? $bless_avoid_things_q4 :radio_buttons {dictionary=kbild_all_none}
+
+			8.	In the last 2 weeks, my lung condition has made me feel anxious. :radio_buttons {dictionary=kbild_all_none} $lung_feel_anxious_q8
+
+	Page 2 :tab
+		:horiz_container {segments=2}
+			9.	In the last 2 weeks, how often have you experienced ‘wheeze’ or whistling sounds from your chest? $chest_wheeze_q9 :radio_buttons {dictionary=kbild_all_none}
+			13.	In the last 2 weeks, how much has your lung condition limited you carrying things, for example, groceries? $lung_limit_carrying_q13 :radio_buttons {dictionary=kbild_all_none}
+
+		:horiz_container {segments=2}
+			10.	In the last two weeks how much of the time have you felt your lung disease is getting worse? $lung_time_felt_worse_q10 :radio_buttons {dictionary=kbild_all_none}
+			14.	In the last 2 weeks, has your lung condition made you think more about the end of your life? $lung_eol_think_q14 :radio_buttons {dictionary=kbild_all_none}
+
+		:horiz_container {segments=2}
+
+			11.	In the last 2 weeks has your lung condition interfered with your job or other daily tasks? $lung_affected_job_q11 :radio_buttons {dictionary=kbild_all_none}
+			15.	Are you financially worse off because of your lung condition? $lung_finance_worse_q15 :radio_buttons {dictionary=kbild_sig_not}
+
+		12.	In the last 2 weeks have you expected your lung complaint to get worse? $lung_expect_worse_q12 :radio_buttons {dictionary=kbild_all_none}
+
+Scores :fieldset {compress=1} $scores
+	:horiz_container
+
+		Breathlessness/activity* $blness_score :number {min=5,max=35,suffix=/35,summary_obs=kbild_blness,fixed=0,expression=sum('bless_stairs_hill_q1;bless_avoid_things_q4;lung_affected_job_q11;lung_limit_carrying_q13')}
+		Psychological* $psych_score :number {min=7,max=49,suffix=/49,summary_obs=kbild_psych,fixed=0,expression=sum('worried_about_lung_q3;felt_in_lung_control_q5;fed_up_lung_q6;lung_feel_anxious_q8;lung_time_felt_worse_q10;lung_expect_worse_q12;lung_eol_think_q14')}
+		Physical $phys_score :number {min=3,max=21,suffix=/21,summary_obs=kbild_phys,fixed=0,expression=sum('chest_felt_tight_q2;breathe_air_hunger_q7;chest_wheeze_q9')}
+		Total*	$total_score :expression {min=15,max=105,suffix=/105,summary_obs=kbild_total,size=4,fixed=0,expression=sum('blness_score;psych_score;phys_score')}
+
+Status	$status	:internal {summary_obs=kbild_status,summary_type=status}

@@ -1,0 +1,182 @@
+[ 
+    {
+        "id" : "156909", "encounter_form_id" : "164", "patient_id" : "999", "parent_encounter_id" : "156907", 
+        "badge" : null, "is_complete" : "0", "is_locked" : "0", "is_deleted" : "0", "is_invalid" : "0", 
+        "is_autosave" : "0", "is_verified" : "0", "revision_no" : "1", "date_created" : "2015-04-09 10:12:50", 
+        "date_updated" : "2015-04-09 10:12:50", "icd10_code" : {
+            "value" : "I48", "label" : "I48 - Atrial fibrillation and flutter" 
+        },
+        "uhl_qualifier" : {
+            "value" : null, "label" : "" 
+        },
+        "primary_diagnosis" : {
+            "value" : "0", "label" : " " 
+        }
+    },
+
+    {
+        "id" : "156911", "encounter_form_id" : "164", "patient_id" : "999", "parent_encounter_id" : "156907", 
+        "badge" : null, "is_complete" : "0", "is_locked" : "0", "is_deleted" : "0", "is_invalid" : "0", 
+        "is_autosave" : "0", "is_verified" : "0", "revision_no" : "1", "date_created" : "2015-04-09 10:12:50", 
+        "date_updated" : "2015-04-09 10:12:50", "icd10_code" : {
+            "value" : "I50.0", "label" : "I50.0 - Congestive heart failure" 
+        },
+        "uhl_qualifier" : {
+            "value" : null, "label" : "" 
+        },
+        "primary_diagnosis" : {
+            "value" : "0", "label" : " " 
+        }
+    },
+
+    {
+        "id" : "156912", "encounter_form_id" : "164", "patient_id" : "999", "parent_encounter_id" : "156907", 
+        "badge" : null, "is_complete" : "0", "is_locked" : "0", "is_deleted" : "0", "is_invalid" : "0", 
+        "is_autosave" : "0", "is_verified" : "0", "revision_no" : "1", "date_created" : "2015-04-09 10:12:51", 
+        "date_updated" : "2015-04-09 10:12:51", "icd10_code" : 
+        {
+            "value" : "R76.8", "label" : "R76.8 - Other specified abnormal immunological findings in serum" 
+        },
+        "uhl_qualifier" : {
+            "value" : null, "label" : "" 
+        },
+        "primary_diagnosis" : {
+            "value" : "0", "label" : " " 
+        }
+    },
+
+    {
+        "id" : "156913", "encounter_form_id" : "164", "patient_id" : "999", "parent_encounter_id" : "156907", 
+        "badge" : null, "is_complete" : "0", "is_locked" : "0", "is_deleted" : "0", "is_invalid" : "0", 
+        "is_autosave" : "0", "is_verified" : "0", "revision_no" : "1", "date_created" : "2015-04-09 10:12:51", 
+        "date_updated" : "2015-04-09 10:12:51", "icd10_code" : {
+            "value" : "N18.3", "label" : "N18.3 - Chronic kidney disease, stage 3" 
+        },
+        "uhl_qualifier" : {
+            "value" : null, "label" : "" 
+        },
+        "primary_diagnosis" : {
+            "value" : "0", "label" : " " 
+        }
+    },
+
+    {
+        "id" : "156914", "encounter_form_id" : "164", "patient_id" : "999", "parent_encounter_id" : "156907", 
+        "badge" : null, "is_complete" : "0", "is_locked" : "0", "is_deleted" : "0", "is_invalid" : "0", 
+        "is_autosave" : "0", "is_verified" : "0", "revision_no" : "1", "date_created" : "2015-04-09 10:12:51", 
+        "date_updated" : "2015-04-09 10:12:51", "icd10_code" : {
+            "value" : "I10", "label" : "I10 - Essential (primary) hypertension" 
+        },
+        "uhl_qualifier" : {
+            "value" : null, "label" : "" 
+        },
+        "primary_diagnosis" : {
+            "value" : "0", "label" : " " 
+        }
+    },
+
+    {
+        "id" : "156915", "encounter_form_id" : "164", "patient_id" : "999", "parent_encounter_id" : "156907", 
+        "badge" : null, "is_complete" : "0", "is_locked" : "0", "is_deleted" : "0", "is_invalid" : "0", 
+        "is_autosave" : "0", "is_verified" : "0", "revision_no" : "1", "date_created" : "2015-04-09 10:12:51", 
+        "date_updated" : "2015-04-09 10:12:51", "icd10_code" : {
+            "value" : "J45.8", "label" : "J45.8 - Mixed asthma" 
+        },
+        "uhl_qualifier" : {
+            "value" : null, "label" : "" 
+        },
+        "primary_diagnosis" : {
+            "value" : "0", "label" : " " 
+        }
+    },
+
+    {
+        "id" : "156916", "encounter_form_id" : "164", "patient_id" : "999", "parent_encounter_id" : "156907", 
+        "badge" : null, "is_complete" : "0", "is_locked" : "0", "is_deleted" : "0", "is_invalid" : "0", 
+        "is_autosave" : "0", "is_verified" : "0", "revision_no" : "1", "date_created" : "2015-04-09 10:12:51", 
+        "date_updated" : "2015-04-09 10:12:51", "icd10_code" : {
+            "value" : "K57", "label" : "K57 - Diverticular disease of intestine" 
+        },
+        "uhl_qualifier" : {
+            "value" : null, "label" : "" 
+        },
+        "primary_diagnosis" : {
+            "value" : "0", "label" : " " 
+        }
+    },
+
+    {
+        "id" : "156917", "encounter_form_id" : "164", "patient_id" : "999", "parent_encounter_id" : "156907", 
+        "badge" : null, "is_complete" : "0", "is_locked" : "0", "is_deleted" : "0", "is_invalid" : "0", 
+        "is_autosave" : "0", "is_verified" : "0", "revision_no" : "1", "date_created" : "2015-04-09 10:12:51", 
+        "date_updated" : "2015-04-09 10:12:51", "icd10_code" : {
+            "value" : "M10", "label" : "M10 - Gout" 
+        },
+        "uhl_qualifier" : {
+            "value" : null, "label" : "" 
+        },
+        "primary_diagnosis" : {
+            "value" : "0", "label" : " " 
+        }
+    },
+
+    {
+        "id" : "156918", "encounter_form_id" : "164", "patient_id" : "999", "parent_encounter_id" : "156907", 
+        "badge" : null, "is_complete" : "0", "is_locked" : "0", "is_deleted" : "0", "is_invalid" : "0", 
+        "is_autosave" : "0", "is_verified" : "0", "revision_no" : "1", "date_created" : "2015-04-09 10:12:51", 
+        "date_updated" : "2015-04-09 10:12:51", "icd10_code" : {
+            "value" : "E11", "label" : "E11 - Non-insulin-dependent diabetes mellitus" 
+        },
+        "uhl_qualifier" : {
+            "value" : null, "label" : "" 
+        },
+        "primary_diagnosis" : {
+            "value" : "0", "label" : " " 
+        }
+    },
+
+    {
+        "id" : "156919", "encounter_form_id" : "164", "patient_id" : "999", "parent_encounter_id" : "156907", 
+        "badge" : null, "is_complete" : "0", "is_locked" : "0", "is_deleted" : "0", "is_invalid" : "0", 
+        "is_autosave" : "0", "is_verified" : "0", "revision_no" : "1", "date_created" : "2015-04-09 10:12:51", 
+        "date_updated" : "2015-04-09 10:12:51", "icd10_code" : {
+            "value" : "I31.3", "label" : "I31.3 - Pericardial effusion (noninflammatory)" 
+        },
+        "uhl_qualifier" : {
+            "value" : null, "label" : "" 
+        },
+        "primary_diagnosis" : {
+            "value" : "0", "label" : " " 
+        }
+    },
+
+    {
+        "id" : "156926", "encounter_form_id" : "164", "patient_id" : "999", "parent_encounter_id" : "156907", 
+        "badge" : null, "is_complete" : "0", "is_locked" : "0", "is_deleted" : "0", "is_invalid" : "0", 
+        "is_autosave" : "0", "is_verified" : "0", "revision_no" : "1", "date_created" : "2015-04-09 10:37:45", 
+        "date_updated" : "2015-04-09 10:37:45", "icd10_code" : {
+            "value" : "J47", "label" : "J47 - Bronchiectasis" 
+        },
+        "uhl_qualifier" : {
+            "value" : null, "label" : "" 
+        },
+        "primary_diagnosis" : {
+            "value" : "1", "label" : "*" 
+        }
+    },
+
+    {
+        "id" : "156931", "encounter_form_id" : "164", "patient_id" : "999", "parent_encounter_id" : "156907", 
+        "badge" : null, "is_complete" : "0", "is_locked" : "0", "is_deleted" : "0", "is_invalid" : "0", 
+        "is_autosave" : "0", "is_verified" : "0", "revision_no" : "1", "date_created" : "2015-04-09 10:42:00", 
+        "date_updated" : "2015-04-09 10:42:00", "icd10_code" : {
+            "value" : "J22", "label" : "J22 - Unspecified acute lower respiratory infection" 
+        },
+        "uhl_qualifier" : {
+            "value" : null, "label" : "" 
+        },
+        "primary_diagnosis" : {
+            "value" : "0", "label" : " " 
+        }
+    }
+]

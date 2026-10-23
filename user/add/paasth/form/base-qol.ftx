@@ -1,0 +1,68 @@
+
+Hospital anxiety and depression scale (HADS) $hads_fset :fieldset
+	Edit questionnaire.. $edit_hads :page_link {page=dac/baseline/bhads,section=bhads,complete_title=Read questionnaire..,new_title=Perform questionnaire..,incomplete_edit_title=Continue questionnaire..,incomplete_view_title=View incomplete questionnaire..}
+
+	$hc1 :horiz_container
+		Visit Date $hads_date :display_text {data_type=date,display_title=HADS date,date_field=hads_date}
+		Status $hads_status :display_text {data_type=dropdown,display_title=HADS status,date_field=hads_date,default="New"}
+		A score $hads_anxiety_score :display_text {data_type=number,display_title=HADS A score,date_field=hads_date,size=3}
+		D score $hads_depression_score :display_text {data_type=number,display_title=HADS D score,date_field=hads_date,size=3}
+		Total $hads_total :display_text {data_type=number,display_title=HADS total,date_field=hads_date,size=3}
+		A mean $hads_anxiety_mean :display_text {data_type=number,display_title=HADS A mean,date_field=hads_date,size=3}
+		D mean $hads_depression_mean :display_text {data_type=number,display_title=HADS D mean,date_field=hads_date,size=3}
+
+Juniper Asthma Control Questionnaire 6 (JACQ6) $jacq6_fset :fieldset
+	Edit questionnaire.. $edit_jacq6 :page_link {page=dac/baseline/bjacq6,section=bjacq6,complete_title=Read questionnaire..,new_title=Perform questionnaire..,incomplete_edit_title=Continue questionnaire..,incomplete_view_title=View incomplete questionnaire..}
+
+	$hc2 :horiz_container
+		Visit Date $jacq6_date :display_text {data_type=date,display_title=JACQ6 date,date_field=jacq6_date}
+		Status $jacq6_status :display_text {data_type=dropdown,display_title=JACQ6 status,date_field=jacq6_date,default="New"}
+		Score (6) $jacq6_score6 :display_text {data_type=number,display_title=JACQ6 score (6),date_field=jacq6_date}
+		Score (7) $jacq6_score :display_text {data_type=number,display_title=JACQ6 score (7),date_field=jacq6_date,size=3}
+
+Asthma Quality of Life Questionnaire (AQLQ(S)) $aqlq_fset :fieldset
+	Edit questionnaire.. $edit_aqlq :page_link {page=dac/baseline/baqlq,section=baqlq,complete_title=Read questionnaire..,new_title=Perform questionnaire..,incomplete_edit_title=Continue questionnaire..,incomplete_view_title=View incomplete questionnaire..}
+
+	$field_1 :horiz_container {segments=9}
+		Visit Date $aqlq_date :display_text {data_type=date,display_title=AQLQ date,date_field=aqlq_date}
+		Status $aqlq_status :display_text {data_type=dropdown,display_title=AQLQ status,date_field=aqlq_date,default="New"}
+		<br/>Scores $scores :item
+		Symptoms $aqlq_symptoms_score :display_text {data_type=number,display_title=AQLQ symptoms score,date_field=aqlq_date,size=2}
+		Act Limit $aqlq_act_limit_score :display_text {data_type=number,display_title=AQLQ activity limit score,date_field=aqlq_date,size=2}
+		Emot Func $aqlq_emot_func_score :display_text {data_type=number,display_title=AQLQ emotional function score,date_field=aqlq_date,size=2}
+		Env Stim $aqlq_env_stimuli_score :display_text {data_type=number,display_title=AQLQ environment stimulation score,date_field=aqlq_date,size=2}
+		Total $aqlq_total_score :display_text {data_type=number,display_title=AQLQ total score,date_field=aqlq_date,size=3}
+
+	$field_2 :horiz_container {segments=9}
+		&nbsp; $m1 :markup
+		&nbsp; $m2 :markup
+		Means $means :item
+		$aqlq_symptoms_mean :display_text {data_type=number,display_title=AQLQ symptoms mean,date_field=aqlq_date,size=2}
+		$aqlq_act_limit_mean :display_text {data_type=number,display_title=AQLQ activity limit mean,date_field=aqlq_date,size=2}
+		$aqlq_emot_func_mean :display_text {data_type=number,display_title=AQLQ emotional function mean,date_field=aqlq_date,size=2}
+		$aqlq_env_stimuli_mean :display_text {data_type=number,display_title=AQLQ enviroment stimulation mean,date_field=aqlq_date,size=2}
+
+Nijmegen $nijmegen_fset :fieldset
+	Edit questionnaire.. $edit_nymegen :page_link {page=dac/baseline/bnijmegen,section=bnijmegen,complete_title=Read questionnaire..,new_title=Perform questionnaire..,incomplete_edit_title=Continue questionnaire..,incomplete_view_title=View incomplete questionnaire..}
+
+	$hc4 :horiz_container
+		Visit Date $nijmegen_date :display_text {data_type=date,display_title=Nijmegen date,date_field=nijmegen_date}
+		Status $nijmegen_status :display_text {data_type=dropdown,display_title=Nijmegen status,date_field=nijmegen_date,default="New"}
+		Score $nijmegen_score :display_text {data_type=number,display_title=Nijmegen score,date_field=nijmegen_date,size=3}
+
+EuroQoL 5D $eq5d_fset :fieldset
+	Edit questionnaire.. $edit_eq5d :page_link {page=dac/baseline/beq5d,section=beq5d,complete_title=Read questionnaire..,new_title=Perform questionnaire..,incomplete_edit_title=Continue questionnaire..,incomplete_view_title=View incomplete questionnaire..}
+
+	$hc5 :horiz_container
+		Visit Date $eq5d_date :display_text {data_type=date,display_title=EQ5D date,date_field=eq5d_date}
+		Status $eq5d_status :display_text {data_type=dropdown,display_title=EQ5D status,date_field=eq5d_date,default="New"}
+		Score $eq5d_score :display_text {data_type=number,display_title=EQ5D score,date_field=eq5d_date,size=3}
+		Health State $eq5d_health_state :display_text {data_type=number,display_title=EQ5D health state,date_field=eq5d_date,size=3}
+
+VCDQ $vcdq_fset :fieldset
+	Edit questionnaire.. $edit_vcdq :page_link {page=dac/baseline/bvcdq,section=bvcdq,complete_title=Read questionnaire..,new_title=Perform questionnaire..,incomplete_edit_title=Continue questionnaire..,incomplete_view_title=View incomplete questionnaire..}
+
+	$vcdq_hc :horiz_container
+		Visit Date $vcdq_date :display_text {data_type=date,display_title=VCDQ date,date_field=vcdq_date}
+		Status $vcdq_status :display_text {data_type=dropdown,display_title=VCDQ status,date_field=vcdq_date,default="New"}
+		Score $vcdq_score :display_text {data_type=number,display_title=VCDQ score,date_field=vcdq_date,size=3}

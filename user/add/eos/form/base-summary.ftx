@@ -1,0 +1,68 @@
+:horiz_container
+	Date of visit :date $date_of_visit
+	Referred by specialty :dropdown [1=Respiratory,2=Renal,3=Cardiovascular,4=Muscularskeletal,5=Psychiatry,6=Gastroenterology,7=Genitorurinary,8=STD clinic,9=Infectious disease,10=Other]
+
+Diagnosis :checkboxes [1=Fungal allergy,2=Asthma,3=Parasitic disease,4=Drug allergy,5=Hypereosinophilic syndrome,6=EGPA, 7=Malignancy,8=Eosinophilic pneumonia] {condition_test[0]=3,condition_action[0]=show,condition_target[0]=para_tab,condition_test[1]=4,condition_action[1]=show,condition_target[1]=drug_tab,condition_test[2]=5,condition_action[2]=show,condition_target[2]=hypo_tab,condition_test[3]=7,condition_action[3]=show,condition_target[3]=mali_tab,columns=3}
+
+:tab_container
+
+	Summary information :tab $summ_tab 
+		:horiz_container {segments=3}
+			Date of first attendance :date
+			Date eosinophilia first noticed :date
+		:horiz_container {segments=3}
+			Date of onset of symptoms :date
+			Date of diagnosis :date
+			
+		Basis for diagnosis :checkboxes [1=Investigations,2=Clinical] {inline=1}
+		
+	Smoking :tab $smoking_tab
+		smoking item $smoking_items :encounter_grid {use_page=history:smoking,fields=date_recorded;smoking_status;pack_year_calc;smoking_item_type;from_year;to_year;pack_years}
+		Add smoking item :grid_add_button {refresh=smoking_items,modal_width=700,use_page=history:smoking}
+	
+	Parasitic disease :tab $para_tab
+		"Parasitic disease" :check_boxes [1=Strongyloides,2=Filiriasis,3=Fasciola,4=Hydatid,5=Schistomiasis,6=Toxocara,7=Ascaris,O=Other] {condition_test=O,condition_op=eq,condition_action=show,condition_target=para_other}
+		Other :text $para_other
+	
+	Drug allergy :tab $drug_tab
+		"Allergic to" $allergic_to :checkboxes [1=Betalactams,2=Other antibiotics,3=Psychiatric drugs, 4=Heparin]
+
+	Hypoeosinophilic syndrome :tab $hypo_tab
+
+		Myeloproliferative $mylo_fset :fieldset {compress=1}
+			Myeloproliferative :yes_no
+			FIP1L1/PDGF receptor alpha :yes_no
+			
+			C-KIT/JAK-2 test $myel_tests :encounter_grid {use_page=path:haemresult,description=haematology result,fields=test_code;result;units;normal_low;normal_high;specimen_no;coll_date_time,,filter_op[0]=eq,filter_field[0]=test_code,filter_value[0]=ICKIT;JAK2}
+			
+			-JAK-2 :yes_no $jak_2
+			-"C-kit" :yes_no
+			Other details :text $other_mylo
+
+		Reactive $reactive_fset :fieldset {compress=1}
+			Reactive :yes_no
+			:horiz_container {segments=3}
+				Eosinophilic cellulitis :yes_no
+				Eosinophilic gastroenteritis :yes_no
+				Eosinophilic pneumonia :yes_no
+
+			:horiz_container {segments=3}
+				Lymphocytic :yes_no {compress=1}
+				Psychiatric drugs :radio_buttons [1=Ivobradine,2=Other]
+ 
+  
+	Malignancy :tab $mali_tab
+		Lymphoma :yes_no
+		Solid tumour :yes_no
+		Organ :dropdown [1=Lung,2=Gut,3=Kidney,4=Other]
+		Other organ :text
+-$date_recorded
+-$smoking_status
+-$years_since_last_smoked
+-$pack_year_calc
+-$smoking_item_type
+-$no_smoked_per_day
+-$from_year
+-$to_year
+-$no_years		
+-$pack_years

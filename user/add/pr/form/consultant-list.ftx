@@ -1,0 +1,2 @@
+Consultant $consultants :dictionary_grid {dictionary=pr_consultant,fields=title,use_page=pr:consultant-item,after_row_actions=EditDictItem}
+Add consultant :grid_add_button {refresh=consultants,modal_width=700,use_page=pr:consultant-item}

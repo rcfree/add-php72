@@ -1,0 +1,13 @@
+RELEASE HISTORY
+---------------
+1.1.0 29/02/2015
+* Switched data source to ILAB pathology results
+
+1.0.0 13/05/2014
+* updated for compatibility with ADD2
+! incorrect dictionary specified in ige-results.xlsx
+
+0.0.1 28/01/2014
++prelim version of inv skintests including dictionary and forms
++custom AddIgGTests field type
+*changes to ensure compatibility with core 1.0.16

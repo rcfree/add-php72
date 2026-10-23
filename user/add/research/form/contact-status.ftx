@@ -1,0 +1,7 @@
+Type $log_type :dropdown {default=1,viewonly=1} [1=Change status,2=Patient review,3=Comment,4=Continued communication,5=Sent email]
+Date changed* $date_changed :date {default=today(),col_title=Date}
+Recruitment status* $recruit_status :dropdown {dictionary=rrdb_status,condition_target[0]=reason_unavail,condition_action[0]=show,condition_test[0]=5,condition_target[1]=contact_method,condition_action[1]=show,condition_test[1]=X}
+Reason (if unavailable) $reason_unavail :dropdown {dictionary=rrdb_reason_unavail}
+Contact method $contact_method :checkboxes {blank_no_options=1,dictionary=rrdb_contact_methods}
+Comments $change_comments :memo {size=80,height=5}
+User $user_changed :hidden {default=current_user()}

@@ -1,0 +1,4 @@
+Date of bronchoscopy $bronch_date :date
+Problems $problems :yes_no {condition_test=Y,condition_action=show,condition_target=problem_details}
+Problem details $problem_details :memo {size=80,rows=5}
+"Happy to have another bronchscopy?" $another_bronch :yes_no {col_title=Another bronchoscopy?}

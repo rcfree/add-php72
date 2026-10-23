@@ -1,5 +1,5 @@
 {
-"name": "add/build",
+    "name": "add/build",
     "description": "Airway Disease Database basic build",
     "authors": [
         {
@@ -8,109 +8,141 @@
         }
     ],
     "require": {
-        "clinicle/base":"^1.6",
-		"clinicle/patient":"^1.4",
-		"clinicle/manage":"^1.7",
-		"add/qol":"^2.4",
-        "add/ild":"^1.3",
-		"add/cap":"^1.0",
-		"add/dac":"^2.6",
-		"add/pr":"^1.4",
-		"add/advcopd":"^2.7",
-		"add/advcopd_fup":"^1.0",
-		"add/advcopd_report":"^1.1",
-		"add/med":"^1.4",
-		"add/med_report":"^1.0",
-		"add/history":"^2.0",
-		"add/history_ext":"^2.2",
-		"add/research":"^3.2",
-		"add/research_studies":"^4.1",
-		"add/research_bronch":"^2.0",
-		"add/research_search":"^2.2",
-		"add/inv":"^2.2",
-		"add/inv_ige":"^1.1",
-		"add/path":"^1.3",
-		"add/tag":"^2.0",
+        "clinicle/base": "^1.6",
+        "clinicle/patient": "^1.4",
+        "clinicle/manage": "^1.7",
+        "add/qol": "^2.4",
+        "add/ild": "^1.3",
+        "add/cap": "^1.0",
+        "add/dac": "^2.6",
+        "add/pr": "^1.4",
+        "add/advcopd": "^2.7",
+        "add/advcopd_fup": "^1.0",
+        "add/advcopd_report": "^1.1",
+        "add/med": "^1.4",
+        "add/med_report": "^1.0",
+        "add/history": "^2.0",
+        "add/history_ext": "^2.2",
+        "add/research": "^3.2",
+        "add/research_studies": "^4.1",
+        "add/research_bronch": "^2.0",
+        "add/research_search": "^2.2",
+        "add/inv": "^2.2",
+        "add/inv_ige": "^1.1",
+        "add/path": "^1.3",
+        "add/tag": "^2.0",
         "add/concept": "^1.6",
         "add/eos": "^1.1",
         "add/theme": "^2.1",
         "add/referral": "^1.3",
-	"add/dac_mdt":"^1.1",
-	"add/research_api":"^2.0",
-	"add/grouping":"^1.0",
-	"add/resphy": "^1.5",
-	    "add/resphy_import": "^1.3",
-		"clinicle/export":"^1.2",
-		"add/history_status":"^1.0",
-	    "ember/blness":"^1.6",
+        "add/dac_mdt": "^1.1",
+        "add/research_api": "^2.0",
+        "add/grouping": "^1.0",
+        "add/resphy": "^1.5",
+        "add/resphy_import": "^1.3",
+        "clinicle/export": "^1.2",
+        "add/history_status": "^1.0",
+        "ember/blness": "^1.6",
         "ember/asthcopd": "^1.3",
-	"ember/pneumonia":"^1.1",
-		"ember/hfail":"^1.1",
-		"clinicle/monitor":"^1.0",
-		"add/inv_fungi":"^0.1",
-		"clinicle/search":"^0.1",
-		"add/pr_dashboard":"^0.1",
-"add/paasth":"^0.1",
-"copd/main":"^1.0",
+        "ember/pneumonia": "^1.1",
+        "ember/hfail": "^1.1",
+        "clinicle/monitor": "^1.0",
+        "add/inv_fungi": "^0.1",
+        "clinicle/search": "^0.1",
+        "add/pr_dashboard": "^0.1",
+        "add/paasth": "^0.1",
+        "copd/main": "^1.0",
         "tecnickcom/tcpdf": "^6.2"
     },
-	"repositories": [
-{
-"type":"vcs",
-"url":"https://bitbucket.org/rcfree/add_paasth"
-},
-{"type":"vcs",
-"url":"https://bitbucket.org/rcfree/copd_main"
-},
- {
-            "type": "composer",
-            "url": "https://projects.ilh.le.ac.uk/satis"
-        },
-	{
-		"type":"vcs",
-		"url":"https://bitbucket.org/emberuol/pneumonia"
-},
-{
-                "type":"vcs",
-                "url":"https://bitbucket.org/leicrespbru/add_inv_fungi"
-},
-{
-                "type":"vcs",
-                "url":"https://bitbucket.org/clinicle/dataframe"
-},{
-"type":"vcs",
-"url":"https://bitbucket.org/leicrespbru/add_pr_dashboard"
-},{
-			"type":"vcs",
-			"url":"https://bitbucket.org/tbit2/screening"
-		},
-		{
-			"type":"vcs",
-			"url":"https://bitbucket.org/tbit2/casemanage"
-		},
-		{
-			"type":"vcs",
-			"url":"https://bitbucket.org/emberuol/hfail"
-		},
-		{
-			"type":"vcs",
-			"url":"https://bitbucket.org/clinicle/risk-score"
-		},
-{
-                        "type":"vcs",
-                        "url":"https://bitbucket.org/clinicle/search"
-                },
-		{
-			"type":"vcs",
-			"url":"https://bitbucket.org/leicrespbru/add_research_comms"
-		}
-
+    "repositories": [
+        {
+            "type": "path",
+            "url": "user/*/*",
+            "options": {
+                "symlink": false,
+                "versions": {
+                    "add/advcopd": "2.7.0",
+                    "add/advcopd_fup": "1.0.1",
+                    "add/advcopd_report": "1.1.2",
+                    "add/cap": "1.0.7",
+                    "add/concept": "1.6.2",
+                    "add/dac": "2.6.0",
+                    "add/dac_mdt": "1.1.0",
+                    "add/eos": "1.1.2",
+                    "add/grouping": "1.1.0",
+                    "add/history": "2.0.1",
+                    "add/history_ext": "2.2.1",
+                    "add/history_status": "1.0.2",
+                    "add/ild": "1.3.0",
+                    "add/inv": "2.2.4",
+                    "add/inv_fungi": "0.1.0",
+                    "add/inv_ige": "1.1.0",
+                    "add/med": "1.4.2",
+                    "add/med_report": "1.0.1",
+                    "add/paasth": "0.1.0",
+                    "add/path": "1.4.4",
+                    "add/pr": "1.4.3",
+                    "add/pr_dashboard": "0.1.0",
+                    "add/qol": "2.4.0",
+                    "add/referral": "1.3.0",
+                    "add/research": "3.2.0",
+                    "add/research_action": "1.0.3",
+                    "add/research_api": "2.0.1",
+                    "add/research_bronch": "2.0.0",
+                    "add/research_search": "2.2.0",
+                    "add/research_studies": "4.1.1",
+                    "add/resphy": "1.5.1",
+                    "add/resphy_import": "1.4.0",
+                    "add/tag": "2.0.0",
+                    "add/theme": "2.1.1",
+                    "cdbrkr/conditions": "1.0.0",
+                    "cdbrkr/logic": "1.3.1",
+                    "clinicle/ajax": "1.1.1",
+                    "clinicle/api": "1.1.0",
+                    "clinicle/base": "1.6.0",
+                    "clinicle/client": "1.12.3",
+                    "clinicle/common": "1.4.0",
+                    "clinicle/core": "2.17.2",
+                    "clinicle/datafile": "1.0.4",
+                    "clinicle/dataframe": "0.1.0",
+                    "clinicle/download": "1.3.0",
+                    "clinicle/email": "1.0.1",
+                    "clinicle/episode": "1.0.6",
+                    "clinicle/export": "1.2.1",
+                    "clinicle/icd10": "2.0.0",
+                    "clinicle/import": "1.0.3",
+                    "clinicle/install": "1.2.4",
+                    "clinicle/letter": "1.0.1",
+                    "clinicle/manage": "1.8.1",
+                    "clinicle/migrate": "1.0.1",
+                    "clinicle/monitor": "1.0.0",
+                    "clinicle/options": "1.7.0",
+                    "clinicle/patient": "1.4.2",
+                    "clinicle/query": "1.2.0",
+                    "clinicle/record": "1.1.1",
+                    "clinicle/remote": "1.0.1",
+                    "clinicle/report": "1.2.1",
+                    "clinicle/report_ext": "1.1.2",
+                    "clinicle/risk-score": "1.0.1",
+                    "clinicle/search": "0.1.0",
+                    "clinicle/setup": "1.0.0",
+                    "clinicle/touch": "2.0.1",
+                    "clinicle/web": "1.4.4",
+                    "copd/main": "1.0.0",
+                    "ember/asthcopd": "1.4.0",
+                    "ember/blness": "1.7.3",
+                    "ember/hfail": "1.1.1",
+                    "ember/pneumonia": "1.1.0",
+                    "leicrespbru/lrbtools": "1.2.8"
+                }
+            }
+        }
     ],
-	"minimum-stability":"dev",
-"prefer-stable":true,
-    "config":{
-    	"preferred-install":"source",
-    	"cache-files-ttl":0,
-	"secure-http":true
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "preferred-install": "dist",
+        "cache-files-ttl": 0,
+        "secure-http": true
     }
 }

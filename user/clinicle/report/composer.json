@@ -1,0 +1,14 @@
+{
+    "name": "clinicle/report",
+    "description": "ClinicLE report module",
+	"type": "clinicle-module",
+	"require":{
+		"clinicle/install":"~1.0",
+		"clinicle/base":"^1.5",
+		"clinicle/api":"^1.1",
+		"itbz/fpdf": "1.7.2"
+	},
+    "autoload": {
+        "classmap": ["lib"]
+    }
+}

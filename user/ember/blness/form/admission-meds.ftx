@@ -1,0 +1,25 @@
+Add prescription drug $add_gen_drug :grid_add_button {refresh=general_drugs,modal_width=700,use_page=med:presdrugitem,allow_add_another=1}
+Show inactive drugs :filter_switch $show_inactive {target_grid=general_drugs,off_filter=drug_type|eq|1+current_status|eq|1,on_filter=drug_type|eq|1}
+prescription drug $general_drugs :encounter_grid {filter[0]=drug_type|eq|1,filter[1]=current_status|eq|1,use_page=med:drugitem,fields=drug_details;dose;frequency;duration,condition_field=current_status,description=prescription drug,before_row_actions=DateCreated,after_row_actions=StartDateSummary;EndDateSummary;InactivateRecord,parent_type=med:general,row_condition=current_status|eq|2|inactive}
+
+-Visit 1A $visit1a_date @visit_date :hidden {default=get('ascreening:admission_date'),use_default=1}
+-Visit 1B $visit1b_date :hidden {default=episode_get('doutcome:outcome_date'),use_default=1}
+-Pre-admission drugs :tab $pa_drugs_tab
+-<p class='text-info'>The list below shows drugs that were taken previous to the admission.</p> $pre_adm_mkup
+-Add pre-admission specific drug $add_preadm_drug :grid_add_button {refresh=preadm_drugs,use_page=blness:pread-drugitem,allow_add_another=1,use_parent=1}
+-pre-admission drug $preadm_drugs :encounter_grid {use_page=blness:pread-drugitem,fields=drug_details;dose;frequency;duration,description=prescription drug,before_row_actions=DateCreated,use_parent=1,after_row_actions=StartDateSummary;EndDateSummary;DeleteRecord}
+
+-Admission-specific drugs :tab $adm_spec_drugs_tab
+-<p class='text-info'>The list below shows drugs that were specific administered during the admission. They will be automatically copied to the discharge visit.</p> $adm_mkup
+-Add admission specific drug $add_adm_drug :grid_add_button {refresh=adm_drugs,use_page=blness:adm-drugitem,allow_add_another=1,use_parent=1}
+-admission specific drug $adm_drugs :encounter_grid {use_page=blness:adm-drugitem,fields=drug_details;dose;frequency;duration,description=prescription drug,before_row_actions=DateCreated,use_parent=1,after_row_actions=StartDateSummary;EndDateSummary;DeleteRecord}
+
+-:tab_container $tabs
+-General drugs (at admission) :tab $gen_drugs_tab
+-<p class='text-info'>The list below only shows those drugs that were active on the date of admission</p> $gen_mkup
+
+-$dose
+-$other_dose
+-$frequency
+-$duration
+-$field_2

@@ -1,0 +1,2 @@
+"Internal value (read-only)" $value :hidden {size=4}
+Consultant name* $title :text {size=50,ajax-func=UniqueDictItem}

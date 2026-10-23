@@ -1,0 +1,20 @@
+HISTORY
+
+1.1.0 01/11/2016
++ Debug log added to API output if debug enabled
+
+1.0.4 24/02/2016
+! Separate terms not being highlighted in dictionary lookup
+
+1.0.3 24/08/2015
+! Data in dictionary items now added correctly to output
+
+1.0.2 03/08/2015
++ Changed term output so bold tags surround term
+
+1.0.1 29/07/2015
++ Parameter 'from_start' added to API page DictLookup 
+
+1.0.0
+
+* Initial version

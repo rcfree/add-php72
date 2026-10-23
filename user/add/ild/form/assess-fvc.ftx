@@ -1,0 +1,8 @@
+Date entered $date_imported :hidden {default=now(),detail_field=date_imported}
+	
+:horiz_container {detail_field=source,detail_constant=4}
+	Date of test* $date_of_test :date {detail_field=exam_date,multi_field=test_date}
+	Comments $lf_comments :memo {rows=3,detail_field=comments}
+	$test_set_details :hidden {detail_field=test_set_details,detail_constant=FVC}
+	
+FVC predicted :number $no {fixed=2,size=4,multi_no=1,multi_field=pre_pc_predicted,multi_constant[0]=test_type:FVC,suffix=%}

@@ -1,0 +1,75 @@
+
+$field_1 :tab_container
+
+	Sputum/blood $sputum_blood :tab
+
+		Sputum $eosin_fset :fieldset {compress=1}
+			<div class='alert alert-info'>The actual sputum results have been moved to the Investigations -> Cell counts section</div> $spu_msg :markup {width=30%}
+
+			$sput_hc :horiz_container
+				Sputum obtained? $sputum_obtained :yes_no [Y=Yes,N=No]  {condition_action=show,condition_test="Y",condition_target=sputum_date,date_field=sputum_date,required=Y,inline=1}
+				Sputum date $sputum_date :date {date_field=sputum_date,required=Y,min=date_of_birth(),max=today(),size=10}
+
+		Blood $blood_fset :fieldset {compress=1}
+
+			$blood_hc :horiz_container
+				Blood date $blood_date :date {date_field=blood_date,min=date_of_birth(),max=today(),size=10}
+				Eosinophil count $eosin_count_blood :number {date_field=blood_date,required=Y,suffix=10<sup>9</sup>/l,size=6}
+
+	Immunoglobulin $ig_fset :tab {compress=1}
+		ILAB Ig result $ig_results :encounter_matrix {data_url=/api/matrix,use_page=path:haemresult,yfield=test_code,xfield=coll_date_time,value_field=result,no_parent=1,filter_field[0]=test_code,filter_value[0]=A-IGE;M3;IGA;IGM;IGE;IGG;VAF,filter_op[0]=eq,sort_field=coll_date_time,sort_order=DESC,sort_date=1}
+		$ig_results_status :pathology_status {status_prefix=ILAB Ig result transfer}
+
+		$hc2 :horiz_container {segments=5}
+			Total IgE date $ig_date :date {date_field=ig_date,min=date_of_birth(),max=today(),size=10}
+			Total IgE $ig_e :number {date_field=ig_date,allow_op=1,required=Y,suffix=kU l<sup>-1</sup>,size=6}
+
+		$hc_ig_e :horiz_container {segments=5}
+			IgE (asp.) date $ig_e_date :date {date_field=ig_e_date,size=10}
+			IgE (aspergillus) $ig_e_aspergillus :number {date_field=ig_e_date,allow_op=1,required=Y,suffix=kU l<sup>-1</sup>,size=6}
+
+		$hc_igg :horiz_container {segments=5}
+			IgG date $ig_g_date :date {date_field=ig_g_date,size=10}
+			IgG $ig_g :number {date_field=ig_g_date,allow_op=1,required=Y,suffix=g l<sup>-1</sup>,size=6}
+
+		$hc_igg2 :horiz_container {segments=5}
+			IgG (asp.) date $ig_g_asp_date :date {date_field=ig_g_asp_date,size=10}
+			IgG (asp.) $ig_g_aspergillus :number {date_field=ig_g_asp_date,allow_op=1,required=Y,suffix=g l<sup>-1</sup>,size=6}
+
+		$hc_iga_hc :horiz_container {segments=5}
+			IgA date $ig_a_date :date {date_field=ig_a_date,size=10}
+			IgA $ig_a :number {date_field=ig_a_date,allow_op=1,required=Y,suffix=g l<sup>-1</sup>,size=6}
+
+		$hc_igm_hc :horiz_container {segments=5}
+			IgM date $ig_m_date :date {date_field=ig_m_date,size=10}
+			IgM $ig_m :number {date_field=ig_m_date,allow_op=1,required=Y,suffix=g l<sup>-1</sup>,size=6}
+		Specific ab deficiency? $spec_ab_deficient :yes_no [Y=Yes,N=No]  {inline=1}
+
+	ANCA and DEXA $anca_tab :tab
+		ILAB ANCA result $anca_results :encounter_matrix {data_url=/api/matrix,use_page=path:haemresult,yfield=test_code,xfield=coll_date_time,value_field=result,no_parent=1,filter_field[0]=test_code,filter_value[0]=ANCA;MPOQ;PR3Q,filter_op[0]=eq,sort_field=coll_date_time,sort_order=DESC,sort_date=1}
+		$anca_results_status :pathology_status {status_prefix=ILAB ANCA result transfer}
+
+		ANCA $anca_fset :fieldset {compress=1}
+
+			$hc3 :horiz_container
+				c ANCA $c_anca :radio_buttons [1=Positive,2=Negative,3=Not done]  {required=Y}
+				p ANCA $p_anca :radio_buttons [1=Positive,2=Negative,3=Not done]  {required=Y}
+
+		DEXA $other_fset :fieldset {compress=1}
+			DEXA scan $dexa_scan :yes_no [Y=Yes,N=No]  {condition_test="Y",condition_target=dexa_date;normal_dexa_scan;hc_density,condition_action=show,date_field=dexa_date,required=Y,inline=1}
+			Date of DEXA $dexa_date :date {date_field=dexa_date,min=date_of_birth(),max=today(),size=10}
+
+			$hc_density :horiz_container
+				Spinal bone density (L1-4) T score $spinal_bone_den_t_score :number {date_field=dexa_date,allow_op=1,required=Y,size=6}
+				Femoral neck bone density T score $fem_neck_bone_den_t_score :number {date_field=dexa_date,allow_op=1,required=Y,size=6}
+			Normal scan $normal_dexa_scan :yes_no [Y=Yes,N=No]  {condition_test="N",condition_target=osteoporosis;osteopenia,condition_action=show,date_field=dexa_date,inline=1}
+
+			$hc_dexa :horiz_container
+				Osteoporosis $osteoporosis :yes_no [Y=Yes,N=No]  {date_field=dexa_date,inline=1}
+				Osteopenia $osteopenia :yes_no [Y=Yes,N=No]  {date_field=dexa_date,inline=1}
+
+			Auto-antibody $ab_fset :fieldset {compress=1}
+
+				$hc_ab :horiz_container
+					Auto-antibody screen $auto_ab_screen :yes_no [Y=Yes,N=No]  {condition_test="Y",condition_target=pos_auto_ab_result,condition_action=show,required=Y,inline=1}
+					Positive auto-antibody result $pos_auto_ab_result :yes_no [Y=Yes,N=No]  {required=Y,inline=1}

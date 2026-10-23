@@ -1,0 +1,4 @@
+:tab_container $rec_tabs
+
+	Oscillometry :tab
+		$oscil_concept :concept_group {concept_type=blness:oscillometry}

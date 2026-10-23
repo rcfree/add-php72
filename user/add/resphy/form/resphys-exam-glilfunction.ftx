@@ -1,0 +1,42 @@
+:container $predicted_values {detail_field=source,detail_constant=2}
+
+	Date entered $date_imported :hidden {default=now(),detail_field=date_imported}
+	
+	:horiz_container
+		Date of tests* $date_of_tests :date {detail_field=exam_date,multi_field=test_date}
+		Height (cm)* $height :number {detail_field=height,min=60,max=272}
+		Predicted* $predicted :hidden {detail_field=predicted_source,detail_constant=GLI-2012}
+		$test_set_details :hidden {detail_field=test_set_details,detail_constant=Standard PFTs (GLI-2012)}
+		Comments $lf_comments :memo {rows=3,detail_field=comments}
+		
+	:horiz_container
+		Research specific? $lf_research_specific :checkbox {condition_test=1,condition_action=show,condition_target=lf_study,detail_field=research_specific}
+		"Study (optional)" $lf_study :dropdown {dictionary=studylist,detail_field=study}
+		
+	Predicted Values $pv_fset :fieldset {compress=1,width=98%}
+	
+		:horiz_container
+			FEV<sub>1</sub> $pred_fev1 :number {display_text=Predicted FEV<sub>1</sub>,size=4,suffix=l,multi_no=1,multi_field=predicted,multi_constant[0]=test_type:FEV1,ajax-func=GliLungFunction}
+			FVC $pred_fvc :number {display_text=Predicted FVC,size=4,suffix=l,multi_no=2,multi_field=predicted,multi_constant[0]=test_type:FVC}
+			FEV<sub>1</sub>/FVC $pred_fev1_fvc :number {display_text=Predicted FEV<sub>1</sub>/FVC,size=4,suffix=l,multi_no=3,multi_field=predicted,multi_constant[0]=test_type:FEV1/FVC}
+			Ethnicity $cfactor_90pc :radio_buttons [1=Caucasian,2=African-American,3=NE Asian,4=SE Asian,5 = Other/mixed] {empty_option=0,inline=1,detail_field=use_cfactor_90pc,default=1}
+
+:horiz_container
+
+	FEV<sub>1</sub> $fev1_fset :fieldset {compress=1}
+
+		:horiz_container
+			FEV<sub>1</sub>* $fev1 :number {fixed=2,size=4,suffix=l,multi_no=1,multi_field=pre_value,min=0.1,max=9}
+			% predicted FEV<sub>1</sub> $pc_pred_fev1 :expression {expression=(get('fev1')/get('pred_fev1')*100),expression_fail_value=NULL,fixed=2,size=4,suffix=%,multi_no=1,multi_field=pre_pc_predicted,required=0}
+
+	FVC :fieldset $fvc_fset {compress=1}
+
+		:horiz_container
+			FVC* $fvc :number {fixed=2,size=4,suffix=l,multi_no=2,multi_field=pre_value,min=0.1,max=9}
+			% predicted FVC $pc_pred_fvc :expression {expression=(get('fvc')/get('pred_fvc')*100),expression_fail_value=NULL,fixed=2,size=4,suffix=%,multi_no=2,multi_field=pre_pc_predicted,required=0}
+
+FEV<sub>1</sub>/FVC $fev1_fvc_fset :fieldset {compress=1}
+
+	:horiz_container
+		FEV<sub>1</sub>/FVC $fev1_fvc :expression {fixed=2,size=4,suffix=l,obsField=pre_value,encNo=3,expression=get('fev1')/get('fvc'),multi_no=3,multi_field=pre_value}
+		% predicted FEV<sub>1</sub>/ FVC $pc_pred_fev1_fvc :expression {expression=(get('fev1_fvc')/get('pred_fev1_fvc')*100),expression_fail_value=NULL,fixed=2,size=4,suffix=%,multi_no=3,multi_field=pre_pc_predicted,required=0}

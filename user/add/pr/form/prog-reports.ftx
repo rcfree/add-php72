@@ -1,0 +1,10 @@
+:tab_container
+	Discharge letters :tab $dl_tab
+		Print discharge letter :discharge_letter_link {no_tooltip=1,use_encounter=parent,refresh_field=discharge_letters}
+		<br/> $br
+		Existing discharge letter $discharge_letters :grid {dataurl=/report/items,report=pr-discharge-letter,fields=time_printed;printed_by;report_type,after_row_actions=ViewReport,use_parent=1}
+		
+	Discharge reports :tab $dr_tab
+		Print discharge report :report_link {no_tooltip=1,report=pr-discharge-report,use_encounter=parent,refresh_field=discharge_reports}
+		<br/> $br2
+		Existing discharge report $discharge_reports :grid {dataurl=/report/items,report=pr-discharge-report,fields=time_printed;printed_by;report_type,after_row_actions=ViewReport,use_parent=1}

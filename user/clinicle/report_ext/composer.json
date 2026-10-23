@@ -1,0 +1,12 @@
+{
+    "name": "clinicle/report_ext",
+    "description": "ClinicLE extended text-file based reports",
+	"type": "clinicle-module",
+	"require":{
+		"clinicle/install":"~1.0",
+		"clinicle/core":"~2.3"
+	},
+    "autoload": {
+        "classmap": ["lib"]
+    }
+}

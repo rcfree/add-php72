@@ -1,0 +1,26 @@
+{
+    "name": "add/resphy_import",
+    "description": "Respiratory physiology import module (part of ADD)",
+	"type": "clinicle-module",
+	"require":{
+		"clinicle/core":"^2.12",
+		"clinicle/install":"^1.0",
+		"clinicle/import":"^1.0",
+		"clinicle/download":"^1.2",
+        "add/referral":"^1.3",
+		"add/resphy":"^1.0",
+      "wrep/daemonizable-command": "^1.3"
+	},
+	"autoload": {
+        "psr-4":{
+          "ADD\\ResphyImport\\":"src/"
+        }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "http://packages.local"
+        }
+    ],
+    "minimum-stability":"dev"
+}

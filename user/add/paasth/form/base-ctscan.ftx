@@ -1,0 +1,26 @@
+CT scan status $ct_scan :radio_buttons [1=Not done,2=Normal,3=Abnormal]  {condition_test="2";"3",condition_target=ct_scan_date;fset1;fset2,condition_action=show,required=Y}
+Date of CT scan $ct_scan_date :date {size=10}
+
+Bronchiectasis $fset1 :fieldset {compress=1}
+
+	$hc1 :horiz_container
+		Central bronchiectasis $central_bronchiectasis :yes_no [Y=Yes,N=No]  {required=Y,inline=1}
+		Any other bronchiectasis $any_other_bronchiectasis :yes_no [Y=Yes,N=No]  {required=Y,inline=1}
+	Bronchiectasis comment $bronchiectasis_comment :memo {height=3,required=Y,size=80}
+
+Bronchial wall $fset2 :fieldset {compress=1}
+
+	$hc2 :horiz_container
+		Bronchial wall thickening $bronchial_wall_thickening :yes_no [Y=Yes,N=No]  {required=Y,inline=1}
+		Bronchial dilation without bronchiectasis $bronchial_dilation_wout_bronchiectasis :yes_no [Y=Yes,N=No]  {required=Y,inline=1}
+
+	$hc3 :horiz_container
+		Ground glass shadowing $ground_glass_shadowing :yes_no [Y=Yes,N=No]  {required=Y,inline=1}
+		Tree and bud shadowing $tree_bud_shadowing :yes_no [Y=Yes,N=No]  {required=Y,inline=1}
+
+	$hc4 :horiz_container
+		Air trapping reported $air_trapping_reported :yes_no [Y=Yes,N=No]  {required=Y,inline=1}
+		Mucus plugging $mucus_plugging :yes_no [Y=Yes,N=No]  {required=Y,inline=1}
+		Any other significant finding $any_other_significant_finding :yes_no [Y=Yes,N=No]  {condition_test="Y",condition_target=details_of_finding,condition_action=show,required=Y,inline=1}
+	Details of the significant finding $details_of_finding :memo {height=3,required=Y,size=80}
+	Scan reported as normal by radiologist $reported_normal_by_radiologist :yes_no [Y=Yes,N=No]  {required=Y,inline=1}

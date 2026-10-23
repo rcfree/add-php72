@@ -1,0 +1,10 @@
+{
+    "name": "add/advcopd_fup",
+    "description": "Advanced COPD followup module (part of ADD)",
+	"type": "clinicle-module",
+	"require":{
+		"clinicle/core":"~2.3",
+		"clinicle/install":"~1.0",
+		"add/advcopd":"~2.2"
+	}
+}

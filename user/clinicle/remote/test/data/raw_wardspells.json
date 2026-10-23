@@ -1,0 +1,56 @@
+{
+    "data" : [ 
+    {
+        "id" : "151459", "encounter_form_id" : "162", "patient_id" : "999", "parent_encounter_id" : "151458", 
+        "badge" : null, "is_complete" : "1", "is_locked" : "0", "is_deleted" : "0", "is_invalid" : "0", 
+        "is_autosave" : "0", "is_verified" : "0", "revision_no" : "1", "date_created" : "2015-02-13 00:02:29", 
+        "date_updated" : "2015-02-13 00:02:29", "date_of_admission" : {
+            "value" : null, "label" : null 
+        },
+        "ward" : {
+            "value" : null, "label" : "" 
+        },
+        "specialty" : {
+            "value" : null, "label" : "" 
+        },
+        "consultant" : {
+            "value" : null, "label" : "" 
+        }
+    },
+
+    {
+        "id" : "156920", "encounter_form_id" : "162", "patient_id" : "999", "parent_encounter_id" : "156907", 
+        "badge" : null, "is_complete" : "1", "is_locked" : "0", "is_deleted" : "0", "is_invalid" : "0", 
+        "is_autosave" : "0", "is_verified" : "0", "revision_no" : "1", "date_created" : "2015-04-09 10:13:14", 
+        "date_updated" : "2015-04-09 10:13:54", "date_of_admission" : {
+            "value" : null, "label" : null 
+        },
+        "ward" : {
+            "value" : null, "label" : "" 
+        },
+        "specialty" : {
+            "value" : null, "label" : "" 
+        },
+        "consultant" : {
+            "value" : null, "label" : "" 
+        }
+    },
+
+    {
+        "id" : "162772", "encounter_form_id" : "162", "patient_id" : "999", "parent_encounter_id" : "162759", 
+        "badge" : null, "is_complete" : "1", "is_locked" : "0", "is_deleted" : "0", "is_invalid" : "0", 
+        "is_autosave" : "0", "is_verified" : "0", "revision_no" : "1", "date_created" : "2015-07-06 07:04:23", 
+        "date_updated" : "2015-07-06 07:04:23", "date_of_admission" : {
+            "value" : null, "label" : null 
+        },
+        "ward" : {
+            "value" : null, "label" : "" 
+        },
+        "specialty" : {
+            "value" : null, "label" : "" 
+        },
+        "consultant" : {
+            "value" : null, "label" : "" 
+        }
+    }], "total" : 3, "first" : 1, "last" : 3
+}

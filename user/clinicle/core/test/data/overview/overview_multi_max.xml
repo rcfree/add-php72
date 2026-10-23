@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<overview>
+	
+	<logic name="max-prev-blood-eosin">
+		<input test="max_obs" op="any">
+			<enc section="bsd" obs="high_eosin_count_blood" otherObs="sample_date"/>
+			<enc section="flungfunction" obs="blood_eosin_count" otherObs="sample_date"/>
+		</input>
+		<output obs="max_prev_blood_eos_value" otherObs="max_prev_blood_eos_date" action="update"/>
+	</logic>
+	
+</overview>

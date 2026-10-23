@@ -1,0 +1,3 @@
+Date of scan $ct_date :date {size=10}
+Pattern of fibrosis $pat_fibrosis :memo
+Comments/other features $comments_other :memo

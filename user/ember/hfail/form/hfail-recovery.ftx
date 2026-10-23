@@ -1,0 +1,8 @@
+:tab_container
+	Scores :tab
+		NYHA classification :radio_buttons $nyha_class {dictionary=hfail_nyha,inline=1}
+	Exacerbation status :tab $cd_tab
+		Total number of hospitalisations (last 12m) * $total_hosps_12m :number {min=0}
+		Heart failure related hospitalisations* $hf_related_hosps :number {min=0,max=get('total_hosps_12m')}
+		Number of exacerbations* $no_exacerbs_12m :number {min=0}
+		Number of intravenous diuretics $no_iv_diuretics :number {min=0}

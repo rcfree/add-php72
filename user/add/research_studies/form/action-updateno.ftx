@@ -1,0 +1,7 @@
+Action*	$action_type	:hidden	{default=updateno}
+Date action recorded	$date_recorded	:hidden							{default=today(),readonly=1,col_title=Record date}
+Created by	$action_created_by	:hidden	@created_by						{default=current_user(),readonly=1}
+Date updated*	$action_end_date	 :date						{default=today()}
+Study number*	$action_study_no	:text				{size=20,ajax-func=CheckRidUnique,sync=1}
+Comments	$description	:hidden							{height=6,size=80}									
+$action_status	:hidden	{default=2}

@@ -1,0 +1,9 @@
+<div class="alert alert-info">Commonly entered conditions are separated into disease areas below. If you are unable to find a condition please use the search button.</div>
+Click an area button to show common conditions $diagnoses :bucket_selection {dictionary=icd10_area,dictionary_option=SeparateTable,groupdict=comorb-groups,lookupdict=icd10,refresh=comorb_results_grid,group_info=condition,option_info=diagnoses,option_title=Click a diagnosis button to add it to the diagnoses record below,check_select_page=blness:comorbitem}
+Search $diagnoses_search_group_buttons	:container
+	:angular_model {controller=SearchController,pim=blness:comorbitem}
+		:horiz_container 
+			Enter terms to search all available comorbidities $comorbidity_search :auto_complete {size=55,dictionary=icd10_code,dictionary_option=SearchReplaceDictionaryItems,option_search=cancer,option_replace=neoplasm,data_field[0]=value:icd10_code,no_store=1,ignore_content=1,min_search=5}
+			$clear :clear_field_button {field=comorbidity_search}
+		Add selected comorbidity $add_to_list :add_sel_diag_button
+:qualifier_modal $qualifier_modal {pim=blness:comorbitem}

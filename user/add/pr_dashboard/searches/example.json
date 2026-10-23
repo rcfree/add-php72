@@ -1,0 +1,83 @@
+{
+  "groups": [
+    {
+      "id": 1,
+      "title": "Pulmonary rehab: Treatment programme: Referral",
+      "name": "pr.prog.referral",
+      "filters": [],
+      "attributes": [],
+      "settings": {
+        "internal_logic": "OR",
+        "external_logic": "AND",
+        "join_type": "LEFT",
+        "enabled": 1
+      }
+    },
+    {
+      "id": 2,
+      "title": "Pulmonary rehab: Treatment programme: ISWT",
+      "name": "pr.prog.iswt",
+      "filters": [],
+      "attributes": [],
+      "settings": {
+        "internal_logic": "OR",
+        "external_logic": "AND",
+        "join_type": "LEFT",
+        "enabled": 1
+      }
+    },
+    {
+      "id": 3,
+      "title": "Pulmonary rehab: Treatment programme: ESWT",
+      "name": "pr.prog.eswt",
+      "filters": [],
+      "attributes": [],
+      "settings": {
+        "internal_logic": "OR",
+        "external_logic": "AND",
+        "join_type": "LEFT",
+        "enabled": 1
+      }
+    },
+    {
+      "id": 4,
+      "title": "Pulmonary rehab: Treatment programme: Quality of Life",
+      "name": "pr.prog.qol",
+      "filters": [],
+      "attributes": [
+        "hads_anxiety_mean_pre",
+        "hads_depression_mean_pre",
+        "hads_anxiety_mean_post",
+        "hads_depression_mean_post",
+        "crq_d_mean_pre",
+        "crq_f_mean_pre",
+        "crq_e_mean_pre",
+        "crq_m_mean_pre",
+        "crq_d_mean_post",
+        "crq_f_mean_post",
+        "crq_e_mean_post",
+        "crq_m_mean_post"
+      ],
+      "settings": {
+        "internal_logic": "OR",
+        "external_logic": "AND",
+        "join_type": "LEFT",
+        "enabled": 1
+      }
+    },
+    {
+      "id": 5,
+      "title": "Pulmonary rehab: Treatment programme: Outcome",
+      "name": "pr.prog.outcome",
+      "filters": [],
+      "attributes": [],
+      "settings": {
+        "internal_logic": "OR",
+        "external_logic": "AND",
+        "join_type": "LEFT",
+        "enabled": 1
+      }
+    }
+  ],
+  "title": ""
+}

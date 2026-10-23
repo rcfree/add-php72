@@ -1,0 +1,24 @@
+Level,Title,Field,Type,Prefix,Suffix,Size,Options,Min,Max,Default,Required,Settings
+1,Lung function,lf_fset,fieldset,,,,,,,,,compress=1
+2,Date of spirometry,date_of_spirometry,date,,,,,,,today(),,
+2,,,horiz_container,,,,,,,,,segments=4
+3,FEV1 % predicted,fev1_predicted,number,,%,,,,,,,
+3,FEV1,fev1,number,,l,,,,,,,
+3,FVC,fvc,number,,l,,,,,,,
+1,Key indicators,,fieldset,,,,,,,,,compress=1
+2,,,horiz_container,,,,,,,,,
+3,Working,,yes_no,,,,,,,,,
+3,Occupation,occupation,text,,,30,,,,,,
+2,,,horiz_container,,,,,,,,,segments=4
+3,Age at time of diagnosis,age_time_diagnosis,number,,,,,0,age(),,,
+DEL,Year of diagnosis,yr_diagnosis,number,,,,,,,,,
+3,Oxygen at home,o2_at_home,yes_no,,,,,,,,,
+3,NIV at home,niv_at_home,yes_no,,,,,,,,,
+2,Smoking,smoking,radio_buttons,,,,"1=Ex-smoker,2=Current,3=Never smoked",,,,,inline=1
+2,MRC grade,mrc_grade,radio_buttons,,,,,,,,,dictionary=mrc_grade
+2,No. COPD related hospitalisations (last year),no_copd_hosp_last_yr,number,,,,,0,50,,,
+1,Measurements,,fieldset,,,,,,,,,compress=1
+2,,,horiz_container,,,,,,,,,
+3,Height,height,number,,cm,,,,,,,
+3,Weight,weight,number,,kg,,,,,,,
+3,BMI,bmi,expression,,,4,,,,,,expression=(get('weight')/((get('height')/100) * (get('height')/100))).toFixed(1)

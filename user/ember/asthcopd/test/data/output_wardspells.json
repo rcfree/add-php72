@@ -1,0 +1,55 @@
+[
+    {
+        "id" : "151459", "encounter_form_id" : "162", "patient_id" : "123", "parent_encounter_id" : "151458", 
+        "badge" : null, "is_complete" : "1", "is_locked" : "0", "is_deleted" : "0", "is_invalid" : "0", 
+        "is_autosave" : "0", "is_verified" : "1", "revision_no" : "1", "date_created" : "2015-02-10 00:04:29", 
+        "date_updated" : "2015-02-10 00:04:29", "date_of_admission" : {
+            "value" : "10\/02\/2015", "label" : "12\/02\/2015"
+        },
+        "ward" : {
+            "value" : "FCDU", "label" : "FCDU"
+        },
+        "specialty" : {
+            "value" : "thoracic_medicine", "label" : "Thoracic Medicine"
+        },
+        "consultant" : {
+            "value" : "4", "label" : "SMITH, DR A"
+        }
+    },
+
+    {
+        "id" : "156920", "encounter_form_id" : "162", "patient_id" : "123", "parent_encounter_id" : "156907", 
+        "badge" : null, "is_complete" : "1", "is_locked" : "0", "is_deleted" : "0", "is_invalid" : "0", 
+        "is_autosave" : "0", "is_verified" : "1", "revision_no" : "1", "date_created" : "2015-04-09 10:13:14", 
+        "date_updated" : "2015-04-09 09:13:54", "date_of_admission" : {
+            "value" : "07\/04\/2015", "label" : "08\/04\/2015"
+        },
+        "ward" : {
+            "value" : "FCDU", "label" : "FCDU"
+        },
+        "specialty" : {
+            "value" : "thoracic_medicine", "label" : "Thoracic Medicine"
+        },
+        "consultant" : {
+            "value" : "29", "label" : "EVANS, Dr B"
+        }
+    },
+
+    {
+        "id" : "162772", "encounter_form_id" : "162", "patient_id" : "123", "parent_encounter_id" : "162759", 
+        "badge" : null, "is_complete" : "1", "is_locked" : "0", "is_deleted" : "0", "is_invalid" : "0", 
+        "is_autosave" : "0", "is_verified" : "1", "revision_no" : "1", "date_created" : "2015-07-03 08:04:23", 
+        "date_updated" : "2015-07-06 07:04:23", "date_of_admission" : {
+            "value" : "03\/07\/2015", "label" : "03\/07\/2015"
+        },
+        "ward" : {
+            "value" : "FCDU", "label" : "FCDU"
+        },
+        "specialty" : {
+            "value" : "thoracic_medicine", "label" : "Thoracic Medicine"
+        },
+        "consultant" : {
+            "value" : "11", "label" : "MCDONALD, Dr C"
+        }
+    }
+	]

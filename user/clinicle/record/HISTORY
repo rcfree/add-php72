@@ -1,0 +1,52 @@
+RELEASE HISTORY
+
+1.1.1 18/10/2017
+* DB conn changed to public static variable
+
+1.1.0 13/01/2017
+* Support for new client module
+* Replaced managed class with Command class
+
+1.0.12 25/08/2015
++ Removal of users which are logged out but have not unlocked records
+* Changed cleanup time from 1 hour to 2 hours logged in
+
+1.0.11 31/07/2015
+! Fixed problem with accidently removed require_once
+
+1.0.10 17/06/2015
+* Integrated into new composer based system
+
+1.0.9 28/04/2015
+* Modified to work with new client module using generic 'grid' field type
+* Minor cosmetic change to user list
+
+1.0.8 16/03/2015
+! Confirm user session is not already in the user_records table
+
+1.0.7 13/03/2015
+! Removed record lock from PublicEntry pages which are not linked to specific IDs
+
+1.0.6 19/02/2015
+! Fixed problem with no parent encounter record when prelim detail pages
+
+1.0.5 17/02/2015
+! Removed UnlockRecord component which was conflicting with page
+
+1.0.4 28/01/2015
++ Changes for compatibility with client changes
+
+1.0.3 16/01/2015
+! User DB class properties not defined correctly
+! Incorrect Database class being used in UserRecordTable
+
+1.0.2 14/01/2015
++ Login cleanup management tool
+* Renamed Database_User to Database_Record
++ Created new Database_User to deal with calls to the user database
+
+1.0.1 09/01/2015
++ Set system 'INUSE' state to indicate record is currently in use
+
+1.0.0 07/01/2015
+* Initial version with no user request unlock feature

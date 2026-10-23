@@ -1,0 +1,711 @@
+RELEASE HISTORY
+---------------
+2.17.3 24/06/2019
+! Fix incorrect storage of button fields
+
+2.17.2 24/01/2019
+! Sub-module loading fixed by excluding non-sub module pages from module map
+
+2.17.1 13/09/2018
+! Reverted change to child field position as this is causing a problem
+
+2.17.0 12/09/2018
+* Switched icons from crosses and ticks to empty squares and checked squares for complete/incomplete
+* Save button changed from tick to disk icon
+! Fixed late stage adding of child fields so they go in the correct place
+! Reverted Search component to original until issues are ironed out
+
+2.16.1 21/08/2018
+! Logic not looking at appropriate module page
+
+2.16.0 21/08/2018
+! Separate dictionary item search fixed
+* Flag to display autocomplete if readonly record
+! Handle component types without 'ADD_Component' prefix
++ Allow use of options with non ADD_Option prefix
++ Extended dictionary group options to allow dictionary to be specified
+! Reset email now has site tag information support
++ PagedData class for handling pages of data 
+
+2.15.0 26/04/2018
++ createQuery function added to EncounterGroup
++ AutoEnrol domain do not require domain record to be present
+! Print/no print for tab fields
+
+2.14.0 31/10/2017
++ Refined initialisation including events
++ New style page classes added
+! Handle container fields in field expressions
++ Refactored ADD_Field_Util::getSiblingObs into DataPageField classes
+
+2.13.3 27/09/2017
+! Reverse change to statement cache to reduce likelihood of breakage
+
+2.13.2 26/09/2017
+! Removed breaking change - DB connection timeout handling to legacy Database.php
+
+2.13.1 26/09/2017
+! Symfony-based commands were not logging as complete
+
+2.13.0 25/09/2017
+! Removed cached DB prepare statements
++ Added non-breaking classes for transition to event-based Components/request-based Pages
++ DB connection timeout handling to legacy Database.php
+
+2.12.11 11/09/2017
+! Compatibility with new-style Symfony commands
+
+2.12.10 18/08/2017
+! Allow blank_no_options setting so that displayed text from checkboxes is empty
+! Still problems loading deleted fields
+
+2.12.9 17/08/2017
+! Date/time updated included in domain menu
+! Deleted fields dealt with correctly in install
+
+2.12.8 10/08/2017
+! Levels are reset for child fields even if marked as deleted
+
+2.12.7
+! Fails if checkbox value does not exist in list of values
+
+2.12.6 13/07/2017
+! Checkbox not being identified as complete when required
+! EncounterQuery links to other encounters not working fully
+
+2.12.5 21/04/2017
+! Tabs being shown when they should be hidden in conditional logic
+
+2.12.4 17/03/2017
+! T837 Warning message is displayed saying that fields are hidden due to the value of another field
+
+2.12.3 17/03/2017
+! T836 Verification leads to clearing of checkboxes in forms
+
+2.12.2 08/03/2017
+! Quick add displaying blank form once patient created
+
+2.12.1 18/01/2017
+! ADD_Field_Util::timestamp() was returning date of epoch not now
+
+2.12.0 17/01/2017
++ New CommandExecute class which replaces ADD_Tool_ManageExecute and provides profile selection
+! Resolved RadioItem container/list combined issue by changing it into a decorator class
++ Testing classes for implementing unit testing with mock system etc. in modules
+
+
+2.11.0 01/11/2016
++ Event dispatcher added to page class
+! Log only configured once per request
++ Debugging support improved
+! Don't attempt to load a new section record 
++ Refactored ModuleSetup into classes to deal with different scenarios (e.g. install, dev-stat, web)
+* Audit simplified into a single table
++ Support for panel-based page updates
+! Locking/unlocking still allowed even if page is being used by other user
+* Extracted logic for label and field markup into separate functions in Text field classes
+! Missing death_indicator in search results in error
+! Fixed purge/delete patient functions
++ Support for fields display_on_edit, or readonly_on_edit
++ createAngularCell() Field function to render output in grids
++ Support for events to add buttons to option containers
+* Forked 'Interpolate' library for email variables ([{variable}])
+* Switched exception for warning if conditional fields do not exist
+! Memory errors due to enmass observation values update in field classes
+
+2.10.1 22/04/2016
+! Javascript files in sub-modules are not loaded
+
+2.10.0 21/04/2016
++ Integrated ability to use clinicle/monitor with Logger class
+
+2.9.0 20/04/2016
++ Allow forced deletion of missing fields during install
+
+2.8.11 20/04/2016
+! Verification not working for non-logged in user
+
+2.8.10 20/04/2016
+! Repeat section deletion throwing errors
+
+2.8.9 14/04/2016
+! Text fields too long
+
+2.8.6 22/03/2016
+! Encounter record not loaded if badge set
+! Number field browser error
+! Fixed loading of new modules in ModuleSetup.php
+
+2.8.5 16/03/2016
+! Sub-module forms loaded from base-module path
+
+2.8.4 15/03/2016
+! Inconsistent loading of sub-modules resolved in ModuleSetup
+
+2.8.3 01/03/2016
+! Problem if 'group' index not present in item row
+
+2.8.2 29/02/2016
+! Dictionary group not being removed or updated for existing items
+
+2.8.1 25/02/2016
+! Size of number fields are too small
+
+2.8.0 24/02/2016
++ Improved error handling in expression evaluator
++ Allow | to represent , in functions
++ Added 'getif' field function which provides boolean logic
+
+2.7.7 08/02/2016
+! Hidden fields not always hidden as expected
+! Field evaluation does not support arrays of values
+! Resolved minor issue with EncounterRecord
+
+2.7.6 02/02/2016
+! Dictionary group sort not being recognised
+
+2.7.5 25/01/2016
+! Adding child field in concept group causes invalid array index
+
+2.7.4 20/01/2016
+! List data update still tries to update note table
+
+2.7.3 20/01/2016
+! Install encounter page with no components throws exception
+
+2.7.2 13/01/2016
+! Required fields not highlighted if new record
+
+2.7.1 11/01/2016
+! Hidden fields not triggering conditional hiding on PHP side
+* Modified missing filter field message for lists
+! Reactivated 'Locking' component in EncounterEntry meta-component
+
+2.7.0 05/01/2016
++ Implemented support for section/domain tables with DomainRecord/SectionRecord classes
++ Install dictionary Target classes
+* Refinement of field dictionary option classes 
+* Improved sub-module handling so only single module is created
++ Merged 'observation_note' table into observation 'note' field
+
+2.5.3 16/11/2015
+! Dictionary items not sorted in group
+
+2.5.2 04/11/2015
+! Fixed login redirect so that URL and parameters are encoded
+
+2.5.1 04/11/2015
+! Fixed hidden and readonly flags in field settings
+
+2.5.0 02/11/2015
+* Updated 'Verification' component which allows entry of other username/password
+- Removed disused Web.php class
++ ConfigSave.disable option added to disable dirtyForms plugin
++ MenuItem_Single.no_viewonly option added to remove '(view only)' text in menu
++ OverviewSummary content component to show read-only overview page              
++ New logic test 'latest_obs' added to Tool_Logic
+* Automatically update 'is_complete' flag in OverviewUpdate component
++ Status column added to patient search (e.g. deceased or not)
+
+2.4.12 30/09/2015
+* Moved 'Quick Add' button to after 'Add' button to reduce confusion
+
+2.4.11 22/09/2015
+! Fixed bug in EncounterRecord with audit in delete action
+
+2.4.10 17/09/2015
++ Quick add option to provide fast addition of patients
+! Strip HTML tags from breadcrumb text
+
+2.4.9 02/09/2015
++ Ability to ignore_token in page submission
+* Remove warning for unclean values
++ Support for 'hide_on_view' setting for all fields
+
+2.4.8 27/08/2015
+! Fixed problem with RequiredFields notify component which threw error if used in modal
+
+2.4.7 24/08/2015
+* Improved performance for dictionary list update usage check
+
+2.4.6 12/08/2015
++ Better error handling switch and ignore deprecated errors
++ Field setting to allow condition fields to be ignored
+! Fixed HorizContainer start HTML
++ Current page logic now automatically sets the open menu
+
+2.4.5 11/08/2015
+! If no module requirements then load can fail
+
+2.4.4 10/08/2015
++ Dictionary can be forced no to update using 'no_update'
++ Proper headings support for TableHelper
++ Improved module dependency loading
+
+
+2.4.3 29/07/2015
++ Support for new dictionary settings 'retain_filehash','ignore_weight'
++ Support for new dictionary item field 'group_weight'
++ Autocomplete field can now be told to search 'from_start'
+! Prevent dictionary item data being updated if a field key is not present
++ Support for new dictionary setting 'relative_to_home' to use external dictionary files
+! Resolved dependency loading problem during install and in web app
+! Fixed invalid dictionary group values
+
+2.4.2 24/07/2015
++ Extend field conditions to work beyond the current page
+
+2.4.1 14/07/2015
++ Changed visual look of checkboxes
++ Added 'always_enabled' setting for dropdown box
+
+2.4.0 01/07/2015
++ Isolated modules and integrated into composer-based module install
+* Search falls-back to DB if no PMI available or error
++ Dropdown list will not show 'is_disabled' dictionary items in a new record
++ Repeat section 'add_label' option allows the label to be changed
+
+2.3.1 12/05/2015
+! Minor fixes to deal with prelim pages with no encounter and checkbox data which has not been unserialized
+* Checkbox rendering improved along with read only fix to dropdown
+! Audit of observations was switched off and history not displaying correctly
+
+2.3.0 30/04/2015
+* New recent patients and debug home tools added
+* Extracted home tool generation logic into a separate component
+* API class error/warning/message handling streamlined across ADD
++ 'use_default' field setting added to force form to always use default
+! Fixed list options not being shown by getDisplayText()
+! Fixed inconsistencies which were not merged from v2.2 branch as expected
+* Fixed error when date not present in VERSION file
+! Resolved error thrown with new RepeatSection
++ Added ErrorHandler class to throw proper exception when PHP fatal error or normal error
+* Use 'default_path' config option for home page
+! Removed fake test system and features which are not used anymore
++ Added Command class to deal with system calls
++ Extracted out some install system/symlink logic
++ Added SelfUpgrade manage class
+! purgeEncounter class fixed for ADD v2
+! Minor issues with SelfUpgrade/Install and factoring out install logic
+* Moved alerts into their own CI view
++ Added 'runAtEnd' function to Manage classes which acts like try..catch's finally clause
+* Removed unused consent links in patient panel
+! Fixed inconsistencies between new API output and JS code
++ 'data_hash' field added to encounter which includes sha1 version of observation values for quick lookups
+* Modified TableHelper to allow attributes to be included in cell definitions
+* Auth changes from v3 added to branch
+! Domain breadcrumb text now shows the title
++ Auditing of manage tool action runs
++ Moved RecentPatients home tool to core
+! Fixed EncounterSummary module tests for view only pages
+
+2.2.0 19/02/2015
+! Forgot to add new page and helpers
++ CodeIgniter Context added to AccessManager
++ Manage Install 'i' inplace (symlink) flag added
++ Public_Page class and flag to allow non-registered users to view pages
+! Fixed Module not being passed to non-standard Page
++ HomeTool component 'isAvailable' function added to interface and classes updated
++ Welcome page changed to be start of ADD - now includes home tools including login home tool (when user is not logged in)
+! Request specific API-key login (does not remain logged in)
+* Side panel now hidden if no content
++ AngularJS 1.2 support by default
++ Changes to report handling so each is contains a separate Content object
++ New 'isWebContent' flag indicates if content should go through the CI views system
++ createOutput() in Page now outputs a Content object (rather than a string containing the content)
++ All core Components which output non-HTML code have been changed to Pages (e.g. api, ajax, patient lookup)
+! Radio button clear in IE8 not working
+* Moved Api_Encounter to Api_Enc to allow improved API classes
+! Resolved module test incompatibilities with existing modules
+* Modified notifications so they are displayed in a home tool
+! Fixed PHP error when resetting password
+
+2.1.6 07/01/2015
++ Additional CI/Component hooks for user login and logout
++ User record handling logic moved out of core libraries into 'record' module
+* MenuItem_Single component changed to handle non-encounter based pages
+! Fixed problem with user login/logout which meant system user was stored rather than actual user
+
+2.1.5 05/01/2015
+! Util::currentPageURL() now returns script name if not in a web page
++ Reverse the order of fields names used by report Function::diff() function
+
+2.1.4 19/12/2014
+! Error message change caused error rather than warning in OverviewUpdate
+
+2.1.3 17/12/2014
++ Email on error in PatientUpdate script
+
+2.1.2 16/12/2014
++ Implemented -r flag on module install to force update of dictionaries
+
+2.1.1 14/10/2014
++ 'grid' core module changed to 'client' which will deal with HTML template/JS-based components
+! Fields conditional on checkbox value now hidden
+! Tab container can now be hidden in conditional
+! Radio buttons now store empty value if none is selected
++ 'title_heading' setting added to RadioGroup field
++ Util function to convert ISO timestamp to d/m/y h:m
++ RTF content now specified file output in HTTP header and ADD_Report classes now have support for a report file extension
++ 'refresh_field' setting added to ReportLink button field which causes a 'refresh' JS function to be called 500msecs after, on the specified field when clicked
+* Caribiner support removed
++ 'overridable' field setting prevents recalculations in field
++ isEnabled() JS util function added
++ SummaryPage content component added which is not linked to an encounter
++ getFieldContent accessor added to Form component
+! Setup manage class is looking in the wrong place for the setup SQL
+! Report link button tweaked to work in IE8 (wait time increased to 1sec before updates)
++ Improvements to caching and accuracy of form data updates
+* Summary page expected permissions changed to view-only
++ Weight field support added to dictionary loading
++ Improved dictionary item update with 'allow_change' flag to mark changed title
++ isAvailable() function added to button fields which indicates if button is displayed
+! Manage uninstall does not now remove encounter types which were not created from a form
+! Manage upgrade works correctly to check modules reinstall
+! Resolution of ModuleInstall data updates
++ PageFactory to create different variations of Page class using 'page_class' setting
++ Improvement to auto-logout based on document focus '/auth/loggedin' check
+* Report class setup setting is now 'report_class'
+* Support for Report access control through Page extending Report class
++ Enhanced add-manage unit-test support so modules can be tested as well as core system
+! Fixed to core client module so encounters are created/retrieved correctly
+! Added safeguard against intermittent failure of AJAX call to /loggedin
+! Hack to get SummaryPage component working - had to add Encounter_Single component
+! Removed incorrect readonly check in Verification component
++ Current page added to error email sent to admin
+! Blank reports menu only displayed if user has access to them
+* HTTP status codes corrected for 404 and 500 errors
+! User menu option now only displayed if 'UserMenuOption.permission' is true
+* Changed tab style to make them more prominent
++ Current page URL now included in error email
++ 'hash' (sha1-based) function added to Util
++ Support for 'afterSubmitValues' in custom Fields
+* Current tab now remembered when page submitted
+! If checkbox is disabled now has a hidden field to retain the value
++ Simpler populating of MockEncounterManager for mocking sets of encounters (Test_RecordSet)
+! Fixed patient lookup warning error 
+! Dictionary ModuleInstall logic simplified by separating into Supervisor and SingleFile classes
++ 'no_update' flag added to dictionary settings to stop it from loading over existing dictionary
+* Improved DataUpdate output when fields changed
+! JS now ignores evaluation unless there is a ( in the expression
+! URI param/fragments now separated
++ patient-update management now provided which updates demographics if they have changed
+! Removed unrequired info from Welcome page and added new styles
+! Patient update issues resolved (missing GP field, logging unresolved updates)
+* Options menu now available in all pages
+! During data update take into account re-used encounters such as QoL
+
+2.1.0 21/08/2014
++ Separated update/insert observation field into separate functions
++ Renamed FormLoad to ModuleInstall and extracted out
+! Resolved problem with empty settings being added to the obs field database record (e.g. required, min, max)
+! Resolved problem with dictionary options being added to the obs field database record
+* Reactivated current observation value update so that it updates AJAX values, calculations etc.
+* Changed 'Define' to 'Feature' classes to improve maintenance of JS
++ QUnit JS tests for ValidateDate and ValidateNumber features
+* Resolved minor issues with change to core libraries and tests
++ Support for DB changes from installing modules (with sql/install directory in module)
+* Changed modules so 'extends' is setup when the module is loaded
+* Made 'values' attribute optional in Page createOutput() function
++ Moved table, table row and table head fields into 'common' core module
+! Fixed zero-value problem with isEmpty() function
++ Download (-d) option added to manage install action
++ PHP syntax check of lib/php directory prior to module testing
++ 'grid' added to core modules
+* Friendlier error handling of missing child record in encounter RepeatSection component
++ Radio group and item classes moved to core from qol module
++ Upgrade support for SQL
++ Grepable logging statements added to ModuleInstall process (e.g. DELETE FIELD, CREATE FIELD, RECALC)
++ Corrections made to syntax/path locations in system files
+* Moved Anonymise DB routine to Manage class (anon) 
+* Fields with a default value are ignored during conditional resolution
++ Support for checkbox values in conditional resolution (e.g. arrays of values)
+! Removed superfluous log statements from PHP and JS
+! Improved ModuleSetup class so it uses regression to load sub-modules and their dependencies
+! Fixed problem with zero-indexed field options which lead to non-coded flat lists of options
+* Warning if user tries to create fields with zero-indexed fields
++ Moved Anonymise DB routine to Manage class (anon) 
+! Fixed integrity problem with manage Anon class and syntax error in DbRestore class
++ User record table for future use by current record (e.g. user record locking)
+! ReportField image type pointing to wrong directory
+! JS modal validation not activating
+! Corrected report PDF generation test
+! Fixed ReportField classes which were attempting to access the wrong properties of the ReportOutput component
++ 'date_recorded' setting added to encounter table field - which will show the date the record was created
+! Form_Simple setFormMethod not working
+! Audits were not updated with note data
+* Home page changed to be container for 'tools' and Component_HomeToolInterface created as base for these
+! Fix to stop user from not changing password when expired
+* Added automatic duplicate observation resolution
+! JS dialog/confirm problems fixed 
+
+2.0.5 23/07/2014
++ API key-based authentication using an 'apikey' URL parameter
+! JS number field was not rounding to specified decimal places
++ Clear javascript function added to Web
++ Added prelim version of 'record in use' feature to lock records etc.
++ Refactored Domain_ManualEnrol component to allow dynamic menu uri to be created and function to determine if user can add to domain
++ Support added to allow a field to perform an operation before and during submission (Field must implement ADD_Field_SubmitInterface)
++ Began replacing ADD states with constants (ADD_System::READONLY being the key one)
++ New ADD state constant (ADD_System::NO_UNCLEAN_WARNING) to specify ignore undefined fields and not show a warning
+! Bug loading dictionaries which meant plugins would not process fields after they had been retrieved
+! HtmlReadable was not dealing with HTML content objects correctly
+! readline() function not supported by UoL LAMP so have replaced it with a Util function which deals with the situation
+
+2.0.4 16/07/2014
+! Fixed patient selection (which was causing multiple encounters to be created) by blocking users from doing things during the wait
++ Added modal support for fields which cannot be changed on edit
++ Added time (-t) flag to Manage db-restore which accepts YYYY/MM/DD/HH00 
++ Added auto update version to Manage upgrade when SQL upgrade file does not exist
+! Disabled fields were not working in IE (needed to removeProp('readOnly') )
+! JS number field was not rounding to specified decimal places
+! Field with disabled HTML property is not submitted - removed this setting until I find an alternative
+
+2.0.3 11/07/2014
+! Corrected dictionary items so only only those with 'is_deleted' = 0 are returned
+* Added support for 'delete' field in dictionary input files
++ Start wait modal added when user submits page forms, modal forms or adds a new items to the database in an effort to prevent dual data submission
+* Form uncleanValues now includes values from fields which are not stored
+! JS function for updating fields between modals replaced with AjaxFieldUpdate definition
+* AddEntryLink is not displayed if state is readOnly
+* Extended EncounterTable row conditions by allowing multiple semi-colon separated conditions
+* Prevent non-view modal action being displayed if state is readOnly
+* Changed Submit field so default onclick action is to start the wait modal
++ New 'addJSAssign' function added to Web to make it easier to add a JS field assignment class
+* Improved wait modal so it appears in the middle of the screen
++ ADD.has() function added to ADD JS core which returns true if a field has assignments
++ Added JS ConfirmAction definition which shows a confirmation before changing page
++ Changed JS 'Condition' update so that condition_target_values evaluated on update (e.g. allowing 'today()' to be used as an update value)
+! IE has a problem dealing with the dialog modal and a wait modal, changed so the action buttons disappear instead
+! Issues in modals related to JS Condition firing a 'change' action condition when it is hidden. Have re-instated window.ignoreClearContent as ADD.Form.ignoreClearContent flag
+* Over-rode getDisplayText for Memo fields so text is output with <br/> when HTML and \n when PDF
+! Text area now allows carriage returns in the text (previously return in all elements in form was prevented)
+* Patient_Purge component now redirects to welcome page
+* Changed handling of dirty forms - now shows please wait popup if user selects 'Save'
+
+2.0.2 10/07/2014
+* Minor changes to report module to improve observation retrieval and allow colour setting for RBox report field type
+! JS was trying to remove error message from global variable which does not exist
+* Improved auto page-break function by changing size of height allowed
+! Added hack to pull year of onset from advanced COPD general page -> this will need to be changed in the next version!
+! Removed suffix from field output if no value
+* Modified ValidateNumber JS function so it will allow > or < if 'allow_op' setting is present in field
+
+2.0.1 03/07/2014
++ OptionMenuInterface with 'optionMenu' function to add items to the ADD Options menu
++ SubmitValueInterface to allow non-submit fields to submit data
+* Initial rewrite of JS so that handler ADD.Define.[class] objects are used rather than large numbers of global functions. 
+! fixed JS validation so all validation messages are shown
+! merged with minor changes on uhl-test system
+! re-added S number as required field in validation
+! fixed bug with missing Field_Checkboxes variable
+! removed deleted fields from EncounterRecord/Database observation output unless flag is set 
+* disabled in-memory cache as it's not working correctly
+! reverted Encounter_Section component to manual addition and fixed appropriate tests
++ Added ability to remove locking/verification for pages using 'no-locking' and 'no-verification' page flags
++ Sub-class of 'RepeatSection' can now set $this->noLinks=true so options are shown as view only (without links)
+* resolved auto adding Section problem - are now created when a patient is selected
++ 'live' flag to config to display site 'as live'
+
+2.0.0 27/02/2014
+* removal of Propel ORM and replacement with direct DB access
+* implemented EncounterRecord class to allow simple retrieval and creation of encounters and observations
+* Behat tests added to ensure smooth running of system
+* general refactoring of modules to pass tests and include EncounterRecord
+* extracted singleton logic into multiple classes (Initialiser, ModuleLoad, ModuleCollection, AccessManager, DatabaseManager) so they can be more easily unit tested
+* Domain_ManualEnrol unit test class used to test validity of extraction of logic
+* Module-specific integrity and unit testing run on a module before loading through the bin/testModule.php script. An attempt to reduce clashes with changes to code etc. within and between modules.
+* Moved logic to create children etc. into an EncounterManager class which is part of System also mocked a version for which the generated classes can be changed
+* continued improvements to regression testing
+* extracted out some features into core modules (e.g. ajax, reporting)
+* changed to single Config class to deal with loading Settings, Templates etc.
+! fixed problem with updated Observations (still using Propel)
+! general bug fixes to Database modules for 2.0.0 compatibility
+! resolved problem with PDF output when there is an error
+* separated out BlankReports logic into separate component
++ add-manage meta script to manage ADD setup using specific commands rather than separate scripts for each action
++ specific 'Manage' classes for setup, upgrading, loading modules and testing modules
+* amalgamating Behat tests using a dummy DB setup (implemented using the new Manage classes)
+* changed to use of composer.json dependencies rather than PEAR
+* refactored FieldFactory into separate classes
+* changed Content base class into ContentInterface and Manage base class into ManageInterface
+* initial set of Behat tests are complete
+* allow multiple icons in menu items
++ verification option in EncounterEntry pages for signing records
++ extended AJAX to allow options to be returned based on sent data
+! identifier update in database module
++ Caching classes added for improved performance
++ Cache support added to Database classes for observation fields and encounter forms
++ Download manage class to obtain modules from Bitbucket
++ Multi-threaded page submit testing adding to ensure tokens are reacting correctly
++ Database logic testing to ensure data is stored correctly
++ Began implementing unit tests for core logic
+* Changed Component so Page object only set once at construction
+! Fixed demographics-page patient lookup
++ Expression field calculation value testing
++ Resolved various errors in tests including refactoring SystemStub into mock System object
++ Extra Manage classes to run unit tests and Behat tests
+* Integrated module tests into the module loading procedure
++ Moved unit tests from test/core to test/unit
+* Improved conditional logic and improved AJAX component so values and/or options can be passed back
+* General fixes to core code and tests
+! problem with Observation update (related to date_updated/created fields)
+! AJAX call not being treated correctly (due to allowing both options and values to be dealt with)
+! report displaying lists with - choose option - item
+* changes to JS form validation allowing custom validation functions to be included
+* clear output buffer before returning non-HTML output from Web class
+! resolved silent fail with Util::loadClass() method
+* reorganised Ajax module so one component = one ajax function
+* separated DB logic for searching into separate Database_SearchPatient class
++ additional mock functions for execInBackground() and isProcessRunning() for module tests
+! various bug-fixes and additional AJAX support for field errors in JS
++ SeparateDate field which allows one or all of day, month and year -> creates three child fields in the database
++ PatientIdCheck moved into AJAX-based component (rather than requiring submission to validate)
+! Behat test fixed to accomodate the autosave component and a problem with revision numbers
+* separated out dependency check into ModuleDependency class
++ history API and history option display for specific fields
+! RadioGroup field not displaying options at top of table
+! audit was recording checkbox update even when it hadn't changed
+* dictionary item update audit now includes previous data
+! deleted fields were still being updated resulting in duplicate observations
++ add-manage checks for LRB libraries and web/cache and web/module directories
+! history data not returned in correct form and therefore not producing a history icon
+* fixed issues with Api/DictItem and Database/Dictionary
+* views/head.php now uses $title in preference to ADD::web()->createTitle()
+! JS validation issue meant if there was a field error then the conditional display was not activated
+! problem if incorrect field resulted in error
+! add-manage not returning to home directory after creating LRB
+* option menu (optionMenu content) which can be added to by implementing Component_OptionMenuInterface in component
+* default options added to option menu
+
+1.0.17 12/02/2014
+* refactored content generation logic into Web class which will produce output in the required type
+* refactored report generation into ReportOutput component and moved logic into core 'report' module
+* moved patient Component logic into core 'patient' module
+* changed web views including header and footer
+* refined OverviewUpdate component with separate functions
+* AutoComplete field now has 'words' flag which allows it to search for multiple words in dictionaries
+* Auto logout added for all pages with optional 'auto_logout' setting (seconds) in add.ini (if no setting then does not do anything)
+* Autosave functionality added for EncounterEntry
++ additional conditional logic for greater than or equals (ge) and less than or equals (le) operators
+
+1.0.16 10/02/2014
+* initial refactoring to create Web and Content classes that deal with HTML/non-HTML output and errors/messages
+* initial 'work' directory populated with current versions of modules (prevents changes to modules impacting on site)
+* moved db() function out of System class into add.php also created new web() function to get current Web class
+* moved core modules (ATM just patient) into the 'module' directory
+* adapted ModuleLoad to deal with core and non-core modules and also if not existing sets up work directory
+! fixed redirect which was getting into infinite recursion
+! syntax bug when creating warning in modal
+* update (-u) flag to clone/pull module from ADD bitbucket repo
+! re-added 'db' method to System to prevent incompatibilities
+! allow undeletion of fields which have previously been deleted in ModuleLoad
+! rollback in Page afterSubmit() function updated to use the ADD::db()
+! ModalDictAction field failing as it was not using 'DictionaryEntry.dictionary' page setting
+* changed incorrect conditional fields to use warnings rather than errors
+
+1.0.15 05/02/2014
++ accordion-based menus which keeps open the menu from pages in the current module
+! fixed edit user which was not updating changes to user groups correctly
+* cleaned out Jenkins files which are not relevant to v1.0.x branch
+! restored missing function from Patient Database module (caused problems with patient lookup)
+
+1.0.14 27/01/2014
++ extended dictionary library and API calls with synonym support
++ isEmpty util function added which recognises zeroes
+! DisplayText field now recognises zero as value (previously was displaying 'not entered')
+* separated ModuleLoad into functions for better readability
++ added ModuleLoad function which updates expression calculations upon form update (removes need for Selenium updates)
++ barcode generation web controller (accessed through /barcode) - no frontend as yet
+* reduced sub-transactions - now more simplistic approach - either everything is committed or on error rolled back
++ image field type created with button to view image as popup
++ DAC refactory asthma image added to /web/images directory (not possible to make this module specific yet)
++ sub-module feature using 'extends=<module>' setting in sub-module's page.ini - to allow additions to modules
+! problem with purgePatient function in Database_Patient resolved
+! Util::isEmpty() changed to recognise arrays
++ paged patient search results to reduce memory load and increase speed of large searches
+! Locking component stop processing if state is 'cancel'
+
+1.0.13 24/01/2014
+! fixed unexpected and redirect error handling in Page module
++ 'reset' function in Encounter components to clear cached Encounter/Observations
++ 'addButton' function in ADD_Content_Html to make it easier to add a Bootstrap button
+* modified RepeatSections so entries are displayed as 'followup N (date)' or 'followup N' if no date present
+
+1.0.12 09/01/2014
+Fix: fully fixed report markup fields (previous revision did not work for drug report)
+
+1.0.11 08/01/2014
+Provided link so patient can be enrolled if not added automatically by Domain_AutoEnrol component for some reason.
+Minor change to location of uhl-test site (now in /local/add_v1_0)
+Fixed caught error message display in Page module
+Resolved non-displaying fields produced in report markup fields. 
+Fixed issue with condition comparison (not treating values as numbers).
+
+1.0.10 30/10/2013
+Added database transactional support to fix partial data insertion problems
+Introduced unique submit_token to prevent multiple form submissions of the same data. Also safe guards against resubmission.
+Devised encounter deletion script (accepts an encounter ID)
+
+1.0.9 24/10/2013
+Added password reset requirement at 3 month intervals. Password is now also randomly generated at user creation.
+Email now sent to user with initial credentials.
+Changed from group to role-based access (roles consist of multiple groups). Roles are applied to user during creation or editing
+New controllers added to deal with AJAX-based calculations and timeline image generation.
+Calculation logic improved, the framework now determines which fields trigger recalculation.
+Added RecalculateButton component which provides a 'Recalculate' button if there are any calculations in the page.
+Change add.css to fix problem with date pickers displaying over option buttons.
+Use jQuery to hide 'clear..' options for fields when shown in modal as view only.
+Cleaner field validation through single JS function.
+Improved domain options display to provide collapsible sections
+Updated ModuleLoad and associated classes to provide transaction support for form loading and form and report validation
+
+1.0.8 26/09/2013
+Added 'clear' option to fields to remove selection/clear field
+Extended EncounterSummary component to provide single tick/cross when encounters linked to QoL are complete
+Built outputStructure script to help with creation of a skeleton for i2b2/transmart ontologies
+Improved loadModule script to automatically load dictionary files (based on a dictionary.ini file) (see ticket #148).
+
+1.0.7 06/09/2013
+Improved age functions in in Util module and javascript base.js
+Fixed issue with hidden fields being required when relying on checkbox values
+Changed order of field finalisation in Tool/ModuleLoad class
+Resolved issue around invisible input data beings detected when conditions changed
+Added error if ADD detects pre-filled values which are hidden due to a condition
+Fixed issue with checkbox values and conditions (overlooked in simplified 'condition' JS method)
+Added 'value-only' setting for report fields
+
+1.0.6 30/08/2013
+Fixed issue in IE with multi submission of modal data when accidently click multiple times on 'Save data'.
+
+1.0.5 21/08/2013
+Fixed issues with conditional JS (kept prompting user when opening modal dialogs)
+Removed logging from JS and PHP code
+Resolved issue with trimmed report table title
+User dictionary list now matches just the users with permission to use a page (e.g. for allergy testing, only those who are allowed to create,edit or view are in the list)
+Improved validation on allergy testing page (inline encounters) for required fields.
+Removed site tag and changed top gradient to blue to identify non-live sites (e.g. if profile is not uhl-live)
+
+1.0.4 20/08/2013
+Refined conditional JS and calculation JS. Now fields with those properties are dealt with by 'condition' and 'calculate' functions.
+
+1.0.3 16/08/2013
+Fixed allergen available test screen and api calls.
+Added permissions for test deletion (based on count of number of results using the test)
+Minor change to display of menu item (added space)
+Resolved issue with modal title showing as 'View null'
+Moved config/local to config/local-stable
+Created config/local-test for testing on local system
+
+1.0.2 15/08/2013
+Resolved issues with fields disabled when viewing data, which were not undisabled and therefore not submitted in modal forms.
+Fixed Field ReportLink so it can deal with multiple encounters (field setting use_encounter=parent)
+Fixed patient lookup which was unable to find 'sitePath' variable.
+Added ability to use # in field name for duplicate field names in reports.
+Added function to convert from ISO date to DMY
+
+1.0.1 12/08/2013
+General fixes to the system.
+
+1.0.0 01/08/2013
+Initial release

@@ -1,0 +1,21 @@
+Test type* $test_type :text
+	
+Test date $test_date :date
+-Treatment $treatment :dropdown [1=None,2=Bronchodilator]
+	
+-Height $height :number
+-Age :markup
+-Prediction equation :dropdown [1=ECCS] {col_title=Pred equation}
+		
+Units $units :text
+
+:horiz_container
+	Predicted :number $predicted {fixed=1,col_title=Pred value}
+:horiz_container
+	Pre-value :number $pre_value {fixed=1}
+	Pre % predicted :expression $pre_pc_predicted {size=4,fixed=1,expression=get('pre_value')/get('predicted')*100,required=0}
+:horiz_container
+	Post-value :number $post_value {fixed=1}
+	Post % predicted :expression $post_pc_predicted {size=4,fixed=1,expression=get('post_value')/get('predicted')*100,required=0}
+
+

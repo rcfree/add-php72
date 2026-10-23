@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<overview>
+	
+	<logic name="atopic-disease">
+		<input section="medhistory" obs="atopic_disease" op="any" />
+		<output obs="atopic" action="update"/>
+	</logic>
+	
+	<logic name="current-smoker">
+		<input section="medhistory" obs="smoking_status" op="eq" value="2" />
+		<output obs="current_smoker" action="update" value="Y" />
+	</logic>
+	
+	<logic name="smoking">
+		<input section="medhistory" obs="smoking_status" op="eq" value="2" />
+		<output obs="current_smoker" action="update" value="Y" />
+	</logic>
+	
+	<logic name="nasal-polyps-history">
+		<input section="medhistory" obs="nasal_polyps_history" op="any" />
+		<output obs="nasal_polyps" action="update" />
+	</logic>
+	
+	<logic name="pack_years">
+		<input section="medhistory" obs="pack_years" op="any" />
+		<output obs="total_pack_yrs" action="update" />
+	</logic>
+	
+	<logic name="dysfunctional-breathing">
+		<input test="is_selected" section="medhistory" obs="comorbidity_details" value="7" />
+		<output obs="dysfunctional_breathing" action="toggle" onValue="Y" offValue="N" />
+	</logic>
+		
+	<logic name="airtrapping">
+		<input section="ctscan" obs="air_trapping_reported" />
+		<output obs="air_trapping" action="update" />
+	</logic>
+	
+	<logic name="bronch_wall_thickening">
+		<input section="ctscan" obs="bronchial_wall_thickening" />
+		<output obs="bronch_wall_thickening" action="update" />
+	</logic>
+	
+	<logic name="body-mass-index">
+		<input section="details" obs="bmi" op="any" />
+		<output obs="bmi" action="update"/>
+	</logic>
+	
+	<logic name="leic-cough-score">
+		<input section="blcq" obs="score" op="any" />
+		<output obs="lcough_score" action="update"/>
+	</logic>
+	
+	<logic name="fev1_max_bronch_revers">
+		<input test="max_obs" op="any">
+			<enc section="lungfunction" obs="post_bronch_fev1" otherObs="pc_pred_post_bronch_fev1;spirometry_date"/>
+		</input>
+		<output obs="mbfev1_mls" otherObs="mbfev1_pc;mbfev1_date" title="Maximal bronchodilator reversibility FEV&lt;sub&gt;1&lt;/sub&gt;" action="update"/>
+	</logic>
+	
+	<logic name="pc20">
+		<input test="max_obs" op="any">
+			<enc section="lungfunction" obs="pc20_methacholine_histamine" otherObs="other_measure_date"/>
+		</input>
+		<output obs="pc20_value" otherObs="pc20_date" title="PC&lt;sub&gt;20&lt;/sub&gt;" action="update"/>
+	</logic>
+	
+	<logic name="max-prev-blood-eosin">
+		<input test="max_obs" op="any">
+			<enc section="bsd" obs="high_eosin_count_blood" otherObs="blood_date"/>
+			<enc section="fbsd" obs="eosin_count_blood" otherObs="blood_date"/>
+		</input>
+		<output obs="max_prev_blood_eos_value" otherObs="max_prev_blood_eos_date" title="Maximal blood eosinophil" action="update"/>
+	</logic>
+	
+	<logic name="max-spu-neutrophilia">
+		<input test="max_obs" op="any">
+			<enc section="bsd" obs="high_neut_count_sputum" otherObs="sputum_date"/>
+			<enc section="fbsd" obs="neut_count_sputum" otherObs="sputum_date"/>
+		</input>
+		<output obs="max_spu_neu_pc" action="update" title="Maximal sputum neutrophil" otherObs="max_spu_neu_date"/>
+	</logic>
+	
+	<logic name="max-spu-eosinophilia">
+		<input test="max_obs" op="any">
+			<enc section="bsd" obs="high_eosin_count_sputum" otherObs="sputum_date"/>
+			<enc section="fbsd" obs="eosin_count_sputum" otherObs="sputum_date"/>
+		</input>
+		<output obs="max_spu_eos_value" action="update" title="Maximal sputum eosinophil" otherObs="max_spu_eos_date"/>
+	</logic>
+	
+	<logic name="no-rhinitis">
+		<input section="medhistory" obs="seasonal_rhinitis" op="eq" value="N" />
+		<input section="medhistory" obs="perennial_rhinitis_history" op="eq" value="N" />
+		<output obs="rhinitis_type" action="update" value="1" />
+	</logic>
+	
+	<logic name="season-rhinitis">
+		<input section="medhistory" obs="seasonal_rhinitis" op="eq" value="Y" />
+		<input section="medhistory" obs="perennial_rhinitis_history" op="eq" value="N" />
+		<output obs="rhinitis_type" action="update" value="2" />
+	</logic>
+	
+	<logic name="peren-rhinitis">
+		<input section="medhistory" obs="seasonal_rhinitis" op="eq" value="N" />
+		<input section="medhistory" obs="perennial_rhinitis_history" op="eq" value="Y" />
+		<output obs="rhinitis_type" action="update" value="3" />
+	</logic>
+	
+	<logic name="both-rhinitis">
+		<input section="medhistory" obs="seasonal_rhinitis" op="eq" value="Y" />
+		<input section="medhistory" obs="perennial_rhinitis_history" op="eq" value="Y" />
+		<output obs="rhinitis_type" action="update" value="4" />
+	</logic>
+	
+	<logic name="ig_e">
+		<input section="bsd" obs="ig_e" op="any" />
+		<output obs="total_ige" action="update" />
+	</logic>
+	
+</overview>
+

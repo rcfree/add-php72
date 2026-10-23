@@ -1,0 +1,6 @@
+Demog/admissions
+Which wards go with which hospitals?
+Two spirometry field sets. Is one the confirmed diagnosis spiro and the other followup?
+
+Comorbidities
+Cancer options?

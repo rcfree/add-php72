@@ -1,0 +1,74 @@
+value,title,dictionary,score
+1,Not at all,epro_q1,0
+2,Slightly,epro_q1,1
+3,Moderately,epro_q1,2
+4,Severely,epro_q1,3
+5,Extremely,epro_q1,4
+1,Not at all,epro_q2,0
+2,Rarely,epro_q2,1
+3,Occasionally,epro_q2,2
+4,Frequently,epro_q2,3
+5,Almost constantly,epro_q2,4
+1,None at all,epro_q3,0
+2,A little,epro_q3,1
+3,Some,epro_q3,1
+4,A great deal,epro_q3,2
+5,A very great deal,epro_q3,3
+1,Not at all,epro_q4,0
+2,Slightly,epro_q4,1
+3,Moderately,epro_q4,2
+4,Severely,epro_q4,3
+5,Extremely,epro_q4,4
+1,Not at all,epro_q5,0
+2,Slightly,epro_q5,1
+3,Moderately,epro_q5,2
+4,Severe,epro_q5,3
+5,Extreme,epro_q5,4
+1,Not at all,epro_q6,0
+2,Slightly,epro_q6,1
+3,Moderately,epro_q6,2
+4,Severely,epro_q6,3
+5,Extremely,epro_q6,4
+1,Not at all,epro_q7,0
+2,Slightly,epro_q7,1
+3,Moderately,epro_q7,2
+4,Severely,epro_q7,3
+5,Extremely,epro_q7,4
+1,Unaware of breathlessness,epro_q8,0
+2,Breathless during strenuous activity,epro_q8,1
+3,Breathless during light activity,epro_q8,2
+4,Breathless when washing or dressing,epro_q8,3
+5,Present when resting,epro_q8,3
+1,Not at all,epro_q9,0
+2,Slightly,epro_q9,1
+3,Moderately,epro_q9,2
+4,Severely,epro_q9,3
+5,Extremely,epro_q9,3
+6,Too breathless to do these,epro_q9,4
+1,Not at all,epro_q10,0
+2,Slightly,epro_q10,1
+3,Moderately,epro_q10,2
+4,Severely,epro_q10,3
+5,Extremely,epro_q10,3
+6,Too breathless to do these,epro_q10,3
+1,Not at all,epro_q11,0
+2,Slightly,epro_q11,1
+3,Moderately,epro_q11,2
+4,Severely,epro_q11,3
+5,Extremely,epro_q11,3
+6,Too breathless to do these,epro_q11,3
+1,Not at all,epro_q12,0
+2,Slightly,epro_q12,1
+3,Moderately,epro_q12,2
+4,Severely,epro_q12,3
+5,Extremely,epro_q12,4
+1,Not at all,epro_q13,0
+2,Slightly,epro_q13,1
+3,Moderately,epro_q13,2
+4,Severely,epro_q13,3
+5,Extremely,epro_q13,4
+1,Not at all,epro_q14,0
+2,Slightly,epro_q14,1
+3,Moderately,epro_q14,2
+4,Severely,epro_q14,3
+5,Extremely,epro_q14,3

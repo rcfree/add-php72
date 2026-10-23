@@ -1,0 +1,8 @@
+C,Cohabiting
+D,Divorced
+M,Married
+N,Not given
+P,Parted
+S,Single
+U,Unknown
+W,Widowed

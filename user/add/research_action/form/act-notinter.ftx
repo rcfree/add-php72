@@ -1,0 +1,3 @@
+Date :date $not_inter_date
+Reason :memo $reason
+-$consent_date

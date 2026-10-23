@@ -1,0 +1,24 @@
+Blood gas :fieldset {compress=1}
+	Blood gas done :yes_no {condition_test=Y,condition_action=show,condition_target=blood_gas_hc}
+	:horiz_container $blood_gas_hc
+		pH $ph :number {min=1,max=14}
+		PCO<sub>2</sub> $pco2 @ph_pco2 :number
+		pO<sub>2</sub> $po2  :number
+		HCO<sub>3</sub> $hco3 :number
+	
+-Acidaemia $acidaemia :yes_no
+
+
+Biochemistry result set $biochem_grid :encounter_matrix {data_url=/api/daterangematrix,use_page=path:haemresult,yfield=test_code,xfield=coll_date_time,value_field=result,no_parent=1,filter_field[0]=test_code,filter_value[0]=NA;K;UREA;CREA;CALB;BNP;BNPP;TROI;CRP;INR,filter_op[0]=eq,include_fields=visit_date,sort_field=coll_date_time,sort_order=DESC,sort_date=1,cell_actions=LinkCell,linkfield=biochem}
+:pathology_status {status_prefix=Biochemistry test ILAB result transfer}
+Linked biochemistry result set :link_multiple_records $biochem @link_biochem {linked_grid=biochem_grid,link_source_title=biochemistry results,link_target_title=admission}
+
+-Date of Creatinine :date $crea_date
+-Creatinine :number $crea_value
+
+-Date of CRP :date $crp_date;
+-CRP :number $crp_value {allow_op=1}
+	
+-Date of troponin :date $troi_date
+-Troponin :number $troi_value
+

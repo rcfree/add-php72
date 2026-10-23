@@ -1,0 +1,13 @@
+{
+    "name": "add/research_search",
+    "description": "Research search module (part of ADD)",
+	"type": "clinicle-module",
+	"require":{
+		"clinicle/base":"^1.5",
+		"clinicle/client":"^1.9",
+		"add/research":"^3.0"
+	},
+	"autoload": {
+        "classmap": ["php"]
+    }
+}

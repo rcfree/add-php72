@@ -1,0 +1,5 @@
+Date of communication* $date_changed :date {default=today()}
+Contact method $contact_method :checkboxes {dictionary=rrdb_contact_methods}
+Log type $log_type :hidden {default=4}
+Communication comments :memo $change_comments {size=80,height=5}
+User $user_changed :hidden {default=current_user()}

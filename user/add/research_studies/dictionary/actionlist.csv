@@ -1,0 +1,11 @@
+sendpis,Send patient information sheet
+contactpat,Contact patient
+consent,Record patient consent
+studyenrol,Enrol in study
+notinter,Patient not interested in study
+withdraw,Withdraw from study
+studycomp,Study complete
+fupnorep,Followup no reply
+failcrit,Patient does not meet study criteria
+other,Other action (enter in Notes)
+updateno,Update study no

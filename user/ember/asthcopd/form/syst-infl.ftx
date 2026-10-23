@@ -1,0 +1,10 @@
+:horiz_container
+	Urine sample collected* :yes_no
+	Blood sample collected* :yes_no
+	Saliva sample collected* :yes_no
+
+Blood count result $blood_counts :encounter_matrix {data_url=/api/daterangematrix,use_page=path:haemresult,yfield=test_code,xfield=coll_date_time,value_field=result,no_parent=1,filter_field[0]=test_code,filter_value[0]=WBC;LYMAB;LYMPH;NEUAB;NEUT;EOS;EOSAB;PLT;PLTA;HB,include_fields=visit_date,filter_op[0]=eq,after_column_actions=LinkColumn,linkfield=link_bloodcount,datacol_width=8em,sort_field=coll_date_time,sort_order=DESC,sort_date=1}
+Blood count time point* :link_record $link_bloodcount {linked_grid=blood_counts,unlinked_text=Use a 'Link' button to link a result with this record}
+
+Fib/DDM result $clotting :encounter_matrix {data_url=/api/daterangematrix,use_page=path:haemresult,yfield=test_code,xfield=coll_date_time,value_field=result,no_parent=1,filter_field[0]=test_code,filter_value[0]=FIB;DDM,filter_op[0]=eq,include_fields=visit_date}			
+		

@@ -1,0 +1,19 @@
+Return to QoL summary..	$qol_return	:summary_page_link {parent_key=buttons}
+Date* $morisky_date	:date {min=date_of_birth(),max=today(),default=today(),summary_obs=morisky_date}
+Record score only $score_only :checkbox {condition_test[0]=1,condition_action[0]=hide,condition_target[0]=questions,condition_test[1]=1,condition_action[1]=enable,condition_target[1]=total_score}
+
+$questions :container
+	$groups :radio_group {col_width=8em} [1=Y,0=N]
+		Do you sometimes forget to take your medicine?* $forget_medicine :radio_item
+		People sometimes miss taking their medicines for reasons other than forgetting. Thinking over the past 2 weeks, were there any days when you did not take your medicine?* $other_miss_reason :radio_item
+		Have you ever cut back or stopped taking your medicine without telling your doctor because you felt worse when you took it?* $felt_worse :radio_item
+		When you travel or leave home, do you sometimes forget to bring along your medicine?* $travel_forget_medicine :radio_item
+		Did you take all your medicines yesterday?* :radio_item $take_yesterday
+		When you feel like your symptoms are under control, do you sometimes stop taking your medicine?* :radio_item $symptoms_stop_taking
+		Taking medicine every day is a real inconvenience for some people. Do you ever feel hassled about sticking to your treatment plan?* :radio_item $hassled_treatment
+
+	How often do you have difficulty remembering to take all your medicine?* $difficulty_remembering :radio_buttons {dictionary=morisky_diff_rem,condition_test[0]=A,condition_target[0]=remember_score,condition_action[0]=set,condition_target_value[0]=0,condition_test[1]=B;C;D;E,condition_target[1]=remember_score,condition_action[1]=set,condition_target_value[1]=1}
+	Remember score $remember_score :hidden
+
+Total score* $total_score :number {min=0,max=8,size=2,fixed=0,summary_obs=morisky_score,expression=sum('forget_medicine;other_miss_reason;felt_worse;travel_forget_medicine;take_yesterday;symptoms_stop_taking;hassled_treatment;remember_score')}
+Status	$status	:internal {summary_obs=morisky_status,summary_type=status}

@@ -1,0 +1,6 @@
+Current status $current_status :hidden {default=2,use_default=1}
+$start_date	:hidden
+Reason for change* $reason	:dropdown {dictionary=drug_reason}
+Details of change $details_reason :memo									
+End date known?* $end_date_known :yes_no {condition_test[0]="Y",condition_target[0]=end_date,condition_action[0]=show}
+End date $end_date :date {min=get('start_date'),max=today()}

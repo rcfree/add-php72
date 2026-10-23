@@ -1,0 +1,148 @@
+:hidden $gender {no_store=1,default=patient_get('gender'),use_default=1,condition_test=F,condition_target=parte_tab,condition_action=show}
+
+:tab_container
+	Sampling tests :tab
+		:horiz_container
+			Test date* $test_date :date
+			Test time* $test_time :time
+			Test date/time :expression $test_datetime {size=16,as_string=1,expression=get('test_date').toString() + " " + get('test_time').toString()}
+
+		VOC tests $voc_tests :checkboxes {dictionary=ember_voc_tests,columns=4}
+
+	"PART A" $parta_tab :tab
+		Have you been taking any over-the-counter medicines? $otc_medicines :yes_no {condition_test=Y,condition_target=otc_hc,condition_action=show}
+
+		:horiz_container $otc_hc {indent=1}
+			If yes, when? $otc_when :radio_buttons {dictionary=blness_taking_when}
+			If yes, what did you take? $otc_what :text
+
+		Have you been taking any prescribed medicines? $presc_medicines :yes_no  {condition_test=Y,condition_target=presc_hc,condition_action=show}
+
+		:horiz_container $presc_hc {indent=1}
+			If yes, when? $presc_when :radio_buttons {dictionary=blness_taking_when}
+			If yes, what did you take? $presc_what :text
+
+		Have you been taking any supplements? $supplements :yes_no  {condition_test=Y,condition_target=supplements_hc,condition_action=show}
+
+		:horiz_container $supplements_hc {indent=1}
+			If yes, when? $suppl_when :radio_buttons {dictionary=blness_taking_when}
+			If yes, what did you take? $suppl_what :text
+
+	"PART B" $partb_tab :tab
+
+		Did you eat today? $eat_today :yes_no {condition_test=Y,condition_target=eat_hc,condition_action=show}
+
+		:horiz_container $eat_hc {indent=1}
+			If yes, when? $eat_when :radio_buttons {dictionary=blness_times_when}
+			If yes, what did you eat $eat_what :text
+
+		Did you have bowel movement today? $bowel_move_today :yes_no {condition_test=Y,condition_target=bowel_move_hc,condition_action=show}
+
+		:horiz_container $bowel_move_hc {indent=1}
+			If yes, when? $bowel_move_when :radio_buttons {dictionary=blness_times_when}
+
+		Did you urinate today? $urinate_today :yes_no {condition_test=Y,condition_target=urinate_today_hc,condition_action=show}
+
+		:horiz_container $urinate_today_hc {indent=1}
+			If yes, when? $urinate_when :radio_buttons {dictionary=blness_times_when}
+
+		Did you have any tea/coffee today? $tea_coffee_today :yes_no  {condition_test=Y,condition_target=tea_coffee_hc,condition_action=show}
+
+		:horiz_container $tea_coffee_hc {indent=1}
+			If yes, when? $tea_coffee_when :radio_buttons {dictionary=blness_times_when}
+			If yes, what did you have? $tea_coffee_what :checkboxes [1=Tea,2=Coffee]
+			If yes, how much $tea_coffee_how_much :text
+
+		:horiz_container
+			Did you have any hot chocolate today? $hot_choc_today :yes_no  {condition_test=Y,condition_target=hot_choc_when;hot_choc_how_much,condition_action=show}
+			If yes, when? $hot_choc_when :radio_buttons {dictionary=blness_times_when}
+			If yes, how much $hot_choc_how_much :text
+
+		Did you have any fizzy drinks today? $fizzy_drinks_today :yes_no  {condition_test=Y,condition_target=fizzy_drinks_hc,condition_action=show}
+
+		:horiz_container $fizzy_drinks_hc {indent=1}
+			If yes, when? $fizzy_drinks_when :radio_buttons {dictionary=blness_times_when}
+			If yes, what did you have? $fizzy_drinks_what @fizzy_drinks_how_much :text
+
+		Did you have any fruit juice today? $fruit_juice_today :yes_no  {condition_test=Y,condition_target=fruit_juice_hc,condition_action=show}
+
+		:horiz_container $fruit_juice_hc {indent=1}
+			If yes, when? $fruit_juice_when :radio_buttons {dictionary=blness_times_when}
+			If yes, how much $fruit_juice_how_much @fruit_juice_what :text
+
+		Did you have any alcohol today? $alcohol_today :yes_no {condition_test=Y,condition_target=alcohol_hc,condition_action=show}
+
+		:horiz_container $alcohol_hc {indent=1}
+			If yes, when? $alcohol_when :radio_buttons {dictionary=blness_times_when}
+			If yes, how_much $alcohol_how_much @alcohol_what :text
+
+	"PART C" $partc_tab :tab
+
+		:horiz_container
+			Did you take a bath/shower today? $bath_shower :yes_no {condition_test=Y,condition_target=bath_shower_when,condition_action=show}
+			If yes, when? $bath_shower_when @bath_show_when :radio_buttons {dictionary=blness_times_when}
+
+		:horiz_container
+			Did you put on any makeup today? $makeup :yes_no {condition_test=Y,condition_target=makeup_when,condition_action=show}
+			If yes, when? $makeup_when :radio_buttons {dictionary=blness_times_when}
+
+		:horiz_container
+			Did you put on any face-cream or moisturiser? $fcream_moist :yes_no {condition_test=Y,condition_target=fcream_moist_when,condition_action=show}
+			If yes, when? $fcream_moist_when :radio_buttons {dictionary=blness_times_when}
+
+		:horiz_container
+			Did you use a perfume or body spray/deodorant? $perfume_spray :yes_no {condition_test=Y,condition_target=perfume_spray_when,condition_action=show}
+			If yes, when? $perfume_spray_when :radio_buttons {dictionary=blness_times_when}
+
+		:horiz_container
+			Did you brush your teeth? $brush_teeth :yes_no {condition_test=Y,condition_target=brush_teeth_when,condition_action=show}
+			If yes, when? $brush_teeth_when :radio_buttons {dictionary=blness_times_when}
+
+		:horiz_container
+			Did you rinse your mouth with a mouthwash today? $mouthwash :yes_no  {condition_test=Y,condition_target=mouthwash_when,condition_action=show}
+			If yes, when? $mouthwash_when :radio_buttons {dictionary=blness_times_when}
+
+
+	"PART D" $partd_tab :tab
+
+		:horiz_container
+			Have you dispensed petrol or diesel today? $disp_petrol_diesel @dispensed_diesel :yes_no {condition_test=Y,condition_target=disp_petrol_diesel_when,condition_action=show}
+			If yes, when? $disp_petrol_diesel_when @dispensed_diesel_when :radio_buttons {dictionary=blness_times_when}
+
+		:horiz_container
+			Have you visited a dry cleaner today? $dry_cleaner :yes_no {condition_test=Y,condition_target=dry_cleaner_when,condition_action=show}
+			If yes, when? $dry_cleaner_when :radio_buttons {dictionary=blness_times_when}
+
+		Have you been exposed to cigarette smoke today? $cig_smoke :yes_no {condition_test=Y,condition_target=cig_smoke_hc,condition_action=show}
+
+		:horiz_container $cig_smoke_hc {indent=1}
+			If yes, when? $cig_smoke_when :radio_buttons {dictionary=blness_times_when}
+			Where was this? $cig_smoke_where :radio_buttons [1=Indoors,2=Outdoors]
+
+		Have you visited a swimming pool today? $swimming_pool :yes_no {condition_test=Y,condition_target=swimming_pool_when,condition_action=show}
+		If yes, when? $swimming_pool_when :radio_buttons {dictionary=blness_times_when}
+
+		Have you been exposed to fresh paint today? $fresh paint :yes_no {condition_test=Y,condition_target=fresh_paint_when,condition_action=show}
+		If yes, when? $fresh_paint_when :radio_buttons {dictionary=blness_times_when}
+
+		Have you been exposed to solvents today? $solvents :yes_no {condition_test=Y,condition_target=solvents_when,condition_action=show}
+		If yes, when? $solvents_when :radio_buttons {dictionary=blness_times_when}
+
+	"PART E" $parte_tab :tab
+		Menstrual part not applicable :checkbox $menstrual_part_na {condition_test=1,condition_action=hide,condition_target=menstrual_cn}
+
+		:container $menstrual_cn
+			Are your periods normal/regular :yes_no $periods_normal
+
+			:horiz_container
+				Are you on the contraceptive 'pill' :yes_no $on_pill {condition_test=Y,condition_target=on_pill_what,condition_action=show}
+				If yes, what are you taking? $on_pill_what :text
+
+			:horiz_container
+				Do you use any other form of contraception that my affect your menstrual cycle? :yes_no $other_contracept {condition_test=Y,condition_target=other_contracept_what,condition_action=show}
+				If yes, what are you taking? $other_contracept_what :text
+
+			At what stage are you in the menstrual cycle :slider {min=1,max=28,step=1}
+
+-If yes, what did you eat $bowel_move_what :text
+-If yes, what did you have $urinate_what :text

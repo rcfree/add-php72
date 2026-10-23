@@ -1,0 +1,12 @@
+{
+    "name": "clinicle/letter",
+    "description": "ClinicLE letter module",
+	"type": "clinicle-module",
+	"require":{
+		"clinicle/install":"~1.0",
+		"phpoffice/phpword": "^0.11"
+	},
+    "autoload": {
+        "classmap": ["lib"]
+    }
+}

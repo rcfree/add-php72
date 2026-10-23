@@ -1,0 +1,7 @@
+RELEASE HISTORY
+
+1.0.1 27/07/2017
+! Allow more recent versions of phpoffice/phpword to be installed
+
+1.0.0 17/06/2015
++ Separated letter module from core

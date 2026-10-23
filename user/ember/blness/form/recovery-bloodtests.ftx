@@ -1,0 +1,8 @@
+$visit_date @date_recorded :hidden {default=get('rdemog:date_of_recovery_visit'),use_default=1}
+
+:tab_container
+	Pathology tests :tab
+		$path_tests_concept :concept_group {concept_type=blness:path-tests}
+	Systemic inflammation :tab
+		$syst_inf_concept :concept_group {concept_type=blness:syst-infl}
+

@@ -1,0 +1,13 @@
+"<div class='alert alert-info'>The 'MDT Overview' cannot be directly edited. It will be updated with the latest MDT assessment data.</div>" :markup $info
+
+Date of MDT :date {viewonly=1} $date_of_mdt @date_of_assessment
+Fibrotic interstitial lung disease* :yes_no $fib_ild {viewonly=1}
+Idiopathic* :yes_no $idiopathic {viewonly=1}
+Diagnosis* $diagnoses :radio_buttons {dictionary=ild_mdt_diagnosis,condition_test=4,condition_action=show,condition_target=other_diagnosis,viewonly=1}
+Other diagnosis $other_diagnosis :text {viewonly=1}
+FVC test $fvcs :encounter_grid {use_page=resphy:test,fields=test_date;test_type;pre_pc_predicted,filter_field[0]=test_type,filter_value[0]=FVC,filter_op[0]=eq}
+Tlco test $tlcos :encounter_grid {use_page=resphy:test,fields=test_date;test_type;pre_pc_predicted,filter_field[0]=test_type,filter_value[0]=Tlco,filter_op[0]=eq}
+Approached about research* :yes_no $research_approached {viewonly=1}
+Willing to take part in research* :yes_no $research_willing {viewonly=1}
+-$latest_fvc_pc_pred
+-$latest_flco_pc_pred

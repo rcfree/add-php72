@@ -1,0 +1,8 @@
+value,title,dictionary
+1,Today,blness_taking_when
+2,Yesterday,blness_taking_when
+3,3 days ago,blness_taking_when
+4,>3 days ago,blness_taking_when
+1,<2 hours,blness_times_when
+2,2-6 hours,blness_times_when
+3,>6 hours,blness_times_when

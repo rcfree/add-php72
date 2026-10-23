@@ -1,0 +1,3 @@
+:new_search_button
+
+saved search $search_list :search_saved_grid {dataurl=/search/list,use_page=search:list,fields=id;title;owner;date_created;date_updated}

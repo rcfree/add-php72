@@ -1,0 +1,24 @@
+Type of adherence $adherence_type :hidden {default=1,use_default=1}
+
+Drug details $fset_dd :fieldset {compress=1}
+
+	$dd2 :horiz_container
+		Name $drug :text
+		Dose $dose :number {min=1,max=99,size=3}
+		Frequency $frequency :dropdown {dictionary=drug_frequency}
+
+Prescription refill $fset_pr :fieldset {compress=1}
+
+	$pr2 :horiz_container
+		No. collected over last 12 months $no_year_prescn :number {min=0,max=100,size=2}
+		Average dose (oral steroid only) $average_dose :number {min=1,max=99,size=4}
+
+	$pr3 :horiz_container
+		Adherence score (%) $score :number {condition_test[0]=79,condition_test[1]=50;79,condition_test[2]=50,condition_target[0]=adherence,condition_target[1]=adherence,condition_target[2]=adherence,condition_action[0]=set,condition_action[1]=set,condition_action[2]=set,condition_target_value[0]=Adherent,condition_target_value[1]=Partially adherent,condition_target_value[2]=Non-adherent,condition_op[0]=gt,condition_op[1]=bt,condition_op[2]=lt,colspan_title=Prescription data,colspan_size=2,col_title=Score,min=0,max=100,size=3}
+		Adherence $adherence :expression {col_title=Overall impression,data_type=text,size=15}
+
+Self-reported $fset_sr :fieldset {compress=1,min=0,max=10}
+
+	$sr2 :horiz_container
+		Adherent? $sr_adherence :yes_no [Y=Yes,N=No]  {inline=1}
+		Scale $sr_scale :number {col_title=Self-reported<br/>Score,min=1,max=10,size=2}

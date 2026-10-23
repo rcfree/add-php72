@@ -1,0 +1,31 @@
+$visit_date @date_recorded :hidden {default=get('ascreening:admission_date'),use_default=1}
+
+:tab_container
+	Clinical status :tab $cd_tab
+		:horiz_container
+			MRC score on admission* $mrc_admission :radio_buttons {dictionary=mrc_grade,value_only=1,inline=1,condition_test=5,condition_action=show,condition_target=mrc_admiss_ext}
+			Extended MRC* $mrc_admiss_ext :radio_buttons {dictionary=mrc_extended,inline=1} 
+		$clin_status_concept :concept_group {concept_type=blness:clin-status}
+		-$mrc_stable
+		-$mrc_stable_ext
+		
+	Pathology tests :tab
+		$path_tests_concept :concept_group {concept_type=blness:path-tests}
+		
+	ECG :tab
+		$ecg_concept :concept_group {concept_type=blness:ecg}
+		
+	CXR :tab
+		$cxr_concept :concept_group {concept_type=blness:cxr}
+
+	Systemic inflammation :tab
+		$syst_inf_concept :concept_group {concept_type=blness:syst-infl}
+-Urine sample collected* :yes_no
+-Blood sample collected* :yes_no
+-Saliva sample collected* :yes_no
+
+
+-$decaf_score
+
+-$link_smoking
+

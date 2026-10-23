@@ -1,0 +1,1 @@
+L1	Field	Typegeneral_info						fieldset							date_of_data					date	Date of data						fatigure_level			radio_group	9. How often has your patient felt embarrassed by coughing or heavy breathing?				list:embarrassed_time	

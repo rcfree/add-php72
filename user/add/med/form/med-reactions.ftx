@@ -1,0 +1,2 @@
+Add adverse reaction $add_reaction :grid_add_button {refresh=reactions,use_page=med:reactionitem,allow_add_another=1}
+adverse reaction $reactions :encounter_grid {use_page=med:reactionitem,fields=drug_name;reaction;reaction_date,description=prescription drug,before_row_actions=DateCreated,use_parent=1}

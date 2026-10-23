@@ -1,0 +1,43 @@
+RELEASE HISTORY
+
+1.7.1 02/03/2020
+! Incorrect double quote in mail to attribute
+
+1.7.0 13/07/2017
++ Provision for always private home tool
+
+1.6.0 13/01/2017
+* Modified options menu to use sub-menus
+! Search home tool form was not posting
+
+1.5.0 01/11/2016
+! Extracted home tools into their own class type and config option
++ New simple Slider field with min, max and step
+* Separated home tool management into a service
+
+1.4.1 20/06/2016
+! Reset question popup appears below Codebreaker table
+
+1.4.0 17/05/2016
++ Support for 'caption' setting in 'table' field
+
+1.3.0 14/04/2016
++ Notify user that reset question is not set on home page
+
+1.2.1 22/02/2016
+! Only store recent patient if ID in URL
+
+1.2.0 05/01/2016
++ Modified to use optimised 'recent_patients' table rather than 'audit' table
+
+1.1.1 02/12/2015
+! Incorrect name and alias in page.ini
+
+1.1.0 04/11/2015
++ New settings available to disable home tools (SearchHomeTool.disable and RecentPatientsHomeTool.disable)
+
+1.0.3 22/09/2015
++ Use 'dest' param to redirect user when logging in
+
+1.0.2 17/08/2015
++ Use site name in SearchHomeTool rather than 'ADD'

@@ -1,0 +1,12 @@
+:horiz_container
+	Add :item {no_label=1}
+	Single test $single_add_test :grid_add_button {refresh=allergen_tests,use_page=inv:allergenresult,allow_add_another=1,no_label=1}
+	OR :item $or1 {no_label=1}
+	Standard panel	$asp_add_set :add_standard_tests {dictionary=skin_prick_tests,groups=controls;animals;mould;standard_panel,target_field=allergen_test,add_message=Added standard allergy test panel,use_page=inv:allergenresult,no_label=1}
+	OR :item $or2 {no_label=1}
+	$hc1 :horiz_container
+		Other test set	$group_allergy_set :dropdown {dictionary_groups=skin_prick_tests}
+		$group_add_set :add_set_submit {obs_group_map=group_allergy_set:allergen_test,use_page=inv:allergenresult,empty_label=1}
+
+
+allergen skin test $allergen_tests :encounter_grid {use_page=inv:allergenresult,fields=allergen_test;width;height;flaring_level;itch,after_row_actions=EditRecord;DeleteRecord,use_parent=1,use_paging=1,col_headings=Allergen test;Width;Height;Flaring?;Itch?}

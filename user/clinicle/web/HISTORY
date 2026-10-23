@@ -1,0 +1,106 @@
+RELEASE HISTORY
+
+1.4.4 26/04/2018
+! Removed unneeded logging
+
+1.4.3 07/12/2017
+! Autocomplete issue if no parent ID in form
+! JS warnings related to unreachable code
+! JS map for underscoreJS not available
+
+1.4.2 27/11/2017
+! Error messages not displayed for autocomplete
+
+1.4.1 08/11/2017
+! No support for print styling
+
+1.4.0 31/10/2017
++ Font awesome to static files
++ Improved handling of AJAX calls and content replacement
++ Replaced AJAX spinner with FA
+
+1.3.2 17/08/2017
+! All AJAX warnings removed incorrectly after AJAX call
+
+1.3.1 21/04/2017
+! Ignore PHP notices in CodeIgniter
+
+1.3.0 04/01/2017
+* Support for modified client module
+
+1.2.0 01/11/2016
+* Improved support for iPad access
++ 'set_if_empty' support added to conditional logic
+* Updated copyright message
+! JS validation of numbers failing in some cases
+* Improve AJAX field-based calls
+! Deal with IE problem with multiple modals
++ Show loading image when AJAX options being updated
++ Support for panel-based page updates
+* Upgrade JQuery to include ui-slider
+! Resolved problem with non-changing menu carets
+! Resolved IE not auto-logging out
+! {{variable}} used by both AngularJS and interpolated variables. Interpolated variables now in form [{variable}]
+
+1.1.6 20/04/2016
+! Verification logic not updated to deal with CB-style approach
+
+1.1.5 31/03/2016
+! Javascript error in get_year function if date supplied
+
+1.1.4 09/03/2016
+! Customised email message not being used by create user action
+
+1.1.3 01/03/2016
+! Failure when attempting to store role groups
+
+1.1.2 29/02/2016
+! Create email text was not provided by template file had to be changed manually
+
+1.1.1 22/02/2016
+! Non-existing role groups not being created properly when added to role
+! Prevent AJAX field change from triggering dirtyforms
+
+1.1.0 09/02/2016
++ Refined roles by providing improved table structure and management pages
++ Minified single CSS/JS which is recreated if files change
+! Resolved AJAX warning problem
+* Replaced AJAX field name with AJAX function name in warning
+* Use Permission.title page setting for role permission by default
+
+1.0.10 04/11/2015
+! Resolved notices problem related to AJAX warnings
+! Fixed container size so it does not overlap page edges
+
+1.0.9 02/11/2015
+! Fixed option bar so it floats in both ADD and Codebreaker
+! Resolved AJAX errors/warnings which keep being removed
+
+1.0.8 24/08/2015
+* Updated 'wait' modal so it uses ClinicLE logo
+
+1.0.7 17/08/2015
+! Role creation field had been taken out
+
+1.0.6 12/08/2015
+* Removed error handling from web_init.php
++ Now requires 'live' config setting to indicate live site
+
+1.0.5 11/08/2015
+! Fixed site name in window title
+
+1.0.4 10/08/2015
++ Minor changes to stylesheet so buttons are shown in inactive rows
+
+1.0.3 02/08/2015
+! Load stylesheet from theme rather than clinicle/web if 'theme_module' is set
+
+1.0.2 29/07/2015
++ Close modals if autologout fires
++ Support for 'from_start' setting in autocomplete JS function
+
+1.0.1 18/06/2015
++ Size of reset question select changed
+
+1.0.0 17/06/2015
++ Separated web module from core

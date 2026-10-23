@@ -1,0 +1,16 @@
+:horiz_container
+	Primary condition* $primary_condition @condition :checkboxes {dictionary=blness_condition,inline=1,condition_test=AST,condition_target=asthma_severity,condition_action=show,columns=4}
+	Asthma severity* $asthma_severity :dropdown {size=10,dictionary=icd10_qualifier,dictionary_option=SingleGroupItems,dictionary_group=16}
+	Disease state $disease_state :radio_buttons {dictionary=blness_disease_state,inline=1}
+	-$stable_disease
+
+Patient has comorbidities?* :yes_no $has_comorbs {condition_test=Y,condition_action=show,condition_target=comorbidities}
+
+:container $comorbidities
+	:concept_group {concept_type=blness:manual-diagnosis}
+	-Codebreaker transfer :tab
+	-Codebreaker ward spell $select_ward_spell :dropdown {ajax-func=WardspellList,dictionary_option=RemoteListOption,empty_option=- select spell -,size=40,dynamic=1,empty=1}
+	-Transfer from Codebreaker :transfer_remote_button {use_page=blness:comorbitem,sourcepim=wspell:comorbitem}
+
+	-Time of admission :time
+	Diagnosis record $comorb_results_grid :encounter_grid {plural=Existing diagnoses,use_page=comorbitem,use_parent=1,fields=icd10_code;uhl_qualifier,after_row_actions=DeleteRecord,before_row_actions=EmberPrimaryDiagnosis,refresh=diagnoses_matrix_set}

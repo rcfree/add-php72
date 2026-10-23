@@ -1,0 +1,11 @@
+RELEASE HISTORY
+
+1.0.4 23/09/2016
+! Batch count was calculated incorrectly
+
+1.0.3 22/09/2016
+! Row count was ignoring null rows which was causing problems
+
+1.0.2 15/09/2016
+! Batch reader not dealing correctly with single batches
+

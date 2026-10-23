@@ -1,0 +1,14 @@
+{
+    "name": "add/history_ext",
+    "description": "Medical history extension module (part of ADD)",
+	"type": "clinicle-module",
+	"require":{
+		"clinicle/core":"~2.3",
+		"add/patient":"~1.0",
+		"add/history":"~2.0",
+		"clinicle/install":"~1.0"
+	},
+	"autoload": {
+        "classmap": ["php"]
+    }
+}

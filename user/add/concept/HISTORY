@@ -1,0 +1,59 @@
+RELEASE HISTORY
+
+1.6.2 31/05/2019
+! Fix support for conditional menu episode conditions using dot notation to identify section (e.g. admission.ascreen) and ConditionalMenu.condition_episode=1 setting
+
+1.6.1 05/10/2018
+! Resolved issue if there are no child fields in ConceptGroup field
+
+1.6.0 14/09/2018
+* Compatibility change for clinicle/clinicle
++ Support for embedding in non-DB forms
++ Delete section button included in top-menu
+
+1.5.3 10/08/2017
+! If concept group field marked as deleted, child fields within not being deleted during install
+! Concept group fields not added if page uses a Form_File component
+
+1.5.2 24/07/2017
+! Prevent failure if no Conditional menu component
+
+1.5.1 18/07/2017
+! Ignore sorting if no weight to avoid reversing menu items
+
+1.5.0 13/07/2017
++ Weight-based sorting of top menu items
+
+1.4.0 01/11/2016
++ Allow extension of ConditionTopMenu functions with sub-class
++ Added weights to MRC grade
+
+1.3.0 20/04/2016
++ 'hide_topmenu' setting to allow episode menu to be used instead
+! If required delete child fields within a concept group and run their beforeInstall() functions
+
+1.2.3 22/02/2016
+! Support for 'no-menu' setting had been removed
+! Use 'href' rather than JS to link to page for ConfirmSave to work properly
+
+1.2.2 08/02/2015
+! ConditionalTopSection now supports arrays of values and Menu is always added to child pages
+
+1.2.1 02/02/2015
+! Page lookup not working correctly
+
+1.2.0 27/01/2015
++ Support for ConceptGroup pages in other modules
+
+1.1.0 10/12/2015
++ Conditional menu logic moved from PR module
+
+1.0.2 13/05/2015
+! Resolved problem with respiratory physiology modal input
+
+1.0.1 12/11/2014
+! Increased size of smoking item type
+
+1.0.0 17/09/2014
+* Initial version including LungFunction and standard height/weight measures along with MRC grade
++ Tobacco conversion dictionary

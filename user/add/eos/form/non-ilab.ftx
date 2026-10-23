@@ -1,0 +1,4 @@
+Test date $test_date :date
+Type of test* $test_type :dropdown {dictionary=eos-tests}
+Result* :text $result
+Details :memo $details

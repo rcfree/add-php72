@@ -1,0 +1,6 @@
+Date tested* :date $date_tested {min=date_of_birth(),max=today(),multi_field=date_tested}
+Lab code :number {prefix=FC,multi_field=lab_code}
+
+Fumigatus :number {suffix=CFU,multi_no=1,multi_field=count_cfu,multi_constant[0]=organism:1}
+Niger :number {suffix=CFU,multi_no=2,multi_field=count_cfu,multi_constant[0]=organism:2}
+Yeast :number {suffix=CFU,multi_no=3,multi_field=count_cfu,multi_constant[0]=organism:3}

@@ -1,0 +1,20 @@
+Return to QoL summary..	$qol_return	:summary_page_link {parent_key=buttons}
+Date* $acqia_date	:date {min=date_of_birth(),max=today(),default=today(),summary_obs=acqia_date}
+$q_1_6 :radio_group [0,1,2,3,4,5,6]
+	1. Woken by asthma* $woken_by_asthma :radio_item
+	2. Asthma symptoms on waking* $morning_symptoms :radio_item
+	3. Activity limitation* $activity_limited :radio_item
+	4. Short of breath* $shortness_of_breath :radio_item
+	5. Wheeze $wheeze* :radio_item
+	6. Bronchodilator* $bronchodilator :radio_item
+
+:horiz_container
+	:container
+		7. FEV<sub>1</sub> pre-bronchodilator* $fev1_pre_bronch :number {min=0,max=7,fixed=2}
+		FEV<sub>1</sub> predicted* $fev1_predicted :number {min=0,max=7,fixed=2, ajax-func=AcqIaScore7}
+		"FEV<sub>1</sub> % predicted" $fev1_pc_predicted :expression {size=4}
+
+	$score_7 :radio_buttons [0=&gt; 95%,1=95-90%,2=89-80%,3=79-70%,4=69-60%,5=59-50%,6=<50%] {summary_obs=acqia_score7,readonly=1}
+
+Total score* $total_score :expression {size=2,fixed=0,summary_obs=acqia_score,expression=sum('woken_by_asthma;morning_symptoms;activity_limited;shortness_of_breath;wheeze;bronchodilator;score_7')}
+Status	$status	:internal {summary_obs=acqia_status,summary_type=status}

@@ -1,0 +1,18 @@
+#!/usr/bin/php
+<?php
+$path = getenv('ADD_PATH');
+if (!$path) {
+    $path = getcwd();
+    print "WARNING: No ADD_PATH env variable set, using current path ($path)\n";
+}
+
+$autoloadPath = getenv('ADD_AUTOLOAD_PATH_TEST');
+if($autoloadPath) {
+    $classLoader = include_once($autoloadPath."/vendor/autoload.php");
+}
+else {
+    $classLoader = include_once($path."/vendor/autoload.php");
+}
+$environment = new \ClinicLE\System\Environment\CommandEnvironment($path,getenv('ADD_PROFILE'),$argv,$classLoader);
+$runner = new \ClinicLE\Command\CommandRunner($environment);
+$runner->runCommand();

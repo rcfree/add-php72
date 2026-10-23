@@ -1,0 +1,12 @@
+Unique test ID $unique_test_id :hidden
+Specimen No $specimen_no :text
+Collection date/time $coll_date_time :date_time
+Test $test_code :dropdown {dictionary=testcodes}
+SNOMED-CT code $snomed_ct_code :text
+Result :text $result
+Result code :text $result_code
+Specimen type code :text $specimen_type_code
+Specimen type :text $specimen_type
+Isolates $organisms :data_list
+Organisms and sensitivities $antibiotic_sens :data_list {assoc=1}
+Quantifier :text $quantifier

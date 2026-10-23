@@ -1,0 +1,8 @@
+:tab_container
+	Hospitalisations/exacerbations :tab
+		Add hospitalisation record $add_hosp :grid_add_button {refresh=hosps,use_page=history:hosprec}
+		hospitalisation record $hosps :collated_encounter_grid {use_page=hrcollate,fields=visit_date;condition;timescale;no_exacerbs;total_hosps;asth_copd_related;domain,after_row_actions=DateCreated}
+
+	Body measurements :tab
+		Add body measurement $add_bodymeas :grid_add_button {refresh=body_measures,use_page=history:bodymeasitem}
+		body measurement $body_measures :collated_encounter_grid {use_page=bmcollate,fields=visit_date;height;weight;bmi;domain,after_row_actions=DateCreated}

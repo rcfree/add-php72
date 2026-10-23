@@ -1,0 +1,117 @@
+{
+  "groups": [
+    {
+      "id": 1,
+      "name": "pr.prog.referral",
+      "filters": [],
+      "attributes": [],
+      "settings": {
+        "internal_logic": "AND",
+        "external_logic": "AND",
+        "join_type": "LEFT",
+        "enabled": 1,
+        "include_section_id":1,
+        "from_weight":1
+      }
+    },
+
+    {
+      "id": 2,
+      "name": "pr.prog.subject",
+      "filters": [],
+      "attributes": [],
+      "settings": {
+        "internal_logic": "AND",
+        "external_logic": "AND",
+        "join_type": "LEFT",
+        "enabled": 1,
+        "include_section_id":0,
+        "from_weight":2
+      }
+    },
+    {
+      "id": 3,
+      "name": "pr.prog.exercise",
+      "filters": [],
+      "attributes": [],
+      "settings": {
+        "internal_logic": "AND",
+        "external_logic": "AND",
+        "join_type": "LEFT",
+        "enabled": 1,
+        "include_section_id":0,
+        "from_weight":3
+      }
+    },
+    {
+      "id": 4,
+      "name": "pr.prog.iswt",
+      "filters": [],
+      "attributes": [],
+      "settings": {
+        "internal_logic": "OR",
+        "external_logic": "AND",
+        "join_type": "LEFT",
+        "enabled": 1,
+        "include_section_id":0,
+        "from_weight":4
+      }
+    },
+    {
+      "id": 5,
+      "name": "pr.prog.eswt",
+      "filters": [],
+      "attributes": [],
+      "settings": {
+        "internal_logic": "OR",
+        "external_logic": "AND",
+        "join_type": "LEFT",
+        "enabled": 1,
+        "include_section_id":0,
+        "from_weight":5
+      }
+    },
+    {
+      "id": 6,
+      "name": "pr.prog.qol",
+      "filters": [],
+      "attributes": [],
+      "settings": {
+        "internal_logic": "OR",
+        "external_logic": "AND",
+        "join_type": "LEFT",
+        "enabled": 1,
+        "include_section_id":0,
+        "from_weight":6
+      }
+    },
+    {
+      "id": 7,
+      "name": "pr.prog.outcome",
+      "filters": [],
+      "attributes": [],
+      "settings": {
+        "enabled": "1",
+        "internal_logic": "OR",
+        "external_logic": "AND",
+        "join_type": "LEFT",
+        "include_section_id":0,
+        "from_weight":7
+      }
+    },
+    {
+      "id": 8,
+      "name": "ident_patient",
+      "filters": [],
+      "attributes": [],
+      "settings": {
+        "internal_logic": "AND",
+        "external_logic": "AND",
+        "join_type": "LEFT",
+        "enabled": 1,
+        "from_weight":8
+      }
+    }
+  ],
+  "title": ""
+}

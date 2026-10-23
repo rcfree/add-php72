@@ -1,0 +1,6 @@
+Type of adherence $adherence_type :hidden {default=2,use_default=1}
+
+Test $test :dropdown [=-select option-,1=Theophyline (10-20mg/l),2=Cortisol level (<50 nmol/l),3=Prednisolone level (81-1812 nmol/l),4=Other]  {modal_action=edit,modal_name=adh_entry_modal}
+Date/Time $datetime :date_time {default=now(),size=16}
+Result $result :number {size=6}
+Comments $comments :text

@@ -1,0 +1,64 @@
+RELEASE HISTORY
+---------------
+1.09 24/03/2014
++ added improved regression testing for key components/fields
++ made compatible with v2 of the ADD framework
++ expected values added for EncounterEntry tests
+* improved stability of LungFunction calculations using tests
+
+1.08 17/02/2014
++ A2E endotype changed to dictionary and additional options added (Occupational asthma and aspirin sensitive)
++ overridable values in A2E (currently if flagged as overrided will not be updated if a greater value appears)
+! fixed some parts of A2E logic which were not consistent
+! improved layout of QoL summary page
+
+1.07 11/02/2014
++ correction factor and patient withheld inhalers field added to followup lungfunction
++ transition to remove IgE from baseline
++ added new fields in baseline which have not been added to baseline report
+* changes to ensure compatibility with core 1.0.16
+* deleted test results for sputum fields (e.g. kept 'sputum obtained and date') and added messages indicating where results are now added
+* mix up with Ig section -> restored Ig fields and added a date -> will use Ig section once ILAB integration is working
+
+1.06 31/01/2014
++ added 'ATS criteria' tab to baseline medical history including refactory asthma image
+! corrected reversibility calculation in lung function pages
+! normal DEXA scan conditional changed from Y to N
++ exhaled NO fields added and label changed
+! changed DAC consent version date
+
+1.05 21/01/2014
++ Scripts for update and extraction of sputum samples
++ Lung function reversibility testing 
+* Selenium script to update lung reversibility results
++ Lung function highest PEF fields
++ Added output_type/output_title settings for use by ADD_to_i2b2 script
+
+1.04 06/11/2013
+Incorrect FEV1/FVC calculation fixed
+
+1.03 18/10/2013
+Renamed and changed labels on fields in med history and base line report
+Added 'Has patient withheld inhalers' Y/N field with conditions to lung function
+Rejigged the BSD interface so it has tabs for sections
+Fixed non-expected lung function required fields
+Added informed consent fields and new dictionary file (dac_consent)
+Created TimeLine module to add basic functionality to pages and wrapped it in a component.
+Rejigged the LungFunction component to work using AJAX
+Added Date for CT scan
+Changed followup date from create date to date of visit and updated followup report and datasheet titles (previously duplicate titles)
+
+1.02 22/08/2013
+Added PC20 date and DEXA date fields and corrected A2E logic
+Added specific antibody deficiency and no. course oral steroids fields
+Corrected baseline report for hospital admission fields and included missing fields
+Added 'Not known' and 'Adopted' to family history options
+Added 'Not interested' option to informed consent field
+
+1.01 16/08/2013
+Added followup datasheet report and menu option to view/print it
+Removed irrelevant dictionaries and reports
+
+1.00 12/08/2013
+Initial full release of difficult asthma clinic module
+

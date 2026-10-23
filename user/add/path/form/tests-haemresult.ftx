@@ -1,0 +1,9 @@
+Unique test ID :hidden $unique_test_id
+Specimen No $specimen_no :text
+Collection date/time $coll_date_time :date_time
+Test $test_code :dropdown {dictionary=testcodes}
+SNOMED-CT code $snomed_ct_code :text
+Result :text $result
+Units :text $units
+Normal low :text $normal_low
+Normal high :text $normal_high

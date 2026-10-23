@@ -1,0 +1,53 @@
+RELEASE HISTORY
+---------------
+1.4.0 07/12/2017
+* Refactored back to scheduled task as continuous task crashed but cause could not be pinned down
+
+1.3.2 30/10/2017
+! Handle non-movable files better
+
+1.3.1 17/10/2017
+! Incorrect exit function left in command
+
+1.3.0 17/10/2017
+* Converted resphy-import to file watcher which should be run as daemon
+! Database timeout causes problems
+
+1.2.3 21/04/2017
+! Removed logging from command
+
+1.2.2 20/01/2017
+! Incorrect class name for exception
+
+1.2.1 18/01/2017
+! Exception handling not working correctly
+
+1.2.0 18/01/2017
+* Refactored classes into psr-4 style
+* Removed in-built emailing and rely on ML instead
+
+1.1.1 02/11/2016
+! Switched from symfony copy to system cp due to problem copying onto shared drive
+
+1.1.0 01/11/2016
+* Refactor to use new Hometool architecture
+
+1.0.4 01/03/2016
+! Large numbers of files should be separated into sub-dirs
+
+1.0.3 25/02/2016
+! PDF files not being identified and copied into local directory
+
+1.0.2 08/02/2016
+! Resolved issue with '-p' flag so files are moved correctly
+
+1.0.1 08/02/2016
+! Catch SystemCommandException error if try to move file within Exception
+* Updated required version of add/referral
+
+1.0.0 25/08/2015
+* Initial version of respiratory physiology import module
+* Support added for named exam field details
++ Domain/section record support
++ Processing extracted out into separate class and files moved into processed dir
+* Moved PDF copying out into processor class

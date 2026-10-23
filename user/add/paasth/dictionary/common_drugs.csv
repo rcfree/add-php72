@@ -1,0 +1,93 @@
+value,title,group,group_title
+1,Salbutamol (Ventolin),saba,SABA
+2,Terbutaline (Bricanyl),saba,SABA
+3,Ipratropium (Atrovent),sama,SAMA
+4,Duaklir,laba_lama,LABA/LAMA
+5,Spiolto,laba_lama,LABA/LAMA
+6,Salmeterol (Serevent),laba,LABA
+7,Formeterol (Oxis),laba,LABA
+8,Tiotropium (Spiriva),lama,LAMA
+9,Aclidinium  (Eklira),lama,LAMA
+10,Braltus,lama,LAMA
+11,Flucticasone (Flixotide),ics,ICS
+12,Budesonide (Pulmicort),ics,ICS
+13,"Becomethasone (qvar, clenil)",ics,ICS
+14,Seretide,ics_laba,ICS/LABA
+15,Symbicort,ics_laba,ICS/LABA
+16,Fostair,ics_laba,ICS/LABA
+17,Spiromax,ics_laba,ICS/LABA
+18,Spiromax,ics_laba,ICS/LABA
+19,Rofulmast (Daxas),pdeai,Phosphodiester-ase inhibitor
+20,"Theophyline (uniphillin, Nuelin)",pdeai,Phosphodiester-ase inhibitor
+21,Aminophylline,pdeai,Phosphodiester-ase inhibitor
+22,Prednisolone,oral_ster,Oral steroids
+23,Sodium Chloride,muco,Mucolytics
+24,Carbocisteine,muco,Mucolytics
+25,Mecysteine,muco,Mucolytics
+26,Enalapril,ace_inhib,ACE inhibitor
+27,Lisinopril,ace_inhib,ACE inhibitor
+28,Perindopril,ace_inhib,ACE inhibitor
+29,Ramipril,ace_inhib,ACE inhibitor
+30,Othe,ace_inhib,ACE inhibitor
+31,Candesartan,arb,ARB
+32,Losartan,arb,ARB
+33,Valsartan,arb,ARB
+34,Olmesartan,arb,ARB
+35,Other,arb,ARB
+36,Bisoprolol,beta_blocker,Beta-blocker
+37,Carvedilol,beta_blocker,Beta-blocker
+38,Atenolol,beta_blocker,Beta-blocker
+39,Other,beta_blocker,Beta-blocker
+40,ISMN,anti_angin,Anti-anginals
+41,ISDN,anti_angin,Anti-anginals
+42,GTN ,anti_angin,Anti-anginals
+43,Nicorandil,anti_angin,Anti-anginals
+44,Bumetanide,diuretics,Diuretics
+45,Furosemide,diuretics,Diuretics
+46,Bendro flumethazide,diuretics,Diuretics
+47,Metolazone,diuretics,Diuretics
+48,Thiazide,diuretics,Diuretics
+49,Other,diuretics,Diuretics
+50,Eplerenone,aldost_antag,Aldosterone antagonist
+51,Spironolactone,aldost_antag,Aldosterone antagonist
+52,Aspirin,anti_plet_coag,Anti-platelet/coagulant
+53,Warfarin,anti_plet_coag,Anti-platelet/coagulant
+54,Clopidogrel,anti_plet_coag,Anti-platelet/coagulant
+55,Prasugrel,anti_plet_coag,Anti-platelet/coagulant
+56,Ticagrelor,anti_plet_coag,Anti-platelet/coagulant
+57,Other ,anti_plet_coag,Anti-platelet/coagulant
+58,Digoxin,anti_arrhythmics,Anti-arrhythmics
+59,Amiodarone,anti_arrhythmics,Anti-arrhythmics
+60,Other,anti_arrhythmics,Anti-arrhythmics
+61,Amlodipine,ca_chan_blockers,Ca channel blockers
+62,Felodipine,ca_chan_blockers,Ca channel blockers
+63,Diltiazem,ca_chan_blockers,Ca channel blockers
+64,Verapamil,ca_chan_blockers,Ca channel blockers
+65,N-acetlcysteine,ild,ILD medication
+66,Azathioprine,ild,ILD medication
+67,Pirfenidone,ild,ILD medication
+68,Paroxetine,anti_dep_anxi,Anti-depressants/anxiolytics
+69,Fluoxetine,anti_dep_anxi,Anti-depressants/anxiolytics
+70,Citalopram,anti_dep_anxi,Anti-depressants/anxiolytics
+71,Lorazepam,anti_dep_anxi,Anti-depressants/anxiolytics
+72,Diazepam,anti_dep_anxi,Anti-depressants/anxiolytics
+73,Aledronic Acid (Fosamax),anti_osteo,Anti-osteoporosis
+74,Risedronate (Actovel),anti_osteo,Anti-osteoporosis
+75,Calcium preparation,anti_osteo,Anti-osteoporosis
+76,Esomeprazole,ppi_anti_ulc,PPI/anti-ulcer
+77,Lansoprazole,ppi_anti_ulc,PPI/anti-ulcer
+78,Omeprazole,ppi_anti_ulc,PPI/anti-ulcer
+79,Ranitidine,ppi_anti_ulc,PPI/anti-ulcer
+80,Atorvastatin,statin,Statin
+81,Pravastatin,statin,Statin
+82,Rosuvastatin,statin,Statin
+83,Simvastatin,statin,Statin
+84,Other Therapy for Lipids ,statin,Statin
+85,Metformin,diabetic,Diabetic drugs
+86,Sulphonylurea,diabetic,Diabetic drugs
+87,Glimepiride,diabetic,Diabetic drugs
+88,Insulin ,diabetic,Diabetic drugs
+89,Other current Diabetes Therapy,diabetic,Diabetic drugs
+90,Azithromycin,lt_antib,Long-term antibiotics
+91,Montelukast,ltra,LTRAs
+92,Zafirlukast,ltra,LTRAs

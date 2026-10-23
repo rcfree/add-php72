@@ -1,0 +1,17 @@
+Enter or select allergen test* $allergen_test :auto_complete {dictionary=skin_prick_tests,size=25,show_list=1,min_search=1,db_populated=1}
+Width* $width :dropdown {dictionary=spt_size,size=5,empty_option=-,query_as_number=1}
+Height $height :dropdown {dictionary=spt_size,empty_option=-,size=5,query_as_number=1}
+Flaring? $flaring_level	:dropdown [Y=Yes,N=No] {size=5,empty_option=-}
+Itch? $itch :dropdown [Y=Yes,N=No] {size=5,empty_option=-}
+
+-Flare size	$single_flare :hidden
+-$enc_submit
+-$allergen_report
+-$allergen_opt
+-$asp_add_set
+-$ar_fset
+-$single_test
+-$single_add_test
+-$group_allergy_set
+-$group_add_set
+-$del

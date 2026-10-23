@@ -63,12 +63,14 @@ mkdir -p "$OUT"
 cd "$ROOT" || exit 2
 
 if [ "$FIRST_PARTY" -eq 1 ]; then
-    TARGETS=(modules vendor/clinicle vendor/leicrespbru bin config)
+    TARGETS=(user bin config)
 else
-    TARGETS=(modules vendor bin config)
+    TARGETS=(user vendor bin config)
 fi
 
-# build copies, logs and nested module vendors are not runtime code
+# Generated first-party mirrors live in vendor/ after composer install; scan
+# the source under user/ instead. Build copies, logs and nested vendors are
+# not runtime code.
 PRUNE=(
     -name .hg -prune -o
     -name backup -prune -o
@@ -76,7 +78,13 @@ PRUNE=(
     -name tmp -prune -o
     -name log -prune -o
     -name .audit -prune -o
-    -path 'modules/*/vendor' -prune -o
+    -path 'user/*/*/vendor' -prune -o
+    -path 'vendor/add' -prune -o
+    -path 'vendor/cdbrkr' -prune -o
+    -path 'vendor/clinicle' -prune -o
+    -path 'vendor/copd' -prune -o
+    -path 'vendor/ember' -prune -o
+    -path 'vendor/leicrespbru' -prune -o
     -name '*.php' -print0
 )
 

@@ -1,0 +1,4 @@
+name = Recruitment DB
+description = Recruitment DB extension
+core = 7.x
+package = LRB Tools

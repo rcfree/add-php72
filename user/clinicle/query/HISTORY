@@ -1,0 +1,58 @@
+HISTORY
+
+1.2.0 14/01/2016
++ Extended LinkedRecordQuery class to simplify linkage between data sets
+
+1.1.0 05/01/2016
+* Simplified Search class added
+
+1.0.11 21/10/2015
++ hgignore file added
+
+1.0.10 30/09/2015
+! Problem with 0 being recognised as null value
+! Fixed EncData filter
+
+1.0.9 27/07/2015
++ Added frequency to ActiveDrugs output
+! Do not add non-DB encounter forms to the EncounterLookup class
+
+1.0.8 15/07/2015
+! Corrected ObsData value to fail if a value has no label associated
+
+1.0.7 17/06/2015
++ Integrated into composer-based install
+
+1.0.6 07/03/2015
+* To make it more obvious changed ResultItem function from nextRowItem() to nextResultItem()
+* Improved ResultItem addEncounterData() so that data is merged rather than replaces
+
+1.0.5 06/03/2015
++ Improved support for collating observation data in RecordItem
+! Problems with row-based output not showing in correct columns
+! Encounter IDs not being included in filters
+
+1.0.4 02/03/2015
+! Identifiers Filter 'not in' operator fixed
+
+1.0.3 01/03/2015
++ Encounter data added using 'addMetaDataFromRows' now appended to existing data in ResultItem
+! Required classes now loaded within 'initQuery' Util function 
+
+1.0.2 16/02/2015
+* Added additional value and filter types
+! Resolved requirement for 'export' module
+
+1.0.1 09/01/2015
++ Patient field order by option added to Run and Database classes 
+
+1.0.0 26/11/2014
++ Initial version of query module with filter/value system
+! Patient/encounter query value output was not limited to appropriate encounter IDs
+* Patient record dates converted to dd/mm/yyyy
+* Extracted core Output Table functions and implemented CSV and Record to output appropriate data 
++ RecordList helper class which deals with object creation etc. and outputs rows of data
++ Simple help class which outputs raw ResultItem objects
++ Changes to implement row by row outputs
++ Result class now acts as container for Run and Output - simplified access to data
++ Added utility functions to ResultItem for easy retrieval of encounter data

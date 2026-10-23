@@ -1,0 +1,109 @@
+Date of onset of symptoms :date
+Date of diagnosis :date
+Basis for diagnosis :checkboxes [1=Investigations,2=Clinical] {inline=1}
+
+Clinical presentation :memo
+Drug history for eosinophilic disease :checkboxes [1=Corticosteroids,2=Hydroxycarbamide,3=Methotrexate,4=Hazothyoprine,5=Mycophenalate,6=Mipolizumab,7=Cyclophosphamide,8=Imatinib mesylate]
+Family history of eosinophilic disease :yes_no
+Aspirin sensitive :yes_no
+Rhinosinusitis :yes_no
+Nasal polyps :yes_no
+Steroid responsive :yes_no
+Date of blood eosinophil count :date
+Highest blood eosinophil count :number
+
+"Smoking (use from DAC)"
+Highest basophil date :date
+Highest basophil count :number
+
+Highest platelet date :date
+Highest platelet count :number
+Longitudinal eosinophil count
+
+Date B12 :date
+B12 :number
+
+Bone marrow :yes_no
+Date of bone marrow :date
+Details of bone marrow :memo
+
+Serum IL-5 not in Ilab :number
+Serum CCL18/TARC not in Ilab :number
+
+F/P mutation (not in Ilab:radio_buttons [P=Positive,N=Negative,D=Not done]
+C-kit not in Ilab :radio_buttons [P=Positive,N=Negative,D=Not done]
+JAK-2 :radio_buttons [P=Positive,N=Negative,D=Not done]
+
+Cytogenetics not in Ilab :radio_buttons [Y=Yes,N=No,D=Not done]
+Cytogenetics report :memo
+
+Atopic not in Ilab :yes_no
+
+Specific IgE results :fieldset
+ Copy DAC Ig/ANCA/auto-Ab
+ Rheumatoid factor :yes_no
+ Total IgE :number
+
+Parasitic serology :fieldset
+ IgG strongyloides :number
+ IgG filiriasis :number
+ IgG Fasciola :number
+ IgG Hydatid :number
+ IgG other parasite :number
+
+Lymphocyte phenotype [1=Normal,2=Abnormal,3=Not done]
+Abnormal details :text
+
+C3 $c3
+C4 $c4
+
+Tryptase :number
+Cold agglutinins :number
+Anti-cardiolipin :number
+Cortisol :number
+Creatinine kinase :number
+EGFR :number
+Albumin :number
+ALT :number
+CRP :number
+Thyroid function :number
+Troponin :number
+
+End of ILab
+
+Dates for all
+CXR [1=Normal,2=Abnormal,3=Not done] :radio_buttons
+CXR abnormal details :memo
+
+
+CT chest [1=Normal,2=Abnormal,3=Not done] :radio_buttons
+CT chest details :memo
+CT abdomen and pelvis [1=Normal,2=Abnormal,3=Not done] :radio_buttons
+CT a/p details :memo
+CT head [1=Normal,2=Abnormal,3=Not done] :radio_buttons
+CT head details :memo
+
+Brain MRI [1=Normal,2=Abnormal,3=Not done] :radio_buttons
+Brain MRI abnormal details :memo
+
+Cardiac MRI [1=Normal,2=Abnormal,3=Not done] :radio_buttons
+Cardiac MRI abnormal details :memo
+
+Echocardiogram [1=Normal,2=Abnormal,3=Not done] :radio_buttons
+Echocardiogram abnormal details :memo
+
+Abdominal ultrasound [1=Normal,2=Abnormal,3=Not done] :radio_buttons
+Abdominal abnormal details :memo
+
+DAC lung function page
+
+ECG [1=Normal,2=Abnormal,3=Not done] :radio_buttons
+EMG [1=Normal,2=Abnormal,3=Not done] :radio_buttons
+
+"In Ilab 2:"
+Gut biopsy [1=Normal,2=Abnormal,3=Not done] :radio_buttons
+Skin biopsy [1=Normal,2=Abnormal,3=Not done] :radio_buttons
+Neural biopsy [1=Normal,2=Abnormal,3=Not done] :radio_buttons
+Cardiac biopsy [1=Normal,2=Abnormal,3=Not done] :radio_buttons
+
+Eosinophil counts display table from ILab data

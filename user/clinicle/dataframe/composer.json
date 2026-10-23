@@ -1,0 +1,9 @@
+{
+    "name": "clinicle/dataframe",
+    "description": "ClinicLE dataframe",
+	"autoload": {
+        "psr-4":{
+			"ClinicLE\\DataFrame\\":"src/"
+		}
+    }
+}

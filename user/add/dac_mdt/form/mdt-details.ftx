@@ -1,0 +1,15 @@
+Date of MDT :date $date_of_mdt {default=today()}
+
+:tab_container
+
+	General :tab
+		Active problems :memo $active_problems {size=80,height=6}
+		Outcome/plan :memo $outcome_plan {size=80,height=6}
+		Follow up :memo $follow_up {size=80,height=6}
+		Present :checkboxes {columns=3,dictionary=dac_mdt_members,condition_test=O,condition_action=show,condition_target=other_present}
+		Other :text $other_present {size=8}
+
+	Treatments :tab
+		Thermoplasty agreed $thermoplasty_agreed :yes_no
+		Xolair agreed $xolair_agreed :yes_no
+		Mepolizumab $mepo_agreed :yes_no

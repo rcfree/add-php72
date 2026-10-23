@@ -1,0 +1,15 @@
+RELEASE HISTORY
+1.0.3 05/02/2015
++ Add 'Does not meet study criteria' to study status + action
+
+1.0.2 18/09/2014
++ Added 'auto_add_action' setting which automatically adds the action if the status is changed
++ Added support for array of 'update_status' settings which does the reverse of the above (e.g. updates the status based on the action added)
+
+1.0.1 15/07/2014
++ Other actions added including followup no reply and complete study
+* Changed 'Send PIS' action so that when complete it updates status to 'Awaiting enrolment'
+
+1.0.0 03/07/2014
++ Initial release of study actions with limited actions including Contact patient, enrol in study, consent page and send PIS
++ 'Patient not interested in study' action added with 'Reason' field

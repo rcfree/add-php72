@@ -1,0 +1,4 @@
+Investigation date* $invest_date :date
+Type* $invest_type :dropdown {dictionary=investtypes,show_list=1}
+Result* [1=Normal,2=Abnormal,3=Not done] $invest_result :radio_buttons {inline=1,condition_test=2,condition_action=show,condition_target=invest_abnorm_details}
+"Details (if abnormal)" $invest_abnorm_details :memo

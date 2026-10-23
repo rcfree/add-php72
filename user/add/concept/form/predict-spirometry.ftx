@@ -1,0 +1,10 @@
+Date of spirometry tests $spirometry_date :date {required=Y,size=10}
+
+Predicted Values $predicted_values :fieldset {compress=1,width=98%}
+
+	$hc_pred :horiz_container
+		FEV<sub>1</sub> $pred_fev1 :expression {ajax-func=LungFunction,display_text=Predicted FEV<sub>1</sub>,size=4,suffix=l}
+		FVC $pred_fvc :expression {display_text=Predicted FVC,size=4,suffix=l}
+		FEV<sub>1</sub>/FVC $pred_fev1_fvc :expression {display_text=Predicted FEV<sub>1</sub>/FVC,size=4,suffix=l}
+		PEF $pred_pef :expression {display_text=Predicted PEF,size=5,suffix=l min <sup>-1</sup>}
+		Use correction factor (90%)? $cfactor_90pc :checkbox

@@ -1,0 +1,111 @@
+RELEASE HISTORY
+---------------
+
+3.4.x
++ Replace barcode printer support with PDF label generation
+
+3.2.0 18/08/2017
++ Continued communication option with choice of contact method
+
+3.1.0 01/11/2016
++ Research resource added with support for new data view record type 'res'
+
+3.0.0 09/02/2016
++ Support for domain/section records
++ Added 'DeleteRecord' option in logs
+
+2.3.3 26/10/2015
+! Deceased status fails to create status record correctly
+
+2.3.2 19/10/2015
++ ConsentCheckSection which prevents section being shown if no consent
+
+2.3.1 14/10/2015
+! Had removed PatientPhone component which includes phone number
+
+2.3.0 23/09/2015
+* Integrated all consent information into single page
+
+2.2.0 08/09/2015
++ Display notification saying if consented to research DB or not
+
+2.1.7 13/08/2015
+* Menus now Angular refreshable
+* Fixed CheckUnique component to work with new AjaxFunction execution
+
+2.1.6 16/02/2015
+! PHPUnit test fix because of slight change to display
+
+2.1.5 17/12/2014
++ Demographics phone number copy tool and populate component
++ Filter patients on deceased not 1
+
+2.1.4
++ Fixed menu label problems in module
++ Comments field added to contact details page
+* Update status auto updates to 'Available' or 'Not available' when consent added
+
+2.1.3
++ Support for deceased status along with auto update of patient deceased
++ Hides fields (but does not clear) on contact details if specific details
+* Added support for ADD v2.1 branch
+! Resolved issue with test classes
+* Changed menu icon to printer
+
+2.1.2 
+! Fixed condition field in record of consent request (Y with "Y")
+* Removed required 'date sent' field from record of consent request
+
+2.1.1 11/06/2014
+* Removed Form sent/Not sent badge if consent records are present
+* Removed 'Currently in study' recruitment status from list
+* If patient is in 'research' domain now displays the current status
+
+2.1.0 05/06/2014
+* implemented PrintBarcodes as an option in the new option menu by implementing ADD_Component_OptionMenuInterface - now require 2.1.0
+* reorganised the database consent options so they are repeatable
+* extracted out the contact/ID details
++ new 'form sent' page to record if patient has been sent form
++ added warnings to prevent contact with people who do not want to be contacted are not interested in research
+! fixed migrate script which needed to include a mapping from init_status to current_status field
+! resolved issue with ID entry -> was looking at IDs in the old consent form
+* worked through status issues -> still need to add consents even if rejected
++ Implemented Constants file for field names to reduce potential problems
+* accepts manual section adding in tests which had been set to automatic previously
+* logic changes so that warnings are more informative (e.g. unsuitable/unavailable are separated)
++ Removed locking/verification from details page using the new 'no-locking' and 'no-verification' page settings
+* tweaked notifications so they are more informative
+! fixed to show 'No interest' badge in red and allow adding consent when 'Not available'
+
+2.0.0 14/05/2014
+* added tests and refined module
+* refactored script so it is now a Manage module and can be accessed through add-manage -civi_transfer -p<patient_id>
++ added additional unit tests with mocking
++ built new CheckUnique component which checks for unique ILH number and whether it is in the allowed list
++ improved the basic form so if only pack history this can be entered
+! 'recruit' menu item not showing as selected when on the page 
+* refactored to remove page dependence from Component function
+! separation of consent record persistance logic into separate class
+* replaced PHP 5.4 specific test code (closures)
++ latest consent version to dictionary
+* changes to AJAX components to improve maintainability
+! resolved problem with module tests -> was calling real System functions
+! resolved issue with background execution/web page update by creating IntegrationTest which integrates with CiviCRM/ADD
+* removed RecruitPatient configs from page.ini and added as RecruitPatient section in add.ini
+! fixed incompatibility with EncounterRecord which now needs to force retrieval
+! forgot to add PrintBarcodes component and page
+! reorganised PrintBarcodes so it uses a credentials file
+
+1.0.0 28/01/2014
++research recruitment forms
++civiCRM integration which creates recruit contacts and supporting data
++progress indication on recruitment specific web form
++improved integration creates linked GP and sets consent activities' status to 'Completed'
++determines recruit status and deals with non-contactable recruits accordingly
++V2 respiratory database consent
++ILH ID generator Tool class (creates an 'ilh_existing_id' table in ADD, then generates random ILH number)
+*changes to ensure compatibility with core 1.0.16
++ILH ID check to confirm ID not used and was printed by ADD
+!Fixed problem with PrintBarcodes component which caused it to exponentially grow barcodes
+*refactored bits of Tool_IdGenerator to allow check for existing ID
+

@@ -1,0 +1,6 @@
+Value $value :hidden
+Study name $title :text
+Description $description :memo
+Study inactive $is_disabled :checkbox
+Observational study $allow_recruitment :checkbox
+Study end date $study_end_date :date

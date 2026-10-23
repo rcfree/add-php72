@@ -1,0 +1,18 @@
+Date recorded $date_recorded :date {modal_action=edit,modal_name=smoking_entry_modal,default=today(),size=10}
+
+Smoking status* $smoking_status :radio_buttons [1=Non-smoker,2=Current smoker,3=Ex-smoker,4=Passive smoker]  {condition_test[0]="2";"3",condition_target[0]=pack_year_calc,condition_action[0]=show,inline=1}
+
+Do you want to calculate pack years?* $pack_year_calc :radio_buttons [Y=Yes,N=No,D=Details not known]  {inline=1,condition_target[0]=smoking_hc,condition_target[1]=pack_years,condition_target[2]=range_hc,condition_target[3]=info_alert,condition_action[0]=show,condition_action[1]=enable,condition_action[2]=show,condition_action[3]=show,condition_test[0]=Y,condition_test[1]=N,condition_test[2]=Y;N,condition_test[3]=N,col_title=Calculated?}
+
+$smoking_hc :horiz_container
+	Type of item smoked* $smoking_item_type :dropdown {dictionary=tobacco_item,col_title=Type of item}
+	Number per day* $no_smoked_per_day :number {col_title=No. per day,size=3}
+
+<div class='alert alert-info'>If possible please enter 'From' and 'To' to help other people.</div> $info_alert :markup
+
+$range_hc :horiz_container
+	From $from_year :year {size=3}
+	To $to_year :year
+	→ $arrow :item
+	No. years $no_years :expression {expression=get('to_year')-get('from_year'),size=3}
+	Pack years* $pack_years :expression {expression=((get('smoking_item_type')*get('no_smoked_per_day'))/20*(get('no_years'))).toFixed(2),fix=2,required=1,size=3}

@@ -1,0 +1,33 @@
+{
+    "name": "add/research_api",
+    "description": "Research API module",
+	"type": "clinicle-module",
+	"require":{
+		"clinicle/core":"~2.3",
+		"clinicle/install":"~1.0",
+		"clinicle/query":"~1.2",
+		"add/research":"~3.0",
+		"add/research_studies":"~4.0"
+	},
+	"require-dev":{
+		"phpunit/phpunit":"~4.1"
+	},
+	"autoload": {
+        "classmap": ["lib"],
+		"psr-4": {
+        "Clinicle\\Query\\": "lib\\Clinicle\\Query"
+      }
+    },
+	"minimum-stability":"dev",
+	"prefer-stable":true,
+	"repositories": [
+        {
+            "type": "composer",
+            "url": "http://projects.ilh.le.ac.uk/satis"
+        }
+    ],
+	"config":{
+		"preferred-install":"source",
+		"cache-files-ttl":0
+	}
+}

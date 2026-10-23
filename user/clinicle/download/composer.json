@@ -1,0 +1,11 @@
+{
+    "name": "clinicle/download",
+    "description": "ClinicLE file download handling",
+	"type": "library",
+	"require":{
+		"clinicle/core":"~2.11"
+	},
+	"autoload": {
+        "classmap": ["lib"]
+    }
+}

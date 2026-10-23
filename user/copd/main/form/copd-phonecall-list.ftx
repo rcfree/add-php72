@@ -1,0 +1,2 @@
+Add phone call $phone_call :grid_add_button {use_page=copd:phonecall,refresh=phone_calls}
+Phone call $phone_calls :encounter_grid {use_page=copd:phonecall,use_parent=1,fields=call_date;call_type;call_nurse;unable_to_contact;call_length;call_outcome;reason_for_pr_ref_decline}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<overview>
+	
+	<logic name="hads-anxiety">
+		<input section="ahads" obs="a_score" op="any" />
+		<output obs="hads_anxiety_score" action="update"/>
+	</logic>
+	
+	<logic name="hads-depression">
+		<input section="ahads" obs="d_score" op="any" />
+		<output obs="hads_depression_score" action="update"/>
+	</logic>
+	
+</overview>

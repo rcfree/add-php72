@@ -1,0 +1,29 @@
+Referral outcome $referral_outcome :dropdown {dictionary=pr_ref_outcome,condition_test=1,condition_action=show,condition_target=pr_assessment}
+
+:container $pr_assessment
+	Date of PR assessment*  $date_pr_assessment :date
+	Outcome of assessment* $assessment_outcome :dropdown {dictionary=pr_outcome_assessment,condition_test[0]=1,condition_action[0]=show,condition_target[0]=suitable_for_pr}
+	Suitable for PR programme?* $suitable_for_pr :yes_no [Y=Yes,N=No]  {condition_test[0]="N",condition_test[1]="Y",condition_action[0]=show,condition_action[1]=show,condition_target[0]=why_not_suitable,condition_target[1]=pr_details}
+	
+	Why not suitable?* $why_not_suitable :dropdown {dictionary=pr_reason_not_suitable,indent=1}
+	  
+	$pr_details :container
+	 :horiz_container
+	  PR programme start date* $pr_prog_start_date :date
+	  Cohort number* $cohort_no :dropdown {dictionary=pr_cohort}
+	 
+	 Started PR programme?* $started_pr :yes_no [Y=Yes,N=No]  {condition_test[0]="Y",condition_action[0]=show,condition_target[0]=comp_pr_cn;no_sessions_attended,inline=1}
+	 
+	 :container {indent=1} $comp_pr_cn
+	  :horiz_container
+	   Completed PR programme* $completed_pr :yes_no [Y=Yes,N=No]  {condition_test[0]="Y",condition_test[1]="N",condition_action[0]=show,condition_action[1]=show,condition_target[0]=date_pr_completed,condition_target[1]=reason_pr_not_completed}
+	   Date programme completed* $date_pr_completed :date {size=10}
+	   Reason PR not completed? $reason_pr_not_completed :dropdown {dictionary=pr_reason_not_completed}
+	 
+	  Number of sessions attended?* $no_sessions_attended :number {size=6}
+	 
+	 Referred to other agencies?* $referred_to_other_agencies :yes_no {condition_test=Y,condition_action=show,condition_target=other_agencies}
+	 Other agencies* $other_agencies :checkboxes {dictionary=pr_referred_to_other,columns=2,indent=1}
+	 
+	Comments $comments :memo {size=80,height=5}
+ 

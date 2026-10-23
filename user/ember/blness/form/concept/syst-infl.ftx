@@ -1,0 +1,3 @@
+Blood count set $blood_count_results :encounter_matrix {data_url=/api/daterangematrix,use_page=path:haemresult,yfield=test_code,xfield=coll_date_time,value_field=result,no_parent=1,filter_field[0]=test_code,filter_value[0]=WBC;LYMAB;NEUAB;EOSAB;PLT;PLTA;HB;FIB;DDM,include_fields=visit_date,filter_op[0]=eq,cell_actions=LinkCell,linkfield=blood,datacol_width=8em,sort_field=coll_date_time,sort_order=DESC,sort_date=1}
+:pathology_status {status_prefix=Blood count ILAB result transfer}
+Linked blood count set :link_multiple_records $blood @blood_count {linked_grid=blood_count_results,link_source_title=blood counts,link_target_title=admission,map_results_to_fields=1,}

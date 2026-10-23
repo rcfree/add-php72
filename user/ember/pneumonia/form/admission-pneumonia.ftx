@@ -1,0 +1,17 @@
+$stage_date @acute_admission_date :hidden {default=get('ademog:enrolled_date'),use_default=1}
+
+:tab_container $ac_tabs
+	Exacerbation status :tab $cd_tab
+		$clin_status_concept :concept_group {concept_type=blness:exac-status}
+		
+		Total number of hospitalisations (last 12m) * $total_hosps_12m :number {min=0}
+		Asthma/COPD/pneumonia related hospitalisations* $acp_related_hosps @asth_copd_related_12m :number {min=0,max=get('total_hosps_12m')}
+		Number of exacerbations* $no_exacerbs_12m :number {min=0}
+		Number of courses antibiotics $no_crs_antibiotics :number {min=0}
+		Number of courses steroids $no_crs_steroids :number {min=0}
+
+	Lung inflammation :tab
+		$lung_infl_concept :concept_group {concept_type=blness:lung-infl}
+		
+	Acute disease severity :tab
+		CURB65 score $curb65_score @curb65_score_curb65score :radio_buttons {dictionary=curb65_score,inline=1,viewonly=1}

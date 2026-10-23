@@ -1,0 +1,25 @@
+{
+    "name": "ember/pneumonia",
+    "description": "Pneumonia module (part of EMBER)",
+	"type": "clinicle-module",
+	"require":{
+		"ember/blness":"~1.0",
+		"add/concept":"^1.6"
+	},
+	"require-dev":{
+		"phpunit/phpunit":"~4.0",
+		"clinicle/core":"~2.7"
+	},
+    "minimum-stability":"dev",
+	"prefer-stable":true,
+	"repositories": [
+        {
+            "type": "composer",
+            "url": "http://projects.ilh.le.ac.uk/satis"
+        }
+    ],
+    "config":{
+    	"preferred-install":"source",
+    	"cache-files-ttl":0
+    }
+}

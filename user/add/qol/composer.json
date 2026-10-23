@@ -1,0 +1,16 @@
+{
+    "name": "add/qol",
+    "description": "Quality of life module (part of ADD)",
+	"type": "clinicle-module",
+	"require":{
+		"clinicle/core":"~2.12",
+		"clinicle/install":"~1.0",
+		"clinicle/options":"^1.5"
+	},
+	"autoload": {
+        "classmap": ["php"],
+		"psr-4":{
+			"ADD\\Qol\\Test\\":"test"
+		}
+    }
+}

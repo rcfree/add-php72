@@ -1,0 +1,6 @@
+Outcome date :hidden @discharge_date {default=get('doutcome:outcome_date'),use_default=1}
+Dicharge due to heart failure $discharge_hfail :yes_no
+Lipid fasting $lipid_fasting :yes_no
+
+Blood result $blood_results :encounter_matrix {data_url=/api/daterangematrix,use_page=path:haemresult,yfield=test_code,xfield=coll_date_time,value_field=result,no_parent=1,filter_field[0]=test_code,filter_value[0]=HB;HCT;WBC;PLT;UREA;CREA;GFR;NA;K;GLU;CHOL;TRIG;CRP;CK;TROI;BNPP;UA,filter_op[0]=eq,include_fields=outcome_date,after_column_actions=LinkColumn,linkfield=link_blood_sample,datacol_width=8em,sort_field=coll_date_time,sort_order=DESC,sort_date=1}
+Blood result sample* :link_record $link_blood_sample {linked_grid=blood_results,unlinked_text=Use a 'Link' button to link a blood sample with this record}

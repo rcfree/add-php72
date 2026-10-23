@@ -1,0 +1,4 @@
+Date tested* :date $date_tested {min=date_of_birth(),max=today()}
+Lab code :number {prefix=FC,multi_field=lab_code}
+Organism :dropdown {dictionary=inv_fungi}
+Count CFU :number {suffix=CFU}

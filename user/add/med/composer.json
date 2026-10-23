@@ -1,0 +1,32 @@
+{
+    "name": "add/med",
+    "description": "Medication module (part of ADD)",
+	"type": "clinicle-module",
+	"require":{
+		"clinicle/core":"~2.11",
+		"clinicle/manage":"~1.5",
+		"clinicle/install":"~1.2",
+		"clinicle/client":"~1.9",
+		"clinicle/report": "~1.0"
+	},
+	"repositories": [
+        {
+            "type": "composer",
+            "url": "http://projects.ilh.le.ac.uk/satis"
+		}
+    ],
+	"autoload": {
+        "classmap": ["php"],
+		"psr-4":{
+			"ADD\\Med\\":"src",
+			"ADD\\Test\\Med\\":"test"
+		}
+    },
+	"minimum-stability":"dev",
+	"prefer-stable":true,
+    "config":{
+    	"preferred-install":"source",
+    	"cache-files-ttl":0,
+	"secure-http":false
+    }
+}

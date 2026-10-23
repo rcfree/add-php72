@@ -1,0 +1,23 @@
+Return to QoL summary..	$qol_return	:summary_page_link {parent_key=buttons}
+Date*	$bckq_date	:date {min=date_of_birth(),max=today(),default=today(),summary_obs=vcdq_date}
+Record scores only	$scores_only :checkbox {condition_test[0]=1,condition_action[0]=hide,condition_target[0]=questions,condition_test[1]=1,condition_action[1]=enable,condition_target[1]=score}
+
+Therapy :radio_buttons [1=Pre,2=Post] {inline=1}
+
+$questions :radio_group	{dictionary=vcdq_options,col_width=8em}
+	$values :value_radio_item
+	My symptoms are confined to my throat/upper chest.* $symp_confined_throat_chest :radio_item
+	"I feel like I can't get breath past a certain point in my throat/upper chest because of restriction in my throat."* $throat_restrict_no_breath :radio_item
+	My breathlessness is usually worse when breathing in.* $bless_worse_breathe_in :radio_item
+	My attacks typically come on very suddenly.* $attacks_sudden :radio_item
+	I feel that there is something in my throat that I can't clear* $non_clearable_throat :radio_item
+	My attacks are associated with changes in my voice* $attacks_change_voice :radio_item
+	My breathing can be noisy during attacks $attacks_noisy_breathing :radio_item
+	I'm aware of other specific triggers that cause attacks $attacks_other_triggers :radio_item
+	My symptoms are associated with a tickle/ache/pain/itch in my throat $symp_assoc_uncomfort_throat :radio_item
+	I am frustrated that my symptoms have not been understood correctly $frust_symptoms_not_understood :radio_item
+	I am unable to tolerate any light pressure around the neck, e.g. tight clothes or bending the neck $untoler_neck_pressure :radio_item
+	The attacks impact on my social life $attacks_impact_soc_life :radio_item
+
+Score*	$score	:number	{min=12,max=60,suffix=/60,summary_obs=vcdq_score,fixed=0,expression=sum('symp_confined_throat_chest;throat_restrict_no_breath;bless_worse_breathe_in;attacks_sudden;non_clearable_throat;attacks_change_voice;attacks_noisy_breathing;attacks_other_triggers;symp_assoc_uncomfort_throat;frust_symptoms_not_understood;untoler_neck_pressure;attacks_impact_soc_life')}
+Status	$status	:internal {summary_obs=vcdq_status,summary_type=status}

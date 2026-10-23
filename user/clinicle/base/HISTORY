@@ -1,0 +1,26 @@
+RELEASE HISTORY
+---------------
+
+1.6.x
+* Updated clinicle/client and associated modules
+
+1.5.0 01/11/2016
+* Updated version of clinicle/options and clinicle/core
+
+1.4.1 25/04/2016
+! Included clinicle/monitor library as default
+
+1.4.0 21/04/2016
+* EMBER-based updates including new client features and optional remote monitoring 
+
+1.3.0 24/02/2016
+* Updated with v2.8.x core, v1.2.x system and v1.1 web requirements
+
+1.2.0 05/01/2015
+* Updated with v1.2.x branch of clinicle/options
+
+1.1.0 02/12/2015
+* Base with v2.7.x core requirement
+
+1.0.0 12/02/2015
+* Initial version

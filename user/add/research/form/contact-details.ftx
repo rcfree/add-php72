@@ -1,0 +1,37 @@
+Recruitment status* $current_status :angular_dropdown {dictionary=rrdb_status,readonly=1,pim=research:details}
+:horiz_container
+	Change status $change_status :grid_add_button {icon=icon-edit,use_page=research:status,refresh=current_status;research-domain-menu;status_log}
+	Add patient review $record_review :grid_add_button {use_page=research:review,refresh=current_status;status_log}
+	Add comment $comment :grid_add_button {use_page=research:comment,refresh=current_status;status_log}
+	Add communication $add_comm :grid_add_button {use_page=research:commrecord,refresh=current_status;status_log}
+	Send email $send_email :grid_add_button {use_page=research:sendemail,refresh=current_status;status_log}
+
+:tab_container
+
+	Database consent $consent_tab :tab
+		:horiz_container
+			Research identifier* :text $ilh_identifier {size=11,ajax-func=CheckUnique}
+			"<br/><span class='label label-important'>Use the barcode scanner to scan the barcode into the box on the left</span>" $scan_info
+		
+		Add database consent $add_consent :grid_add_button {use_page=research:consent,refresh=consents;research-domain-menu;current_status;status_log,ignore_parent=1}
+		database consent $consents :encounter_grid {use_page=research:consent,fields=consent_form_date;consent_version;add_to_recruit_db;add_to_research_db,after_row_actions=EditRecord,refresh=consents;research-domain-menu;current_status;status_log}
+		
+		
+	Contact details $rid_tab :tab	
+		Availability :fieldset $avail_fset {compress=1}
+			Best time to contact $best_time :memo
+			Preferred method of contact :dropdown {dictionary=rrdb_contact_methods}
+			Preferred name :text
+
+		Methods :fieldset $contact_fset {compress=1}
+			Email address $email_address :text {size=80}
+			Phone number $phone_number :text {size=50}
+		
+		Additional comments $recruit_comments :memo {size=80,height=3}
+
+		
+	Recruitment record :tab $rec_tab
+		recruitment record $status_log :encounter_grid {use_page=research:status,use_parent=1,fields=date_changed;user_changed;log_type;recruit_status;contact_method;reason_unavail;change_comments,after_row_actions=DeleteRecord}
+	
+		
+	

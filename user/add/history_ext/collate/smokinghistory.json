@@ -1,0 +1,78 @@
+{
+	"history:smoking":{
+		"map":[
+		"date_recorded",
+		"smoking_status",
+		"years_since_last_smoked",
+		"pack_year_calc",
+		"smoking_item_type",
+		"no_smoked_per_day",
+		"from_year",
+		"to_year",
+		"no_years",
+		"pack_years"
+		],
+		"constants":{
+			"domain":"Medical history"
+		}
+	},
+	"dac:medhistory":{
+		"map":[
+		"smoking_status",
+		"years_since_last_smoked",
+		"smoking_item_type",
+		"no_smoked_per_day",
+		"no_years",
+		"pack_years"
+		],
+		"constants":{
+			"domain":"Difficult Asthma Clinic (baseline)"
+		},
+		"lookups":{
+			"date_recorded":"details.date_first_seen"
+		}
+	},
+	"dac:fclinstatus":{
+		"map":[
+		"smoking_status",
+		"smoking_item_type",
+		"no_smoked_per_day",
+		"no_years",
+		"pack_years"
+		],
+		"constants":{
+			"domain":"Difficult Asthma Clinic (followup)"
+		},
+		"lookups":{
+			"date_recorded":"fclinstatus.visit_date"
+		}
+	},
+	"advcopd:generic":{
+		"map":{
+			"date_recorded":"assessment_date",
+			"smoking_status":"smoking_history",
+			"smoking_item_type":"smoking_item_type",
+			"no_smoked_per_day":"current_no_per_day",
+			"no_years":"years_smoked",
+			"pack_years":"pack_years"
+		},
+		"constants":{
+			"domain":"Advanced COPD (Annual assessment)"
+		}
+	},
+	"pr:subject":{
+		"map":[
+		"date_recorded",
+		"smoking_status",
+		"smoking_item_type",
+		"no_smoked_per_day",
+		"from_year",
+		"to_year",
+		"no_years",
+		"pack_years"
+		],
+		"constants":{
+			"domain":"Pulmonary rehab (Treatment programme)"
+		}
+	}
+}

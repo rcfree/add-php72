@@ -1,0 +1,37 @@
+copd-patients:
+  type: organise-patients
+  source: DelimitedInput
+  target: DelimitedOutput
+  inputFile: /local/add/modules/copd/main/import/legacy.csv
+  idField: patient_identifier
+  firstNameField: patient_first_name
+  lastNameField: patient_last_name
+  dobField: patient_dob
+  outputDir: /local/add/modules/copd/main/import/20180503
+  failScore: 3
+  totalFailScore: 10
+
+copd-data:
+  type: organise-encounters
+  inputFile: /local/add/modules/copd/main/import/20180503/patientlookup_obs.txt
+  outputDir: /local/add/modules/copd/main/import/20180503
+  outputPrefix: encs
+  patientIdField: patient_identifier
+  domainType: copd
+  sectionType: copd-visit
+  encType: copd-visit-admission
+
+import-copd:
+  type: import-data
+  patientFile: /local/add/modules/copd/main/import/20180503/patientlookup_pats.txt
+  encFile: /local/add/modules/copd/main/import/20180503/encs_1.csv
+  matchEncTarget:
+  fieldMappings:
+    any_vascular: Any vascular
+  matchOn:
+    Date seen: copd-visit-admission.date_seen
+
+fieldMappings:
+    date_seen: Date seen
+    employment_status: Employment status
+    web_literate: Web litera

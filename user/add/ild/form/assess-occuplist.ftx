@@ -1,0 +1,11 @@
+Date added :date {default=today()}
+Start date* :separate_date
+End date* :separate_date {min=get('start_date_year')}
+Description* :text
+
+
+-Add occupation	$add_occupation	:add_entry_link	{modal_name=occupation_modal,parent_key=buttons}
+
+-:encounter_modal $occupation_modal
+	
+-Occupations :encounter_table $occupation_table {cols=date_added;start_date;end_date;description}

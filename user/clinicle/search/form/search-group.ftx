@@ -1,0 +1,2 @@
+Choose a category $search_category :dropdown {dynamic=1, ajax-func=LookupCategoryGroups,dictionary_option=SearchCategories,size=30}
+Choose a group $search_group :dropdown {empty=1,size=50}

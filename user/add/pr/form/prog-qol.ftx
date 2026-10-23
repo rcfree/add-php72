@@ -1,0 +1,217 @@
+Hospital anxiety and depression scale (HADS) $hads_fset :fieldset
+
+ $hc1 :table
+
+  $th1 :table_head
+   :markup
+   :markup
+   Visit Date $m1 :markup
+   Status $m2 :markup
+   A score $m3 :markup
+   D score $m4 :markup
+   Total $m5 :markup
+   A mean $m6 :markup
+   D mean $m7 :markup
+
+  :table_row
+   <b>Pre-PR</b> $pre_pr :markup
+   Edit questionnaire.. $edit_hads_pre :page_link {section=prehads,complete_title=Read questionnaire..,new_title=Perform questionnaire..,incomplete_edit_title=Continue questionnaire..,incomplete_view_title=View incomplete questionnaire..}
+   $hads_date_pre :display_text
+   $hads_status_pre :display_text {default="New"}
+   $hads_anxiety_score_pre :display_text {size=3}
+   $hads_depression_score_pre :display_text {size=3}
+   $hads_total_pre :display_text
+   $hads_anxiety_mean_pre :display_text
+   $hads_depression_mean_pre :display_text
+
+  $hc2_post :table_row
+   <b>Post-PR</b> $m11 :markup
+   Edit questionnaire.. $edit_hads_post :page_link {section=posthads,complete_title=Read questionnaire..,new_title=Perform questionnaire..,incomplete_edit_title=Continue questionnaire..,incomplete_view_title=View incomplete questionnaire..}
+   $hads_date_post :display_text
+   $hads_status_post :display_text {default="New"}
+   $hads_anxiety_score_post :display_text {size=3}
+   $hads_depression_score_post :display_text {size=3}
+   $hads_total_post :display_text
+   $hads_anxiety_mean_post :display_text
+   $hads_depression_mean_post :display_text
+
+Chronic Respiratory Questionnaire (CRQ-SR) $crq_fset :fieldset
+
+ :table
+
+  :table_head
+   :markup
+   :markup
+   Visit Date $vd :markup
+   Status $st :markup
+   Dyspnoea $dyspnoea :markup
+   Fatigue $fatigue :markup
+   Emotional $emotional :markup
+   Mastery $mastery :markup
+   Total $tot :markup
+
+  $hc2 :table_row {segments=9}
+   <b>Pre-PR</b> $pre_crq :markup
+   Edit questionnaire.. $edit_crq :page_link {section=precrq,complete_title=Read questionnaire..,new_title=Perform questionnaire..,incomplete_edit_title=Continue questionnaire..,incomplete_view_title=View incomplete questionnaire..}
+   $crq_date_pre :display_text
+   $crq_status_pre :display_text {default="New"}
+
+   :container
+    $crq_d_score_pre :display_text {size=3}
+    $crq_d_mean_pre :display_text {size=3}
+
+   :container
+    $crq_f_score_pre :display_text {size=3}
+    $crq_f_mean_pre :display_text {size=3}
+
+   :container
+    $crq_e_score_pre :display_text {size=3}
+    $crq_e_mean_pre :display_text {size=3}
+
+   :container
+    $crq_m_score_pre :display_text {size=3}
+    $crq_m_mean_pre :display_text {size=3}
+   $crq_total_pre :display_text {size=3}
+
+  $tr_post_crq :table_row {segments=9}
+   <b>Post-PR</b> $post_crq :markup
+   Edit questionnaire.. $edit_crq_post :page_link {section=postcrq,complete_title=Read questionnaire..,new_title=Perform questionnaire..,incomplete_edit_title=Continue questionnaire..,incomplete_view_title=View incomplete questionnaire..}
+   $crq_date_post :display_text
+   $crq_status_post :display_text {default="New"}
+
+   :container
+    $crq_d_score_post :display_text {size=3}
+    $crq_d_mean_post :display_text {size=3}
+
+   :container
+    $crq_f_score_post :display_text {size=3}
+    $crq_f_mean_post :display_text {size=3}
+
+   :container
+    $crq_e_score_post :display_text {size=3}
+    $crq_e_mean_post :display_text {size=3}
+
+   :container
+    $crq_m_score_post :display_text {size=3}
+    $crq_m_mean_post :display_text {size=3}
+   $crq_total_post :display_text {size=3}
+   
+PRAISE $praise_fset :fieldset
+
+	:table
+
+		:table_head
+			:markup
+			:markup
+			Visit Date $praise_date :markup
+			Status $praise_status :markup
+			Score $praise_score :markup
+
+		:table_row {segments=4}
+			<b>Pre-PR</b> $pre_praise :markup
+			Edit questionnaire.. $edit_praise_pre :page_link {section=prepraise,complete_title=Read questionnaire..,new_title=Perform questionnaire..,incomplete_edit_title=Continue questionnaire..,incomplete_view_title=View incomplete questionnaire..}
+			$praise_date_pre :display_text
+			$praise_status_pre :display_text {default="New"}
+			$praise_score_pre :display_text {size=3}
+
+		:table_row
+			<b>Post-PR</b> $post_praise :markup
+			Edit questionnaire.. $edit_praise_post :page_link {section=postpraise,complete_title=Read questionnaire..,new_title=Perform questionnaire..,incomplete_edit_title=Continue questionnaire..,incomplete_view_title=View incomplete questionnaire..}
+			$praise_date_post :display_text
+			$praise_status_post :display_text {default="New"}
+			$praise_score_post :display_text {size=3}
+
+COPD assessment test (CAT) $cat_fset :fieldset
+	:table
+		:table_head
+			:markup
+			:markup
+			Visit Date $cat_date :markup
+			Status $cat_status :markup
+			Score $cat_score :markup
+		:table_row
+			<b>Pre-PR</b> $pre_cat :markup
+			Edit questionnaire.. $edit_cat_pre :page_link {section=precat,complete_title=Read questionnaire..,new_title=Perform questionnaire..,incomplete_edit_title=Continue questionnaire..,incomplete_view_title=View incomplete questionnaire..}
+			$cat_date_pre :display_text
+			$cat_status_pre :display_text {default="New"}
+			$cat_score_pre :display_text {size=3}
+		:table_row
+			<b>Post-PR</b> $post_cat :markup
+			Edit questionnaire.. $edit_cat_post :page_link {section=postcat,complete_title=Read questionnaire..,new_title=Perform questionnaire..,incomplete_edit_title=Continue questionnaire..,incomplete_view_title=View incomplete questionnaire..}
+			$cat_date_post :display_text
+			$cat_status_post :display_text {default="New"}
+			$cat_score_post :display_text {size=3}
+
+Bristol COPD Knowledge Questionnaire (BCKQ) $bckq_fset :fieldset
+	:table
+		:table_head
+			:markup
+			:markup
+			Visit Date $bckq_date :markup
+			Status $bckq_status :markup
+			Score $bckq_score :markup
+		:table_row
+			<b>Pre-PR</b> $pre_bckq :markup
+			Edit questionnaire.. $edit_bckq_pre :page_link {section=prebckq,complete_title=Read questionnaire..,new_title=Perform questionnaire..,incomplete_edit_title=Continue questionnaire..,incomplete_view_title=View incomplete questionnaire..}
+			$bckq_date_pre :display_text
+			$bckq_status_pre :display_text {default="New"}
+			$bckq_score_pre :display_text {size=3}
+		:table_row
+			<b>Post-PR</b> $post_bckq :markup
+			Edit questionnaire.. $edit_bckq_post :page_link {section=postbckq,complete_title=Read questionnaire..,new_title=Perform questionnaire..,incomplete_edit_title=Continue questionnaire..,incomplete_view_title=View incomplete questionnaire..}
+			$bckq_date_post :display_text
+			$bckq_status_post :display_text {default="New"}
+			$bckq_score_post :display_text {size=3}
+			
+K-BILD $kbild_fset :fieldset
+	:table
+		:table_head
+			:markup
+			:markup
+			Visit Date $kbild_date :markup
+			Status $kbild_status :markup
+			Psych. $kbild_psych_score :markup
+			Blness/activity $kbild_blness_score :markup
+			Physical $kbild_phys_score :markup
+			Total $kbild_total_score :markup
+		:table_row
+			<b>Pre-PR</b> $pre_kbild :markup
+			Edit questionnaire.. $edit_kbild_pre :page_link {section=prekbild,complete_title=Read questionnaire..,new_title=Perform questionnaire..,incomplete_edit_title=Continue questionnaire..,incomplete_view_title=View incomplete questionnaire..}
+			$kbild_date_pre :display_text
+			$kbild_status_pre :display_text {default="New"}
+			$kbild_psych_pre :display_text {size=3}
+			$kbild_blness_pre :display_text {size=3}
+			$kbild_phys_pre :display_text {size=3}
+			$kbild_total_pre @kbild_score_pre :display_text {size=3}
+		:table_row
+			<b>Post-PR</b> $post_kbild :markup
+			Edit questionnaire.. $edit_kbild_post :page_link {section=postkbild,complete_title=Read questionnaire..,new_title=Perform questionnaire..,incomplete_edit_title=Continue questionnaire..,incomplete_view_title=View incomplete questionnaire..}
+			$kbild_date_post :display_text
+			$kbild_status_post :display_text {default="New"}
+			$kbild_psych_post :display_text {size=3}
+			$kbild_blness_post :display_text {size=3}
+			$kbild_phys_post :display_text {size=3}
+			$kbild_total_post @kbild_score_post :display_text {size=3}
+
+JACQ6 $jacq6_fset :fieldset
+	:table
+		:table_head
+			:markup
+			:markup
+			Visit Date $jacq6_date :markup
+			Status $jacq6_status :markup
+			Score $jacq6_score :markup
+		:table_row
+			<b>Pre-PR</b> $pre_jacq6 :markup
+			Edit questionnaire.. $edit_jacq6_pre :page_link {section=prejacq6,complete_title=Read questionnaire..,new_title=Perform questionnaire..,incomplete_edit_title=Continue questionnaire..,incomplete_view_title=View incomplete questionnaire..}
+			$jacq6_date_pre :display_text
+			$jacq6_status_pre :display_text {default="New"}
+			$jacq6_score6_pre :display_text {size=3}
+			$jacq6_score_pre :display_text {size=3}
+		:table_row
+			<b>Post-PR</b> $post_jacq6 :markup
+			Edit questionnaire.. $edit_jacq6_post :page_link {section=postjacq6,complete_title=Read questionnaire..,new_title=Perform questionnaire..,incomplete_edit_title=Continue questionnaire..,incomplete_view_title=View incomplete questionnaire..}
+			$jacq6_date_post :display_text
+			$jacq6_status_post :display_text {default="New"}
+			$jacq6_score6_post :display_text {size=3}
+			$jacq6_score_post :display_text {size=3}

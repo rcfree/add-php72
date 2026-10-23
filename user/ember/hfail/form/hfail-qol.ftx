@@ -1,0 +1,3 @@
+MLHF score $mlhf_scores :encounter_grid {use_page=blness:mlhf,fields=mlhf_date;score;mean,before_row_actions=LinkRecord,after_row_actions=StatusAction;DeleteRecord,linkfield=linked_mlhf}
+MLHF* :link_record $linked_mlhf {linked_grid=mlhf_scores,link_display_field=mlhf_date}
+Perform MLHF :grid_add_button {refresh=mlhf_scores,use_page=blness:mlhf,linkfield=linked_mlhf}

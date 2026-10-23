@@ -1,0 +1,49 @@
+:tab_container
+	Sputum :tab
+		Sputum test :encounter_grid {use_page=inv:sputumresult,fields=sputum_date;eosin_count_sputum;neut_count_sputum;viability_sputum;squamous_contamination;tcc_spu_avail;total_cell_count_sputum;mcs_sent_sputum}
+		
+	Haematology :tab	
+		Haematology tests $routine_eosinophils :encounter_matrix {use_page=path:haemresult,yfield=test_code,xfield=coll_date_time,value_field=result,filter_field[0]=test_code,filter_value[0]=LYMAB;LYMPH;NEUAB;NEUT;BASAB;BASO;EOS;EOSAB;PLT;PLTA;HB,filter_op[0]=eq,sort_field=coll_date_time,sort_order=DESC,sort_date=1}
+
+	Immunology :tab
+		
+		IgE result $ige_results :encounter_grid {use_page=path:haemresult,description=haematology result,fields=test_code;result;units;normal_low;normal_high;specimen_no;coll_date_time,filter_field[0]=test_code,filter_value[0]=A-IGE;C1;C2;C202;CC5;CC6;CC7;D1;D2;D71;E1;E201;E208;E209;E213;E215;E3;E4;E5;E6;E7;E74;E78;E82;E84;E85;E86;E87;EX72;EX73;F1;F10;F12;F13;F14;F15;F17;F18;F2;F20;F201;F202;F203;F204;F205;F206;F207;F208;F210;F212;F214;F215;F216;F217;F221;F222;F224;F225;F226;F23;F235;F236;F237;F24;F242;F244;F247;F25;F253;F254;F255;F256;F258;F259;F26;F261;F262;F263;F268;F27;F283;F287;F288;F289;F290;F291;F293;F294;F299;F3;F300;F306;F309;F312;F313;F314;F317;F319;F320;F324;F329;F33;F332;F333;F335;F338;F343;F345;F35;F352;F354;F36;F37;F4;F40;F41;F416;F42;F422;F423;F424;F425;F427;F428;F44;F45;F47;F48;F49;F5;F54;F6;F7;F75;F78;F79;F8;F80;F81;F82;F83;F84;F85;F86;F87;F88;F89;F9;F91;F92;F93;F94;F95;F96;G6;I1;I2;I205;I208;I209;I5;I75;K20;K212;K80;K82;K84;K87;M1;M205;M210;M3;M5;M6;MM2;MM9;O70;SPIGE2;T12;T15;T16;T2;T215;T7;T8;TIGE;TT3;TT4;W6:RF,filter_op[0]=eq}
+		
+		Other Ig result $other_ig :encounter_grid {use_page=path:haemresult,fields=test_code;result;units;normal_low;normal_high;specimen_no;coll_date_time,filter_field[0]=test_code,filter_value[0]=VAF,filter_op[0]=eq}
+		 
+		ANCA result $anca :encounter_grid {use_page=path:haemresult,description=haematology result,fields=test_code;result;units;normal_low;normal_high;specimen_no;coll_date_time,filter_field[0]=test_code,filter_value[0]=ANCA,MPOQ,PR3Q,filter_op[0]=eq}
+		
+		Other immunology result $other_imm :encounter_grid {use_page=path:haemresult,description=haematology result,fields=test_code;result;units;normal_low;normal_high;specimen_no;coll_date_time,filter_op[0]=eq,filter_field[0]=test_code,filter_value[0]=C3;C4;MCT;MCTP,PR3Q;RBCAGG;TOX;VRLE1;ACAG;ACAM;ACAS;ACLP;CDL;CDLP;CALB;DMA;SAACRP;TIA;ULBC;TFT;TFTD;TROI;RF}
+	
+	Allergen skin tests :tab
+		Select a visit to view test results  :link_grid_dropdown $allergy_visits {no_store=1,use_page=inv:visit,size=30,list_pattern={{row.date_of_visit.value }} - {{ row.consultant.label}},linkgrid=skin_tests}
+		skin test $skin_tests :encounter_grid {use_page=inv:results,fields=allergen_test;width;height;flaring_level,linkparent=allergy_visits}
+		
+	Biochemistry :tab
+		Cortisol test :encounter_grid {use_page=path:haemresult,description=haematology result,fields=test_code;result;units;normal_low;normal_high;specimen_no;coll_date_time,filter_field[0]=test_code,filter_value[0]=COR,filter_op[0]=eq}
+		Creatine kinase :encounter_grid {use_page=path:haemresult,description=haematology result,fields=test_code;result;units;normal_low;normal_high;specimen_no;coll_date_time,filter_field[0]=test_code,filter_value[0]=CK,filter_op[0]=eq}
+		eGFR :encounter_grid {use_page=path:haemresult,description=haematology result,fields=test_code;result;units;normal_low;normal_high;specimen_no;coll_date_time,filter_field[0]=test_code,filter_value[0]=GFR,filter_op[0]=eq}
+		
+		Creatinine :encounter_grid {use_page=path:haemresult,description=haematology result,fields=test_code;result;units;normal_low;normal_high;specimen_no;coll_date_time,filter_field[0]=test_code,filter_value[0]=CREA,filter_op[0]=eq}
+		
+		ALT :encounter_grid {use_page=path:haemresult,description=haematology result,fields=test_code;result;units;normal_low;normal_high;specimen_no;coll_date_time,filter_field[0]=test_code,filter_value[0]=ALT,filter_op[0]=eq}
+		CRP :encounter_grid {use_page=path:haemresult,description=haematology result,fields=test_code;result;units;normal_low;normal_high;specimen_no;coll_date_time,filter_field[0]=test_code,filter_value[0]=CRP,filter_op[0]=eq}
+		
+		Troponin result :encounter_grid {use_page=path:haemresult,description=haematology result,fields=test_code;result;units;normal_low;normal_high;specimen_no;coll_date_time,filter_field[0]=test_code,filter_value[0]=TROI,filter_op[0]=eq}
+		Thyroid function :encounter_grid {use_page=path:haemresult,description=haematology result,fields=test_code;result;units;normal_low;normal_high;specimen_no;coll_date_time,filter_field[0]=test_code,filter_value[0]=TFT;TFTD,filter_op[0]=eq}
+			
+		B12 result $b12_results :encounter_grid {use_page=path:haemresult,description=haematology result,fields=test_code;result;units;normal_low;normal_high;specimen_no;coll_date_time,filter_field[0]=test_code,filter_value[0]=B12;B12D,filter_op[0]=eq}
+		
+		
+	Microbiology :tab
+		Microbiology result $micro_results_grid :encounter_grid {use_page=path:microresult,description=microbiology result,fields=coll_date_time;test_code;specimen_type;organisms,sort_field=coll_date_time,sort_order=DESC,sort_date=1}	
+		
+	Bone marrow :tab $bm_tab
+		Bone marrow $bone_marrow :encounter_grid :encounter_grid {use_page=bmarrow,description=bone marrow,fields=bm_date;bm_details,after_row_actions=DeleteRecord}
+		Add bone marrow :grid_add_button {refresh=bone_marrow,modal_width=700,use_page=eos:bmarrow}
+		
+	Non-ILAB :tab $other_tab
+		Non-ILAB test $non_ilab_tests :encounter_grid {use_page=eos:non-ilab,description=non-ILAB test,fields=test_date;test_type;result,after_row_actions=DeleteRecord}
+		Add non-ILAB test :grid_add_button {refresh=non_ilab_tests,modal_width=700,use_page=eos:non-ilab}
+	
+-Lymphocyte phenotype :memo $lymphocyte_phenotype

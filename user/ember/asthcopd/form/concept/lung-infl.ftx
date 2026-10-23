@@ -1,0 +1,11 @@
+Sputum collected* :yes_no $sputum_collected @sputum_plug_collected {condition_action=show,condition_test=Y,condition_target=sputum_cn}
+
+:container $sputum_cn {indent=1,test=1}
+	Sputum type* :radio_buttons $sputum_type [1=Spontaneous,2=Induced]
+	Unable to count cells $unable_to_count :checkbox {condition_test=1,condition_action=hide,condition_target=sputum_result_cn}
+
+	:container $sputum_result_cn
+		Add sputum result $add_sputum_result :grid_add_button {refresh=sputum_counts,modal_width=700,use_page=inv:sputumresult,allow_add_another=1}
+
+		Sputum count result $sputum_counts :encounter_grid {use_page=inv:sputumresult,link_display_field=sputum_date,before_row_actions=LinkRecord,linkfield=link_sputumcount,fields=sputum_date;eosin_count_sputum;neut_count_sputum;viability_sputum;squamous_contamination;tcc_spu_avail;total_cell_count_sputum;mcs_sent_sputum}
+		Sputum count* :link_record $link_sputumcount {linked_grid=sputum_counts,unlinked_text=Use a 'Link' button to link a count result with this record}

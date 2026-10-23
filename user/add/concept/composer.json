@@ -1,0 +1,12 @@
+{
+    "name": "add/concept",
+    "description": "Common concepts module (part of ADD)",
+	"type": "clinicle-module",
+	"require":{
+		"clinicle/ajax":"~1.0",
+		"clinicle/api":"~1.0"
+	},
+    "autoload": {
+        "classmap": ["lib"]
+    }
+}

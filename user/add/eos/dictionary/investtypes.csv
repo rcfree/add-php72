@@ -1,0 +1,15 @@
+value,title,group_title
+1,CXR
+2,CT chest,CT
+3,CT abdomen and pelvis,CT
+4,CT head,CT
+5,Brain MRI,MRI
+6,Cardiac MRI,MRI
+7,Echocardiogram,
+8,Abdominal ultrasound
+9,ECG
+10,EMG
+11,Gut biopsy,Biopsy
+12,Skin biopsy,Biopsy
+13,Neural biopsy,Biopsy
+14,Cardiac biopsy,Biopsy

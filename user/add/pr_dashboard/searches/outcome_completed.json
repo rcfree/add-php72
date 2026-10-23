@@ -1,0 +1,47 @@
+{
+  "groups": [
+    {
+      "id": 2,
+      "title": "Pulmonary rehab: Treatment programme: Referral",
+      "name": "pr.prog.referral",
+      "filters": [],
+      "attributes": [],
+      "settings": {
+        "internal_logic": "AND",
+        "external_logic": "AND",
+        "join_type": "LEFT",
+        "enabled": 1,
+        "count_agg": "1"
+      }
+    },
+    {
+      "id": 1,
+      "title": "Pulmonary rehab: Treatment programme: Outcome",
+      "name": "pr.prog.outcome",
+      "filters": [
+        {
+          "field":"started_pr",
+          "operation":"eq",
+          "values":["Y"]
+        }
+      ],
+      "attributes": [
+        "completed_pr"
+      ],
+      "settings": {
+        "enabled": "1",
+        "internal_logic": "AND",
+        "external_logic": "AND",
+        "join_type": "LEFT",
+        "include_section_id": "0",
+        "include_episode_id": "0",
+        "include_date_created": "0",
+        "include_date_updated": "0",
+        "count_agg": "1",
+        "group_by_patient": "0",
+        "multiple_separator": ""
+      }
+    }
+  ],
+  "title": ""
+}

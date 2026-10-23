@@ -1,0 +1,41 @@
+Visit done :yes_no $visit_done
+$withdrawal_page
+
+Date of recovery visit* :date @date_of_admission
+
+:tab_container
+	Smoking history :tab $sh_tab
+		Add to smoking history :grid_add_button {refresh=smoking_items,modal_width=700,use_page=history:smoking,linkfield=link_smoking}
+
+		smoking history item $smoking_items :encounter_grid {use_page=history:smoking,fields=date_recorded;smoking_status;pack_year_calc;smoking_item_type;from_year;to_year;pack_years,no_parent=1,before_row_actions=LinkRecord,linkfield=link_smoking,link_display_field=date_recorded}
+		Smoking history item* :link_record $link_smoking {linked_grid=smoking_items}
+		
+	Vital signs :tab $cd_tab
+		:horiz_container $hc1
+			Height :number
+			Weight :number
+			&rarr; $arrow :item
+			BMI :number {viewonly=1,expression=(get('weight')/((get('height')/100) * (get('height')/100))).toFixed(1),expression_fail_value=-}
+
+		:horiz_container
+			Blood pressure :item
+			$bp_top :number
+			"/" :item
+			$bp_bottom :number {suffix=mmgHg}
+
+		Temperature :number {fixed=1,suffix=&#176;,min=10,max=50}
+
+		Heart rate (non-ECG) $non_ecg_heart_rate :number
+		Respiratory rate $resp_rate :number {suffix=breaths/min}
+
+		SpO<sub>2</sub> on air :number $spo2 @spo2_on_air {suffix=%,length=3,min=1,max=100}
+
+		On supplementary O<sub>2</sub> $on_supo2 :yes_no
+		SpO<sub>2</sub> on supplementary O<sub>2</sub> :number $spo2_on_supo2 {suffix=%,length=3,min=1,max=100}
+
+		:horiz_container
+			O<sub>2</sub> delivery method :dropdown [1=Venturi,2=Hudson,3=Nasal cannula] {condition_test[0]=1,condition_action[0]=show,condition_target[0]=o2_reading_pc,condition_test[1]=2;3,condition_action[1]=show,condition_target[1]=o2_reading_litres}
+
+			O<sub>2</sub> reading :number $o2_reading_pc @o2_reading_percent {suffix=%}
+			O<sub>2</sub> reading :number $o2_reading_litres {suffix=l}
+

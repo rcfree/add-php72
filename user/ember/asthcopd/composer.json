@@ -1,0 +1,39 @@
+{
+    "name": "ember/asthcopd",
+    "description": "Asthma/COPD exacerbation module (part of EMBER)",
+	"type": "clinicle-module",
+	"require":{
+		"clinicle/core":"~2.7",
+		"add/patient":"~1.0",
+		"clinicle/install":"~1.0",
+		"clinicle/client":"~1.6",
+		"clinicle/report":"~1.1",
+		"add/concept":"~1.0",
+		"add/qol":"~2.4",
+		"add/inv":"~2.0",
+		"add/med":"~1.1",
+		"add/history_status":"~1.0",
+		"clinicle/remote":"~1.0",
+		"clinicle/touch":"~2.0",
+		"clinicle/icd10":"~2.0",
+		"cdbrkr/logic":"~1.1",
+		"add/resphy":"^1.5",
+		"ember/blness":"~1.0"
+	},
+	"require-dev":{
+		"phpunit/phpunit":"~4.0",
+		"clinicle/core":"~2.7"
+	},
+    "minimum-stability":"dev",
+	"prefer-stable":true,
+	"repositories": [
+        {
+            "type": "composer",
+            "url": "http://projects.ilh.le.ac.uk/satis"
+        }
+    ],
+    "config":{
+    	"preferred-install":"source",
+    	"cache-files-ttl":0
+    }
+}

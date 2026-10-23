@@ -1,0 +1,116 @@
+title,group,group_values,search_terms,allow_change
+Anti-coagulation therapy,C,Z92.1,,1
+Cardiac pacemaker,C,,pacemaker,1
+Cardiac failure,C,,I50,1
+Cardiomyopathy,C,,I42;I43,1
+Lipid disorders,C,,E78,1
+Hypertension (primary),C,I10;I11;I12;I13;I67.4,,1
+Hypertension (secondary),C,,I15,1
+Hypertension (pregnancy),C,,O1,1
+Hypertension (pulmonary),C,,I27,1
+IHD (angina),C,,angina,1
+Peripheral vascular disease,C,,I73,1
+Valve disease (mitral),C,,mitral valve,1
+Valve disease (aortic),C,,aortic valve,1
+Valve disease (tricuspid),C,,tricuspid valve,1
+Valve disease (pulmonary),C,,pulmonary valve,1
+Asthma,R,,asthma,1
+Bronchiectasis,R,,bronchiectasis,1
+Acute bronchitis,R,,acute bronchitis,1
+LRTI,R,J22;J44.0,,1
+URTI,R,J06.8;J06.9,,1
+Chronic bronchitis,R,,chronic bronchitis,1
+COPD,R,J44.0;J44.1;J44.8;J44.9,,1
+Emphysema,R,J43.1;J43.2;J43.8;J43.9;J98.2;J98.3;P25;P25.0;P25.8;T79.7,,1
+ILD,R,,J70;J84;J66;J67,1
+Respiratory failure,R,J96.0;J96.1;J95.8;J96.9,,1
+Pleural conditions,R,,pleur,1
+Pneumothorax,R,,pneumothorax,1
+Smoking,GEN,Z72.0;F17.1,,1
+Cerebrovascular disease (ischaemic),N,,G45;G46;I63,1
+Cerebrovascular disease (haemorhage),N,,I61;I62,1
+Subarachnoid haemorrage,N,,I60,1
+Deafness,N,,hearing,1
+Dementia,N,,dementia,1
+Dysphasia,N,,R47,1
+Epilepsy,N,,G40;G41,1
+Hemiplegia,N,,hemiplegia;I69,1
+Learning difficulties,N,F70;F71;F72;F73;F78;F79,,1
+Multiple sclerosis,N,,G35;G36;G37,1
+Visual impairment,N,,visual,1
+Abnormal LFT,G,R94.5,,1
+Alcohol related,G,,Z72.1;Z71.4;Y91;G62.1;G72.1;I46.2;K29.2;K70;K86.0,1
+Diabetes mellitus,G,E10.9;E11.9,,1
+Dysphagia,G,R13,,1
+GORD,G,,K21,1
+Peptic ulcer disease,G,,K27,1
+Liver disease (alcoholic),G,,K70;K71,1
+Liver disease (hepatitis),G,,K72;K73;K74;K75,1
+Liver disease (other),G,,K76;K77,1
+Anxiety disorder,P,,anxiety,1
+Depression,P,,depress,1
+Eating disorders,P,,F50,1
+Personal history of self harm,P,,self-harm,1
+Psychosis,P,,F23;F28;F29;F30;F31,1
+Schizophrenia,P,,schizo,1
+Chronic kidney disease,RE,N18.1;N18.2;N18.3;N18.4;N18.5;N18.9,,1
+Acute renal failure,RE,,N17,1
+Rheumatoid arthritis (sero-negative),RH,M06;M06.0;M06.1;M06.2;M06.3;M06.4;M06.8;M06.9,,1
+Rheumatoid arthritis (sero-positive),RH,M05;M05.0;M05.1;M05.2;M05.3;M05.4;M05.8;M05.9,,1
+Arthritis,RH,M13;M13.0;M13.1;M13.4;M13.8;M13.9,,1
+Obstructive uropathy,RE,,N13;R33,1
+Other renal disorders,RE,,N14;N15;N16,1
+Drug abuse,GEN,,substance abuse,1
+Falls / syncope,GEN,,"R29.6;R26;I95;""R55 """,1
+HIV,GEN,,hiv,1
+Living alone - led to delayed discharge,GEN,Z60.2,,1
+Palliative care,GEN,Z51.5,,1
+Fluid disorders,GEN,,E86;E87,1
+Sepsis,GEN,,A40;A41,1
+Pressure sores,GEN,,L89,1
+Non-cardiac chest pain,C,,R07.1;R07.3;R07.4;E55;M94.0;G58.0,1
+IHD (MI),C,I21.0;I21.1;I21.2;I21.3;I21.4;I21.9;I22.0;I22.1;I22.8;I22.9;I23.0;I23.1;I23.2;I23.3;I23.4;I23.5;I23.6;I23.8;I24.0;I25.2;Z03.4,,1
+Community acquired pneumonia (CAP),R,J12.0;J12.1;J12.2;J12.8;J12.9;J13.X;J14.X;J15.0;J15.1;J15.2;J15.3;J15.4;J15.5;J15.6;J15.7;J15.8;J15.9;J16.0;J16.8;J17.0;J18.0;J18.1;J18.2;J18.8;J18.9,,1
+Other pneumonias,R,A20.2;A40.3;A48.2;B01.2;B05.2;B20.6;B22.1;B25.0;B95.3;B96.0;J69.0;J69.1;J69.8;J85.0;J85.1;J85.2;J85.3;J86.0;J86.9;P23.0;P23.1;P23.2;P23.3;P23.4;P23.5;P23.6;P23.8;P23.9;Y95.U,,1
+Sarcoidosis,R,,sarcoid,1
+Pneumoconiosis,R,,pneumoconiosis,1
+PE,R,,I26,1
+PPH,R,,I27,1
+UTI,RE,,N39,1
+Prostate disorders,RE,,prostat,1
+Drug allergy,GEN,,Z88,1
+Arrhythmias (Brady),C,,I44;I45;I46,1
+Arrhythmias (Tachy),C,,I47;I48;I49,1
+Inflammatory bowel,G,,K50;K51,1
+Diverticular disease,G,,K57,1
+Irritable bowel / constipation,G,,K58;K59,1
+Oesophageal disorders,G,,K21;K22;K23,1
+Gallbladder,G,,K80;K81;K82;K83,1
+Thyroid (hypo),G,,E00;E01;E02;E03,1
+Thyroid (hyper),G,,E04;E05;E06,1
+Polyarteritis,RH,,M30,1
+Necrotizing vasculopathy,RH,,M31,1
+SLE,RH,,M32,1
+Dermatopolymyositis,RH,,M33,1
+Systemic sclerosis,RH,,M34,1
+Other connective tissue disease,RH,,M35;M36,1
+Gout,RH,M10,,1
+Chest,NP,,C33;C34;C35;C36;C37;C38,1
+Mesothelioma,NP,,C45,1
+Breast,NP,,C50;D05,1
+Previous history (neoplasm),NP,,Z85,1
+TB (active respiratory),R,,A15;A16,1
+TB (active other),R,,K67.3;K93.0;M01.1;M49.0;M90.0;A17;A18;A19 ,1
+TB related,R,,B90;R76.1;Z03.0;Z11.1;Z20.1;Z23.2;R76.1,1
+Previous grafts / implants,C,,Z95,1
+Venous disorders,C,,I80;I83;I87,1
+Previous transplant,GEN,,Z94,1
+Previous stomas,GEN,,Z93,1
+Risk factors,GEN,,"Z91;""Z20 "";E55",1
+Obesity,GEN,,E66,1
+Sleep,R,,G47,1
+Respiratory symptoms,R,,R04;R05;R06;R09,1
+Cardiac symptoms,C,,R00;R01;R03,1
+Anticoagulants,GEN,Z92.1;D68.3,,1
+PE exclusion,R,Z03
+"Observation, results pending",GEN,,Z03

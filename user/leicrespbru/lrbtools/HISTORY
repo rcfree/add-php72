@@ -1,0 +1,62 @@
+RELEASE HISTORY
+
+1.2.8 07/11/2017
+! Log4php version limits other modules
+
+1.2.7 01/04/2015
+! Problem with field text not recognising asterisk in line that is in settings
+
+
+1.2.6 10/02/2015
+! Month/year delta determination incorrect for rolling DB backups
+
+1.2.5 19/01/2015
++ Normalise REDCap export library and script added
+
+1.2.4 12/11/2014
+! Fixed rename support so it works with fields containing numbers
+
+1.2.3 23/10/2014
+! Corrected delete field logic
++ Added rename field support
+
+1.2.2 15/10/2014
++ Rolling backups to backupDb.pl with unit tests of logic
+* Improved rolling backups so that (at least) daily backups are retained from the last 4 months
++ ENV variables for library access
+
+1.2.1 24/09/2014
+! Fixed problem with HTML tags in fields
+
+1.2.0 02/07/2014
++ Introduced text file-based FTX format to simplify forms
+
+1.1.0 09/04/2014
++ Added PatientLookup/TestPMI class to deal with Behat tests in ADD
+! Fixed bug with DataFile classes
++ 'setHeaderRow/hasHeaderRow' flag added to DataFile_Delimited
+
+1.05 13/02/2014
++ CaseOperation class to deal with case and associated entity management
++ ContactOperation class to deal with contact and associated entity management
+
+1.04 11/12/2013
+Added backupDB Perl script to LRBTools bundle and modified to use config file for settings
+
+1.03 03/02/2014
+*removed clinical data fields completely
++additional V2 consent option value
+
+1.02 26/11/2013
+Moved S number and NHS number into custom group (medical identifiers).
+Added a medication section with 10 free text values.
+Changed the GP link ID into a text field the value of which can be changed if required.
+Modified the Contact extra summary template to reorder things on the page.
+
+1.01 18/11/2013
+Improved LRB Tools with civicrm templates for case and display.
+Operations module to do specific API operations
+
+1.00 19/09/2013
+Initial version of LRB Tools with working civiload modules
+

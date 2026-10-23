@@ -1,0 +1,2 @@
+Add diagnosis $add_diagnosis :grid_add_button {refresh=diagnoses,use_page=history:comorbrecord}
+diagnosis record $diagnoses :encounter_grid {use_page=history:comorbrecord,fields=date_recorded;comorbidity_title;manual_entry;comorbidity_details;start_date;end_date,after_row_actions=DeleteRecord,use_parent=1}

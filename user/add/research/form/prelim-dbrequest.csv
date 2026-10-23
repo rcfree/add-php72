@@ -1,0 +1,5 @@
+Rename,Level,Title,Type,Field,Settings,Options,Required
+patient_sent_given_database_consent_,1,Patient sent/given database consent?,radio_buttons,pat_sent_db_consent,"inline=1,condition_test=Y,condition_target=date_sent;sent_by;comments,condition_action=show,ignore_content=1","Y=Yes,N=Patient not interested",1
+,1,Date sent,date,date_sent,,,
+,1,Sent by,text,sent_by,default=current_user(),,
+,1,Comments,memo,comments,,,

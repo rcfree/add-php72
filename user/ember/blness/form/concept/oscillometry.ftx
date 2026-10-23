@@ -1,0 +1,13 @@
+Oscillometry test performed :radio_buttons [Y=Yes,N=No,U=Not acceptable] $oscil_test_performed {condition_test=Y,condition_action=show,condition_target=oscil_data,inline=1}
+
+$oscil_data :container {indent=1}
+	Date oscillometry performed :date $date_oscillometry
+	:horiz_container {segments=3}
+		R5 $r5_oschillometry :number
+		X5 $x5_oschillometry :number
+		R19 $r19_oschillometry :number
+
+	:horiz_container {segments=3}
+		X19 $x19_oschillometry :number
+		f<sub>res</sub> $fres_oschillometry :number
+		A<sub>X</sub> $ax_oschillometry :number

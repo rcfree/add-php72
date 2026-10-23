@@ -1,0 +1,9 @@
+$treatments :radio_group [Y=Yes,N=No,U=Unknown] 
+	Drugs $drugs :radio_item
+	Pulmonary Rehab $pulmonary_rehab :radio_item
+	Palliative care $palliative_care :radio_item
+	Home visit $home_visit :radio_item
+	Lung transplant assessment $lung_tran_assessment :radio_item
+	Pirfenidone candidate $pirf_candidate :radio_item
+	Suitable for research $suitable_research :radio_item
+	Screen and failed $screened_failed :radio_item

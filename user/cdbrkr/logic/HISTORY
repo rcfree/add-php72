@@ -1,0 +1,39 @@
+RELEASE HISTORY
+---------------
+
+1.3.1 27/04/2017
+! Add search selection not working
+
+1.3.0 13/01/2017
+* Modified to work with changed client module
+
+1.2.0 01/11/2016
++ AJAX-based remote lookup of wardspells
+* Use of new core-based data services to filter data
++ Support for panel-based changes
+
+1.1.6 20/04/2016
+* Extracted dictionary loading into cdbrkr/conditions                                                      
+1.1.5 18/04/2016
+! Fixed CSS styling issues
+
+1.1.4 15/03/2016
+! Ellipsis handling wrong in web-kit browsers
+
+1.1.3 26/02/2016
+! Error handling if qualifier failed not present
+! Database name hard coded in qualifier query
+
+1.1.2 09/02/2016
+! Missing TranferCB from page.ini
+! Hard-coded target encounter type in SpellCollate
+
+1.1.1 19/01/2016
+* TransferRemoteButton refactored into general logic
+
+1.1.0 05/01/2016
+* Separation of groups, areas and qualifiers into separate tables
+* Moved specific codebreaker push button logic from touch
+
+1.0.0 26/08/2015
+* Initial version

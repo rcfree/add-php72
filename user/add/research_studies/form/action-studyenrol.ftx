@@ -1,0 +1,7 @@
+Action*	$action_type	:hidden	{default=studyenrol}
+Date action recorded	$date_recorded	:hidden							{default=today(),readonly=1,col_title=Record date}
+Created by	$action_created_by	:hidden	@created_by						{default=current_user(),readonly=1}
+Enrol date*	$action_end_date	@end_date :date						today()
+Study number	$action_study_no	@study_no :text				{size=20,ajax-func=CheckRidUnique,sync=1}
+Enrolment comments	$description	:memo								{height=6,size=80}									
+$action_status	:hidden	{default=2}

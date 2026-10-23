@@ -1,0 +1,40 @@
+-Copy admission drugs to discharge	$copy_active :copy_active_drugs	{parent_key=buttons,parent_pim=blness:discharge}
+-ward spell $ward_spell :encounter_grid {use_page=wspell:sdetail,fields=discharge_date_time;consultant_code;ward;status,col_headings=Discharge timestamp;Consultant;Ward;Status on ward,no_parent=1,remote_site=codebreaker,before_row_actions=LinkRecord,linkfield=linked_spell,link_copydata=discharge_date_time:outcome_datetime}
+-selected spell* :link_record $linked_spell {linked_grid=ward_spell,link_display_field=date_of_admission}
+
+-$primary
+
+:horiz_container
+	Date of outcome* :date $outcome_date
+	Time of outcome* :time $outcome_time
+	Date/time of outcome* :expression $outcome_datetime {size=16,as_string=1,expression=get('outcome_date').toString() + " " + get('outcome_time').toString()}
+
+:horiz_container
+	Outcome :radio_buttons [1=Discharged,2=Died] {inline=1,condition_target[0]=disch_during_stay,condition_test[0]=1,condition_action[0]=show}
+	Discharged during patient stay $disch_during_stay @discharged_during_patient_stay :yes_no
+
+-Date of death $date_of_death :date
+
+Length of hospital stay* :number {suffix=days,ajax-func=LengthOfStay}
+
+Physical activity monitor issued :yes_no $physical_activity_monitor_issu {condition_test=Y,condition_action=show,condition_target=phys_mon_hc}
+
+:horiz_container $phys_mon_hc
+	Date issued :date $date_issued
+	Time issued :time $time_issued
+
+Visit done* :yes_no $visit_done {condition_test=N,condition_action=show,condition_target=reason_not_done}
+Reason not done :text $reason_not_done
+
+-	Discharge drugs $d_drugs_tab :tab
+-		<p class='text-info'>Admission-specific drugs are copied to the list below.</p> $dis_mkup
+		
+-		Add discharge drug $add_drug :grid_add_button {refresh=discharge_drugs,modal_width=700,use_page=blness:dis-drugitem,allow_add_another=1,use_parent=1}
+-		discharge medication $discharge_drugs :encounter_grid {use_page=blness:dis-drugitem,fields=drug_details;dose;frequency;duration;start_date;end_date,condition_field=current_status,condition_class=inactive,row_condition=current_status|eq|2|inactive,filter[0]=drug_type|eq|1,filter[1]=current_status|eq|1,description=prescription drug,before_row_actions=DateCreated,after_row_actions=DeleteRecord;InactivateRecord,use_parent=1,InactivateRecord.pim=blness:dis-druginact}
+	
+-	General drugs (at discharge) :tab $gen_drugs_tab
+-		<p class='text-info'>The list below only shows those drugs that were active on the date of outcome</p> $adm_mkup
+-		Add general drug $add_gen_drug :grid_add_button {refresh=general_drugs,modal_width=700,use_page=med:presdrugitem,allow_add_another=1}
+-		Show inactive drugs :filter_switch $hide_inactive_prs {target_grid=general_drugs,off_filter=drug_type|eq|1+current_status|eq|1,on_filter=drug_type|eq|1}
+-		general drug $general_drugs :encounter_grid {data_url=/api/drug-encounters,include_fields=outcome_date,use_page=med:drugitem,fields=drug_details;dose;frequency;duration;start_date;end_date,condition_field=current_status,description=prescription drug,before_row_actions=DateCreated,after_row_actions=DeleteRecord;InactivateRecord,parent_type=med:general}
+	

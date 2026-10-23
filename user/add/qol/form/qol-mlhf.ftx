@@ -1,0 +1,30 @@
+Date* $mlhf_date :date
+Record scores only $scores_only	:checkbox {condition_test[0]=1,condition_action[0]=hide,condition_target[0]=questions,condition_test[1]=1,condition_action[1]=enable,condition_target[1]=scores}
+
+$questions :container
+	"Did your heart failure prevent you from living as you wanted during the past month (4 weeks) by:" $hf_questions :radio_group {dictionary=mlhf,col_width=8em}
+		causing swelling in your ankles or legs* $swelling_ankles_legs :radio_item {question=1.,show_value=1}
+		making you sit or lie down to rest during the day* $sit_lie_down :radio_item {question=2.,show_value=1}
+		making your walking about or climbing stairs difficult* $walking_climbing_diff :radio_item {question=3.,show_value=1}
+		making your working around the house or yard difficult* $working_house_yard_diff :radio_item {question=4.,show_value=1}
+		making your going places away from home difficult* $away_from_home_diff :radio_item {question=5.,show_value=1}
+		making your sleeping well at night difficult* $sleeping_well_diff :radio_item {question=6.,show_value=1}
+		making your relating to or doing things with friends or family difficult* $friends_family_diff :radio_item {question=7.,show_value=1}
+		making your working to earn a living difficult* $earn_living_diff :radio_item {question=8.,show_value=1}
+		making your recreational pastimes, sports or hobbies difficult* $recr_sports_hobbies_diff :radio_item {question=9.,show_value=1}
+		making your sexual activities difficult* $sex_diff  :radio_item {question=10.,show_value=1}
+		making you eat less of the foods you like* $eat_less :radio_item {question=11.,show_value=1}
+		making you short of breath* $short_breath :radio_item {question=12.,show_value=1}
+		making you tired, fatigued, or low on energy* $tired_fatigued :radio_item {question=13.,show_value=1}
+		making you stay in a hospital* $stay_in_hosp :radio_item {question=14.,show_value=1}
+		costing you money for medical care* $cost_money_med_care :radio_item {question=15.,show_value=1}
+		giving you side effects from treatments* $side_eff_treatments :radio_item {question=16.,show_value=1}
+		making you feel you are a burden to your family or friends* $burden_to_fam_friends :radio_item {question=17.,show_value=1}
+		making you feel a loss of self-control in your life* $loss_self_control :radio_item {question=18.,show_value=1}
+		making you worry* $worry :radio_item {question=19.,show_value=1}
+		making it difficult for you to concentrate or remember* things $diff_conc_remember :radio_item {question=20.,show_value=1}
+		making you feel depressed* $feel_depressed :radio_item {question=21.,show_value=1}
+	
+$scores :horiz_container
+	Score $score @total:number {expression=group_sum("hf_questions")}
+	Mean $mean :hidden

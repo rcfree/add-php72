@@ -1,0 +1,88 @@
+Level,Title,Field,Type,Settings
+1,Advanced COPD Clinic - ANNUAL DATASHEET,title,text_header,"width=190,align=C,decoration=B,size=12,extra_cr=1,type=1,top=0"
+1,"{patient.last_name}, {patient.first_name}",name1,markup,"font=Courier,decoration=B"
+1,{patient.identifier},id,markup,font=Courier
+1,{patient.nhs_no},nhs_no,markup,font=Courier
+1,{patient.date_of_birth},dob,markup,font=Courier
+1,{address.postcode},postcode,markup,font=Courier
+1,Date of Review,generic.assessment_date,simple_obs,"top=4,left=32"
+1,Age,age,age_obs,"to_field=generic.assessment_date,top=5,left=32"
+1,Lung Function,,text_header,"size=12,gap=1,align=C,type=3,top=9,left=0"
+1,,,h_container,segments=3
+2,,exercise.fev1,simple_obs,"label_width=16"
+2,FEV1 pred,exercise.pc_pred_fev1,simple_obs,"label_width=16"
+2,,exercise.fvc,simple_obs,"label_width=16"
+1,,,h_container,segments=3
+2,PYH,generic.pack_years,simple_obs,"label_width=16"
+2,RV (%) pred,exercise.rv_pc_pred,simple_obs,"label_width=16"
+2,RV/TLC,exercise.rv_tlc_ratio,simple_obs,"label_width=16"
+1,TLCO (%) pred,exercise.gt_pc_pred,simple_obs,"label_width=16"
+1,,,h_container,segments=3,
+2,ELBG type,exercise.elbg_type,simple_obs,"label_width=16"
+2,,exercise.elbg_po2,simple_obs,"label_width=16"
+2,,exercise.elbg_pco2,simple_obs,"label_width=16"
+1,CAT score,acat.score,simple_obs,"label_width=16"
+1,,,horiz_line,
+1,Exercise/breathlessness,,text_header,"type=3,gap=1,align=C"
+1,,,h_container,segments=2
+2,MRC score,exercise.mrc_grade,simple_obs,"stack=1,value-only=1"
+2,ISWT,exercise.iswt,simple_obs,
+1,,,h_container,segments=2
+2,SpO2 rest,exercise.spo2_rest,simple_obs,stack=1
+2,SpO2 exercise,exercise.spo2_peak,simple_obs,
+1,,,h_container,segments=2
+2,QS,exercise.isom_muscle_strength,simple_obs,
+2,QS (% predicted),exercise.pc_pred_qmvc,simple_obs,
+1,,,h_container,segments=2
+2,Attended PR,exercise.prev_attend_pulmrehab,simple_obs,stack=1
+2,When attended,exercise.pr_most_recent,simple_obs,
+1,,,horiz_line,
+1,Exacerbation,,text_header,"type=3,size=12,gap=1,align=C"
+1,BMI,earlymortrisk.bmi,simple_obs,
+1,"",,markup
+1,"** Observations in this Domain correspond to last 12 months **",,markup,"align=C"
+1,"",,markup
+1,,,h_container,segments=2
+2,"Courses a/biotics",exacerb.no_courses_antibiotics,simple_obs
+2,Courses steroids,exacerb.no_courses_steroids,simple_obs
+1,,,h_container,segments=2
+2,Admissions,exacerb.total_hosps,simple_obs
+2,COPD admissions,exacerb.no_copd_related,simple_obs
+1,,,h_container,segments=2
+2,Flu vacc up to date,exacerb.flu_vaccination,simple_obs
+2,Pneumon. vacc up to date,exacerb.pneumonia_vaccination,simple_obs
+1,Blood eosinophilia,exacerb.blood_eosin_last_12m,simple_obs
+1,,,h_container,segments=2
+2,Maint. antibiotics,exacerb.maint_antibiotics,simple_obs
+2,Maint. oral steroids,exacerb.maint_oral_steroids,simple_obs
+1,,,horiz_line,
+1,Comorbidities,,text_header,"type=3,size=12,gap=1,align=C"
+1,,,h_container,segments=2
+2,DEXA FFMI,expulmdis.ffmi,simple_obs,block_height=12
+2,DEXA SMI,expulmdis.smi,simple_obs,block_height=12
+1,DEXA T score,expulmdis.t_score,simple_obs,
+1,,,h_container,segments=2
+2,HADS anxiety,expulmdis.hads_anxiety_score,simple_obs,
+2,HADS depression,expulmdis.hads_depression_score,simple_obs,
+1,,,h_container,segments=2
+2,ECG result,expulmdis.ecg_result,simple_obs,stack=1
+2,,expulmdis.hb,simple_obs,
+1,,,h_container,segments=2
+2,,expulmdis.bnp,simple_obs,
+2,,expulmdis.vit_d_level,simple_obs,
+1,,,horiz_line,
+1,Prognostic Indicators,,text_header,"size=12,gap=1,align=C"
+1,Smoking status,generic.smoking_history,simple_obs,label_width=19
+1,,,h_container,segments=2
+2,Type of oxygen,earlymortrisk.type_of_oxygen,simple_obs,"label_width=19,stack=1"
+1,,,h_container,segments=2
+2,Home NIV,earlymortrisk.niv_at_home,simple_obs,label_width=19
+2,Required Acute NIV,earlymortrisk.prev_need_acute_niv,simple_obs,label_width=19
+1,,,horiz_line,
+1,Social,,text_header,"type=3,size=12,gap=1,align=C"
+1,,,h_container,segments=2
+2,Home circumstances,generic.accommodation,simple_obs,inline=0
+2,Social care support,generic.pers_social_care,simple_obs,
+1,,,h_container,segments=2
+2,Lives with,generic.others_in_household,simple_obs,
+2,Alcohol,generic.alcohol_units_wk,simple_obs,

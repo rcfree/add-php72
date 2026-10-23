@@ -1,0 +1,11 @@
+{
+    "name": "clinicle/import",
+	"type":"clinicle-module",
+    "description": "ClinicLE import module",
+	"require":{
+		"clinicle/install":"~1.0"
+	},
+    "autoload": {
+        "classmap": ["lib"]
+    }
+}

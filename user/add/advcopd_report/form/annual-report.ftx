@@ -1,0 +1,2 @@
+Annual review :text_report {report=annrev,use_id=1,type=section}
+Medication :text_report {report=druglist,module=med,type=section}

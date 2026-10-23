@@ -1,0 +1,34 @@
+RELEASE HISTORY
+---------------
+
+1.06 21/01/2014
++ Added output_type/output_title settings for use by ADD_to_i2b2 script
++ Cell count section with 'sputum' page extracted from bsd page in DAC
+* Changes to ensure compatibility with core 1.0.16
+1.05 21/10/2013
+Added the add allergen panel option to the 2 existing options and removed the separate button. Also included Date and Examiner options.
+Changed Flaring to Y/N field, set default date of visit blank and added comment box. Also added additional consultants.
+Moved allergen report to top menu bar and also display the actual visit date rather than the create date for the record
+Allergen testers dictionary updated.
+Modified AddStandardTests field to remove updates to tester and date for these tests.
+
+1.04 25/09/2013
+Added continuous to drug duration options
+Added adverse reactions to drugs reports and changed drugs report to an option (rather than button in drugs page)
+Moved the medication sections into a new med module
+
+1.03 21/08/2013
+Minor changes to report field properties (e.g. size)
+Minor tweaks to adherence assessment and allergen result forms. Most improvement are in the core framework.
+
+1.02 16/08/2013
+Fixed the allergen test form which required some changes to core Components and Fields.
+
+1.01 15/08/2013
+Renamed the adherence report from drugs-report to adherence-report and made changes to the drugs form.
+New Drugs report is a drugs list. Changes also include custom report fields for the table - to deal with logic displays.
+
+1.00 12/08/2013
+Initial full release of investigations module
+
+

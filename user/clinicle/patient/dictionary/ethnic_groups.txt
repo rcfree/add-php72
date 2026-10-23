@@ -1,0 +1,25 @@
+A,White-British/Mixed British
+B,White-Irish
+C,White-Other European
+C2,White-Northern Irish
+C3,White-Other
+CA,White-English
+CB,White-Scottish
+CC,White-Welsh
+CN,Gypsy Traveller
+CY,White-European
+D,Mixed-White & Black Caribbean
+E,Mixed-White & Black African
+F,Mixed-White & Asian
+G,Any other Mixed background
+H,Indian
+J,Pakistani
+K,Bangladeshi
+L,Other
+M,Black-Caribbean
+N,Black-African
+P,Black-Other
+R,Chinese
+S,Any other ethnic group
+Z,Not recorded
+Z9,Declined to State

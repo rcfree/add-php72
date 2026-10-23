@@ -1,0 +1,15 @@
+{
+    "name": "add/ild",
+    "description": "ADD ILD module",
+	"type": "clinicle-module",
+	"require":{
+		"clinicle/install":"~1.0",
+		"clinicle/options":"~1.0",
+		"add/patient":"~1.0",
+		"add/referral":"~1.0",
+		"clinicle/import":"~1.0"
+	},
+    "autoload": {
+        "classmap": ["lib"]
+    }
+}

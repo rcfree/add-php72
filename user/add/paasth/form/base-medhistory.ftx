@@ -1,0 +1,80 @@
+
+$tc1 :tab_container
+
+	Medical history (1) $mh1_fset :tab
+
+		$hc1 :horiz_container
+			Age at diagnosis $age_at_diagnosis :number {required=Y,min="0",max=age(),size=3,suffix=years}
+			Year of symptom onset $year_symptom_onset :year {required=Y,min=get_year(date_of_birth()),max=get_year()}
+		Smoking status $smoking_status :radio_buttons [1=Non-smoker,2=Current smoker,3=Ex-smoker,4=Passive smoker]  {condition_test[0]="2";"3",condition_test[1]="3",condition_target[0]=hc2,condition_target[1]=years_since_last_smoked,condition_action[0]=show,condition_action[1]=show,required=Y}
+		Years since last smoked $years_since_last_smoked :number {min="0",max=age(),size=3,suffix=years}
+
+		$hc2 :horiz_container
+			Type of item smoked $smoking_item_type :dropdown {dictionary=tobacco_item,calculate=pack_years}
+			Number per day $no_smoked_per_day :number {calculate=pack_years,size=3}
+			Years $years_smoked :number {calculate=pack_years,size=3}
+			&rarr; $arrow :item
+			Pack years $pack_years :expression {expression=((get('smoking_item_type')*get('no_smoked_per_day'))/20*get('years_smoked')).toFixed(2),size=3}
+		Smoking cessation advice given $smok_cess_adv_given :yes_no [Y=Yes,N=No]  {inline=1}
+		Atopy $atopy :yes_no [Y=Yes,N=No]  {required=Y,inline=1}
+
+	Medical history (2) $mh2_fset :tab
+		Atopic disease $atopic_disease :yes_no [Y=Yes,N=No]  {condition_test="Y",condition_target=hc3,condition_action=show,required=Y,inline=1}
+
+		$hc3 :horiz_container
+			Seasonal rhinitis $seasonal_rhinitis :yes_no [Y=Yes,N=No]  {inline=1}
+			Food allergy $food_allergy :yes_no [Y=Yes,N=No]  {inline=1}
+			Perennial rhinitis $perennial_rhinitis_history :yes_no [Y=Yes,N=No]  {inline=1}
+			Eczema $eczema_history :yes_no [Y=Yes,N=No]  {inline=1}
+
+		$field_1 :horiz_container
+			History of oesophageal reflux $oesophageal_reflux :yes_no [Y=Yes,N=No]  {condition_test="Y",condition_target=reflux_symptoms,condition_action=show,inline=1}
+			Symptoms related to reflux $reflux_symptoms :checkboxes [1=Chest pain,2=Ear ache,3=Heartburn,4=Nausea,5=Dysphagia,6=Weight loss,7=Cough,8=Other]  {required=Y}
+
+		Comorbidity/other info $comoborbidity_fset :fieldset {compress=1}
+			Eosinophilic oesophagitis $eosino_oesopha :yes_no [Y=Yes,N=No]  {required=Y,inline=1}
+			Urticaria / angioedema $urticaria_angioedema :yes_no [Y=Yes,N=No]  {required=Y,inline=1}
+
+		$field_2 :horiz_container
+			Comorbidity $non_asthma_comorbidity :yes_no [Y=Yes,N=No]  {condition_test="Y",condition_target=comorbidity_details,condition_action=show,required=Y,inline=1}
+			Details of other non-related comorbidity $comorbidity_details :checkboxes [1=Hypertension,2=Ischemic heart disease,3=Obstructive sleep apnea,4=GI reflux,5=Diabetes,6=Osteoporosis,7=Dysfunctional breathing,8=Psychological]  {required=Y}
+
+	Medical history (3) $mh3_tab :tab
+
+		$field_3 :horiz_container
+			Family history of asthma $asthma_family_history :radio_buttons [Y=Yes,N=No,A=Adopted,U=Unknown]  {condition_test="Y",condition_target=family_history_details,condition_action=show,required=Y}
+			Details of family history of asthma $family_history_details :checkboxes [1=Parents,2=Siblings,3=Grandparents,4=Children,5=Other]
+
+		$field_4 :horiz_container
+			Deaths in family due to asthma $asthma_family_deaths :radio_buttons [Y=Yes,N=No,A=Adopted,U=Unknown]  {condition_test="Y",condition_target=family_deathdetails,condition_action=show,required=Y}
+			Details of deaths in family due to asthma $family_deathdetails :checkboxes [1=Parents,2=Siblings,3=Grandparents,4=Children,5=Other]
+		Asthma management plan $asthma_mngmt_plan :yes_no [Y=Yes,N=No]  {inline=1}
+
+		Hospital visits $hospvisits_fset :fieldset {compress=1}
+
+			$field_5 :horiz_container
+				Unscheduled visits to GP/A&E (last 12 months) $unscheduled_gp_ae_visits :number {required=Y,min="0",max="99",size=3}
+				No. hospital admissions (last 12 months) $hosp_adm_last_12m :number {required=Y,min="0",max="99",size=3}
+
+			$field_6 :horiz_container
+				No. ITU admissions (last 12 months) $itu_adms_last_12m :number {required=Y,min="0",max="99",size=3}
+				Total no. ITU admissions $total_itu_adms :number {required=Y,min="0",max="99",size=3}
+		No. courses of oral steroids (last 12 months) $courses_oral_ster_last_12m :number {required=Y,min="0",max="99",size=3}
+
+	Medical history (4) $mh4_tab :tab
+
+		$pp_hc :horiz_container
+			Prior nasal polyps $nasal_polyps_history :yes_no [Y=Yes,N=No]  {required=Y,inline=1}
+			Prior nasal surgery $prior_nasal_surgery :yes_no [Y=Yes,N=No]  {condition_test="Y",condition_target=nasal_surgery_details,condition_action=show,required=Y,inline=1}
+			Details of prior nasal surgery $nasal_surgery_details :text
+		Polypectomy $polypectomy :yes_no [Y=Yes,N=No]  {required=Y,inline=1}
+
+		$field_7 :horiz_container
+			OGD $ogd :yes_no [Y=Yes,N=No]  {condition_test="Y",condition_target=ogd_findings,condition_action=show,required=Y,inline=1}
+			OGD findings $ogd_findings :checkboxes [1=Oesophagitis,2=Peptic ulcer disease,3=Hiatus hernia,4=Candidiasis,5=Barrett's oesophagus]
+		pH profile $ph_profile :radio_buttons [1=Not done,2=Normal,3=Abnormal]  {condition_test=3,condition_target=abnormal_ph_profile,condition_action=show,inline=1,required=Y}
+		Abnormal pH profile $abnormal_ph_profile :text {size=100}
+
+	ATS criteria $ats_crit_tab :tab
+		Does the patient fulfil the ATS criteria for refractory asthma $ats_refractory_asthma :radio_buttons [Y=Yes,N=No,A=Currently being assessed]  {inline=1,required=Y}
+		$field_8 :image {src=/images/refactory_asthma.png}

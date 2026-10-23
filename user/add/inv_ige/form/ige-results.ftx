@@ -1,0 +1,1 @@
+IgE result $ige_results :encounter_grid {use_page=path:haemresult,description=IgE result,fields=coll_date_time;test_code;result;units;normal_low;normal_high;specimen_no,filter_field[0]=test_code,filtergroup[0]=1,filter_value[0]=ige,filter_op[0]=eq}

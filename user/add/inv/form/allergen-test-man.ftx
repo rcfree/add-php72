@@ -1,0 +1,6 @@
+:horiz_container
+	Allergen test groups $group :dropdown {dictionary_groups=skin_prick_tests,empty_option=None}
+	Refresh test group :refresh_button {refresh_target=allergen_tests,empty_label=1}
+
+Add allergen test type :grid_add_button {refresh=allergen_tests,use_page=inv:alltesttype}
+Allergen test type $allergen_tests :dictionary_grid {include_fields=group,dictionary=skin_prick_tests,fields=title,after_row_actions=EditDictItem,use_page=inv:alltesttype}

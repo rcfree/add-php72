@@ -1,0 +1,4 @@
+Date of email* $date_changed :date {default=today()}
+Log type $log_type :hidden {default=5}
+Email template :file_memo $email {size=100,height=20,filename=email_template.txt}
+User $user_changed :hidden {default=current_user()}

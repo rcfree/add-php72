@@ -1,0 +1,35 @@
+RELEASE HISTORY
+
+1.3.0 13/01/2017
+* New client module support
+
+1.2.0 01/11/2016
+* Hometool separation
+
+1.1.0 27/01/2016
++ Support for domain/section records
+
+1.0.5 30/09/2015
++ Modified list to use EditPage action rather than EditRecord action
+
+1.0.4 22/09/2015
+! Clear patients in list if error
+* Provide link to patient in message when moved
++ Extract out patient link home tool into separate table which can be added to a page
+
+1.0.3 15/07/2015
+! Referral review tools deactivated when they shouldn't be
++ Loading image added to search patient system
++ Renamed SplitText to IssuesButton and added modal view
+
+1.0.2 07/07/2015
++ Support added to deactivate using deactivate_[module-alias] in [Referral] section
+
+1.0.1 24/06/2015
++ Tool added to review referrals which have been matched to a patient
+* Removed single record per patient limit for held records
+! Improved table headings 
++ Setting 'hide_if_login' added to ReferralHomeTool to prevent showing if logged in
+
+1.0.0 01/05/2015
+* Initial version of holding module

@@ -1,0 +1,51 @@
+:tab_container
+	O2 $o2_tab :tab
+		O2 Sat % on admission $o2_sat_pc_adm @o2_sat_% :number
+    	O2 User $o2_user :radio_buttons  {dictionary=copd_o2_user,inline=1}
+
+
+	Blood and sputum results $blood_results_tab :tab
+
+		Blood result $blood_count_results :encounter_matrix {data_url=/api/matrix,use_page=path:haemresult,yfield=test_code,xfield=coll_date_time,value_field=result,no_parent=1,filter_field[0]=test_code,filter_value[0]=WBC;LYMAB;NEUAB;EOSAB;CRP,filter_op[0]=eq,cell_actions=LinkCell,linkfield=blood,datacol_width=8em,sort_field=coll_date_time,sort_order=DESC,sort_date=1}
+		:pathology_status {status_prefix=ILAB result transfer}
+		Linked blood results :link_multiple_records $blood {linked_grid=blood_count_results,link_source_title=blood counts,xfield_type=date,link_target_title=admission,map_results_to_fields=1}
+
+		Sputum Colour $sputum_colour :radio_buttons  {dictionary=copd_sputum_colour,inline=1}
+
+-	Exercise $exercise_tab :tab
+-		Exercise Behaviour $exercise_behaviour :dropdown  {dictionary=copd_exerc_behaviour}
+-		Do You Exercise For 10 Minute Bouts X5 Week $exercise_5_10min_bouts_week :yes_no
+
+	Smoking and cessation :tab
+		:horiz_container
+			Smoking status*	$smoking_status	:radio_buttons [1=Non-smoker,2=Current smoker,3=Ex-smoker,4=Passive smoker]	{condition_test[0]=2;3,condition_target[0]=cessation_fields,condition_action[0]=show,inline=1} <1=snomed:8392000,2=snomed:160618006,3=snomed:8517006,4=snomed:43381005>
+
+		:container $cessation_fields {indent=1}
+			Pack years*	$pack_years	:number	{size=3, fixed=2} <snomed:315609007>
+			Offered Smoking Cessation $offered_smoking_cessation :radio_buttons [Y=Yes,N=No,D=Declined,X=N/A] {inline=1}
+			If Declined Referral $if_declined_referral :dropdown  {dictionary=copd_smoke_cess_dec_reason}
+			Nrt Prescribed $nrt_prescribed :radio_buttons [Y=Yes,N=No,D=Declined,X=N/A] {inline=1}
+
+	Scores :tab $score_tab
+		DECAF score $decaf_score :radio_buttons {dictionary=decaf_score,inline=1}
+		MRC extended score $mrc_score :radio_buttons  {dictionary=mrc_extended,value_only=1,inline=1}
+		"Frailty Score (0-9)" $frailty_score :number {min=0,max=9,suffix=/9}
+
+	Spirometry $spiro_tab :tab
+		Confirmed Diagnosis With Spirometry Within <5Years $conf_diag_spiro_lt5yrs :yes_no
+
+		Add spirometry :grid_add_button {refresh=spiro,modal_width=700,modal_height=600,use_page=resphy:stdlfunction}
+
+		Spirometry test $spiro :encounter_matrix {use_page=resphy:test,xfield=test_date,yfield=test_type,value_field=pre_value;pre_pc_predicted,filter_field[0]=test_type,filter_value[0]=FEV1;FVC;FEV1/FVC,filter_op[0]=eq,linkfield=link_spiro,cell_actions=LinkCell,custom_pattern=cell.data.pre_value.value + ' (' + cell.data.pre_pc_predicted.value + '%)',ignore_fieldmap=1,fieldmap[0]=FEV1:link_spiro_date_fev1;link_spiro_pre_value_fev1#pre_value;link_spiro_pre_pc_predicted_fev1#pre_pc_predicted,fieldmap[1]=FVC:link_spiro_date_fvc;link_spiro_pre_value_fvc#pre_value;link_spiro_pre_pc_predicted_fvc#pre_pc_predicted,fieldmap[2]=FEV1/FVC:link_spiro_date_fev1_fvc;link_spiro_pre_value_fev1_fvc#pre_value;link_spiro_pre_pc_predicted_fev1_fvc#pre_pc_predicted}
+		Linked spirometry test $link_spiro :link_multiple_records {linked_grid=spiro,link_source_title=Spirometry tests,link_target_title=visit,xfield_type=date,xfield_title=Date,yfields=pre_value;pre_pc_predicted,yfield_title=Value;% predicted}
+
+
+		If Spirometry Available - Where Documented $if_spirometry_available :radio_buttons  {inline=1, dictionary=copd_spiro_where}
+
+		Follow Up Spirometry Required $follow_up_spiro_req :yes_no
+
+-Non-Invasive Ventilation (Niv) On This Admission $niv_on_admission :yes_no
+-Discharged With Niv $discharged_with_niv :yes_no
+-Niv Used At Home? $niv_used_at_home :yes_no
+-Niv Used Long Term $niv_used_long_term :yes_no
+

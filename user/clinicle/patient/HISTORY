@@ -1,0 +1,45 @@
+RELEASE HISTORY
+
+1.4.2 05/10/2018
+! Restored original search component due to problems with Angular updates
+
+1.4.1 13/09/2018
+! Incorrect client version
+
+1.4.0 12/09/2018
+* Patient search converted to client/AJAX based search
+! Fix to patient demographics link
+! Separated search from core into patient as SearchPatients component
+
+1.3.0 08/02/2017
+* Replaced manage class with Command class
++ Fixed quick add option
+
+1.2.0 01/11/2016
+* Replaced add/patient with clinicle/patient
++ Implement Patient resource to display top panel
++ Patient event handling (delete/purge)
++ Force reload of top and side panels
++ patient_get function added to field functions
+
+1.1.4 15/03/2016
+! View/edit button too long on iPad
+
+1.1.3 04/01/2016
+! Syntax error when joining messages together
+ 
+1.1.2 04/01/2016
+* Updated to work with v2.0.x of clinicle/options
+
+1.1.1 21/10/2015
++ Always run after submission to update patient when they are created
+
+1.1.0 30/09/2015
++ Auto-save capability through 'save' URL parameter
+
+1.0.1 05/08/2015
++ Added support for different theme look through 'new_at_top' module setting
++ Improved support for theming with different CSS classes
+
+1.0.0 15/05/2015
+* Initial version

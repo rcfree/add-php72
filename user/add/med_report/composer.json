@@ -1,0 +1,11 @@
+{
+    "name": "add/med_report",
+    "description": "Medication report module (part of ADD)",
+	"type": "clinicle-module",
+	"require":{
+		"clinicle/core":"~2.3",
+		"clinicle/install":"~1.0",
+		"add/med":"~1.0",
+		"clinicle/report_ext":"~1.0"
+	}
+}

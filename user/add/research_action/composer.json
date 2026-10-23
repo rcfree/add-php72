@@ -1,0 +1,9 @@
+{
+    "name": "add/research_action",
+    "description": "Research action module (part of ADD)",
+	"type": "clinicle-module",
+	"require":{
+		"clinicle/core":"~2.3",
+		"clinicle/install":"~1.0"
+	}
+}

@@ -1,0 +1,36 @@
+Age left school $age_left_school :number
+	
+:tab_container
+	Occupations :tab $occup_tab
+		occupation $occupations :encounter_grid {use_page=ild:occupations,fields=date_added;start_date;end_date;description}
+		Add occupation :grid_add_button {use_page=ild:occupations,refresh=occupations}
+		
+	Birds/animals :tab
+
+		:horiz_container
+			Kept, or cared for, birds (including} caged birds or racing birds $ever_kept_birds :yes_no {condition_test=Y,condition_action=show,condition_target=bird_description}
+			Description of bird $bird_description :memo
+
+		"Worked on a farm, kept large animals (eg horses) or been exposed to moulds?" $worked_on_farm :yes_no
+	
+	Materials :tab
+		:horiz_container {segments=2}
+			Worked with or been exposed to asbestos $asbestos_work_expose :yes_no
+			Worked in coal mining $coal_mining_work :yes_no
+		Exposed to rock dust or particles of sand, such as fettling or foundry work? $rock_sand_expose :yes_no
+		
+		:horiz_container {segments=2}
+			Machined wood $machined_wood :yes_no
+			Machined metals $machined_metals :yes_no
+
+		Worked as a welder $worked_as_welder :yes_no {condition_target=weld_fields,condition_action=show,condition_test=Y}
+
+		:horiz_container $weld_fields
+		 "Type(s)  of welding" [1=MIG,2=TIG] $weld_type :checkboxes
+		 "Type(s) of metal welded" $metal_type :text
+		
+		:horiz_container {segments=2}
+			Sprayed paints $sprayed_paints $sprayed_paints :yes_no
+			Worked in hairdressing $worked_in_hairdressing :yes_no
+		
+		Worked with coolant oil $worked_with_coolant :yes_no

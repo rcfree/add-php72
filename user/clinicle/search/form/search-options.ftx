@@ -1,0 +1,6 @@
+Retrieval settings :fieldset {compress=1}
+	Include field values $include_field_values :checkbox
+	Non-unique/distinct values $non_distinct_values :checkbox
+
+Post-processing :fieldset {compress=1}
+	Single patient-per row $patient_per_row :checkbox

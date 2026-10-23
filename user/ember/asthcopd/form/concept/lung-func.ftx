@@ -1,0 +1,22 @@
+:horiz_container
+	Add standard PFT (GLI) :grid_add_button {refresh=lung_function,modal_width=700,modal_height=600,use_page=resphy:stdglilfunction}
+	Add reversibility PFT (GLI) :grid_add_button {refresh=lung_function,modal_width=700,modal_height=600,use_page=resphy:revglilfunction}
+	Add standard PFT (ECS) :grid_add_button {refresh=lung_function,modal_width=700,modal_height=600,use_page=resphy:stdlfunction}
+	Add reversibility PFT :grid_add_button {refresh=lung_function,modal_width=700,modal_height=600,use_page=resphy:revlfunction}
+
+PFT exam $lung_function :encounter_matrix {use_page=resphy:test,xfield=test_date,yfield=test_type,value_field=pre_pc_predicted,filter_field[0]=test_type,filter_value[0]=FEV1;FVC;FEV1/FVC,filter_op[0]=eq,linkfield=link_pft,cell_actions=LinkCell,custom_pattern='<b>Pre:</b>' + cell.data.pre_value.value + ' (' + cell.data.pre_pc_predicted.value + '%) <b>Post:</b>' + cell.data.post_value.value + ' (' + cell.data.post_pc_predicted.value + '%)',ignore_fieldmap=1,fieldmap[0]=FEV1:link_pft_date_fev1;link_pft_pre_pc_predicted_fev1#pre_pc_predicted;link_pft_post_pc_predicted_fev1#post_pc_predicted,fieldmap[1]=FVC:link_pft_date_fvc;link_pft_pre_pc_predicted_fvc#pre_pc_predicted;link_pft_post_pc_predicted_fvc#post_pc_predicted,fieldmap[2]=FEV1/FVC:link_pft_date_fev1_fvc;link_pft_pre_pc_predicted_fev1_fvc#pre_pc_predicted;link_pft_post_pc_predicted_fev1_fvc#post_pc_predicted}
+Linked PFT exam $link_pft :link_multiple_records {linked_grid=lung_function,link_source_title=PFT results,link_target_title=visit,xfield_type=date,xfield_title=Date,yfields=pre_pc_predicted;post_pc_predicted,yfield_title=Pre % predicted;Post % predicted}
+
+Add pre PEF :grid_add_button {refresh=pef_results,modal_width=700,modal_height=600,use_page=resphy:pef}
+pre PEF result $pef_results :encounter_matrix {use_page=resphy:test,xfield=test_date,yfield=test_type,value_field=pre_value,filter_field[0]=test_type,filter_value[0]=PEF,filter_op[0]=eq,linkfield=link_pef,cell_actions=LinkCell }
+Linked pre PEF result* :link_multiple_records $link_pef {linked_grid=pef_results,link_source_title=PEF results,link_target_title=PEF result,xfield_type=date,xfield_title=Date}
+
+Add post PEF :grid_add_button {refresh=post_pef_results,modal_width=700,modal_height=600,use_page=blness:post_pef}
+post PEF result $post_pef_results :encounter_matrix {use_page=resphy:test,xfield=test_date,yfield=test_type,value_field=post_value,filter_field[0]=test_type,filter_value[0]=POSTPEF,filter_op[0]=eq,linkfield=link_post_pef,cell_actions=LinkCell }
+Linked post PEF result* :link_multiple_records $link_post_pef {linked_grid=post_pef_results,link_source_title=PEF results,link_target_title=PEF result,xfield_type=date,xfield_title=Date}
+
+-Linked lung function exam :link_grid_dropdown $lung_exams @link_tests {size=30,use_page=resphy:detail,list_pattern={{row.exam_date.value }} - {{ row.test_set_details.value}},linkgrid=lung_function}
+
+-$link_pft_date_pef
+-$link_pft_pre_pc_predicted_pef
+-$link_pft_post_pc_predicted_pef		

@@ -1,0 +1,62 @@
+:tab_container
+ Diagnosis :tab
+  Ever seen by a rheumatologist (joint specialist) in hospital or clinic? $seen_by_rheumat :yes_no {condition_test=Y,condition_target=rheumat_diagnosis,condition_action=show}
+  If so, what diagnosis were you given? $rheumat_diagnosis :text
+
+  Do you suffer from any of the following conditions? :radio_group [Y=Yes,N=No] $suffer_conditions_rg
+   Rheumatoid arthritis :radio_item $condition_rarth
+   Systemic sclerosis :radio_item $condition_systscler
+   Scleroderma :radio_item $condition_sclero
+   Myositis :radio_item $condition_myositis
+   Polymyositis :radio_item $condition_polymyo
+   Dermatomyositis :radio_item $condition_dermato
+   Sjögren's syndrome :radio_item $condition_ssyndrome
+   SLE :radio_item $condition_sle
+   Lupus :radio_item $condition_lupus
+   Raynaud's :radio_item $condition_raynauds
+ 
+ Joints :tab
+  Do your joints hurt or ache regularly :yes_no $joints_hurt_ache {condition_test=Y,condition_action=show,condition_target=joints_hc}
+  :horiz_container $joints_hc
+   Which joints? :text $joints_ha_details
+   Is this usually worse :radio_buttons [1=when you wakeup,2=at the end of the day] {inline=1} $joints_ha_when
+  
+  Are any joints stiff when you wake up in the morning :yes_no $morn_joints_stiff  {condition_test=Y,condition_action=show,condition_target=time_joints_loose}
+  If so, on average how many minutes does it take before they loosen up :number $time_joints_loose
+
+  :horiz_container
+   Do any joints swell :yes_no $joints_swell  {condition_test=Y,condition_action=show,condition_target=joints_swell_details}
+   If so, which ones? :text $joints_swell_details
+
+  "Do your fingers ever change colour in the cold (go white)?" :yes_no $fingers_change_col {condition_test=Y,condition_action=show,condition_target=blue_red_fingers}
+  If so, do they then go blue and/or red? :yes_no $blue_red_fingers
+
+ Other symptoms :tab
+
+  Do you suffer with a rash or rashes? :yes_no $suffer_rashes  {condition_test=Y,condition_action=show,condition_target=rashes_con}
+  :container $rashes_con
+   If so, where on the body? :text $rashes_where
+   "Do you ever get a rash (other than sunburn) in areas of the skin exposed to sunlight?" :yes_no $rash_sunlight_expose
+
+  :horiz_container
+   Have you lost weight without wanting to or dieting? :yes_no $weight_loss {condition_test=Y,condition_action=show,condition_target=weight_loss_value}
+   How much weight have you lost? :number suffix=kg} $weight_loss_value
+
+  Do you experience dryness or grittiness of the eyes? :yes_no $eye_dry_grit
+
+  Do you experience troublesome dryness of the mouth? :yes_no $mouth_dryness
+
+  Do you get frequent or troublesome mouth ulcers? :yes_no $freq_trouble_mouth_ulcers
+
+  Have you experienced unexpected hair loss? :yes_no $hair_loss
+
+  Do you experience pain or other difficulty swallowing? :yes_no $swallow_pain_difficult
+
+  Do you experience a foul taste, acid or bile in the mouth, or other features of reflux? :yes_no $foul_taste_reflux
+
+  Do you suffer from fevers? :yes_no $fevers
+
+  Do you experience weakness of the muscles? :yes_no $muscle_weakness
+
+  Do you struggle to get up from a chair without using your arms, or difficulty climbing the stairs without using a bannister? :yes_no $chair_stair_use_arms
+

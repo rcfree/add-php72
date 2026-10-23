@@ -1,0 +1,77 @@
+:tab_container
+	Clinical features :tab
+		Clinical presentation :memo
+		Drug history for eosinophilic disease $drug_hist_eosin_dis @drug_history_for_eosinophilic_ :checkboxes {dictionary=drughist,columns=3,condition_test[0]=A,condition_op[0]=eq,condition_action[0]=show,condition_target[0]=other_antibiotic,,condition_test[1]=O,condition_op[1]=eq,condition_action[1]=show,condition_target[1]=other_drug}
+		Other antibiotic :text $other_antibiotic
+		Other drug :text $other_drug
+		
+		:horiz_container {segments=3}
+			Family hist. of eosinophilic disease $fam_hist_eosin_dis @family_history_of_eosinophilic :yes_no
+			Aspirin sensitive :yes_no
+			Rhinosinusitis :yes_no
+			
+		:horiz_container {segments=3}
+			Nasal polyps :yes_no
+			Steroid responsive :yes_no
+			Atopic $atopic @atopic_not_in_ilab :yes_no
+	
+	-Immunological results :tab
+		
+		-ILAB IgE result $ige_results :encounter_grid {use_page=path:haemresult,description=haematology result,fields=test_code;result;units;normal_low;normal_high;specimen_no;coll_date_time,filter_field[0]=test_code,filter_value[0]=A-IGE;C1;C2;C202;CC5;CC6;CC7;D1;D2;D71;E1;E201;E208;E209;E213;E215;E3;E4;E5;E6;E7;E74;E78;E82;E84;E85;E86;E87;EX72;EX73;F1;F10;F12;F13;F14;F15;F17;F18;F2;F20;F201;F202;F203;F204;F205;F206;F207;F208;F210;F212;F214;F215;F216;F217;F221;F222;F224;F225;F226;F23;F235;F236;F237;F24;F242;F244;F247;F25;F253;F254;F255;F256;F258;F259;F26;F261;F262;F263;F268;F27;F283;F287;F288;F289;F290;F291;F293;F294;F299;F3;F300;F306;F309;F312;F313;F314;F317;F319;F320;F324;F329;F33;F332;F333;F335;F338;F343;F345;F35;F352;F354;F36;F37;F4;F40;F41;F416;F42;F422;F423;F424;F425;F427;F428;F44;F45;F47;F48;F49;F5;F54;F6;F7;F75;F78;F79;F8;F80;F81;F82;F83;F84;F85;F86;F87;F88;F89;F9;F91;F92;F93;F94;F95;F96;G6;I1;I2;I205;I208;I209;I5;I75;K20;K212;K80;K82;K84;K87;M1;M205;M210;M3;M5;M6;MM2;MM9;O70;SPIGE2;T12;T15;T16;T2;T215;T7;T8;TIGE;TT3;TT4;W6:RF,filter_op[0]=eq}
+		
+		-ILAB ANCA result $anca :encounter_grid {use_page=path:haemresult,description=haematology result,fields=test_code;result;units;normal_low;normal_high;specimen_no;coll_date_time,filter_field[0]=test_code,filter_value[0]=ANCA,MPOQ,PR3Q,filter_op[0]=eq}
+		-Rheumatoid factor :yes_no
+		-Total IgE :number
+
+		-Parasitic serology :fieldset {compress=1}
+			-IgG strongyloides :number
+			-IgG filiriasis :number
+			-IgG Fasciola :number
+			-IgG Hydatid :number
+			-IgG other parasite :number
+
+	-Other haematology :tab $other_haem_tab
+		
+		
+		-ILAB result $other_haem :encounter_grid {use_page=path:haemresult,description=haematology result,fields=test_code;result;units;normal_low;normal_high;specimen_no;coll_date_time,,filter_op[0]=eq,filter_field[0]=test_code,filter_value[0]=C3;C4;MCT;MCTP,PR3Q;RBCAGG;TOX;VRLE1;ACAG;ACAM;ACAS;ACLP;CDL;CDLP;CK;GFR;CALB;ALT;DMA;OCRP;SAACRP;TIA;ULBC;TFT;TFTD;TROI}
+
+		-Cortisol :number
+		-Creatinine kinase :number
+		-EGFR :number
+		-Albumin :number
+		-ALT :number
+		-CRP :number
+		-Thyroid function :number
+		-Troponin :number
+		-C3 $c3
+		-C4 $c4
+		
+		-Tryptase :number
+		-Cold agglutinins :number
+		-Anti-cardiolipin :number
+
+	
+	-Lung function :tab $lung_func_tab
+		-lung function test $lung_function :encounter_grid {use_page=resphy:test,fields=test_type;predicted;pre_value;pre_pc_predicted;post_value;post_pc_predicted,filter_field[0]=test_type,filter_value[0]=FEV1;FVC;FEV1/FVC;PEF,filter_op[0]=eq}
+
+	Investigations :tab $invest_tab
+		investigation $investigations :encounter_grid {use_page=eos:cfinvest,fields=invest_date;invest_type;invest_result;invest_abnorm_details}
+		Add investigation :grid_add_button {use_page=eos:cfinvest,refresh=investigations}
+		
+		-ECG :radio_buttons [1=Normal,2=Abnormal,3=Not done] 
+		-EMG :radio_buttons [1=Normal,2=Abnormal,3=Not done]
+	
+	-Biopsies :tab
+	-	Gut biopsy :radio_buttons  [1=Normal,2=Abnormal,3=Not done]
+	-	Skin biopsy :radio_buttons [1=Normal,2=Abnormal,3=Not done] 
+	-	Neural biopsy :radio_buttons [1=Normal,2=Abnormal,3=Not done]
+	-	Cardiac biopsy :radio_buttons [1=Normal,2=Abnormal,3=Not done]
+	
+	-Microbiology :tab
+		-Microbiology result $micro_results_grid :encounter_grid {use_page=path:microresult,description=microbiology result,fields=coll_date_time;test_code;specimen_type;organisms,sort_field=coll_date_time,sort_order=DESC,sort_date=1}
+		
+	-Routine counts :tab
+		-Lymphocyte phenotype :radio_buttons $lymphocyte_phenotype [1=Normal,2=Abnormal,3=Not done]
+		-Abnormal details :text
+		
+		-count $routine_result_times :encounter_matrix {use_page=path:haemresult,yfield=test_code,xfield=coll_date_time,value_field=result,no_parent=1,filter_field[0]=test_code,filter_value[0]=EOS;EOSAB;PLT;PLTA;NEUAB;NEUT,filter_op[0]=eq}

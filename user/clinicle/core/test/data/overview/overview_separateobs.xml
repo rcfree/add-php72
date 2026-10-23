@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<overview>
+	<logic name="obese-non-eosinophil">
+		<input section="details" obs="bmi" op="gt" value="30"/>
+		<input section="bsd" obs="high_eosin_count_blood" op="gt" value="10"/>
+		<output obs="endotype" value="3" action="update"/>
+	</logic>
+	<logic name="atopic-disease">
+		<input section="medhistory" obs="atopic_disease" op="any" />
+		<output obs="atopic" action="update"/>
+	</logic>
+</overview>
+

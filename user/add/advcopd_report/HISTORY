@@ -1,0 +1,15 @@
+RELEASE HISTORY
+---------------
+
+1.1.2 04/11/2016
+! report.js moved to module config as not being loaded within page in sub-module
+
+1.1.1 16/03/2016
+! Incorrectly removed FEV1/FVC fields from report
+
+1.1.0 24/02/2016
++ Updated report to support new section/domain structure
+
+1.0.0 16/02/2015
+* Created page to copy free text reports to clipboard
++ Plain text version of annual review report

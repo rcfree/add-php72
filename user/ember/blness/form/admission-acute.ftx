@@ -1,0 +1,5 @@
+Date of admission* :date $admission_date {min=date_of_birth(),max=today()}
+
+:horiz_container
+	Age at admission :expression {size=3,expression=age(date_of_birth()|get('admission_date')),condition_action[0]=set_if_empty,condition_op[0]=gt,condition_test[0]=16,condition_target[0]=treat_as,condition_target_value[0]=1,condition_action[1]=set_if_empty,condition_op[1]=lt,condition_test[1]=17,condition_target[1]=treat_as,condition_target_value[1]=2}
+	Treat as :radio_buttons [1=Adult,2=Child] {inline=1}

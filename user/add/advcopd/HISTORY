@@ -1,0 +1,111 @@
+RELEASE HISTORY
+---------------
+
+2.7.0 31/10/2017
+* Renamed EQ5D-5 fields so they work with new version of QoL
+* Undeleted FEV1 and FVC fields from Exercise page
+
+2.6.0 03/07/2017
++ Verification components added to forms
+
+2.5.3 02/11/2016
+! QMVC calculation error because height had moved
+
+2.5.2 25/02/2016
+! Placeholder field was not hidden
+
+2.5.1 25/02/2016
+! Missing HADS fields
+
+2.5.0 25/02/2016
++ Supports changes to fields for iteration 4
+
+2.3.0 10/12/2015
++ Removed overlapping classes which are in add/report
+
+2.2.5 05/01/2015
+* Vit D (earlymortrisk) given 'allow_op' setting
+* 4m gait measurement 'fixed' setting changed to 2
+
+2.2.4 19/12/2014
+! BMI expression restored
+
+2.2.3 17/12/2014
++ Added fields for waist circ and 4m gait
+
+2.2.2 17/09/2014
+* Merged local v2.1.0 compatible changes with changes made for stable v2.2.0
+! Removed old Field/Option/Encounters file which was not used and added requires to ReportField AgeObs
+! Compatibility fixes to AgeObs and to QoL test config files
+
+2.2.1 02/09/2014
+! Fixed calculations which were not working (incorrect syntax)
+
+
+2.2.0 27/08/2014
+* Several field labels changed and new fields added based on dev session with MS
+! Fixed test and custom code problems with field name changes
+
+2.1.1 11/07/2014
+! Conditional field issue with ELBG result fixed
+
+2.1.0 10/07/2014
++ Improved annual data sheet report which required new ReportField types to be set up
+* Removed the old annual report
+! Corrected field label in report
+! Conditional field issue with ELBG result fixed
+
+2.0.0 16/04/2014
++added improved regression testing for key components/fields
++made compatible with v2 of the ADD framework
++expected value config files for unit tests
++initial alterations as per suggestions from MS and NT
+* changes to AJAX components to improve maintainability
++ added migration from v1 to v2 (moving the prelim record into a baseline encounter)
+! problem with non-existing fields and conditional logic
++ added additional migration logic to update conditional field
+! invalid options in annual-actions.csv file
+* refined UpdateOnCondition migrate class
++ changes asked for by Mick/Nicole in second phase of advanced COPD
+! report bug fixes (missing fields etc)
+
+1.0.10 18/02/2014
++individual lean values added along with calculations for FFMI and QMVC
+!renamed PredictedQMVC to PredictedQmvc (was not loading correctly)
+
+1.0.9 10/02/2014
++QMVC predicted calculations and fields
+*removed old followup form and page from template (replaced with new sub-module)
+*changes to ensure compatibility with core 1.0.16
+
+1.0.8 29/01/2014
+!fixed incorrect fields displayed in annual datasheet report
+
+1.07 02/12/2013
+Fields add to state whether patient had readings taken or not for lung volume, gas transfer, blood results, FE NO
+
+1.06 30/10/2013
+Removed incorrect fields, added referral criteria (active smoker)
+
+1.05 22/10/2013
+Made Framingham Risk AJAX-compliant so updates without pre-save
+
+1.04 26/08/2013
+Switched EQ5D-3 for EQ5D-5 in annual QoL page
+Modified annual data sheet to remove headings and include comorbidities
+Added additional fields for ELBG and BORG to annual exercise page
+
+1.03 06/08/2013
+Removed pre-calculated lung function values from 'Exercise' domain due to discrepancies between ADD and UHL values
+Improved layout for Annual Assessment Data Sheet and additional fields (MRC grade and PO2)
+Minor tweaks to forms to remove required field issues (related to containers with required set)
+Addition of Y/N questions for values not always available.
+
+1.02 16/08/2013
+Added annual datasheet report and menu option to view/print it
+
+1.01 15/08/2013
+Changed DrugDropdown field into DrugCheckboxes to allow multiple selections
+
+1.00 12/08/2013
+Initial full release of advanced COPD module

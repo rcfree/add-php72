@@ -1,0 +1,7 @@
+Value $value :hidden
+"<div class='alert alert-warning'>The test label cannot be changed once it has been created</div>" :markup {show_on_edit=1}
+
+Test label/description* $title :text {readonly_on_edit=1}
+Group $group :dropdown {dictionary_groups=skin_prick_tests,empty_option=None}
+Create new group $new_group :checkbox {condition_action[0]=show,condition_test[0]=1,condition_target[0]=group_label}
+New group label* $group_label :text

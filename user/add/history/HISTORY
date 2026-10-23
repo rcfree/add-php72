@@ -1,0 +1,15 @@
+RELEASE HISTORY
+---------------
+2.0.1 18/09/2014
++ Added requires to page.ini
+! Corrected dictionary loader PHP class from FormLoad to ModuleInstall
+
+2.0.0 09/05/2014
+* Changed ICD10 Dictionary plugin to create groups of ICD10 terms and deal with historical non-NHS terms
+* Refactored PHP code for ADD v2
+* field renamed from 'add_drug' to 'add_comorbidity'
+
+0.0.1 27/01/2014
++ ICD10-based XML to CSV transformation script (currently uses CDC 2014 version of ICD10)
++ ICD10 comorbidity dictionary including synonyms
++ comorbidities page based on medication -> drugs page

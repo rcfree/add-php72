@@ -1,0 +1,2 @@
+"Primary condition/disease" :checkboxes $primary_cond_dis {dictionary=conditionlist,condition_test=O,condition_action=show,condition_target=other_condition}
+Details of other condition :text $other_condition

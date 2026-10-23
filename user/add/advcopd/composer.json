@@ -1,0 +1,15 @@
+{
+    "name": "add/advcopd",
+    "description": "Advanced COPD module (part of ADD)",
+	"type": "clinicle-module",
+	"require":{
+		"clinicle/core":"~2.3",
+		"add/patient":"~1.0",
+		"clinicle/install":"~1.0",
+		"add/concept":"~1.0",
+		"add/qol":"^2.3"
+	},
+	"autoload": {
+        "classmap": ["php"]
+    }
+}

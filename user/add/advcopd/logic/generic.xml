@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<overview>
+	
+	<logic name="cat">
+		<input section="acat" obs="score" op="any" />
+		<output obs="cat_score" action="update"/>
+	</logic>
+	
+	<logic name="crq-dys">
+		<input section="acrq" obs="dyspnoea_score" op="any" />
+		<output obs="crq_dyspnoea_score" action="update"/>
+	</logic>
+	
+	<logic name="crq-fatigue">
+		<input section="acrq" obs="fatigue_score" op="any" />
+		<output obs="crq_fatigue_score" action="update"/>
+	</logic>
+	
+	<logic name="crq-emotional">
+		<input section="acrq" obs="emotional_score" op="any" />
+		<output obs="crq_emotional_score" action="update"/>
+	</logic>
+	
+	<logic name="crq-mastery">
+		<input section="acrq" obs="mastery_score" op="any" />
+		<output obs="crq_mastery_score" action="update"/>
+	</logic>
+	
+</overview>

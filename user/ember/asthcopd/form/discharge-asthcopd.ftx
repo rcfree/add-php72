@@ -1,0 +1,27 @@
+$primary :checkboxes {dictionary=blness_condition, hidden=1,default=get('ddiagnosis:primary_condition'),use_default=1,condition_test[0]=CAP,condition_action[0]=hide,condition_target[0]=lf_tab}
+
+:tab_container $ac_tabs
+
+	Quad U/S :tab {copd_only=1} $quad_us_tab
+		Quad U/S performed $quad_us_performed :yes_no {condition_test=Y,condition_action=show,condition_target=frailty_concept}
+		$frailty_concept :concept_group {concept_type=blness:frailty,indent=1}
+
+	Lung function :tab $lf_tab
+		$lung_func_concept :concept_group {concept_type=blness:lung-func}
+
+	4m gait :tab $4m_gait_tab
+		4m gait done :yes_no $4m_gait_done {condition_test=Y,condition_target=4m_gait_speed,condition_action=show}
+
+		4m gait speed* :number $4m_gait_speed {suffix=secs,min=1,max=30}
+
+
+-FeNo :tab
+-Add FeNO :grid_add_button {refresh=exhaled_no,use_page=resphy:no,linkfield=link_exhaled_no}
+-FeNO result $exhaled_no :encounter_grid {link_display_field=test_date,before_row_actions=LinkRecord,use_page=resphy:test,fields=test_date;test_type;pre_value;pre_pc_predicted,filter_field[0]=test_type,filter_value[0]=NO,filter_op[0]=eq,linkfield=link_exhaled_no}
+-FeNO* :link_record $link_exhaled_no {linked_grid=exhaled_no,unlinked_text=Use a 'Link' button to link an exhaled NO with this record,use_parent_id=1}
+
+-$decaf_score
+-$link_pft_date_pef
+-$link_pft_pre_pc_predicted_pef
+-$link_pft_post_pc_predicted_pef
+

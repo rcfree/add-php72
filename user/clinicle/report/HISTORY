@@ -1,0 +1,27 @@
+RELEASE HISTORY
+
+1.2.2 07/12/2017
+! Accidental reintroduction of ADD.Client namespace in ReportLink field
+
+1.2.1 04/11/2016
+! Report link button needed non-ng attribute
+! Report link button looking for ADD_SectionRecord class
+
+1.2.0 01/11/2016
++ Support for panel-based page updates
++ Use of factory registry to create ReportField classes 
++ Changed to work with refined clinicle/core
++ Support for CSV files in FileView content
+
+1.1.0 10/12/2015
++ Implemented support for section/domain tables with DomainRecord/SectionRecord classes
+
+1.0.2 29/07/2015
++ Fix report/letter 'lookup' function so it pulls data from linked observations in a link field
+
+1.0.1 14/07/2015
++ Changed missing report error to warning
++ Removed target attribute in ReportLink
+
+1.0.0 17/06/2015
++ Separated report module from core

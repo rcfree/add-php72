@@ -1,0 +1,14 @@
+Level,Title,Field,Type,Settings,Min,Max,Default,Prefix,Suffix,Size,Attributes,Options,Required
+1,"Return to QoL summary..",eq5d_5_return,summary_page_link,"parent_key=buttons",,,,,,,,,
+1,Date,eq5d_5_date,date,"summary_obs=eq5d5_date","""01/01/1900""",today(),today(),,,,,,Y
+1,Mobility,mobility,radio_buttons,"dictionary=eq5d5_mobility,show_value=1,rtl=1",,,,,,,,,Y
+1,Self-Care,self_care,radio_buttons,"dictionary=eq5d5_selfcare,show_value=1,rtl=1",,,,,,,,,Y
+1,"Usual Activities <i>(e.g. work, study, housework, family or leisure activities)</i>",usual_activities,radio_buttons,"dictionary=eq5d5_activities,show_value=1,rtl=1",,,,,,,,,Y
+1,Pain/Discomfort,pain_discomfort,radio_buttons,"dictionary=eq5d5_pain,show_value=1,rtl=1",,,,,,,,,Y
+1,Anxiety/Depression,anxiety_depression,radio_buttons,"dictionary=eq5d5_anxiety,show_value=1,rtl=1",,,,,,,,,Y
+1,"Health state",health_state,number,"description=From 0 (Worst imaginable health state) to 100 (Best imaginable health state),summary_obs=eq5d5_health_state",0,100,,,,3,,,Y
+1,Totals,fs2,fieldset,compress=1,,,,,,,,,
+2,,hc1,horiz_container,,,,,,,,,,
+3,Score,score,expression,"expression=sum('mobility;self_care;usual_activities;pain_discomfort;anxiety_depression'),summary_obs=eq5d5_score",,,,,/15,2,,,
+3,Status,status,internal,"summary_obs=eq5d5_status,summary_type=status",,,,,,,,,
+DEL,"Calculate score",calc_score,calc_button,"calculate=score,recalc_onsubmit=1,empty_label=1",,,,,,,,,

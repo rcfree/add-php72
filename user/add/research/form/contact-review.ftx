@@ -1,0 +1,4 @@
+Date of review* $date_changed :date {default=today()}
+Log type $log_type :hidden {default=2}
+Review comments :memo $change_comments {size=80,height=5}
+User $user_changed :hidden {default=current_user()}

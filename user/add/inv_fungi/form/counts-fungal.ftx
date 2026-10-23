@@ -1,0 +1,3 @@
+Add fungal set $add_fungal_set :grid_add_button {refresh=fungal_counts,modal_width=700,use_page=inv:fungalresult}
+Add fungal result $add_fungal_result :grid_add_button {refresh=fungal_counts,modal_width=700,use_page=inv:frow}
+fungal count $fungal_counts :encounter_grid {use_page=inv:frow,before_row_actions=DateCreated,after_row_actions=DeleteRecord;EditRecord}

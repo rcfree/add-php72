@@ -1,0 +1,16 @@
+{
+    "name": "clinicle/base",
+    "description": "ClinicLE base",
+    "require": {
+        "php": ">=5.3.3",
+		"clinicle/core":"^2.13",
+		"clinicle/web":"^1.3",
+		"clinicle/api":"^1.1",
+		"clinicle/ajax":"^1.1",
+		"clinicle/client":"^1.10",
+		"clinicle/patient":"^1.3",
+		"clinicle/options":"^1.6",
+        "clinicle/record":"^1.1",
+		"clinicle/setup":"^1.0"
+    }
+}

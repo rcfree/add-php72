@@ -1,0 +1,35 @@
+Return to QoL summary..	$qol_return	:summary_page_link {parent_key=buttons}
+Date*	$epro_date	:date {min=date_of_birth(),max=today(),default=today(),summary_obs=epro_date}
+
+$questions :tab_container
+
+	Q1 :tab
+		1. Did your chest feel congested today? :exactpro_question $chest_congestion {dictionary=epro_q1}
+	Q2 :tab
+		2. How often did you cough today :exactpro_question $cough_freq {dictionary=epro_q2}
+	Q3 :tab
+		3. How much mucus (phlegm) did you bring up coughing today? :exactpro_question $mucus_cough_amount {dictionary=epro_q3}
+	Q4 :tab
+		4. How difficult was it to bring up mucus (phlegm) today? :exactpro_question $mucus_difficulty {dictionary=epro_q4}
+	Q5 :tab
+		5. Did you have chest discomfort today? :exactpro_question $chest_discomfort {dictionary=epro_q5}
+	Q6 :tab
+		6. Did your chest feel tight today? :exactpro_question $chest_tight {dictionary=epro_q6}
+	Q7 :tab
+		7. Were you breathless today? :exactpro_question $breathless {dictionary=epro_q7}
+	Q8 :tab
+		8. Describe how breathless you were today: :exactpro_question $how_breathless {dictionary=epro_q8}
+	Q9 :tab
+		9. Were you short of breath today when performing your usual personal care activities like washing or dressing? :exactpro_question $sob_dressing_acts {dictionary=epro_q9}
+	Q10 :tab
+		10. Were you short of breath today when performing your usual indoor activities like cleaning or household work? :exactpro_question $sob_indoor_acts {dictionary=epro_q10}
+	Q11 :tab
+		11. Were you short of breath today when performing your usual activities outside the home such as yard work or errands? :exactpro_question $sob_outside_acts {dictionary=epro_q11}
+	Q12 :tab
+		12. Were you tired or weak today? :exactpro_question $tired_weak {dictionary=epro_q12}
+	Q13 :tab
+		13. Last night, was your sleep disturbed? :exactpro_question $sleep_disturbed {dictionary=epro_q13}
+	Q14 :tab
+		14. How scared or worried were you about your lung problems today? :exactpro_question $scared_lung_problems {dictionary=epro_q14}
+
+Status	$status	:internal {summary_obs=epro_status,summary_type=status}

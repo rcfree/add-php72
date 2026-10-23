@@ -1,0 +1,13 @@
+:tab_container
+	Prescription drugs	:tab $pd_fset	
+		Add prescription drug $add_drug :grid_add_button {refresh=prescr_drugs;otc_drugs,modal_width=700,use_page=med:presdrugitem,allow_add_another=1}
+		Show inactive drugs :filter_switch $hide_inactive_prs {target_grid=prescr_drugs,off_filter=drug_type|eq|1+current_status|eq|1,on_filter=drug_type|eq|1}
+		prescription drug $prescr_drugs :encounter_grid {use_page=med:drugitem,fields=drug_details;dose;frequency;duration,condition_field=current_status,condition_class=inactive,row_condition=current_status|eq|2|inactive,filter[0]=drug_type|eq|1,filter[1]=current_status|eq|1,description=prescription drug,before_row_actions=DateCreated,after_row_actions=StartDateSummary;EndDateSummary;InactivateRecord;DeleteRecord,use_parent=1}
+
+	
+	OTC/recreational/complementary drugs $otc_fset :tab
+		Add OTC drug $add_otc_drug :grid_add_button {refresh=prescr_drugs;otc_drugs,modal_width=700,use_page=med:otcdrugitem,allow_add_another=1}
+
+		Show inactive drugs :filter_switch $hide_inactive_otc {target_grid=otc_drugs,off_filter=drug_type|eq|2+current_status|eq|1,on_filter=drug_type|eq|2}
+
+		OTC/recreational/complementary drug $otc_drugs	:encounter_grid {use_page=med:drugitem,fields=drug_details;dose;frequency;duration,condition_field=current_status,condition_class=inactive,row_condition=current_status|eq|2|inactive,filter[0]=drug_type|eq|2,filter[1]=current_status|eq|1,description=OTC/recreational/complementary drug,before_row_actions=DateCreated,after_row_actions=StartDateSummary;EndDateSummary;InactivateRecord;DeleteRecord,use_parent=1}

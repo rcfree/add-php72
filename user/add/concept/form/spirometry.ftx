@@ -1,0 +1,104 @@
+:container $predicted_values
+	Date of spirometry :date $spirometry_date 
+
+	Predicted Values $pv_fset :fieldset {compress=1,width=98%}
+
+		:horiz_container
+			FEV<sub>1</sub> $pred_fev1 :expression {ajax-func=LungFunction,display_text=Predicted FEV<sub>1</sub>,size=4,suffix=l}
+			FVC $pred_fvc :expression {display_text=Predicted FVC,size=4,suffix=l}
+			FEV<sub>1</sub>/FVC $pred_fev1_fvc :expression {display_text=Predicted FEV<sub>1</sub>/FVC,size=4,suffix=l}
+			PEF $pred_pef :expression {display_text=Predicted PEF,size=5,suffix=l min <sup>-1</sup>}
+			Use correction factor (90%)? $cfactor_90pc :checkbox
+			
+Pre_post FEV1/FVC :container $pre_post_fev1_fvc
+	
+	Has patient withheld inhalers :yes_no  $patient_wheld_inhalers {condition_test="N",condition_target=fset1;fset3;fset5;fset7,condition_action=hide,inline=1}
+
+	:horiz_container
+
+		"Pre-bronchodilator FEV<sub>1</sub>" $fset1 :fieldset {compress=1,width=48%}
+
+			:horiz_container
+				FEV<sub>1</sub> $pre_bronch_fev1 :number {display_title=Pre-bronch FEV1,required=Y,size=4,suffix=l}
+				% predicted FEV<sub>1</sub> $pc_pred_pre_bronch_fev1 :expression {expression=get('pre_bronch_fev1')/get('pred_fev1')*100,expression_fail_value=NULL,fixed=2,data_type=number,display_title=Pre-bronch % pred. FEV1,size=4,suffix=%}
+
+		"Post-bronchodilator FEV<sub>1</sub>" $fset2 :fieldset {compress=1,width=48%}
+
+			:horiz_container
+				"FEV<sub>1</sub>" $post_bronch_fev1 :number {display_title=Post-bronch FEV1,required=Y,size=4,suffix=l}
+				"% predicted FEV<sub>1</sub>" $pc_pred_post_bronch_fev1 :expression {expression=(get('post_bronch_fev1')/get('pred_fev1')*100),expression_fail_value=NULL,fixed=2,data_type=number,display_title=Post-bronch % pred. FEV1,size=4,suffix=%}
+
+	:horiz_container
+
+		"Pre-bronchodilator FVC" $fset3 :fieldset {compress=1,width=48%}
+
+			:horiz_container
+				"FVC" $pre_bronch_fvc :number {display_title=Pre-bronch % pred. FVC,required=Y,size=4,suffix=l}
+				"% predicted FVC" $pc_pred_pre_bronch_fvc :expression {expression=(get('pre_bronch_fvc')/get('pred_fvc')*100),expression_fail_value=NULL,fixed=2,data_type=number,display_title=Post-bronch % pred. FVC,size=4,suffix=%}
+
+		"Post-bronchodilator FVC" $fset4 :fieldset {compress=1,width=48%}
+
+			:horiz_container
+				"FVC" $post_bronch_fvc :number {display_title=Post-bronch FVC,required=Y,size=4,suffix=l}
+				"% predicted FVC" $pc_pred_post_bronch_fvc :expression {expression=(get('post_bronch_fvc')/get('pred_fvc')*100),expression_fail_value=NULL,fixed=2,data_type=number,display_title=Pre-bronch % pred. FVC,size=4,suffix=%}
+
+	:horiz_container
+
+		"Pre-bronchodilator FEV<sub>1</sub>/FVC" $fset5 :fieldset {compress=1,width=48%}
+
+			:horiz_container
+				"FEV<sub>1</sub>/FVC" $pre_bronch_fev1_fvc :expression {expression=(get('pre_bronch_fev1')/get('pre_bronch_fvc')*100),expression_fail_value=-,fixed=2,data_type=number,display_title=Pre-bronch % pred. FEV1/FVC,size=4,suffix=l}
+				"% predicted FEV<sub>1</sub>/FVC" $pc_pred_pre_bronch_fev1_fvc :expression {expression=(get('pre_bronch_fev1_fvc')/get('pred_fev1_fvc')*100),expression_fail_value=NULL,fixed=2,data_type=number,display_title=Post-bronch % pred FEV1/FVC,size=5,suffix=%}
+
+		"Post-bronchodilator FEV<sub>1</sub>/FVC" $fset6 :fieldset {compress=1,width=48%}
+
+			:horiz_container
+				"FEV<sub>1</sub>/FVC" $post_bronch_fev1_fvc :expression {expression=(get('post_bronch_fev1')/get('post_bronch_fvc')*100),expression_fail_value=-,fixed=2,display_title=Post-bronch FEV1/FVC,data_type=number,size=4,suffix=l}
+				"% predicted FEV<sub>1</sub>/ FVC" $pc_pred_post_bronch_fev1_fvc :expression {expression=(get('post_bronch_fev1_fvc')/get('pred_fev1_fvc')*100),expression_fail_value=NULL,fixed=2,display_title=Post-bronch % pred. FEV1/FVC,data_type=number,size=5,suffix=%}
+
+	"Bronchodilator reversibility FEV<sub>1</sub>" $fset7 :fieldset {compress=1}
+
+		:horiz_container
+			$bronch_rev_fev1_pc :expression {expression=(get('post_bronch_fev1')-get('pre_bronch_fev1'))/get('pre_bronch_fev1')*100,expression_fail_value=NULL,fixed=1,data_type=number,display_title=Reversibility FEV1 %,size=4,suffix=%}
+			$bronch_rev_fev1_mls :expression {expression=(get('post_bronch_fev1')-get('pre_bronch_fev1'))*1000,expression_fail_value=NULL,fixed=1,data_type=number,display_title=Reversibility FEV1 mls,size=4,suffix=mls}
+
+			
+			
+Peak-expiratory flow $pef :fieldset {compress=1}
+	:horiz_container {segments=4}
+		Best PEF $best_pef :number {required=Y,size=6,suffix=l min<sup>-1</sup>}
+		% predicted best $pc_pred_best_pef :expression {expression=(get('best_pef')/get('pred_pef')*100),expression_fail_value=NULL,fixed=2,data_type=number,display_title=% pred. best PEF,size=5}
+		Current PEF $current_pef :number {required=Y,size=6,suffix=l min<sup>-1</sup>}
+		% best PEF $pc_best_pef :expression {expression=(get('current_pef')/get('best_pef')*100),expression_fail_value=NULL,fixed=2,size=5}
+
+		
+		
+"PC<sub>20</sub> methacholine/histamine" $pc20 :fieldset {compress=1,width=48%,display_title=PC20 methacholine/histamine}
+	:horiz_container $pc20_hc
+		PC20 status* $pc20_status :radio_buttons [1=Done,2=Failed,3=Not done]  {date_field=pc20_date,condition_test=1,condition_action=show,condition_target=pc20_date;pc20_methacholine_histamine}
+		Date of PC<sub>20</sub> $pc20_date :date {date_field=pc20_date,size=10}
+		Value $pc20_methacholine_histamine :number {display_title=PC20 value,date_field=pc20_date,size=4}
+
+		
+
+FEV1/FVC :container $single_fev1_fvc
+
+	:horiz_container
+
+		FEV<sub>1</sub> $fev1_fset :fieldset {compress=1}
+
+			:horiz_container
+				FEV<sub>1</sub> $fev1 :number {fixed=2,required=Y,size=4,suffix=l}
+				% predicted FEV<sub>1</sub> $pc_pred_fev1 :expression {expression=(get('fev1')/get('pred_fev1')*100),expression_fail_value=NULL,fixed=2,required=Y,size=4,suffix=%}
+
+		FVC :fieldset $fvc_fset {compress=1}
+
+			:horiz_container
+				FVC $fvc :number {fixed=2,required=Y,size=4,suffix=l}
+				% predicted FVC $pc_pred_fvc :expression {expression=(get('fvc')/get('pred_fvc')*100),expression_fail_value=NULL,fixed=2,required=Y,size=4,suffix=%}
+
+	FEV<sub>1</sub>/FVC $fev1_fvc_fset :fieldset {compress=1}
+
+		:horiz_container
+			FEV<sub>1</sub>/FVC $fev1_fvc :number {fixed=2,required=Y,size=4,suffix=l}
+			% predicted FEV<sub>1</sub>/ FVC $pc_pred_fev1_fvc :expression {expression=(get('fev1_fvc')/get('pred_fev1_fvc')*100),expression_fail_value=NULL,fixed=2,required=Y,size=4,suffix=%}

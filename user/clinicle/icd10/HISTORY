@@ -1,0 +1,8 @@
+RELEASE HISTORY
+---------------
+2.0.x
+* Isolated ICD10 codes into their own table
+* Updated plugin name so it does not conflict
+
+1.0.0 19/11/2014
++ Extracted ICD10 dictionary and plugin from history module

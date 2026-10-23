@@ -1,0 +1,2 @@
+Add smoking item $add_smoking :grid_add_button {refresh=smoking,use_page=history:smoking}
+smoking history item $smoking :collated_encounter_grid {use_page=shcollate,fields=date_recorded;smoking_status;years_since_last_smoked;pack_year_calc;smoking_item_type;no_smoked_per_day;from_year;to_year;no_years;pack_years;domain,after_row_actions=DateCreated;DeleteRecord}

@@ -1,0 +1,9 @@
+-HADS :fieldset  {compress=1}
+-Perform HADS :grid_add_button {refresh=hads_scores,use_page=blness:hads,linkfield=linked_hads}
+-HADS score $hads_scores :encounter_grid {use_page=blness:hads,fields=hads_date;a_score;d_score;a_mean;d_mean,col_widths=4em;6em;4em;4em;4em;4em;7em;7em,before_row_actions=LinkRecord,after_row_actions=StatusAction;DeleteRecord,linkfield=linked_hads,link_display_field=hads_date}
+-HADS* :link_record $linked_hads {linked_grid=hads_scores,link_display_field=hads_date}
+
+MoCA :fieldset {compress=1}
+	Perform MoCA :grid_add_button {refresh=moca_scores,use_page=blness:rmoca,linkfield=linked_moca}
+	MoCA score $moca_scores :encounter_grid {use_page=blness:rmoca,link_display_field=moca_date,fields=moca_date;v_score;n_score;at_score;l_score;ab_score;dr_score;o_score;total,before_row_actions=LinkRecord,after_row_actions=StatusAction;DeleteRecord,linkfield=linked_moca,col_widths=4em;6em;4em;4em;4em;4em;4em;4em;4em;4em;8em;8em,col_headings=Date;V/spatial;Naming;Attn;Lang;Abstract;D. recall;Orient;Total}
+	MoCA* :link_record $linked_moca {linked_grid=moca_scores,link_display_field=moca_date}

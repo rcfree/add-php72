@@ -1,0 +1,7 @@
+:tab_container $ac_tabs
+
+	Lung inflammation :tab
+		$lung_infl_concept :concept_group {concept_type=blness:lung-infl}
+
+	Lung function :tab $lung_func_tab
+		$lung_func_concept :concept_group {concept_type=blness:lung-func}

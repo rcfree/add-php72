@@ -1,0 +1,9 @@
+CAT :fieldset $cat_fset {compress=1} 
+	CAT score $cat_scores @cat_score :encounter_grid {use_page=blness:cat,fields=cat_date;score,before_row_actions=LinkRecord,linkfield=linked_cat,after_row_actions=StatusAction;DeleteRecord,link_display_field=cat_date}
+	CAT* :link_record $linked_cat {linked_grid=cat_scores,link_display_field=cat_date}
+	Perform CAT :grid_add_button {refresh=cat_scores,use_page=blness:cat,linkfield=linked_cat}
+
+CRQ :fieldset $crq_fset {compress=1}
+	CRQ score $crq_scores :encounter_grid {use_page=blness:crq,fields=crq_date;dyspnoea_score;fatigue_score;emotional_score;mastery_score;dyspnoea_mean;fatigue_mean;emotional_mean;mastery_mean,before_row_actions=LinkRecord,linkfield=linked_crq,after_row_actions=StatusAction;DeleteRecord,link_display_field=crq_date}
+	CRQ :link_record $linked_crq {linked_grid=crq_scores,link_display_field=crq_date}
+	Perform CRQ :grid_add_button {refresh=crq_scores,use_page=blness:crq,linkfield=linked_crq}

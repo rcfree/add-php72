@@ -1,0 +1,78 @@
+<?php
+drupal_add_js(drupal_get_path('module','patientlookup').'/js/patientlookup.js');
+drupal_add_js(drupal_get_path('module','patientlookup').'/js/patientlookup.config.js');
+drupal_add_js(drupal_get_path('module','patientlookup').'/js/log4js.js');
+
+#include('log4php/Logger.php');
+#$log = Logger::getLogger("main");
+
+#implement civi's civicrm_buildForm hook
+#prevent users from adding participants to cases unless they have permission to contact participant
+function patientlookup_civicrm_buildForm(  $formName, &$form ) {
+	if ($formName!='CRM_Contact_Form_Contact') return;
+	include_once "HTML/QuickForm/button.php";
+	include_once "HTML/QuickForm/date.php";
+	include_once "HTML/QuickForm/text.php";
+	
+	$button = new HTML_QuickForm_button("lookup_button","Lookup Patient", array('onclick'=>'patientLookup()'));
+	$form->addElement($button);
+
+	$ident = new HTML_QuickForm_text("lookup_identifier");
+	$ident->setLabel("Hospital No/S number");
+	$form->addElement($ident);
+
+	$first_name = new HTML_QuickForm_text("lookup_first_name");
+	$first_name->setLabel("First name");
+	$form->addElement($first_name);
+	$last_name = new HTML_QuickForm_text("lookup_last_name");
+	$last_name->setLabel("Last name");
+	$form->addElement($last_name);
+	$form->addDate('lookup_date_of_birth', ts('Date of birth'), FALSE, array('formatType' => 'birth'));
+	
+}
+
+/**
+ * Implementation of hook_services_resources().
+ */
+function patientlookup_services_resources() {
+	return array(
+	    'patient' => array(
+	      'retrieve' => array(
+	        'help' => 'Retrieve a patient by ID using LRBRUTool_PatientLookup module',
+	        'file' => array('file' => 'inc', 'module' => 'patientlookup'),
+	        'callback' => '_patient_lookup_retrieve',
+	        'access callback' => '_patient_lookup_access',
+	        'access arguments' => array('view'),
+	        'access arguments append' => TRUE,
+			'args' => array(
+						array(
+									            'name' => 'id',
+									            'type' => 'int',
+									            'description' => 'The id of the patient to get',
+									            'source' => array('path' => '0'),
+									            'optional' => FALSE,
+						),
+					),
+				),
+			'index' => array(
+				        'help' => 'Lookup patients using LRBRUTool_PatientLookup module',
+				        'file' => array('file' => 'inc', 'module' => 'patientlookup'),
+				        'callback' => '_patient_lookup_index',
+				        'access callback' => '_patient_lookup_access',
+				        'access arguments' => array('view'),
+				        'access arguments append' => TRUE,
+						'args' => array(
+	),
+	),
+	)
+	);
+}
+
+function patientlookup_permission() {
+	return array(
+    'lookup patients' => array(
+      'title' => t('Lookup patients'), 
+      'description' => t('Lookup patients using the hospital system.'),
+	),
+	);
+}

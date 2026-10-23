@@ -1,0 +1,3 @@
+Date added* :date $date_added
+BTS identifier* :number $bts_identifier
+Comments :memo $comments

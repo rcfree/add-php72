@@ -1,0 +1,26 @@
+Level,Title,Field,Type,Settings
+1,,,h_container,"segments=2"
+2,Print date: {report.date},,markup,
+2,Printed by: {report.printed_by},,markup
+1,Prescription drugs,heading6,text_header,"type=2,align=C,top=2"
+1,,drugs,encounter_med_table,"top=5,encounter=med-general-drug,heading_height=8,filter_field[0]=drug_type,filter_value[0]=1,filter_field[1]=current_status,filter_value[1]=1"
+2,Drug,drug,encounter_col_cell,"size=32,header_size=32"
+3,,drug_name,encounter_col
+3,,formulation,encounter_col,
+3,,strength,encounter_col,
+2,Dose,dose,encounter_col,"size=5,header_size=5"
+2,Frequency,frequency,encounter_col,"size=10,header_size=10"
+2,Route,route,encounter_col,"size=8,header_size=8"
+2,Duration,duration,encounter_col,"size=10,header_size=10"
+1,"",,markup
+1,OTC/recreational/complementary drugs,,text_header,"type=2,align=C"
+1,"",,markup
+1,,drugs#2,encounter_med_table,"encounter=med-general-drug,heading_height=8,filter_field[0]=drug_type,filter_value[0]=2,filter_field[1]=current_status,filter_value[1]=1"
+2,Drug,drug#2,encounter_col_cell,"size=32,header_size=32"
+3,,drug_name#2,encounter_col
+3,,formulation#2,encounter_col,
+3,,strength#2,encounter_col,
+2,Dose,dose#2,encounter_col,"size=5,header_size=5"
+2,Frequency,frequency#2,encounter_col,"size=10,header_size=10"
+2,Route,route#2,encounter_col,"size=8,header_size=8"
+2,Duration,duration#2,encounter_col,"size=10,header_size=10"

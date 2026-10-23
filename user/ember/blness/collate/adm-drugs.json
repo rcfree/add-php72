@@ -1,0 +1,44 @@
+{
+	"blness:pread-drugitem":{
+		"map":[
+			"date_recorded",
+			"drug_name",
+			"formulation",
+			"strength",
+			"dose",
+			"frequency",
+			"duration"
+		],
+		"constants":{
+			"domain":"Breathlessness (pre-admission)"
+		}
+	},
+	"blness:adm-drugitem":{
+		"map":[
+			"date_recorded",
+			"drug_name",
+			"formulation",
+			"strength",
+			"dose",
+			"frequency",
+			"duration"
+		],
+		"constants":{
+			"domain":"Breathlessness (admission)"
+		}
+	},
+	"med:drugitem":{
+		"map":[
+			"date_recorded",
+			"drug_name",
+			"formulation",
+			"strength",
+			"dose",
+			"frequency",
+			"duration"
+		],
+		"constants":{
+			"domain":"Medication (general)"
+		}
+	}
+}

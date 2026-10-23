@@ -1,0 +1,7 @@
+HISTORY
+
+v0.1.1 02/03/2020
+Correct numeric value filters and handling of null values
+
+v0.1.0
+Initial version

@@ -1,0 +1,12 @@
+{
+    "name": "add/tag",
+    "description": "Tag module (part of ADD)",
+	"type": "clinicle-module",
+	"require":{
+		"clinicle/core":"~2.7",
+		"clinicle/install":"~1.0"
+	},
+	"autoload": {
+        "classmap": ["lib"]
+    }
+}

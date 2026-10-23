@@ -1,0 +1,15 @@
+{
+    "name": "ember/hfail",
+    "description": "EMBER heart-failure module",
+	"type": "clinicle-module",
+	"require":{
+		"add/concept":"^1.0",
+		"clinicle/risk-score":"^1.0"
+	},
+	"autoload": {
+		"psr-4":{
+			"EMBER\\HFail\\":"src/",
+			"EMBER\\HFail\\Test\\":"test/"
+		}
+	}
+}

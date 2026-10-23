@@ -1,0 +1,34 @@
+:tab_container
+	Referral info :tab
+		Referral date $referral_date :date
+		Referred by* $referred_by :dropdown {dictionary=pr_referred_by}
+		Referral pathway $referral_pway :radio_buttons [1=Elective,2=Post-exacerbation] {inline=1}
+		Full treatment programme :enrol_submit $enrol_in_treatment
+		
+	Diagnosis :tab
+		:horiz_container
+			Main diagnosis* $main_diagnosis :dropdown {dictionary=pr_main_diagnosis,condition_test=10,condition_action=show,condition_target=other_diagnosis}
+			Other diagnosis* $other_diagnosis :text
+
+		Concurrent diagnosis $concurrent_diagnosis :dropdown_add_list {dictionary=pr_diagnosis}
+
+		Comments :memo $diag_comments
+		
+	Patient details :tab
+		Consultant* $consultant :dropdown {dictionary=pr_consultant,transfer_field=subject.ref_consultant}
+
+		Education level* $education_level :dropdown {dictionary=education}
+
+		:horiz_container
+			Occupation type* $occupation_type :dropdown {dictionary=occupation}
+			Job details $job_details :text
+
+		Requires transport* $requires_transport :yes_no [Y=Yes,N=No]  {inline=1}
+		MRSA status* $mrsa_status :yes_no [Y=Yes,N=No]  {inline=1}
+
+		:horiz_container
+			Inhaler technique checked?* $inhaler_tech_checked :yes_no [Y=Yes,N=No]  {condition_test="Y",condition_action=show,condition_target=date_checked,inline=1}
+			Date inhaler technique checked* $date_checked :date {size=10}
+
+		Consent gained* $consent_gained :yes_no [Y=Yes,N=No]  {inline=1}
+

@@ -1,0 +1,59 @@
+RELEASE HISTORY
+---------------
+2.4.0 03/06/2019
++ Add PAQLQ(S) and ACQ-IA paediatric questionnaires
+
+
+2.3.0 31/10/2017
++ EXACT-PRO questionnaire added
++ Morisky and SNOT-22 questionnaires added
++ Minnesota Living with Heart Failure added
+* Altered EQ5D-5 to use fields prefixed with eq5d5_
+
+2.2.0 13/01/2017
++ BCKQ scores and calculation added
++ VCDQ and ValueRadioItem to display numbers in radio item grid
++ K-BILD questionnaire added
+
+2.1.2 04/11/2016
+! AngularJS not rendering CRQ in IE due to invalid HTML
+! Checkbox to list logic not working correctly
+
+2.1.1 09/09/2016
+! Missing clinicle/options dependency
+
+2.1.0 20/01/2016
++ Score only checkboxes added to asthma QoL
++ MoCA questionnaire added
++ Install flag added
+
+2.0.2 14/10/2014
++ 'Record scores only' checkboxes to HADS and CRQ for PR module
+! HADS radio button values were not being submitted when blank
+
+2.0.1 17/09/2014
++ Moved table, table row and table head fields into 'common' core module
+! Changed function to be compatible with v2.1
+
+2.0.0 12/05/2014
+* resolved V1/2 compatibility issues with Fields
+! incorrectly named field was causing problem with EQ5D-5 -> not sure how this hadn't been picked up before
+! options not being displayed in specific radio button table
+
+1.03 25/03/2014
+! fixed minor issue with Nijmegen questionnaire
+
+1.02 06/11/2013
+Removed un-needed Calculate Scores button which was causing an error. Calculations are now done on the fly.
+
+1.01 01/09/2013
+Made sure all fields in QoLs set to required.
+Modified JacqRadioButton module to add a '*' for required field.
+Modified HADS questionnaire so sets of options are highlighted if they are required.
+Added EQ5D-5 questionnaire to module
+
+1.00 12/08/2013
+Initial full release of quality of life module
+
+
+

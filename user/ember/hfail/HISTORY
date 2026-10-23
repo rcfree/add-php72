@@ -1,0 +1,16 @@
+RELEASE HISTORY
+
+1.1.1 11/10/2018
+! Incorrect page for ejection fraction in params
+
+1.1.0 05/10/2018
++ Implemented fixes to simplify and support new EMBER protocol
+
+1.0.2 13/12/2017
+! MAGGIC score fails if not risk factors are not integers
+
+1.0.1 31/10/2017
+! Removed QoL access and improved menu weights
+
+1.0.0 31/10/2017
+* Initial version

@@ -1,0 +1,21 @@
+RELEASE HISTORY
+
+1.1.2 21/04/2017
+! Incorrect smoking results being displayed
+
+1.1.1 21/03/2016
+! Sputum results not compatible with change to add/inv module
+
+1.0.3
++ Created allergen skin tests tab in results page
++ Added haemaglobin test to results matrix
+* Moved LP to non-ilab tests
+
+1.0.2 03/08/2015
++ Updated test results field
+
+1.0.1 08/07/2015
++ Updated smoking panel with required fields
+
+1.0.0 01/05/2015
+* Initial version of hyper-eosinophilic syndrome module

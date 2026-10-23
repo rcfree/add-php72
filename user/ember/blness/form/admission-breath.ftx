@@ -1,0 +1,6 @@
+-Breath survey ID $survey_id :text {size=10}
+-Eaten in past 8 hours? $eaten_8_hrs :yes_no
+
+-$smoking_items
+-$add_to_smoking_history
+-$link_smoking

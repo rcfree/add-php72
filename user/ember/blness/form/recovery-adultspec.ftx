@@ -1,0 +1,18 @@
+:tab_container
+	Score :tab
+		eMRC recovery score* $emrc_admission @mrc_admission :radio_buttons {dictionary=mrc_extended,inline=1}
+
+	ECG :tab
+		ECG performed :yes_no  {condition_test=Y,condition_action=show,condition_target=ecg_concept}
+		$ecg_concept :concept_group {concept_type=blness:ecg,indent=1}
+
+	CXR :tab
+		CXR performed :yes_no {condition_test=Y,condition_action=show,condition_target=cxr_concept}
+		$cxr_concept :concept_group {concept_type=blness:cxr,indent=1}
+
+	Echocardiogram :tab
+		Echo test performed :yes_no $echo_test_performed {condition_test=Y,condition_action=show,condition_target=echo_data}
+
+		$echo_data :container {indent=1}
+			Date of echo :date $date_of_echo
+			Ejection fraction :number $echo_ef {suffix=%}

@@ -1,0 +1,12 @@
+{
+    "name": "clinicle/icd10",
+    "description": "ICD10 module",
+	"type": "clinicle-module",
+	"require":{
+		"clinicle/base":"~1.0"
+	},
+	"autoload": {
+        "classmap": ["php"]
+    }
+}
+

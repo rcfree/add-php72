@@ -1,0 +1,91 @@
+RELEASE HISTORY
+---------------
+1.5.0 03/07/2019
++ New feature to download only results which have changed since a particular date (using -d option)
+
+1.4.4 15/03/2019
+! Improved single test retrieval through use of function calls
+! Fixed inconsistent micro antibiotic sensitivity results
+
+1.4.3 24/10/2017
+! Needed allow_change flag to fix old BNP title
+
+1.4.2 24/10/2017
+! Missing FER (ferritin) code added to dictionary
+
+1.4.1 18/10/2017
+! Incorrect BNP code (BNPP) in dictionary
+
+1.4.0 15/09/2017
++ Support for retrieval of pathology tests recorded with a trial number
+
+1.3.2 08/03/2017
+! Resolved incompatibility with newer version of php-sybase extension
+
+1.3.1 20/01/2017
+! Warning about suppressed flag and not locked table means notification sent on most runs
+! Remove logging from execute command
+
+1.3.0 13/01/2017
+* Upgraded to use newer version of core 
+* Changed to use CLE_LOG_CONFIG env variable to point to log4php config file
+
+1.2.3 07/12/2016
+! Resolved issue with multi-status record creation and update
+
+1.2.2 06/12/2016
+! Patient ID search changed to include use of S number (i option)
+
+1.2.1 02/11/2016
+! Removed reattempt button for now
+
+
+1.2.0 01/11/2016
++ Status record for pathology transfer, including timestamp and message in record
++ Integrated remote monitor module into transfer
++ Added path-lock management command to view lock status
+* Use 'env_profile' setting to determine which profile to use when triggered
++ Improved use of resources and home tool class to deal with trigger
+* Moved manage classes into command classes
+
+1.1.4 10/03/2016
+! Update pathology tests failing due to non-domain query and no empty patient handling
+
+1.1.3 01/03/2016
+! Tidied up pathology test list and added ige group
+
+1.1.2 09/02/2016
+* Updated pathology test list with cardiac tests
+
+1.1.1 13/01/2016
+! Missing server and date from pathology lock record
+! Domain should not be automatically created
+
+1.1.0 05/01/2016
++ Support for section/domain structure
+
+1.0.7 22/09/2015
++ Additional tests to support acute module
+
+1.0.6 15/09/2015
++ Additional tests to support brncts module
+
+1.0.5 08/09/2015
++ HB test to dictionary
+
+1.0.4 26/08/2015
+! Stop pathology transfer trigger for users without pathology access
+
+1.0.3 12/08/2015
++ Pathology transfer now triggered on any page not just home page
+
+1.0.2 11/08/2015
+* Improved locking approach using MSSQL DB table
++ Additional tests added for micro
+
+1.0.1 30/06/2015
++ Auto removal of duplicate path encounters added due to lock failure
+! Fixed .pathlock to prevent multiple instances running concurrently
+
+1.0.0 01/05/2015
+* Initial version of system

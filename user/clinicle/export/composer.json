@@ -1,0 +1,11 @@
+{
+    "name": "clinicle/export",
+    "description": "ClinicLE export module",
+	"type": "clinicle-module",
+	"require":{
+		"clinicle/install":"~1.0"
+	},
+    "autoload": {
+        "classmap": ["lib"]
+    }
+}

@@ -1,0 +1,53 @@
+PR treatment programme :referral $pr_prog {referral_success_message=COPD visit referred to PR treatment programme.,referral_pim=pr:referral,convert_field_type=ConvertToPRButton,target_id_field=copd_visit_id}
+Registry entry $registry_entry :hidden {readonly=1}
+:tab_container
+	Admission $adm_tab :tab
+		:horiz_container
+			Date Of Admission $date_of_admission :date
+			Admitted From $admitted_from :radio_buttons  {dictionary=copd_spiro_where,inline=1}
+
+		Visit type :radio_buttons $visit_type @readmission [1=Baseline,2=Re-admission] {inline=1}
+
+		:horiz_container
+			Hospital Admitted To  $hospital_admitted_to :radio_buttons [1=GH,2=LRI] {inline=1}
+			Ward Admitted To $ward_admitted_to :dropdown  {dictionary=copd_ward}
+
+		Reviewed By Copd Team $reviewed_by_copd_team :radio_buttons [Y=Yes,N=No,M=Missed] {inline=1}
+		Date Seen $date_seen :date
+		Diagnosis $diagnosis :radio_buttons  {dictionary=copd_diagnosis,inline=1}
+
+		:horiz_container
+			Early Discharge $early_discharge :yes_no
+			Supported Discharge $supported_discharge :yes_no
+
+		Admission Avoidance $admission_avoidance :dropdown  {dictionary=copd_adm_avoidance}
+
+		Reasons For Re-Admission $reasons_for_readm :dropdown  {dictionary=copd_readm_reason}
+
+
+	Basic Demographics $demog_tab :tab
+		Employment Status $employment_status :radio_buttons  {dictionary=copd_employ_status}
+		Social Circumstances $social_circumstances :radio_buttons  {dictionary=copd_social_circ}
+		-Web Literate $web_literate :yes_no
+		Walking aid $walking_aid :yes_no {condition_target=which_walking_aid,condition_test=Y,condition_action=show}
+		$which_walking_aid :checkboxes {indent=1} [1=Frame/mobilator,2=Scooter,3=Stick]
+
+
+
+	General questions $gen_questions_tab :tab
+		Alcohol Consumption $alcohol_consumption :radio_buttons [1=<14 units,2=>14 units] {inline=1}
+
+		:horiz_container $hc1
+			Height* :number
+			Weight* :number
+			&rarr; $arrow :item
+			BMI :number {viewonly=1,expression=(get('weight')/((get('height')/100) * (get('height')/100))).toFixed(1),expression_fail_value=-}
+
+
+-Next day call in diary :yes_no $next_day_call
+-No Spirometry Documented - Ip Spirometry (Aps)  $no_spirometry_documented :radio_buttons {inline=1} [1=Pattern consistent with COPD,2=No pattern consistent with COPD]
+-Falls In The Last 12 Months $any_falls_last_12m @falls_in_last_12m :yes_no {condition_test=Y,condition_action=show,condition_target=num_falls_last_12m}
+-How may falls? $num_falls_last_12m :number
+-Follow Up Consultant $follow_up_consultant :yes_no
+-Number Of calls  $number_of_calls :number
+-Inhaled Medication $inhaled_medication :checkboxes  {dictionary=copd_inhaled_meds,columns=

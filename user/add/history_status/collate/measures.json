@@ -1,0 +1,59 @@
+{
+	"history:bodymeasitem":{
+		"map":[
+		"visit_date",
+		"height",
+		"weight",
+		"bmi"
+		],
+		"constants":{
+			"domain":"Medical history"
+		}
+	},
+	"dac:details":{
+		"map":{
+			"visit_date":"date_first_seen",
+			"height":"height",
+			"weight":"weight",
+			"bmi":"bmi"
+		},	
+		"constants":{
+			"domain":"Difficult Asthma Clinic (Baseline)"
+		}
+	},
+	"dac:fclinstatus":{
+		"map":{
+			"visit_date":"visit_date",
+			"height":"height",
+			"weight":"weight",
+			"bmi":"bmi"
+		},	
+		"constants":{
+			"domain":"Difficult Asthma Clinic (Followup)"
+		}
+	},
+	"advcopd:earlymortrisk":{
+		"map":{
+			"height":"height",
+			"weight":"weight",
+			"bmi":"bmi"
+		},	
+		"constants":{
+			"domain":"Advanced COPD (Annual review)"
+		},
+		"lookups":{
+			"visit_date":"generic.assessment_date"
+		}
+	},
+	"pr:subject":{
+		"map":{
+			"visit_date":"assessment_date",
+			"height":"height",
+			"weight":"weight",
+			"bmi":"bmi"
+		},	
+		"constants":{
+			"domain":"Pulmonary rehab (Treatment programme)"
+		}
+	}
+}

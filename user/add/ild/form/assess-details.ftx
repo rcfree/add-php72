@@ -1,0 +1,53 @@
+:horiz_container
+	Discussed at MDT :yes_no $discussed_at_mdt {condition_test=Y,condition_action=show,condition_target=date_of_mdt}
+	Date of MDT assessment $date_of_mdt :date {size=10}
+	
+:horiz_container	
+	Referral source $referral_source :dropdown {dictionary=ild_ref_source}
+	Referring doctor $referring_doctor :text {size=100}
+		
+
+:tab_container
+
+	MDT summary :tab $mdt_tab
+		Fibrotic interstitial lung disease :yes_no $fib_ild
+		Idiopathic :yes_no $idiopathic
+		Diagnosis $diagnoses :radio_buttons {dictionary=ild_mdt_diagnosis,condition_test=4,condition_action=show,condition_target=other_diagnosis}
+		Other diagnosis $other_diagnosis :text
+		
+		FVC test $fvcs :encounter_grid {use_page=resphy:test,fields=test_date;test_type;pre_pc_predicted,filter_field[0]=test_type,filter_value[0]=FVC,filter_op[0]=eq}
+		Add FVC :grid_add_button {refresh=fvcs,use_page=ild:fvc}
+
+		Tlco test $tlcos :encounter_grid {use_page=resphy:test,fields=test_date;test_type;pre_pc_predicted,filter_field[0]=test_type,filter_value[0]=Tlco,filter_op[0]=eq}
+		Add Tlco :grid_add_button {refresh=tlcos,use_page=ild:tlco}
+
+		Approached about research* :yes_no $research_approached
+		Willing to take part in research :yes_no $research_willing
+
+	Legacy import :tab $det_tab
+		Diagnosis $diagnosis :memo {size=100,height=5}
+		Biopsy $biopsy :memo {size=100,height=3}
+		Comments $comments :memo {size=100,height=3}
+		MDT Outcome $mdt_outcome :memo {size=100,height=5}
+	
+	Immunology :tab
+		 
+		ANCA result $anca :encounter_grid {use_page=path:haemresult,description=haematology result,fields=test_code;result;units;normal_low;normal_high;specimen_no;coll_date_time,filter_field[0]=test_code,filter_value[0]=ANCA,MPOQ,PR3Q,filter_op[0]=eq,sort_field=coll_date_time,sort_order=DESC,sort_date=1}
+		
+		ANA result $ana :encounter_grid {use_page=path:haemresult,description=haematology result,fields=test_code;result;units;normal_low;normal_high;specimen_no;coll_date_time,filter_field[0]=test_code,filter_value[0]=ANA,filter_op[0]=eq,sort_field=coll_date_time,sort_order=DESC,sort_date=1}
+		
+		ENA result $ena :encounter_grid {use_page=path:haemresult,description=haematology result,fields=test_code;result;units;normal_low;normal_high;specimen_no;coll_date_time,filter_field[0]=test_code,filter_value[0]=ENA,filter_op[0]=eq,sort_field=coll_date_time,sort_order=DESC,sort_date=1}
+		
+		RF result $rf :encounter_grid {use_page=path:haemresult,description=haematology result,fields=test_code;result;units;normal_low;normal_high;specimen_no;coll_date_time,filter_field[0]=test_code,filter_value[0]=RF,filter_op[0]=eq,sort_field=coll_date_time,sort_order=DESC,sort_date=1}
+		
+		Anti-CCP result $ccp :encounter_grid {use_page=path:haemresult,description=haematology result,fields=test_code;result;units;normal_low;normal_high;specimen_no;coll_date_time,filter_field[0]=test_code,filter_value[0]=CCP,filter_op[0]=eq,sort_field=coll_date_time,sort_order=DESC,sort_date=1}
+		
+		
+	CT scan :tab
+		Date of scan $ct_date :date {size=10}
+		Pattern of fibrosis $pat_fibrosis :memo
+		Comments/other features $comments_other :memo
+-Date of discussion :date $date_of_discussion {default=date_of_mdt}
+-Immunoglobulin result $ig_results :encounter_matrix {use_page=path:haemresult,yfield=test_code,xfield=coll_date_time,value_field=result,filter_field[0]=test_code,filter_value[0]=TIGE;M3;IGA;IGM;IGA,filter_op[0]=eq,sort_field=coll_date_time,sort_order=DESC,sort_date=1}
+-$latest_fvc_pc_pred
+-$latest_flco_pc_pred

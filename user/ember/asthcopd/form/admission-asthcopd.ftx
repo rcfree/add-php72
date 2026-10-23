@@ -1,0 +1,49 @@
+$stage_date @acute_admission_date :hidden {default=get('ademog:enrolled_date'),use_default=1}
+$primary :checkboxes {dictionary=blness_condition, hidden=1,default=get('adiagnosis:primary_condition'),use_default=1,condition_test[0]=AST,condition_action[0]=hide,condition_target[0]=quad_us_tab;4mg_tab;acute_sev_tab,condition_test[1]=COP,condition_action[1]=hide,condition_target[1]=feno_tab}
+
+:tab_container $ac_tabs
+	Exacerbation status :tab $cd_tab
+		$clin_status_concept :concept_group {concept_type=blness:exac-status}
+
+		Total number of hospitalisations (last 12m) * $total_hosps_12m :number {min=0}
+		Asthma/COPD/pneumonia related hospitalisations* $acp_related_hosps @asth_copd_related_12m :number {min=0,max=get('total_hosps_12m')}
+		Number of exacerbations* $no_exacerbs_12m :number {min=0}
+		Number of courses antibiotics $no_crs_antibiotics :number {min=0}
+		Number of courses steroids $no_crs_steroids :number {min=0}
+
+	Lung inflammation :tab
+		$lung_infl_concept :concept_group {concept_type=blness:lung-infl}
+
+	Quad U/S :tab {copd_only=1} $quad_us_tab
+		Quad U/S performed $quad_us_performed :yes_no {condition_test=Y,condition_action=show,condition_target=frailty_concept}
+		$frailty_concept :concept_group {concept_type=blness:frailty,indent=1}
+
+	Acute disease severity :tab $acute_sev_tab
+		DECAF score $decaf_score :radio_buttons {dictionary=decaf_score,inline=1,ajax-func=DECAFCalculate}
+		CURB65 Score $curb65_score @curb65_score_curb65score :radio_buttons {hidden=1,dictionary=curb65_score,inline=1,ajax-func=CURB65Calculate}
+
+	Lung function :tab $lung_func_tab
+		$lung_func_concept :concept_group {concept_type=blness:lung-func}
+
+	FeNo :tab $feno_tab
+		Add FeNO :grid_add_button {refresh=exhaled_no,use_page=resphy:no,linkfield=link_exhaled_no}
+		FeNO result $exhaled_no :encounter_grid {link_display_field=test_date,before_row_actions=LinkRecord,use_page=resphy:test,fields=test_date;test_type;pre_value;pre_pc_predicted,filter_field[0]=test_type,filter_value[0]=NO,filter_op[0]=eq,linkfield=link_exhaled_no}
+		FeNO :link_record $link_exhaled_no {linked_grid=exhaled_no,unlinked_text=Use a 'Link' button to link an exhaled NO with this record,use_parent_id=1}
+
+	4m gait :tab $4mg_tab
+		4m gait done :yes_no $4m_gait_done {condition_test=Y,condition_target=fmg_hc,condition_action=show}
+
+		:horiz_container $fmg_hc
+			Date of 4m gait :date
+			4m gait speed :number $4m_gait_speed {suffix=secs,min=1,max=30}
+
+-MRC score at stable state* $mrc_stable :radio_buttons {dictionary=mrc_grade,value_only=1,inline=1,condition_test=5,condition_action=show,condition_target=mrc_stable_ext}
+-Extended MRC $mrc_stable_ext* :radio_buttons {dictionary=mrc_extended,inline=1}
+-Lung infection :tab
+-$lung_infect_concept :concept_group {concept_type=blness:lung-infect}
+-BTS severity score $bts_severity_score :number
+
+-$link_pft_date_pef
+-$link_pft_pre_pc_predicted_pef
+-$link_pft_post_pc_predicted_pef
+

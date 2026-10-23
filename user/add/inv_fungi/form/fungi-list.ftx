@@ -1,0 +1,2 @@
+Fungi $fungi :dictionary_grid {dictionary=inv_fungi,fields=title,use_page=inv:fungi-item,after_row_actions=EditDictItem}
+Add fungi :grid_add_button {refresh=fungi,modal_width=700,use_page=inv:fungi-item}

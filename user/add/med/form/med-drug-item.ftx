@@ -1,0 +1,44 @@
+Type of drug* $drug_type	:radio_buttons				[1=Prescription drug,2=OTC/recreational/complementary drug]				{condition_test[0]=2,condition_target[0]=drug_name;formulation;strength,condition_action[0]=enable,condition_test[1]="1";"2",condition_target[1]=drug_readcode;drug_name;formulation;strength,condition_action[1]=clear,condition_test[2]=1,condition_target[2]=drug_readcode,condition_action[2]=show,condition_test[3]="1";"2",condition_target[3]=drug_fset,condition_action[3]=show,inline=1}
+
+:fieldset		$drug_fset							{compress=1}
+	Enter search terms and select the required drug	$drug_readcode	:auto_complete			{size=50,dictionary=read_codes,no_view=1,data_field[0]=drug_name:drug_name,data_field[1]=formulation:formulation,data_field[2]=strength:strength,clear_text=1,min_search=3,col_title=Drug details}
+	
+	Drug Details $drug_details	:horiz_container
+		Drug name*	$drug_name	:expression	{size=20,data_type=text}
+		Formulation	$formulation	:expression	{size=20,data_type=text}
+		Strength	$strength	:expression	{size=20,data_type=text}
+	
+	:horiz_container									
+		Dose	$dose	:number			{size=3}						
+		Frequency	$frequency	:dropdown		{dictionary=drug_frequency,size=10}
+		Route	$route	:dropdown	{dictionary=drug_route,size=10}
+		Duration	$duration	:dropdown {dictionary=drug_duration,size=10}
+		
+	:horiz_container		 $sd_hc							
+		Start date*	$start_date_type	:radio_buttons				[1=Started by GP,2=Ongoing,3=Date known,4=PRN use]	{condition_test[0]=3,condition_target[0]=start_date,condition_action[0]=show,inline=1}
+		Date*	$start_date	:date					{min=date_of_birth(),max=today(),col_title=Start date}
+		
+				
+	$status	:horiz_container			
+		Current status*	$current_status	:radio_buttons				[1=Active,2=Inactive] {condition_test[0]=2,condition_target[0]=inactive_status;details_reason,condition_action[0]=show,condition_test[1]=1,condition_action[1]=clear,condition_target[1]=inactive_status,dictionary=drug_status}
+
+		$inactive_status	:container									
+			Reason for change*	$reason	:dropdown								{dictionary=drug_reason}
+			End date known?*	$end_date_known	:yes_no								{condition_test[0]="Y",condition_target[0]=end_date,condition_action[0]=show}
+			End date*	$end_date	:date					{min=get('start_date'),max=today()}
+		Details of change	$details_reason	:memo									
+
+-$add_drug
+-$print_drugs
+-$actions
+-$inactivate
+-$inactivate_modal
+-$update_reason
+-$update_details_reason
+-$update_end_date_known
+-$update_end_date
+-$data_entry_modal
+-$current	fieldset									
+-$enc_table	encounter_table	
+-$otc_rec_comp_fset	fieldset									
+-$otc_table

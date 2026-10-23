@@ -1,0 +1,55 @@
+{
+	"history:hosprec":{
+		"map":[
+		"visit_date",
+		"timescale",
+		"condition",
+		"no_exacerbs",
+		"asth_copd_related",
+		"total_hosps"
+		],
+		"constants":{
+			"domain":"Medical history"
+		}
+	},
+	"dac:medhistory":{
+		"map":{
+			"no_exacerbs":"courses_oral_ster_last_12m",
+			"total_hosps":"hosp_adm_last_12m"
+		},	
+		"constants":{
+			"domain":"Difficult Asthma Clinic (Baseline)",
+			"condition":"Asthma",
+			"timescale":"In last 12 months"
+		},
+		"lookups":{
+			"visit_date":"details.date_first_seen"
+		}
+	},
+	"dac:fclinstatus":{
+		"map":{
+			"visit_date":"visit_date",
+			"total_hosps":"total_hosp_admissions"
+		},	
+		"constants":{
+			"domain":"Difficult Asthma Clinic (Followup)",
+			"condition":"Asthma",
+			"timescale":"Since last visit"
+		}
+	},
+	"advcopd:exacerb":{
+		"map":{
+			"asth_copd_related":"no_copd_related",
+			"total_hosps":"total_hosps"
+
+		},	
+		"constants":{
+			"domain":"Advanced COPD (Annual review)",
+			"timescale":"In last 12 months",
+			"condition":"COPD"
+		},
+		"lookups":{
+			"visit_date":"generic.assessment_date"
+		}
+	}
+}

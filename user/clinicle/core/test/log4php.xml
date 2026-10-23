@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration xmlns="http://logging.apache.org/log4php/">
+	<appender name="file" class="LoggerAppenderFile">
+		<layout class="LoggerLayoutPattern">
+			<param name="conversionPattern" value="%p %d %c (%L) %m%n"/>
+		</layout>
+		<param name="file" value="log/add.log"/>
+	</appender>
+	<appender name="cons" class="LoggerAppenderConsole">
+		<layout class="LoggerLayoutPattern">
+				<param name="conversionPattern" value="%p %d %c (%L) %m%n"/>
+		</layout>
+	</appender>
+	<root>
+		<level value="INFO" />
+		<appender_ref ref="cons" />
+		<appender_ref ref="file" />
+	</root>
+</configuration>

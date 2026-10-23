@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<overview>
+	<logic name="atopic-disease">
+		<input section="medhistory" obs="atopic_disease" op="any" />
+		<output obs="atopic" action="update"/>
+	</logic>
+</overview>
+

@@ -1,0 +1,29 @@
+:tab_container
+	Comorbidities $com_tab :tab
+		$comorbs_cn :container
+			Vascular $any_vascular :yes_no {condition_test=Y,condition_action=show,condition_target=comorb_vascular,default=N}
+			* $comorb_vascular :checkboxes  {dictionary=copd_comorb_vascular,indent=1,columns=3}
+			Metabolic $any_metabolic :yes_no {condition_test=Y,condition_action=show,condition_target=comorb_metabolic,default=N}
+			* $comorb_metabolic :checkboxes  {dictionary=copd_comorb_metabolic,indent=1,columns=3}
+			Musculo-skeletal $has_musculoskeletal :yes_no {condition_test=Y,condition_action=show,condition_target=comorb_musculoskeletal,default=N}
+			* $comorb_musculoskeletal :checkboxes  {dictionary=copd_comorb_muscskel,indent=1,columns=3}
+			Cardiac? $any_cardiac :yes_no {condition_test=Y,condition_action=show,condition_target=comorb_cardiac,default=N}
+			* $comorb_cardiac :checkboxes  {dictionary=copd_comorb_cardiac,indent=1,columns=3}
+			Neurological $any_neurological :yes_no {condition_test=Y,condition_action=show,condition_target=comorb_neurological,default=N}
+			* $comorb_neurological :checkboxes  {dictionary=copd_comorb_neurol,indent=1,columns=3}
+			Infectious diseases $any_infdis :yes_no {condition_test=Y,condition_action=show,condition_target=comorb_infdis,default=N}
+			* $comorb_infdis :checkboxes  {dictionary=copd_comorb_infdis,indent=1,columns=3}
+			Gastro intestinal $any_gi :yes_no {condition_test=Y,condition_action=show,condition_target=comorb_gi,default=N}
+			* $comorb_gi :checkboxes  {dictionary=copd_comorb_gi,indent=1,columns=3}
+			Cancers $any_cancers :yes_no {condition_test=Y,condition_action=show,condition_target=comorb_cancers,default=N}
+			* $comorb_cancers :memo
+			Psychiatric? $any_psychiatric :yes_no {condition_test=Y,condition_action=show,condition_target=comorb_psychiatric,default=N}
+			* $comorb_psychiatric :checkboxes  {dictionary=copd_comorb_psych,indent=1,columns=3}
+
+	Falls and problems $fp_tab :tab
+		:horiz_container
+			Falls in the last year $fall_last_yr :yes_no {condition_test=Y,condition_target=num_falls_last_yr,condition_action=show}
+			How many? $num_falls_last_yr :number
+		-$outcomes
+
+			Presenting Problems $presenting_problems :checkboxes  {columns=3,dictionary=copd_presenting_probs}

@@ -1,0 +1,5 @@
+Reason for contact :dropdown $reason_for_contact {dictionary=contactreason,condition_test=O,condition_target=other_reason,condition_action=show}
+Other reason :text $other_reason
+Reason details :memo $reason_details
+Date contacted :date $contact_date
+Comments :memo $comments

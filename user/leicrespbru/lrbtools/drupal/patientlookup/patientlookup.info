@@ -1,0 +1,10 @@
+name = Patient Lookup
+description = Patient Lookup PMI Lookup extension
+core = 7.x
+package = LRB Tools
+dependencies[] = services
+files[] = patientlookup.inc
+files[] = patientlookup.module
+
+; PatientLookup connection settings are deployment-specific and must be
+; configured outside the repository.

@@ -1,0 +1,26 @@
+{
+    "name": "ember/blness",
+    "description": "EMBER breathlessness module",
+	"type": "clinicle-module",
+	"require":{
+		"clinicle/core":"~2.12",
+		"add/patient":"~1.1",
+		"add/concept":"~1.2",
+		"clinicle/install":"~1.0",
+		"clinicle/client":"~1.10",
+		"add/concept":"~1.1",
+		"add/qol":"~2.1",
+		"add/inv":"~2.0",
+		"add/med":"~1.1",
+		"add/path":"~1.4",
+		"add/history_status":"~1.0",
+		"clinicle/remote":"~1.0",
+		"clinicle/touch":"~2.0",
+		"cdbrkr/conditions":"~1.0",
+		"cdbrkr/logic":"~1.3",
+		"clinicle/episode":"^1.0"
+	},
+	"autoload": {
+        "classmap": ["lib"]
+    }
+}

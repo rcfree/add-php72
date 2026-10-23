@@ -1,0 +1,9 @@
+Last successful transfer $complete_timestamp :date_time {viewonly=1}
+
+:horiz_container
+	Transfer status :dropdown $transfer_status @update_status [1=Pending,2=In progress,3=Error,4=Time-out,5=Complete] {readonly=1}
+	Status timestamp :date_time $status_timestamp @transfer_timestamp {viewonly=1}
+	Status message $status_message @transfer_message :memo {viewonly=1,size=50,rows=3}
+
+Microbiology result $micro_results_grid :encounter_grid {use_page=path:microresult,description=microbiology result,fields=test_code;specimen_type;result;organisms;specimen_no;coll_date_time,use_paging=1}
+-Add result $add_result :grid_action_button {modal_page=microresult,grid=micro_results_grid,update_field=micro_results_grid,modal_action=add}

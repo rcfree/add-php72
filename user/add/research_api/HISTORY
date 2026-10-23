@@ -1,0 +1,25 @@
+RELEASE HISTORY
+
+2.0.1 21/04/2017
+! Blank line causes session issue with new version of clinicle/web module
+
+2.0.0 09/02/2016
+* Support section/domain tables
+
+1.1.3 20/01/2016
+! Removed Search class which is supplied by clinicle/query
+
+1.1.2 23/09/2015
+* Changed research_studies version constraint
+
+1.1.1 25/08/2015
+* Modified to work in new composer-based system
+
+1.1.0 16/02/2015
+* Components changed to use new Page_Api class
+
+1.0.0 17/09/2014
+* Initial version with three web-services
++ Date created now returned in group data from add-to-group web-service
++ Added ADD patient_id to GetRcRids web-service
+

@@ -1,0 +1,19 @@
+{
+    "name": "clinicle/email",
+    "description": "ClinicLE email service",
+    "authors": [
+        {
+            "name": "Rob Free",
+            "email": "rcf8@le.ac.uk"
+        }
+    ],
+    "require": {},
+	"require-dev":{
+		"phpunit/phpunit":"~4.0"
+	},
+	"autoload": {
+      "psr-4": {
+        "ClinicLE\\Service\\Email\\": "src"
+      }
+    }
+}

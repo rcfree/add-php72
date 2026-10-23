@@ -1,0 +1,9 @@
+Field $filter_field :dropdown {dictionary_option=SearchFields,ajax-func=LookupFieldOperations}
+Operation $operation :dropdown {empty=1,ajax-func=LookupFieldValues}
+$values_container :container
+	$value :hidden
+	$to_value :hidden
+	$from_value :hidden
+
+Set as parameter in simple search? $param :checkbox
+

@@ -1,0 +1,10 @@
+{
+    "name": "add/inv_fungi",
+    "description": "Fungi entry investigations module (part of ADD)",
+	"type": "clinicle-module",
+	"require":{
+		"add/inv":"^2.2",
+		"clinicle/install":"^1.2",
+		"clinicle/client":"^1.9"
+	}
+}

@@ -1,0 +1,118 @@
+Patient practice? :checkbox $patient_practice {condition_test=1,condition_action=show,condition_target=practice;practice_5;iswt_distance_prac;iswt_end_hr_prac;iswt_end_spo2_prac;iswt_end_borg_breath_prac;iswt_end_borg_exert_prac;iswt_o2_prac;iswt_term_reason_prac;iswt_comments_prac;iswt_bp_after_exer_prac;iswt_bp_rest_prac}
+
+:table {class=table table-bordered table-striped}
+
+	:table_head
+		:markup
+		Practice :markup $practice
+		Pre PR :markup $pre_pr2
+		Post PR :markup $post_pr2
+
+	:table_row
+		"<b>ISWT distance</b>" :markup
+		* @iswt1_distance_prac $iswt_distance_prac :number {size=6,suffix=m,min=0,max=1200}
+		* @iswt1_distance_pre $iswt_distance_pre :number {size=6,suffix=m,min=0,max=1200}
+		* @iswt1_distance_post $iswt_distance_post :number {size=6,suffix=m,min=0,max=1200}
+
+-	:table_row
+-		"<b>ISWT 2 distance</b>" :markup
+-		* $iswt2_distance_prac :number {size=6,suffix=m,min=0,max=1200}
+-		* $iswt2_distance_pre :number {size=6,min=0,max=1200}
+-		* $iswt2_distance_post :number {size=6,min=0,max=1200}
+
+	:table_row
+		"<b>ISWT end HR</b>" :markup
+		* $iswt_end_hr_prac :number {size=6,min=40,max=200}
+		* $iswt_end_hr_pre :number {size=6,min=40,max=200}
+		* $iswt_end_hr_post :number {size=6,min=40,max=200}
+
+	:table_row
+		"<b>ISWT end SpO2</b>" :markup
+		* $iswt_end_spo2_prac :number {size=3,suffix=%,min=70,max=100}
+		* $iswt_end_spo2_pre :number {size=3,suffix=%,min=70,max=100}
+		* $iswt_end_spo2_post :number {size=3,suffix=%,min=70,max=100}
+
+	:table_row
+		<b>ISWT end BORG breath</b> :markup
+		* $iswt_end_borg_breath_prac :dropdown {dictionary=pr_borg_breath,size=6}
+		* $iswt_end_borg_breath_pre :dropdown {dictionary=pr_borg_breath,size=6}
+		* $iswt_end_borg_breath_post :dropdown {dictionary=pr_borg_breath,size=6}
+	
+	:table_head
+		:markup
+		Practice :markup $practice_5
+		Pre PR :markup $pre_pr5
+		Post PR :markup $post_pr5
+
+	
+	:table_row
+		<b>ISWT end BORG exertion</b> :markup $iswt_end_borg_exert
+		* $iswt_end_borg_exert_prac :dropdown {size=4,dictionary=pr_borg_exertion}
+		* $iswt_end_borg_exert_pre :dropdown {size=4,dictionary=pr_borg_exertion}
+		* $iswt_end_borg_exert_post :dropdown {size=4,dictionary=pr_borg_exertion}
+	
+	:table_row
+		<b>ISWT O2 used?</b> $iswt_o2_used :markup
+
+		:container $iswt_o2_prac
+			"Home O<sub>2</sub> used"* $iswt_o2_used_prac :yes_no [Y=Yes,N=No]  {inline=1,condition_target=iswt_o2_flow_rate_prac,condition_test=Y,condition_action=show}
+			Flow rate* $iswt_o2_flow_rate_prac :dropdown {dictionary=pr_o2_flowrate,size=7}
+
+		:container
+			"Home O<sub>2</sub> used"* $iswt_o2_used_pre :yes_no [Y=Yes,N=No]  {inline=1,condition_target=iswt_o2_flow_rate_pre,condition_test=Y,condition_action=show}
+			Flow rate* $iswt_o2_flow_rate_pre :dropdown {dictionary=pr_o2_flowrate,size=7}
+
+		:container
+			"Home O<sub>2</sub> used"* $iswt_o2_used_post :yes_no [Y=Yes,N=No]  {inline=1,condition_target=iswt_o2_flow_rate_post,condition_test=Y,condition_action=show}
+			Flow rate* $iswt_o2_flow_rate_post :dropdown  {dictionary=pr_o2_flowrate,size=7}
+	:table_row
+		"<b>ISWT resting BP</b>" :markup
+		:container $iswt_bp_rest_prac
+			* $iswt_bp_sys_rest_prac :number {size=4,min=40,max=300,suffix=mmHg}
+			* $iswt_bp_dia_rest_prac :number {size=4,min=30,max=160,suffix=mmHg}
+		:container $iswt_bp_rest_pre
+			* $iswt_bp_sys_rest_pre :number {size=4,min=40,max=300,suffix=mmHg}
+			* $iswt_bp_dia_rest_pre :number {size=4,min=30,max=160,suffix=mmHg}
+		:container $iswt_bp_rest_post
+			* $iswt_bp_sys_rest_post :number {size=4,min=40,max=300,suffix=mmHg}
+			* $iswt_bp_dia_rest_post :number {size=4,min=30,max=160,suffix=mmHg}
+
+	:table_row
+		"<b>ISWT BP after exertion</b>" :markup
+		:container $iswt_bp_after_exer_prac
+			* $iswt_bp_sys_after_prac :number {size=4,min=40,max=300,suffix=mmHg}
+			* $iswt_bp_dia_after_prac :number {size=4,min=30,max=160,suffix=mmHg}
+		:container $iswt_bp_after_exer_pre
+			* $iswt_bp_sys_after_pre :number {size=4,min=40,max=300,suffix=mmHg}
+			* $iswt_bp_dia_after_pre :number {size=4,min=30,max=160,suffix=mmHg}
+		:container $iswt_bp_after_exer_post
+			* $iswt_bp_sys_after_post :number {size=4,min=40,max=300,suffix=mmHg}
+			* $iswt_bp_dia_after_post :number {size=4,min=30,max=160,suffix=mmHg}
+	:table_row
+		"<b>ISWT Reason for ISWT termination</b>" :markup $iswt_term_reason
+		* $iswt_term_reason_prac :dropdown {dictionary=pr_term_reason,size=12}
+		* $iswt_term_reason_pre :dropdown {dictionary=pr_term_reason,size=12}
+		* $iswt_term_reason_post :dropdown {dictionary=pr_term_reason,size=12}
+
+	:table_row
+		<b>ISWT comments</b> :markup $iswt_comments
+		$iswt_comments_prac :memo
+		$iswt_comments_pre :memo
+		$iswt_comments_post :memo
+
+-	:table_row
+-		<b>Do you think there has been an improvement?</b> :markup $iswt_improvment
+-		:markup $iswt_improvement_prac
+-		* $iswt_improvement_pre :yes_no
+-		* $iswt_improvement_post :yes_no
+		
+:horiz_container
+	Do you think there has been an improvement? * $iswt_improvement @iswt_improvement_post :yes_no
+
+	ANCHOR score $iswt_anchor @iswt_anchor_post :dropdown {dictionary=pr_anchor,size=4}
+	
+-	:table_row
+-		<b>ANCHOR score</b> :markup $iswt_anca
+-		:markup $iswt_anca_prac
+-	    $iswt_anca_pre :dropdown {dictionary=pr_anchor,size=5}
+-		$iswt_anca_post :dropdown {dictionary=pr_anchor,size=5}

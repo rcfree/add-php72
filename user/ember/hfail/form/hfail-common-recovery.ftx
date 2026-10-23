@@ -1,0 +1,14 @@
+
+:tab_container
+	Oscillometry :tab
+		$oscil_concept :concept_group {concept_type=blness:oscillometry}
+
+	Lung inflammation :tab
+		$lung_infl_concept :concept_group {concept_type=blness:lung-infl}
+
+	4m gait :tab {copd_only=1}
+		4m gait done* :yes_no $4m_gait_done {condition_test=Y,condition_target=fmg_hc,condition_action=show}
+
+		:horiz_container $fmg_hc
+			Date of 4m gait :date
+			4m gait speed* :number $4m_gait_speed {suffix=secs,min=1,max=30}

@@ -1,0 +1,2 @@
+Add study type :grid_add_button {refresh=studies,use_page=research:studytype}
+Study type $studies :dictionary_grid {dictionary=studylist,fields=title;description;allow_recruitment;is_disabled;study_end_date,after_row_actions=EditDictItem,use_page=research:studytype}

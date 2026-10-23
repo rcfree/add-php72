@@ -1,0 +1,6 @@
+Action*	$action_type	:hidden	{default=studycomp}
+Date action recorded	$date_recorded	:hidden							{max=today(),readonly=1,col_title=Record date}
+Created by	$action_created_by	:hidden	@created_by						{default=current_user(),readonly=1}
+Date completed*	$action_end_date	@end_date :date						today()
+Comments	$description	:memo								{height=6,size=80}									
+$action_status	:hidden	{default=2}

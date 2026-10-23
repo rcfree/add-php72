@@ -1,0 +1,12 @@
+{
+    "name": "add/referral",
+    "description": "ADD referral form/management module",
+	"type": "clinicle-module",
+	"require":{
+		"clinicle/install":"~1.0",
+		"clinicle/client":"~1.9"
+	},
+    "autoload": {
+        "classmap": ["lib"]
+    }
+}

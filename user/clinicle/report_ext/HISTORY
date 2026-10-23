@@ -1,0 +1,13 @@
+RELEASE HISTORY
+
+1.1.2 18/04/2016
+! Resolved clipboard JS function issue
+
+1.1.1 26/02/2016
+! Copy to clipboard JS function not loaded
+
+1.1.0 24/02/2016
++ Support for 'type' setting in TextReport field
+
+1.0.0 28/01/2015
++ Initial version of report plain-text module

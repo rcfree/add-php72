@@ -1,0 +1,19 @@
+{
+    "name": "clinicle/touch",
+    "description": "Touch interface module",
+	"type": "clinicle-module",
+	"require":{
+		"clinicle/base":"~1.0"
+	},
+	"autoload": {
+        "classmap": ["src"]
+    },
+	"prefer-stable":true,
+	"minimum-stability":"dev",
+	"repositories": [
+        {
+            "type": "composer",
+            "url": "http://projects.ilh.le.ac.uk/satis"
+        }
+    ]
+}

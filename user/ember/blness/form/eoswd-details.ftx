@@ -1,0 +1,4 @@
+Date of completion/withdrawal/discontinuation* :date
+Study participation outcome* $study_participation_outcome :radio_buttons [1=Completed,2=Withdrawn,3=Discontinued] {condition_target=reason_for_withdrawaldiscontin,condition_action=show,condition_test=2;3}
+Reason for withdrawal/discontinuation* $reason_for_withdrawaldiscontin :checkboxes {dictionary=withdis_reason,condition_target=other_reason,condition_test=O,condition_action=show}
+Other reason* $other_reason :text

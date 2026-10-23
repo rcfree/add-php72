@@ -1,0 +1,5 @@
+Date of visit :date $visit_date
+		
+Blood count $blood counts :encounter_matrix {use_page=path:haemresult,yfield=test_code,xfield=coll_date_time,value_field=result,filter_field[0]=test_code,filter_value[0]=LYMAB;LYMPH;NEUAB;NEUT;BASAB;BASO;EOS;EOSAB;PLT;PLTA,filter_op[0]=eq}
+
+Comments :memo $comments

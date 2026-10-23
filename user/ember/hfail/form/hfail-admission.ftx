@@ -1,0 +1,56 @@
+:tab_container
+	Clinical status :tab $status_tab
+		:radio_group [Y=Yes,N=No,U=Unknown]
+			Dyspnoea at rest :radio_item
+			Dyspnoea on exertion :radio_item
+			Fatigue :radio_item
+			Orthopnea :radio_item
+			Raised JVP :radio_item
+			Third HS :radio_item
+			Rales :radio_item
+			Murmur :radio_item
+			Displaced apex :radio_item
+			Chest pain :radio_item
+			Cough :radio_item
+			Fever :radio_item
+			ACS :radio_item
+			Dementia :radio_item
+			First diagnosis of heart failure in past 18 months* $first_diag_hf_lt18m :radio_item
+			On beta blocker* $on_beta_blocker :radio_item
+			On ACEI/ARB* $on_acei_arb :radio_item
+			Diabetes* :radio_item $diabetes
+			COPD* :radio_item $copd
+	
+	Imaging measurements :tab $status2_tab
+		:radio_group [Y=Yes,N=No,U=Unknown]
+			Pulmonary oedema $pulm_oedema :radio_item
+			CTR $ctr :radio_item
+			ULD $uld :radio_item
+			Effusion $effusion :radio_item
+			Kerley B Lines $ker_blines :radio_item
+		
+		:horiz_container {segments=4}
+			LVIDD $lvidd :number
+			LVIDS $lvids :number
+			
+		:horiz_container {segments=4}
+			Medial EE&prime; $medial_ee :number
+			Lateral EE&prime; $lateral_ee :number
+			Mean EE&prime; $mean_ee :number 
+			
+		:horiz_container {segments=4}
+			ESV $esv :number
+			EDV $edv :number
+			
+	Prior procedures :tab $prior_proc_tab
+		Add procedure $add_procedure :grid_add_button {refresh=procedures,use_page=blness:procedure,use_parent=1,allow_add_another=1}
+		procedure $procedures :encounter_grid {use_page=blness:procedure,fields=procedure_date;procedure_type;procedure_details,use_parent=1}
+
+	Scores :tab $scores
+		NYHA classification* $nyha_class :radio_buttons {dictionary=hfail_nyha,inline=1}
+		MAGGIC score* :expression $maggic_score {ajax-func=MAGGICScore}
+
+	Lung inflammation :tab
+		$lung_infl_concept :concept_group {concept_type=blness:lung-infl}
+
+-EF* $ef :number

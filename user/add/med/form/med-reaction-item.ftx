@@ -1,0 +1,21 @@
+Is the reaction to pencillin? $penicillin :yes_no [Y=Yes,N=No]  {condition_test[0]="N",condition_action[0]=show,condition_target[0]=drug;drug_details,condition_test[1]="Y",condition_action[1]=set,condition_target[1]=drug_name,condition_target_value[1]="BENZYLPENICILLIN(PENICILLIN G)",condition_test[2]="N",condition_action[2]=clear,condition_target[2]=drug_name;drug_code,condition_test[3]="Y",condition_action[3]=set,condition_target[3]=drug_code,condition_target_value[3]="e11..",condition_test[4]="N",condition_action[4]=clear,condition_target[4]=__drug_ac}
+
+<p class='text-info'>If not penicillin, choose 'No' to search available drugs.</p> $info :markup
+
+Enter search terms and select the required drug $drug :auto_complete {dictionary=read_names,no_view=1,data_field[0]=title:drug_name,data_field[1]=value:drug_code,no_store=1,size=50}
+
+Drug details $drug_details :horiz_container
+	Drug name $drug_name :text {viewonly=1,modal_name=reaction_entry_modal,modal_action=edit,required=Y,size=40}
+	Read code $drug_code :text {size=6}
+
+$reaction_info :horiz_container
+	Reaction $reaction :dropdown {dictionary=reaction_type,condition_test[0]="O",condition_target[0]=other_reaction,condition_action[0]=show,required=Y}
+	Details of reaction $other_reaction :text {size=40}
+Date of reaction $reaction_date :date {min=date_of_birth(),max=today(),size=10}
+
+-Add adverse reaction $add_reaction :add_entry_link {modal_name=reaction_entry_modal,parent_key=buttons}
+-$reaction_entry_modal :encounter_modal
+-Options $actions :internal
+-$main_actions :modal_actions {modal_actions=view,modal_name=reaction_entry_modal}
+-Current adverse reactions $current :fieldset
+-$enc_table :encounter_table {cols=drug_name;reaction;reaction_date;actions,description=adverse reaction}

@@ -1,0 +1,9 @@
+ACQ-IA :fieldset $acqia_fset {compress=1}
+	ACQ-IA score $acqia_scores :encounter_grid {use_page=blness:racqia,fields=acqia_date;total_score,before_row_actions=LinkRecord,linkfield=linked_acqia,after_row_actions=StatusAction;DeleteRecord,link_display_field=acqia_date}
+	ACQ-IA* :link_record $linked_acqia {linked_grid=acqia_scores}
+	Perform ACQ-IA :grid_add_button {refresh=acqia_scores,use_page=blness:racqia,linkfield=linked_acqia}
+
+PAQLQ(S) :fieldset $paqlqs_fset {compress=1}
+	PAQLQ(S) score $paqlqs_scores :encounter_grid {use_page=blness:rpaqlqs,col_headings=;Date;S(mean);AL(mean);EF(mean);S;AL;EF;Total,fields=paqlqs_date;symptoms_mean;act_limit_mean;emot_func_mean;symptoms_score;act_limit_score;emot_func_score;total_score,before_row_actions=LinkRecord,linkfield=linked_paqlqs,after_row_actions=StatusAction;DeleteRecord,link_display_field=paqlqs_date}
+	PAQLQ(S)* :link_record $linked_paqlqs {linked_grid=paqlqs_scores,link_display_field=paqlqs_date}
+	Perform PAQLQ(S) :grid_add_button {refresh=paqlqs_scores,use_page=blness:rpaqlqs,linkfield=linked_paqlqs}

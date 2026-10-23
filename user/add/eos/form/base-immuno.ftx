@@ -1,0 +1,31 @@
+Atopic $atopic :yes_no
+
+Specific IgE results :fieldset
+ Copy DAC Ig/ANCA/auto-Ab
+ Rheumatoid factor :yes_no
+ Total IgE :number
+
+Parasitic serology :fieldset
+ IgG strongyloides :number
+ IgG filiriasis :number
+ IgG Fasciola :number
+ IgG Hydatid :number
+ IgG other parasite :number
+
+Lymphocyte phenotype [1=Normal,2=Abnormal,3=Not done]
+Abnormal details :text
+
+C3 $c3
+C4 $c4
+
+Tryptase :number
+Cold agglutinins :number
+Anti-cardiolipin :number
+Cortisol :number
+Creatinine kinase :number
+EGFR :number
+Albumin :number
+ALT :number
+CRP :number
+Thyroid function :number
+Troponin :number

@@ -1,0 +1,7 @@
+Visit date $visit_date @date_recorded :date {default=today()}
+:horiz_container $measures_hc											
+	Height*	$height	:number		{suffix=cm, size=4,min=100,max=200} <snomed:248333004>	
+	Weight*	$weight	:number		{suffix=kg,size=4,min=20,max=2000}	<snomed:425024002>	
+	:icon {class=icon-arrow-right}
+	BMI	$bmi :expression {expression=(get('weight')/((get('height')/100) * (get('height')/100))).toFixed(1),size=4} <snomed:60621009>
+	Domain :hidden {default="Medical history"}

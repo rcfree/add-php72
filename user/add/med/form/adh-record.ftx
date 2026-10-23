@@ -1,0 +1,23 @@
+Type of adherence $adherence_type :radio_buttons [1=Prescription adherence,2=Therapeutic monitoring]  {required=Y}
+
+Test $test :dropdown [=-select option-,1=Theophyline (10-20mg/l),2=Cortisol level (<50 nmol/l),3=Prednisolone level (81-1812 nmol/l),4=Other]  {modal_action=edit,modal_name=adh_entry_modal}
+Date/Time $datetime :date_time {default=now(),size=16}
+Result $result :number {size=6}
+Comments $comments :text
+
+Name $drug :text
+Dose $dose :number {min=1,max=99,size=3}
+Frequency $frequency :dropdown {dictionary=drug_frequency}
+
+
+No. collected over last 12 months $no_year_prescn :number {min=0,max=100,size=2}
+Average dose (oral steroid only) $average_dose :number {min=1,max=99,size=4}
+
+Adherence score (%) $score :number
+Adherence $adherence :expression {data_type=text,size=15}
+
+Adherent? $sr_adherence :yes_no [Y=Yes,N=No]
+Scale $sr_scale :number {min=1,max=10,size=2}
+Drug encounter ID $drug_encounter_id :hidden
+-$copy_active
+-$add_adh

@@ -1,0 +1,10 @@
+{
+    "name": "add/cap",
+    "description": "Community acquired pneumonia module (part of ADD)",
+	"type": "clinicle-module",
+	"require":{
+		"clinicle/core":"~2.3",
+		"clinicle/install":"~1.0",
+		"add/patient":"~1.0"
+	}
+}

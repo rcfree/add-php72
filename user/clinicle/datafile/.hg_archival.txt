@@ -1,0 +1,4 @@
+repo: 0862255cdf78d9af6b6074d06d00a1bd4e00dcaa
+node: f7196ed9399b9f6d68f4c854321d573d63100409
+branch: v1.0.x
+tag: v1.0.4

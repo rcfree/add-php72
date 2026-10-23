@@ -1,0 +1,19 @@
+1,1,Pulmonary Fibrosis,,,,,,,,
+2,,Asthma,J45,,,,,,,
+3,,Bronchiectasis,J47,Q33.4,,,,,,
+4,1,Cryptogenic Fibrosing Alveolitis (CFA),,,,,,,,
+5,,COPD,J44,,,,,,,
+6,,Emphysema,J43,J98.2,,,,,,
+7,,Heart Failure,I50,I11,I51,I97.1,T81.8,,,
+16,,HP/EAA
+8,,Hyperventilation,R06.4,F45.3,,,,,,
+14,,IPF
+9,,Ischaemic Heart Disease,I25,I24,,,,,,
+12,,Lung Cancer,All 'C' Codes,D37 to D48,,,,,,
+15,,NSIP
+10,,Other,,,,,,,,
+17,,Other ILD
+11,,Respiratory Failure,J96,J95.8,,,,,,
+18,,Rheumatoid lung disease
+13,1,Interstitial Lung Disease (ILD),,,,,,,,
+19,,Sarcoidosis,,,,,,,,,,,,,,

@@ -1,0 +1,195 @@
+3,Most of the time,hads_tense_wound_up
+2,A lot of the time,hads_tense_wound_up
+1,"From time to time, occasionally",hads_tense_wound_up
+0,Not at all,hads_tense_wound_up
+3,Nearly all the time,hads_slowed_down
+2,Very often,hads_slowed_down
+1,Sometimes,hads_slowed_down
+0,Not at all,hads_slowed_down
+0,Definitely as much,hads_enjoy_things
+1,Not quite as much,hads_enjoy_things
+2,Only a little,hads_enjoy_things
+3,Hardly at all,hads_enjoy_things
+0,Not at all,hads_fright_butterflies
+1,Occasionally,hads_fright_butterflies
+2,Quite often,hads_fright_butterflies
+3,Very often,hads_fright_butterflies
+3,Very definitely and quite badly,hads_fright_awful
+2,"Yes, but not too badly",hads_fright_awful
+1,"A little, but it doesn't worry me",hads_fright_awful
+0,Not at all,hads_fright_awful
+3,Definitely,hads_appearance
+2,I don't take as much care as I should,hads_appearance
+1,I may not take quite as much care,hads_appearance
+0,I take just as much care as ever,hads_appearance
+0,As much as I always could,hads_laughter
+1,Not quite so much now,hads_laughter
+2,Definitely not so much,hads_laughter
+3,Not at all,hads_laughter
+3,Very much indeed,hads_restless
+2,Quite a lot,hads_restless
+1,Not very much,hads_restless
+0,Not at all,hads_restless
+3,A great deal of the time,hads_worrying
+2,A lot of the time,hads_worrying
+1,Not too often,hads_worrying
+0,Very little,hads_worrying
+0,As much as I ever did,hads_enjoyment
+1,Rather less than I used to,hads_enjoyment
+2,Definitely less that I used to,hads_enjoyment
+3,Hardly at all,hads_enjoyment
+3,Never,hads_cheerful
+2,Not often,hads_cheerful
+1,Sometimes,hads_cheerful
+0,Most of the time,hads_cheerful
+3,Very often indeed,hads_sudden_panic
+2,Quite often,hads_sudden_panic
+1,Not very often,hads_sudden_panic
+0,Not at all,hads_sudden_panic
+0,Definitely,hads_feel_relaxed
+1,Usually,hads_feel_relaxed
+2,Not often,hads_feel_relaxed
+3,Not at all,hads_feel_relaxed
+0,Often,hads_enjoy_media
+1,Sometimes,hads_enjoy_media
+2,Not often,hads_enjoy_media
+3,Very seldom,hads_enjoy_media
+0,Never,jacq6_woken_by_asthma
+1,Hardly ever,jacq6_woken_by_asthma
+2,A few times,jacq6_woken_by_asthma
+3,Several times,jacq6_woken_by_asthma
+4,Many times,jacq6_woken_by_asthma
+5,A great many times,jacq6_woken_by_asthma
+6,Unable to sleep because of asthma,jacq6_woken_by_asthma
+0,No symptoms,jacq6_morning_symptoms
+1,Very mild symptoms,jacq6_morning_symptoms
+2,Mild symptoms,jacq6_morning_symptoms
+3,Moderate symptoms,jacq6_morning_symptoms
+4,Quite severe symptoms,jacq6_morning_symptoms
+5,Severe symptoms,jacq6_morning_symptoms
+6,Very severe symptoms,jacq6_morning_symptoms
+0,Not limited at all,jacq6_activity_limited
+1,Very slightly limited,jacq6_activity_limited
+2,Slightly limited,jacq6_activity_limited
+3,Moderately limited,jacq6_activity_limited
+4,Very limited,jacq6_activity_limited
+5,Extremely limited,jacq6_activity_limited
+6,Totally limited,jacq6_activity_limited
+0,None,jacq6_shortness_of_breath
+1,A very little,jacq6_shortness_of_breath
+2,A little,jacq6_shortness_of_breath
+3,A moderate amount,jacq6_shortness_of_breath
+4,Quite a lot,jacq6_shortness_of_breath
+5,A great deal,jacq6_shortness_of_breath
+6,A very great deal,jacq6_shortness_of_breath
+0,Never,jacq6_wheeze
+1,Hardly any of the time,jacq6_wheeze
+2,A little of the time,jacq6_wheeze
+3,A moderate amount of the time,jacq6_wheeze
+4,A lot of the time,jacq6_wheeze
+5,Most of the time,jacq6_wheeze
+6,All of the time,jacq6_wheeze
+0,None,jacq6_puff_inhalations
+1,1-2 puffs/inhalations most days,jacq6_puff_inhalations
+2,3-4 puffs/inhalations most days,jacq6_puff_inhalations
+3,5-8 puffs/inhalations most days,jacq6_puff_inhalations
+4,9-12 puffs/inhalations most days,jacq6_puff_inhalations
+5,13-16 puffs/inhalations most days,jacq6_puff_inhalations
+6,More than 16 puffs/inhalations most days,jacq6_puff_inhalations
+0,>95% predicted,jacq6_fev1_predicted
+1,95-90%,jacq6_fev1_predicted
+2,89-80%,jacq6_fev1_predicted
+3,79-70%,jacq6_fev1_predicted
+4,69-60%,jacq6_fev1_predicted
+5,59-50%,jacq6_fev1_predicted
+6,<50% predicted,jacq6_fev1_predicted
+1,Totally Limited,aqlq_limited_asthma
+2,Extremely Limited,aqlq_limited_asthma
+3,Very Limited,aqlq_limited_asthma
+4,Moderate Limitation,aqlq_limited_asthma
+5,Some Limitation,aqlq_limited_asthma
+6,A Little Limitation,aqlq_limited_asthma
+7,Not at all Limited,aqlq_limited_asthma
+1,A Very Great Deal,aqlq_discomfort
+2,A Great Deal,aqlq_discomfort
+3,A Good Deal,aqlq_discomfort
+4,Moderate Amount,aqlq_discomfort
+5,Some,aqlq_discomfort
+6,Very Little,aqlq_discomfort
+7,None,aqlq_discomfort
+1,All of the Time,aqlq_how_much_time
+2,Most of the Time,aqlq_how_much_time
+3,A Good Bit of the Time,aqlq_how_much_time
+4,Some of the Time,aqlq_how_much_time
+5,A Little of the Time,aqlq_how_much_time
+6,Hardly Any of the Time,aqlq_how_much_time
+7,None of the Time,aqlq_how_much_time
+1,Most Not Done,aqlq_limited
+2,&nbsp;,aqlq_limited
+3,Several Not Done,aqlq_limited
+4,&nbsp;,aqlq_limited
+5,Very Few Not Done,aqlq_limited
+6,&nbsp;,aqlq_limited
+7,No Limitation,aqlq_limited
+1,I have no problems in walking about,eq5d_mobility
+2,I have some problems in walking about,eq5d_mobility
+3,I am confined to bed,eq5d_mobility
+1,I have no problems with self-care,eq5d_selfcare
+2,I have some problems washing or dressing myself,eq5d_selfcare
+3,I am unable to wash or dress myself,eq5d_selfcare
+1,I have no problems with performing my usual activities,eq5d_activities
+2,I have some problems with performing my usual activities,eq5d_activities
+3,I am unable to perform my usual activities,eq5d_activities
+1,I have no pain or discomfort,eq5d_pain
+2,I have moderate pain or discomfort,eq5d_pain
+3,I have extreme pain or discomfort,eq5d_pain
+1,I am not anxious or depressed,eq5d_anxiety
+2,I am moderately anxious or depressed,eq5d_anxiety
+3,I am extremely anxious or depressed,eq5d_anxiety
+0,Not at all,nijmegen_symptoms
+1,&nbsp;,nijmegen_symptoms
+2,&nbsp;,nijmegen_symptoms
+3,&nbsp;,nijmegen_symptoms
+4,Very often indeed,nijmegen_symptoms
+1,All of the time,lcq_all_to_none
+2,Most of the time,lcq_all_to_none
+3,A good bit of the time,lcq_all_to_none
+4,Some of the time,lcq_all_to_none
+5,A little of the time,lcq_all_to_none
+6,Hardly any of the time,lcq_all_to_none
+7,None of the time,lcq_all_to_none
+1,None of the time,lcq_none_to_all
+2,Hardly any of the time,lcq_none_to_all
+3,A little of the time,lcq_none_to_all
+4,Some of the time,lcq_none_to_all
+5,A good bit of the time,lcq_none_to_all
+6,Most of the time,lcq_none_to_all
+7,All of the time,lcq_none_to_all
+1,Every time,lcq_every_to_never
+2,Most times,lcq_every_to_never
+3,Several times,lcq_every_to_never
+4,Some times,lcq_every_to_never
+5,Occasionally,lcq_every_to_never
+6,Rarely,lcq_every_to_never
+7,Never,lcq_every_to_never
+1,All of the time (continuously),lcq_all_cont_to_none
+2,Most times of during the day,lcq_all_cont_to_none
+3,Several times during the day,lcq_all_cont_to_none
+4,Some times during the day,lcq_all_cont_to_none
+5,Occasionally through the day,lcq_all_cont_to_none
+6,Rarely,lcq_all_cont_to_none
+7,None,lcq_all_cont_to_none
+1,Every time,lcq_every_time_to_none
+2,Most times,lcq_every_time_to_none
+3,A good bit of the time,lcq_every_time_to_none
+4,Some of the time,lcq_every_time_to_none
+5,A little of the time,lcq_every_time_to_none
+6,Hardly any of the time,lcq_every_time_to_none
+7,None of the time,lcq_every_time_to_none
+1,Every time I cough,lcq_every_cough_to_never
+2,Most times when I cough,lcq_every_cough_to_never
+3,Several times when I cough,lcq_every_cough_to_never
+4,Sometimes when I cough,lcq_every_cough_to_never
+5,Occasionally when I cough,lcq_every_cough_to_never
+6,Rarely,lcq_every_cough_to_never
+7,Never,lcq_every_cough_to_never

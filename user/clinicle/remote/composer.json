@@ -1,0 +1,30 @@
+{
+    "name": "clinicle/remote",
+    "description": "ClinicLE remote access",
+    "authors": [
+        {
+            "name": "Rob Free",
+            "email": "rcf8@le.ac.uk"
+        }
+    ],
+    "require": {
+		"guzzle/guzzle":"*",
+		"clinicle/common":"~1.0"
+	},
+	"require-dev":{
+		"phpunit/phpunit":"~4.0"
+	},
+	"autoload": {
+      "psr-4": {
+        "ClinicLE\\Service\\Remote\\": "src"
+      }
+    },
+	"prefer-stable":true,
+	"minimum-stability":"dev",
+	"repositories": [
+        {
+            "type": "composer",
+            "url": "http://projects.ilh.le.ac.uk/satis"
+        }
+    ]
+}

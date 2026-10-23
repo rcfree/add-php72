@@ -1,0 +1,19 @@
+{
+    "name": "add/resphy",
+    "description": "Respiratory physiology module (part of ADD)",
+	"type": "clinicle-module",
+	"require":{
+		"clinicle/core":"~2.3",
+		"clinicle/install":"~1.0",
+		"clinicle/client":"~1.0",
+		"clinicle/download":"~1.0",
+		"add/concept":"~1.0",
+		"kachkaev/php-r":"~1.0"
+	},
+	"autoload": {
+		"psr-4":{
+			"ADD\\Resphy\\":"src/"
+		},
+		"classmap": ["lib"]
+	}
+}

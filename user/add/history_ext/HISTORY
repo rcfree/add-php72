@@ -1,0 +1,51 @@
+RELEASE HISTORY
+---------------
+
+2.2.1 17/08/2017
+! Corrected title information in page.ini
+! Missing delete option for smoking records
+
+2.2.0 01/11/2016
+* Altered module to use clinicle/client modal data entry
+
+2.1.1 01/03/2016
+! Incorrectly changed dictionary from icd10
+
+2.1.0 05/11/2015
++ Updated smoking history to use new client module as collated table with add function
+
+2.0.8 30/09/2015
++ ILD and HES added to condition list
+
+2.0.7 11/08/2015
+* Added smoking dictionary to module so it does not require DAC
+
+2.0.6 03/08/2015
+! Fixed size of smoking item in IE for smoking history
+
+2.0.5 01/07/2015
++ Added 'Details not known' for ex-smokers with unknown details
+* Changed 'visit' to 'medical history'
+* Removed GINA/GOLD page
+
+2.0.4 12/01/2015
+* Changed 'other' field into memo
+
+2.0.3 18/09/2014
+* Refactored AJAX-based tests for LookupDictGroup component and improved handling of empty group
+! Removed superfluous Dictionary loader plugin
+
+2.0.2 16/07/2014
++ Smoking status item to smoking record (e.g. non-smoker, ex-smoker etc)
+
+2.0.1 26/06/2014
+* added form and dictionary to select overall condition (e.g. asthma, COPD, bronchiecstasis etc)
+
+2.0.0 12/05/2014
+* episode-based primary/secondary comorbidity recording tools based on ICD10
+* asthma/COPD specific GINA/GOLD measures for comorbidity
++ smoking history page with calculation
++ redirect to smoking history page when add to other history
++ auto copy of active comorbidities when creating new visit (CopyActiveComorb component)
+* improved separate date JS logic
++ start date known field which displays start date

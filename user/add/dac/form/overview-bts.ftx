@@ -1,0 +1,8 @@
+Does the patient meet BTS criteria for severe asthma? $bts_severe_asthma :radio_buttons [Y=Yes,N=No,A=Currently being assessed] {inline=1}
+Life threatening :yes_no $life_threatening
+Event of acute severe asthma :yes_no $acute_severe_event
+
+Maintenance oral steroids $maint_oral_steroids :yes_no 
+&ge;2 hospitalisations within last 12 months $ge_2_hosps_12m :yes_no
+Fixed airflow obstruction $fixed_air_obstruct :yes_no
+Adolescent trans. patient $adol_trans_patient :yes_no

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<overview>
+	<logic name="date_of_mdt">
+		<input section="mdt" test="latest_obs" obs="date_of_mdt" op="any" date-field="date_of_mdt"/>
+		<output obs="date_of_mdt" action="update"/>
+	</logic>
+	
+	<logic name="fib-ild">
+		<input section="mdt" test="latest_obs" obs="fib_ild" op="any" date-field="date_of_mdt"/>
+		<output obs="fib_ild" action="update"/>
+	</logic>
+	
+	<logic name="idiopathic">
+		<input section="mdt" test="latest_obs" obs="idiopathic" op="any" date-field="date_of_mdt"/>
+		<output obs="idiopathic" action="update"/>
+	</logic>
+	
+	<logic name="diagnoses">
+		<input section="mdt" test="latest_obs" obs="diagnoses" op="any" date-field="date_of_mdt"/>
+		<output obs="diagnoses" action="update"/>
+	</logic>
+	
+	<logic name="other_diagnosis">
+		<input section="mdt" test="latest_obs" obs="other_diagnosis" op="any" date-field="date_of_mdt"/>
+		<output obs="other_diagnosis" action="update"/>
+	</logic>
+	
+	<logic name="research_approached">
+		<input section="mdt" test="latest_obs" obs="research_approached" op="any" date-field="date_of_mdt"/>
+		<output obs="research_approached" action="update"/>
+	</logic>
+	
+	<logic name="research_willing">
+		<input section="mdt" test="latest_obs" obs="research_willing" op="any" date-field="date_of_mdt"/>
+		<output obs="research_willing" action="update"/>
+	</logic>
+	
+</overview>
+

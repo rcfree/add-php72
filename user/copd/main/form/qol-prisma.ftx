@@ -1,0 +1,22 @@
+Return to QoL summary..	$qol_return	:summary_page_link {parent_key=buttons}
+Date*	$prisma_date :date {min=date_of_birth(),max=today(),default=today(),summary_obs=prisma_date}
+Record scores only $scores_only :checkbox {condition_test[0]=1,condition_action[0]=hide,condition_target[0]=questions,condition_test[1]=1,condition_action[1]=enable,condition_target[1]=scores}
+
+:container $questions
+	Age at visit $age_at_visit :expression {expression=age(date_of_birth()|get('prisma_date')),condition_action[0]=set_if_empty,condition_op[0]=gt,condition_test[0]=84,condition_target[0]=is_85_years,condition_target_value[0]=1,condition_action[1]=set_if_empty,condition_op[1]=lt,condition_test[1]=85,condition_target[1]=is_85_years,condition_target_value[1]="0"}
+
+	Gender :text {no_store=1,default=patient_get('gender'),use_default=1,condition_action[0]=set_if_empty,condition_op[0]=eq,condition_test[0]="M",condition_target[0]=male,condition_target_value[0]=1}
+
+	:container $frailty_cn
+		1. Are you 85 years? $is_85_years [1=Yes,0=No] :radio_buttons {inline=1}
+		2. Male? $male [1=Yes,0=No] :radio_buttons {inline=1}
+		3. In general, do you have any health problems that require you to limit your activities? $health_problems [1=Yes,0=No] :radio_buttons {inline=1,default="0"}
+		4. Do you need someone to help you on a regular basis? $help_regular [1=Yes,0=No] :radio_buttons {inline=1,default="0"}
+		5. In general, do you have any health problems that require you to stay at home? $stay_at_home [1=Yes,0=No] :radio_buttons {inline=1,default="0"}
+		6. In case of need can you count on someone close to you? $count_on_close [1=Yes,0=No] :radio_buttons {inline=1,default="0"}
+		7. Do you regularly use a stick, walker or wheelchair to get about? $regular_stick_etc [1=Yes,0=No] :radio_buttons {inline=1,default="0"}
+
+$scores :container
+	Score $prisma_score :number {fixed=0,summary_obs=prisma_score,expression=sum('is_85_years;male;health_problems;help_regular;stay_at_home;count_on_close;regular_stick_etc')}
+	<div class='alert alert-info'>Score > 3 indicates possible frailty</div> $info_box
+	Status	$prisma_status	:internal {summary_obs=prisma_status,summary_type=status}

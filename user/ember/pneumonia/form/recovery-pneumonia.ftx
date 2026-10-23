@@ -1,0 +1,25 @@
+$stage_date @visit_date :hidden {default=get('rdemog:date_of_recovery_visit'),use_default=1}
+
+:tab_container $ac_tabs
+	Exacerbation status :tab $cd_tab
+		$clin_status_concept :concept_group {concept_type=blness:exac-status}
+		
+		Total number of hospitalisations (since visit) * $total_hosps_last_vis :number {min=0}
+		Asthma/COPD/pneumonia related hospitalisations* $acp_related_hosps @asth_copd_related_last_vis :number {min=0,max=get('total_hosps_last_vis')}
+		Number of exacerbations* $no_exacerbs_last_vis :number {min=0}
+
+		Number of courses antibiotics $no_crs_antibiotics :number {min=0}
+		Number of courses steroids $no_crs_steroids :number {min=0}
+
+	Lung inflammation :tab
+		$lung_infl_concept :concept_group {concept_type=blness:lung-infl}
+		
+	Lung infection :tab
+		$lung_infect_concept :concept_group {concept_type=blness:lung-infect}
+
+	Oscillometry :tab
+		$oscil_concept :concept_group {concept_type=blness:oscillometry}
+
+-$exacerb
+-$link_exacerbs
+		

@@ -1,0 +1,7 @@
+Visit date :date $visit_date @date_recorded {default=today()}
+Condition :radio_buttons [1=Asthma,2=COPD]
+Timescale $timescale :radio_buttons [1=In last 12 months,2=Since last visit]
+Number of exacerbations* $no_exacerbs :number {col_title=No. exacerbations}
+Asthma/COPD related hospitalisations* $asth_copd_related :number {col_title=Asthma/COPD related}
+Total number of hospitalisations* $total_hosps :number {col_title=Total hosps.}
+Domain :hidden {default="Medical history"}

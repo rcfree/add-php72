@@ -1,0 +1,31 @@
+:container $predicted_values
+	:horiz_container
+		Date of spirometry* :date $spirometry_date {obsField=test_date,default=today()}
+		Height :number $height {obsField=height}
+	Predicted Values $pv_fset :fieldset {compress=1,width=98%}
+
+		:horiz_container
+			FEV<sub>1</sub> $pred_fev1 :number {display_text=Predicted FEV<sub>1</sub>,size=4,suffix=l,encNo=1,obsField=predicted,obsFieldConstant[0]=test_type:1,obsFieldConstant[1]=prediction_equation:1,obsFieldConstant[2]=treatment:1,ajax-func=LungFunction}
+			FVC $pred_fvc :number {display_text=Predicted FVC,size=4,suffix=l,obsField=predicted,encNo=2,obsFieldConstant[0]=test_type:2,obsFieldConstant[1]=prediction_equation:1,obsFieldConstant[2]=treatment:1}
+			FEV<sub>1</sub>/FVC $pred_fev1_fvc :number {display_text=Predicted FEV<sub>1</sub>/FVC,size=4,suffix=l,encNo=3,obsField=predicted,obsFieldConstant[0]=test_type:3,obsFieldConstant[1]=prediction_equation:1,obsFieldConstant[2]=treatment:1}
+			Use correction factor (90%)? $cfactor_90pc :checkbox
+
+:horiz_container
+
+	FEV<sub>1</sub> $fev1_fset :fieldset {compress=1}
+
+		:horiz_container
+			FEV<sub>1</sub> $fev1 :number {fixed=2,size=4,suffix=l,encNo=1,obsField=pre_value}
+			% predicted FEV<sub>1</sub> $pc_pred_fev1 :expression {expression=(get('fev1')/get('pred_fev1')*100),expression_fail_value=NULL,fixed=2,size=4,suffix=%,encNo=1,obsField=pre_pc_predicted,required=0}
+
+	FVC :fieldset $fvc_fset {compress=1}
+
+		:horiz_container
+			FVC $fvc :number {fixed=2,size=4,suffix=l,encNo=2,obsField=pre_value}
+			% predicted FVC $pc_pred_fvc :expression {expression=(get('fvc')/get('pred_fvc')*100),expression_fail_value=NULL,fixed=2,size=4,suffix=%,encNo=2,obsField=pre_pc_predicted,required=0}
+
+	FEV<sub>1</sub>/FVC $fev1_fvc_fset :fieldset {compress=1}
+
+		:horiz_container
+			FEV<sub>1</sub>/FVC $fev1_fvc :expression {fixed=2,size=4,suffix=l,obsField=pre_value,encNo=3,expression=get('fev1')/get('fvc')}
+			% predicted FEV<sub>1</sub>/ FVC $pc_pred_fev1_fvc :expression {expression=(get('fev1_fvc')/get('pred_fev1_fvc')*100),expression_fail_value=NULL,fixed=2,size=4,suffix=%,obsField=pre_pc_predicted,encNo=3,required=0}

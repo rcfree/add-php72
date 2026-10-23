@@ -1,0 +1,63 @@
+:table {class=table table-bordered table-striped}
+	:table_head
+		:markup
+		Pre PR :markup $pre_pr1
+		Post PR :markup $post_pr1
+
+	:table_row
+		<b>Date of visit</b> :markup
+		* $date_of_visit_pre :date {min=date_of_birth(),max=today(),display_title=Pre-PR date of visit}
+		* $date_of_visit_post :date {min=get('date_of_visit_pre'),max=today(),display_title=Post-PR date of visit}
+
+	:table_row
+		"<b>Walking aid used during walk tests?</b>" :markup $walking_aid
+		* $walking_aid_used_pre :dropdown [1=none,2=walking stick,3=wheeled walker,4=elbow crutches] 
+		* $walking_aid_used_post :dropdown [1=none,2=walking stick,3=wheeled walker,4=elbow crutches] 
+
+	:table_row
+		<b>Resting BORG</b> $resting_borg :markup
+		* $resting_borg_pre :dropdown {size=4,dictionary=pr_borg_breath}
+		* $resting_borg_post :dropdown {size=4,dictionary=pr_borg_breath}
+
+	:table_head
+		:markup
+		Pre PR :markup $pre_pr4
+		Post PR :markup $post_pr4
+
+	:table_row
+		<b>Resting HR</b> $resting_hr :markup 
+		* $resting_hr_pre :number {size=6,min=40,max=200}
+		* $resting_hr_post :number {size=6,min=40,max=200}
+
+	:table_row
+		<b>Resting SaO2</b> $resting_sao2 :markup
+		* $resting_sao2_pre :number {size=3,suffix=%,min=0,max=100}
+		* $resting_sao2_post :number {size=3,suffix=%,min=0,max=100}
+
+	:table_row
+		<b>MRC grade $mrc_grade</b> :markup
+		* $mrc_grade_pre :dropdown {dictionary=mrc_grade,use_value=1}
+		* $mrc_grade_post :dropdown {dictionary=mrc_grade,use_value=1}
+
+	:table_row
+		<b>Quad strength</b> :markup
+		
+		:container
+			Leg measured* $leg_measured_pre :radio_buttons {dictionary=pr_quad_leg,inline=1,condition_test[0]=2;3,condition_target[0]=quad_strength_pre,condition_action[0]=show,condition_test[1]=1,condition_target[1]=quad_reason_nd_pre,condition_action[1]=show}
+			Value* $quad_strength_pre :number	
+			Reason not done* :dropdown $quad_reason_nd_pre {dictionary=pr_quad_not_done}
+			
+		:container
+			Leg measured* $leg_measured_post :radio_buttons {dictionary=pr_quad_leg,inline=1,condition_test[0]=2;3,condition_target[0]=quad_strength_post,condition_action[0]=show,condition_test[1]=1,condition_target[1]=quad_reason_nd_post,condition_action[1]=show}
+			Value* $quad_strength_post :number
+			Reason not done* :dropdown $quad_reason_nd_post {dictionary=pr_quad_not_done}
+			
+	:table_head
+		:markup
+		Pre PR :markup $pre_pr9
+		Post PR :markup $post_pr9
+
+:horiz_container
+	Do you think there has been an improvement? * $exercise_improvement :yes_no
+
+	ANCHOR score $exercise_anchor :dropdown {dictionary=pr_anchor,size=4}

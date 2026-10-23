@@ -1,0 +1,8 @@
+Add prescription drug $add_gen_drug :grid_add_button {refresh=general_drugs,modal_width=700,use_page=med:presdrugitem,allow_add_another=1}
+Show inactive drugs :filter_switch $show_inactive {target_grid=general_drugs,off_filter=drug_type|eq|1+current_status|eq|1,on_filter=drug_type|eq|1}
+prescription drug $general_drugs :encounter_grid {filter[0]=drug_type|eq|1,filter[1]=current_status|eq|1,row_condition=current_status|eq|2|inactive,use_page=med:drugitem,fields=drug_details;dose;frequency;duration,condition_field=current_status,description=prescription drug,before_row_actions=DateCreated,after_row_actions=StartDateSummary;EndDateSummary;InactivateRecord,parent_type=med:general}
+
+-Visit 1B $visit1b_date :hidden {default=get('doutcome:outcome_date'),use_default=1}
+-Visit 2 $visit2_date :hidden {default=episode_get('rdiagnosis:date_of_recovery_visit'),use_default=1}
+
+-Show inactive drugs :filter_switch $hide_inactive_prs {target_grid=general_drugs,off_filter=drug_type|eq|1+current_status|eq|1,on_filter=drug_type|eq|1}

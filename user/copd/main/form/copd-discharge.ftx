@@ -1,0 +1,20 @@
+PR treatment programme :referral $pr_prog {referral_success_message=COPD visit referred to PR treatment programme.,referral_pim=pr:referral,convert_field_type=ConvertToPRButton,target_id_field=copd_visit_id}
+
+:horiz_container
+	Date Of Discharge $date_of_discharge :date
+	Ward $discharge_ward :dropdown  {dictionary=copd_ward}
+
+Outcomes $outcomes :dropdown  {dictionary=copd_outcome}
+
+:horiz_container
+	Discharged To $discharged_to :dropdown  {dictionary=copd_discharge_to}
+	Under Care Of: $discharged_under_care_of :dropdown {dictionary=pr_consultant}
+
+Diagnosis (autosuggest) $discharge_diagnosis :auto_complete {dictionary=icd10_code, dictionary_option=SeparateTable, min_search=3,db_populated=1,size=50,show_if_readonly=1}
+
+:horiz_container
+	Outpatient Follow Up With Copd Nurse $outpatient_fup_with_copd_nurse :yes_no {condition_test=N,condition_action=show,condition_target=reason_op_declined}
+	Reason declined $reason_op_declined :dropdown  {dictionary=copd_op_decline_reason}
+
+-	Rescue Pack $rescue_pack :yes_no
+-	Rescue Bag $rescue_bag :yes_no

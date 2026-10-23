@@ -1,0 +1,66 @@
+-Referred by* $referred_by :dropdown {dictionary=pr_referred_by}
+-$diag_hc :horiz_container
+-	Main diagnosis* $main_diagnosis :dropdown {dictionary=pr_main_diagnosis,condition_test="0",condition_action=show,condition_target=other_diagnosis}
+-	Other diagnosis* $other_diagnosis :text
+-	Concurrent diagnosis* $concurrent_diagnosis :dropdown {dictionary=pr_diagnosis}
+
+Date of PR assessment* $assessment_date :date {min=date_of_birth(),max=today()}
+
+$tc :tab_container
+		
+	Clinical history $clinical_history :tab
+		:concept_group $measures {concept_type=measures}
+		Previous PR :radio_buttons [Y=Yes,N=No,O=Other] {inline=1}
+		No. Exacerbations &lt 12 Months $no_exacerbations_lt12m :number {min=0}
+		No. Hospital days &lt 12 Months $no_hosp_days_lt12m :number {min=0}
+		Do you take regular physical activity of at least 3 bouts of 10min x 5 per week $exercise_5_10min_bouts_week :yes_no
+
+	Lung function $lung_function_tab :tab
+		Lung function done* :yes_no {condition_test=Y,condition_target=predicted;lung_function,condition_action=show}
+		$predicted :concept_group {concept_type=spirometry,concept_block=predicted_values}
+		$lung_function :concept_group {concept_type=spirometry,concept_block=single_fev1_fvc}
+	
+	-O2 flow rate* $o2_flow_rate :number {size=6,suffix=l/min}
+				
+	Oxygen $oxygen_tab :tab
+		Home O2 use* $home_o2_use :yes_no [Y=Yes,N=No]  {condition_test[0]="Y",condition_action[0]=show,condition_target[0]=oxygen_hc,required=Y,inline=1}
+
+		$oxygen_hc :horiz_container {indent=1}
+			Type of oxygen* $type_of_oxygen :checkboxes [1=LTOT,2=Ambulatory,3=SBOT]  {condition_test[0]=1,condition_target[0]=ltot_flow_rate,condition_action[0]=show,condition_test[1]=2,condition_target[1]=amb_flow_rate,condition_action[1]=show,,condition_test[2]=3,condition_target[2]=sbot_flow_rate,condition_action[2]=show}
+			
+			:container
+				LTOT O2 flow rate* $ltot_flow_rate :number {size=6,suffix=l/min}
+				Ambulatory O2 flow rate* $amb_flow_rate :number {size=6,suffix=l/min}
+				SBOT O2 flow rate* $sbot_flow_rate :number {size=6,suffix=l/min}
+				
+			O2 delivery* $o2_delivery :checkboxes [1=Concentrator,2=Cylinders,3=Ambulatory,4=Liquid]
+		NIV/CPAP $niv_cpap :yes_no
+
+	Smoking/drink :tab $sd_tab
+		$smoking :concept_group {concept_type=smoking}
+		Current vaper :yes_no $current_vaper
+		Alcohol consumption* $alcohol_units_wk :number {size=6,suffix=units/wk}
+		
+	Personal details $personal_details :tab
+		Employment Status* $employment_status :dropdown {dictionary=pr_employment}
+		Occupation* $occupation :text
+		Accommodation* $accommodation :radio_buttons [1=House,2=Flat,3=Bungalow,4=Maisonette,5=Nursing/residential home,6=Other]  {inline=1,condition_test="6",condition_target=other_accommodation,condition_action=show,cols=3,required=Y}
+		Other accommodation* $other_accommodation :text
+		Others in household* $others_in_household :checkboxes [1=Spouse,2=Partner,3=Children,4=Alone,0=Other]  {required=Y}
+		Social circumstances $social_circums :text
+		Responsibilities :fieldset $resp_fset {compress=1}
+			:horiz_container
+				Carer :yes_no $resp_carer
+				Grandchildren :yes_no $resp_grandchildren
+				Pets :yes_no $pets
+
+	Details of problems $details_of_problems :tab
+		Has problems* $has_problems :yes_no {condition_test=Y,condition_target=problems,condition_action=show}
+		
+		Problems* $problems :checkboxes {dictionary=pr_problem,columns=3,indent=1}
+		
+		Has problem activities* $has_problem_acts :yes_no {condition_test=Y,condition_target=problem_activities,condition_action=show}
+		
+		Problem activities* $problem_activities :checkboxes {dictionary=pr_problem_activity,columns=3,indent=1}
+		Hobbies $hobbies :memo
+		Previous exercise behaviour* $previous_exercise_behaviour :radio_buttons {dictionary=pr_prev_exer_behaviour}

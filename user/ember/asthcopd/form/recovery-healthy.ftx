@@ -1,0 +1,38 @@
+$stage_date @visit_date :hidden {default=get('rdemog:date_of_recovery_visit'),use_default=1}
+$primary :checkboxes {dictionary=blness_condition, hidden=1,default=get('rdiagnosis:primary_condition'),use_default=1,condition_test=COP,condition_action=hide,condition_target=feno_tab}
+
+:tab_container $ac_tabs
+	Exacerbation status :tab $cd_tab
+		$clin_status_concept :concept_group {concept_type=blness:exac-status}
+
+		Total number of hospitalisations (since visit) * $total_hosps_last_vis :number {min=0}
+		Asthma/COPD/pneumonia related hospitalisations* $acp_related_hosps @asth_copd_related_last_vis :number {min=0,max=get('total_hosps_last_vis')}
+		Number of exacerbations* $no_exacerbs_last_vis :number {min=0}
+
+	Quad U/S :tab {copd_only=1} $quad_us_tab
+		Quad U/S performed $quad_us_performed :yes_no {condition_test=Y,condition_action=show,condition_target=frailty_concept}
+		$frailty_concept :concept_group {concept_type=blness:frailty,indent=1}
+
+	4m gait :tab {copd_only=1}
+		4m gait done* :yes_no $4m_gait_done {condition_test=Y,condition_target=fmg_hc,condition_action=show}
+
+		:horiz_container $fmg_hc
+			Date of 4m gait :date
+			4m gait speed* :number $4m_gait_speed {suffix=secs,min=1,max=30}
+
+	FeNo :tab $feno_tab
+		Add FeNO :grid_add_button {refresh=exhaled_no,use_page=resphy:no,linkfield=link_exhaled_no}
+		FeNO result $exhaled_no :encounter_grid {link_display_field=test_date,before_row_actions=LinkRecord,use_page=resphy:test,fields=test_date;test_type;pre_value;pre_pc_predicted,filter_field[0]=test_type,filter_value[0]=NO,filter_op[0]=eq,linkfield=link_exhaled_no}
+		FeNO :link_record $link_exhaled_no {linked_grid=exhaled_no,unlinked_text=Use a 'Link' button to link an exhaled NO with this record,use_parent_id=1}
+
+	Oscillometry :tab $oscil_tab
+		$oscil_concept :concept_group {concept_type=blness:oscillometry}
+
+	Lung function :tab $lf_tab
+		$lung_func_concept :concept_group {concept_type=blness:lung-func}
+
+-Past history O<sub>2</sub> use $past_hist_o2_use :radio_buttons [1=none,2=LTO,3=ambulatory,4=palliative] {inline=1}
+-$on_oxygen
+-$o2_reading_in
+-$o2_reading_pc
+-$o2_reading_litres

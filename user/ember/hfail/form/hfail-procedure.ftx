@@ -1,0 +1,3 @@
+Date of procedure $procedure_date :separate_date
+Type of procedure $procedure_type :dropdown {dictionary=hfail_procedures}
+Details $procedure_details :memo

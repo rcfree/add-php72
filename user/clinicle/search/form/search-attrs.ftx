@@ -1,0 +1,3 @@
+:select_all_none {target_field=attributes}
+
+Attributes $attributes :checkboxes {dictionary_option=SearchFields,columns=4}

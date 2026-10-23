@@ -1,0 +1,25 @@
+RELEASE HISTORY
+---------------
+1.0.6 17/06/2015
++ Integrated into composer-based install
+
+1.0.5 10/09/2014
+* New fields added to reflect new CQUIN targets
+* Added >=2.1.0 to page.ini
+
+1.0.4 13/05/2014
+* changed to ensure compatibility with ADD v2
+
+
+1.0.3 07/04/2014
++ admission route field with conditional other admission route text field
+
+1.0.2 13/11/2013
+Changed care-bundle into longitudinal records (episodes) by changing to RepeatSection encounter type
+
+1.0.1 13/11/2013
+Changed care-bundle into longitudinal records (episodes) by changing to RepeatSection encounter type
+
+1.0.0 26/09/2013
+Initial full release of CAP module
+Includes changes to add extra fields (Reason Ab not concordant), HIV tested and Date/Time UHL visit.

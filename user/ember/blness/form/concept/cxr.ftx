@@ -1,0 +1,15 @@
+:horiz_container
+	Evidence of consolidation* :yes_no {condition_action=show,condition_test=Y,condition_target=cxr_multi_lobar}
+	Multi-lobar* $cxr_multi_lobar :yes_no
+Collapse $cxr_collapse :yes_no
+
+:horiz_container
+	Pleural effusion* $cxr_pleural_effusion :yes_no {condition_action=show,condition_test=Y,condition_target=cxr_pleural_effusion_type}
+	Pleural effusion type* $cxr_pleural_effusion_type :dropdown [1=Bilateral,2=Unilateral]
+
+Hyperinflation* :yes_no $cxr_hyperinflation
+Cardiomegaly* :yes_no $cxr_cardiomegaly
+Septal lines* :yes_no $cxr_septal_lines
+Upper lobar diversion* $cxr_upper_lobal_diversion :yes_no
+Mass* :yes_no $cxr_mass
+		 

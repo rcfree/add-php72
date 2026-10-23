@@ -1,0 +1,10 @@
+Rhythm* $ecg_rhythm :dropdown [1=Sinus,2=Atrial fibrillation/flutter,3=SVT,4=VT]
+Rate* $ecg_rate :number {min=30,max=200,suffix=bpm}
+Morphology* $ecg_morphology :dropdown [1=Normal,2=RBBB,3=LBBB]
+ST Segment* $ecg_st_segment :dropdown [1=Normal,2=Depressed,3=Elevated]
+"QT<sub>c</sub> interval" :number $ecg_qtc_interval {min=0,max=500}
+
+-:horiz_container
+	-* $ecg_qtc_int_start :number {min=150,max=get('ecg_qtc_int_end'),suffix=ms}
+	-* $ecg_qtc_int_end :number {min=get('ecg_qtc_int_start'),max=600,suffix=ms}
+		

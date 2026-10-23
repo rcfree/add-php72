@@ -1,0 +1,2 @@
+Add sputum result $add_sputum_result :grid_add_button {refresh=sputum_counts,modal_width=700,use_page=inv:sputumresult,allow_add_another=1}
+sputum count $sputum_counts :encounter_grid {use_page=inv:sputumresult,before_row_actions=DateCreated,fields=sputum_date;eosin_count_sputum;neut_count_sputum;viability_sputum;squamous_contamination;tcc_spu_avail;total_cell_count_sputum;mcs_sent_sputum,after_row_actions=DeleteRecord}

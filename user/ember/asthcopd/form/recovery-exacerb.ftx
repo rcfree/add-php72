@@ -1,0 +1,6 @@
+Visit date :date $visit_date @date_recorded {default=today()}
+Condition :checkboxes {hidden=1,default=get('rdiagnosis:primary_condition'),use_default=1} [1=Asthma,2=COPD]
+Timescale $timescale :hidden {default=2,use_default=1}
+Number of exacerbations* $no_exacerbs :number {col_title=No. exacerbations}
+Asthma/COPD related hospitalisations* $asth_copd_related :number {col_title=Asthma/COPD related}
+Total number of hospitalisations* $total_hosps :number {col_title=Total hosps.}

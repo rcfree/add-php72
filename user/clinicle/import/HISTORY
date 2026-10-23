@@ -1,0 +1,14 @@
+RELEASE HISTORY
+---------------
+1.0.3 02/06/2016
+! Missing patient deceased flag
+
+1.0.2 31/07/2015
++ Slight change to error output
+
+1.0.1 15/07/2015
++ Provided provision for different separator character when getting issues as text
+
+1.0.0 04/02/2015
++ Refactored patient-specific logic into PatientImport classes and ImportPatients manage class
++ Rebuilt PatientImport classes using TDD and separated out access to PatientServices

@@ -1,0 +1,16 @@
+RELEASE HISTORY
+
+1.1.0 26/10/2015
++ Extended Group query and list to include various recruitment statuses
+
+1.0.2 22/09/2015
+* Changed to composer-based module
+
+1.0.1 22/09/2014
++ Added page showing all patients in a selected group
+- Removed research API components
+- Removed implementation of OptionMenuInterface and replaced with the UserMenuOption component and settings
++ Timestamp to group table
+
+1.0.0 03/07/2014
+* Initial version with simple grouping

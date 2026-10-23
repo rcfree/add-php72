@@ -1,0 +1,50 @@
+Filters :collapsible_fieldset
+	:horiz_container
+		Referral date $ref_date_from :date
+		to :item $ref_item
+		$ref_date_to :date
+	:horiz_container
+		Assessment date $ass_date_from :date
+		to :item $ass_item
+		$ass_date_to :date
+
+	:horiz_container
+		Cohort number* $cohort_no :dropdown {dictionary=pr_cohort}
+		Main diagnosis* $main_diagnosis :dropdown {dictionary=pr_main_diagnosis}
+
+
+
+:tab_container
+
+	Counts :tab
+		:horiz_container
+			Update counts :refresh_button {refresh_target=pr_counts}
+
+		$pr_counts :search_grid_container {dataurl=/pr/count-data,includefields=main_diagnosis;ref_date_from;ref_date_to;ass_date_from;ass_date_to;cohort_no}
+
+			:horiz_container {segments=3}
+				$referral_sources :search_grid {search_name=referral_sources,config_container=pr_counts}
+				$referral_diagnoses :search_grid {search_name=referral_diagnoses,config_container=pr_counts}
+				$referral_pathway :search_grid {search_name=referral_pathway,config_container=pr_counts}
+
+			:horiz_container {segments=3}
+							$outcome_assessment :search_grid {search_name=outcome_assessment,config_container=pr_counts}
+
+			:horiz_container {segments=3}
+				$outcome_suitable :search_grid {search_name=outcome_suitable,config_container=pr_counts}
+				$outcome_unsuit_reason :search_grid {search_name=outcome_unsuit_reason,config_container=pr_counts}
+
+			:horiz_container {segments=3}
+				$outcome_completed :search_grid {search_name=outcome_completed,config_container=pr_counts}
+				$outcome_reason_not_comp :search_grid {search_name=outcome_reason_not_comp,config_container=pr_counts}
+
+	Data :tab
+		:export_options $export_options {columns=4, dictionary=pr_data_types}
+
+		:horiz_container
+			View results :refresh_button $run_query {refresh_target=search_result,icon=icon-refresh}
+
+			Export results $export_results :export_results_button {path=pr/export-data,search_results_grid=search_result}
+			Email results $email_results :email_results_button {search_results_grid=search_result}
+
+		$search_result :search_result {searchurl=/pr/export-data,use_page=pr:export-data,includefields=export_options;main_diagnosis;ref_date_from;ref_date_to;ass_date_from;ass_date_to;cohort_no}

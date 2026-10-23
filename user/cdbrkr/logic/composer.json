@@ -1,0 +1,13 @@
+{
+    "name": "cdbrkr/logic",
+    "description": "Codebreaker core logic",
+	"type": "clinicle-module",
+	"require":{
+		"clinicle/base":"~1.0",
+		"clinicle/touch":"~2.0",
+		"clinicle/query":"~1.1"
+	},
+	"autoload": {
+        "classmap": ["php"]
+    }
+}

@@ -1,0 +1,3 @@
+Date sent :date $date_sent
+Sent by :text $sent_by {default=current_user()}
+Comments :memo $comments

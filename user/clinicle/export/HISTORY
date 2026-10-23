@@ -1,0 +1,40 @@
+RELEASE HISTORY
+
+1.2.1 06/12/2016
+! Missing index in temporary consent_record table
+
+1.2.0 01/11/2016 
++ Added new options to extract research consented patients, remove memo/sensitive data, include ILH identifier, use field names only, separate checkbox values and only output field values
+! Empty fields specified in component settings not being hidden
+
+1.1.1 15/02/2015
+! Exported data fields may be numbered incorrectly when repeated
+
+1.1.0 13/01/2015
++ Support for section/domain records 
+
+1.0.5 27/07/2015
+! Problem creating titles with pages with no parent page 
+
+1.0.4 17/06/2015
++ Integrated into composer-based install
+
+1.0.3 16/02/2015
+* Renamed Content_Text to Content_CSV (the former is used by the report_ext module)
+
+1.0.2 26/07/2014
+* Combined select and export into a single component
++ Form_Simple now used to generate page
++ ExportData component can now be used to build module specific export pages with parameters set in the page settings
++ Title and breadcrumb added to ExportData
+
+1.0.1 17/07/2014
++ Access control to prevent access to exports
++ Edit export row function to edit encounters directly to correct errors
++ Range of dates (hard-coded currently)
++ Comma separated encounter types possible
++ Patient per line option to output all encounters on a single line (experimental)
+- Removed implementation of OptionMenuInterface and replaced with the UserMenuOption component and settings
+
+1.0.0 09/06/2014
+* Initial version

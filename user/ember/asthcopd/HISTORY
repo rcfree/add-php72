@@ -1,0 +1,45 @@
+HISTORY
+
+1.4.0 31/05/2019
+Add QoL (children) linkage with ACQ-IA and PAQLQ(S)
+Add GLI-based lung function recording
+
+1.3.6 23/01/2019
++ New fields for no. courses steroids/antibiotics
+
+1.3.5 11/10/2018
+! Removed ACQ and Nijmegen
+! Removed requirements for FeNO and Culture and sputum (through checkbox)
+
+1.3.4 06/10/2018
+! Incorrect fields removed from form
+
+1.3.3 05/10/2018
+! Post-PEF fixed by adding new POSTPEF test type to allow test on different day
+
+1.3.2 05/10/2018
+! Fixed missing page issue
+
+1.3.1 20/09/2018
+! Oscillometry duplicated in two places
+
+1.3.0 13/09/2018
+* General fixes and tweaks
++ Implemented fixes to simplify and support new EMBER protocol
+
+1.2.1 08/01/2018
++ Questionnaires for recovery visit
+
+1.2.0 24/10/2017
+* Added PEF to PFTs and CURB65 calculation
++ CRP/FBC added to visit 1B for pneumonia
+
+1.1.0 10/08/2017
+* Enable disease specific page to be displayed in all conditions
++ New button to add sputum count result
+
+1.0.1 06/12/2016
+! Not showing severity when primary diagnosis selected 
+
+1.0.0 01/11/2016
+* Initial version with breathlessness stuff extracted out

@@ -1,0 +1,29 @@
+{
+    "name": "add/path",
+    "description": "Pathology module (part of ADD)",
+	"type": "clinicle-module",
+	"require":{
+		"clinicle/base":"^1.6",
+		"clinicle/query":"^1.0",
+		"clinicle/patient":"~1.0"
+	},
+	"autoload": {
+        "classmap": ["lib"],
+      "psr-4":{
+        "ADD\\Pathology\\" : "src/"
+      }
+    },
+    "minimum-stability":"dev",
+	"prefer-stable":true,
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "http://projects.ilh.le.ac.uk/satis"
+        }
+    ],
+    "config":{
+      "secure-http":false,
+      "preferred-install":"source",
+      "cache-files-ttl":0
+    }
+}

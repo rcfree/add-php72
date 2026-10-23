@@ -1,0 +1,71 @@
+RELEASE HISTORY
+---------------
+
+1.4.2 17/08/2017
+! Reswitched Form type as there is a base adhrecord
+
+1.4.1 17/08/2017
+! Switched Form_File for Form_DB which was incorrect
+! Missing DeleteRecord option in drugs list
+
+1.4.0 13/01/2017
++ Switched to support new client module
+
+1.3.0 01/11/2016 
++ Changed to limit to parent-specific encounters
++ Logic to determine if drug was active at timepoint
++ StartDateSummary and EndDateSummary actions display type/status if no date
++ Extended drug active logic to work with time range
+
+1.2.1 08/02/2016
+! Removed JS logging
+
+1.2.0 10/12/2015
+* Updated reports to use sections rather than encounters
+
+1.1.1 24/09/2015
+! Removed DateCreated action which duplicates that in clinicle/client
+
+1.1.0 22/06/2015
++ Modified to work with new client module
++ New filter to hide inactive drugs
++ Separated 'Add drug button' into 'Add prescription drug' and 'Add OTC drug'
++ Improved two-pass dictionary loading with better terms
++ Autocomplete searches from beginning of terms
++ Moved two types of drugs into their own tabs
++ Moved readdrugs dictionary sources outside codebase
+! Inactivate page was not updating the date or the reason
+
+1.0.6 28/01/2015
++ Added extra option to inactivate reason
+
+1.0.5 18/09/2014
+* Renamed ModuleInstall Dictionary classes
++ Date recorded field added to drug table (based on the encounter date created)
+! Removed extra setting in drug-patient-report
+! Corrected dictionary setting to use headings
+* Added 'data_type' settings to expression fields
+
+1.04 25/03/2014
+* modified to work with core v2
++ regression test examples added
+
+1.03 10/02/2014
+* changes to ensure compatibility with core 1.0.16
+* changed field length for adherence average dose, changed range for no. collected to 0-100, added new drug frequency option
+
+1.02 22/11/2013
+Added OD to drug_frequency dictionary
+
+1.01 22/10/2013
+Moved adherence report option to top menu bar
+Changed adherence date from create date to date of assessment
+
+1.00 24/09/2013
+Demerged separate medication module from investigation module
+Added patient report to mediciation module with larger fonts and only active drugs.
+Moved CopyActiveDrugs field class to med module.
+
+
+
+

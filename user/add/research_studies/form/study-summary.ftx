@@ -1,0 +1,16 @@
+:horiz_container {style=padding:0.5em,class=form-actions}
+	Sent PIS $sent_pis :grid_add_button {icon=icon-envelope,refresh=actions;study_details;action_options,modal_width=700,use_page=research:action-sentpis,use_parent=1}
+	Enrol in study $enrol :grid_add_button {icon=icon-plus-sign,refresh=actions;study_details;action_options,modal_width=700,use_page=research:action-studyenrol,use_parent=1}
+	Not interested $not_interested :grid_add_button {icon=icon-ban-circle,refresh=actions;study_details;action_options,modal_width=700,use_page=research:action-notinter,use_parent=1}
+	"Re-sent PIS" $resent_pis :grid_add_button {icon=icon-envelope,refresh=actions;study_details;action_options,modal_width=700,use_page=research:action-sentpis,use_parent=1}
+	Complete study $complete_study :grid_add_button {icon=icon-ok-sign,refresh=actions;study_details;action_options,modal_width=700,use_page=research:action-studycomp,use_parent=1}
+	Withdraw from study $withdraw :grid_add_button {icon=icon-remove-sign,refresh=actions;study_details;action_options,modal_width=700,use_page=research:action-withdraw,use_parent=1}
+	"Screen fail" $screen_fail :grid_add_button {icon=icon-thumbs-down,refresh=actions;study_details;action_options,modal_width=700,use_page=research:action-screenfail,use_parent=1}
+	Update number $update_no :grid_add_button {icon=icon-edit,refresh=actions;study_details;action_options,modal_width=700,use_page=research:action-updateno,use_parent=1}
+	
+	Add other action $reset_status :grid_add_button {refresh=actions;study_details;action_options,modal_width=700,use_page=research:actions,use_parent=1}
+
+$study_details :embedded_form {use_page=research:sdetails,readonly=1,refresh=research-domain-menu}
+			
+Action $actions :encounter_grid {fields=action_created_by;action_type;description;action_end_date,use_page=research:actions,use_parent=1,before_row_actions=DateCreated,col_widths=7em;7em;15em;15em;7em}
+

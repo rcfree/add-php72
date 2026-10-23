@@ -1,0 +1,89 @@
+Level,Title,Field,Type,Settings
+1,,header,header,
+2,image,img,image,"top=10,left=10,file=ilh-logo.png"
+2,Advanced COPD Clinic,title,markup,"top=10,left=10,width=190,align=C,decoration=B,size=12"
+2,ANNUAL DATASHEET,title2,markup,"top=15,left=10,width=190,align=C,decoration=B,size=12"
+1,,r_box,r_box,"left=10,border_colour=255;255;255,top=35,lmargin=2,rmargin=2,tmargin=2,bmargin=2,width=55,height=15,border=0"
+2,"{patient.last_name}, {patient.first_name}",name1,markup,"font=Courier,decoration=B"
+2,{patient.identifier},id,markup,font=Courier
+2,{patient.nhs_no},nhs_no,markup,font=Courier
+2,{patient.date_of_birth},dob,markup,font=Courier
+2,{address.postcode},postcode,markup,font=Courier
+1,,rbox_15,r_box,"height=20,top=36,left=150,lmargin=2,rmargin=2,tmargin=2,bmargin=2,width=67"
+2,Date of Review,generic.assessment_date,simple_obs,
+2,,generic.diagnosis_age,simple_obs,
+2,Age,age,age_obs,to_field=generic.assessment_date
+2,BMI,earlymortrisk.bmi,simple_obs,
+1,Basic Data,,section_header,"size=12,gap=1,top=65"
+1,,,h_container,segments=3
+2,Smoking status,generic.smoking_history,simple_obs,stack=1
+2,PYH,generic.pack_years,simple_obs,
+1,,,h_container,segments=3
+2,TLC,exercise.lung_vol_plethys,simple_obs,
+2,RV,exercise.rv_pc_pred,simple_obs,
+2,RV/TLC ratio,exercise.rv_tlc_ratio,simple_obs,
+1,,,h_container,segments=3
+2,,exercise.gt_pc_pred,simple_obs,
+2,,exercise.lvr_assessment,simple_obs,stack=1
+2,LVR date,exercise.lvr_date,simple_obs,
+1,,,horiz_line,
+1,Exercise Data,,section_header,"size=12,gap=1"
+1,,,h_container,segments=3
+2,MRC score,exercise.mrc_grade,simple_obs,"stack=1,value-only=1"
+2,MRC extended,exercise.mrc_extended,simple_obs,
+2,ISWT,exercise.iswt,simple_obs,
+1,,,h_container,segments=3
+2,SpO2 rest,exercise.spo2_rest,simple_obs,stack=1
+2,SpO2 exercise,exercise.spo2_peak,simple_obs,
+1,,,h_container,segments=3
+2,QS,exercise.isom_muscle_strength,simple_obs,
+2,QS predicted,exercise.pc_pred_qmvc,simple_obs,
+1,,,h_container,segments=5
+2,Attended PR,exercise.prev_attend_pulmrehab,simple_obs,stack=1
+2,When attended,exercise.pr_most_recent,simple_obs,
+1,,,horiz_line,
+1,Exacerbation Data,,section_header,"size=12,gap=1"
+1,,,h_container,segments=2
+2,Courses antibiotics in last 12m,exacerb.no_courses_antibiotics,simple_obs,
+2,Courses steroids in last 12m,exacerb.no_courses_steroids,simple_obs,
+1,,,h_container,segments=2
+2,Admissions in last 12m,exacerb.total_hosps,simple_obs,
+2,COPD admissions in last 12m,exacerb.no_copd_related,simple_obs,
+1,,,h_container,segments=2
+2,Flu vacc up to date last 12m,exacerb.flu_vaccination,simple_obs,
+2,Pneumonia vacc up to date last 12m,exacerb.pneumonia_vaccination,simple_obs,
+1,,exacerb.blood_eosin_3_yrs,simple_obs,
+1,,,horiz_line,
+1,Extrapulmonary Disease,,section_header,"size=12,gap=1"
+1,,,h_container,segments=3
+2,Known comorbidities (list),expulmdis.known_comorb,multi_obs,
+2,,,v_container,
+3,,,h_container,block_height=12
+4,DEXA FFMI,expulmdis.ffmi,simple_obs,block_height=12
+4,DEXA SMI,expulmdis.smi,simple_obs,block_height=12
+3,DEXA T score,expulmdis.t_score,simple_obs,
+3,,,h_container,
+4,HADS anxiety,expulmdis.hads_anxiety_score,simple_obs,
+4,HADS depression,expulmdis.hads_depression_score,simple_obs,
+3,ECG result,expulmdis.ecg_result,simple_obs,stack=1
+3,,,h_container,
+4,,expulmdis.hb,simple_obs,
+4,,expulmdis.bnp,simple_obs,
+1,,,horiz_line,
+1,Respiratory Failure,,section_header,"size=12,gap=1"
+1,,,h_container,
+2,Oedema,earlymortrisk.oedema,simple_obs,
+2,Type of oxygen,earlymortrisk.type_of_oxygen,simple_obs,
+1,,,h_container,
+2,Home NIV,earlymortrisk.niv_at_home,simple_obs,
+2,,,h_container,
+3,Required Acute NIV,earlymortrisk.prev_need_acute_niv,simple_obs,
+3,How many,earlymortrisk.no_acute_niv_episodes,simple_obs,
+1,,,horiz_line,
+1,Social,,section_header,"size=12,gap=1"
+1,,,h_container,segments=2
+2,Home circumstances,generic.accommodation,simple_obs,inline=0
+2,Social care support,generic.pers_social_care,simple_obs,
+1,,,h_container,segments=2
+2,Lives with,generic.others_in_household,simple_obs,
+2,,generic.alcohol_units_wk,simple_obs,

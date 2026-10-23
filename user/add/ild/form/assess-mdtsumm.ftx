@@ -1,0 +1,11 @@
+Discussed at MDT :yes_no $discussed_at_mdt {condition_test=Y,condition_action=show,condition_target=date_of_discussion}
+Date of discussion :date $date_of_discussion
+Fibrotic interstitial lung disease :yes_no $fib_ild
+Idiopathic :yes_no $idiopathic
+Diagnosis $diagnosis :radio_buttons {dictionary=ild_mdt_diagnosis,condition_test=4,condition_action=show,condition_target=other_diagnosis}
+Other diagnosis $other_diagnosis :text
+
+Latest FVC % predicted $latest_fvc_pc_pred :number {min=0}
+Latest Tlco % predicted $latest_flco_pc_pred :number {min=0}
+Approached about research :yes_no $research_approached
+Willing to take part in research :yes_no $research_willing

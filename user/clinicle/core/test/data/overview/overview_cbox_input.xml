@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<overview>
+	
+	<logic name="dysfunctional-breathing">
+		<input test="is_selected" section="medhistory" obs="comorbidity_details" value="7" />
+		<output obs="dysfunctional_breathing" action="toggle" onValue="Y" offValue="N" />
+	</logic>
+
+</overview>
+

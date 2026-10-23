@@ -1,0 +1,28 @@
+-admission record $admissions :encounter_grid {use_page=wspell:sdetail,filter_field[0]=admission_spell,filter_value[0]=1,filter_op[0]=eq,fields=date_of_admission;start_date_time;consultant;ward;status;admission_spell,col_headings=Date;Timestamp;Consultant;Ward,no_parent=1,remote_site=codebreaker,before_row_actions=LinkRecord,linkfield=linked_adm,link_copydata=date_of_admission:admission_date;start_date_time:admission_datetime}
+-selected admission record :link_record $linked_adm {linked_grid=admissions,link_display_field=date_of_admission,not_addable=1,no_records_footer=As there are no admission records present. Please enter date and time of admission below.}
+
+:horiz_container
+	Date of admission* :date $admission_date {min=date_of_birth(),max=today()}
+	Time of admission* :time $admission_time
+	Date/time of admission* :expression $admission_datetime {size=16,as_string=1,expression=get('admission_date').toString() + " " + get('admission_time').toString()}
+
+:horiz_container
+	Age at admission :expression {size=3,expression=age(date_of_birth()|get('admission_date')),condition_action[0]=set_if_empty,condition_op[0]=gt,condition_test[0]=16,condition_target[0]=treat_as,condition_target_value[0]=1,condition_action[1]=set_if_empty,condition_op[1]=lt,condition_test[1]=17,condition_target[1]=treat_as,condition_target_value[1]=2}
+	Treat as :radio_buttons [1=Adult,2=Child] {inline=1,condition_test[0]=1,condition_action[0]=show,condition_target[0]=adult_score,condition_test[1]=2,condition_action[1]=show,condition_target[1]=child_score}
+
+Patient reported acute breathlessness* $patient_rept_blness :yes_no {condition_test=Y,condition_target=emrc_admission,condition_action=show}
+
+$scores :container
+	$adult_score :container
+		eMRC admission score* $emrc_admission @mrc_admission :radio_buttons {dictionary=mrc_extended,inline=1}
+		eMRC stable score* $emrc_stable :radio_buttons {dictionary=mrc_extended,inline=1}
+
+	$child_score :horiz_container
+		VAS $vas :slider {min=0,max=100,step=10,size=3}
+
+Meets study criteria* :yes_no $meets_study_criteria
+
+-$mrc_admiss_ext
+-Date enrolled* :date $enrolled_date {min=date_of_birth(),max=today()}
+-Time enrolled* :time $enrolled_time
+-Date/time enrolled* :expression $enrolled_datetime {size=16,as_string=1,expression=get('enrolled_date').toString() + " " + get('enrolled_time').toString()}

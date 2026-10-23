@@ -1,0 +1,29 @@
+-HADS :fieldset  {compress=1}
+-Perform HADS :grid_add_button {refresh=hads_scores,use_page=blness:hads,linkfield=linked_hads}
+-HADS score $hads_scores :encounter_grid {use_page=blness:hads,fields=hads_date;a_score;d_score;a_mean;d_mean,col_widths=4em;6em;4em;4em;4em;4em;7em;7em,before_row_actions=LinkRecord,after_row_actions=StatusAction;DeleteRecord,linkfield=linked_hads,link_display_field=hads_date}
+-HADS* :link_record $linked_hads {linked_grid=hads_scores,link_display_field=hads_date}
+
+:tab_container
+	Psychological/cognitive :tab
+		MoCA :fieldset {compress=1}
+			Perform MoCA :grid_add_button {refresh=moca_scores,use_page=blness:amoca,linkfield=linked_moca}
+			MoCA score $moca_scores :encounter_grid {use_page=blness:amoca,link_display_field=moca_date,fields=moca_date;v_score;n_score;at_score;l_score;ab_score;dr_score;o_score;total,before_row_actions=LinkRecord,after_row_actions=StatusAction;DeleteRecord,linkfield=linked_moca,col_widths=4em;6em;4em;4em;4em;4em;4em;4em;4em;4em;8em;8em,col_headings=Date;V/spatial;Naming;Attn;Lang;Abstract;D. recall;Orient;Total}
+			MoCA :link_record $linked_moca {linked_grid=moca_scores,link_display_field=moca_date}
+
+	VAS :tab
+		Breathlessness* $vas_breathlessness :slider {min=0,max=100,step=10,size=3,suffix=mm}
+		Cough* $vas_cough :slider {min=0,max=100,step=10,size=3,suffix=mm}
+		Wheeze* $vas_wheeze :slider {min=0,max=100,step=10,size=3,suffix=mm}
+
+	EXACT-PRO :tab $ep_tab
+		Perform EXACT-PRO :grid_add_button {refresh=exact_pro_score,use_page=blness:aepro,linkfield=linked_epro}
+		EXACT-PRO score $epro_scores :encounter_grid {fields=epro_date,use_page=blness:aepro,link_display_field=epro_date,before_row_actions=LinkRecord,after_row_actions=StatusAction;DeleteRecord,linkfield=linked_epro}
+        EXACT-PRO :link_record $linked_epro {linked_grid=epro_scores,link_display_field=epro_date}
+		EXACT-PRO score $exact_pro_score
+
+	Environment :tab
+		Required questionnaires added* $req_quests_added :checkbox
+		Add environment questionnaire :grid_add_button {refresh=enviro_quest,use_page=blness:aenviro}
+		environment questionnaire $enviro_quest :encounter_grid {use_page=blness:aenviro,after_row_actions=EditRecord;DeleteRecord,fields=test_datetime;voc_tests}
+
+		$ntl_concept :concept_group {concept_type=blness:nasa-task-load}

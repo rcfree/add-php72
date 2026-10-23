@@ -1,0 +1,95 @@
+:table {class=table table-bordered table-striped}
+
+	:table_head
+		:markup
+		Pre PR :markup $pre_pr3
+		Post PR :markup $post_pr3
+
+	:table_row
+		<b>ESWT speed</b> $eswt_speed :markup
+		* $eswt_speed_pre :dropdown {size=8,dictionary=pr_eswt_speed,suffix=km/h,condition_test="",condition_op=any,condition_target=eswt_level_pre,condition_action=set,condition_target_value=get('eswt_speed_pre')}
+		* $eswt_speed_post :dropdown {size=8,dictionary=pr_eswt_speed,suffix=km/h,condition_test="",condition_op=any,condition_target=eswt_level_post,condition_action=set,condition_target_value=get('eswt_speed_post')}
+
+	:table_row
+		<b>ESWT level</b> $eswt_level :markup
+		* $eswt_level_pre :text {viewonly=1,size=4}
+		* $eswt_level_post :text {viewonly=1,size=4}
+
+	:table_row
+		<b>ESWT time</b> $eswt_time :markup
+		* $eswt_time_pre :number {size=6,suffix=seconds,min=0,max=2400}
+		* $eswt_time_post :number {size=6,suffix=seconds,min=0,max=2400}
+
+	:table_row
+		"<b>ESWT end HR</b>" $eswt_end_hr :markup
+		* $eswt_end_hr_pre :number {size=6,min=40,max=200}
+		* $eswt_end_hr_post :number {size=6,min=40,max=200}
+
+	:table_row
+		"<b>ESWT resting BP</b>" :markup
+		:container $eswt_bp_rest_pre
+			* $eswt_bp_sys_rest_pre :number {size=4,min=40,max=300,suffix=mmHg}
+			* $eswt_bp_dia_rest_pre :number {size=4,min=30,max=160,suffix=mmHg}
+		:container $eswt_bp_rest_post
+			* $eswt_bp_sys_rest_post :number {size=4,min=40,max=300,suffix=mmHg}
+			* $eswt_bp_dia_rest_post :number {size=4,min=30,max=160,suffix=mmHg}
+
+	:table_row
+		"<b>ESWT BP after exertion</b>" :markup
+		:container $eswt_bp_after_exer_pre
+			* $eswt_bp_sys_after_pre :number {size=4,min=40,max=300,suffix=mmHg}
+			* $eswt_bp_dia_after_pre :number {size=4,min=30,max=160,suffix=mmHg}
+		:container $eswt_bp_after_exer_post
+			* $eswt_bp_sys_after_post :number {size=4,min=40,max=300,suffix=mmHg}
+			* $eswt_bp_dia_after_post :number {size=4,min=30,max=160,suffix=mmHg}
+
+	:table_head
+		:markup
+		Pre PR :markup $pre_pr7
+		Post PR :markup $post_pr7
+
+	:table_row
+		"<b>ESWT end SpO<sub>2</sub></b>" :markup $eswt_end_spo2
+		* $eswt_end_spo2_pre :number {size=3,suffix=%,min=70,max=100}
+		* $eswt_end_spo2_post :number {size=3,suffix=%,min=70,max=100}
+
+	:table_row
+		<b>ESWT Borg breath</b> $eswt_borg_breath:markup
+		* $eswt_borg_breath_pre :dropdown {dictionary=pr_borg_breath,size=6}
+		* $eswt_borg_breath_post :dropdown {dictionary=pr_borg_breath,size=6}
+
+	:table_row
+		<b>ESWT Borg exertion</b> $eswt_borg_exertion :markup
+		* $eswt_borg_exertion_pre :dropdown {size=4,dictionary=pr_borg_exertion}
+		* $eswt_borg_exertion_post :dropdown {size=4,dictionary=pr_borg_exertion}
+
+	:table_row
+		<b>ESWT O2 used?</b> $eswt_o2_used :markup
+
+		:container
+			"Home O<sub>2</sub> used"* $eswt_o2_used_pre :yes_no [Y=Yes,N=No]  {inline=1,condition_target=eswt_o2_flow_rate_pre,condition_test=Y,condition_action=show}
+			Flow rate* $eswt_o2_flow_rate_pre :dropdown {dictionary=pr_o2_flowrate,size=7}
+
+		:container
+			"Home O<sub>2</sub> used"* $eswt_o2_used_post :yes_no [Y=Yes,N=No]  {inline=1,condition_target=eswt_o2_flow_rate_post,condition_test=Y,condition_action=show}
+			Flow rate* $eswt_o2_flow_rate_post :dropdown  {dictionary=pr_o2_flowrate,size=7}
+
+	:table_row
+		"<b>Reason for ESWT termination</b>" :markup $eswt_reason_mkup
+		* $eswt_reason_for_termination_pre :dropdown  {dictionary=pr_term_reason,size=12}
+		* $eswt_reason_for_termination_post :dropdown {dictionary=pr_term_reason,size=12} 
+
+	:table_row
+		<b>ESWT comments</b> :markup
+		$eswt_comments_pre :memo
+		$eswt_comments_post :memo
+
+	-* $eswt_improvement_pre :yes_no
+:horiz_container {segments=2}
+	Do you think there has been an improvement? * $eswt_improvement @eswt_improvement_post :yes_no
+
+		-<b>ANCHOR score</b> :markup $anca_mkup
+		-$nbsp2 &nbsp; :markup 
+		-$eswt_anca_pre :dropdown {dictionary=pr_anchor,size=4}
+	ANCHOR score $eswt_anchor @eswt_anca_post :dropdown {dictionary=pr_anchor,size=4}
+				

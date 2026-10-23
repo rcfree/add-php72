@@ -1,0 +1,25 @@
+value,title,full_name,allow_change,weight
+N,No consultant,No consultant,1,1
+15,"Agrawal, Dr. Sanjay",Dr. Sanjay Agrawal,1,2
+6,"Bennett, Dr. Jonathan",Dr. Jonathan Bennett,1,3
+20,"Bradding, Prof. Peter",Prof. Peter Bradding,1,4
+11,"Evans, Dr. Rachael",Dr. Rachael Evans,1,5
+1,"Free, Dr. Catherine",Dr. Catherine Free,1,6
+3,"Giantsou, Dr. Elpis",Dr. Elpis Giantsou,1,7
+13,"Green, Dr. Ruth",Dr. Ruth Green,1,8
+21,"Greening, Dr. Neil",Dr. Neil Greening,1,9
+10,"Haldar, Dr. Pranabashis",Dr. Pranabashis Haldar,1,10
+9,"Martin, Dr. Neil",Dr. Neil Martin,1,11
+19,"Morgan, Prof. Mike",Prof. Mike Morgan,1,12
+2,"Ohri, Dr. Chandra",Dr. Chandra Ohri,1,13
+12,"Panchal, Dr. Rakesh",Dr. Rakesh Panchal,1,14
+17,"Pavord, Prof. Ian",Prof. Ian Pavord,1,15
+8,"Peake, Dr. Mick",Dr. Mick Peake,1,16
+16,"Range, Dr. Simon",Dr. Simon Range,1,17
+7,"Ryanna, Dr. Kimuli",Dr. Kimuli Ryanna,1,18
+14,"Siddiqui, Dr. Salman",Dr. Salman Siddiqui,1,19
+18,"Steiner, Prof. Michael",Prof. Michael Steiner,1,20
+22,"Wardlaw, Prof. Andrew",Prof. Andrew Wardlaw,1,21
+5,"Woltmann, Dr. Gerrit",Dr. Gerrit Woltmann,1,22
+4,"Woodhead, Dr. Felix",Dr. Felix Woodhead,1,23
+O,Other,Other,,24

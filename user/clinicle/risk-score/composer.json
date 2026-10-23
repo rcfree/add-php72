@@ -1,0 +1,19 @@
+{
+    "name": "clinicle/risk-score",
+    "description": "ClinicLE risk score calculation module",
+    "type":"clinicle-module",
+    "authors": [
+        {
+            "name": "Rob Free",
+            "email": "rcf8@le.ac.uk"
+        }
+    ],
+    "require-dev": {
+	"phpunit/phpunit":"~4.1"
+    },
+    "autoload": {
+      "psr-4": {
+        "ClinicLE\\RiskScore\\": "src"
+      }
+    }
+}

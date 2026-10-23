@@ -1,0 +1,11 @@
+{
+    "name": "clinicle/api",
+    "description": "ClinicLE API module",
+	"type": "clinicle-module",
+	"require":{
+		"clinicle/install":"~1.0"
+	},
+    "autoload": {
+        "classmap": ["lib"]
+    }
+}

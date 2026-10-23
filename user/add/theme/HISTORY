@@ -1,0 +1,27 @@
+RELEASE HISTORY
+---------------
+
+2.1.1 05/10/2018
+! Reverted changes to broken angular-based patient search box
+
+2.1.0 12/19/2018
+! Missing media print styling
+! Improved print output for DAC MDT
++ Added black-text class
+
+2.0.1 06/12/2016
+! Missing top-gap styling
+
+2.0.0 01/11/2016
++ Compatible with iPad view port 
++ Support for panel-based system
+
+1.0.2 02/12/2015
++ Class to display 'Loading' banner
+
+1.0.1 11/08/2015
+* Support for change to add/patient style classes
+! Fixed 'live' config flag
+
+1.0.0 17/06/2015
+* ADD standard theme initial version

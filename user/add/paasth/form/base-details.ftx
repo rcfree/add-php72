@@ -1,0 +1,26 @@
+Date first seen $date_first_seen :date {required=Y,min=date_of_birth(),max=today(),default=today(),size=10}
+
+$detail_tabs :tab_container
+
+	Occupation/Education $general_fset :tab {compress=1}
+		Educational attainment $education_attainment :radio_buttons {dictionary=education}
+		Working status $working_status :dropdown {dictionary=working_status,condition_test[0]="3";"5",condition_action[0]=show,condition_target[0]=not_working_other_cause,size=20}
+		Other cause of not working $not_working_other_cause :text
+		Occupation type $occupation :dropdown {dictionary=occupation}
+		Occupational cause/worsening of asthma $occu_cause_worsening :yes_no [Y=Yes,N=No]  {required=Y,inline=1}
+
+	Body measurements $body_fset :tab {compress=1}
+
+		$hc :horiz_container
+			Height $height :number {calculate=bmi,required=Y,min="100",max="200",size=4,suffix=cm}
+			Weight $weight :number {calculate=bmi,required=Y,min="20",max="2000",size=4,suffix=kg}
+			$arrow :icon {class=icon-arrow-right}
+			BMI $bmi :expression {expression=(get('weight')/((get('height')/100) * (get('height')/100))).toFixed(1),size=3}
+		Fat-free mass $fat_free_mass :number {min=0,max=get('weight'),size=4,suffix=kg}
+
+	Consent $consent :tab
+		Informed consent obtained $informed_consent :radio_buttons [Y=Yes,N=No,U=Not interested]  {condition_test="Y",condition_target=ic_hc,condition_action=show,required=Y}
+
+		$ic_hc :horiz_container
+			Informed consent version $inf_consent_version :dropdown {dictionary=dac_consent,required=Y}
+			Date consent given $date_consent_given :date {required=Y,size=10}

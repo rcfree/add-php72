@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+
+<CaseType>
+  <name>MATCH</name>
+  <ActivityTypes>
+    <ActivityType>
+      <name>Open Case</name>
+      <max_instances>1</max_instances>
+    </ActivityType>
+     <ActivityType>
+      <name>Check participant status</name>
+    </ActivityType>
+    <ActivityType>
+      <name>Print PDF Letter</name>
+      <status>Scheduled</status>
+    </ActivityType>
+    <ActivityType>
+      <name>Reply received</name>
+      <status>Scheduled</status>
+    </ActivityType>
+    <ActivityType>
+      <name>MATCH consent accepted</name>
+      <status>Scheduled</status>
+    </ActivityType>
+    <ActivityType>
+      <name>MATCH consent rejected</name>
+      <status>Scheduled</status>
+    </ActivityType>
+    <ActivityType>
+      <name>Followup letter sent</name>
+      <status>Scheduled</status>
+    </ActivityType>
+  </ActivityTypes>
+  <ActivitySets>
+    <ActivitySet>
+      <name>standard_timeline</name>
+      <label>Initial recruitment</label>
+      <timeline>true</timeline>
+      <ActivityTypes>
+        <ActivityType>
+          <name>Open Case</name>
+          <status>Completed</status>
+        </ActivityType>
+        <ActivityType>
+          <name>Print PDF Letter</name>
+          <status>Scheduled</status>
+        </ActivityType>
+        <ActivityType>
+          <name>Reply received</name>
+          <status>Scheduled</status>
+        </ActivityType>
+      </ActivityTypes>
+    </ActivitySet>
+    <ActivitySet>
+      <name>followup_recruitment</name>
+      <label>Followup recruitment</label>
+      <timeline>true</timeline>
+      <ActivityTypes>
+        <ActivityType>
+          <name>Print PDF Letter</name>
+          <status>Scheduled</status>
+        </ActivityType>
+        <ActivityType>
+          <name>Reply received</name>
+          <status>Scheduled</status>
+        </ActivityType>
+      </ActivityTypes>
+    </ActivitySet>
+    <ActivitySet>
+      <name>consent_acceptance</name>
+      <label>Consent acceptance</label>
+      <timeline>true</timeline>
+      <ActivityTypes>
+        <ActivityType>
+          <name>MATCH consent accepted</name>
+          <status>Scheduled</status>
+        </ActivityType>
+      </ActivityTypes>
+    </ActivitySet>
+    <ActivitySet>
+      <name>consent_rejection</name>
+      <label>Consent rejection</label>
+      <timeline>true</timeline>
+      <ActivityTypes>
+        <ActivityType>
+          <name>MATCH consent rejected</name>
+          <status>Completed</status>
+        </ActivityType>
+      </ActivityTypes>
+    </ActivitySet>
+    <ActivitySet>
+      <name>consent_rejection</name>
+      <label>Study withdrawal</label>
+      <timeline>true</timeline>
+      <ActivityTypes>
+        <ActivityType>
+          <name>MATCH study withdrawal</name>
+          <status>Scheduled</status>
+        </ActivityType>
+      </ActivityTypes>
+    </ActivitySet>
+   </ActivitySets>
+  <CaseRoles>
+    <RelationshipType>
+        <name>Case Coordinator</name>
+        <creator>1</creator>
+        <manager>1</manager>
+    </RelationshipType>	  
+ </CaseRoles>
+</CaseType>

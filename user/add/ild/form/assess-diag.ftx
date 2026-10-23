@@ -1,0 +1,42 @@
+$tabs :tab_container
+
+	Lung function $lf_tab :tab
+		PFT result $lung_function :encounter_matrix {use_page=resphy:test,xfield=test_date,yfield=test_type,value_field=pre_pc_predicted,filter_field[0]=test_type,filter_value[0]=FEV1;FVC;FEV1/FVC,filter_op[0]=eq,linkfield=link_pft,after_column_actions=LinkColumn}
+		PFT result :link_record $link_pft {linked_grid=lung_function}
+		Add standard PFT tests :grid_add_button {refresh=lung_exams;lung_function,modal_width=700,modal_height=600,use_page=resphy:stdlfunction}
+		
+		TLCO result $tlco_results :encounter_matrix {use_page=resphy:test,xfield=test_date,yfield=test_type,value_field=pre_pc_predicted,filter_field[0]=test_type,filter_value[0]=Tlco,filter_op[0]=eq,linkfield=link_tlco,after_column_actions=LinkColumn}
+		TLCO result :link_record $link_tlco {linked_grid=lung_function}
+		Add TLCO test :grid_add_button {refresh=tlco_results;lung_function,modal_width=700,modal_height=600,use_page=resphy:tlco}
+		
+		KCO result $kco_results :encounter_matrix {use_page=resphy:test,xfield=test_date,yfield=test_type,value_field=pre_pc_predicted,filter_field[0]=test_type,filter_value[0]=Kco,filter_op[0]=eq,linkfield=link_kco,after_column_actions=LinkColumn}
+		KCO result :link_record $link_kco {linked_grid=lung_function}
+		Add KCO test :grid_add_button {refresh=kco_results;lung_function,modal_width=700,modal_height=600,use_page=resphy:kco}
+		
+	6 min walk test $walk_tab :tab
+		Date of walk $walk_date :date {size=10}
+		Distance walked $distance_walked :number {suffix=m,size=6}
+		"Starting saturation O<sub>2</sub>" $starting_sat_o2 :number {size=6}
+		"Finishing saturation O<sub>2</sub>" $finishing_sat_o2 :number {size=6}
+
+	Echocardiogram $echo_tab :tab
+		Date of test $date_of_echo :date {size=10}
+-$lf_test_date
+-$exp_pred_fev1
+-$exp_pred_fvc
+-$exp_pred_fev1_fvc
+-$fev1
+-$pc_pred_fev1
+-$fvc
+-$pc_pred_fvc
+-$fev1_fvc
+-$pc_pred_fev1_fvc
+
+-	Date of TLCO $tlco_date :date {size=10}
+-	Value $tlco_value :number {suffix=%,size=6}
+-	"% predicted" $pc_pred_tlco :number {size=6}
+-Date of KCO $kco_date :date {size=10}
+-Value $kco_value :number {size=6}
+-$ct_date
+-$pat_fibrosis
+-$comments_other

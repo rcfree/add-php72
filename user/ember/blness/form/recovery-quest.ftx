@@ -1,0 +1,18 @@
+:tab_container
+	Psychological/cognitive :tab
+		MoCA :fieldset {compress=1}
+			Perform MoCA :grid_add_button {refresh=moca_scores,use_page=blness:rmoca,linkfield=linked_moca}
+			MoCA score $moca_scores :encounter_grid {use_page=blness:amoca,link_display_field=moca_date,fields=moca_date;v_score;n_score;at_score;l_score;ab_score;dr_score;o_score;total,before_row_actions=LinkRecord,after_row_actions=StatusAction;DeleteRecord,linkfield=linked_moca,col_widths=4em;6em;4em;4em;4em;4em;4em;4em;4em;4em;8em;8em,col_headings=Date;V/spatial;Naming;Attn;Lang;Abstract;D. recall;Orient;Total}
+			MoCA :link_record $linked_moca {linked_grid=moca_scores,link_display_field=moca_date}
+
+	VAS :tab
+		Breathlessness* $vas_breathlessness :slider {min=0,max=100,step=10,size=3,suffix=mm}
+		Cough* $vas_cough :slider {min=0,max=100,step=10,size=3,suffix=mm}
+		Wheeze* $vas_wheeze :slider {min=0,max=100,step=10,size=3,suffix=mm}
+
+	Environment :tab
+		Required questionnaires added* $req_quests_added :checkbox
+		Add environment questionnaire :grid_add_button {refresh=enviro_quest,use_page=blness:renviro}
+		environment questionnaire $enviro_quest :encounter_grid {use_page=blness:renviro,after_row_actions=EditRecord;DeleteRecord,fields=test_datetime;voc_tests}
+
+		$ntl_concept :concept_group {concept_type=blness:nasa-task-load}

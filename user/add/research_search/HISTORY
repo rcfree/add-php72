@@ -1,0 +1,18 @@
+HISTORY
+
+2.2.0 03/07/2017
++ Additional features for bulk study recruit updates
+* Updated to use modified client module
+
+2.1.1 24/11/2016
+! Search query performance improved
+
+2.1.0 01/11/2016
++ Hometools moved to specific classes
++ Research table logic moved into separate class
+
+2.0.0 02/12/2015
++ Compatible with v3.0.x core
+
+1.0.0 30/09/2015
+* Initial version

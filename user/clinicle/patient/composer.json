@@ -1,0 +1,19 @@
+{
+    "name": "clinicle/patient",
+    "description": "ClinicLE patient module",
+	"type": "clinicle-module",
+	"require":{
+		"clinicle/ajax":"~1.0",
+		"clinicle/install":"~1.0",
+		"clinicle/import":"~1.0",
+		"clinicle/base":"~1.6",
+		"clinicle/client":"^1.12"
+	},
+    "autoload": {
+        "classmap": ["lib"],
+		"psr-4":{"ClinicLE\\Patient\\":"src/"}
+    },
+	"replace":{
+		"add/patient":"^1.0"
+	}
+}

@@ -1,0 +1,9 @@
+value,title,allow_change
+ident_patient,Patient,1
+pr.prog.referral,Referral
+pr.prog.subject,Subjective
+pr.prog.exercise,Exercise
+pr.prog.iswt,ISWT
+pr.prog.eswt,ESWT
+pr.prog.qol,QoL,1
+pr.prog.outcome,Outcome

@@ -1,0 +1,18 @@
+{
+    "name": "add/research",
+    "description": "Research module (part of ADD)",
+	"type": "clinicle-module",
+	"require":{
+		"clinicle/core":"~2.7",
+		"clinicle/install":"~1.0",
+		"clinicle/options":"~1.0",
+		"clinicle/query":"~1.0",
+		"clinicle/client":"~1.3",
+		"add/patient":"~1.1",
+		"clinicle/manage":"^1.5",
+		"tecnickcom/tcpdf":"^6.2"
+	},
+	"autoload": {
+        "classmap": ["php"]
+    }
+}

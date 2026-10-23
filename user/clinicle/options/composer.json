@@ -1,0 +1,12 @@
+{
+    "name": "clinicle/options",
+    "description": "ClinicLE options module",
+	"type": "clinicle-module",
+	"require":{
+		"clinicle/install":"^1.0",
+		"clinicle/core":"^2.11"
+	},
+    "autoload": {
+        "classmap": ["lib"]
+    }
+}

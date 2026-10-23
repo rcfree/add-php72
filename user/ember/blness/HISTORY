@@ -1,0 +1,47 @@
+RELEASE HISTORY
+1.7.3 31/05/2019
+! Fix child visit date lookup field
+
+1.7.2 23/01/2019
+! Fixed NASA task load questionnair
+
+1.7.1 11/10/2018
+! Incorrect questionnaire page being used
+
+1.7.0 05/10/2018
++ Implemented fixes to simplify and support new EMBER protocol
+
+1.6.0 14/05/2018
++ Altered to support changes to EMBER protocol
+
+1.4.3 23/02/2017
+! DECAF score calculation fix
+
+1.4.2 15/01/2017
+! DDU prefix missing from allowed EMBER patient numbers
+
+1.4.1 28/11/2017
+! Corrected SpO2 on O2 and ECG QTc interval fields
+
+1.4.0 24/10/2017
++ Include pathology tests recorded with an EMBER trial number
++ Include EXACT-PRO support
++ Reduce requirement for disease state
++ Corrected BNP test code
+
+1.3.0 22/08/2017
+* Further refinements and bugfixes
++ CURB65 calculation
+* EMBER patient list accessible through button 
+
+1.2.1 19/07/2017
+! Access control for EMBER pages in visits
+
+1.2.0 17/07/2017
+* First selection of protocol changes
+
+1.1.0 13/01/2017
+* Compatibility with client module changes
+
+1.0.0 01/11/2016
+* Initial version

@@ -1,0 +1,14 @@
+{
+    "name": "add/pr_dashboard",
+    "description": "ADD PR dashboard module",
+	"type": "clinicle-module",
+	"require":{
+		"add/pr":"^1.4",
+        "clinicle/search":"^0.1"
+	},
+  "autoload": {
+    "psr-4": {
+      "ADD\\PR\\": "src/"
+    }
+  }
+}

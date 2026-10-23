@@ -1,0 +1,5 @@
+Date of consent :date $consent_date
+Consent taken by :text $taken_by {default=current_user()}
+Comments :memo $comments
+-$consent_to_use_specimens
+-$consent_to_use_data

@@ -1,0 +1,15 @@
+{
+    "name": "cdbrkr/conditions",
+    "description": "Codebreaker conditions data module",
+	"type": "clinicle-module",
+	"require":{
+		"clinicle/base":"~1.0",
+		"clinicle/icd10":"~2.0",
+		"cdbrkr/logic":"~1.1"
+	},
+	"autoload": {
+		"psr-4":{
+			"Codebreaker\\Conditions\\":"src/"
+		}
+    }
+}

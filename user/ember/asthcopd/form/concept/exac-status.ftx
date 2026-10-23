@@ -1,0 +1,15 @@
+:horiz_container
+	Increased sputum volume $inc_sputum_vol :yes_no
+	Increased sputum thickness $inc_sputum_thickness @inc_sputum_pur :yes_no
+	Increased coughing $inc_coughing @coughing :yes_no
+
+-No. exacerbations (last 12m) $no_exac_last_12m :number
+
+-Total no. hospitalisations (last 12m) $total_hosps :number
+-Astha/COPD related hospitalisations (last 12m) $asth_copd_hosps :number
+
+-Admission severity of asthma exacerbation :radio_buttons $asth_adm_sev_exacerb [1=Moderate,2=Severe,3=Life-threatening,4=Near-fatal]
+-On oxygen $on_oxygen :yes_no {condition_test=Y,condition_action=show,condition_target=oxy_cn}
+-O<sub>2</sub> Reading in $o2_reading_in :radio_buttons [1=%,2=litres] {inline=1,condition_test[0]=1,condition_action[0]=show,condition_target[0]=o2_reading_pc,condition_test[1]=2,condition_action[1]=show,condition_target[1]=o2_reading_litres}
+-:number $o2_reading_pc @o2_reading_percent {suffix=%}
+-:number $o2_reading_litres {suffix=l}

@@ -1,0 +1,39 @@
+Rename,Level,Title,Field,Type,Prefix,Suffix,Size,Options,Min,Max,Default,Required,Settings
+,DEL,Add comorbidity,add_comorbidity,add_entry_link,,,,,,,,,"modal_name=data_entry_modal,parent_key=buttons"
+,DEL,Options,actions,internal,,,,,,,,,ignore_condition=1
+,DEL,Inactivate..,inactivate,modal_action,,,,,,,,,"modal_action=edit,modal_name=inactivate_modal,modal_heading=Inactivate comorbidity,modal_beforejs=beforeComorbInactive,modal_afterjs=afterComorbInactive"
+,DEL,Delete..,delete,modal_action,,,,,,,,,"modal_action=delete,modal_name=date_entry_modal"
+,DEL,,inactivate_modal,encounter_modal,,,,,,,,,
+,DEL,Reason for change,update_reason,dropdown,,,,"Inaccurate diagnosis,Improved accuracy,Patient recovered",,,,Y,"no_store=1,update_field=reason"
+,DEL,Details of change,update_details_reason,memo,,,,,,,,,"no_store=1,update_field=details_reason"
+,DEL,End date known?,update_end_date_known,yes_no,,,,,,,,Y,"no_store=1,update_field=end_date_known,condition_test[0]=Y,condition_target[0]=update_end_date,condition_action[0]=show"
+,DEL,End date,update_end_date,separate_date,,,,,get('start_date'),today(),,Y,no_store=1
+,DEL,,data_entry_modal,encounter_modal,,,,,,,,,
+,DEL,,update_end_date_year,,,,,,get('start_date'),today(),,Y,no_store=1
+,DEL,,update_end_date_month,,,,,,get('start_date'),today(),,Y,no_store=1
+,DEL,,update_end_date_day,,,,,,,,,,
+,1,Date recorded,date_recorded,date,,,,,,,today(),Y,
+condition_type,1,Enter terms to search available comorbidities,comorbidity_search,auto_complete,,,60,,,,,,"dictionary=icd10,dictionary_option=DictionaryGroups,data_field[0]=title:comorbidity_title,data_field[1]=value:comorbidity_icd10,clear_text=1,no_view=1,no_store=1,show_list=1"
+not_present,1,Manually enter the comorbidity,manual_entry,checkbox,,,,,,,,,"ignore_content=1,condition_target[0]=instruct,condition_test[0]=1,condition_action[0]=show,condition_target[1]=comorbidity_title,condition_test[1]=1,condition_action[1]=enable,condition_target[2]=comorbidity_icd10;comorbidity_details;comorbidity_title,condition_test[2]=1,condition_action[2]=clear,condition_target[3]=comorbidity_search;comorbidity_icd10;comorbidity_details,condition_test[3]=1,condition_action[3]=hide,col_title=Manual entry?"
+,1,Comorbidity information,ci_fset,fieldset,,,,,,,,,compress=1
+,2,<span class=label label-info>Please enter the comorbidity in the field below:</span>,instruct,markup,,,,,,,,,
+,2,,comor_hc,horiz_container,,,,,,,,,
+,3,Comorbidity,comorbidity_title,text,,,60,,,,,Y,"viewonly=1,modal_action=view,modal_name=data_entry_modal"
+,DEL,,field_33,,,,,,,,,,
+icd10_code,3,ICD10 code,comorbidity_icd10,text,,,4,,,,,,viewonly=1
+,DEL,,field_1,,,,,,,,,,
+comorbidity,2,Details of comorbidity,comorbidity_details,dropdown,,,30,,,,,,"empty=1,ajax-func=LookupDictGroupItems,dictionary=icd10,empty_option=- select optional details -,lookup_field=comorbidity_icd10,dynamic=1"
+,2,,main_cr,container,,,,,,,,,
+,3,,rep_hc,horiz_container,,,,,,,,,
+,4,Reported by,reported_by,dropdown,,,,"1=Patient,2=GP,3=Consultant,4=Nurse",,,,,
+,4,Start date known?,start_date_known,yes_no,,,,,,,,Y,"condition_test[0]=Y,condition_target[0]=start_date,condition_action[0]=show"
+,4,Start date,start_date,separate_date,,,,,,,,,
+,3,,status_hc,horiz_container,,,,,,,,,
+,4,Current status,current_status,radio_buttons,,,,"1=Active,2=Inactive",,,,Y,"condition_test[0]=2,condition_target[0]=inactive_status;details_reason,condition_action[0]=show,condition_test[1]=1,condition_action[1]=clear,condition_target[1]=inactive_status"
+,3,,inactive_status,horiz_container,,,,,,,,,
+,4,Reason for change,reason,dropdown,,,,"1=Inaccurate diagnosis,2=Patient recovered,3=Data entry error",,,,Y,
+,4,End date known?,end_date_known,yes_no,,,,,,,,Y,"condition_test[0]=Y,condition_target[0]=end_date,condition_action[0]=show"
+,4,End date,end_date,separate_date,,,,,,,,Y,
+,3,Details of change,details_reason,memo,,,,,,,,,
+,DEL,Secondary comorbidity list,current,fieldset,,,,,,,,,
+,DEL,,enc_table,encounter_table,,,,,,,,,"cols=date_recorded;comorbidity_title;manual_entry;comorbidity_details;actions;start_date;end_date,description=comorbidity,condition_field=current_status,condition_class=inactive,condition=2"

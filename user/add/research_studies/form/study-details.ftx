@@ -1,0 +1,17 @@
+:horiz_container {segments=3}
+	Study*	$study	:dropdown		{size=20,dictionary=studylist}
+	Study number*	$study_no	:text	{size=20,ajax-func=CheckRidUnique}
+	Current status*	$current_status	:dropdown	{dictionary=studystatus,ignore_condition_error=1,condition_test[0]="",condition_action[0]=show,condition_target[0]=sent_pis,condition_test[1]=7,condition_action[1]=show,condition_target[1]=enrol;not_interested;resent_pis,condition_test[2]=3,condition_target[2]=withdraw;update_no;complete_study,condition_action[2]=show,condition_test[3]=7;3,condition_action[3]=show,condition_target[3]=screen_fail}
+	
+:horiz_container {segments=3}
+	Enrol date	$enrol_date	:date					{min=date_of_birth(),max=today()}		
+	End date	$end_date	:date					{min=date_of_birth(),max=today()}			
+-Additional comments	$comments	:memo {size=80,rows=5}								
+Created by	$created_by	:hidden
+
+-Start date*	$start_date	:date
+	
+-Add action $add_action :grid_add_button {refresh=actions,modal_width=700,use_page=research:actions,use_parent=1}
+		
+-Study action $actions :encounter_grid {fields=date_recorded;action_created_by;action_date_scheduled;action_type;description;action_status;action_end_date,row_condition=action_status|eq|2|inactive,use_page=research:actions,use_parent=1}
+

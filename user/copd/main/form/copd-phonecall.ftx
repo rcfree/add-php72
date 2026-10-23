@@ -1,0 +1,12 @@
+:horiz_container
+	Date of call* $call_date :date
+	Name of nurse*  $call_nurse :dropdown  {dictionary=copd_nurse}
+	Unable to contact $unable_to_contact :checkbox {condition_test=1,condition_action=hide,condition_target=call_cn}
+
+:container $call_cn
+	:horiz_container
+		Type of call* $call_type :dropdown [fu=Follow-up,1d=1-day phonecall,5d=5-day phonecall,ltc=LTC,idt=IDT,gp=GP] {condition_test="fu";"5d",condition_action=show,condition_target=call_outcome}
+		Length of phone call* $call_length :number {prefix=mins}
+
+	Outcome of phone call $call_outcome :dropdown {dictionary=copd_phone_outcome,dictionary_options=ItemByGroup,ajax-func=LookupDictGroupItems,condition_test=2,condition_action=show,condition_target=reason_for_pr_ref_decline}
+Reason for declining Pr Referral*  $reason_for_pr_ref_decline :dropdown  {dictionary=copd_fo_phone_pr_dec_reason}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<overview>	
+	<logic name="early-onset-atopic">
+		<input section="details" obs="date_first_seen" op="lt" test="age" value="16"/>
+		<input section="allergentests" op="ge" test="count_encs" value="1" />
+		<input section="allergentests" op="ge" obs="width" test="max" value="1" />
+		<output obs="endotype" value="1" action="update"/>
+	</logic>
+</overview>
+

@@ -1,0 +1,2 @@
+ILD appointment required $ild_appt_reqd :date {size=10}
+Next outpatient appointment $next_outpatient_appt :text

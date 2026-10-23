@@ -1,0 +1,21 @@
+Enable query group? $enabled :checkbox
+
+Query logic :fieldset {compress=1}
+	:horiz_container {segments=4}
+		Internal logic $internal_logic :dropdown [OR=OR,AND=AND]
+		External logic $external_logic :dropdown [OR=OR,AND=AND]
+		Join type $join_type :dropdown [RIGHT=RIGHT,LEFT=LEFT,OUTER=OUTER,INNER=INNER]
+
+Encounter data :fieldset {compress=1}
+	:horiz_container {segments=4}
+		Include section ID? $include_section_id :checkbox
+		Include episode ID? $include_episode_id :checkbox
+		Include date created? $include_date_created :checkbox
+		Include date updated? $include_date_updated :checkbox
+
+Grouping :fieldset {compress=1}
+	:horiz_container
+		Count aggregation $count_agg :checkbox
+		Group by patient when multiple? $group_by_patient :checkbox
+		Multiple separator $multiple_separator :text {size=1}
+

@@ -1,0 +1,20 @@
+Date recorded* :date {default=today()}
+
+:tab_container
+
+	Severe asthma :tab $bts_tab
+		Does the patient meet ATS criteria for severe asthma?* $bts_severe_asthma :radio_buttons [Y=Yes,N=No,A=Being assessed] {inline=1}
+		:image {src=/images/refactory_asthma.png}
+	
+	Criteria :tab $crit_tab		
+		Life threatening* :yes_no $life_threatening
+		Event of acute severe asthma* :yes_no $acute_severe_event
+
+		Maintenance oral steroids* $maint_oral_steroids :yes_no
+		&ge;2 courses prednisolone in 12 months* $ge_2_predn_courses @ge_2_hosps_12m :yes_no
+		"Fixed airflow obstruction (post BD FEV<sub>1</sub> < 70% predicted)"* $fixed_air_obstruct :yes_no
+		Adolescent transition patient* $adol_trans_patient :yes_no
+		
+	BTS registry :tab
+		Add BTS record $add_bts :grid_add_button {refresh=bts_record,use_page=dac:brecord}
+		BTS record $bts_record :encounter_grid {use_page=dac:brecord,fields=date_added;bts_identifier;comments,use_parent=1}

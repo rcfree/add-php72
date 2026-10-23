@@ -1,0 +1,12 @@
+value,title,dictionary
+1,Corticosteroids,drughist
+2,Hydroxycarbamide,drughist
+3,Methotrexate,drughist
+4,Azathioprine,drughist
+5,Mycophenalate,drughist
+6,Mipolizumab,drughist
+7,Cyclophosphamide,drughist
+8,Imatinib mesylate,drughist
+9,Mepolizumab,drughist
+A,Other antibiotic,drughist
+O,Other drug,drughist

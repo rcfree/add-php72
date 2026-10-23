@@ -1,0 +1,59 @@
+:horiz_container
+	Referral date* $referral_date :date {default=today()}
+	Referral status $referral_status :dropdown [1=Reviewed]
+	
+-$request_date
+:tab_container
+ Patient details :tab $pat_tab
+  S number/hospital no* $identifier @pat_number :patient_data {size=10,field=identifier}
+  
+  :horiz_container
+   First name* $first_name @pat_firstname :patient_data {size=50,field=first_name}
+   Last name* $last_name @pat_lastname :patient_data {size=50,field=last_name}
+   Date of birth $dob @pat_dob :patient_data {field=date_of_birth,data_type=Text_Date}
+  
+ Referral details :tab $ref_det_tab
+  :horiz_container
+   Consultant title $consultant_title :text {size=5}
+   Consultant first name $consultant_first_name :text
+   Consultant surname $consultant_surname :text
+
+  Email for correspondance $corresp_email :user_email
+
+ Diagnosis :tab $diag_tab
+  Does the patient have a confirmed rheumatological diagnosis? $confirmed_rheum_diagnosis :yes_no {condition_test=Y,condition_target=diagnosis,condition_action=show}
+  Diagnosis $diagnosis :memo
+
+  :horiz_container
+   Rheumatoid factor or CCP $rheum_factor_ccp :radio_buttons [1=Not done/not known,2=Positive,3=Negative] 
+   ANA $ana :radio_buttons [1=Not done/not known,2=Positive,3=Negative]
+
+
+  Does patient have specific symptoms $any_specific_symps :yes_no {condition_test=Y,condition_target=spec_symptoms,condition_action=show}
+  Specific symptoms :checkboxes {dictionary=spec_symptoms,columns=2} $spec_symptoms
+  
+
+ Lung function :tab
+  Date of most recent full PFTs :date $date_recent_pfts
+  Most recent FVC % predicted :number {suffix=%} $fvc_pc_pred
+  Has patient had gas transfer? :yes_no $gas_transfer {condition_test=Y,condition_action=show,condition_target=gt_cn}
+  
+  :container $gt_cn
+	  Most recent TLco % predicted :number {suffix=%} $tlco_pc_pred
+	  Most recent KCO % predicted :number {suffix=%} $kco_pc_pred
+
+ Biopsy :tab
+  :horiz_container
+   Has the patient had a biopsy? $patient_had_biopsy @has_the_patient_had_a_biopsy :radio_buttons [1=No,2=Yes and I know the result,3=Yes biopsy needs discussing] {condition_test=2;3,condition_action=show,condition_target=biopsy_result}
+   Biopsy result :memo
+
+  Is the patient fit for a biopsy? :yes_no $fit_for_biopsy {condition_test=Y,condition_action=show,condition_target=biopsy_referred;refer_centre}
+  Do you want pt referred for biopsy from MDT? $biopsy_referred :radio_buttons [Y=Yes please see in clinic too,N=No please only discuss at the MDT]
+  Which centre are you referring to? $refer_centre :dropdown [1=Coventry,2=Heartlands/Birmingham Chest Clinic,3=Queen Elizabeth Birmingham,4=Stoke-on-Trent,5=Whichever is soonest]
+  
+ Clinic :tab 
+  Are you referring patient to be seen? $refer_see_pt :radio_buttons [Y=Yes please see in clinic too,N=No please only discuss at the MDT]
+  
+-:horiz_container
+-Referring trust :dropdown $refer_trust {dictionary=refer_trust,condition_test=O,condition_target=other_trust,condition_action=show}
+- Other trust $other_trust :text

@@ -1,0 +1,15 @@
+Return to QoL summary..	$qol_return	:summary_page_link {parent_key=buttons}
+Date* $cact_date	:date {min=date_of_birth(),max=today(),default=today(),summary_obs=cact4_11_date}
+
+Question 1. $q1 :number {min=0,max=3}
+Question 2. $q2 :number {min=0,max=3}
+Question 3. $q3 :number {min=0,max=3}
+Question 4. $q4 :number {min=0,max=3}
+
+
+Question 5. $q5 :number {min=0,max=5}
+Question 6. $q6 :number {min=0,max=5}
+Question 7. $q7 :number {min=0,max=5}
+
+Score* $score :expression {size=3,fixed=0,summary_obs=cact4_11_score,expression=sum('q1;q2;q3;q4;q5;q6;q7')}
+Status	$status	:internal {summary_obs=cact4_11_status,summary_type=status}

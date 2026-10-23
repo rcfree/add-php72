@@ -1,0 +1,27 @@
+Leg* :radio_buttons [1=Left,2=Right] {inline=1}
+Length from patella measurement taken* :number {suffix=cm,min=10,max=30,fixed=1}
+
+$quad_us :table {caption=Quadriceps ultrasound}
+	:table_head
+		"&nbsp;" $mkup :markup
+		"Area (cm<sup>2</sup>)" $area_head
+		"Thickness (mm)" $thick_head
+	:table_row
+		Measurement 1 :item
+		$quad_area_1 :number {min=1,max=12}
+		$quad_thickness_1 :number {min=1,max=30}
+	:table_row
+		Measurement 2 :item
+		$quad_area_2 :number {min=1,max=12}
+		$quad_thickness_2 :number {min=1,max=30}
+	:table_row
+		Measurement 3 :item
+		$quad_area_3 :number {min=1,max=12}
+		$quad_thickness_3 :number {min=1,max=30}
+	:table_row
+		Mean :item
+		$quad_ultra_area_mean :expression {expression=sum('quad_area_1;quad_area_2;quad_area_3')/3,fixed=1,size=4,suffix=cm<sup>2</sup>}
+		$quad_ultra_thick_mean :expression {expression=sum('quad_thickness_1;quad_thickness_2;quad_thickness_3')/3,fixed=1,size=4,suffix=mm}
+		
+-Quadriceps ultrasound size* :number {suffix=cm<sup>2</sup>,min=1,max=12}
+-Quadriceps thickness* :number {suffix=mm,min=1,max=30}

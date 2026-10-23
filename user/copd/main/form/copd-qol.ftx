@@ -1,0 +1,50 @@
+Hospital anxiety and depression scale (HADS) $hads_fset :fieldset
+
+	$hc1 :table
+
+		$th1 :table_head
+			:markup
+			Visit Date $m1 :markup
+			Status $m2 :markup
+			A score $m3 :markup
+			D score $m4 :markup
+			Total $m5 :markup
+			A mean $m6 :markup
+			D mean $m7 :markup
+
+		:table_row
+			Edit questionnaire.. $edit_hads :page_link {section=vhads,complete_title=Read questionnaire..,new_title=Perform questionnaire..,incomplete_edit_title=Continue questionnaire..,incomplete_view_title=View incomplete questionnaire..}
+			$hads_date :display_text
+			$hads_status :display_text {default="New"}
+			$hads_anxiety_score :display_text {size=3}
+			$hads_depression_score :display_text {size=3}
+			$hads_total :display_text
+			$hads_anxiety_mean :display_text
+			$hads_depression_mean :display_text
+
+
+COPD assessment test (CAT) $cat_fset :fieldset
+	:table
+		:table_head
+			:markup
+			Visit Date $cat_date_head :markup
+			Status $cat_status_head :markup
+			Score $cat_score_head :markup
+		:table_row
+			Edit questionnaire.. $edit_cat :page_link {section=vcat,complete_title=Read questionnaire..,new_title=Perform questionnaire..,incomplete_edit_title=Continue questionnaire..,incomplete_view_title=View incomplete questionnaire..}
+			$cat_date :display_text
+			$cat_status :display_text {default="New"}
+			$cat_score :display_text {size=3}
+
+-PRISMA $prisma_fset :fieldset
+-	:table
+-		:table_head
+-			:markup
+-			Visit Date $prisma_date_head :markup
+-			Status $prisma_status_head :markup
+-			Score $prisma_score_head :markup
+-		:table_row
+-			Edit questionnaire.. $edit_prisma :page_link {section=vprisma,complete_title=Read questionnaire..,new_title=Perform questionnaire..,incomplete_edit_title=Continue questionnaire..,incomplete_view_title=View incomplete questionnaire..}
+-			$prisma_date :display_text
+-			$prisma_status :display_text {default="New"}
+-			$prisma_score :display_text {size=3}

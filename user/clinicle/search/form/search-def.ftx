@@ -1,0 +1,24 @@
+:tab_container
+	Definition :tab
+		:horiz_container {segments=2}
+			:horiz_container
+				Add group.. :grid_add_button $add_search_group {use_page=search:group,refresh=search_groups}
+				Search options :search_options_button $search_options_button
+
+			:horiz_container
+				$search_title :text
+				$search_id :text {size=3}
+				Save $save_search :save_search_button
+				Save new $save_search_new :save_search_button {save_new=1}
+
+		$search_groups :search_def_grid
+
+	Results :tab
+
+		:horiz_container
+			Run query :refresh_button $run_query {refresh_target=search_result,icon=icon-refresh}
+
+			Export results $export_results :export_results_button {search_results_grid=search_result}
+			Email results $email_results :email_results_button {search_results_grid=search_result}
+
+		$search_result :search_result {searchurl=/search/run,use_page=search:run}

@@ -1,0 +1,23 @@
+value,title,group
+UHL-AST1,mild,16
+UHL-AST2,moderate,16
+UHL-AST3,acute severe,16
+UHL-AST4,life threatening,16
+UHL-AST5,near-fatal,16
+UHL-AST6,brittle,16
+UHL-AST7,stable,16
+UHL-AST0,other,16
+UHL-PNE0,CURB65 - 0,72
+UHL-PNE1,CURB65 - 1,72
+UHL-PNE2,CURB65 - 2,72
+UHL-PNE3,CURB65 - 3,72
+UHL-PNE4,CURB65 - 4,72
+UHL-PNE5,CURB65 - 5,72
+UHL-RFL1,Acute type I,25
+UHL-RFL2,Chronic type I,25
+UHL-RFL3,Acute type II,25
+UHL-RFL4,Chronic type II,25
+UHL-RFL5,Post-procedure,25
+UHL-PEM1,Imaging pending,76
+UHL-PEM2,Imaging confirmed,76
+UHL-PEM3,Clinical diagnosis without imaging,76

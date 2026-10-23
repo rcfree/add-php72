@@ -1,0 +1,15 @@
+
+AQLQ :fieldset $aqlq_fset {compress=1}
+	AQLQ score $aqlq_scores :encounter_grid {use_page=blness:aqlq,fields=aqlq_date;symptoms_mean;act_limit_mean;emot_func_mean;env_stimuli_mean;symptoms_score;act_limit_score;emot_func_score;total_score,before_row_actions=LinkRecord,linkfield=linked_aqlq,after_row_actions=StatusAction;DeleteRecord,link_display_field=aqlq_date}
+	AQLQ* :link_record $linked_aqlq {linked_grid=aqlq_scores,link_display_field=aqlq_date}
+	Perform AQLQ :grid_add_button {refresh=aqlq_scores,use_page=blness:aqlq,linkfield=linked_aqlq}
+
+-ACQ :fieldset $acq_fset {compress=1}
+-	ACQ score $acq_scores :encounter_grid {use_page=blness:acq,fields=jacq6_date;score;score6,before_row_actions=LinkRecord,linkfield=linked_acq,after_row_actions=StatusAction;DeleteRecord,col_widths=6em;8em;6em;6em;6em;6em,link_display_field=jacq6_date}
+-	ACQ* :link_record $linked_acq {linked_grid=acq_scores}
+-	Perform ACQ :grid_add_button {refresh=acq_scores,use_page=blness:acq,linkfield=linked_acq}
+
+-Nijmegen :fieldset $nijmegen_fset {compress=1}
+-Nijmegen score $nijmegen_scores :encounter_grid {use_page=blness:nijmegen,fields=nijmegen_date;score,linkfield=linked_nijmegen,before_row_actions=LinkRecord,after_row_actions=StatusAction;DeleteRecord,link_display_field=nijmegen_date}
+-Nijmegen :link_record $linked_nijmegen {linked_grid=nijmegen_scores,link_display_field=nijmegen_date}
+-Perform Nijmegen :grid_add_button {refresh=nijmegen_scores,use_page=blness:nijmegen,linkfield=linked_nijmegen}

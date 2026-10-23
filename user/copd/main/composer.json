@@ -1,0 +1,15 @@
+{
+    "name": "copd/main",
+    "description": "ADD COPD main module",
+	"type": "clinicle-module",
+	"require":{
+		"clinicle/install":"~1.0",
+		"add/paasth":"^0.1"
+
+	},
+    "autoload": {
+        "psr-4":{
+        "COPD\\Main\\" : "src/"
+      }
+    }
+}

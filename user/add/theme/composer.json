@@ -1,0 +1,9 @@
+{
+    "name": "add/theme",
+    "description": "ADD-specific theme module",
+	"type": "clinicle-module",
+	"require":{
+		"clinicle/core":"~2.8",
+		"clinicle/install":"~1.0"
+	}
+}

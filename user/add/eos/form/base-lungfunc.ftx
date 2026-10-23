@@ -1,0 +1,2 @@
+lung test $lung_function :encounter_grid {use_page=resphy:test,fields=test_date;test_type;pre_value;pre_pc_predicted;post_value;post_pc_predicted,filter_field[0]=test_type,filter_value[0]=FEV1;FVC;FEV1/FVC;PEF;reversibility %;reversibility mls,filter_op[0]=eq}
+Add reversibility tests :grid_add_button {refresh=lung_function,modal_width=700,modal_height=600,use_page=resphy:revlfunction}

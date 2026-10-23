@@ -1,0 +1,9 @@
+NASA task load :fieldset {compress=1}
+	NASA task load questionnaire* $ntl_done :yes_no
+	Date $ntl_date :date
+	Mental demand $ntl_mental_demand :number {min=0, max=100}
+	Physical demand $ntl_physical_demand :number {min=0, max=100}
+	Temporal demand $ntl_temporal_demand :number {min=0, max=100}
+	Performance $ntl_performance :number {min=0, max=100}
+	Effort $ntl_effort :number {min=0, max=100}
+	Frustration $ntl_frustration :number {min=0, max=100}

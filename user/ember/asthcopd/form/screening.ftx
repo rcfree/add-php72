@@ -1,0 +1,11 @@
+Inclusion criteria :fieldset
+
+	Age over 18* $age_over_18 :yes_no
+	Able to provide informed consent* $prov_informed_consent :yes_no
+	Physician diagnosis of asthma/COPD* :yes_no
+	
+Exclusion critera :fieldset
+	
+	Pregnant* :yes_no
+	Concominant myocardial infarction* $conc_myoc_infarc :yes_no
+	Active TB* :yes_no

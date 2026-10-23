@@ -1,0 +1,11 @@
+How do you want to search for patients? :radio_buttons $search_sel [1=by S number/casenote/hospital number,2=by name and date of birth] {ignore_content=1,default=1,inline=1,condition_test[0]=1,condition_target[0]=id,condition_action[0]=show,condition_test[1]=2,condition_target[1]=name_dob,condition_action[1]=show}
+
+Enter an S number of hospital number* :text $id
+
+:horiz_container $name_dob
+	Enter first name* :text $fname
+	Enter last name* :text $lname
+	Enter date of birth* :date $dob
+Search :refresh_button $search {refresh_target=patient_results}
+
+patients :search_patients $patient_results

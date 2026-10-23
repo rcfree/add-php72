@@ -1,0 +1,101 @@
+PR treatment programme :referral $pr_prog {referral_success_message=COPD visit referred to PR treatment programme.,referral_pim=pr:referral,convert_field_type=ConvertToPRButton,target_id_field=copd_visit_id}
+
+:tab_container
+	Review $copd_rev_tab :tab
+		:horiz_container {segments=2}
+			No. Reviews by COPD Nurse (Ip) $times_reviewed_by_copd_nurse :number
+			Name Of reviewer $name_of_nurse_ahp_aps :dropdown  {dictionary=copd_nurse}
+		:horiz_container {segments=2}
+			Admissions &lt; 12 Months (Resp 30A) $number_adms_lt_12m_30a :number
+
+		:horiz_container {segments=2}
+			No. Exacerbations &lt 12 Months $number_exacerbations_lt12m :number
+
+	Inhaler techniqu $it_tab :tab
+		Inhaler Technique Demonstrated $inhaler_technique_demonstrated :radio_buttons [Y=Yes,N=No,X=N/A] {inline=1,condition_test=Y,condition_target=technique_understanding,condition_action=show}
+		Technique understood? $technique_understanding :dropdown  {dictionary=copd_inh_tech_understand}
+		Inhaler technique checklist :table
+			:table_head
+				Step :item
+				Action :item
+				Device 1 :text $device1
+				Device 2 :text $device2
+				Device 3 :text $device3
+
+			:table_row
+				Step 1 :item
+				Prepare inhaler :item
+				$step1_d1 :radio_buttons {inline=1,dictionary=copd_inh_tech}
+				$step1_d2 :radio_buttons {inline=1,dictionary=copd_inh_tech}
+				$step1_d3 :radio_buttons {inline=1,dictionary=copd_inh_tech}
+
+			:table_row
+				Step 2 :item
+				Prepare/load dose<br>Lips around :item
+				$step2_d1 :radio_buttons {inline=1,dictionary=copd_inh_tech}
+				$step2_d2 :radio_buttons {inline=1,dictionary=copd_inh_tech}
+				$step2_d3 :radio_buttons {inline=1,dictionary=copd_inh_tech}
+
+			:table_row
+				Step 3 :item
+				Breathe out (not into inhaler) :item
+				$step3_d1 :radio_buttons {inline=1,dictionary=copd_inh_tech}
+				$step3_d2 :radio_buttons {inline=1,dictionary=copd_inh_tech}
+				$step3_d3 :radio_buttons {inline=1,dictionary=copd_inh_tech}
+
+			:table_row
+				Step 4 :item
+				Lips around mouthpiech :item
+				$step4_d1 :radio_buttons {inline=1,dictionary=copd_inh_tech}
+				$step4_d2 :radio_buttons {inline=1,dictionary=copd_inh_tech}
+				$step4_d3 :radio_buttons {inline=1,dictionary=copd_inh_tech}
+
+			:table_row
+				Step 5 :item
+				Breathe in:<br>Aerosol (MDI)<br/>slow + steady<br/><br/>Dry powder (DPI)<br/>Quick + deep :item
+				$step5_d1 :radio_buttons {inline=1,dictionary=copd_inh_tech}
+				$step5_d2 :radio_buttons {inline=1,dictionary=copd_inh_tech}
+				$step5_d3 :radio_buttons {inline=1,dictionary=copd_inh_tech}
+			:table_row
+				Step 6 :item
+				Remove inhaler -<br/> close mouth - hold <br/> breath up to 10 seconds :item
+				$step6_d1 :radio_buttons {inline=1,dictionary=copd_inh_tech}
+				$step6_d2 :radio_buttons {inline=1,dictionary=copd_inh_tech}
+				$step6_d3 :radio_buttons {inline=1,dictionary=copd_inh_tech}
+			:table_row
+				Step 7 :item
+				Repeat as directed :item
+				$step7_d1 :radio_buttons {inline=1,dictionary=copd_inh_tech}
+				$step7_d2 :radio_buttons {inline=1,dictionary=copd_inh_tech}
+				$step7_d3 :radio_buttons {inline=1,dictionary=copd_inh_tech}
+			:table_row
+				Score :item
+				Out of 7 :item
+				:expression $device1_score {expression=sum('step1_d1;step2_d1;step3_d1;step4_d1;step5_d1;step6_d1;step7_d1')}
+				:expression $device2_score {expression=sum('step1_d2;step2_d2;step3_d2;step4_d2;step5_d2;step6_d2;step7_d2')}
+				:expression $device3_score {expression=sum('step1_d3;step2_d3;step3_d3;step4_d3;step5_d3;step6_d3;step7_d3')}
+
+	Bundle $copd_bund_tab :tab
+		:horiz_container
+			Patient On Care Bundle Pathway $patient_on_care_bundle_pathway :radio_buttons [Y=Yes,N=No,M=Missed,P=Pre-issued] {inline=1,condition_test=N,condition_action=show,condition_target=reason_not_on_cbundle}
+			Reason why not? $reason_not_on_cbundle :dropdown [1=No spirometry,2=LRI patient,3=Patient refused]
+		Priority Card Given $priority_card_given :radio_buttons [Y=Yes,N=No,P=Pre-issued,U=Not applicable] {inline=1}
+
+		Pulmonary rehab :fieldset {compress=1}
+			PR referral :encounter_grid {use_page=pr:referral,fields=referral_date;enrol_in_treatment,col_titles=Referral data;Full treatment programme?}
+			:horiz_container
+				Referred To Pulmonary Rehabilitation $referred_to_pulmonary_rehabilitation :radio_buttons [Y=Yes,N=No,X=Not appropriate] {condition_target[0]=pr_progs,condition_action[0]=show,condition_test[0]=Y,inline=1,condition_test[1]=N,condition_action[1]=show,condition_target[1]=reason_no_pr_refer}
+				Reason not referred $reason_no_pr_refer :dropdown [1=Done before, 2=Transport,3=Carer,4=Working F/T,5=Know what to do,6=Found it too hard,7=Frailty score >4]
+
+			:container $pr_progs {indent=1}
+				PR programme :encounter_grid {use_page=pr:outcome,fields=date_pr_assessment;referral_outcome;assessment_outcome;suitable_for_pr;why_not_suitable;started_pr;completed_pr;reason_pr_not_completed}
+
+				Declined Pr Ref (As Ip) $declined_pr_ref_as_ip :dropdown  {dictionary=copd_pr_ref_dec_reason}
+
+		Self Management Plan $self_management_plan :yes_no
+		Blf Passport Given $blf_passport_given :yes_no
+
+-$sputum_colour
+-No. Times Copd Bundle Completed &lt 12 Months $number_copd_bundle_completed_lt_12m :number
+-Admissions &lt; 12 Months (Other) $number_adms_lt_12m_other :number
+-Let's talk (if HADS score high) $lets_talk_hads :yes_no

@@ -4,21 +4,15 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ed6f1ab6c662538303276ed37f0821ec",
+    "content-hash": "72b00950150158fb94ba0bd4d35a5de4",
     "packages": [
         {
             "name": "add/advcopd",
-            "version": "v2.7.0",
-            "source": {
-                "type": "hg",
-                "url": "https://bitbucket.org/leicrespbru/add_advcopd",
-                "reference": "e74432b3e0fbf2ad2f9acc0ebcb99fb230051711"
-            },
+            "version": "2.7.0",
             "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/leicrespbru/add_advcopd/get/e74432b3e0fbf2ad2f9acc0ebcb99fb230051711.zip",
-                "reference": "e74432b3e0fbf2ad2f9acc0ebcb99fb230051711",
-                "shasum": ""
+                "type": "path",
+                "url": "user/add/advcopd",
+                "reference": "9b156f75ebedf5607f8b27826b81649599fb8dde"
             },
             "require": {
                 "add/concept": "~1.0",
@@ -34,21 +28,18 @@
                 ]
             },
             "description": "Advanced COPD module (part of ADD)",
-            "time": "2017-10-31T10:30:53+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "add/advcopd_fup",
-            "version": "v1.0.1",
-            "source": {
-                "type": "hg",
-                "url": "https://bitbucket.org/leicrespbru/add_advcopd_fup",
-                "reference": "a39fb0b51a6d7c0324c948ad00627e3b8b1a9a00"
-            },
+            "version": "1.0.1",
             "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/leicrespbru/add_advcopd_fup/get/a39fb0b51a6d7c0324c948ad00627e3b8b1a9a00.zip",
-                "reference": "a39fb0b51a6d7c0324c948ad00627e3b8b1a9a00",
-                "shasum": ""
+                "type": "path",
+                "url": "user/add/advcopd_fup",
+                "reference": "9b1a02bd36a7c74c2c8cad02012aa759f499688c"
             },
             "require": {
                 "add/advcopd": "~2.2",
@@ -57,21 +48,18 @@
             },
             "type": "clinicle-module",
             "description": "Advanced COPD followup module (part of ADD)",
-            "time": "2015-06-17T14:04:38+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "add/advcopd_report",
-            "version": "v1.1.2",
-            "source": {
-                "type": "hg",
-                "url": "https://bitbucket.org/leicrespbru/add_advcopd_report",
-                "reference": "fd71e142f4249976c65ccfb606c614fa46eb2b30"
-            },
+            "version": "1.1.2",
             "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/leicrespbru/add_advcopd_report/get/fd71e142f4249976c65ccfb606c614fa46eb2b30.zip",
-                "reference": "fd71e142f4249976c65ccfb606c614fa46eb2b30",
-                "shasum": ""
+                "type": "path",
+                "url": "user/add/advcopd_report",
+                "reference": "42e61f8545ee9cffff362e7538235d896e09a796"
             },
             "require": {
                 "add/advcopd": "~2.2",
@@ -80,21 +68,18 @@
             },
             "type": "clinicle-module",
             "description": "Advanced COPD report module (part of ADD)",
-            "time": "2016-11-04T11:38:36+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "add/cap",
-            "version": "v1.0.7",
-            "source": {
-                "type": "hg",
-                "url": "https://bitbucket.org/leicrespbru/add_cap",
-                "reference": "58dcf181ebab4ba4f09f6fc2b29b5ba8db6555bd"
-            },
+            "version": "1.0.7",
             "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/leicrespbru/add_cap/get/58dcf181ebab4ba4f09f6fc2b29b5ba8db6555bd.zip",
-                "reference": "58dcf181ebab4ba4f09f6fc2b29b5ba8db6555bd",
-                "shasum": ""
+                "type": "path",
+                "url": "user/add/cap",
+                "reference": "ee72cd36e16ea3617f915ec6d0ca5b81688f6040"
             },
             "require": {
                 "add/patient": "~1.0",
@@ -103,21 +88,18 @@
             },
             "type": "clinicle-module",
             "description": "Community acquired pneumonia module (part of ADD)",
-            "time": "2015-06-17T13:56:16+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "add/concept",
-            "version": "v1.6.2",
-            "source": {
-                "type": "hg",
-                "url": "https://bitbucket.org/leicrespbru/add_concept",
-                "reference": "aa7586395d0c5fbb92c058e676d60fcfcc7129aa"
-            },
+            "version": "1.6.2",
             "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/leicrespbru/add_concept/get/aa7586395d0c5fbb92c058e676d60fcfcc7129aa.zip",
-                "reference": "aa7586395d0c5fbb92c058e676d60fcfcc7129aa",
-                "shasum": ""
+                "type": "path",
+                "url": "user/add/concept",
+                "reference": "296ba7058b6a063e34b88035574895cf5695fa16"
             },
             "require": {
                 "clinicle/ajax": "~1.0",
@@ -130,21 +112,18 @@
                 ]
             },
             "description": "Common concepts module (part of ADD)",
-            "time": "2019-05-31T12:41:57+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "add/dac",
-            "version": "v2.6.0",
-            "source": {
-                "type": "hg",
-                "url": "https://bitbucket.org/leicrespbru/add_dac",
-                "reference": "cf534a44ce344eb19dfac27301c3c3e787253eb4"
-            },
+            "version": "2.6.0",
             "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/leicrespbru/add_dac/get/cf534a44ce344eb19dfac27301c3c3e787253eb4.zip",
-                "reference": "cf534a44ce344eb19dfac27301c3c3e787253eb4",
-                "shasum": ""
+                "type": "path",
+                "url": "user/add/dac",
+                "reference": "107c5c7d2fd39ebfc0d0e3b622f154020b59c1d7"
             },
             "require": {
                 "add/concept": "^1.0",
@@ -156,21 +135,18 @@
             },
             "type": "clinicle-module",
             "description": "Difficult Asthma Clinic module (part of ADD)",
-            "time": "2017-10-31T10:30:12+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "add/dac_mdt",
-            "version": "v1.1.0",
-            "source": {
-                "type": "hg",
-                "url": "https://bitbucket.org/leicrespbru/add_dac_mdt",
-                "reference": "f44033f50a3f56eb6f77476d929d723e4bb452c5"
-            },
+            "version": "1.1.0",
             "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/leicrespbru/add_dac_mdt/get/f44033f50a3f56eb6f77476d929d723e4bb452c5.zip",
-                "reference": "f44033f50a3f56eb6f77476d929d723e4bb452c5",
-                "shasum": ""
+                "type": "path",
+                "url": "user/add/dac_mdt",
+                "reference": "118096e8030f0bfa2ce5fabecdb25973c7beaad3"
             },
             "require": {
                 "add/dac": "~2.0",
@@ -180,21 +156,18 @@
             },
             "type": "clinicle-module",
             "description": "DAC MDT module (part of ADD)",
-            "time": "2016-11-01T16:58:17+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "add/eos",
-            "version": "v1.1.2",
-            "source": {
-                "type": "hg",
-                "url": "https://bitbucket.org/leicrespbru/add_eos",
-                "reference": "4e0084833eb26f9c20f7ea50cce9e4438e3a328b"
-            },
+            "version": "1.1.2",
             "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/leicrespbru/add_eos/get/4e0084833eb26f9c20f7ea50cce9e4438e3a328b.zip",
-                "reference": "4e0084833eb26f9c20f7ea50cce9e4438e3a328b",
-                "shasum": ""
+                "type": "path",
+                "url": "user/add/eos",
+                "reference": "a46215f9f17128d09077738f849c4c337b9ba301"
             },
             "require": {
                 "add/concept": "~1.0",
@@ -207,21 +180,18 @@
             },
             "type": "clinicle-module",
             "description": "Hyper-eosinophilic module (part of ADD)",
-            "time": "2017-04-21T17:44:35+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "add/grouping",
-            "version": "v1.1.0",
-            "source": {
-                "type": "hg",
-                "url": "https://bitbucket.org/leicrespbru/add_grouping",
-                "reference": "315103553631b8086c196d50f353209855e658dc"
-            },
+            "version": "1.1.0",
             "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/leicrespbru/add_grouping/get/315103553631b8086c196d50f353209855e658dc.zip",
-                "reference": "315103553631b8086c196d50f353209855e658dc",
-                "shasum": ""
+                "type": "path",
+                "url": "user/add/grouping",
+                "reference": "e25f037baa6b1a85c5f6ef1b947ebb559d02f249"
             },
             "require": {
                 "clinicle/core": "~2.4",
@@ -234,21 +204,18 @@
                 ]
             },
             "description": "Grouping module (part of ADD)",
-            "time": "2015-10-26T12:21:37+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "add/history",
-            "version": "v2.0.1",
-            "source": {
-                "type": "hg",
-                "url": "https://bitbucket.org/leicrespbru/add_history",
-                "reference": "228a0b00befd3eeb14b91308240677836ee360ae"
-            },
+            "version": "2.0.1",
             "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/leicrespbru/add_history/get/228a0b00befd3eeb14b91308240677836ee360ae.zip",
-                "reference": "228a0b00befd3eeb14b91308240677836ee360ae",
-                "shasum": ""
+                "type": "path",
+                "url": "user/add/history",
+                "reference": "94cec38d03e22e496f2147b82df73fcc4c3a4ca5"
             },
             "require": {
                 "add/patient": "~1.0",
@@ -262,21 +229,18 @@
                 ]
             },
             "description": "Medical history module (part of ADD)",
-            "time": "2015-06-17T15:27:06+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "add/history_ext",
-            "version": "v2.2.1",
-            "source": {
-                "type": "hg",
-                "url": "https://bitbucket.org/leicrespbru/add_history_ext",
-                "reference": "4decd432eef1bbfaf33b18f57dda1ea437e0ec88"
-            },
+            "version": "2.2.1",
             "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/leicrespbru/add_history_ext/get/4decd432eef1bbfaf33b18f57dda1ea437e0ec88.zip",
-                "reference": "4decd432eef1bbfaf33b18f57dda1ea437e0ec88",
-                "shasum": ""
+                "type": "path",
+                "url": "user/add/history_ext",
+                "reference": "54739f533ecf29f13a617247b8556d05a3d5dc0b"
             },
             "require": {
                 "add/history": "~2.0",
@@ -291,21 +255,18 @@
                 ]
             },
             "description": "Medical history extension module (part of ADD)",
-            "time": "2017-08-17T12:38:29+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "add/history_status",
-            "version": "v1.0.2",
-            "source": {
-                "type": "hg",
-                "url": "https://bitbucket.org/leicrespbru/add_history_status",
-                "reference": "58ba317f70bdd07dd38190ac39fb1484cdd1e68a"
-            },
+            "version": "1.0.2",
             "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/leicrespbru/add_history_status/get/58ba317f70bdd07dd38190ac39fb1484cdd1e68a.zip",
-                "reference": "58ba317f70bdd07dd38190ac39fb1484cdd1e68a",
-                "shasum": ""
+                "type": "path",
+                "url": "user/add/history_status",
+                "reference": "23034c3a558e7b71533e74e690ec59701709a137"
             },
             "require": {
                 "add/concept": "~1.0",
@@ -317,21 +278,18 @@
             },
             "type": "clinicle-module",
             "description": "Medical history status module (part of ADD)",
-            "time": "2017-01-31T15:33:42+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "add/ild",
-            "version": "v1.3.0",
-            "source": {
-                "type": "hg",
-                "url": "https://bitbucket.org/leicrespbru/add_ild",
-                "reference": "ea71690a459a5205f4df1b624a7d61f2625778c6"
-            },
+            "version": "1.3.0",
             "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/leicrespbru/add_ild/get/ea71690a459a5205f4df1b624a7d61f2625778c6.zip",
-                "reference": "ea71690a459a5205f4df1b624a7d61f2625778c6",
-                "shasum": ""
+                "type": "path",
+                "url": "user/add/ild",
+                "reference": "0e5edcd49044b90f51c97bb373de3ba9ec5cf349"
             },
             "require": {
                 "add/patient": "~1.0",
@@ -347,21 +305,18 @@
                 ]
             },
             "description": "ADD ILD module",
-            "time": "2016-11-01T15:54:02+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "add/inv",
-            "version": "v2.2.4",
-            "source": {
-                "type": "hg",
-                "url": "https://bitbucket.org/leicrespbru/add_inv",
-                "reference": "b27c610d71940804e77bbbbcae1ce9654148be5a"
-            },
+            "version": "2.2.4",
             "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/leicrespbru/add_inv/get/b27c610d71940804e77bbbbcae1ce9654148be5a.zip",
-                "reference": "b27c610d71940804e77bbbbcae1ce9654148be5a",
-                "shasum": ""
+                "type": "path",
+                "url": "user/add/inv",
+                "reference": "9a09433354225f0c751dab8ad56c7471893b9897"
             },
             "require": {
                 "clinicle/client": "^1.9",
@@ -375,21 +330,18 @@
                 ]
             },
             "description": "Investigations module (part of ADD)",
-            "time": "2017-07-13T13:50:48+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "add/inv_fungi",
-            "version": "v0.1.x-dev",
-            "source": {
-                "type": "hg",
-                "url": "https://bitbucket.org/leicrespbru/add_inv_fungi",
-                "reference": "0363707c876165587105562c2631715e7f9142fa"
-            },
+            "version": "0.1.0",
             "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/leicrespbru/add_inv_fungi/get/0363707c876165587105562c2631715e7f9142fa.zip",
-                "reference": "0363707c876165587105562c2631715e7f9142fa",
-                "shasum": ""
+                "type": "path",
+                "url": "user/add/inv_fungi",
+                "reference": "23fda993cc523cb586b9ce1db7fe82866f944f53"
             },
             "require": {
                 "add/inv": "^2.2",
@@ -398,21 +350,18 @@
             },
             "type": "clinicle-module",
             "description": "Fungi entry investigations module (part of ADD)",
-            "time": "2017-07-17T14:51:39+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "add/inv_ige",
-            "version": "v1.1.0",
-            "source": {
-                "type": "hg",
-                "url": "https://bitbucket.org/leicrespbru/add_inv_ige",
-                "reference": "6f2983ce24e32236db4fd90d4c6e3740bd76734d"
-            },
+            "version": "1.1.0",
             "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/leicrespbru/add_inv_ige/get/6f2983ce24e32236db4fd90d4c6e3740bd76734d.zip",
-                "reference": "6f2983ce24e32236db4fd90d4c6e3740bd76734d",
-                "shasum": ""
+                "type": "path",
+                "url": "user/add/inv_ige",
+                "reference": "8a747f7a8fb1405698febb22f0b3bf575005498b"
             },
             "require": {
                 "add/inv": "~2.0",
@@ -427,21 +376,18 @@
                 ]
             },
             "description": "Investigations IgE module (part of ADD)",
-            "time": "2016-02-29T17:43:07+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "add/med",
-            "version": "v1.4.2",
-            "source": {
-                "type": "hg",
-                "url": "https://bitbucket.org/leicrespbru/add_med",
-                "reference": "8191937752bdc59d49caae69f1f6b45cd17f3398"
-            },
+            "version": "1.4.2",
             "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/leicrespbru/add_med/get/8191937752bdc59d49caae69f1f6b45cd17f3398.zip",
-                "reference": "8191937752bdc59d49caae69f1f6b45cd17f3398",
-                "shasum": ""
+                "type": "path",
+                "url": "user/add/med",
+                "reference": "a4ffb9bbb7436574ebef04dbd70ca53418f2fcf6"
             },
             "require": {
                 "clinicle/client": "~1.9",
@@ -461,21 +407,18 @@
                 }
             },
             "description": "Medication module (part of ADD)",
-            "time": "2017-08-17T17:17:26+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "add/med_report",
-            "version": "v1.0.1",
-            "source": {
-                "type": "hg",
-                "url": "https://bitbucket.org/leicrespbru/add_med_report",
-                "reference": "8e8c66f436e32f2f3379f76931412da712fd1413"
-            },
+            "version": "1.0.1",
             "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/leicrespbru/add_med_report/get/8e8c66f436e32f2f3379f76931412da712fd1413.zip",
-                "reference": "8e8c66f436e32f2f3379f76931412da712fd1413",
-                "shasum": ""
+                "type": "path",
+                "url": "user/add/med_report",
+                "reference": "0b8eda26ae4429bc5ec86011c7e2be2cdb801ef5"
             },
             "require": {
                 "add/med": "~1.0",
@@ -485,21 +428,18 @@
             },
             "type": "clinicle-module",
             "description": "Medication report module (part of ADD)",
-            "time": "2015-08-28T13:03:45+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "add/paasth",
-            "version": "v0.1.0",
-            "source": {
-                "type": "hg",
-                "url": "https://bitbucket.org/rcfree/add_paasth",
-                "reference": "79769133f187bf13e78668db5439fa3482b8ba5c"
-            },
+            "version": "0.1.0",
             "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/rcfree/add_paasth/get/79769133f187bf13e78668db5439fa3482b8ba5c.zip",
-                "reference": "79769133f187bf13e78668db5439fa3482b8ba5c",
-                "shasum": ""
+                "type": "path",
+                "url": "user/add/paasth",
+                "reference": "e7427540aae488eb63c4e579ef59f12706a5ae13"
             },
             "require": {
                 "add/concept": "^1.0",
@@ -516,21 +456,18 @@
                 }
             },
             "description": "Paediatric asthma module (part of ADD)",
-            "time": "2018-08-21T11:20:36+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "add/path",
-            "version": "v1.4.4",
-            "source": {
-                "type": "hg",
-                "url": "https://bitbucket.org/leicrespbru/add_path",
-                "reference": "062925b7fc6fdd939b392f6118afca1e28a6dbab"
-            },
+            "version": "1.4.4",
             "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/leicrespbru/add_path/get/062925b7fc6fdd939b392f6118afca1e28a6dbab.zip",
-                "reference": "062925b7fc6fdd939b392f6118afca1e28a6dbab",
-                "shasum": ""
+                "type": "path",
+                "url": "user/add/path",
+                "reference": "a3d1736588d97d136b178dc2caba35920022ef0e"
             },
             "require": {
                 "clinicle/base": "^1.6",
@@ -547,21 +484,18 @@
                 }
             },
             "description": "Pathology module (part of ADD)",
-            "time": "2019-03-15T11:40:27+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "add/pr",
-            "version": "v1.4.3",
-            "source": {
-                "type": "hg",
-                "url": "https://bitbucket.org/leicrespbru/add_pr",
-                "reference": "293942a2d26a786a5d82479ea0bb50c06b2801ab"
-            },
+            "version": "1.4.3",
             "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/leicrespbru/add_pr/get/293942a2d26a786a5d82479ea0bb50c06b2801ab.zip",
-                "reference": "293942a2d26a786a5d82479ea0bb50c06b2801ab",
-                "shasum": ""
+                "type": "path",
+                "url": "user/add/pr",
+                "reference": "97e5d178e61c5b9b8cdf4ea395cd56d414c2bb4a"
             },
             "require": {
                 "add/concept": "~1.6",
@@ -580,21 +514,18 @@
                 ]
             },
             "description": "ADD PR module",
-            "time": "2019-02-02T21:59:23+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "add/pr_dashboard",
-            "version": "v0.1.x-dev",
-            "source": {
-                "type": "hg",
-                "url": "https://bitbucket.org/leicrespbru/add_pr_dashboard",
-                "reference": "481377fb88af6b93d1c96f9c0285bec15494b6aa"
-            },
+            "version": "0.1.0",
             "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/leicrespbru/add_pr_dashboard/get/481377fb88af6b93d1c96f9c0285bec15494b6aa.zip",
-                "reference": "481377fb88af6b93d1c96f9c0285bec15494b6aa",
-                "shasum": ""
+                "type": "path",
+                "url": "user/add/pr_dashboard",
+                "reference": "d384dc475f0619c041c31d64b3315211e638b498"
             },
             "require": {
                 "add/pr": "^1.4",
@@ -607,21 +538,18 @@
                 }
             },
             "description": "ADD PR dashboard module",
-            "time": "2018-06-19T19:51:47+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "add/qol",
-            "version": "v2.4.0",
-            "source": {
-                "type": "hg",
-                "url": "https://bitbucket.org/leicrespbru/add_qol",
-                "reference": "73ea218e7f2fe13089a27dffa4c2927b441ce3c2"
-            },
+            "version": "2.4.0",
             "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/leicrespbru/add_qol/get/73ea218e7f2fe13089a27dffa4c2927b441ce3c2.zip",
-                "reference": "73ea218e7f2fe13089a27dffa4c2927b441ce3c2",
-                "shasum": ""
+                "type": "path",
+                "url": "user/add/qol",
+                "reference": "9c2d070fce05a8507149a95a05db9394f98fd8b2"
             },
             "require": {
                 "clinicle/core": "~2.12",
@@ -638,21 +566,18 @@
                 }
             },
             "description": "Quality of life module (part of ADD)",
-            "time": "2019-06-03T21:25:30+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "add/referral",
-            "version": "v1.3.0",
-            "source": {
-                "type": "hg",
-                "url": "https://bitbucket.org/leicrespbru/add_referral",
-                "reference": "a37da4e1fb30ae2254387836da6b66585e090efe"
-            },
+            "version": "1.3.0",
             "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/leicrespbru/add_referral/get/a37da4e1fb30ae2254387836da6b66585e090efe.zip",
-                "reference": "a37da4e1fb30ae2254387836da6b66585e090efe",
-                "shasum": ""
+                "type": "path",
+                "url": "user/add/referral",
+                "reference": "100212e19748e49193aa48b0baebeb5cf316ebe2"
             },
             "require": {
                 "clinicle/client": "~1.9",
@@ -665,21 +590,18 @@
                 ]
             },
             "description": "ADD referral form/management module",
-            "time": "2017-01-13T10:18:19+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "add/research",
-            "version": "v3.2.0",
-            "source": {
-                "type": "hg",
-                "url": "https://bitbucket.org/leicrespbru/add_research",
-                "reference": "c2f6fccd0b03dfc5d0bc4bb73af7a764a71f59a2"
-            },
+            "version": "3.2.0",
             "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/leicrespbru/add_research/get/c2f6fccd0b03dfc5d0bc4bb73af7a764a71f59a2.zip",
-                "reference": "c2f6fccd0b03dfc5d0bc4bb73af7a764a71f59a2",
-                "shasum": ""
+                "type": "path",
+                "url": "user/add/research",
+                "reference": "6884130707e037ffba31b283ad7724ea4c2205dd"
             },
             "require": {
                 "add/patient": "~1.1",
@@ -688,7 +610,8 @@
                 "clinicle/install": "~1.0",
                 "clinicle/manage": "^1.5",
                 "clinicle/options": "~1.0",
-                "clinicle/query": "~1.0"
+                "clinicle/query": "~1.0",
+                "tecnickcom/tcpdf": "^6.2"
             },
             "type": "clinicle-module",
             "autoload": {
@@ -697,21 +620,18 @@
                 ]
             },
             "description": "Research module (part of ADD)",
-            "time": "2017-08-18T15:39:40+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "add/research_action",
-            "version": "v1.0.3",
-            "source": {
-                "type": "hg",
-                "url": "https://bitbucket.org/leicrespbru/add_research_action",
-                "reference": "f7452e5f72a19e0907b4bdc0beac9f1ddcff32be"
-            },
+            "version": "1.0.3",
             "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/leicrespbru/add_research_action/get/f7452e5f72a19e0907b4bdc0beac9f1ddcff32be.zip",
-                "reference": "f7452e5f72a19e0907b4bdc0beac9f1ddcff32be",
-                "shasum": ""
+                "type": "path",
+                "url": "user/add/research_action",
+                "reference": "4c09238aa90ff0e4fefeb7e330e04644faca8858"
             },
             "require": {
                 "clinicle/core": "~2.3",
@@ -719,21 +639,18 @@
             },
             "type": "clinicle-module",
             "description": "Research action module (part of ADD)",
-            "time": "2015-06-01T18:51:42+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "add/research_api",
-            "version": "v2.0.1",
-            "source": {
-                "type": "hg",
-                "url": "https://bitbucket.org/leicrespbru/add_research_api",
-                "reference": "9bfd42f412c795a675bef621264fce23f82e1c85"
-            },
+            "version": "2.0.1",
             "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/leicrespbru/add_research_api/get/9bfd42f412c795a675bef621264fce23f82e1c85.zip",
-                "reference": "9bfd42f412c795a675bef621264fce23f82e1c85",
-                "shasum": ""
+                "type": "path",
+                "url": "user/add/research_api",
+                "reference": "b8ad6441efd2f54eaac72bd025b3413d5b67dbdc"
             },
             "require": {
                 "add/research": "~3.0",
@@ -755,21 +672,18 @@
                 }
             },
             "description": "Research API module",
-            "time": "2017-04-21T11:24:53+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "add/research_bronch",
-            "version": "v2.0.0",
-            "source": {
-                "type": "hg",
-                "url": "https://bitbucket.org/leicrespbru/add_research_bronch",
-                "reference": "763b8dfcb335736d9d8ae523789c1d3bf3e30f94"
-            },
+            "version": "2.0.0",
             "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/leicrespbru/add_research_bronch/get/763b8dfcb335736d9d8ae523789c1d3bf3e30f94.zip",
-                "reference": "763b8dfcb335736d9d8ae523789c1d3bf3e30f94",
-                "shasum": ""
+                "type": "path",
+                "url": "user/add/research_bronch",
+                "reference": "93e9e41bf589d9b6d0a9dab8091c4a2609e0f081"
             },
             "require": {
                 "add/research": "~3.0",
@@ -778,21 +692,18 @@
             },
             "type": "clinicle-module",
             "description": "Research bronchoscopy module (part of ADD)",
-            "time": "2016-02-09T13:24:13+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "add/research_search",
-            "version": "v2.2.0",
-            "source": {
-                "type": "hg",
-                "url": "https://bitbucket.org/leicrespbru/add_research_search",
-                "reference": "de99e17a60a455bce8294e5206e9c51dab5ee391"
-            },
+            "version": "2.2.0",
             "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/leicrespbru/add_research_search/get/de99e17a60a455bce8294e5206e9c51dab5ee391.zip",
-                "reference": "de99e17a60a455bce8294e5206e9c51dab5ee391",
-                "shasum": ""
+                "type": "path",
+                "url": "user/add/research_search",
+                "reference": "9fc06fbd21e923cf5c9b6a773df590a1de3b3a08"
             },
             "require": {
                 "add/research": "^3.0",
@@ -806,21 +717,18 @@
                 ]
             },
             "description": "Research search module (part of ADD)",
-            "time": "2017-07-03T13:34:29+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "add/research_studies",
-            "version": "v4.1.1",
-            "source": {
-                "type": "hg",
-                "url": "https://bitbucket.org/leicrespbru/add_research_studies",
-                "reference": "a954f98594568d87a12fb677bb330a1d817ebe4d"
-            },
+            "version": "4.1.1",
             "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/leicrespbru/add_research_studies/get/a954f98594568d87a12fb677bb330a1d817ebe4d.zip",
-                "reference": "a954f98594568d87a12fb677bb330a1d817ebe4d",
-                "shasum": ""
+                "type": "path",
+                "url": "user/add/research_studies",
+                "reference": "8cb462ee0684bd2849599e50319601463a278be5"
             },
             "require": {
                 "add/research": "~3.0",
@@ -836,21 +744,18 @@
                 ]
             },
             "description": "Research studies module (part of ADD)",
-            "time": "2016-11-24T16:41:46+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "add/resphy",
-            "version": "v1.5.1",
-            "source": {
-                "type": "hg",
-                "url": "https://bitbucket.org/leicrespbru/add_resphy",
-                "reference": "13b9ac3fc8fa64aa4ec2fe09ce627917376ae336"
-            },
+            "version": "1.5.1",
             "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/leicrespbru/add_resphy/get/13b9ac3fc8fa64aa4ec2fe09ce627917376ae336.zip",
-                "reference": "13b9ac3fc8fa64aa4ec2fe09ce627917376ae336",
-                "shasum": ""
+                "type": "path",
+                "url": "user/add/resphy",
+                "reference": "e9dde50de11fa8b88f7e3ba5d894d3a7a40f2ae1"
             },
             "require": {
                 "add/concept": "~1.0",
@@ -870,21 +775,18 @@
                 ]
             },
             "description": "Respiratory physiology module (part of ADD)",
-            "time": "2019-05-31T14:08:59+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "add/resphy_import",
-            "version": "v1.4.0",
-            "source": {
-                "type": "hg",
-                "url": "https://bitbucket.org/leicrespbru/add_resphy_import",
-                "reference": "0fd199038a9c62dd99ff34e9285e1192709f4e48"
-            },
+            "version": "1.4.0",
             "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/leicrespbru/add_resphy_import/get/0fd199038a9c62dd99ff34e9285e1192709f4e48.zip",
-                "reference": "0fd199038a9c62dd99ff34e9285e1192709f4e48",
-                "shasum": ""
+                "type": "path",
+                "url": "user/add/resphy_import",
+                "reference": "612aec4ad563f43999b2791638426c835cd282c3"
             },
             "require": {
                 "add/referral": "^1.3",
@@ -902,21 +804,18 @@
                 }
             },
             "description": "Respiratory physiology import module (part of ADD)",
-            "time": "2017-12-07T10:31:33+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "add/tag",
-            "version": "v2.0.0",
-            "source": {
-                "type": "hg",
-                "url": "https://bitbucket.org/leicrespbru/add_tag",
-                "reference": "df10bd5261732f8b5a7a3df4488e622fdfe912d8"
-            },
+            "version": "2.0.0",
             "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/leicrespbru/add_tag/get/df10bd5261732f8b5a7a3df4488e622fdfe912d8.zip",
-                "reference": "df10bd5261732f8b5a7a3df4488e622fdfe912d8",
-                "shasum": ""
+                "type": "path",
+                "url": "user/add/tag",
+                "reference": "2b4b2d8fbbf568ae3b9bb15731eb7142aaf323a8"
             },
             "require": {
                 "clinicle/core": "~2.7",
@@ -929,21 +828,18 @@
                 ]
             },
             "description": "Tag module (part of ADD)",
-            "time": "2016-01-05T17:03:12+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "add/theme",
-            "version": "v2.1.1",
-            "source": {
-                "type": "hg",
-                "url": "https://bitbucket.org/leicrespbru/add_theme",
-                "reference": "9561d33ea8372ada798022bba1509a07c5d6e575"
-            },
+            "version": "2.1.1",
             "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/leicrespbru/add_theme/get/9561d33ea8372ada798022bba1509a07c5d6e575.zip",
-                "reference": "9561d33ea8372ada798022bba1509a07c5d6e575",
-                "shasum": ""
+                "type": "path",
+                "url": "user/add/theme",
+                "reference": "bb69fe348c6e43940830f115fd87f5954c6ae9c7"
             },
             "require": {
                 "clinicle/core": "~2.8",
@@ -951,7 +847,10 @@
             },
             "type": "clinicle-module",
             "description": "ADD-specific theme module",
-            "time": "2018-10-05T12:40:12+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "apache/log4php",
@@ -985,17 +884,11 @@
         },
         {
             "name": "cdbrkr/conditions",
-            "version": "v1.0.0",
-            "source": {
-                "type": "hg",
-                "url": "https://bitbucket.org/cdbrkr/conditions",
-                "reference": "5454cd51f99a8fcb2dfdbc2e39021ed275939e41"
-            },
+            "version": "1.0.0",
             "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/cdbrkr/conditions/get/5454cd51f99a8fcb2dfdbc2e39021ed275939e41.zip",
-                "reference": "5454cd51f99a8fcb2dfdbc2e39021ed275939e41",
-                "shasum": ""
+                "type": "path",
+                "url": "user/cdbrkr/conditions",
+                "reference": "8cdd09b21246c2ab5f59df7c9e11a2966cdc0dac"
             },
             "require": {
                 "cdbrkr/logic": "~1.1",
@@ -1009,21 +902,18 @@
                 }
             },
             "description": "Codebreaker conditions data module",
-            "time": "2016-11-01T16:06:11+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "cdbrkr/logic",
-            "version": "v1.3.1",
-            "source": {
-                "type": "hg",
-                "url": "https://bitbucket.org/cdbrkr/logic",
-                "reference": "6a82cf47bfaa5d25016212445dc50f0f2dd36479"
-            },
+            "version": "1.3.1",
             "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/cdbrkr/logic/get/6a82cf47bfaa5d25016212445dc50f0f2dd36479.zip",
-                "reference": "6a82cf47bfaa5d25016212445dc50f0f2dd36479",
-                "shasum": ""
+                "type": "path",
+                "url": "user/cdbrkr/logic",
+                "reference": "b76e3f48eb9179779f5a1804e4020273f4902b50"
             },
             "require": {
                 "clinicle/base": "~1.0",
@@ -1037,21 +927,18 @@
                 ]
             },
             "description": "Codebreaker core logic",
-            "time": "2017-04-27T10:15:42+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "clinicle/ajax",
-            "version": "v1.1.1",
-            "source": {
-                "type": "hg",
-                "url": "https://bitbucket.org/leicrespbru/clinicle_ajax",
-                "reference": "e96dd43479bb85d76fa32ae1403912b190841ea6"
-            },
+            "version": "1.1.1",
             "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/leicrespbru/clinicle_ajax/get/e96dd43479bb85d76fa32ae1403912b190841ea6.zip",
-                "reference": "e96dd43479bb85d76fa32ae1403912b190841ea6",
-                "shasum": ""
+                "type": "path",
+                "url": "user/clinicle/ajax",
+                "reference": "3b8941dffb2435eb51ef62bb966785bc9a56cd1b"
             },
             "require": {
                 "clinicle/install": "^1.0"
@@ -1063,21 +950,18 @@
                 ]
             },
             "description": "ClinicLE AJAX module",
-            "time": "2017-04-21T13:49:10+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "clinicle/api",
-            "version": "v1.1.0",
-            "source": {
-                "type": "hg",
-                "url": "https://bitbucket.org/leicrespbru/clinicle_api",
-                "reference": "53b843e431056858824fada0c5d1f629b3624f68"
-            },
+            "version": "1.1.0",
             "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/leicrespbru/clinicle_api/get/53b843e431056858824fada0c5d1f629b3624f68.zip",
-                "reference": "53b843e431056858824fada0c5d1f629b3624f68",
-                "shasum": ""
+                "type": "path",
+                "url": "user/clinicle/api",
+                "reference": "fc0c7476780e7fa00a8975cacb6a86ec88900e1c"
             },
             "require": {
                 "clinicle/install": "~1.0"
@@ -1089,21 +973,18 @@
                 ]
             },
             "description": "ClinicLE API module",
-            "time": "2016-11-01T16:37:25+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "clinicle/base",
-            "version": "1.6.x-dev",
-            "source": {
-                "type": "hg",
-                "url": "https://bitbucket.org/leicrespbru/clinicle_base",
-                "reference": "1603f4c4f85d038ee46514f7a793fdfc2842da4d"
-            },
+            "version": "1.6.0",
             "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/leicrespbru/clinicle_base/get/1603f4c4f85d038ee46514f7a793fdfc2842da4d.zip",
-                "reference": "1603f4c4f85d038ee46514f7a793fdfc2842da4d",
-                "shasum": ""
+                "type": "path",
+                "url": "user/clinicle/base",
+                "reference": "4ecfc34456ce12779196a5c63db514213cabfdbc"
             },
             "require": {
                 "clinicle/ajax": "^1.1",
@@ -1119,21 +1000,18 @@
             },
             "type": "library",
             "description": "ClinicLE base",
-            "time": "2017-09-12T10:16:56+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "clinicle/client",
-            "version": "v1.12.3",
-            "source": {
-                "type": "hg",
-                "url": "https://bitbucket.org/leicrespbru/clinicle_client",
-                "reference": "740412eebbec73a7233219ce24ecb1df6566bbbd"
-            },
+            "version": "1.12.3",
             "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/leicrespbru/clinicle_client/get/740412eebbec73a7233219ce24ecb1df6566bbbd.zip",
-                "reference": "740412eebbec73a7233219ce24ecb1df6566bbbd",
-                "shasum": ""
+                "type": "path",
+                "url": "user/clinicle/client",
+                "reference": "54ce883234dc75bec5212e98d1f5fa2449b7d503"
             },
             "require": {
                 "add/concept": "~1.3",
@@ -1153,21 +1031,18 @@
                 ]
             },
             "description": "ClinicLE client module",
-            "time": "2019-04-22T23:22:00+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "clinicle/common",
-            "version": "1.4.x-dev",
-            "source": {
-                "type": "hg",
-                "url": "https://bitbucket.org/clinicle/common",
-                "reference": "d2ff23b85d5bd75ea123047ddd544be14bb35024"
-            },
+            "version": "1.4.0",
             "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/clinicle/common/get/d2ff23b85d5bd75ea123047ddd544be14bb35024.zip",
-                "reference": "d2ff23b85d5bd75ea123047ddd544be14bb35024",
-                "shasum": ""
+                "type": "path",
+                "url": "user/clinicle/common",
+                "reference": "7e9b4ebc4c804051fe9acc68613656909f8f36d2"
             },
             "require-dev": {
                 "phpunit/phpunit": "~4.1"
@@ -1185,21 +1060,18 @@
                 }
             ],
             "description": "ClinicLE common classes",
-            "time": "2018-01-15T13:44:41+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "clinicle/core",
-            "version": "v2.17.2",
-            "source": {
-                "type": "hg",
-                "url": "https://bitbucket.org/leicrespbru/clinicle_core",
-                "reference": "49960707c8023c7f5a6692868a1535da9383bcd8"
-            },
+            "version": "2.17.2",
             "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/leicrespbru/clinicle_core/get/49960707c8023c7f5a6692868a1535da9383bcd8.zip",
-                "reference": "49960707c8023c7f5a6692868a1535da9383bcd8",
-                "shasum": ""
+                "type": "path",
+                "url": "user/clinicle/core",
+                "reference": "7037600864ee817d986de2538b2f4c93865fc279"
             },
             "require": {
                 "apache/log4php": "^2.1",
@@ -1235,21 +1107,18 @@
                 }
             },
             "description": "ClinicLE core",
-            "time": "2019-01-24T12:01:19+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "clinicle/datafile",
-            "version": "v1.0.4",
-            "source": {
-                "type": "hg",
-                "url": "https://bitbucket.org/clinicle/datafile",
-                "reference": "f7196ed9399b9f6d68f4c854321d573d63100409"
-            },
+            "version": "1.0.4",
             "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/clinicle/datafile/get/f7196ed9399b9f6d68f4c854321d573d63100409.zip",
-                "reference": "f7196ed9399b9f6d68f4c854321d573d63100409",
-                "shasum": ""
+                "type": "path",
+                "url": "user/clinicle/datafile",
+                "reference": "3e7ac20c144acc413a6eab3a8f58bbcf4ca35d82"
             },
             "require": {
                 "clinicle/common": "^1.0",
@@ -1268,21 +1137,18 @@
                 }
             },
             "description": "Library which provides support for loading XLSX and CSV files a row at a time or in one go",
-            "time": "2016-09-23T18:32:54+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "clinicle/dataframe",
-            "version": "v0.1.0",
-            "source": {
-                "type": "hg",
-                "url": "https://bitbucket.org/clinicle/dataframe",
-                "reference": "7210799c522ceffd8e85ec5487d0a4e255f58402"
-            },
+            "version": "0.1.0",
             "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/clinicle/dataframe/get/7210799c522ceffd8e85ec5487d0a4e255f58402.zip",
-                "reference": "7210799c522ceffd8e85ec5487d0a4e255f58402",
-                "shasum": ""
+                "type": "path",
+                "url": "user/clinicle/dataframe",
+                "reference": "8b6ef68354be1c3ae8e69055f9b5028d820a76dc"
             },
             "type": "library",
             "autoload": {
@@ -1291,21 +1157,18 @@
                 }
             },
             "description": "ClinicLE dataframe",
-            "time": "2017-07-13T13:45:43+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "clinicle/download",
-            "version": "v1.3.0",
-            "source": {
-                "type": "hg",
-                "url": "https://bitbucket.org/leicrespbru/clinicle_download",
-                "reference": "a66ed20e9f856c1cbe5c70889e2044c00c88d1b5"
-            },
+            "version": "1.3.0",
             "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/leicrespbru/clinicle_download/get/a66ed20e9f856c1cbe5c70889e2044c00c88d1b5.zip",
-                "reference": "a66ed20e9f856c1cbe5c70889e2044c00c88d1b5",
-                "shasum": ""
+                "type": "path",
+                "url": "user/clinicle/download",
+                "reference": "ef754fdda71dbe11d440dae481ed6930368c7469"
             },
             "require": {
                 "clinicle/core": "~2.11"
@@ -1317,21 +1180,18 @@
                 ]
             },
             "description": "ClinicLE file download handling",
-            "time": "2017-10-08T21:21:19+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "clinicle/email",
-            "version": "v1.0.1",
-            "source": {
-                "type": "hg",
-                "url": "https://bitbucket.org/clinicle/email",
-                "reference": "483a7075b89e7a9d53d7fa5ca82b5023215f7b31"
-            },
+            "version": "1.0.1",
             "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/clinicle/email/get/483a7075b89e7a9d53d7fa5ca82b5023215f7b31.zip",
-                "reference": "483a7075b89e7a9d53d7fa5ca82b5023215f7b31",
-                "shasum": ""
+                "type": "path",
+                "url": "user/clinicle/email",
+                "reference": "f57149b3283657199e5bc320cf64d40d64591b23"
             },
             "require-dev": {
                 "phpunit/phpunit": "~4.0"
@@ -1349,21 +1209,18 @@
                 }
             ],
             "description": "ClinicLE email service",
-            "time": "2017-07-27T14:10:32+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "clinicle/episode",
-            "version": "v1.0.6",
-            "source": {
-                "type": "hg",
-                "url": "https://bitbucket.org/clinicle/episode",
-                "reference": "dc49a6c4cf20b4e49ed5d1ae48dfcc8bdd067c33"
-            },
+            "version": "1.0.6",
             "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/clinicle/episode/get/dc49a6c4cf20b4e49ed5d1ae48dfcc8bdd067c33.zip",
-                "reference": "dc49a6c4cf20b4e49ed5d1ae48dfcc8bdd067c33",
-                "shasum": ""
+                "type": "path",
+                "url": "user/clinicle/episode",
+                "reference": "deee389011f5b89ab2006cd86074f75bd850eec1"
             },
             "require": {
                 "clinicle/core": "^2.11",
@@ -1380,21 +1237,18 @@
                 }
             },
             "description": "ClinicLE episode section support",
-            "time": "2018-07-11T11:04:19+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "clinicle/export",
-            "version": "v1.2.1",
-            "source": {
-                "type": "hg",
-                "url": "https://bitbucket.org/leicrespbru/clinicle_export",
-                "reference": "d6f71cc39795a1d279ce945fd3c2486d81b63b0d"
-            },
+            "version": "1.2.1",
             "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/leicrespbru/clinicle_export/get/d6f71cc39795a1d279ce945fd3c2486d81b63b0d.zip",
-                "reference": "d6f71cc39795a1d279ce945fd3c2486d81b63b0d",
-                "shasum": ""
+                "type": "path",
+                "url": "user/clinicle/export",
+                "reference": "e7045e16595fe3f80155c9b51f870f1c334346bd"
             },
             "require": {
                 "clinicle/install": "~1.0"
@@ -1406,21 +1260,18 @@
                 ]
             },
             "description": "ClinicLE export module",
-            "time": "2016-12-06T14:15:44+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "clinicle/icd10",
-            "version": "v2.0.0",
-            "source": {
-                "type": "hg",
-                "url": "https://bitbucket.org/leicrespbru/clinicle_icd10",
-                "reference": "426ab481e6ba130dc014e44818ac9d39f2e4eccf"
-            },
+            "version": "2.0.0",
             "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/leicrespbru/clinicle_icd10/get/426ab481e6ba130dc014e44818ac9d39f2e4eccf.zip",
-                "reference": "426ab481e6ba130dc014e44818ac9d39f2e4eccf",
-                "shasum": ""
+                "type": "path",
+                "url": "user/clinicle/icd10",
+                "reference": "43d95469cbaaffd0353d110ccdfe6bc1f1ac978b"
             },
             "require": {
                 "clinicle/base": "~1.0"
@@ -1432,21 +1283,18 @@
                 ]
             },
             "description": "ICD10 module",
-            "time": "2015-12-10T12:49:59+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "clinicle/import",
-            "version": "v1.0.3",
-            "source": {
-                "type": "hg",
-                "url": "https://bitbucket.org/leicrespbru/clinicle_import",
-                "reference": "14a2fe32da457a5bc750e0e179b5717c90d17004"
-            },
+            "version": "1.0.3",
             "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/leicrespbru/clinicle_import/get/14a2fe32da457a5bc750e0e179b5717c90d17004.zip",
-                "reference": "14a2fe32da457a5bc750e0e179b5717c90d17004",
-                "shasum": ""
+                "type": "path",
+                "url": "user/clinicle/import",
+                "reference": "4bfebe75f13c7f4da806cb432ab80e60580aac82"
             },
             "require": {
                 "clinicle/install": "~1.0"
@@ -1458,33 +1306,25 @@
                 ]
             },
             "description": "ClinicLE import module",
-            "time": "2016-06-14T17:32:56+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "clinicle/install",
-            "version": "v1.2.4",
-            "source": {
-                "type": "hg",
-                "url": "https://bitbucket.org/leicrespbru/clinicle_install",
-                "reference": "435136e49708165321bf2ddf63444e51bed4e5f4"
-            },
+            "version": "1.2.4",
             "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/leicrespbru/clinicle_install/get/435136e49708165321bf2ddf63444e51bed4e5f4.zip",
-                "reference": "435136e49708165321bf2ddf63444e51bed4e5f4",
-                "shasum": ""
+                "type": "path",
+                "url": "user/clinicle/install",
+                "reference": "7aa8bd79b8fd2d2911edf21a97375755cee842fb"
             },
             "require": {
                 "clinicle/common": "~1.0",
                 "clinicle/core": "~2.11",
-                "clinicle/datafile": "^1.0",
-                "composer-plugin-api": "~1.0",
-                "composer/composer": "^1.0"
+                "clinicle/datafile": "^1.0"
             },
-            "type": "composer-plugin",
-            "extra": {
-                "class": "ClinicLE\\Install\\ComposerModuleInstallerPlugin"
-            },
+            "type": "library",
             "autoload": {
                 "classmap": [
                     "lib"
@@ -1493,29 +1333,21 @@
                     "ClinicLE\\Install\\": "src/"
                 }
             },
-            "scripts": {
-                "post-autoload-dump": [
-                    "ClinicLE\\Install\\ComposerModuleInstallerPlugin::onPostAutoloadDump"
-                ]
-            },
             "license": [
                 "MIT"
             ],
-            "time": "2017-09-27T15:36:58+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "clinicle/letter",
-            "version": "v1.0.1",
-            "source": {
-                "type": "hg",
-                "url": "https://bitbucket.org/leicrespbru/clinicle_letter",
-                "reference": "266b8f9e7ddeb0848dd7a92f8fa0883e85426643"
-            },
+            "version": "1.0.1",
             "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/leicrespbru/clinicle_letter/get/266b8f9e7ddeb0848dd7a92f8fa0883e85426643.zip",
-                "reference": "266b8f9e7ddeb0848dd7a92f8fa0883e85426643",
-                "shasum": ""
+                "type": "path",
+                "url": "user/clinicle/letter",
+                "reference": "777004eee716fd78e181a54f1ae9c846f514f41d"
             },
             "require": {
                 "clinicle/install": "~1.0",
@@ -1528,21 +1360,18 @@
                 ]
             },
             "description": "ClinicLE letter module",
-            "time": "2017-07-27T12:53:14+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "clinicle/manage",
-            "version": "v1.8.1",
-            "source": {
-                "type": "hg",
-                "url": "https://bitbucket.org/leicrespbru/clinicle_manage",
-                "reference": "2b991454abab4d8813e474f3272b638695eba1e4"
-            },
+            "version": "1.8.1",
             "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/leicrespbru/clinicle_manage/get/2b991454abab4d8813e474f3272b638695eba1e4.zip",
-                "reference": "2b991454abab4d8813e474f3272b638695eba1e4",
-                "shasum": ""
+                "type": "path",
+                "url": "user/clinicle/manage",
+                "reference": "f3837ef01b3fc983e637ff918bfa063cad7012ff"
             },
             "require": {
                 "clinicle/core": "^2.13",
@@ -1559,21 +1388,18 @@
                 }
             },
             "description": "ClinicLE manage",
-            "time": "2017-10-27T20:54:57+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "clinicle/migrate",
-            "version": "v1.0.1",
-            "source": {
-                "type": "hg",
-                "url": "https://bitbucket.org/clinicle/migrate",
-                "reference": "78605495ee16372573851e91bd4c61445f9ebf04"
-            },
+            "version": "1.0.1",
             "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/clinicle/migrate/get/78605495ee16372573851e91bd4c61445f9ebf04.zip",
-                "reference": "78605495ee16372573851e91bd4c61445f9ebf04",
-                "shasum": ""
+                "type": "path",
+                "url": "user/clinicle/migrate",
+                "reference": "52ec8fea99592179b4141dd0cb15a528ab04a270"
             },
             "require": {
                 "clinicle/common": "^1.2"
@@ -1599,21 +1425,18 @@
                 }
             ],
             "description": "Description of project clinicle-migrate.",
-            "time": "2017-08-18T15:41:42+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "clinicle/monitor",
-            "version": "v1.0.0",
-            "source": {
-                "type": "hg",
-                "url": "https://bitbucket.org/clinicle/monitor",
-                "reference": "457918288b2b5e3861e2c7e0c6c7c4a8de2c2739"
-            },
+            "version": "1.0.0",
             "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/clinicle/monitor/get/457918288b2b5e3861e2c7e0c6c7c4a8de2c2739.zip",
-                "reference": "457918288b2b5e3861e2c7e0c6c7c4a8de2c2739",
-                "shasum": ""
+                "type": "path",
+                "url": "user/clinicle/monitor",
+                "reference": "ba6bb49a82012e06c7d3adc14e1b7798e57a0954"
             },
             "require": {
                 "apache/log4php": "^2.1",
@@ -1638,21 +1461,18 @@
                 }
             ],
             "description": "ClinicLE monitor wrapper",
-            "time": "2016-11-01T16:42:48+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "clinicle/options",
-            "version": "v1.7.0",
-            "source": {
-                "type": "hg",
-                "url": "https://bitbucket.org/leicrespbru/clinicle_options",
-                "reference": "adf91ebb1f3aa621715ebae4b54b92ebc2274da1"
-            },
+            "version": "1.7.0",
             "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/leicrespbru/clinicle_options/get/adf91ebb1f3aa621715ebae4b54b92ebc2274da1.zip",
-                "reference": "adf91ebb1f3aa621715ebae4b54b92ebc2274da1",
-                "shasum": ""
+                "type": "path",
+                "url": "user/clinicle/options",
+                "reference": "1a7f04bfedf3f99e4b381c11de950bcd0c20e65e"
             },
             "require": {
                 "clinicle/core": "^2.11",
@@ -1665,21 +1485,18 @@
                 ]
             },
             "description": "ClinicLE options module",
-            "time": "2017-07-13T12:45:59+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "clinicle/patient",
-            "version": "v1.4.2",
-            "source": {
-                "type": "hg",
-                "url": "https://bitbucket.org/leicrespbru/add_patient",
-                "reference": "b7e2d3158903dd27073dbb91e554736f8237c282"
-            },
+            "version": "1.4.2",
             "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/leicrespbru/add_patient/get/b7e2d3158903dd27073dbb91e554736f8237c282.zip",
-                "reference": "b7e2d3158903dd27073dbb91e554736f8237c282",
-                "shasum": ""
+                "type": "path",
+                "url": "user/clinicle/patient",
+                "reference": "0f48af2aafa2bdc1bacbd893732f7d6537279777"
             },
             "require": {
                 "clinicle/ajax": "~1.0",
@@ -1701,21 +1518,18 @@
                 }
             },
             "description": "ClinicLE patient module",
-            "time": "2018-10-05T12:31:04+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "clinicle/query",
-            "version": "v1.2.0",
-            "source": {
-                "type": "hg",
-                "url": "https://bitbucket.org/leicrespbru/clinicle_query",
-                "reference": "6782f2109efcb8f1c085e2239962bf86f343af64"
-            },
+            "version": "1.2.0",
             "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/leicrespbru/clinicle_query/get/6782f2109efcb8f1c085e2239962bf86f343af64.zip",
-                "reference": "6782f2109efcb8f1c085e2239962bf86f343af64",
-                "shasum": ""
+                "type": "path",
+                "url": "user/clinicle/query",
+                "reference": "e36b5774e5521c8c1dac38c057b91b9ac2b4a52e"
             },
             "require": {
                 "clinicle/core": "~2.3",
@@ -1728,21 +1542,18 @@
                 ]
             },
             "description": "ClinicLE query module",
-            "time": "2016-01-20T16:57:19+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "clinicle/record",
-            "version": "v1.1.1",
-            "source": {
-                "type": "hg",
-                "url": "https://bitbucket.org/leicrespbru/clinicle_record",
-                "reference": "ef0f82f1fb7076324cd144f9a71dfe3f368261d2"
-            },
+            "version": "1.1.1",
             "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/leicrespbru/clinicle_record/get/ef0f82f1fb7076324cd144f9a71dfe3f368261d2.zip",
-                "reference": "ef0f82f1fb7076324cd144f9a71dfe3f368261d2",
-                "shasum": ""
+                "type": "path",
+                "url": "user/clinicle/record",
+                "reference": "75372ee2909bd63a9dfe3f40ae275626c9c92638"
             },
             "require": {
                 "clinicle/client": "~1.0",
@@ -1757,21 +1568,18 @@
                 ]
             },
             "description": "ClinicLE user record handling",
-            "time": "2017-10-18T16:04:17+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "clinicle/remote",
-            "version": "v1.0.1",
-            "source": {
-                "type": "hg",
-                "url": "https://bitbucket.org/leicrespbru/clinicle_remote",
-                "reference": "2473e8a9a760612ca0957e49b961022ef0726b8f"
-            },
+            "version": "1.0.1",
             "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/leicrespbru/clinicle_remote/get/2473e8a9a760612ca0957e49b961022ef0726b8f.zip",
-                "reference": "2473e8a9a760612ca0957e49b961022ef0726b8f",
-                "shasum": ""
+                "type": "path",
+                "url": "user/clinicle/remote",
+                "reference": "80b74842830c549a680c445067e8278f6a392961"
             },
             "require": {
                 "clinicle/common": "~1.0",
@@ -1793,21 +1601,18 @@
                 }
             ],
             "description": "ClinicLE remote access",
-            "time": "2016-09-20T16:52:03+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "clinicle/report",
-            "version": "v1.2.1",
-            "source": {
-                "type": "hg",
-                "url": "https://bitbucket.org/leicrespbru/clinicle_report",
-                "reference": "78d235fbbe5a54b06f5ac2c63bd0476e4ebbc15e"
-            },
+            "version": "1.2.1",
             "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/leicrespbru/clinicle_report/get/78d235fbbe5a54b06f5ac2c63bd0476e4ebbc15e.zip",
-                "reference": "78d235fbbe5a54b06f5ac2c63bd0476e4ebbc15e",
-                "shasum": ""
+                "type": "path",
+                "url": "user/clinicle/report",
+                "reference": "c7c30545235f8c8a90916af8f189702465acedbb"
             },
             "require": {
                 "clinicle/api": "^1.1",
@@ -1822,21 +1627,18 @@
                 ]
             },
             "description": "ClinicLE report module",
-            "time": "2016-11-04T13:42:41+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "clinicle/report_ext",
-            "version": "v1.1.2",
-            "source": {
-                "type": "hg",
-                "url": "https://bitbucket.org/leicrespbru/clinicle_report_ext",
-                "reference": "7b6e9226bb66fd8a9bb6c2d2d57852089ad722b8"
-            },
+            "version": "1.1.2",
             "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/leicrespbru/clinicle_report_ext/get/7b6e9226bb66fd8a9bb6c2d2d57852089ad722b8.zip",
-                "reference": "7b6e9226bb66fd8a9bb6c2d2d57852089ad722b8",
-                "shasum": ""
+                "type": "path",
+                "url": "user/clinicle/report_ext",
+                "reference": "38d013b9b6e7e615409d641782154a0ee351edc2"
             },
             "require": {
                 "clinicle/core": "~2.3",
@@ -1849,21 +1651,18 @@
                 ]
             },
             "description": "ClinicLE extended text-file based reports",
-            "time": "2016-04-18T13:03:55+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "clinicle/risk-score",
-            "version": "v1.0.1",
-            "source": {
-                "type": "hg",
-                "url": "https://bitbucket.org/clinicle/risk-score",
-                "reference": "78fb56a5f2c5dc2d73201cb8bf27f5087ea91d68"
-            },
+            "version": "1.0.1",
             "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/clinicle/risk-score/get/78fb56a5f2c5dc2d73201cb8bf27f5087ea91d68.zip",
-                "reference": "78fb56a5f2c5dc2d73201cb8bf27f5087ea91d68",
-                "shasum": ""
+                "type": "path",
+                "url": "user/clinicle/risk-score",
+                "reference": "f5fb1a9769f5e2ebb91ab6e2bb80d384a1cb84fa"
             },
             "require-dev": {
                 "phpunit/phpunit": "~4.1"
@@ -1881,21 +1680,18 @@
                 }
             ],
             "description": "ClinicLE risk score calculation module",
-            "time": "2018-01-09T10:12:08+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "clinicle/search",
-            "version": "v0.1.0",
-            "source": {
-                "type": "hg",
-                "url": "https://bitbucket.org/clinicle/search",
-                "reference": "dc1cb68bd232447ecfa0665fe6e3c0440ac52049"
-            },
+            "version": "0.1.0",
             "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/clinicle/search/get/dc1cb68bd232447ecfa0665fe6e3c0440ac52049.zip",
-                "reference": "dc1cb68bd232447ecfa0665fe6e3c0440ac52049",
-                "shasum": ""
+                "type": "path",
+                "url": "user/clinicle/search",
+                "reference": "e57ccc910f862bd8238e89d49fa5b62a99d94915"
             },
             "require": {
                 "clinicle/client": "^1.11",
@@ -1924,21 +1720,18 @@
                 }
             ],
             "description": "ClinicLE search module",
-            "time": "2019-04-22T23:19:47+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "clinicle/setup",
-            "version": "v1.0.0",
-            "source": {
-                "type": "hg",
-                "url": "https://bitbucket.org/clinicle/setup",
-                "reference": "04d97ef07df01ef55a03669aca5f556a7ff20839"
-            },
+            "version": "1.0.0",
             "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/clinicle/setup/get/04d97ef07df01ef55a03669aca5f556a7ff20839.zip",
-                "reference": "04d97ef07df01ef55a03669aca5f556a7ff20839",
-                "shasum": ""
+                "type": "path",
+                "url": "user/clinicle/setup",
+                "reference": "f3c98404b1f8781fae3ed330846901ad92e6a123"
             },
             "require": {
                 "clinicle/core": "^2.11",
@@ -1952,21 +1745,18 @@
                 }
             },
             "description": "ClinicLE setup and migration",
-            "time": "2016-11-01T16:10:31+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "clinicle/touch",
-            "version": "v2.0.1",
-            "source": {
-                "type": "hg",
-                "url": "https://bitbucket.org/leicrespbru/clinicle_touch",
-                "reference": "d26363842138141ce383919d1c8fc9ec2259ec38"
-            },
+            "version": "2.0.1",
             "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/leicrespbru/clinicle_touch/get/d26363842138141ce383919d1c8fc9ec2259ec38.zip",
-                "reference": "d26363842138141ce383919d1c8fc9ec2259ec38",
-                "shasum": ""
+                "type": "path",
+                "url": "user/clinicle/touch",
+                "reference": "71cd9715d487ebfe6ba753ca1ddf873889439108"
             },
             "require": {
                 "clinicle/base": "~1.0"
@@ -1978,21 +1768,18 @@
                 ]
             },
             "description": "Touch interface module",
-            "time": "2016-03-15T13:29:23+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "clinicle/web",
-            "version": "v1.4.4",
-            "source": {
-                "type": "hg",
-                "url": "https://bitbucket.org/leicrespbru/clinicle_web",
-                "reference": "4c5d4bcfebeea4bc1b02c36c47c1a3686e03012c"
-            },
+            "version": "1.4.4",
             "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/leicrespbru/clinicle_web/get/4c5d4bcfebeea4bc1b02c36c47c1a3686e03012c.zip",
-                "reference": "4c5d4bcfebeea4bc1b02c36c47c1a3686e03012c",
-                "shasum": ""
+                "type": "path",
+                "url": "user/clinicle/web",
+                "reference": "27f974de7bf0f11ca806903f4eee92661bf95de4"
             },
             "require": {
                 "php": ">=5.3.3",
@@ -2000,323 +1787,18 @@
             },
             "type": "library",
             "description": "ClinicLE web",
-            "time": "2018-04-26T15:28:24+00:00"
-        },
-        {
-            "name": "composer/ca-bundle",
-            "version": "1.1.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/composer/ca-bundle.git",
-                "reference": "558f321c52faeb4828c03e7dc0cfe39a09e09a2d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/composer/ca-bundle/zipball/558f321c52faeb4828c03e7dc0cfe39a09e09a2d",
-                "reference": "558f321c52faeb4828c03e7dc0cfe39a09e09a2d",
-                "shasum": ""
-            },
-            "require": {
-                "ext-openssl": "*",
-                "ext-pcre": "*",
-                "php": "^5.3.2 || ^7.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.5",
-                "psr/log": "^1.0",
-                "symfony/process": "^2.5 || ^3.0 || ^4.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Composer\\CaBundle\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Jordi Boggiano",
-                    "email": "j.boggiano@seld.be",
-                    "homepage": "http://seld.be"
-                }
-            ],
-            "description": "Lets you find a path to the system CA bundle, and includes a fallback to the Mozilla CA bundle.",
-            "keywords": [
-                "cabundle",
-                "cacert",
-                "certificate",
-                "ssl",
-                "tls"
-            ],
-            "time": "2019-01-28T09:30:10+00:00"
-        },
-        {
-            "name": "composer/composer",
-            "version": "1.8.5",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/composer/composer.git",
-                "reference": "949b116f9e7d98d8d276594fed74b580d125c0e6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/composer/composer/zipball/949b116f9e7d98d8d276594fed74b580d125c0e6",
-                "reference": "949b116f9e7d98d8d276594fed74b580d125c0e6",
-                "shasum": ""
-            },
-            "require": {
-                "composer/ca-bundle": "^1.0",
-                "composer/semver": "^1.0",
-                "composer/spdx-licenses": "^1.2",
-                "composer/xdebug-handler": "^1.1",
-                "justinrainbow/json-schema": "^3.0 || ^4.0 || ^5.0",
-                "php": "^5.3.2 || ^7.0",
-                "psr/log": "^1.0",
-                "seld/jsonlint": "^1.4",
-                "seld/phar-utils": "^1.0",
-                "symfony/console": "^2.7 || ^3.0 || ^4.0",
-                "symfony/filesystem": "^2.7 || ^3.0 || ^4.0",
-                "symfony/finder": "^2.7 || ^3.0 || ^4.0",
-                "symfony/process": "^2.7 || ^3.0 || ^4.0"
-            },
-            "conflict": {
-                "symfony/console": "2.8.38"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^4.8.35 || ^5.7",
-                "phpunit/phpunit-mock-objects": "^2.3 || ^3.0"
-            },
-            "suggest": {
-                "ext-openssl": "Enabling the openssl extension allows you to access https URLs for repositories and packages",
-                "ext-zip": "Enabling the zip extension allows you to unzip archives",
-                "ext-zlib": "Allow gzip compression of HTTP requests"
-            },
-            "bin": [
-                "bin/composer"
-            ],
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.8-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Composer\\": "src/Composer"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Nils Adermann",
-                    "email": "naderman@naderman.de",
-                    "homepage": "http://www.naderman.de"
-                },
-                {
-                    "name": "Jordi Boggiano",
-                    "email": "j.boggiano@seld.be",
-                    "homepage": "http://seld.be"
-                }
-            ],
-            "description": "Composer helps you declare, manage and install dependencies of PHP projects, ensuring you have the right stack everywhere.",
-            "homepage": "https://getcomposer.org/",
-            "keywords": [
-                "autoload",
-                "dependency",
-                "package"
-            ],
-            "time": "2019-04-09T15:46:48+00:00"
-        },
-        {
-            "name": "composer/semver",
-            "version": "1.5.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/composer/semver.git",
-                "reference": "46d9139568ccb8d9e7cdd4539cab7347568a5e2e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/composer/semver/zipball/46d9139568ccb8d9e7cdd4539cab7347568a5e2e",
-                "reference": "46d9139568ccb8d9e7cdd4539cab7347568a5e2e",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^5.3.2 || ^7.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^4.5 || ^5.0.5",
-                "phpunit/phpunit-mock-objects": "2.3.0 || ^3.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Composer\\Semver\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Nils Adermann",
-                    "email": "naderman@naderman.de",
-                    "homepage": "http://www.naderman.de"
-                },
-                {
-                    "name": "Jordi Boggiano",
-                    "email": "j.boggiano@seld.be",
-                    "homepage": "http://seld.be"
-                },
-                {
-                    "name": "Rob Bast",
-                    "email": "rob.bast@gmail.com",
-                    "homepage": "http://robbast.nl"
-                }
-            ],
-            "description": "Semver library that offers utilities, version constraint parsing and validation.",
-            "keywords": [
-                "semantic",
-                "semver",
-                "validation",
-                "versioning"
-            ],
-            "time": "2019-03-19T17:25:45+00:00"
-        },
-        {
-            "name": "composer/spdx-licenses",
-            "version": "1.5.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/composer/spdx-licenses.git",
-                "reference": "a1aa51cf3ab838b83b0867b14e56fc20fbd55b3d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/composer/spdx-licenses/zipball/a1aa51cf3ab838b83b0867b14e56fc20fbd55b3d",
-                "reference": "a1aa51cf3ab838b83b0867b14e56fc20fbd55b3d",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^5.3.2 || ^7.0 || ^8.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^4.8.35 || ^5.7 || 6.5 - 7"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Composer\\Spdx\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Nils Adermann",
-                    "email": "naderman@naderman.de",
-                    "homepage": "http://www.naderman.de"
-                },
-                {
-                    "name": "Jordi Boggiano",
-                    "email": "j.boggiano@seld.be",
-                    "homepage": "http://seld.be"
-                },
-                {
-                    "name": "Rob Bast",
-                    "email": "rob.bast@gmail.com",
-                    "homepage": "http://robbast.nl"
-                }
-            ],
-            "description": "SPDX licenses list and validation library.",
-            "keywords": [
-                "license",
-                "spdx",
-                "validator"
-            ],
-            "time": "2019-03-26T10:23:26+00:00"
-        },
-        {
-            "name": "composer/xdebug-handler",
-            "version": "1.3.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/composer/xdebug-handler.git",
-                "reference": "46867cbf8ca9fb8d60c506895449eb799db1184f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/composer/xdebug-handler/zipball/46867cbf8ca9fb8d60c506895449eb799db1184f",
-                "reference": "46867cbf8ca9fb8d60c506895449eb799db1184f",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^5.3.2 || ^7.0",
-                "psr/log": "^1.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.5"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Composer\\XdebugHandler\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "John Stevenson",
-                    "email": "john-stevenson@blueyonder.co.uk"
-                }
-            ],
-            "description": "Restarts a process without xdebug.",
-            "keywords": [
-                "Xdebug",
-                "performance"
-            ],
-            "time": "2019-05-27T17:52:04+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "copd/main",
-            "version": "v1.0.x-dev",
-            "source": {
-                "type": "hg",
-                "url": "https://bitbucket.org/rcfree/copd_main",
-                "reference": "29e36c6b4c13786f079221bca96366edd97a7536"
-            },
+            "version": "1.0.0",
             "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/rcfree/copd_main/get/29e36c6b4c13786f079221bca96366edd97a7536.zip",
-                "reference": "29e36c6b4c13786f079221bca96366edd97a7536",
-                "shasum": ""
+                "type": "path",
+                "url": "user/copd/main",
+                "reference": "a0e11d2e739c459d9a8992a1255bdfedf257951e"
             },
             "require": {
                 "add/paasth": "^0.1",
@@ -2329,21 +1811,18 @@
                 }
             },
             "description": "ADD COPD main module",
-            "time": "2019-04-22T23:29:01+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "ember/asthcopd",
-            "version": "v1.4.0",
-            "source": {
-                "type": "hg",
-                "url": "https://bitbucket.org/emberuol/asthcopd",
-                "reference": "0c9a09890fee756126edd097cbb9b505297aebba"
-            },
+            "version": "1.4.0",
             "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/emberuol/asthcopd/get/0c9a09890fee756126edd097cbb9b505297aebba.zip",
-                "reference": "0c9a09890fee756126edd097cbb9b505297aebba",
-                "shasum": ""
+                "type": "path",
+                "url": "user/ember/asthcopd",
+                "reference": "7548d06f261fd557fdade003115a5f7cc4298db4"
             },
             "require": {
                 "add/concept": "~1.0",
@@ -2369,21 +1848,18 @@
             },
             "type": "clinicle-module",
             "description": "Asthma/COPD exacerbation module (part of EMBER)",
-            "time": "2019-05-31T12:47:09+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "ember/blness",
-            "version": "v1.7.3",
-            "source": {
-                "type": "hg",
-                "url": "https://bitbucket.org/emberuol/blness",
-                "reference": "b6d2455c59713428fa8e6e92b309a9de03cec390"
-            },
+            "version": "1.7.3",
             "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/emberuol/blness/get/b6d2455c59713428fa8e6e92b309a9de03cec390.zip",
-                "reference": "b6d2455c59713428fa8e6e92b309a9de03cec390",
-                "shasum": ""
+                "type": "path",
+                "url": "user/ember/blness",
+                "reference": "1207d69310ef391420b335fc772119ab8a75e738"
             },
             "require": {
                 "add/concept": "~1.1",
@@ -2409,21 +1885,18 @@
                 ]
             },
             "description": "EMBER breathlessness module",
-            "time": "2019-05-31T12:43:35+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "ember/hfail",
-            "version": "v1.1.1",
-            "source": {
-                "type": "hg",
-                "url": "https://bitbucket.org/emberuol/hfail",
-                "reference": "fe3bdf3213c2bf70b393d4e15f05bfc58d698049"
-            },
+            "version": "1.1.1",
             "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/emberuol/hfail/get/fe3bdf3213c2bf70b393d4e15f05bfc58d698049.zip",
-                "reference": "fe3bdf3213c2bf70b393d4e15f05bfc58d698049",
-                "shasum": ""
+                "type": "path",
+                "url": "user/ember/hfail",
+                "reference": "deb1fba485b20c27140d31e0c120383722a484d3"
             },
             "require": {
                 "add/concept": "^1.0",
@@ -2437,21 +1910,18 @@
                 }
             },
             "description": "EMBER heart-failure module",
-            "time": "2018-10-11T09:28:50+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "ember/pneumonia",
-            "version": "v1.1.0",
-            "source": {
-                "type": "hg",
-                "url": "https://bitbucket.org/emberuol/pneumonia",
-                "reference": "365a5855cf19e740b82e0cc05a0e90691023e6a0"
-            },
+            "version": "1.1.0",
             "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/emberuol/pneumonia/get/365a5855cf19e740b82e0cc05a0e90691023e6a0.zip",
-                "reference": "365a5855cf19e740b82e0cc05a0e90691023e6a0",
-                "shasum": ""
+                "type": "path",
+                "url": "user/ember/pneumonia",
+                "reference": "4c557b3ccc9bc81c33451a48f0311888ac780fbb"
             },
             "require": {
                 "add/concept": "^1.6",
@@ -2463,7 +1933,10 @@
             },
             "type": "clinicle-module",
             "description": "Pneumonia module (part of EMBER)",
-            "time": "2018-09-13T10:20:33+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "guzzle/guzzle",
@@ -2737,72 +2210,6 @@
             "time": "2013-12-27T14:18:15+00:00"
         },
         {
-            "name": "justinrainbow/json-schema",
-            "version": "5.2.8",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/justinrainbow/json-schema.git",
-                "reference": "dcb6e1006bb5fd1e392b4daa68932880f37550d4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/justinrainbow/json-schema/zipball/dcb6e1006bb5fd1e392b4daa68932880f37550d4",
-                "reference": "dcb6e1006bb5fd1e392b4daa68932880f37550d4",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.3"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "~2.2.20",
-                "json-schema/json-schema-test-suite": "1.2.0",
-                "phpunit/phpunit": "^4.8.35"
-            },
-            "bin": [
-                "bin/validate-json"
-            ],
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "5.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "JsonSchema\\": "src/JsonSchema/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Bruno Prieto Reis",
-                    "email": "bruno.p.reis@gmail.com"
-                },
-                {
-                    "name": "Justin Rainbow",
-                    "email": "justin.rainbow@gmail.com"
-                },
-                {
-                    "name": "Igor Wiedler",
-                    "email": "igor@wiedler.ch"
-                },
-                {
-                    "name": "Robert Schönthal",
-                    "email": "seroscho@googlemail.com"
-                }
-            ],
-            "description": "A library to validate a json schema.",
-            "homepage": "https://github.com/justinrainbow/json-schema",
-            "keywords": [
-                "json",
-                "schema"
-            ],
-            "time": "2019-01-14T23:55:14+00:00"
-        },
-        {
             "name": "kachkaev/php-r",
             "version": "v1.0.1",
             "source": {
@@ -2857,17 +2264,11 @@
         },
         {
             "name": "leicrespbru/lrbtools",
-            "version": "v1.2.8",
-            "source": {
-                "type": "hg",
-                "url": "https://bitbucket.org/leicrespbru/lrbtools",
-                "reference": "66b002e9c652330795b02eb225aa277997d661d8"
-            },
+            "version": "1.2.8",
             "dist": {
-                "type": "zip",
-                "url": "https://bitbucket.org/leicrespbru/lrbtools/get/66b002e9c652330795b02eb225aa277997d661d8.zip",
-                "reference": "66b002e9c652330795b02eb225aa277997d661d8",
-                "shasum": ""
+                "type": "path",
+                "url": "user/leicrespbru/lrbtools",
+                "reference": "81ae7e428e7b7848f2fc9f7b5c9912febd46bf8f"
             },
             "require": {
                 "apache/log4php": "^2.3",
@@ -2881,7 +2282,10 @@
                 ]
             },
             "description": "LRB",
-            "time": "2017-11-07T10:53:08+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "matthiasmullie/minify",
@@ -3403,99 +2807,6 @@
                 "uuid"
             ],
             "time": "2016-03-22T18:20:19+00:00"
-        },
-        {
-            "name": "seld/jsonlint",
-            "version": "1.7.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Seldaek/jsonlint.git",
-                "reference": "d15f59a67ff805a44c50ea0516d2341740f81a38"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/jsonlint/zipball/d15f59a67ff805a44c50ea0516d2341740f81a38",
-                "reference": "d15f59a67ff805a44c50ea0516d2341740f81a38",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^5.3 || ^7.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.0"
-            },
-            "bin": [
-                "bin/jsonlint"
-            ],
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Seld\\JsonLint\\": "src/Seld/JsonLint/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Jordi Boggiano",
-                    "email": "j.boggiano@seld.be",
-                    "homepage": "http://seld.be"
-                }
-            ],
-            "description": "JSON Linter",
-            "keywords": [
-                "json",
-                "linter",
-                "parser",
-                "validator"
-            ],
-            "time": "2018-01-24T12:46:19+00:00"
-        },
-        {
-            "name": "seld/phar-utils",
-            "version": "1.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Seldaek/phar-utils.git",
-                "reference": "7009b5139491975ef6486545a39f3e6dad5ac30a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/phar-utils/zipball/7009b5139491975ef6486545a39f3e6dad5ac30a",
-                "reference": "7009b5139491975ef6486545a39f3e6dad5ac30a",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Seld\\PharUtils\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Jordi Boggiano",
-                    "email": "j.boggiano@seld.be"
-                }
-            ],
-            "description": "PHAR file format utilities, for when PHP phars you up",
-            "keywords": [
-                "phra"
-            ],
-            "time": "2015-10-13T18:44:15+00:00"
         },
         {
             "name": "symfony/console",
@@ -4327,9 +3638,10 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {},
     "prefer-stable": true,
     "prefer-lowest": false,
-    "platform": [],
-    "platform-dev": []
+    "platform": {},
+    "platform-dev": {},
+    "plugin-api-version": "2.9.0"
 }

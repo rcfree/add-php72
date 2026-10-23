@@ -1,0 +1,13 @@
+{
+    "name": "add/inv",
+    "description": "Investigations module (part of ADD)",
+	"type": "clinicle-module",
+	"require":{
+		"clinicle/core":"^2.11",
+		"clinicle/install":"^1.2",
+		"clinicle/client":"^1.9"
+	},
+	"autoload": {
+        "classmap": ["php"]
+    }
+}

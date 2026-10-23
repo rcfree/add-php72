@@ -1,0 +1,7 @@
+
+$hc1 :horiz_container
+	Animal exposure $animal_exposure :yes_no [Y=Yes,N=No]  {condition_test="Y",condition_target=animal_type,condition_action=show,required=Y,inline=1}
+	Type of animal $animal_type :checkboxes [1=Dog,2=Rabbit,3=Cat,4=Hamster,5=Gerbil,6=Rat,7=Mouse,8=Horse,9=Birds]  {required=Y}
+Exposure to Aspergillus/other fungi $exposure_to_aspergillus_other :yes_no [Y=Yes,N=No]  {required=Y,inline=1}
+Other significant exposure $other_significant_exposure :yes_no [Y=Yes,N=No]  {condition_test="Y",condition_target=other_allergens_exposed_to,condition_action=show,required=Y,inline=1}
+Other allergens patient exposed to $other_allergens_exposed_to :text {display_text=Details of other exposure,required=Y}

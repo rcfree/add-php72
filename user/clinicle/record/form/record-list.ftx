@@ -1,0 +1,1 @@
+current login $ur_table :grid {fields=username;logged_in;logged_out;record_type;record_id,dataurl=/record/logins,after_row_actions=UnlockRecord}

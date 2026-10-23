@@ -1,0 +1,68 @@
+RELEASE HISTORY
+
+4.1.1 24/11/2016
+! Search query performance improved
+
+4.1.0 01/11/2016
++ Corrections for panel-based system
+* Switch study list to use the new client module
+
+4.0.0 05/01/2015
++ Uses sections/domains instead of encounters
+! Fixed missing username in research log
+
+3.1.0 27/10/2015
++ Provide way to update the study number even if patient is enrolled
+  
+3.0.1 14/10/2015
+! No fields marked as required in actions
+
+3.0.0 23/09/2015
+* Adapted to automatically log recruitment status change in modified research module
+
+2.0.0 12/08/2015
++ Simplified interface and dialogs for adding actions
++ Integrated Angular updates for embedded form and menu
++ CompleteStudies manage task to automatically complete studies past their end date
++ Show the study information in the study summary page
+
+1.0.7 02/03/2015
++ 'allStudies' field setting available to Studies field option
+
+1.0.6 19/02/2015
+! Removed non-required test from ActionEntry tests
+
+1.0.5 16/02/2015
+* Remove built in RecordInUse component
+
+1.0.4 09/02/2015
++ Support for 'is_disabled' field in dictionary to determine if study is still active and should be available
+
+1.0.3 05/02/2015
++ Added 'fails to meet study criteria' to completed status in StudyModalEntry
+
+1.0.2 16/07/2014
+! Fixed automated status update so it checks the submitted status
+! JS error using legacy JS which has been changed
+* Increased size of study no to 20 chars
++ Delete action implemented for study
+
+1.0.1 14/07/2014
+* Changed menu display so status and date are on separate lines
+* Sort studies alphabetically in list
++ Auto-update of study status based on action being complete
++ Embedded view of study number and status into actions view with button to change them
++ Added study number to 'Enrol in study' action
++ Automated status set for appropriate actions (e.g. enrol in study, withdraw etc)
++ Prevent creation of new actions or editing old ones if the patient has withdrawn or the study has finished
+
+1.0.0 03/07/2014
++ Initial study management pages and fields
++ Implemented Constants file for field names to reduce potential problems
++ Added safeguard to prevent addition of blank study
++ StudyRepeatSection now shows studies without links if status is set to 'Patient requests no contact'
++ Improved test output depending on whether patient is unavailable or unsuitable
+! Form changed to display 'x action records' rather than 'x study records'
+* All BRU studies added to studylist dictionary
+* tweaked notifications so they are more informative
+! corrected breadcrumb trail

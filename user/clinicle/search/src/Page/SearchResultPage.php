@@ -1,0 +1,41 @@
+<?php
+
+namespace ClinicLE\Search\Page;
+use ClinicLE\DataFile\DelimitedDataFile;
+use ClinicLE\Search\Output\OutputFiles;
+use ClinicLE\Search\Output\PatientPerRowOutput;
+use ClinicLE\Search\Output\StandardPagedOutput;
+use ClinicLE\Search\Util\DataFrame;
+use ClinicLE\Search\Util\ParamSelectStatement;
+use ClinicLE\System\Util\CommandExecute;
+use Symfony\Component\HttpFoundation\Request;
+use ClinicLE\Search\Query\QueryRunner;
+use ClinicLE\Search\Query\DataQueryRunnerFactory;
+use ClinicLE\Search\Resource\SearchServices;
+use ClinicLE\System\Exception\NotifyUserException;
+use ClinicLE\System\Service\CoreServices;
+use CLE;
+use Rhumsaa\Uuid\Uuid;
+/**
+ * Created by PhpStorm.
+ * User: rob
+ * Date: 25/01/17
+ * Time: 10:06
+ */
+class SearchResultPage extends \ClinicLE\Search\Page\AbstractSearchPage
+{
+    function processGetMethod(Request $request) {
+        $searchId = $request->query->get("search_id");
+        $resultsPath = CLE::sys()->getPath()."/".CLE::sys()->getConfig()->getSection("Search")->get("definition_path")
+            ."/"
+            .$searchId;
+        $fileName = $resultsPath."/".OutputFiles::RESULTS_FILE;
+        return unserialize(file_get_contents($fileName));
+    }
+
+    function createMenuPath()
+    {
+        return "search/result";
+    }
+
+}

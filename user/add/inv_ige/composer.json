@@ -1,0 +1,14 @@
+{
+    "name": "add/inv_ige",
+    "description": "Investigations IgE module (part of ADD)",
+	"type": "clinicle-module",
+	"require":{
+		"clinicle/core":"~2.3",
+		"clinicle/install":"~1.0",
+		"clinicle/client":"~1.7",
+		"add/inv":"~2.0"
+	},
+	"autoload": {
+        "classmap": ["php"]
+    }
+}

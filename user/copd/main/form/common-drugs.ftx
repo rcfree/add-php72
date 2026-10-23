@@ -1,0 +1,31 @@
+Date recorded $date_recorded :date
+
+:tab_container
+	Drugs (1) :tab
+		:horiz_container {segments=2}
+			$drugs1 :dict_groups {dictionary=common_drugs, default_to_no=1,group_filter=saba;sama;laba_lama;laba;lama;ics;ics_laba;tt;saba;pdeai;oral_ster;muco}
+			$drugs2 :dict_groups {dictionary=common_drugs, default_to_no=1,group_filter=ace_inhib;arb;beta_blocker;anti_angin;diuretics;aldost_antag;anti_plet_coag;anti_arrhythmics;ca_chan_blockers}
+
+	Drugs (2) :tab
+		:horiz_container {segments=2}
+			:container
+				$drugs3 :dict_groups {dictionary=common_drugs, default_to_no=1,group_filter=ild;anti_dep_anxi;anti_osteo;ppi_anti_ulc}
+				:container
+					Other $other_drugs :yes_no {condition_test=Y,condition_action=show,condition_target=other_drugs_text}
+					$other_drugs_text :memo {indent=1}
+			:container
+				$drugs4 :dict_groups {dictionary=common_drugs, default_to_no=1,group_filter=statin;diabetic;lt_antib}
+
+				:container
+					Rescue packs $rescue_packs :yes_no {condition_test=Y,condition_action=show,condition_target=rescue_packs_text}
+					$rescue_packs_text :memo {indent=1}
+
+				:container
+					Antibiotics prior to admission $ab_prior_to_adm :yes_no {condition_test=Y,condition_action=show,condition_target=ab_prior_cn}
+					:container {indent=1} $ab_prior_cn
+						$ab_prior_text :memo
+						Start date $ab_prior_start_date :date
+
+
+-$ild_med_meds
+-$ild_med_flag

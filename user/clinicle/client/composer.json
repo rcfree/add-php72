@@ -1,0 +1,19 @@
+{
+    "name": "clinicle/client",
+    "description": "ClinicLE client module",
+	"type": "clinicle-module",
+	"require":{
+		"clinicle/install":"~1.0",
+		"clinicle/api":"^1.1",
+		"add/concept":"~1.3",
+		"clinicle/core":"^2.11",
+		"clinicle/dataframe":"^0.1",
+		"clinicle/web":"^1.4"
+	},
+    "autoload": {
+		"psr-4":{
+			"ClinicLE\\Client\\":"src/"
+		},
+        "classmap": ["php"]
+    }
+}

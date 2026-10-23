@@ -1,0 +1,56 @@
+<?php
+set_include_path(get_include_path().":".getenv('LRB_PATH')."/lib");
+require_once("LRB/CiviTool/Operation.php");
+const LRB_FIRST_NAME="First Name";
+const LRB_LAST_NAME="Last Name";
+include('log4php/Logger.php');
+
+//$log = Logger::getLogger("main");
+
+function recruitmentdb_civicrm_buildForm(  $formName, &$form ) {
+	if ($formName!='CRM_Contact_Form_Contact') return;
+	include_once "HTML/QuickForm/text.php";
+	
+	$hidden = new HTML_QuickForm_text("gp_link_id","GP GNC number",array("id"=>"gp_link_id"));
+	$form->addElement($hidden);
+}
+
+function recruitmentdb_civicrm_pre($op,$objectName,$id,&$params) {
+	if ($op=="view" || $op=="delete") return;
+	
+	if ($objectName!="Individual") return;
+	error_log("set GP to ".$params['gp_link_id']);
+	drupal_static('gp_link_id', $params['gp_link_id']);
+}
+
+#implement civi's civicrm_import hook (called following import of each individual)
+function recruitmentdb_civicrm_post($op,$objectName,$id,&$objectRef) {
+	if(get_class($objectRef)!="CRM_Contact_DAO_Contact") return;
+	if ($op=="view" || $op=="delete") return;
+	$subType = str_replace("\x01","",$objectRef->contact_sub_type);
+
+	if ($subType!="Recruit") return;
+	require_once("api/Exception.php");
+	
+	try {
+		//$enrolled = LRB_CiviTool_Operation::addParticipantToStudy($objectRef->id, "RespiratoryResearch",null,"Automatically added to %s study");
+		//if ($enrolled) CRM_Core_Session::setStatus(ts("Enrolled individual in respiratory research"), "Recruitment success", 'success');
+		$gpId = drupal_static('gp_link_id');
+		
+		if ($gpId) {
+			$gp = LRB_CiviTool_Operation::getContactWithFieldValue("GMC_number","gp_identifiers",$gpId);
+			if (!$gp) {
+				CRM_Core_Session::setStatus("A GP with GNC number '".$gpId ."' was not found in the recruitment database, so a GP/patient relationship was not created" , 'GP link failure','error');
+				return;
+			}
+			
+			$rel = LRB_CiviTool_Operation::createRelationship("GP of",$gp['contact_id'],$id);
+			if ($rel) CRM_Core_Session::setStatus(ts("GP (".$gp['first_name']." ".$gp['last_name'].") linked to patient"), "GP link success", 'success');
+		}
+	}
+	catch(Exception $ex) {
+		CRM_Core_Session::setStatus("Unexpected error:".$ex->getMessage(), 'Recruitment failure','error');
+	}
+}
+
+?>

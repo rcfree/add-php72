@@ -1,0 +1,13 @@
+{
+    "name": "add/history_status",
+    "description": "Medical history status module (part of ADD)",
+	"type": "clinicle-module",
+	"require":{
+		"clinicle/core":"~2.5",
+		"add/concept":"~1.0",
+		"add/patient":"~1.0",
+		"add/history":"~2.0",
+		"clinicle/client":"~1.4",
+		"clinicle/install":"~1.0"
+	}
+}

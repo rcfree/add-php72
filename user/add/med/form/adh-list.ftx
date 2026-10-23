@@ -1,0 +1,13 @@
+Copy active drugs to list $copy_active :copy_active_drugs {parent_key=buttons}
+
+:tab_container
+	Prescription adherence :tab $pres_tab
+		Add prescription adherence  $add_pres_adh :grid_add_button {refresh=presc_adh_records,use_page=med:presadhrecord,allow_add_another=1}
+
+		prescription adherence record $presc_adh_records :encounter_grid {fields=drug;dose;frequency;sr_scale;score;adherence,filter[0]=adherence_type|eq|1,use_page=med:presadhrecord,use_parent=1,after_row_actions=EditRecord,col_headings=Drug name;Dose;Frequency;S/R score;Score;Overall}
+
+
+	Therapeutic drug monitoring $theramon_tab :tab
+		Add therapeutic monitoring $add_ther_adh :grid_add_button {refresh=therap_mon_records,use_page=med:theradhrecord,allow_add_another=1}
+
+		therapeutic monitoring record $therap_mon_records :encounter_grid {fields=test;datetime;result,filter[0]=adherence_type|eq|2,use_page=med:adhrecord,use_parent=1}

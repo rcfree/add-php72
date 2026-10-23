@@ -1,0 +1,19 @@
+Date entered $date_imported :hidden {default=now(),detail_field=date_imported}
+	
+:horiz_container {detail_field=source,detail_constant=4}
+	Date of test* $date_of_test :date {detail_field=exam_date,multi_field=test_date}
+	Time of test* $time_of_test :time {detail_field=exam_time}
+	Comments $lf_comments :memo {rows=3,detail_field=comments}
+	$test_set_details :hidden {detail_field=test_set_details,detail_constant=Lung volume data}
+
+:horiz_container
+	RV :number $rv {fixed=2,size=4,multi_no=1,multi_field=pre_value,multi_constant[0]=test_type:RV,suffix=L,min=0.1,max=5}
+	RV predicted :number $rv_pred {fixed=2,size=4,multi_no=1,multi_field=pre_pc_predicted,suffix=%}
+
+:horiz_container
+	TLC :number $tlc {fixed=2,size=4,multi_no=2,multi_field=pre_value,multi_constant[0]=test_type:TLC,suffix=L,min=0.1,max=12}
+	TLC predicted :number $tlc_pred {fixed=2,size=4,multi_no=2,multi_field=pre_pc_predicted,suffix=%}
+
+:horiz_container
+	FRC :number $frc {fixed=2,size=4,multi_no=3,multi_field=pre_value,multi_constant[0]=test_type:FRC,suffix=L,min=0.1,max=7}
+	FRC predicted :number $frc_pred {fixed=2,size=4,multi_no=3,multi_field=pre_pc_predicted,,suffix=%}

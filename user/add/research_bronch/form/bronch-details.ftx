@@ -1,0 +1,5 @@
+Date recorded* $date_recorded :date
+Patient is happy to have bronchoscopy* :radio_buttons $bronch_happy [Y=Yes,N=No,U=Unsure] {inline=1}
+
+Bronchoscopy record :encounter_grid $bronchoscopy_record {use_page=research:bronchrec,before_row_actions=DateCreated}
+Add bronchoscopy $add_bronchoscopy :grid_add_button {refresh=bronchoscopy_record,modal_width=700,use_page=research:bronchrec}
