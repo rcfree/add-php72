@@ -163,17 +163,58 @@ bottom. Do not rewrite history; correct an entry with a follow-up note.
 - This does not block local code migration or validation with preview data. The final
   deployment target remains to be confirmed.
 
+### Phase 1 restructure completed (local)
+
+- Rollback archive: `/local/backups/add-pre-restructure-20261023.tgz` (8.4 MB,
+  first-party source, composer files, config; excludes VCS history and nested vendors).
+- Root git monorepo initialised:
+  - `1f82d8a` baseline before restructure;
+  - `435cf68` moved first-party packages to `user/` and added Composer path repositories.
+- Removed `.hg`/`.git` metadata, `.hgtags`, `.hgignore`, nested module vendors, and
+  stale module locks.
+- Moved:
+  - `modules/add`, `modules/clinicle`, `modules/cdbrkr`, `modules/ember`;
+  - `modules/main2` -> `user/copd/main`;
+  - `vendor/clinicle/*` -> `user/clinicle/*`;
+  - `vendor/leicrespbru/lrbtools` -> `user/leicrespbru/lrbtools`.
+- Copied the six previously missing packages from `/local/add_modules` into the source
+  tree, then moved them with the rest. Versions for all 73 path packages are pinned in
+  `composer.json` from `composer.lock`.
+- Fixed `user/add/research/composer.json` (`tenickcom` -> `tecnickcom`).
+- Converted `user/clinicle/install` from a Composer plugin to a library:
+  - removed `composer-plugin-api`, `composer/composer`, plugin metadata, and scripts;
+  - deleted `ComposerModuleInstaller*` and `ComposerModuleManager`.
+- Composer 2 resolution/install:
+  - removed only Composer tooling packages (`composer/*`, `seld/*`,
+    `justinrainbow/json-schema`) from the lock;
+  - no runtime third-party versions changed;
+  - installed 105 packages from the new lock.
+- Added `tools/build-module-tree.sh`:
+  - builds `work/<vendor>/<package>` from `user/` using module `composer.json` type;
+  - creates web/view symlinks under `vendor/clinicle/web/public`;
+  - produced 60 module links.
+- Fixed CLI boot on PHP 8.3:
+  - `ClinicLE\Command\CommandRunner` and `ClinicLE\Manage\Runner\CommandRunner`
+    converted dynamic-property deprecations into exceptions; both now ignore
+    `E_DEPRECATED`/`E_USER_DEPRECATED`.
+  - Created VM runtime dirs (`/local/tmp`, `log`, `tmp`, `cache`, `search`) after the
+    log4php config failed to `mkdir` under a root-owned `/local`.
+  - `ADD_PATH=/local/add ADD_PROFILE=uhl-test php vendor/bin/clinicle list` succeeds
+    on the VM and lists the expected commands.
+- Composer reports one ambiguous class:
+  `ADD_Component_DeleteSectionButton` exists identically in `clinicle/core` and
+  `clinicle/touch`; the touch copy wins. Files are byte-identical, so this is currently
+  harmless.
+- `InstallCommand` remains unregistered and still contains module-install code; its
+  forms-only reduction is deferred to Phase 4.
+
 ### Next action
 
-- Phase 0 capture on the live/staging host, inside the VPN:
-  - PHP modules, Apache modules, `/local/add/config/<profile>/`;
-  - MySQL server variables, `sql_mode`, schema-only metadata, and table counts;
-    **not** production rows;
-  - `work/` tree, web/view symlink targets, and `page.ini` aliases;
-  - the six missing packages (`add/inv`, `add/med`, `clinicle/search`,
-    `ember/asthcopd`, `ember/blness`, `ember/pneumonia`) and their versions;
-  - cron/systemd units and PMI FreeTDS settings.
-- Phase 1 restructure can then proceed locally with the preview database; the six
-  packages are required for Composer path-repository resolution.
-- Final validation is run in the VPN after porting the code; no production data is
-  imported locally.
+- Phase 3 dependency migration on the restructured tree:
+  - PHPWord 0.11.1 -> 1.4.x and adapt `ADD_Tool_RTF`;
+  - TCPDF 6.2.26 -> 6.11.x;
+  - FPDF `itbz/fpdf` -> `fpdf/fpdf` 1.8/1.90 and adapt `ADD_Tool_PDF`;
+  - Minify 1.3.61 -> 1.3.75;
+  - PHPExcel -> PhpSpreadsheet 5.x in the two read adapters.
+- Then apply the Phase 4 framework/CI patches and run the smoke matrix.
+- VPN capture and production-data validation remain separate and VPN-only.

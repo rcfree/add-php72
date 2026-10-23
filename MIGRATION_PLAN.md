@@ -1,6 +1,6 @@
 # ADD PHP 8.3 Migration Plan
 
-Status: agreed strategy, ready for execution on staging.
+Status: Phase 1 restructure complete locally; dependency migration next.
 Last updated: 2026-10-23.
 
 This document records the decisions already made so the migration does not restart from
@@ -127,6 +127,7 @@ Failed:
     log4php-2.3.0-each.patch
   tools/
     php82-audit.sh
+    build-module-tree.sh
     apply-patches.sh
     restructure-user.sh
   vendor/                    # generated, gitignored
@@ -251,7 +252,8 @@ Do this before any PHP 8 code edits.
    - reduce `Command/InstallCommand.php` to dictionary/form setup: remove
      `composer require/update`, module copy/symlink, backup/remove, and
      `composer dump-autoload`; resolve the module from `work/` or `user/` and call
-     `ModuleInstall::installForms()` only;
+     `ModuleInstall::installForms()` only. This reduction is deferred to Phase 4;
+     the command is currently unregistered, so it cannot install code as-is;
    - remove or leave unreachable `ModuleInstall::installCode()`, `copyModule()`,
      and `createSymLinks()`; do not call them from the build or commands;
    - keep the `clinicle/install` requirements in the module `composer.json` files.
@@ -548,6 +550,9 @@ import production data into the local VM.
 | `config/<profile>/ci/database.php` | `mysqli`, `mysqli_report` |
 | `patches/log4php-2.3.0-each.patch` (new) | `each` -> `foreach` |
 | `tools/php82-audit.sh` | Retarget from `modules` to `user` after the move |
+| `tools/build-module-tree.sh` | Build `work/<vendor>/<package>` and web/view links from `user/` |
+| `user/clinicle/core/src/Command/CommandRunner.php` | Ignore `E_DEPRECATED`/`E_USER_DEPRECATED`; dynamic properties are not fatal |
+| `user/clinicle/manage/src/Runner/CommandRunner.php` | Same deprecation guard |
 | `tools/apply-patches.sh` (new) | Idempotent third-party patch application |
 | `tools/restructure-user.sh` (new) | One-time move and cleanup |
 
@@ -558,6 +563,7 @@ import production data into the local VM.
 | Production data cannot leave the VPN | Local validation uses preview data; final validation and production-data golden outputs run in the VPN after porting. Never import production rows into the local VM. |
 | Target VM re-provisioning permission is unconfirmed | User will resolve. Fallbacks if a new VM is not allowed: containerized PHP 8.3, static PHP 8.3 FPM + `proxy_fcgi`, or a new host. Do not in-place upgrade 16.04. Local code migration is not blocked. |
 | MySQL 5.7.33 is end-of-life | Keep it staging-only and bound to `127.0.0.1`; plan a separate database upgrade after the PHP migration. |
+| Composer reports ambiguous `ADD_Component_DeleteSectionButton` in `clinicle/core` and `clinicle/touch` | Files are byte-identical; the touch copy wins. Remove one copy later or add an `exclude-from-classmap` rule. |
 | Removing the Composer installer changes how module code and web/view links reach `work/` | Capture the live `work/` layout and symlink targets; replicate with a build script; verify `ModuleSetup` output. `modules.ini` is not used. |
 | `InstallCommand` still contains module code installation | Strip Composer/copy/symlink logic; keep only `installForms()`; test against an existing module in `work/` |
 | `work/` module tree generation breaks after restructure | Compare module set, aliases, and web/view symlinks against baseline |

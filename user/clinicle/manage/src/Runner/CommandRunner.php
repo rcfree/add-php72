@@ -24,6 +24,10 @@ class CommandRunner {
         $path = $env->getPath();
 		chdir($path);
 		set_error_handler(function($errno, $errstr) {
+			if ($errno === E_DEPRECATED || $errno === E_USER_DEPRECATED) {
+				return true;
+			}
+
 			$path = getenv('ADD_PATH');
 			if (empty($path))
 				die("ERROR: No 'ADD_PATH' set");
