@@ -319,6 +319,8 @@ bottom. Do not rewrite history; correct an entry with a follow-up note.
   - browser login from `/` switches to the authenticated header (`Options`/`Logout`).
 - If the browser already has a session, `/` goes straight to the app. Use `Logout`
   or a private window to see the form again.
+- Added `/login` and `/?login=1`, which always serve the form even when a session
+  cookie exists; responses are `Cache-Control: no-store`.
 
 ### Next action
 

@@ -148,7 +148,8 @@ Tunnel service name in the agent runtime: `add-php83-web`.
 Local URL: `http://127.0.0.1:8081/`.
 
 The local router serves the preview login form at `/` when no `ci_session` cookie
-exists. With a valid session it hands the request to the CI app.
+exists. With a valid session it hands the request to the CI app. `/login` and
+`/?login=1` always serve the form, even with a session cookie.
 
 ## Local preview database
 
