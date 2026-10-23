@@ -305,8 +305,11 @@ Do this before any PHP 8 code edits.
       -v /srv/add-data/mysql:/var/lib/mysql \
       -e MYSQL_ROOT_PASSWORD=addroot \
       mysql:5.7.33 \
-      --character-set-server=utf8mb4 --collation-server=utf8mb4_general_ci
+      --character-set-server=utf8mb4 --collation-server=utf8mb4_general_ci \
+      --sql-mode=NO_ENGINE_SUBSTITUTION
     ```
+    The permissive `sql_mode` is required by legacy `DISTINCT ... ORDER BY`
+    queries. Capture production `@@sql_mode` and match it before final validation.
     Create `add_data` and `add_user` with `utf8`/`utf8_general_ci`, create the
     application user, and import the full production dump. The MariaDB preview
     dumps can be used only for a schema smoke test.

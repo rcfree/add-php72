@@ -288,6 +288,25 @@ bottom. Do not rewrite history; correct an entry with a follow-up note.
   - web home still returns HTTP 200 with title `ADD [local] - Home`;
   - CLI `list` still succeeds.
 
+### Preview admin and authenticated smoke
+
+- Seeded the preview `add_user` database:
+  - groups `admin` (1104) and `members` (1105);
+  - user `admin` (id 175), active, `last_changed` set to now;
+  - password stored in ion_auth's configured sha1/store_salt=false format;
+  - user linked to the `admin` group.
+- Credentials for the local preview only: `admin` / `PreviewAdmin123`.
+- MySQL 5.7's default `ONLY_FULL_GROUP_BY` broke the legacy recent-patients
+  query (`DISTINCT ... ORDER BY`). Restarted the container with
+  `--sql-mode=NO_ENGINE_SUBSTITUTION`; the query now succeeds. Production
+  `@@sql_mode` must still be captured and matched.
+- Verified:
+  - `auth/loggedin` returns `{"logged_in":true}`;
+  - browser login shows the authenticated header with `Options` and `Logout`;
+  - home returns HTTP 200 without an error panel.
+- Added local-only login helper at `http://127.0.0.1:8081/preview-login.html`
+  (untracked, not part of the application build).
+
 ### Next action
 
 - Local work is complete. Remaining work is VPN-only:
