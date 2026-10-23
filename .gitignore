@@ -1,0 +1,20 @@
+# Generated dependencies and runtime trees
+/vendor/
+/modules/
+/work/
+/backup/
+/reports/
+
+# Deployment-specific configuration and secrets
+/config/
+/dict/
+
+# Runtime output
+/log/*
+/tmp/*
+/search/*
+/cache/*
+
+# Local tooling and editor state
+/.idea/
+/.hg/

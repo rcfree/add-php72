@@ -1,0 +1,4335 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "ed6f1ab6c662538303276ed37f0821ec",
+    "packages": [
+        {
+            "name": "add/advcopd",
+            "version": "v2.7.0",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/leicrespbru/add_advcopd",
+                "reference": "e74432b3e0fbf2ad2f9acc0ebcb99fb230051711"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/leicrespbru/add_advcopd/get/e74432b3e0fbf2ad2f9acc0ebcb99fb230051711.zip",
+                "reference": "e74432b3e0fbf2ad2f9acc0ebcb99fb230051711",
+                "shasum": ""
+            },
+            "require": {
+                "add/concept": "~1.0",
+                "add/patient": "~1.0",
+                "add/qol": "^2.3",
+                "clinicle/core": "~2.3",
+                "clinicle/install": "~1.0"
+            },
+            "type": "clinicle-module",
+            "autoload": {
+                "classmap": [
+                    "php"
+                ]
+            },
+            "description": "Advanced COPD module (part of ADD)",
+            "time": "2017-10-31T10:30:53+00:00"
+        },
+        {
+            "name": "add/advcopd_fup",
+            "version": "v1.0.1",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/leicrespbru/add_advcopd_fup",
+                "reference": "a39fb0b51a6d7c0324c948ad00627e3b8b1a9a00"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/leicrespbru/add_advcopd_fup/get/a39fb0b51a6d7c0324c948ad00627e3b8b1a9a00.zip",
+                "reference": "a39fb0b51a6d7c0324c948ad00627e3b8b1a9a00",
+                "shasum": ""
+            },
+            "require": {
+                "add/advcopd": "~2.2",
+                "clinicle/core": "~2.3",
+                "clinicle/install": "~1.0"
+            },
+            "type": "clinicle-module",
+            "description": "Advanced COPD followup module (part of ADD)",
+            "time": "2015-06-17T14:04:38+00:00"
+        },
+        {
+            "name": "add/advcopd_report",
+            "version": "v1.1.2",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/leicrespbru/add_advcopd_report",
+                "reference": "fd71e142f4249976c65ccfb606c614fa46eb2b30"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/leicrespbru/add_advcopd_report/get/fd71e142f4249976c65ccfb606c614fa46eb2b30.zip",
+                "reference": "fd71e142f4249976c65ccfb606c614fa46eb2b30",
+                "shasum": ""
+            },
+            "require": {
+                "add/advcopd": "~2.2",
+                "clinicle/core": "~2.3",
+                "clinicle/install": "~1.0"
+            },
+            "type": "clinicle-module",
+            "description": "Advanced COPD report module (part of ADD)",
+            "time": "2016-11-04T11:38:36+00:00"
+        },
+        {
+            "name": "add/cap",
+            "version": "v1.0.7",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/leicrespbru/add_cap",
+                "reference": "58dcf181ebab4ba4f09f6fc2b29b5ba8db6555bd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/leicrespbru/add_cap/get/58dcf181ebab4ba4f09f6fc2b29b5ba8db6555bd.zip",
+                "reference": "58dcf181ebab4ba4f09f6fc2b29b5ba8db6555bd",
+                "shasum": ""
+            },
+            "require": {
+                "add/patient": "~1.0",
+                "clinicle/core": "~2.3",
+                "clinicle/install": "~1.0"
+            },
+            "type": "clinicle-module",
+            "description": "Community acquired pneumonia module (part of ADD)",
+            "time": "2015-06-17T13:56:16+00:00"
+        },
+        {
+            "name": "add/concept",
+            "version": "v1.6.2",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/leicrespbru/add_concept",
+                "reference": "aa7586395d0c5fbb92c058e676d60fcfcc7129aa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/leicrespbru/add_concept/get/aa7586395d0c5fbb92c058e676d60fcfcc7129aa.zip",
+                "reference": "aa7586395d0c5fbb92c058e676d60fcfcc7129aa",
+                "shasum": ""
+            },
+            "require": {
+                "clinicle/ajax": "~1.0",
+                "clinicle/api": "~1.0"
+            },
+            "type": "clinicle-module",
+            "autoload": {
+                "classmap": [
+                    "lib"
+                ]
+            },
+            "description": "Common concepts module (part of ADD)",
+            "time": "2019-05-31T12:41:57+00:00"
+        },
+        {
+            "name": "add/dac",
+            "version": "v2.6.0",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/leicrespbru/add_dac",
+                "reference": "cf534a44ce344eb19dfac27301c3c3e787253eb4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/leicrespbru/add_dac/get/cf534a44ce344eb19dfac27301c3c3e787253eb4.zip",
+                "reference": "cf534a44ce344eb19dfac27301c3c3e787253eb4",
+                "shasum": ""
+            },
+            "require": {
+                "add/concept": "^1.0",
+                "add/patient": "^1.0",
+                "add/qol": "^2.3",
+                "clinicle/client": "^1.3",
+                "clinicle/core": "^2.3",
+                "clinicle/install": "^1.0"
+            },
+            "type": "clinicle-module",
+            "description": "Difficult Asthma Clinic module (part of ADD)",
+            "time": "2017-10-31T10:30:12+00:00"
+        },
+        {
+            "name": "add/dac_mdt",
+            "version": "v1.1.0",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/leicrespbru/add_dac_mdt",
+                "reference": "f44033f50a3f56eb6f77476d929d723e4bb452c5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/leicrespbru/add_dac_mdt/get/f44033f50a3f56eb6f77476d929d723e4bb452c5.zip",
+                "reference": "f44033f50a3f56eb6f77476d929d723e4bb452c5",
+                "shasum": ""
+            },
+            "require": {
+                "add/dac": "~2.0",
+                "add/patient": "~1.0",
+                "clinicle/core": "~2.3",
+                "clinicle/install": "~1.0"
+            },
+            "type": "clinicle-module",
+            "description": "DAC MDT module (part of ADD)",
+            "time": "2016-11-01T16:58:17+00:00"
+        },
+        {
+            "name": "add/eos",
+            "version": "v1.1.2",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/leicrespbru/add_eos",
+                "reference": "4e0084833eb26f9c20f7ea50cce9e4438e3a328b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/leicrespbru/add_eos/get/4e0084833eb26f9c20f7ea50cce9e4438e3a328b.zip",
+                "reference": "4e0084833eb26f9c20f7ea50cce9e4438e3a328b",
+                "shasum": ""
+            },
+            "require": {
+                "add/concept": "~1.0",
+                "add/path": "~1.0",
+                "add/resphy": "~1.0",
+                "clinicle/client": "~1.3",
+                "clinicle/core": "~2.3",
+                "clinicle/install": "~1.0",
+                "clinicle/options": "~1.0"
+            },
+            "type": "clinicle-module",
+            "description": "Hyper-eosinophilic module (part of ADD)",
+            "time": "2017-04-21T17:44:35+00:00"
+        },
+        {
+            "name": "add/grouping",
+            "version": "v1.1.0",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/leicrespbru/add_grouping",
+                "reference": "315103553631b8086c196d50f353209855e658dc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/leicrespbru/add_grouping/get/315103553631b8086c196d50f353209855e658dc.zip",
+                "reference": "315103553631b8086c196d50f353209855e658dc",
+                "shasum": ""
+            },
+            "require": {
+                "clinicle/core": "~2.4",
+                "clinicle/install": "~1.0"
+            },
+            "type": "clinicle-module",
+            "autoload": {
+                "classmap": [
+                    "lib"
+                ]
+            },
+            "description": "Grouping module (part of ADD)",
+            "time": "2015-10-26T12:21:37+00:00"
+        },
+        {
+            "name": "add/history",
+            "version": "v2.0.1",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/leicrespbru/add_history",
+                "reference": "228a0b00befd3eeb14b91308240677836ee360ae"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/leicrespbru/add_history/get/228a0b00befd3eeb14b91308240677836ee360ae.zip",
+                "reference": "228a0b00befd3eeb14b91308240677836ee360ae",
+                "shasum": ""
+            },
+            "require": {
+                "add/patient": "~1.0",
+                "clinicle/core": "~2.3",
+                "clinicle/install": "~1.0"
+            },
+            "type": "clinicle-module",
+            "autoload": {
+                "classmap": [
+                    "php"
+                ]
+            },
+            "description": "Medical history module (part of ADD)",
+            "time": "2015-06-17T15:27:06+00:00"
+        },
+        {
+            "name": "add/history_ext",
+            "version": "v2.2.1",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/leicrespbru/add_history_ext",
+                "reference": "4decd432eef1bbfaf33b18f57dda1ea437e0ec88"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/leicrespbru/add_history_ext/get/4decd432eef1bbfaf33b18f57dda1ea437e0ec88.zip",
+                "reference": "4decd432eef1bbfaf33b18f57dda1ea437e0ec88",
+                "shasum": ""
+            },
+            "require": {
+                "add/history": "~2.0",
+                "add/patient": "~1.0",
+                "clinicle/core": "~2.3",
+                "clinicle/install": "~1.0"
+            },
+            "type": "clinicle-module",
+            "autoload": {
+                "classmap": [
+                    "php"
+                ]
+            },
+            "description": "Medical history extension module (part of ADD)",
+            "time": "2017-08-17T12:38:29+00:00"
+        },
+        {
+            "name": "add/history_status",
+            "version": "v1.0.2",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/leicrespbru/add_history_status",
+                "reference": "58ba317f70bdd07dd38190ac39fb1484cdd1e68a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/leicrespbru/add_history_status/get/58ba317f70bdd07dd38190ac39fb1484cdd1e68a.zip",
+                "reference": "58ba317f70bdd07dd38190ac39fb1484cdd1e68a",
+                "shasum": ""
+            },
+            "require": {
+                "add/concept": "~1.0",
+                "add/history": "~2.0",
+                "add/patient": "~1.0",
+                "clinicle/client": "~1.4",
+                "clinicle/core": "~2.5",
+                "clinicle/install": "~1.0"
+            },
+            "type": "clinicle-module",
+            "description": "Medical history status module (part of ADD)",
+            "time": "2017-01-31T15:33:42+00:00"
+        },
+        {
+            "name": "add/ild",
+            "version": "v1.3.0",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/leicrespbru/add_ild",
+                "reference": "ea71690a459a5205f4df1b624a7d61f2625778c6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/leicrespbru/add_ild/get/ea71690a459a5205f4df1b624a7d61f2625778c6.zip",
+                "reference": "ea71690a459a5205f4df1b624a7d61f2625778c6",
+                "shasum": ""
+            },
+            "require": {
+                "add/patient": "~1.0",
+                "add/referral": "~1.0",
+                "clinicle/import": "~1.0",
+                "clinicle/install": "~1.0",
+                "clinicle/options": "~1.0"
+            },
+            "type": "clinicle-module",
+            "autoload": {
+                "classmap": [
+                    "lib"
+                ]
+            },
+            "description": "ADD ILD module",
+            "time": "2016-11-01T15:54:02+00:00"
+        },
+        {
+            "name": "add/inv",
+            "version": "v2.2.4",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/leicrespbru/add_inv",
+                "reference": "b27c610d71940804e77bbbbcae1ce9654148be5a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/leicrespbru/add_inv/get/b27c610d71940804e77bbbbcae1ce9654148be5a.zip",
+                "reference": "b27c610d71940804e77bbbbcae1ce9654148be5a",
+                "shasum": ""
+            },
+            "require": {
+                "clinicle/client": "^1.9",
+                "clinicle/core": "^2.11",
+                "clinicle/install": "^1.2"
+            },
+            "type": "clinicle-module",
+            "autoload": {
+                "classmap": [
+                    "php"
+                ]
+            },
+            "description": "Investigations module (part of ADD)",
+            "time": "2017-07-13T13:50:48+00:00"
+        },
+        {
+            "name": "add/inv_fungi",
+            "version": "v0.1.x-dev",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/leicrespbru/add_inv_fungi",
+                "reference": "0363707c876165587105562c2631715e7f9142fa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/leicrespbru/add_inv_fungi/get/0363707c876165587105562c2631715e7f9142fa.zip",
+                "reference": "0363707c876165587105562c2631715e7f9142fa",
+                "shasum": ""
+            },
+            "require": {
+                "add/inv": "^2.2",
+                "clinicle/client": "^1.9",
+                "clinicle/install": "^1.2"
+            },
+            "type": "clinicle-module",
+            "description": "Fungi entry investigations module (part of ADD)",
+            "time": "2017-07-17T14:51:39+00:00"
+        },
+        {
+            "name": "add/inv_ige",
+            "version": "v1.1.0",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/leicrespbru/add_inv_ige",
+                "reference": "6f2983ce24e32236db4fd90d4c6e3740bd76734d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/leicrespbru/add_inv_ige/get/6f2983ce24e32236db4fd90d4c6e3740bd76734d.zip",
+                "reference": "6f2983ce24e32236db4fd90d4c6e3740bd76734d",
+                "shasum": ""
+            },
+            "require": {
+                "add/inv": "~2.0",
+                "clinicle/client": "~1.7",
+                "clinicle/core": "~2.3",
+                "clinicle/install": "~1.0"
+            },
+            "type": "clinicle-module",
+            "autoload": {
+                "classmap": [
+                    "php"
+                ]
+            },
+            "description": "Investigations IgE module (part of ADD)",
+            "time": "2016-02-29T17:43:07+00:00"
+        },
+        {
+            "name": "add/med",
+            "version": "v1.4.2",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/leicrespbru/add_med",
+                "reference": "8191937752bdc59d49caae69f1f6b45cd17f3398"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/leicrespbru/add_med/get/8191937752bdc59d49caae69f1f6b45cd17f3398.zip",
+                "reference": "8191937752bdc59d49caae69f1f6b45cd17f3398",
+                "shasum": ""
+            },
+            "require": {
+                "clinicle/client": "~1.9",
+                "clinicle/core": "~2.11",
+                "clinicle/install": "~1.2",
+                "clinicle/manage": "~1.5",
+                "clinicle/report": "~1.0"
+            },
+            "type": "clinicle-module",
+            "autoload": {
+                "classmap": [
+                    "php"
+                ],
+                "psr-4": {
+                    "ADD\\Med\\": "src",
+                    "ADD\\Test\\Med\\": "test"
+                }
+            },
+            "description": "Medication module (part of ADD)",
+            "time": "2017-08-17T17:17:26+00:00"
+        },
+        {
+            "name": "add/med_report",
+            "version": "v1.0.1",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/leicrespbru/add_med_report",
+                "reference": "8e8c66f436e32f2f3379f76931412da712fd1413"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/leicrespbru/add_med_report/get/8e8c66f436e32f2f3379f76931412da712fd1413.zip",
+                "reference": "8e8c66f436e32f2f3379f76931412da712fd1413",
+                "shasum": ""
+            },
+            "require": {
+                "add/med": "~1.0",
+                "clinicle/core": "~2.3",
+                "clinicle/install": "~1.0",
+                "clinicle/report_ext": "~1.0"
+            },
+            "type": "clinicle-module",
+            "description": "Medication report module (part of ADD)",
+            "time": "2015-08-28T13:03:45+00:00"
+        },
+        {
+            "name": "add/paasth",
+            "version": "v0.1.0",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/rcfree/add_paasth",
+                "reference": "79769133f187bf13e78668db5439fa3482b8ba5c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/rcfree/add_paasth/get/79769133f187bf13e78668db5439fa3482b8ba5c.zip",
+                "reference": "79769133f187bf13e78668db5439fa3482b8ba5c",
+                "shasum": ""
+            },
+            "require": {
+                "add/concept": "^1.0",
+                "add/patient": "^1.0",
+                "add/qol": "^2.0",
+                "clinicle/client": "^1.3",
+                "clinicle/core": "^2.3",
+                "clinicle/install": "^1.0"
+            },
+            "type": "clinicle-module",
+            "autoload": {
+                "psr-4": {
+                    "ADD\\Paasth\\": "src/"
+                }
+            },
+            "description": "Paediatric asthma module (part of ADD)",
+            "time": "2018-08-21T11:20:36+00:00"
+        },
+        {
+            "name": "add/path",
+            "version": "v1.4.4",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/leicrespbru/add_path",
+                "reference": "062925b7fc6fdd939b392f6118afca1e28a6dbab"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/leicrespbru/add_path/get/062925b7fc6fdd939b392f6118afca1e28a6dbab.zip",
+                "reference": "062925b7fc6fdd939b392f6118afca1e28a6dbab",
+                "shasum": ""
+            },
+            "require": {
+                "clinicle/base": "^1.6",
+                "clinicle/patient": "~1.0",
+                "clinicle/query": "^1.0"
+            },
+            "type": "clinicle-module",
+            "autoload": {
+                "classmap": [
+                    "lib"
+                ],
+                "psr-4": {
+                    "ADD\\Pathology\\": "src/"
+                }
+            },
+            "description": "Pathology module (part of ADD)",
+            "time": "2019-03-15T11:40:27+00:00"
+        },
+        {
+            "name": "add/pr",
+            "version": "v1.4.3",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/leicrespbru/add_pr",
+                "reference": "293942a2d26a786a5d82479ea0bb50c06b2801ab"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/leicrespbru/add_pr/get/293942a2d26a786a5d82479ea0bb50c06b2801ab.zip",
+                "reference": "293942a2d26a786a5d82479ea0bb50c06b2801ab",
+                "shasum": ""
+            },
+            "require": {
+                "add/concept": "~1.6",
+                "add/patient": "~1.0",
+                "add/qol": "~2.2",
+                "add/referral": "~1.3",
+                "clinicle/export": "~1.0",
+                "clinicle/install": "~1.0",
+                "clinicle/letter": "~1.0",
+                "clinicle/report": "~1.1"
+            },
+            "type": "clinicle-module",
+            "autoload": {
+                "classmap": [
+                    "php"
+                ]
+            },
+            "description": "ADD PR module",
+            "time": "2019-02-02T21:59:23+00:00"
+        },
+        {
+            "name": "add/pr_dashboard",
+            "version": "v0.1.x-dev",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/leicrespbru/add_pr_dashboard",
+                "reference": "481377fb88af6b93d1c96f9c0285bec15494b6aa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/leicrespbru/add_pr_dashboard/get/481377fb88af6b93d1c96f9c0285bec15494b6aa.zip",
+                "reference": "481377fb88af6b93d1c96f9c0285bec15494b6aa",
+                "shasum": ""
+            },
+            "require": {
+                "add/pr": "^1.4",
+                "clinicle/search": "^0.1"
+            },
+            "type": "clinicle-module",
+            "autoload": {
+                "psr-4": {
+                    "ADD\\PR\\": "src/"
+                }
+            },
+            "description": "ADD PR dashboard module",
+            "time": "2018-06-19T19:51:47+00:00"
+        },
+        {
+            "name": "add/qol",
+            "version": "v2.4.0",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/leicrespbru/add_qol",
+                "reference": "73ea218e7f2fe13089a27dffa4c2927b441ce3c2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/leicrespbru/add_qol/get/73ea218e7f2fe13089a27dffa4c2927b441ce3c2.zip",
+                "reference": "73ea218e7f2fe13089a27dffa4c2927b441ce3c2",
+                "shasum": ""
+            },
+            "require": {
+                "clinicle/core": "~2.12",
+                "clinicle/install": "~1.0",
+                "clinicle/options": "^1.5"
+            },
+            "type": "clinicle-module",
+            "autoload": {
+                "classmap": [
+                    "php"
+                ],
+                "psr-4": {
+                    "ADD\\Qol\\Test\\": "test"
+                }
+            },
+            "description": "Quality of life module (part of ADD)",
+            "time": "2019-06-03T21:25:30+00:00"
+        },
+        {
+            "name": "add/referral",
+            "version": "v1.3.0",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/leicrespbru/add_referral",
+                "reference": "a37da4e1fb30ae2254387836da6b66585e090efe"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/leicrespbru/add_referral/get/a37da4e1fb30ae2254387836da6b66585e090efe.zip",
+                "reference": "a37da4e1fb30ae2254387836da6b66585e090efe",
+                "shasum": ""
+            },
+            "require": {
+                "clinicle/client": "~1.9",
+                "clinicle/install": "~1.0"
+            },
+            "type": "clinicle-module",
+            "autoload": {
+                "classmap": [
+                    "lib"
+                ]
+            },
+            "description": "ADD referral form/management module",
+            "time": "2017-01-13T10:18:19+00:00"
+        },
+        {
+            "name": "add/research",
+            "version": "v3.2.0",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/leicrespbru/add_research",
+                "reference": "c2f6fccd0b03dfc5d0bc4bb73af7a764a71f59a2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/leicrespbru/add_research/get/c2f6fccd0b03dfc5d0bc4bb73af7a764a71f59a2.zip",
+                "reference": "c2f6fccd0b03dfc5d0bc4bb73af7a764a71f59a2",
+                "shasum": ""
+            },
+            "require": {
+                "add/patient": "~1.1",
+                "clinicle/client": "~1.3",
+                "clinicle/core": "~2.7",
+                "clinicle/install": "~1.0",
+                "clinicle/manage": "^1.5",
+                "clinicle/options": "~1.0",
+                "clinicle/query": "~1.0"
+            },
+            "type": "clinicle-module",
+            "autoload": {
+                "classmap": [
+                    "php"
+                ]
+            },
+            "description": "Research module (part of ADD)",
+            "time": "2017-08-18T15:39:40+00:00"
+        },
+        {
+            "name": "add/research_action",
+            "version": "v1.0.3",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/leicrespbru/add_research_action",
+                "reference": "f7452e5f72a19e0907b4bdc0beac9f1ddcff32be"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/leicrespbru/add_research_action/get/f7452e5f72a19e0907b4bdc0beac9f1ddcff32be.zip",
+                "reference": "f7452e5f72a19e0907b4bdc0beac9f1ddcff32be",
+                "shasum": ""
+            },
+            "require": {
+                "clinicle/core": "~2.3",
+                "clinicle/install": "~1.0"
+            },
+            "type": "clinicle-module",
+            "description": "Research action module (part of ADD)",
+            "time": "2015-06-01T18:51:42+00:00"
+        },
+        {
+            "name": "add/research_api",
+            "version": "v2.0.1",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/leicrespbru/add_research_api",
+                "reference": "9bfd42f412c795a675bef621264fce23f82e1c85"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/leicrespbru/add_research_api/get/9bfd42f412c795a675bef621264fce23f82e1c85.zip",
+                "reference": "9bfd42f412c795a675bef621264fce23f82e1c85",
+                "shasum": ""
+            },
+            "require": {
+                "add/research": "~3.0",
+                "add/research_studies": "~4.0",
+                "clinicle/core": "~2.3",
+                "clinicle/install": "~1.0",
+                "clinicle/query": "~1.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.1"
+            },
+            "type": "clinicle-module",
+            "autoload": {
+                "classmap": [
+                    "lib"
+                ],
+                "psr-4": {
+                    "Clinicle\\Query\\": "lib\\Clinicle\\Query"
+                }
+            },
+            "description": "Research API module",
+            "time": "2017-04-21T11:24:53+00:00"
+        },
+        {
+            "name": "add/research_bronch",
+            "version": "v2.0.0",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/leicrespbru/add_research_bronch",
+                "reference": "763b8dfcb335736d9d8ae523789c1d3bf3e30f94"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/leicrespbru/add_research_bronch/get/763b8dfcb335736d9d8ae523789c1d3bf3e30f94.zip",
+                "reference": "763b8dfcb335736d9d8ae523789c1d3bf3e30f94",
+                "shasum": ""
+            },
+            "require": {
+                "add/research": "~3.0",
+                "clinicle/core": "~2.7",
+                "clinicle/install": "~1.0"
+            },
+            "type": "clinicle-module",
+            "description": "Research bronchoscopy module (part of ADD)",
+            "time": "2016-02-09T13:24:13+00:00"
+        },
+        {
+            "name": "add/research_search",
+            "version": "v2.2.0",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/leicrespbru/add_research_search",
+                "reference": "de99e17a60a455bce8294e5206e9c51dab5ee391"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/leicrespbru/add_research_search/get/de99e17a60a455bce8294e5206e9c51dab5ee391.zip",
+                "reference": "de99e17a60a455bce8294e5206e9c51dab5ee391",
+                "shasum": ""
+            },
+            "require": {
+                "add/research": "^3.0",
+                "clinicle/base": "^1.5",
+                "clinicle/client": "^1.9"
+            },
+            "type": "clinicle-module",
+            "autoload": {
+                "classmap": [
+                    "php"
+                ]
+            },
+            "description": "Research search module (part of ADD)",
+            "time": "2017-07-03T13:34:29+00:00"
+        },
+        {
+            "name": "add/research_studies",
+            "version": "v4.1.1",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/leicrespbru/add_research_studies",
+                "reference": "a954f98594568d87a12fb677bb330a1d817ebe4d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/leicrespbru/add_research_studies/get/a954f98594568d87a12fb677bb330a1d817ebe4d.zip",
+                "reference": "a954f98594568d87a12fb677bb330a1d817ebe4d",
+                "shasum": ""
+            },
+            "require": {
+                "add/research": "~3.0",
+                "add/research_action": "~1.0",
+                "clinicle/core": "~2.7",
+                "clinicle/install": "~1.0",
+                "clinicle/query": "~1.0"
+            },
+            "type": "clinicle-module",
+            "autoload": {
+                "classmap": [
+                    "php"
+                ]
+            },
+            "description": "Research studies module (part of ADD)",
+            "time": "2016-11-24T16:41:46+00:00"
+        },
+        {
+            "name": "add/resphy",
+            "version": "v1.5.1",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/leicrespbru/add_resphy",
+                "reference": "13b9ac3fc8fa64aa4ec2fe09ce627917376ae336"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/leicrespbru/add_resphy/get/13b9ac3fc8fa64aa4ec2fe09ce627917376ae336.zip",
+                "reference": "13b9ac3fc8fa64aa4ec2fe09ce627917376ae336",
+                "shasum": ""
+            },
+            "require": {
+                "add/concept": "~1.0",
+                "clinicle/client": "~1.0",
+                "clinicle/core": "~2.3",
+                "clinicle/download": "~1.0",
+                "clinicle/install": "~1.0",
+                "kachkaev/php-r": "~1.0"
+            },
+            "type": "clinicle-module",
+            "autoload": {
+                "psr-4": {
+                    "ADD\\Resphy\\": "src/"
+                },
+                "classmap": [
+                    "lib"
+                ]
+            },
+            "description": "Respiratory physiology module (part of ADD)",
+            "time": "2019-05-31T14:08:59+00:00"
+        },
+        {
+            "name": "add/resphy_import",
+            "version": "v1.4.0",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/leicrespbru/add_resphy_import",
+                "reference": "0fd199038a9c62dd99ff34e9285e1192709f4e48"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/leicrespbru/add_resphy_import/get/0fd199038a9c62dd99ff34e9285e1192709f4e48.zip",
+                "reference": "0fd199038a9c62dd99ff34e9285e1192709f4e48",
+                "shasum": ""
+            },
+            "require": {
+                "add/referral": "^1.3",
+                "add/resphy": "^1.0",
+                "clinicle/core": "^2.12",
+                "clinicle/download": "^1.2",
+                "clinicle/import": "^1.0",
+                "clinicle/install": "^1.0",
+                "wrep/daemonizable-command": "^1.3"
+            },
+            "type": "clinicle-module",
+            "autoload": {
+                "psr-4": {
+                    "ADD\\ResphyImport\\": "src/"
+                }
+            },
+            "description": "Respiratory physiology import module (part of ADD)",
+            "time": "2017-12-07T10:31:33+00:00"
+        },
+        {
+            "name": "add/tag",
+            "version": "v2.0.0",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/leicrespbru/add_tag",
+                "reference": "df10bd5261732f8b5a7a3df4488e622fdfe912d8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/leicrespbru/add_tag/get/df10bd5261732f8b5a7a3df4488e622fdfe912d8.zip",
+                "reference": "df10bd5261732f8b5a7a3df4488e622fdfe912d8",
+                "shasum": ""
+            },
+            "require": {
+                "clinicle/core": "~2.7",
+                "clinicle/install": "~1.0"
+            },
+            "type": "clinicle-module",
+            "autoload": {
+                "classmap": [
+                    "lib"
+                ]
+            },
+            "description": "Tag module (part of ADD)",
+            "time": "2016-01-05T17:03:12+00:00"
+        },
+        {
+            "name": "add/theme",
+            "version": "v2.1.1",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/leicrespbru/add_theme",
+                "reference": "9561d33ea8372ada798022bba1509a07c5d6e575"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/leicrespbru/add_theme/get/9561d33ea8372ada798022bba1509a07c5d6e575.zip",
+                "reference": "9561d33ea8372ada798022bba1509a07c5d6e575",
+                "shasum": ""
+            },
+            "require": {
+                "clinicle/core": "~2.8",
+                "clinicle/install": "~1.0"
+            },
+            "type": "clinicle-module",
+            "description": "ADD-specific theme module",
+            "time": "2018-10-05T12:40:12+00:00"
+        },
+        {
+            "name": "apache/log4php",
+            "version": "2.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/apache/logging-log4php.git",
+                "reference": "cac428b6f67d2035af39784da1d1a299ef42fcf2"
+            },
+            "require": {
+                "php": ">=5.2.7"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/main/php/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "description": "A versatile logging framework for PHP",
+            "homepage": "http://logging.apache.org/log4php/",
+            "keywords": [
+                "log",
+                "logging",
+                "php"
+            ],
+            "time": "2012-10-26T09:13:25+00:00"
+        },
+        {
+            "name": "cdbrkr/conditions",
+            "version": "v1.0.0",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/cdbrkr/conditions",
+                "reference": "5454cd51f99a8fcb2dfdbc2e39021ed275939e41"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/cdbrkr/conditions/get/5454cd51f99a8fcb2dfdbc2e39021ed275939e41.zip",
+                "reference": "5454cd51f99a8fcb2dfdbc2e39021ed275939e41",
+                "shasum": ""
+            },
+            "require": {
+                "cdbrkr/logic": "~1.1",
+                "clinicle/base": "~1.0",
+                "clinicle/icd10": "~2.0"
+            },
+            "type": "clinicle-module",
+            "autoload": {
+                "psr-4": {
+                    "Codebreaker\\Conditions\\": "src/"
+                }
+            },
+            "description": "Codebreaker conditions data module",
+            "time": "2016-11-01T16:06:11+00:00"
+        },
+        {
+            "name": "cdbrkr/logic",
+            "version": "v1.3.1",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/cdbrkr/logic",
+                "reference": "6a82cf47bfaa5d25016212445dc50f0f2dd36479"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/cdbrkr/logic/get/6a82cf47bfaa5d25016212445dc50f0f2dd36479.zip",
+                "reference": "6a82cf47bfaa5d25016212445dc50f0f2dd36479",
+                "shasum": ""
+            },
+            "require": {
+                "clinicle/base": "~1.0",
+                "clinicle/query": "~1.1",
+                "clinicle/touch": "~2.0"
+            },
+            "type": "clinicle-module",
+            "autoload": {
+                "classmap": [
+                    "php"
+                ]
+            },
+            "description": "Codebreaker core logic",
+            "time": "2017-04-27T10:15:42+00:00"
+        },
+        {
+            "name": "clinicle/ajax",
+            "version": "v1.1.1",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/leicrespbru/clinicle_ajax",
+                "reference": "e96dd43479bb85d76fa32ae1403912b190841ea6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/leicrespbru/clinicle_ajax/get/e96dd43479bb85d76fa32ae1403912b190841ea6.zip",
+                "reference": "e96dd43479bb85d76fa32ae1403912b190841ea6",
+                "shasum": ""
+            },
+            "require": {
+                "clinicle/install": "^1.0"
+            },
+            "type": "clinicle-module",
+            "autoload": {
+                "classmap": [
+                    "lib"
+                ]
+            },
+            "description": "ClinicLE AJAX module",
+            "time": "2017-04-21T13:49:10+00:00"
+        },
+        {
+            "name": "clinicle/api",
+            "version": "v1.1.0",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/leicrespbru/clinicle_api",
+                "reference": "53b843e431056858824fada0c5d1f629b3624f68"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/leicrespbru/clinicle_api/get/53b843e431056858824fada0c5d1f629b3624f68.zip",
+                "reference": "53b843e431056858824fada0c5d1f629b3624f68",
+                "shasum": ""
+            },
+            "require": {
+                "clinicle/install": "~1.0"
+            },
+            "type": "clinicle-module",
+            "autoload": {
+                "classmap": [
+                    "lib"
+                ]
+            },
+            "description": "ClinicLE API module",
+            "time": "2016-11-01T16:37:25+00:00"
+        },
+        {
+            "name": "clinicle/base",
+            "version": "1.6.x-dev",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/leicrespbru/clinicle_base",
+                "reference": "1603f4c4f85d038ee46514f7a793fdfc2842da4d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/leicrespbru/clinicle_base/get/1603f4c4f85d038ee46514f7a793fdfc2842da4d.zip",
+                "reference": "1603f4c4f85d038ee46514f7a793fdfc2842da4d",
+                "shasum": ""
+            },
+            "require": {
+                "clinicle/ajax": "^1.1",
+                "clinicle/api": "^1.1",
+                "clinicle/client": "^1.10",
+                "clinicle/core": "^2.13",
+                "clinicle/options": "^1.6",
+                "clinicle/patient": "^1.3",
+                "clinicle/record": "^1.1",
+                "clinicle/setup": "^1.0",
+                "clinicle/web": "^1.3",
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "description": "ClinicLE base",
+            "time": "2017-09-12T10:16:56+00:00"
+        },
+        {
+            "name": "clinicle/client",
+            "version": "v1.12.3",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/leicrespbru/clinicle_client",
+                "reference": "740412eebbec73a7233219ce24ecb1df6566bbbd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/leicrespbru/clinicle_client/get/740412eebbec73a7233219ce24ecb1df6566bbbd.zip",
+                "reference": "740412eebbec73a7233219ce24ecb1df6566bbbd",
+                "shasum": ""
+            },
+            "require": {
+                "add/concept": "~1.3",
+                "clinicle/api": "^1.1",
+                "clinicle/core": "^2.11",
+                "clinicle/dataframe": "^0.1",
+                "clinicle/install": "~1.0",
+                "clinicle/web": "^1.4"
+            },
+            "type": "clinicle-module",
+            "autoload": {
+                "psr-4": {
+                    "ClinicLE\\Client\\": "src/"
+                },
+                "classmap": [
+                    "php"
+                ]
+            },
+            "description": "ClinicLE client module",
+            "time": "2019-04-22T23:22:00+00:00"
+        },
+        {
+            "name": "clinicle/common",
+            "version": "1.4.x-dev",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/clinicle/common",
+                "reference": "d2ff23b85d5bd75ea123047ddd544be14bb35024"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/clinicle/common/get/d2ff23b85d5bd75ea123047ddd544be14bb35024.zip",
+                "reference": "d2ff23b85d5bd75ea123047ddd544be14bb35024",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ClinicLE\\Common\\": "src"
+                }
+            },
+            "authors": [
+                {
+                    "name": "Rob Free",
+                    "email": "rcf8@le.ac.uk"
+                }
+            ],
+            "description": "ClinicLE common classes",
+            "time": "2018-01-15T13:44:41+00:00"
+        },
+        {
+            "name": "clinicle/core",
+            "version": "v2.17.2",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/leicrespbru/clinicle_core",
+                "reference": "49960707c8023c7f5a6692868a1535da9383bcd8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/leicrespbru/clinicle_core/get/49960707c8023c7f5a6692868a1535da9383bcd8.zip",
+                "reference": "49960707c8023c7f5a6692868a1535da9383bcd8",
+                "shasum": ""
+            },
+            "require": {
+                "apache/log4php": "^2.1",
+                "clinicle/ajax": "^1.0",
+                "clinicle/common": "^1.3",
+                "clinicle/datafile": "^1.0",
+                "clinicle/email": "^1.0",
+                "clinicle/manage": "^1.5",
+                "clinicle/migrate": "^1.0",
+                "leicrespbru/lrbtools": "^1.2",
+                "matthiasmullie/minify": "^1.3",
+                "php": ">=5.3.3",
+                "pimple/pimple": "^3.0",
+                "symfony/event-dispatcher": "^2.7",
+                "symfony/filesystem": "^2.7",
+                "symfony/finder": "^2.7",
+                "symfony/http-foundation": "^2.7",
+                "symfony/process": "^2.7."
+            },
+            "replace": {
+                "clinicle/system": "^1.3"
+            },
+            "bin": [
+                "bin/clinicle"
+            ],
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "lib"
+                ],
+                "psr-4": {
+                    "ClinicLE\\": "src/"
+                }
+            },
+            "description": "ClinicLE core",
+            "time": "2019-01-24T12:01:19+00:00"
+        },
+        {
+            "name": "clinicle/datafile",
+            "version": "v1.0.4",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/clinicle/datafile",
+                "reference": "f7196ed9399b9f6d68f4c854321d573d63100409"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/clinicle/datafile/get/f7196ed9399b9f6d68f4c854321d573d63100409.zip",
+                "reference": "f7196ed9399b9f6d68f4c854321d573d63100409",
+                "shasum": ""
+            },
+            "require": {
+                "clinicle/common": "^1.0",
+                "php": ">=5.3.3",
+                "phpoffice/phpexcel": "^1.8"
+            },
+            "require-dev": {
+                "apache/log4php": "*",
+                "phpunit/phpunit": "^4.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ClinicLE\\DataFile\\": "src",
+                    "ClinicLE\\Test\\DataFile\\": "test"
+                }
+            },
+            "description": "Library which provides support for loading XLSX and CSV files a row at a time or in one go",
+            "time": "2016-09-23T18:32:54+00:00"
+        },
+        {
+            "name": "clinicle/dataframe",
+            "version": "v0.1.0",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/clinicle/dataframe",
+                "reference": "7210799c522ceffd8e85ec5487d0a4e255f58402"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/clinicle/dataframe/get/7210799c522ceffd8e85ec5487d0a4e255f58402.zip",
+                "reference": "7210799c522ceffd8e85ec5487d0a4e255f58402",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ClinicLE\\DataFrame\\": "src/"
+                }
+            },
+            "description": "ClinicLE dataframe",
+            "time": "2017-07-13T13:45:43+00:00"
+        },
+        {
+            "name": "clinicle/download",
+            "version": "v1.3.0",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/leicrespbru/clinicle_download",
+                "reference": "a66ed20e9f856c1cbe5c70889e2044c00c88d1b5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/leicrespbru/clinicle_download/get/a66ed20e9f856c1cbe5c70889e2044c00c88d1b5.zip",
+                "reference": "a66ed20e9f856c1cbe5c70889e2044c00c88d1b5",
+                "shasum": ""
+            },
+            "require": {
+                "clinicle/core": "~2.11"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "lib"
+                ]
+            },
+            "description": "ClinicLE file download handling",
+            "time": "2017-10-08T21:21:19+00:00"
+        },
+        {
+            "name": "clinicle/email",
+            "version": "v1.0.1",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/clinicle/email",
+                "reference": "483a7075b89e7a9d53d7fa5ca82b5023215f7b31"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/clinicle/email/get/483a7075b89e7a9d53d7fa5ca82b5023215f7b31.zip",
+                "reference": "483a7075b89e7a9d53d7fa5ca82b5023215f7b31",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ClinicLE\\Service\\Email\\": "src"
+                }
+            },
+            "authors": [
+                {
+                    "name": "Rob Free",
+                    "email": "rcf8@le.ac.uk"
+                }
+            ],
+            "description": "ClinicLE email service",
+            "time": "2017-07-27T14:10:32+00:00"
+        },
+        {
+            "name": "clinicle/episode",
+            "version": "v1.0.6",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/clinicle/episode",
+                "reference": "dc49a6c4cf20b4e49ed5d1ae48dfcc8bdd067c33"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/clinicle/episode/get/dc49a6c4cf20b4e49ed5d1ae48dfcc8bdd067c33.zip",
+                "reference": "dc49a6c4cf20b4e49ed5d1ae48dfcc8bdd067c33",
+                "shasum": ""
+            },
+            "require": {
+                "clinicle/core": "^2.11",
+                "clinicle/install": "^1.2",
+                "clinicle/manage": "^1.5"
+            },
+            "type": "clinicle-module",
+            "autoload": {
+                "classmap": [
+                    "lib"
+                ],
+                "psr-4": {
+                    "ClinicLE\\Episode\\": "src/"
+                }
+            },
+            "description": "ClinicLE episode section support",
+            "time": "2018-07-11T11:04:19+00:00"
+        },
+        {
+            "name": "clinicle/export",
+            "version": "v1.2.1",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/leicrespbru/clinicle_export",
+                "reference": "d6f71cc39795a1d279ce945fd3c2486d81b63b0d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/leicrespbru/clinicle_export/get/d6f71cc39795a1d279ce945fd3c2486d81b63b0d.zip",
+                "reference": "d6f71cc39795a1d279ce945fd3c2486d81b63b0d",
+                "shasum": ""
+            },
+            "require": {
+                "clinicle/install": "~1.0"
+            },
+            "type": "clinicle-module",
+            "autoload": {
+                "classmap": [
+                    "lib"
+                ]
+            },
+            "description": "ClinicLE export module",
+            "time": "2016-12-06T14:15:44+00:00"
+        },
+        {
+            "name": "clinicle/icd10",
+            "version": "v2.0.0",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/leicrespbru/clinicle_icd10",
+                "reference": "426ab481e6ba130dc014e44818ac9d39f2e4eccf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/leicrespbru/clinicle_icd10/get/426ab481e6ba130dc014e44818ac9d39f2e4eccf.zip",
+                "reference": "426ab481e6ba130dc014e44818ac9d39f2e4eccf",
+                "shasum": ""
+            },
+            "require": {
+                "clinicle/base": "~1.0"
+            },
+            "type": "clinicle-module",
+            "autoload": {
+                "classmap": [
+                    "php"
+                ]
+            },
+            "description": "ICD10 module",
+            "time": "2015-12-10T12:49:59+00:00"
+        },
+        {
+            "name": "clinicle/import",
+            "version": "v1.0.3",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/leicrespbru/clinicle_import",
+                "reference": "14a2fe32da457a5bc750e0e179b5717c90d17004"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/leicrespbru/clinicle_import/get/14a2fe32da457a5bc750e0e179b5717c90d17004.zip",
+                "reference": "14a2fe32da457a5bc750e0e179b5717c90d17004",
+                "shasum": ""
+            },
+            "require": {
+                "clinicle/install": "~1.0"
+            },
+            "type": "clinicle-module",
+            "autoload": {
+                "classmap": [
+                    "lib"
+                ]
+            },
+            "description": "ClinicLE import module",
+            "time": "2016-06-14T17:32:56+00:00"
+        },
+        {
+            "name": "clinicle/install",
+            "version": "v1.2.4",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/leicrespbru/clinicle_install",
+                "reference": "435136e49708165321bf2ddf63444e51bed4e5f4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/leicrespbru/clinicle_install/get/435136e49708165321bf2ddf63444e51bed4e5f4.zip",
+                "reference": "435136e49708165321bf2ddf63444e51bed4e5f4",
+                "shasum": ""
+            },
+            "require": {
+                "clinicle/common": "~1.0",
+                "clinicle/core": "~2.11",
+                "clinicle/datafile": "^1.0",
+                "composer-plugin-api": "~1.0",
+                "composer/composer": "^1.0"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "ClinicLE\\Install\\ComposerModuleInstallerPlugin"
+            },
+            "autoload": {
+                "classmap": [
+                    "lib"
+                ],
+                "psr-4": {
+                    "ClinicLE\\Install\\": "src/"
+                }
+            },
+            "scripts": {
+                "post-autoload-dump": [
+                    "ClinicLE\\Install\\ComposerModuleInstallerPlugin::onPostAutoloadDump"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "time": "2017-09-27T15:36:58+00:00"
+        },
+        {
+            "name": "clinicle/letter",
+            "version": "v1.0.1",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/leicrespbru/clinicle_letter",
+                "reference": "266b8f9e7ddeb0848dd7a92f8fa0883e85426643"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/leicrespbru/clinicle_letter/get/266b8f9e7ddeb0848dd7a92f8fa0883e85426643.zip",
+                "reference": "266b8f9e7ddeb0848dd7a92f8fa0883e85426643",
+                "shasum": ""
+            },
+            "require": {
+                "clinicle/install": "~1.0",
+                "phpoffice/phpword": "^0.11"
+            },
+            "type": "clinicle-module",
+            "autoload": {
+                "classmap": [
+                    "lib"
+                ]
+            },
+            "description": "ClinicLE letter module",
+            "time": "2017-07-27T12:53:14+00:00"
+        },
+        {
+            "name": "clinicle/manage",
+            "version": "v1.8.1",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/leicrespbru/clinicle_manage",
+                "reference": "2b991454abab4d8813e474f3272b638695eba1e4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/leicrespbru/clinicle_manage/get/2b991454abab4d8813e474f3272b638695eba1e4.zip",
+                "reference": "2b991454abab4d8813e474f3272b638695eba1e4",
+                "shasum": ""
+            },
+            "require": {
+                "clinicle/core": "^2.13",
+                "clinicle/install": "^1.2",
+                "php": ">=5.3.3",
+                "symfony/filesystem": "^2.7",
+                "symfony/finder": "^2.7",
+                "wrep/daemonizable-command": "^1.3"
+            },
+            "type": "clinicle-module",
+            "autoload": {
+                "psr-4": {
+                    "ClinicLE\\Manage\\": "src/"
+                }
+            },
+            "description": "ClinicLE manage",
+            "time": "2017-10-27T20:54:57+00:00"
+        },
+        {
+            "name": "clinicle/migrate",
+            "version": "v1.0.1",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/clinicle/migrate",
+                "reference": "78605495ee16372573851e91bd4c61445f9ebf04"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/clinicle/migrate/get/78605495ee16372573851e91bd4c61445f9ebf04.zip",
+                "reference": "78605495ee16372573851e91bd4c61445f9ebf04",
+                "shasum": ""
+            },
+            "require": {
+                "clinicle/common": "^1.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.8.21"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ClinicLE\\Migrate\\": [
+                        "src"
+                    ],
+                    "ClinicLE\\Test\\Migrate\\": [
+                        "test"
+                    ]
+                }
+            },
+            "authors": [
+                {
+                    "name": "rob",
+                    "email": "your@email.here"
+                }
+            ],
+            "description": "Description of project clinicle-migrate.",
+            "time": "2017-08-18T15:41:42+00:00"
+        },
+        {
+            "name": "clinicle/monitor",
+            "version": "v1.0.0",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/clinicle/monitor",
+                "reference": "457918288b2b5e3861e2c7e0c6c7c4a8de2c2739"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/clinicle/monitor/get/457918288b2b5e3861e2c7e0c6c7c4a8de2c2739.zip",
+                "reference": "457918288b2b5e3861e2c7e0c6c7c4a8de2c2739",
+                "shasum": ""
+            },
+            "require": {
+                "apache/log4php": "^2.1",
+                "clinicle/common": "^1.0",
+                "clinicle/email": "^1.0",
+                "guzzle/guzzle": "^3.0",
+                "ramsey/uuid": "^2.9"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Clinicle\\Monitor\\": "src/"
+                },
+                "classmap": [
+                    "lib"
+                ]
+            },
+            "authors": [
+                {
+                    "name": "Rob Free",
+                    "email": "rcf8@le.ac.uk"
+                }
+            ],
+            "description": "ClinicLE monitor wrapper",
+            "time": "2016-11-01T16:42:48+00:00"
+        },
+        {
+            "name": "clinicle/options",
+            "version": "v1.7.0",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/leicrespbru/clinicle_options",
+                "reference": "adf91ebb1f3aa621715ebae4b54b92ebc2274da1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/leicrespbru/clinicle_options/get/adf91ebb1f3aa621715ebae4b54b92ebc2274da1.zip",
+                "reference": "adf91ebb1f3aa621715ebae4b54b92ebc2274da1",
+                "shasum": ""
+            },
+            "require": {
+                "clinicle/core": "^2.11",
+                "clinicle/install": "^1.0"
+            },
+            "type": "clinicle-module",
+            "autoload": {
+                "classmap": [
+                    "lib"
+                ]
+            },
+            "description": "ClinicLE options module",
+            "time": "2017-07-13T12:45:59+00:00"
+        },
+        {
+            "name": "clinicle/patient",
+            "version": "v1.4.2",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/leicrespbru/add_patient",
+                "reference": "b7e2d3158903dd27073dbb91e554736f8237c282"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/leicrespbru/add_patient/get/b7e2d3158903dd27073dbb91e554736f8237c282.zip",
+                "reference": "b7e2d3158903dd27073dbb91e554736f8237c282",
+                "shasum": ""
+            },
+            "require": {
+                "clinicle/ajax": "~1.0",
+                "clinicle/base": "~1.6",
+                "clinicle/client": "^1.12",
+                "clinicle/import": "~1.0",
+                "clinicle/install": "~1.0"
+            },
+            "replace": {
+                "add/patient": "^1.0"
+            },
+            "type": "clinicle-module",
+            "autoload": {
+                "classmap": [
+                    "lib"
+                ],
+                "psr-4": {
+                    "ClinicLE\\Patient\\": "src/"
+                }
+            },
+            "description": "ClinicLE patient module",
+            "time": "2018-10-05T12:31:04+00:00"
+        },
+        {
+            "name": "clinicle/query",
+            "version": "v1.2.0",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/leicrespbru/clinicle_query",
+                "reference": "6782f2109efcb8f1c085e2239962bf86f343af64"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/leicrespbru/clinicle_query/get/6782f2109efcb8f1c085e2239962bf86f343af64.zip",
+                "reference": "6782f2109efcb8f1c085e2239962bf86f343af64",
+                "shasum": ""
+            },
+            "require": {
+                "clinicle/core": "~2.3",
+                "clinicle/install": "~1.0"
+            },
+            "type": "clinicle-module",
+            "autoload": {
+                "classmap": [
+                    "lib"
+                ]
+            },
+            "description": "ClinicLE query module",
+            "time": "2016-01-20T16:57:19+00:00"
+        },
+        {
+            "name": "clinicle/record",
+            "version": "v1.1.1",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/leicrespbru/clinicle_record",
+                "reference": "ef0f82f1fb7076324cd144f9a71dfe3f368261d2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/leicrespbru/clinicle_record/get/ef0f82f1fb7076324cd144f9a71dfe3f368261d2.zip",
+                "reference": "ef0f82f1fb7076324cd144f9a71dfe3f368261d2",
+                "shasum": ""
+            },
+            "require": {
+                "clinicle/client": "~1.0",
+                "clinicle/core": "~2.3",
+                "clinicle/install": "~1.0",
+                "clinicle/options": "~1.0"
+            },
+            "type": "clinicle-module",
+            "autoload": {
+                "classmap": [
+                    "lib"
+                ]
+            },
+            "description": "ClinicLE user record handling",
+            "time": "2017-10-18T16:04:17+00:00"
+        },
+        {
+            "name": "clinicle/remote",
+            "version": "v1.0.1",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/leicrespbru/clinicle_remote",
+                "reference": "2473e8a9a760612ca0957e49b961022ef0726b8f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/leicrespbru/clinicle_remote/get/2473e8a9a760612ca0957e49b961022ef0726b8f.zip",
+                "reference": "2473e8a9a760612ca0957e49b961022ef0726b8f",
+                "shasum": ""
+            },
+            "require": {
+                "clinicle/common": "~1.0",
+                "guzzle/guzzle": "*"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ClinicLE\\Service\\Remote\\": "src"
+                }
+            },
+            "authors": [
+                {
+                    "name": "Rob Free",
+                    "email": "rcf8@le.ac.uk"
+                }
+            ],
+            "description": "ClinicLE remote access",
+            "time": "2016-09-20T16:52:03+00:00"
+        },
+        {
+            "name": "clinicle/report",
+            "version": "v1.2.1",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/leicrespbru/clinicle_report",
+                "reference": "78d235fbbe5a54b06f5ac2c63bd0476e4ebbc15e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/leicrespbru/clinicle_report/get/78d235fbbe5a54b06f5ac2c63bd0476e4ebbc15e.zip",
+                "reference": "78d235fbbe5a54b06f5ac2c63bd0476e4ebbc15e",
+                "shasum": ""
+            },
+            "require": {
+                "clinicle/api": "^1.1",
+                "clinicle/base": "^1.5",
+                "clinicle/install": "~1.0",
+                "itbz/fpdf": "1.7.2"
+            },
+            "type": "clinicle-module",
+            "autoload": {
+                "classmap": [
+                    "lib"
+                ]
+            },
+            "description": "ClinicLE report module",
+            "time": "2016-11-04T13:42:41+00:00"
+        },
+        {
+            "name": "clinicle/report_ext",
+            "version": "v1.1.2",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/leicrespbru/clinicle_report_ext",
+                "reference": "7b6e9226bb66fd8a9bb6c2d2d57852089ad722b8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/leicrespbru/clinicle_report_ext/get/7b6e9226bb66fd8a9bb6c2d2d57852089ad722b8.zip",
+                "reference": "7b6e9226bb66fd8a9bb6c2d2d57852089ad722b8",
+                "shasum": ""
+            },
+            "require": {
+                "clinicle/core": "~2.3",
+                "clinicle/install": "~1.0"
+            },
+            "type": "clinicle-module",
+            "autoload": {
+                "classmap": [
+                    "lib"
+                ]
+            },
+            "description": "ClinicLE extended text-file based reports",
+            "time": "2016-04-18T13:03:55+00:00"
+        },
+        {
+            "name": "clinicle/risk-score",
+            "version": "v1.0.1",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/clinicle/risk-score",
+                "reference": "78fb56a5f2c5dc2d73201cb8bf27f5087ea91d68"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/clinicle/risk-score/get/78fb56a5f2c5dc2d73201cb8bf27f5087ea91d68.zip",
+                "reference": "78fb56a5f2c5dc2d73201cb8bf27f5087ea91d68",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.1"
+            },
+            "type": "clinicle-module",
+            "autoload": {
+                "psr-4": {
+                    "ClinicLE\\RiskScore\\": "src"
+                }
+            },
+            "authors": [
+                {
+                    "name": "Rob Free",
+                    "email": "rcf8@le.ac.uk"
+                }
+            ],
+            "description": "ClinicLE risk score calculation module",
+            "time": "2018-01-09T10:12:08+00:00"
+        },
+        {
+            "name": "clinicle/search",
+            "version": "v0.1.0",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/clinicle/search",
+                "reference": "dc1cb68bd232447ecfa0665fe6e3c0440ac52049"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/clinicle/search/get/dc1cb68bd232447ecfa0665fe6e3c0440ac52049.zip",
+                "reference": "dc1cb68bd232447ecfa0665fe6e3c0440ac52049",
+                "shasum": ""
+            },
+            "require": {
+                "clinicle/client": "^1.11",
+                "clinicle/common": "^1.4",
+                "clinicle/core": "^2.14",
+                "clinicle/patient": "^1.3",
+                "clinicle/web": "^1.4",
+                "ircmaxell/random-lib": "^1.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.1"
+            },
+            "type": "clinicle-module",
+            "autoload": {
+                "psr-4": {
+                    "ClinicLE\\Search\\": "src"
+                },
+                "classmap": [
+                    "lib"
+                ]
+            },
+            "authors": [
+                {
+                    "name": "Rob Free",
+                    "email": "rcf8@le.ac.uk"
+                }
+            ],
+            "description": "ClinicLE search module",
+            "time": "2019-04-22T23:19:47+00:00"
+        },
+        {
+            "name": "clinicle/setup",
+            "version": "v1.0.0",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/clinicle/setup",
+                "reference": "04d97ef07df01ef55a03669aca5f556a7ff20839"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/clinicle/setup/get/04d97ef07df01ef55a03669aca5f556a7ff20839.zip",
+                "reference": "04d97ef07df01ef55a03669aca5f556a7ff20839",
+                "shasum": ""
+            },
+            "require": {
+                "clinicle/core": "^2.11",
+                "clinicle/install": "^1.2",
+                "clinicle/migrate": "^1.0"
+            },
+            "type": "clinicle-module",
+            "autoload": {
+                "psr-4": {
+                    "ClinicLE\\Setup\\": "src/"
+                }
+            },
+            "description": "ClinicLE setup and migration",
+            "time": "2016-11-01T16:10:31+00:00"
+        },
+        {
+            "name": "clinicle/touch",
+            "version": "v2.0.1",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/leicrespbru/clinicle_touch",
+                "reference": "d26363842138141ce383919d1c8fc9ec2259ec38"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/leicrespbru/clinicle_touch/get/d26363842138141ce383919d1c8fc9ec2259ec38.zip",
+                "reference": "d26363842138141ce383919d1c8fc9ec2259ec38",
+                "shasum": ""
+            },
+            "require": {
+                "clinicle/base": "~1.0"
+            },
+            "type": "clinicle-module",
+            "autoload": {
+                "classmap": [
+                    "src"
+                ]
+            },
+            "description": "Touch interface module",
+            "time": "2016-03-15T13:29:23+00:00"
+        },
+        {
+            "name": "clinicle/web",
+            "version": "v1.4.4",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/leicrespbru/clinicle_web",
+                "reference": "4c5d4bcfebeea4bc1b02c36c47c1a3686e03012c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/leicrespbru/clinicle_web/get/4c5d4bcfebeea4bc1b02c36c47c1a3686e03012c.zip",
+                "reference": "4c5d4bcfebeea4bc1b02c36c47c1a3686e03012c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "yuanqing/interpolate": "~1.2"
+            },
+            "type": "library",
+            "description": "ClinicLE web",
+            "time": "2018-04-26T15:28:24+00:00"
+        },
+        {
+            "name": "composer/ca-bundle",
+            "version": "1.1.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/composer/ca-bundle.git",
+                "reference": "558f321c52faeb4828c03e7dc0cfe39a09e09a2d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/composer/ca-bundle/zipball/558f321c52faeb4828c03e7dc0cfe39a09e09a2d",
+                "reference": "558f321c52faeb4828c03e7dc0cfe39a09e09a2d",
+                "shasum": ""
+            },
+            "require": {
+                "ext-openssl": "*",
+                "ext-pcre": "*",
+                "php": "^5.3.2 || ^7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.5",
+                "psr/log": "^1.0",
+                "symfony/process": "^2.5 || ^3.0 || ^4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Composer\\CaBundle\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jordi Boggiano",
+                    "email": "j.boggiano@seld.be",
+                    "homepage": "http://seld.be"
+                }
+            ],
+            "description": "Lets you find a path to the system CA bundle, and includes a fallback to the Mozilla CA bundle.",
+            "keywords": [
+                "cabundle",
+                "cacert",
+                "certificate",
+                "ssl",
+                "tls"
+            ],
+            "time": "2019-01-28T09:30:10+00:00"
+        },
+        {
+            "name": "composer/composer",
+            "version": "1.8.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/composer/composer.git",
+                "reference": "949b116f9e7d98d8d276594fed74b580d125c0e6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/composer/composer/zipball/949b116f9e7d98d8d276594fed74b580d125c0e6",
+                "reference": "949b116f9e7d98d8d276594fed74b580d125c0e6",
+                "shasum": ""
+            },
+            "require": {
+                "composer/ca-bundle": "^1.0",
+                "composer/semver": "^1.0",
+                "composer/spdx-licenses": "^1.2",
+                "composer/xdebug-handler": "^1.1",
+                "justinrainbow/json-schema": "^3.0 || ^4.0 || ^5.0",
+                "php": "^5.3.2 || ^7.0",
+                "psr/log": "^1.0",
+                "seld/jsonlint": "^1.4",
+                "seld/phar-utils": "^1.0",
+                "symfony/console": "^2.7 || ^3.0 || ^4.0",
+                "symfony/filesystem": "^2.7 || ^3.0 || ^4.0",
+                "symfony/finder": "^2.7 || ^3.0 || ^4.0",
+                "symfony/process": "^2.7 || ^3.0 || ^4.0"
+            },
+            "conflict": {
+                "symfony/console": "2.8.38"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8.35 || ^5.7",
+                "phpunit/phpunit-mock-objects": "^2.3 || ^3.0"
+            },
+            "suggest": {
+                "ext-openssl": "Enabling the openssl extension allows you to access https URLs for repositories and packages",
+                "ext-zip": "Enabling the zip extension allows you to unzip archives",
+                "ext-zlib": "Allow gzip compression of HTTP requests"
+            },
+            "bin": [
+                "bin/composer"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.8-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Composer\\": "src/Composer"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nils Adermann",
+                    "email": "naderman@naderman.de",
+                    "homepage": "http://www.naderman.de"
+                },
+                {
+                    "name": "Jordi Boggiano",
+                    "email": "j.boggiano@seld.be",
+                    "homepage": "http://seld.be"
+                }
+            ],
+            "description": "Composer helps you declare, manage and install dependencies of PHP projects, ensuring you have the right stack everywhere.",
+            "homepage": "https://getcomposer.org/",
+            "keywords": [
+                "autoload",
+                "dependency",
+                "package"
+            ],
+            "time": "2019-04-09T15:46:48+00:00"
+        },
+        {
+            "name": "composer/semver",
+            "version": "1.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/composer/semver.git",
+                "reference": "46d9139568ccb8d9e7cdd4539cab7347568a5e2e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/composer/semver/zipball/46d9139568ccb8d9e7cdd4539cab7347568a5e2e",
+                "reference": "46d9139568ccb8d9e7cdd4539cab7347568a5e2e",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.3.2 || ^7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.5 || ^5.0.5",
+                "phpunit/phpunit-mock-objects": "2.3.0 || ^3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Composer\\Semver\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nils Adermann",
+                    "email": "naderman@naderman.de",
+                    "homepage": "http://www.naderman.de"
+                },
+                {
+                    "name": "Jordi Boggiano",
+                    "email": "j.boggiano@seld.be",
+                    "homepage": "http://seld.be"
+                },
+                {
+                    "name": "Rob Bast",
+                    "email": "rob.bast@gmail.com",
+                    "homepage": "http://robbast.nl"
+                }
+            ],
+            "description": "Semver library that offers utilities, version constraint parsing and validation.",
+            "keywords": [
+                "semantic",
+                "semver",
+                "validation",
+                "versioning"
+            ],
+            "time": "2019-03-19T17:25:45+00:00"
+        },
+        {
+            "name": "composer/spdx-licenses",
+            "version": "1.5.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/composer/spdx-licenses.git",
+                "reference": "a1aa51cf3ab838b83b0867b14e56fc20fbd55b3d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/composer/spdx-licenses/zipball/a1aa51cf3ab838b83b0867b14e56fc20fbd55b3d",
+                "reference": "a1aa51cf3ab838b83b0867b14e56fc20fbd55b3d",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.3.2 || ^7.0 || ^8.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8.35 || ^5.7 || 6.5 - 7"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Composer\\Spdx\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nils Adermann",
+                    "email": "naderman@naderman.de",
+                    "homepage": "http://www.naderman.de"
+                },
+                {
+                    "name": "Jordi Boggiano",
+                    "email": "j.boggiano@seld.be",
+                    "homepage": "http://seld.be"
+                },
+                {
+                    "name": "Rob Bast",
+                    "email": "rob.bast@gmail.com",
+                    "homepage": "http://robbast.nl"
+                }
+            ],
+            "description": "SPDX licenses list and validation library.",
+            "keywords": [
+                "license",
+                "spdx",
+                "validator"
+            ],
+            "time": "2019-03-26T10:23:26+00:00"
+        },
+        {
+            "name": "composer/xdebug-handler",
+            "version": "1.3.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/composer/xdebug-handler.git",
+                "reference": "46867cbf8ca9fb8d60c506895449eb799db1184f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/composer/xdebug-handler/zipball/46867cbf8ca9fb8d60c506895449eb799db1184f",
+                "reference": "46867cbf8ca9fb8d60c506895449eb799db1184f",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.3.2 || ^7.0",
+                "psr/log": "^1.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Composer\\XdebugHandler\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "John Stevenson",
+                    "email": "john-stevenson@blueyonder.co.uk"
+                }
+            ],
+            "description": "Restarts a process without xdebug.",
+            "keywords": [
+                "Xdebug",
+                "performance"
+            ],
+            "time": "2019-05-27T17:52:04+00:00"
+        },
+        {
+            "name": "copd/main",
+            "version": "v1.0.x-dev",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/rcfree/copd_main",
+                "reference": "29e36c6b4c13786f079221bca96366edd97a7536"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/rcfree/copd_main/get/29e36c6b4c13786f079221bca96366edd97a7536.zip",
+                "reference": "29e36c6b4c13786f079221bca96366edd97a7536",
+                "shasum": ""
+            },
+            "require": {
+                "add/paasth": "^0.1",
+                "clinicle/install": "~1.0"
+            },
+            "type": "clinicle-module",
+            "autoload": {
+                "psr-4": {
+                    "COPD\\Main\\": "src/"
+                }
+            },
+            "description": "ADD COPD main module",
+            "time": "2019-04-22T23:29:01+00:00"
+        },
+        {
+            "name": "ember/asthcopd",
+            "version": "v1.4.0",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/emberuol/asthcopd",
+                "reference": "0c9a09890fee756126edd097cbb9b505297aebba"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/emberuol/asthcopd/get/0c9a09890fee756126edd097cbb9b505297aebba.zip",
+                "reference": "0c9a09890fee756126edd097cbb9b505297aebba",
+                "shasum": ""
+            },
+            "require": {
+                "add/concept": "~1.0",
+                "add/history_status": "~1.0",
+                "add/inv": "~2.0",
+                "add/med": "~1.1",
+                "add/patient": "~1.0",
+                "add/qol": "~2.4",
+                "add/resphy": "^1.5",
+                "cdbrkr/logic": "~1.1",
+                "clinicle/client": "~1.6",
+                "clinicle/core": "~2.7",
+                "clinicle/icd10": "~2.0",
+                "clinicle/install": "~1.0",
+                "clinicle/remote": "~1.0",
+                "clinicle/report": "~1.1",
+                "clinicle/touch": "~2.0",
+                "ember/blness": "~1.0"
+            },
+            "require-dev": {
+                "clinicle/core": "~2.7",
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "clinicle-module",
+            "description": "Asthma/COPD exacerbation module (part of EMBER)",
+            "time": "2019-05-31T12:47:09+00:00"
+        },
+        {
+            "name": "ember/blness",
+            "version": "v1.7.3",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/emberuol/blness",
+                "reference": "b6d2455c59713428fa8e6e92b309a9de03cec390"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/emberuol/blness/get/b6d2455c59713428fa8e6e92b309a9de03cec390.zip",
+                "reference": "b6d2455c59713428fa8e6e92b309a9de03cec390",
+                "shasum": ""
+            },
+            "require": {
+                "add/concept": "~1.1",
+                "add/history_status": "~1.0",
+                "add/inv": "~2.0",
+                "add/med": "~1.1",
+                "add/path": "~1.4",
+                "add/patient": "~1.1",
+                "add/qol": "~2.1",
+                "cdbrkr/conditions": "~1.0",
+                "cdbrkr/logic": "~1.3",
+                "clinicle/client": "~1.10",
+                "clinicle/core": "~2.12",
+                "clinicle/episode": "^1.0",
+                "clinicle/install": "~1.0",
+                "clinicle/remote": "~1.0",
+                "clinicle/touch": "~2.0"
+            },
+            "type": "clinicle-module",
+            "autoload": {
+                "classmap": [
+                    "lib"
+                ]
+            },
+            "description": "EMBER breathlessness module",
+            "time": "2019-05-31T12:43:35+00:00"
+        },
+        {
+            "name": "ember/hfail",
+            "version": "v1.1.1",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/emberuol/hfail",
+                "reference": "fe3bdf3213c2bf70b393d4e15f05bfc58d698049"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/emberuol/hfail/get/fe3bdf3213c2bf70b393d4e15f05bfc58d698049.zip",
+                "reference": "fe3bdf3213c2bf70b393d4e15f05bfc58d698049",
+                "shasum": ""
+            },
+            "require": {
+                "add/concept": "^1.0",
+                "clinicle/risk-score": "^1.0"
+            },
+            "type": "clinicle-module",
+            "autoload": {
+                "psr-4": {
+                    "EMBER\\HFail\\": "src/",
+                    "EMBER\\HFail\\Test\\": "test/"
+                }
+            },
+            "description": "EMBER heart-failure module",
+            "time": "2018-10-11T09:28:50+00:00"
+        },
+        {
+            "name": "ember/pneumonia",
+            "version": "v1.1.0",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/emberuol/pneumonia",
+                "reference": "365a5855cf19e740b82e0cc05a0e90691023e6a0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/emberuol/pneumonia/get/365a5855cf19e740b82e0cc05a0e90691023e6a0.zip",
+                "reference": "365a5855cf19e740b82e0cc05a0e90691023e6a0",
+                "shasum": ""
+            },
+            "require": {
+                "add/concept": "^1.6",
+                "ember/blness": "~1.0"
+            },
+            "require-dev": {
+                "clinicle/core": "~2.7",
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "clinicle-module",
+            "description": "Pneumonia module (part of EMBER)",
+            "time": "2018-09-13T10:20:33+00:00"
+        },
+        {
+            "name": "guzzle/guzzle",
+            "version": "v3.9.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/guzzle/guzzle3.git",
+                "reference": "0645b70d953bc1c067bbc8d5bc53194706b628d9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/guzzle/guzzle3/zipball/0645b70d953bc1c067bbc8d5bc53194706b628d9",
+                "reference": "0645b70d953bc1c067bbc8d5bc53194706b628d9",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "php": ">=5.3.3",
+                "symfony/event-dispatcher": "~2.1"
+            },
+            "replace": {
+                "guzzle/batch": "self.version",
+                "guzzle/cache": "self.version",
+                "guzzle/common": "self.version",
+                "guzzle/http": "self.version",
+                "guzzle/inflection": "self.version",
+                "guzzle/iterator": "self.version",
+                "guzzle/log": "self.version",
+                "guzzle/parser": "self.version",
+                "guzzle/plugin": "self.version",
+                "guzzle/plugin-async": "self.version",
+                "guzzle/plugin-backoff": "self.version",
+                "guzzle/plugin-cache": "self.version",
+                "guzzle/plugin-cookie": "self.version",
+                "guzzle/plugin-curlauth": "self.version",
+                "guzzle/plugin-error-response": "self.version",
+                "guzzle/plugin-history": "self.version",
+                "guzzle/plugin-log": "self.version",
+                "guzzle/plugin-md5": "self.version",
+                "guzzle/plugin-mock": "self.version",
+                "guzzle/plugin-oauth": "self.version",
+                "guzzle/service": "self.version",
+                "guzzle/stream": "self.version"
+            },
+            "require-dev": {
+                "doctrine/cache": "~1.3",
+                "monolog/monolog": "~1.0",
+                "phpunit/phpunit": "3.7.*",
+                "psr/log": "~1.0",
+                "symfony/class-loader": "~2.1",
+                "zendframework/zend-cache": "2.*,<2.3",
+                "zendframework/zend-log": "2.*,<2.3"
+            },
+            "suggest": {
+                "guzzlehttp/guzzle": "Guzzle 5 has moved to a new package name. The package you have installed, Guzzle 3, is deprecated."
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.9-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Guzzle": "src/",
+                    "Guzzle\\Tests": "tests/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
+                },
+                {
+                    "name": "Guzzle Community",
+                    "homepage": "https://github.com/guzzle/guzzle/contributors"
+                }
+            ],
+            "description": "PHP HTTP client. This library is deprecated in favor of https://packagist.org/packages/guzzlehttp/guzzle",
+            "homepage": "http://guzzlephp.org/",
+            "keywords": [
+                "client",
+                "curl",
+                "framework",
+                "http",
+                "http client",
+                "rest",
+                "web service"
+            ],
+            "abandoned": "guzzlehttp/guzzle",
+            "time": "2015-03-18T18:23:50+00:00"
+        },
+        {
+            "name": "ircmaxell/password-compat",
+            "version": "v1.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ircmaxell/password_compat.git",
+                "reference": "5c5cde8822a69545767f7c7f3058cb15ff84614c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ircmaxell/password_compat/zipball/5c5cde8822a69545767f7c7f3058cb15ff84614c",
+                "reference": "5c5cde8822a69545767f7c7f3058cb15ff84614c",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.*"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "lib/password.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Anthony Ferrara",
+                    "email": "ircmaxell@php.net",
+                    "homepage": "http://blog.ircmaxell.com"
+                }
+            ],
+            "description": "A compatibility library for the proposed simplified password hashing algorithm: https://wiki.php.net/rfc/password_hash",
+            "homepage": "https://github.com/ircmaxell/password_compat",
+            "keywords": [
+                "hashing",
+                "password"
+            ],
+            "time": "2014-11-20T16:49:30+00:00"
+        },
+        {
+            "name": "ircmaxell/random-lib",
+            "version": "v1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ircmaxell/RandomLib.git",
+                "reference": "e9e0204f40e49fa4419946c677eccd3fa25b8cf4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ircmaxell/RandomLib/zipball/e9e0204f40e49fa4419946c677eccd3fa25b8cf4",
+                "reference": "e9e0204f40e49fa4419946c677eccd3fa25b8cf4",
+                "shasum": ""
+            },
+            "require": {
+                "ircmaxell/security-lib": "^1.1",
+                "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^1.11",
+                "mikey179/vfsstream": "^1.6",
+                "phpunit/phpunit": "^4.8|^5.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "RandomLib": "lib"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Anthony Ferrara",
+                    "email": "ircmaxell@ircmaxell.com",
+                    "homepage": "http://blog.ircmaxell.com"
+                }
+            ],
+            "description": "A Library For Generating Secure Random Numbers",
+            "homepage": "https://github.com/ircmaxell/RandomLib",
+            "keywords": [
+                "cryptography",
+                "random",
+                "random-numbers",
+                "random-strings"
+            ],
+            "time": "2016-09-07T15:52:06+00:00"
+        },
+        {
+            "name": "ircmaxell/security-lib",
+            "version": "v1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ircmaxell/SecurityLib.git",
+                "reference": "f3db6de12c20c9bcd1aa3db4353a1bbe0e44e1b5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ircmaxell/SecurityLib/zipball/f3db6de12c20c9bcd1aa3db4353a1bbe0e44e1b5",
+                "reference": "f3db6de12c20c9bcd1aa3db4353a1bbe0e44e1b5",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "mikey179/vfsstream": "1.1.*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "SecurityLib": "lib"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Anthony Ferrara",
+                    "email": "ircmaxell@ircmaxell.com",
+                    "homepage": "http://blog.ircmaxell.com"
+                }
+            ],
+            "description": "A Base Security Library",
+            "homepage": "https://github.com/ircmaxell/SecurityLib",
+            "time": "2015-03-20T14:31:23+00:00"
+        },
+        {
+            "name": "itbz/fpdf",
+            "version": "1.7.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mreg-archive/fpdf.git",
+                "reference": "06d02a7bf227a62d37691a4e7e9c3a35efcb41c3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mreg-archive/fpdf/zipball/06d02a7bf227a62d37691a4e7e9c3a35efcb41c3",
+                "reference": "06d02a7bf227a62d37691a4e7e9c3a35efcb41c3",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "fpdf": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "no usage restriction"
+            ],
+            "description": "Unofficial PSR-0 compliant version of the FPDF library",
+            "homepage": "http://www.fpdf.org/",
+            "abandoned": "setasign/fpdf",
+            "time": "2013-12-27T14:18:15+00:00"
+        },
+        {
+            "name": "justinrainbow/json-schema",
+            "version": "5.2.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/justinrainbow/json-schema.git",
+                "reference": "dcb6e1006bb5fd1e392b4daa68932880f37550d4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/justinrainbow/json-schema/zipball/dcb6e1006bb5fd1e392b4daa68932880f37550d4",
+                "reference": "dcb6e1006bb5fd1e392b4daa68932880f37550d4",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "~2.2.20",
+                "json-schema/json-schema-test-suite": "1.2.0",
+                "phpunit/phpunit": "^4.8.35"
+            },
+            "bin": [
+                "bin/validate-json"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "JsonSchema\\": "src/JsonSchema/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bruno Prieto Reis",
+                    "email": "bruno.p.reis@gmail.com"
+                },
+                {
+                    "name": "Justin Rainbow",
+                    "email": "justin.rainbow@gmail.com"
+                },
+                {
+                    "name": "Igor Wiedler",
+                    "email": "igor@wiedler.ch"
+                },
+                {
+                    "name": "Robert Schönthal",
+                    "email": "seroscho@googlemail.com"
+                }
+            ],
+            "description": "A library to validate a json schema.",
+            "homepage": "https://github.com/justinrainbow/json-schema",
+            "keywords": [
+                "json",
+                "schema"
+            ],
+            "time": "2019-01-14T23:55:14+00:00"
+        },
+        {
+            "name": "kachkaev/php-r",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kachkaev/php-r.git",
+                "reference": "d8daf7125a72b14b9eb7e17096a480156d682684"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kachkaev/php-r/zipball/d8daf7125a72b14b9eb7e17096a480156d682684",
+                "reference": "d8daf7125a72b14b9eb7e17096a480156d682684",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.9"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Kachkaev\\PHPR\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alexander Kachkaev",
+                    "email": "alexander@kachkaev.ru",
+                    "homepage": "http://en.kachkaev.ru/"
+                },
+                {
+                    "name": "Contributors",
+                    "homepage": "https://github.com/kachkaev/php-r/contributors"
+                }
+            ],
+            "description": "Provides ability to run R scripts from PHP",
+            "homepage": "https://github.com/kachkaev/php-r",
+            "keywords": [
+                "Bridge",
+                "r",
+                "statistical analysis",
+                "stats"
+            ],
+            "time": "2017-12-08T10:23:22+00:00"
+        },
+        {
+            "name": "leicrespbru/lrbtools",
+            "version": "v1.2.8",
+            "source": {
+                "type": "hg",
+                "url": "https://bitbucket.org/leicrespbru/lrbtools",
+                "reference": "66b002e9c652330795b02eb225aa277997d661d8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/leicrespbru/lrbtools/get/66b002e9c652330795b02eb225aa277997d661d8.zip",
+                "reference": "66b002e9c652330795b02eb225aa277997d661d8",
+                "shasum": ""
+            },
+            "require": {
+                "apache/log4php": "^2.3",
+                "php": ">=5.3.3",
+                "phpoffice/phpexcel": "1.8.1"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "lib"
+                ]
+            },
+            "description": "LRB",
+            "time": "2017-11-07T10:53:08+00:00"
+        },
+        {
+            "name": "matthiasmullie/minify",
+            "version": "1.3.61",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/matthiasmullie/minify.git",
+                "reference": "d5acb8ce5b6acb7d11bafe97cecc533f6e4fd751"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/matthiasmullie/minify/zipball/d5acb8ce5b6acb7d11bafe97cecc533f6e4fd751",
+                "reference": "d5acb8ce5b6acb7d11bafe97cecc533f6e4fd751",
+                "shasum": ""
+            },
+            "require": {
+                "ext-pcre": "*",
+                "matthiasmullie/path-converter": "~1.1",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "~2.0",
+                "matthiasmullie/scrapbook": "~1.0",
+                "phpunit/phpunit": "~4.8"
+            },
+            "suggest": {
+                "psr/cache-implementation": "Cache implementation to use with Minify::cache"
+            },
+            "bin": [
+                "bin/minifycss",
+                "bin/minifyjs"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "MatthiasMullie\\Minify\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Matthias Mullie",
+                    "email": "minify@mullie.eu",
+                    "homepage": "http://www.mullie.eu",
+                    "role": "Developer"
+                }
+            ],
+            "description": "CSS & JavaScript minifier, in PHP. Removes whitespace, strips comments, combines files (incl. @import statements and small assets in CSS files), and optimizes/shortens a few common programming patterns.",
+            "homepage": "http://www.minifier.org",
+            "keywords": [
+                "JS",
+                "css",
+                "javascript",
+                "minifier",
+                "minify"
+            ],
+            "time": "2018-11-26T23:10:39+00:00"
+        },
+        {
+            "name": "matthiasmullie/path-converter",
+            "version": "1.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/matthiasmullie/path-converter.git",
+                "reference": "5e4b121c8b9f97c80835c1d878b0812ba1d607c9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/matthiasmullie/path-converter/zipball/5e4b121c8b9f97c80835c1d878b0812ba1d607c9",
+                "reference": "5e4b121c8b9f97c80835c1d878b0812ba1d607c9",
+                "shasum": ""
+            },
+            "require": {
+                "ext-pcre": "*",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.8"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "MatthiasMullie\\PathConverter\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Matthias Mullie",
+                    "email": "pathconverter@mullie.eu",
+                    "homepage": "http://www.mullie.eu",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Relative path converter",
+            "homepage": "http://github.com/matthiasmullie/path-converter",
+            "keywords": [
+                "converter",
+                "path",
+                "paths",
+                "relative"
+            ],
+            "time": "2018-10-25T15:19:41+00:00"
+        },
+        {
+            "name": "paragonie/random_compat",
+            "version": "v2.0.18",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/paragonie/random_compat.git",
+                "reference": "0a58ef6e3146256cc3dc7cc393927bcc7d1b72db"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/0a58ef6e3146256cc3dc7cc393927bcc7d1b72db",
+                "reference": "0a58ef6e3146256cc3dc7cc393927bcc7d1b72db",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.*|5.*"
+            },
+            "suggest": {
+                "ext-libsodium": "Provides a modern crypto API that can be used to generate random bytes."
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "lib/random.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Paragon Initiative Enterprises",
+                    "email": "security@paragonie.com",
+                    "homepage": "https://paragonie.com"
+                }
+            ],
+            "description": "PHP 5.x polyfill for random_bytes() and random_int() from PHP 7",
+            "keywords": [
+                "csprng",
+                "polyfill",
+                "pseudorandom",
+                "random"
+            ],
+            "time": "2019-01-03T20:59:08+00:00"
+        },
+        {
+            "name": "phpoffice/phpexcel",
+            "version": "1.8.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PHPOffice/PHPExcel.git",
+                "reference": "372c7cbb695a6f6f1e62649381aeaa37e7e70b32"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PHPOffice/PHPExcel/zipball/372c7cbb695a6f6f1e62649381aeaa37e7e70b32",
+                "reference": "372c7cbb695a6f6f1e62649381aeaa37e7e70b32",
+                "shasum": ""
+            },
+            "require": {
+                "ext-xml": "*",
+                "ext-xmlwriter": "*",
+                "php": ">=5.2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "PHPExcel": "Classes/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL"
+            ],
+            "authors": [
+                {
+                    "name": "Maarten Balliauw",
+                    "homepage": "http://blog.maartenballiauw.be"
+                },
+                {
+                    "name": "Mark Baker"
+                },
+                {
+                    "name": "Franck Lefevre",
+                    "homepage": "http://blog.rootslabs.net"
+                },
+                {
+                    "name": "Erik Tilt"
+                }
+            ],
+            "description": "PHPExcel - OpenXML - Read, Create and Write Spreadsheet documents in PHP - Spreadsheet engine",
+            "homepage": "http://phpexcel.codeplex.com",
+            "keywords": [
+                "OpenXML",
+                "excel",
+                "php",
+                "spreadsheet",
+                "xls",
+                "xlsx"
+            ],
+            "abandoned": "phpoffice/phpspreadsheet",
+            "time": "2015-05-01T07:00:55+00:00"
+        },
+        {
+            "name": "phpoffice/phpword",
+            "version": "0.11.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PHPOffice/PHPWord.git",
+                "reference": "38d3d7be20e6eb8d5f56e77515a49ceb41b676b6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PHPOffice/PHPWord/zipball/38d3d7be20e6eb8d5f56e77515a49ceb41b676b6",
+                "reference": "38d3d7be20e6eb8d5f56e77515a49ceb41b676b6",
+                "shasum": ""
+            },
+            "require": {
+                "ext-xml": "*",
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "dompdf/dompdf": "0.6.*",
+                "mpdf/mpdf": "5.*",
+                "phpdocumentor/phpdocumentor": "2.*",
+                "phpunit/phpunit": "3.7.*",
+                "squizlabs/php_codesniffer": "1.*",
+                "tecnick.com/tcpdf": "6.*"
+            },
+            "suggest": {
+                "dompdf/dompdf": "Used to write PDF",
+                "ext-gd2": "Used to add images",
+                "ext-xmlwriter": "Used to write DOCX and ODT",
+                "ext-xsl": "Used to apply XSL style sheet to template part",
+                "ext-zip": "Used to write DOCX and ODT"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PhpOffice\\PhpWord\\": "src/PhpWord"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Franck Lefevre",
+                    "homepage": "http://blog.rootslabs.net"
+                },
+                {
+                    "name": "Gabriel Bull",
+                    "email": "me@gabrielbull.com",
+                    "homepage": "http://gabrielbull.com/"
+                },
+                {
+                    "name": "Mark Baker"
+                },
+                {
+                    "name": "Ivan Lanin",
+                    "homepage": "http://ivan.lanin.org"
+                },
+                {
+                    "name": "Roman Syroeshko",
+                    "homepage": "http://ru.linkedin.com/pub/roman-syroeshko/34/a53/994/"
+                }
+            ],
+            "description": "PHPWord - A pure PHP library for reading and writing word processing documents (DOCX, ODT, RTF, HTML, PDF)",
+            "homepage": "http://phpoffice.github.io",
+            "keywords": [
+                "ISO IEC 29500",
+                "OOXML",
+                "Office Open XML",
+                "OpenDocument",
+                "OpenXML",
+                "PhpOffice",
+                "PhpWord",
+                "Rich Text Format",
+                "WordprocessingML",
+                "doc",
+                "docx",
+                "html",
+                "odt",
+                "office",
+                "pdf",
+                "php",
+                "reader",
+                "rtf",
+                "template",
+                "word",
+                "writer"
+            ],
+            "time": "2014-06-02T11:30:51+00:00"
+        },
+        {
+            "name": "pimple/pimple",
+            "version": "v3.2.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/silexphp/Pimple.git",
+                "reference": "9e403941ef9d65d20cba7d54e29fe906db42cf32"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/silexphp/Pimple/zipball/9e403941ef9d65d20cba7d54e29fe906db42cf32",
+                "reference": "9e403941ef9d65d20cba7d54e29fe906db42cf32",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "psr/container": "^1.0"
+            },
+            "require-dev": {
+                "symfony/phpunit-bridge": "^3.2"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Pimple": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                }
+            ],
+            "description": "Pimple, a simple Dependency Injection Container",
+            "homepage": "http://pimple.sensiolabs.org",
+            "keywords": [
+                "container",
+                "dependency injection"
+            ],
+            "time": "2018-01-21T07:42:36+00:00"
+        },
+        {
+            "name": "psr/container",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/container.git",
+                "reference": "b7ce3b176482dbbc1245ebf52b181af44c2cf55f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/container/zipball/b7ce3b176482dbbc1245ebf52b181af44c2cf55f",
+                "reference": "b7ce3b176482dbbc1245ebf52b181af44c2cf55f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Container\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common Container Interface (PHP FIG PSR-11)",
+            "homepage": "https://github.com/php-fig/container",
+            "keywords": [
+                "PSR-11",
+                "container",
+                "container-interface",
+                "container-interop",
+                "psr"
+            ],
+            "time": "2017-02-14T16:28:37+00:00"
+        },
+        {
+            "name": "psr/log",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/log.git",
+                "reference": "6c001f1daafa3a3ac1d8ff69ee4db8e799a654dd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/6c001f1daafa3a3ac1d8ff69ee4db8e799a654dd",
+                "reference": "6c001f1daafa3a3ac1d8ff69ee4db8e799a654dd",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Log\\": "Psr/Log/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for logging libraries",
+            "homepage": "https://github.com/php-fig/log",
+            "keywords": [
+                "log",
+                "psr",
+                "psr-3"
+            ],
+            "time": "2018-11-20T15:27:04+00:00"
+        },
+        {
+            "name": "ramsey/uuid",
+            "version": "2.9.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ramsey/uuid.git",
+                "reference": "b2ef4dd9584268d73f92f752a62bc24cd534dc9a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ramsey/uuid/zipball/b2ef4dd9584268d73f92f752a62bc24cd534dc9a",
+                "reference": "b2ef4dd9584268d73f92f752a62bc24cd534dc9a",
+                "shasum": ""
+            },
+            "require": {
+                "paragonie/random_compat": "^1.0|^2.0",
+                "php": ">=5.3.3"
+            },
+            "replace": {
+                "rhumsaa/uuid": "self.version"
+            },
+            "require-dev": {
+                "doctrine/dbal": ">=2.3",
+                "jakub-onderka/php-parallel-lint": "^0.9.0",
+                "moontoast/math": "~1.1",
+                "phpunit/phpunit": "~4.1|~5.0",
+                "satooshi/php-coveralls": "~0.6",
+                "squizlabs/php_codesniffer": "^2.3",
+                "symfony/console": "~2.3|~3.0"
+            },
+            "suggest": {
+                "doctrine/dbal": "Allow the use of a UUID as doctrine field type.",
+                "moontoast/math": "Support for converting UUID to 128-bit integer (in string form).",
+                "symfony/console": "Support for use of the bin/uuid command line tool."
+            },
+            "bin": [
+                "bin/uuid"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Rhumsaa\\Uuid\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marijn Huizendveld",
+                    "email": "marijn.huizendveld@gmail.com"
+                },
+                {
+                    "name": "Ben Ramsey",
+                    "homepage": "http://benramsey.com"
+                }
+            ],
+            "description": "A PHP 5.3+ library for generating RFC 4122 version 1, 3, 4, and 5 universally unique identifiers (UUID).",
+            "homepage": "https://github.com/ramsey/uuid",
+            "keywords": [
+                "guid",
+                "identifier",
+                "uuid"
+            ],
+            "time": "2016-03-22T18:20:19+00:00"
+        },
+        {
+            "name": "seld/jsonlint",
+            "version": "1.7.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Seldaek/jsonlint.git",
+                "reference": "d15f59a67ff805a44c50ea0516d2341740f81a38"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Seldaek/jsonlint/zipball/d15f59a67ff805a44c50ea0516d2341740f81a38",
+                "reference": "d15f59a67ff805a44c50ea0516d2341740f81a38",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.3 || ^7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.0"
+            },
+            "bin": [
+                "bin/jsonlint"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Seld\\JsonLint\\": "src/Seld/JsonLint/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jordi Boggiano",
+                    "email": "j.boggiano@seld.be",
+                    "homepage": "http://seld.be"
+                }
+            ],
+            "description": "JSON Linter",
+            "keywords": [
+                "json",
+                "linter",
+                "parser",
+                "validator"
+            ],
+            "time": "2018-01-24T12:46:19+00:00"
+        },
+        {
+            "name": "seld/phar-utils",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Seldaek/phar-utils.git",
+                "reference": "7009b5139491975ef6486545a39f3e6dad5ac30a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Seldaek/phar-utils/zipball/7009b5139491975ef6486545a39f3e6dad5ac30a",
+                "reference": "7009b5139491975ef6486545a39f3e6dad5ac30a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Seld\\PharUtils\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jordi Boggiano",
+                    "email": "j.boggiano@seld.be"
+                }
+            ],
+            "description": "PHAR file format utilities, for when PHP phars you up",
+            "keywords": [
+                "phra"
+            ],
+            "time": "2015-10-13T18:44:15+00:00"
+        },
+        {
+            "name": "symfony/console",
+            "version": "v2.8.50",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/console.git",
+                "reference": "cbcf4b5e233af15cd2bbd50dee1ccc9b7927dc12"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/console/zipball/cbcf4b5e233af15cd2bbd50dee1ccc9b7927dc12",
+                "reference": "cbcf4b5e233af15cd2bbd50dee1ccc9b7927dc12",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.9",
+                "symfony/debug": "^2.7.2|~3.0.0",
+                "symfony/polyfill-mbstring": "~1.0"
+            },
+            "require-dev": {
+                "psr/log": "~1.0",
+                "symfony/event-dispatcher": "~2.1|~3.0.0",
+                "symfony/process": "~2.1|~3.0.0"
+            },
+            "suggest": {
+                "psr/log-implementation": "For using the console logger",
+                "symfony/event-dispatcher": "",
+                "symfony/process": ""
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.8-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Console\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Console Component",
+            "homepage": "https://symfony.com",
+            "time": "2018-11-20T15:55:20+00:00"
+        },
+        {
+            "name": "symfony/debug",
+            "version": "v3.0.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/debug.git",
+                "reference": "697c527acd9ea1b2d3efac34d9806bf255278b0a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/debug/zipball/697c527acd9ea1b2d3efac34d9806bf255278b0a",
+                "reference": "697c527acd9ea1b2d3efac34d9806bf255278b0a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9",
+                "psr/log": "~1.0"
+            },
+            "conflict": {
+                "symfony/http-kernel": ">=2.3,<2.3.24|~2.4.0|>=2.5,<2.5.9|>=2.6,<2.6.2"
+            },
+            "require-dev": {
+                "symfony/class-loader": "~2.8|~3.0",
+                "symfony/http-kernel": "~2.8|~3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Debug\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Debug Component",
+            "homepage": "https://symfony.com",
+            "time": "2016-07-30T07:22:48+00:00"
+        },
+        {
+            "name": "symfony/dependency-injection",
+            "version": "v3.2.14",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/dependency-injection.git",
+                "reference": "d9f2e62e1a93d52ad4e4f6faaf66f6eef723d761"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/d9f2e62e1a93d52ad4e4f6faaf66f6eef723d761",
+                "reference": "d9f2e62e1a93d52ad4e4f6faaf66f6eef723d761",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9"
+            },
+            "conflict": {
+                "symfony/yaml": "<3.2"
+            },
+            "require-dev": {
+                "symfony/config": "~2.8|~3.0",
+                "symfony/expression-language": "~2.8|~3.0",
+                "symfony/yaml": "~3.2"
+            },
+            "suggest": {
+                "symfony/config": "",
+                "symfony/expression-language": "For using expressions in service container configuration",
+                "symfony/proxy-manager-bridge": "Generate service proxies to lazy load them",
+                "symfony/yaml": ""
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\DependencyInjection\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony DependencyInjection Component",
+            "homepage": "https://symfony.com",
+            "time": "2017-07-28T15:22:55+00:00"
+        },
+        {
+            "name": "symfony/event-dispatcher",
+            "version": "v2.8.50",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/event-dispatcher.git",
+                "reference": "a77e974a5fecb4398833b0709210e3d5e334ffb0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/a77e974a5fecb4398833b0709210e3d5e334ffb0",
+                "reference": "a77e974a5fecb4398833b0709210e3d5e334ffb0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.9"
+            },
+            "require-dev": {
+                "psr/log": "~1.0",
+                "symfony/config": "^2.0.5|~3.0.0",
+                "symfony/dependency-injection": "~2.6|~3.0.0",
+                "symfony/expression-language": "~2.6|~3.0.0",
+                "symfony/stopwatch": "~2.3|~3.0.0"
+            },
+            "suggest": {
+                "symfony/dependency-injection": "",
+                "symfony/http-kernel": ""
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.8-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\EventDispatcher\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony EventDispatcher Component",
+            "homepage": "https://symfony.com",
+            "time": "2018-11-21T14:20:20+00:00"
+        },
+        {
+            "name": "symfony/filesystem",
+            "version": "v2.8.50",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/filesystem.git",
+                "reference": "7ae46872dad09dffb7fe1e93a0937097339d0080"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/filesystem/zipball/7ae46872dad09dffb7fe1e93a0937097339d0080",
+                "reference": "7ae46872dad09dffb7fe1e93a0937097339d0080",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.9",
+                "symfony/polyfill-ctype": "~1.8"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.8-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Filesystem\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Filesystem Component",
+            "homepage": "https://symfony.com",
+            "time": "2018-11-11T11:18:13+00:00"
+        },
+        {
+            "name": "symfony/finder",
+            "version": "v2.8.50",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/finder.git",
+                "reference": "1444eac52273e345d9b95129bf914639305a9ba4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/finder/zipball/1444eac52273e345d9b95129bf914639305a9ba4",
+                "reference": "1444eac52273e345d9b95129bf914639305a9ba4",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.9"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.8-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Finder\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Finder Component",
+            "homepage": "https://symfony.com",
+            "time": "2018-11-11T11:18:13+00:00"
+        },
+        {
+            "name": "symfony/http-foundation",
+            "version": "v2.8.50",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/http-foundation.git",
+                "reference": "746f8d3638bf46ee8b202e62f2b214c3d61fb06a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/746f8d3638bf46ee8b202e62f2b214c3d61fb06a",
+                "reference": "746f8d3638bf46ee8b202e62f2b214c3d61fb06a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.9",
+                "symfony/polyfill-mbstring": "~1.1",
+                "symfony/polyfill-php54": "~1.0",
+                "symfony/polyfill-php55": "~1.0"
+            },
+            "require-dev": {
+                "symfony/expression-language": "~2.4|~3.0.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.8-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\HttpFoundation\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony HttpFoundation Component",
+            "homepage": "https://symfony.com",
+            "time": "2019-04-16T10:00:53+00:00"
+        },
+        {
+            "name": "symfony/polyfill-ctype",
+            "version": "v1.11.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/polyfill-ctype.git",
+                "reference": "82ebae02209c21113908c229e9883c419720738a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/82ebae02209c21113908c229e9883c419720738a",
+                "reference": "82ebae02209c21113908c229e9883c419720738a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "suggest": {
+                "ext-ctype": "For best performance"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.11-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Polyfill\\Ctype\\": ""
+                },
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                },
+                {
+                    "name": "Gert de Pagter",
+                    "email": "BackEndTea@gmail.com"
+                }
+            ],
+            "description": "Symfony polyfill for ctype functions",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "ctype",
+                "polyfill",
+                "portable"
+            ],
+            "time": "2019-02-06T07:57:58+00:00"
+        },
+        {
+            "name": "symfony/polyfill-mbstring",
+            "version": "v1.11.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/polyfill-mbstring.git",
+                "reference": "fe5e94c604826c35a32fa832f35bd036b6799609"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/fe5e94c604826c35a32fa832f35bd036b6799609",
+                "reference": "fe5e94c604826c35a32fa832f35bd036b6799609",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "suggest": {
+                "ext-mbstring": "For best performance"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.11-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Polyfill\\Mbstring\\": ""
+                },
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony polyfill for the Mbstring extension",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "mbstring",
+                "polyfill",
+                "portable",
+                "shim"
+            ],
+            "time": "2019-02-06T07:57:58+00:00"
+        },
+        {
+            "name": "symfony/polyfill-php54",
+            "version": "v1.11.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/polyfill-php54.git",
+                "reference": "2964b17ddc32dba7bcba009d5501c84d3fba1452"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/polyfill-php54/zipball/2964b17ddc32dba7bcba009d5501c84d3fba1452",
+                "reference": "2964b17ddc32dba7bcba009d5501c84d3fba1452",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.11-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Polyfill\\Php54\\": ""
+                },
+                "files": [
+                    "bootstrap.php"
+                ],
+                "classmap": [
+                    "Resources/stubs"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony polyfill backporting some PHP 5.4+ features to lower PHP versions",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "polyfill",
+                "portable",
+                "shim"
+            ],
+            "time": "2019-02-06T07:57:58+00:00"
+        },
+        {
+            "name": "symfony/polyfill-php55",
+            "version": "v1.11.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/polyfill-php55.git",
+                "reference": "96fa25cef405ea452919559a0025d5dc16e30e4c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/polyfill-php55/zipball/96fa25cef405ea452919559a0025d5dc16e30e4c",
+                "reference": "96fa25cef405ea452919559a0025d5dc16e30e4c",
+                "shasum": ""
+            },
+            "require": {
+                "ircmaxell/password-compat": "~1.0",
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.11-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Polyfill\\Php55\\": ""
+                },
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony polyfill backporting some PHP 5.5+ features to lower PHP versions",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "polyfill",
+                "portable",
+                "shim"
+            ],
+            "time": "2019-02-06T07:57:58+00:00"
+        },
+        {
+            "name": "symfony/process",
+            "version": "v2.8.50",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/process.git",
+                "reference": "c3591a09c78639822b0b290d44edb69bf9f05dc8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/process/zipball/c3591a09c78639822b0b290d44edb69bf9f05dc8",
+                "reference": "c3591a09c78639822b0b290d44edb69bf9f05dc8",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.9"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.8-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Process\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Process Component",
+            "homepage": "https://symfony.com",
+            "time": "2018-11-11T11:18:13+00:00"
+        },
+        {
+            "name": "tecnickcom/tcpdf",
+            "version": "6.2.26",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tecnickcom/TCPDF.git",
+                "reference": "367241059ca166e3a76490f4448c284e0a161f15"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tecnickcom/TCPDF/zipball/367241059ca166e3a76490f4448c284e0a161f15",
+                "reference": "367241059ca166e3a76490f4448c284e0a161f15",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "config",
+                    "include",
+                    "tcpdf.php",
+                    "tcpdf_parser.php",
+                    "tcpdf_import.php",
+                    "tcpdf_barcodes_1d.php",
+                    "tcpdf_barcodes_2d.php",
+                    "include/tcpdf_colors.php",
+                    "include/tcpdf_filters.php",
+                    "include/tcpdf_font_data.php",
+                    "include/tcpdf_fonts.php",
+                    "include/tcpdf_images.php",
+                    "include/tcpdf_static.php",
+                    "include/barcodes/datamatrix.php",
+                    "include/barcodes/pdf417.php",
+                    "include/barcodes/qrcode.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Nicola Asuni",
+                    "email": "info@tecnick.com",
+                    "role": "lead"
+                }
+            ],
+            "description": "TCPDF is a PHP class for generating PDF documents and barcodes.",
+            "homepage": "http://www.tcpdf.org/",
+            "keywords": [
+                "PDFD32000-2008",
+                "TCPDF",
+                "barcodes",
+                "datamatrix",
+                "pdf",
+                "pdf417",
+                "qrcode"
+            ],
+            "time": "2018-10-16T17:24:05+00:00"
+        },
+        {
+            "name": "wrep/daemonizable-command",
+            "version": "1.3.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mac-cain13/daemonizable-command.git",
+                "reference": "5b3d317d52c930f92712552d539334a8c173b9a9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mac-cain13/daemonizable-command/zipball/5b3d317d52c930f92712552d539334a8c173b9a9",
+                "reference": "5b3d317d52c930f92712552d539334a8c173b9a9",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9",
+                "symfony/console": "2.*",
+                "symfony/dependency-injection": "2.*|3.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Wrep\\Daemonizable\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mathijs Kadijk",
+                    "email": "mathijs@wrep.nl"
+                }
+            ],
+            "description": "Daemonizable (endless running) commands for Symfony2.",
+            "homepage": "https://github.com/mac-cain13/daemonizable-command",
+            "keywords": [
+                "Symfony2",
+                "background process",
+                "backgrounding",
+                "daemon",
+                "long running process"
+            ],
+            "time": "2016-12-14T20:31:08+00:00"
+        },
+        {
+            "name": "yuanqing/interpolate",
+            "version": "v1.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yuanqing/interpolate.git",
+                "reference": "58a003a5a0e1c6208e4d07a27755ce29e6065a3c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yuanqing/interpolate/zipball/58a003a5a0e1c6208e4d07a27755ce29e6065a3c",
+                "reference": "58a003a5a0e1c6208e4d07a27755ce29e6065a3c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "yuanqing\\Interpolate\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Lim Yuan Qing",
+                    "email": "hello@yuanqing.sg"
+                }
+            ],
+            "description": "Simple string interpolation in PHP.",
+            "homepage": "https://github.com/yuanqing/interpolate",
+            "keywords": [
+                "interpolate",
+                "interpolation",
+                "regex",
+                "string"
+            ],
+            "time": "2014-07-17T12:35:14+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": [],
+    "prefer-stable": true,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}
