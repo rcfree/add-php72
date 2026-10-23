@@ -328,8 +328,17 @@ Do not reintroduce Mercurial or `.hg` metadata.
 - PhpSpreadsheet adapters use
   `getCell(Coordinate::stringFromColumnIndex($col + 1).$row)`.
 - TCPDF 6.11 needs the curl extension at class load.
-- `tools/build-module-tree.sh` must run after a fresh `clinicle/web` install;
-  Composer install removes the web/view symlinks.
+- Report definitions may reference observations absent from the local forms.
+  `ADD_ReportField_Obs` logs and skips those fields instead of aborting PDF
+  generation.
+- FPDF’s `CurPageSize` is protected; report code uses
+  `ADD_Tool_PDF::getCurPageSize()`, not `$pdf->CurPageSize`.
+- The report `image_path` must contain the referenced images. The report
+  package keeps `ilh-logo.png` under `clinicle/report/images`, not under
+  `clinicle/web/public/images`.
+- `clinicle install` is forms/dictionaries only and does not create symlinks.
+  `tools/build-module-tree.sh` symlinks each module’s `web/` and `views/`
+  directories; other package assets such as `images/` are not linked.
 
 ## Data and security invariants
 

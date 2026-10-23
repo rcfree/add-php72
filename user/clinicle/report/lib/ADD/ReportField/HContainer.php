@@ -8,7 +8,8 @@ class ADD_ReportField_HContainer extends ADD_ReportField {
 		
 		$children = $report->getChildFields($this->getName());
 		if (count($children)==0) return;
-		$childrenWidth = ($pdf->CurPageSize[0] - 15) - $currentX;
+		$pageSize = $pdf->getCurPageSize();
+		$childrenWidth = ($pageSize[0] - 15) - $currentX;
 		$childrenHeight = 0;
 		$gap = $this->getSetting('gap',2);
 		

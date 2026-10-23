@@ -6,6 +6,9 @@ class ADD_Tool_PDF extends \FPDF {
 		$this->_report=$report;
 		parent::__construct($orient,$unit,$size);
 	}
+	function getCurPageSize() {
+		return $this->CurPageSize;
+	}
 	function Header() {
 		$report = $this->_report;
 		$hField = $report->getField('header');

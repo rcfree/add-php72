@@ -7,7 +7,8 @@ class ADD_ReportField_RBox extends ADD_ReportField {
 		parent::createReportElement($report,$currentX, $currentY);
 		$pdf = $report->getPdf();
 		$children = $report->getChildFields($this->getName());
-		$containerWidth = ($pdf->CurPageSize[0] - 10) - $currentX;
+		$pageSize = $pdf->getCurPageSize();
+		$containerWidth = ($pageSize[0] - 10) - $currentX;
 
 		$childWidth = count($children)==0 ? $containerWidth : $containerWidth/count($children);
 		$gap = $this->getSetting('gap',2);

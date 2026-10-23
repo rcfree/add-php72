@@ -456,6 +456,22 @@ bottom. Do not rewrite history; correct an entry with a follow-up note.
 - Verified `/add/advcopd?pid=4` reaches the Referral (Baseline) page with
   `pim="advcopd:prelim"` and no TypeError.
 
+### DAC baseline report robustness
+
+- The report URL failed on a missing `qol.lcq_date` observation in the local
+  form set. `ADD_ReportField_Obs` now logs the missing observation and skips
+  that field instead of aborting.
+- Follow-up PDF failures fixed:
+  - copied the existing `clinicle/report/images/ilh-logo.png` into the configured
+    web images path;
+  - added `ADD_Tool_PDF::getCurPageSize()` and replaced direct access to
+    FPDF’s protected `$CurPageSize` in `RBox`, `HContainer`, and `VContainer`.
+- Made `/srv/add-data/reports` (the target of `/local/reports`) writable.
+- Verified the exact URL now returns a valid 8-page PDF:
+  `/report?pid=6&name=baseline-report&id=40&module=dac&type=section`.
+- `clinicle install` is forms-only; module `web/`/`views/` symlinks come from
+  `tools/build-module-tree.sh`. Package `images/` are not linked.
+
 ### Next action
 
 - Local work is complete. Remaining work is VPN-only:

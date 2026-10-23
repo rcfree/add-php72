@@ -29,7 +29,10 @@ class ADD_ReportField_Obs extends ADD_ReportField {
         if (count($fieldBits)==1) {
 			$page = $mod->getPage("medhistory");
 			$dbField = $this->getFieldFromEncounterForm($report->getEncounterType(),$this->getName());
-			if (!$dbField) throw new ADD_FieldException("No observation '".$this->getName()."' is defined in encounter type '".$report->getEncounterType()->getType()."' ({$this->getName()})");
+			if (!$dbField) {
+				ADD::log($this)->warn("Report observation '".$this->getName()."' is not defined in encounter type '".$report->getEncounterType()->getType()."'; skipping");
+				return;
+			}
 		}
 		else {
             if ($fieldBits[0]=='parent') {
@@ -37,7 +40,10 @@ class ADD_ReportField_Obs extends ADD_ReportField {
                     $page = $mod->getPage($fieldBits[1]);
                     $dbField = $this->getFieldFromEncounterForm($page->getSetting('encounter'),$fieldBits[2]);
 
-                    if (!$dbField) throw new ADD_FieldException("No observation '{$fieldBits[2]}' is defined in encounter type '{$page->getSetting('encounter')}' ({$this->getName()})");
+                    if (!$dbField) {
+                        ADD::log($this)->warn("Report observation '{$fieldBits[2]}' is not defined in encounter type '{$page->getSetting('encounter')}'; skipping");
+                        return;
+                    }
 
             }
             else {
@@ -45,7 +51,10 @@ class ADD_ReportField_Obs extends ADD_ReportField {
 
                 if (!$page) throw new ADD_ReportException("Observation page '".$fieldBits[0]."' does not exist");
                 $dbField = $this->getFieldFromEncounterForm($page->getSetting('encounter'),$fieldBits[1]);
-                if (!$dbField) throw new ADD_FieldException("No observation '{$fieldBits[1]}' is defined in encounter type '{$page->getSetting('encounter')}' ({$this->getName()})");
+                if (!$dbField) {
+                    ADD::log($this)->warn("Report observation '{$fieldBits[1]}' is not defined in encounter type '{$page->getSetting('encounter')}'; skipping");
+                    return;
+                }
 
             }
         }
@@ -58,6 +67,9 @@ class ADD_ReportField_Obs extends ADD_ReportField {
 	}
 	
 	public function createReportElement($page,$currentX,$currentY) {
+		if (!$this->_field) {
+			return array(0, 0, $currentX, $currentY);
+		}
 		$pdf = $page->getPdf();
 		$gap = $this->getSetting('gap',2);
 		$currentX = $this->getLeft($page,$currentX);
@@ -75,10 +87,13 @@ class ADD_ReportField_Obs extends ADD_ReportField {
 	}
 	
 	function calcHeight($page) {
-		return $this->_field->calcPdfHeight($this,$page);
+		return $this->_field ? $this->_field->calcPdfHeight($this,$page) : 0;
 	}
 	
 	function getValueWidth($value,$page) {
+		if (!$this->_field) {
+			return 0;
+		}
 		$pdf = $page->getPdf();
 		$valueWidth = 0;
 		if ($page->isEmpty() || strlen($value)==0) {
@@ -108,6 +123,9 @@ class ADD_ReportField_Obs extends ADD_ReportField {
 		}
 	}
 	function populateValue($values, $page, $ignoreNew=false) {
+		if (!$this->_field) {
+			return;
+		}
 		$fieldName = $this->getName();
 		
 		if(isset($values[$fieldName])) {
@@ -116,10 +134,14 @@ class ADD_ReportField_Obs extends ADD_ReportField {
 	}
 	
 	function beforePopulateFields($report) {
-		$this->_field->beforePopulateFields($report);
+		if ($this->_field) {
+			$this->_field->beforePopulateFields($report);
+		}
 	}
 	function afterPopulateField($report) {
-		$this->_field->afterPopulateFields($report);
+		if ($this->_field) {
+			$this->_field->afterPopulateFields($report);
+		}
 	}
 	function getFormField() {
 		return $this->_field;

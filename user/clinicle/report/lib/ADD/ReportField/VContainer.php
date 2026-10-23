@@ -7,7 +7,8 @@ class ADD_ReportField_VContainer extends ADD_ReportField {
 		$currentY = $this->getTop($report,$currentY);
 		
 		$children = $report->getChildFields($this->getName());
-		$childrenHeight = ($pdf->CurPageSize[0] - 10) - $currentY;
+		$pageSize = $pdf->getCurPageSize();
+		$childrenHeight = ($pageSize[0] - 10) - $currentY;
 		$childrenWidth = 0;
 		$childFixedHeight = $childrenHeight/count($children);
 		$prevX = $currentX;
