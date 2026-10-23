@@ -276,6 +276,15 @@ and migrations thought every table was missing.
 `[SearchDatabase]` is also required by `clinicle/search`; for local preview it
 can point at the same `add_data` database.
 
+With `add/path` installed, `[Pathology]` must exist. Without it,
+`PathologyStatusHomeTool` calls `getSetting()` on a null section and breaks the
+home panel. For local preview:
+
+```ini
+[Pathology]
+notification=Pathology transfer is disabled in the local preview.
+```
+
 `[PatientLookup]` is set to `MockPMI` for local work.
 
 `ion_auth` resolves groups through `users_roles` → `roles_groups` → `groups`,

@@ -429,6 +429,21 @@ bottom. Do not rewrite history; correct an entry with a follow-up note.
   “1 matching patient” for `JEFF CAPES` with S number `S0000001`, no TypeError.
 - Logged-in stock search page and the AJAX main panel both render correctly.
 
+### Quick Add home-panel error
+
+- Quick Add itself completed: `S0000003` was created and the request redirected
+  to `/?pid=3`.
+- The follow-up home panel then failed:
+  `TransferStatus::getNotification()` called `getSetting()` on the null
+  `[Pathology]` section.
+- Added a local `[Pathology]` section with a notification message so the
+  pathology home tool short-circuits without a transfer.
+- Verified `S0000004` and `S0000005` Quick Add return HTTP 302, and the home
+  panel for `pid=4` shows “Pathology transfer is disabled in the local preview.”
+  with no error.
+- Repeating Quick Add for an existing identifier still returns the intentional
+  “already exists” error.
+
 ### Next action
 
 - Local work is complete. Remaining work is VPN-only:
