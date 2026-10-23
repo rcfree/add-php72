@@ -444,6 +444,18 @@ bottom. Do not rewrite history; correct an entry with a follow-up note.
 - Repeating Quick Add for an existing identifier still returns the intentional
   “already exists” error.
 
+### Domain record-lock TypeError
+
+- Adding a patient to Advanced COPD failed in
+  `ADD_Database_Record::isRecordInUse()`: `fetchSingleValue()` returns an
+  integer, but the code called `count($count)`.
+- Fixed both `isRecordInUse()` and `hasRecordWithId()` to compare the integer
+  directly.
+- Also guarded the remaining optional `getErrors()` count in
+  `LegacyRequestHandler`.
+- Verified `/add/advcopd?pid=4` reaches the Referral (Baseline) page with
+  `pim="advcopd:prelim"` and no TypeError.
+
 ### Next action
 
 - Local work is complete. Remaining work is VPN-only:

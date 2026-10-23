@@ -24,7 +24,8 @@ class LegacyRequestHandler extends AbstractRequestHandler {
         $values = $request->request->all();
         $db = CLE::db();
         $result = $page->submitForm($values);
-        if (count($page->getErrors()) == 0) {
+        $errors = $page->getErrors();
+        if (!$errors || count($errors) == 0) {
             $db->commitTxn();
 
             $db->beginTxn();

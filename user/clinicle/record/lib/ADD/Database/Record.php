@@ -22,13 +22,13 @@ class ADD_Database_Record extends ADD_Database {
 	}
 	function hasRecordWithId($id) {
 		$count = $this->fetchSingleValue("select count(*) from user_record where id=?",array($id));
-		if(count($count)>1) throw new ADD_TooManyUserRecordsException();
+		if($count>1) throw new ADD_TooManyUserRecordsException();
 		
 		return $count==1 ? true : false;
 	}
 	function isRecordInUse($sessionId, $id, $recType) {
 		$count = $this->fetchSingleValue("select count(*) from user_record where record_id=? and record_type=? and session_id!=?",array($id, $recType, $sessionId));
-		if(count($count)>1) throw new ADD_TooManyUserRecordsException();
+		if($count>1) throw new ADD_TooManyUserRecordsException();
 		
 		return $count==1 ? true : false;
 	}
