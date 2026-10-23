@@ -12,6 +12,9 @@
 namespace ClinicLE\DataFile;
 
 use ClinicLE\Common\Exception\FileNotFoundException;
+use PhpOffice\PhpSpreadsheet\Cell\Coordinate;
+use PhpOffice\PhpSpreadsheet\IOFactory;
+use PhpOffice\PhpSpreadsheet\Reader\Exception as ReaderException;
 
 /**
  * DataFile class for loading Excel XLSX files.
@@ -37,7 +40,7 @@ class ExcelDataFile extends AbstractDataFile
                 continue;
             }
 
-            $value = $this->sheet->getCellByColumnAndRow($currColumn, $this->currRow+1)->getValue();
+            $value = $this->sheet->getCell(Coordinate::stringFromColumnIndex($currColumn + 1).($this->currRow + 1))->getValue();
 
             $row[$heading] = "$value";
             $currColumn++;
@@ -49,9 +52,9 @@ class ExcelDataFile extends AbstractDataFile
     protected function openFile()
     {
         try {
-            $excel = \PHPExcel_IOFactory::load($this->getFileName());
+            $excel = IOFactory::load($this->getFileName());
         } 
-        catch (\PHPExcel_Reader_Exception $ex) {
+        catch (ReaderException $ex) {
             if (!preg_match("/Could not open/", $ex->getMessage())) {
                 throw $ex;
             }
@@ -66,7 +69,7 @@ class ExcelDataFile extends AbstractDataFile
     {
         $headings = array();
         for ($currColumn = 0; $currColumn < $this->columnCount; $currColumn++) {
-            $cell = $this->sheet->getCellByColumnAndRow($currColumn, 1);
+            $cell = $this->sheet->getCell(Coordinate::stringFromColumnIndex($currColumn + 1).'1');
             $headings[] = $cell->getValue();
         }
         $this->setHeadings($headings);

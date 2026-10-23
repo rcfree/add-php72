@@ -1,4 +1,7 @@
 <?php
+use PhpOffice\PhpSpreadsheet\Cell\Coordinate;
+use PhpOffice\PhpSpreadsheet\IOFactory;
+
 /**
  * This is the derived DataFile class which loads Excel files.
  * Each row is put into an associative array (based on the file header) and added to an array accessible through getDataItems().
@@ -20,14 +23,14 @@ class LRB_DataFile_Excel extends LRB_DataFile_Base {
 
 		#used to allow \n line endings (PHP doesn't support this by default!)
 		#ini_set("auto_detect_line_endings", true);
-		$excel = PHPExcel_IOFactory::load($this->getFileName());
+		$excel = IOFactory::load($this->getFileName());
 		$sheet = $excel->getActiveSheet();
 		$high = ord($sheet->getHighestDataColumn())-64;
 
 		$headings = array();
 		
 		for($c=0;$c<$high;$c++) {
-			$cell = $sheet->getCellByColumnAndRow($c,1);
+			$cell = $sheet->getCell(Coordinate::stringFromColumnIndex($c + 1).'1');
 			$headings[]=$cell->getValue();
 		}
 		#if headings map data as assoc array using $headings
@@ -38,7 +41,7 @@ class LRB_DataFile_Excel extends LRB_DataFile_Base {
 			foreach ($headings as $heading) {
 				if (strlen($heading)==0) { $c++; continue; }
 				if (isset($item[$heading])) throw new Exception("Column '$heading' appears multiple times in file (".$this->getFileName().")");	
-				$value = $sheet->getCellByColumnAndRow($c,$r)->getValue();
+				$value = $sheet->getCell(Coordinate::stringFromColumnIndex($c + 1).$r)->getValue();
 				if (strlen($value)==0) $emptyCells++;
 				$item[$heading]="$value";
 				$c++;

@@ -3,7 +3,7 @@
     "description": "Library which provides support for loading XLSX and CSV files a row at a time or in one go",
     "require": {
         "php": ">=5.3.3",
-        "phpoffice/phpexcel": "^1.8",
+        "phpoffice/phpspreadsheet": "^5.10",
         "clinicle/common": "^1.0"
     },
 	"require-dev":{

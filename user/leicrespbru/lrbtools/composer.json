@@ -3,7 +3,7 @@
     "description": "LRB",
     "require": {
         "php": ">=5.3.3",
-        "phpoffice/phpexcel": "1.8.1",
+        "phpoffice/phpspreadsheet": "^5.10",
         "apache/log4php": "^2.3"
     },
     "autoload": {
