@@ -306,6 +306,9 @@ Do not reintroduce Mercurial or `.hg` metadata.
   error types.
 - CLI command runners ignore deprecations.
 - First-party nested ternaries are parenthesised.
+- `ADD_Page::submitForm()` treats `beforeSubmit()` as optional; it may return
+  `null`, so do not call `count()` without a guard.
+- `System\Application` treats `getErrors()` as optional; it may return `null`.
 - `Profiler.php` uses `$this->{'_compile_'.$section}`, not array access.
 - PHPWord uses `TemplateProcessor`.
 - FPDF is `setasign/fpdf` and `ADD_Tool_PDF extends \FPDF`. Do not use

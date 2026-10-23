@@ -417,6 +417,18 @@ bottom. Do not rewrite history; correct an entry with a follow-up note.
 - Verified authenticated `/search` returns the patient-search form
   (`Search patients`, `terms`, `first_name`, `last_name`, `dob`).
 
+### Patient ID search TypeError
+
+- Searching `S0000001` initially failed with
+  `count(): Argument #1 ... null` in `ADD_Page::submitForm()`:
+  `beforeSubmit()` is optional and returns null for the search component.
+- After guarding that, the next failure was `getErrors()` returning null in
+  `System\Application`.
+- Both are PHP 8 null/count issues, not search logic.
+- Verified in the browser: `/search` with `S0000001` returns
+  “1 matching patient” for `JEFF CAPES` with S number `S0000001`, no TypeError.
+- Logged-in stock search page and the AJAX main panel both render correctly.
+
 ### Next action
 
 - Local work is complete. Remaining work is VPN-only:
