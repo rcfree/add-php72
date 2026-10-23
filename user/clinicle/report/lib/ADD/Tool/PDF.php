@@ -1,8 +1,6 @@
 <?php
 
-use fpdf\FPDF;
-
-class ADD_Tool_PDF extends FPDF {
+class ADD_Tool_PDF extends \FPDF {
 	private $_report = null;
 	function __construct($orient, $unit, $size,$report) {
 		$this->_report=$report;
