@@ -8,7 +8,7 @@
 class ADD_Manage_Load extends ADD_Manage_Install 
 {
     function getOptsList() {
-        return "m::fnr";
+        return "m::fn";
     }
     function getDescription() {
         return "Load module (deprecated)";

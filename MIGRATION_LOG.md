@@ -376,40 +376,6 @@ bottom. Do not rewrite history; correct an entry with a follow-up note.
   an external login page, or Apache-level auth/redirect config. Capture that
   before changing application behavior.
 
-### Legacy module loader restored
-
-- The legacy `ADD_Manage_Load` command was failing on a missing
-  `ADD_Manage_Install` parent class.
-- Added `user/clinicle/core/lib/ADD/Manage/Install.php` as a compatibility
-  adapter. It:
-  - loads the module from `work/` via `SingleModuleSetup`;
-  - with `-r`, only verifies/reports the existing module and exits;
-  - otherwise calls `ModuleInstall::installForms()`;
-  - never copies, downloads, symlinks, or removes module code.
-- `-n` maps to the existing dry-run mode; `-p` maps to delete-missing forms.
-- The adapter implements `runCommand()` because `ADD_Manage_Interface` is also
-  absent from this checkout.
-- `ADD_Manage_Load::getOptsList()` now exposes `r`.
-- Also added `-r` to the namespaced `InstallCommand`, which is what
-  `clinicle install` actually resolves to. It returns immediately after loading
-  the module, before forms/dictionaries.
-- Verified on the VM:
-
-```text
-$ clinicle install -r clinicle/options
-Module 'clinicle/options' loaded from /local/add/work/clinicle/options
-STATE:SUCCESS
-
-$ clinicle load -r clinicle/options
-Module 'clinicle/options' loaded from /local/add/work/clinicle/options
-STATE:SUCCESS
-```
-
-- This does not create a DB module row; this schema has no module registry table.
-  The system loads modules from the filesystem.
-- It also does not fix the blank home page: the login tool is returned by
-  `/client/panel-content`, but the view/client panel IDs do not match.
-
 ### Next action
 
 - Local work is complete. Remaining work is VPN-only:
