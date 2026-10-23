@@ -359,6 +359,23 @@ bottom. Do not rewrite history; correct an entry with a follow-up note.
   deployment config (Apache/vhost/route), not in these controllers. Capture that
   during the VPN phase before changing behavior.
 
+### Apache rewrite verification
+
+- Installed a preview vhost on VM port 8082 with the CI public docroot,
+  `AllowOverride All`, `mod_rewrite`, and `ADD_PATH`/`ADD_PROFILE` env.
+- CI's log class chmods `application/logs`; the preview Apache workers run as
+  `rob` and the writable dirs are `rob:rob` (`application/logs`, `log`, `tmp`,
+  `cache`). Running Apache as `www-data` fails the chmod.
+- Under Apache 2.4 + mod_php 8.3:
+  - `/` returns HTTP 200, 2,844 bytes, title `ADD [local] - Home` (legacy shell);
+  - `/auth/login` returns `Refresh: 0;url=/`.
+- No file under `user/` or `vendor/` calls `load->view('auth/login')`; the view
+  exists but is unreachable in this codebase.
+- Conclusion: the missing login form is not caused by the PHP built-in server,
+  the Apache rewrite, or PHP 8.2. Production likely differed in deployed code,
+  an external login page, or Apache-level auth/redirect config. Capture that
+  before changing application behavior.
+
 ### Next action
 
 - Local work is complete. Remaining work is VPN-only:

@@ -126,13 +126,48 @@ cd /local/add
 ADD_PATH=/local/add ADD_PROFILE=local php vendor/bin/clinicle list
 ```
 
-Local web server on the VM:
+PHP built-in server (quick smoke only):
 
 ```bash
 cd /local/add/vendor/clinicle/web/public
 ADD_PATH=/local/add ADD_PROFILE=local \
   php -S 127.0.0.1:8080 -t . /local/add/tools/php-builtin-router.php
 ```
+
+Apache is the authoritative SAPI because CI relies on `.htaccess`. A preview
+vhost is installed on the VM at `/etc/apache2/sites-available/add-preview.conf`,
+listening on `127.0.0.1:8082`:
+
+```apache
+<VirtualHost *:8082>
+    DocumentRoot /local/add/vendor/clinicle/web/public
+    DirectoryIndex index.php
+    <Directory /local/add/vendor/clinicle/web/public>
+        Options FollowSymLinks
+        AllowOverride All
+        Require all granted
+    </Directory>
+    SetEnv ADD_PATH /local/add
+    SetEnv ADD_PROFILE local
+</VirtualHost>
+```
+
+`mod_rewrite` must be enabled. CI's `Log` class calls `chmod()` on
+`application/logs`; the preview Apache workers run as `rob` (via
+`APACHE_RUN_USER`/`APACHE_RUN_GROUP` in `/etc/apache2/envvars`) and the writable
+dirs are `rob:rob`:
+
+```bash
+sudo chown -R rob:rob \
+  vendor/clinicle/web/public/application/logs \
+  log tmp vendor/clinicle/web/public/cache
+```
+
+If Apache stays as `www-data`, it cannot chmod files owned by `rob` and CI
+returns an error page.
+
+Test with `curl http://127.0.0.1:8082/`. The built-in server remains useful for
+quick checks but does not apply `.htaccess`.
 
 The host tunnel maps `127.0.0.1:8081` to the VM’s `127.0.0.1:8080`:
 
@@ -155,8 +190,12 @@ Legacy login behavior is unchanged and **outside the PHP 8.2 migration scope**:
 - `auth/login` therefore redirects to `/`.
 - `auth/login.php` already contains the normal header/footer, but the controller
   does not reach it.
+- Verified under Apache 2.4 + mod_php 8.3 with `AllowOverride All`: `/` returns
+  the 2,844-byte Home shell; `/auth/login` sends `Refresh: 0;url=/`. No PHP file
+  in `user/` or `vendor/` loads `auth/login.php`.
 
-Do not “fix” that UX as part of the PHP 8.2 port. If local authentication is
+The Apache rewrite is therefore not the missing piece. Do not “fix” that UX as
+part of the PHP 8.2 port. If local authentication is
 needed, POST directly:
 
 ```bash
