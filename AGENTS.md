@@ -267,10 +267,11 @@ falls back to `clinicle/web`’s `content.php`, which still has
 `#main-panel`/`#side-panel`, so home tools (including `LoginHomeTool`) are
 received but never displayed.
 
-`[Database]` must contain the PDO DSN/user/pass. Put `dbname` last; e.g.
-`mysql:host=127.0.0.1;charset=utf8;dbname=add_data`. `AbstractConnection::getDbName()`
-uses a greedy `dbname=(.+)` match, so parameters after `dbname` become part of
-the schema name and migrations think every table is missing.
+`[Database]` must contain the PDO DSN/user/pass, for example
+`mysql:host=127.0.0.1;charset=utf8;dbname=add_data`. `AbstractConnection` now
+parses `dbname` and `host` up to `;`, rather than greedily to the end of the
+DSN. Before that fix, parameters after `dbname` became part of the schema name
+and migrations thought every table was missing.
 
 `[SearchDatabase]` is also required by `clinicle/search`; for local preview it
 can point at the same `add_data` database.

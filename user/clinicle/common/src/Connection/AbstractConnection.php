@@ -62,10 +62,10 @@ abstract class AbstractConnection {
             if($this->dbName) {
                 return;
             }
-	    preg_match("/dbname\=(.+)\;{0,1}/",$this->dsn,$matches);
+	    preg_match("/dbname=([^;]+)/",$this->dsn,$matches);
 	    if(!isset($matches[1])) throw new NullValueException("Database name is not defined in the DSN");
 	    $this->dbName = $matches[1];
-	    preg_match("/host\=(.+)?\;/",$this->dsn,$matches);
+	    preg_match("/host=([^;]+)/",$this->dsn,$matches);
 	    $this->dbHost = Util::val(1,$matches,"localhost");
 	}
 	

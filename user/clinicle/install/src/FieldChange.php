@@ -136,6 +136,9 @@ class FieldChange {
 	}
 	function isMoved() {
 	    $obsField = $this->_formSync->getObsField($this->_field->getName());
+	    if (!$obsField) {
+	        return false;
+	    }
 	    if ($obsField['weight'] != $this->_field -> getWeight()) {
 	        ADD::log($this) -> info("MOVE FIELD '" . $this->_field->getName() . "' " . $obsField['weight'] . "!=" . $this->_field -> getWeight());
 	        return true;

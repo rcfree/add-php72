@@ -402,13 +402,15 @@ bottom. Do not rewrite history; correct an entry with a follow-up note.
   after the data load it completed successfully.
 - PHP 8 null-offset/count fixes made while installing:
   - `DictionaryTableDictTarget` null group;
-  - `FieldChange` missing observation fields;
-  - `DataHandler`/`FieldContent` null child-field lists;
+  - `FieldChange` missing observation fields and move checks;
+  - `DataHandler`/`FieldContent` null child-field lists and next-field index;
   - `Audit` separate-table dictionary lookup;
-  - `ADD_Component_Search` default initial search arguments.
+  - `ADD_Component_Search` default initial search arguments;
+  - `AbstractConnection` DSN parsing now stops at `;` for `dbname`/`host`.
 - `add/history` ICD-10 titles require `allow_change=1` in its dictionary config.
-- Local config additions (ignored): `[SearchDatabase]`, `theme_module=add/theme`,
-  and `dbname` last in the PDO DSN.
+- Local config additions (ignored): `[SearchDatabase]` and
+  `theme_module=add/theme`; the DSN parser was fixed so parameter order no longer
+  matters.
 - `ion_auth` resolves groups through `users_roles`/`roles_groups`/`groups`; the
   preview admin seed now creates the `admin` role mapping. Without it,
   `is_admin()` was false.

@@ -64,7 +64,7 @@ class DataHandler {
             }
             if ($fc->isDeleted()) {
                 if (!$fc->exists()) {
-                    $log->error("DELETE FIELD '" . $this->_field -> getName() . "' cannot be deleted as it does not exist");
+                    $log->error("DELETE FIELD '" . $field->getName() . "' cannot be deleted as it does not exist");
                     continue;
                 }
                 

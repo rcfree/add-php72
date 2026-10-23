@@ -25,8 +25,7 @@ class ADD_Form_FieldContent implements ADD_Form_FieldContainerInterface {
 		$counter=0;
 		foreach($fields as $field) {
 			if ($field->getName() == $searchField->getName()) {
-				$nextField = $fields[$counter+1];
-				return $nextField;
+				return isset($fields[$counter + 1]) ? $fields[$counter + 1] : null;
 			}
 			$counter++;
 		}
