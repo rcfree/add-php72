@@ -21,6 +21,3 @@ class ADD_Client_Action_EditRecord implements ADD_Client_Action_GridRowActionInt
 		
 	}
 }
-?>
-
-		

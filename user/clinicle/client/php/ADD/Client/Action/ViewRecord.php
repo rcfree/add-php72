@@ -21,6 +21,6 @@ class ADD_Client_Action_ViewRecord implements ADD_Client_Action_GridRowActionInt
 		
 	}
 }
-?>
+
 
 		

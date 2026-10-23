@@ -6,6 +6,6 @@ class ADD_Client_Action_AdminEditRecord extends ADD_Client_Action_EditRecord {
 	}
 
 }
-?>
+
 
 		

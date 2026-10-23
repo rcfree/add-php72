@@ -5,4 +5,3 @@ interface ADD_Client_Action_GridCellActionInterface {
 	function afterOutputMarkup(ADD_Content_Html $html);
 	function getRowHeading();
 }
-?>

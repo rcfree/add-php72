@@ -22,6 +22,6 @@ class ADD_Client_Action_EditDictItem implements ADD_Client_Action_GridRowActionI
 		
 	}
 }
-?>
+
 
 		

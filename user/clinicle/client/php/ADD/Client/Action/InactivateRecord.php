@@ -30,4 +30,3 @@ class ADD_Client_Action_InactivateRecord implements ADD_Client_Action_EncounterG
         $this->gridField = $gridField;
     }
 }
-?>

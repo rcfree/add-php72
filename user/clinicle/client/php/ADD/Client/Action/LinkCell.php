@@ -33,4 +33,3 @@ class ADD_Client_Action_LinkCell implements ADD_Client_Action_GridCellActionInte
 	}
 
 }
-?>

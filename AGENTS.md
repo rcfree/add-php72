@@ -305,7 +305,9 @@ Do not reintroduce Mercurial or `.hg` metadata.
 
 ## Known PHP 8 traps already handled
 
-- `web_init.php` must not end with `?>`; trailing output breaks session headers.
+- Pure PHP files, especially `web_init.php` and client action classes, must not
+  end with `?>`; whitespace after the closing tag is output before CI sends
+  headers and causes “Cannot modify header information”.
 - CI `Security::xss_clean` uses `foreach`, not `each()`.
 - CI `Security::entity_decode` uses `preg_replace_callback`, not `/e`.
 - CI `Input::valid_ip()` passes `0` to `filter_var`, not `''`.

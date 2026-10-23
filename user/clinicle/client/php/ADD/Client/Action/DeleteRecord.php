@@ -23,4 +23,3 @@ class ADD_Client_Action_DeleteRecord implements ADD_Client_Action_GridRowActionI
 		
 	}
 }
-?>

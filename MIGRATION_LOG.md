@@ -472,6 +472,21 @@ bottom. Do not rewrite history; correct an entry with a follow-up note.
 - `clinicle install` is forms-only; module `web/`/`views/` symlinks come from
   `tools/build-module-tree.sh`. Package `images/` are not linked.
 
+### Research enrollment header error
+
+- Enrolling a patient in Research failed with “Cannot modify header
+  information”, starting at `EditRecord.php`, then `AdminDeleteRecord.php`.
+  Both files ended with `?>` plus whitespace, which is emitted before CI sends
+  headers.
+- Removed the closing `?>` from all files under
+  `clinicle/client/php/ADD/Client/Action/`; trailing whitespace is now inside
+  PHP and emits nothing.
+- Verified `/add/research?pid=3` reaches
+  `/research/contact/details?pid=3&eid=48` (“Consent details”) with no header
+  error.
+- Re-enrolling an already enrolled patient still reports the intentional
+  “already added” message.
+
 ### Next action
 
 - Local work is complete. Remaining work is VPN-only:

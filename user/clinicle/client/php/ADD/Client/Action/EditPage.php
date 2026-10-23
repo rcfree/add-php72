@@ -21,4 +21,3 @@ class ADD_Client_Action_EditPage implements ADD_Client_Action_GridRowActionInter
 		
 	}
 }
-?>

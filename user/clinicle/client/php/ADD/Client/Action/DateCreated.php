@@ -19,4 +19,3 @@ class ADD_Client_Action_DateCreated implements ADD_Client_Action_GridRowActionIn
 		
 	}
 }
-?>

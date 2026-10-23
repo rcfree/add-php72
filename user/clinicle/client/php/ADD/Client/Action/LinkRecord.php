@@ -37,4 +37,3 @@ class ADD_Client_Action_LinkRecord implements ADD_Client_Action_GridRowActionInt
 	}
 	private $gridField;
 }
-?>

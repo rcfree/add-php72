@@ -3,4 +3,3 @@ interface ADD_Client_Action_EncounterGridRowActionInterface extends ADD_Client_A
 	function __construct(ADD_Page $rowPage);
 
 }
-?>

@@ -28,4 +28,3 @@ class ADD_Client_Action_LinkColumn implements ADD_Client_Action_GridColumnAction
 		
 	}
 }
-?>
