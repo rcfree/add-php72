@@ -147,9 +147,27 @@ Tunnel service name in the agent runtime: `add-php83-web`.
 
 Local URL: `http://127.0.0.1:8081/`.
 
-The local router serves the preview login form at `/` when no `ci_session` cookie
-exists. With a valid session it hands the request to the CI app. `/login` and
-`/?login=1` always serve the form, even with a session cookie.
+Legacy login behavior is unchanged and **outside the PHP 8.2 migration scope**:
+
+- `Auth::login` builds the login view data but redirects to `/` instead of
+  rendering `auth/login.php`.
+- `Content::index` has no auth gate; unauthenticated `/` renders the shell.
+- `auth/login` therefore redirects to `/`.
+- `auth/login.php` already contains the normal header/footer, but the controller
+  does not reach it.
+
+Do not “fix” that UX as part of the PHP 8.2 port. If local authentication is
+needed, POST directly:
+
+```bash
+curl -sS -c /tmp/c -b /tmp/c \
+  -d 'identity=admin&password=PreviewAdmin123' \
+  -o /dev/null http://127.0.0.1:8081/index.php/auth/login
+curl -sS -b /tmp/c http://127.0.0.1:8081/index.php/auth/loggedin
+```
+
+CI's `redirect(..., 'refresh')` sends a `Refresh` header with HTTP 200 and an
+empty body. Browsers follow it; curl needs `-D -` to see it or a manual follow.
 
 ## Local preview database
 
@@ -267,15 +285,16 @@ PHP_BIN=/local/tools/php8.3 JOBS=8 tools/php82-audit.sh --first-party
 ssh -i /local/vm/add-php83/id_ed25519 -p 2222 rob@127.0.0.1 \
   'cd /local/add && ADD_PATH=/local/add ADD_PROFILE=local php vendor/bin/clinicle list'
 
-# 3. Web root
-curl -sS http://127.0.0.1:8081/ | head
+# 3. Legacy auth redirect (expected: Refresh to /)
+curl -sS -D - -o /dev/null http://127.0.0.1:8081/auth/login | grep -i Refresh:
 
-# 4. Login
+# 4. Login round-trip (direct POST; no login form in the legacy flow)
 curl -sS -c /tmp/c -b /tmp/c \
   -d 'identity=admin&password=PreviewAdmin123' \
   -o /dev/null http://127.0.0.1:8081/index.php/auth/login
 curl -sS -b /tmp/c http://127.0.0.1:8081/index.php/auth/loggedin
 ```
 
-Expected: 0 audit blockers, CLI command list, login form at root without a cookie,
-and `{"logged_in":true}` after login.
+Expected: 0 audit blockers, CLI command list, and `{"logged_in":true}` after the
+direct POST. The unauthenticated root/blank-shell behavior is legacy, not a
+PHP 8.2 regression.

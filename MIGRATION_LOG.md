@@ -322,6 +322,43 @@ bottom. Do not rewrite history; correct an entry with a follow-up note.
 - Added `/login` and `/?login=1`, which always serve the form even when a session
   cookie exists; responses are `Cache-Control: no-store`.
 
+### Login simplification (supersedes the router login hacks)
+
+- The pre-restructure archive has the same `Auth::login` redirect to `/` and the
+  same absence of an auth gate in `Content::index`. Those two files were not
+  changed by the PHP 8 port, so the blank unauthenticated root is not a PHP 8
+  regression in them.
+- The login view itself was already complete: `auth/login.php` includes
+  `header.php` and `footer.php`.
+- Two app-level fixes replace the router workaround:
+  - `Auth::login` loads `auth/login` instead of redirecting when it has no POST.
+  - `Content::index` redirects unauthenticated users to `auth/login`.
+- `tools/php-builtin-router.php` is back to static-file serving plus CI handoff;
+  no login-specific paths.
+- Removed the standalone `tools/preview-login.html` and its docroot copy.
+- Verified:
+  - browser `/` follows CI's `Refresh` header to `/auth/login`;
+  - login page has the ADD navbar, form, and footer;
+  - successful login returns to `/` with `Options`/`Logout`;
+  - failed login returns to the branded login page.
+- If production previously showed a login at root, the remaining difference is
+  outside these files (for example an Apache/vhost redirect or a different route);
+  capture that config in the VPN phase before changing behavior again.
+
+### Scope correction: login UX reverted
+
+- Reverted the login/root changes in `Auth::login`, `Content::index`, and
+  `tools/php-builtin-router.php`. They were UX changes, not PHP 8.2 compatibility
+  fixes.
+- Removed the standalone `tools/preview-login.html` and its docroot copy.
+- The pre-restructure archive has the same redirect behavior, so the blank
+  unauthenticated root is legacy. There is no PHP 8.2 change to revert for it.
+- Direct POST to `/index.php/auth/login` still authenticates; the seeded preview
+  admin remains usable.
+- If production previously rendered a login at root, the difference is in
+  deployment config (Apache/vhost/route), not in these controllers. Capture that
+  during the VPN phase before changing behavior.
+
 ### Next action
 
 - Local work is complete. Remaining work is VPN-only:
