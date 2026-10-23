@@ -376,6 +376,24 @@ bottom. Do not rewrite history; correct an entry with a follow-up note.
   an external login page, or Apache-level auth/redirect config. Capture that
   before changing application behavior.
 
+### Theme module and home-tool login
+
+- The login UI is the `LoginHomeTool`, not `auth/login.php`. It is intentionally
+  hidden when `AccessManager::isLoggedIn()` is true.
+- The home panel returned the login HTML, but the browser discarded it because
+  the fallback `clinicle/web` view used `#main-content`/`#side-content` while
+  the client JS writes to `#main-panel`/`#side-panel`.
+- Production uses the `add/theme` module views, which already use the correct
+  panel IDs. The local profile was missing `theme_module=add/theme`.
+- Added `theme_module=add/theme` to `config/local/add.ini` and synced it to the
+  VM. `config/` is ignored; production keeps its own setting.
+- Verified unauthenticated browser:
+  - `#main-panel` and `#side-panel` exist;
+  - `/client/panel-content` returns the login tool;
+  - the page displays `Login to ADD` with the UHL username/password fields,
+    header, footer, and ILD referral tool.
+- Logged-in sessions correctly do not show the login home tool.
+
 ### Next action
 
 - Local work is complete. Remaining work is VPN-only:

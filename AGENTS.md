@@ -247,6 +247,7 @@ Required root-level settings include:
 
 ```ini
 default_path=home
+theme_module=add/theme
 system_version=2.8.0
 date_format=d/m/Y
 image_path=vendor/clinicle/web/public/images
@@ -254,6 +255,12 @@ lrb_path=/local/add/user/leicrespbru/lrbtools
 module_path=work
 source_module_path=/local/add/user
 ```
+
+`theme_module=add/theme` is required for the panel-based UI. Without it the app
+falls back to `clinicle/web`’s `content.php`, which still has
+`#main-content`/`#side-content`; the client JavaScript writes to
+`#main-panel`/`#side-panel`, so home tools (including `LoginHomeTool`) are
+received but never displayed.
 
 `[Database]` must contain the PDO DSN/user/pass. `[PatientLookup]` is set to
 `MockPMI` for local work.
