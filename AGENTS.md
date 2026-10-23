@@ -126,6 +126,19 @@ cd /local/add
 ADD_PATH=/local/add ADD_PROFILE=local php vendor/bin/clinicle list
 ```
 
+Legacy module loader:
+
+```bash
+ADD_PATH=/local/add ADD_PROFILE=local \
+  php vendor/bin/clinicle load -r clinicle/options
+```
+
+`-r` loads/verifies the module from `work/` without installing forms or touching
+module code. Plain `load` calls the restored `ADD_Manage_Install` adapter, which
+runs `ModuleInstall::installForms()` and `-n` dry-run. The old
+`ADD_Manage_Interface` is absent, so the adapter implements `runCommand()` and
+does not extend `ADD_Manage_AbstractManage`.
+
 PHP built-in server (quick smoke only):
 
 ```bash
