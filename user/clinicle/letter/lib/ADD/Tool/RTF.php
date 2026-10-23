@@ -13,9 +13,7 @@ class ADD_Tool_RTF {
 	private $_populatedLines=array();
 	function __construct($filename) {
 		$this->_fileName=$filename;
-		$data = file($filename);
-		$phpWord = new \PhpOffice\PhpWord\PhpWord();
-		$this->_phpWord = $phpWord->loadTemplate($this->_fileName);
+		$this->_phpWord = new \PhpOffice\PhpWord\TemplateProcessor($this->_fileName);
 	}
 	function cleanOutput() {
 		return file_get_contents($this->_fileName);
