@@ -1,0 +1,27 @@
+diff --git a/user/clinicle/report/composer.json b/user/clinicle/report/composer.json
+index 07c41a0..99939a8 100644
+--- a/user/clinicle/report/composer.json
++++ b/user/clinicle/report/composer.json
+@@ -6,7 +6,7 @@
+ 		"clinicle/install":"~1.0",
+ 		"clinicle/base":"^1.5",
+ 		"clinicle/api":"^1.1",
+-		"itbz/fpdf": "1.7.2"
++		"setasign/fpdf": "^1.8"
+ 	},
+     "autoload": {
+         "classmap": ["lib"]
+diff --git a/user/clinicle/report/lib/ADD/Tool/PDF.php b/user/clinicle/report/lib/ADD/Tool/PDF.php
+index 90266c0..b4940ad 100644
+--- a/user/clinicle/report/lib/ADD/Tool/PDF.php
++++ b/user/clinicle/report/lib/ADD/Tool/PDF.php
+@@ -1,8 +1,6 @@
+ <?php
+ 
+-use fpdf\FPDF;
+-
+-class ADD_Tool_PDF extends FPDF {
++class ADD_Tool_PDF extends \FPDF {
+ 	private $_report = null;
+ 	function __construct($orient, $unit, $size,$report) {
+ 		$this->_report=$report;

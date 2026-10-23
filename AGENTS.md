@@ -102,6 +102,11 @@ tools/apply-patches.sh
 The script is idempotent. It currently applies
 `patches/log4php-2.3.0-each.patch`.
 
+The first-party library adapters are also captured as review/provenance patches
+under `patches/` (`third-party-adapters.patch` plus per-library files). The
+current `user/` tree is authoritative; do not apply the adapter patches to it.
+They are not used by `tools/apply-patches.sh`; see `patches/README.md`.
+
 ## Audit and verification
 
 Static audit:

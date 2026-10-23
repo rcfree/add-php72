@@ -1,0 +1,28 @@
+diff --git a/user/clinicle/letter/composer.json b/user/clinicle/letter/composer.json
+index 458407b..29ed503 100644
+--- a/user/clinicle/letter/composer.json
++++ b/user/clinicle/letter/composer.json
+@@ -4,7 +4,7 @@
+ 	"type": "clinicle-module",
+ 	"require":{
+ 		"clinicle/install":"~1.0",
+-		"phpoffice/phpword": "^0.11"
++		"phpoffice/phpword": "^1.4"
+ 	},
+     "autoload": {
+         "classmap": ["lib"]
+diff --git a/user/clinicle/letter/lib/ADD/Tool/RTF.php b/user/clinicle/letter/lib/ADD/Tool/RTF.php
+index b68a936..b94b529 100644
+--- a/user/clinicle/letter/lib/ADD/Tool/RTF.php
++++ b/user/clinicle/letter/lib/ADD/Tool/RTF.php
+@@ -13,9 +13,7 @@ class ADD_Tool_RTF {
+ 	private $_populatedLines=array();
+ 	function __construct($filename) {
+ 		$this->_fileName=$filename;
+-		$data = file($filename);
+-		$phpWord = new \PhpOffice\PhpWord\PhpWord();
+-		$this->_phpWord = $phpWord->loadTemplate($this->_fileName);
++		$this->_phpWord = new \PhpOffice\PhpWord\TemplateProcessor($this->_fileName);
+ 	}
+ 	function cleanOutput() {
+ 		return file_get_contents($this->_fileName);

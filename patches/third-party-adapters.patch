@@ -1,0 +1,163 @@
+diff --git a/user/clinicle/datafile/composer.json b/user/clinicle/datafile/composer.json
+index 7823816..6f24f28 100644
+--- a/user/clinicle/datafile/composer.json
++++ b/user/clinicle/datafile/composer.json
+@@ -3,7 +3,7 @@
+     "description": "Library which provides support for loading XLSX and CSV files a row at a time or in one go",
+     "require": {
+         "php": ">=5.3.3",
+-        "phpoffice/phpexcel": "^1.8",
++        "phpoffice/phpspreadsheet": "^5.10",
+         "clinicle/common": "^1.0"
+     },
+ 	"require-dev":{
+diff --git a/user/clinicle/datafile/src/ExcelDataFile.php b/user/clinicle/datafile/src/ExcelDataFile.php
+index 8973b64..594b797 100644
+--- a/user/clinicle/datafile/src/ExcelDataFile.php
++++ b/user/clinicle/datafile/src/ExcelDataFile.php
+@@ -12,6 +12,9 @@
+ namespace ClinicLE\DataFile;
+ 
+ use ClinicLE\Common\Exception\FileNotFoundException;
++use PhpOffice\PhpSpreadsheet\Cell\Coordinate;
++use PhpOffice\PhpSpreadsheet\IOFactory;
++use PhpOffice\PhpSpreadsheet\Reader\Exception as ReaderException;
+ 
+ /**
+  * DataFile class for loading Excel XLSX files.
+@@ -37,7 +40,7 @@ class ExcelDataFile extends AbstractDataFile
+                 continue;
+             }
+ 
+-            $value = $this->sheet->getCellByColumnAndRow($currColumn, $this->currRow+1)->getValue();
++            $value = $this->sheet->getCell(Coordinate::stringFromColumnIndex($currColumn + 1).($this->currRow + 1))->getValue();
+ 
+             $row[$heading] = "$value";
+             $currColumn++;
+@@ -49,9 +52,9 @@ class ExcelDataFile extends AbstractDataFile
+     protected function openFile()
+     {
+         try {
+-            $excel = \PHPExcel_IOFactory::load($this->getFileName());
++            $excel = IOFactory::load($this->getFileName());
+         } 
+-        catch (\PHPExcel_Reader_Exception $ex) {
++        catch (ReaderException $ex) {
+             if (!preg_match("/Could not open/", $ex->getMessage())) {
+                 throw $ex;
+             }
+@@ -66,7 +69,7 @@ class ExcelDataFile extends AbstractDataFile
+     {
+         $headings = array();
+         for ($currColumn = 0; $currColumn < $this->columnCount; $currColumn++) {
+-            $cell = $this->sheet->getCellByColumnAndRow($currColumn, 1);
++            $cell = $this->sheet->getCell(Coordinate::stringFromColumnIndex($currColumn + 1).'1');
+             $headings[] = $cell->getValue();
+         }
+         $this->setHeadings($headings);
+diff --git a/user/clinicle/letter/composer.json b/user/clinicle/letter/composer.json
+index 458407b..29ed503 100644
+--- a/user/clinicle/letter/composer.json
++++ b/user/clinicle/letter/composer.json
+@@ -4,7 +4,7 @@
+ 	"type": "clinicle-module",
+ 	"require":{
+ 		"clinicle/install":"~1.0",
+-		"phpoffice/phpword": "^0.11"
++		"phpoffice/phpword": "^1.4"
+ 	},
+     "autoload": {
+         "classmap": ["lib"]
+diff --git a/user/clinicle/letter/lib/ADD/Tool/RTF.php b/user/clinicle/letter/lib/ADD/Tool/RTF.php
+index b68a936..b94b529 100644
+--- a/user/clinicle/letter/lib/ADD/Tool/RTF.php
++++ b/user/clinicle/letter/lib/ADD/Tool/RTF.php
+@@ -13,9 +13,7 @@ class ADD_Tool_RTF {
+ 	private $_populatedLines=array();
+ 	function __construct($filename) {
+ 		$this->_fileName=$filename;
+-		$data = file($filename);
+-		$phpWord = new \PhpOffice\PhpWord\PhpWord();
+-		$this->_phpWord = $phpWord->loadTemplate($this->_fileName);
++		$this->_phpWord = new \PhpOffice\PhpWord\TemplateProcessor($this->_fileName);
+ 	}
+ 	function cleanOutput() {
+ 		return file_get_contents($this->_fileName);
+diff --git a/user/clinicle/report/composer.json b/user/clinicle/report/composer.json
+index 07c41a0..99939a8 100644
+--- a/user/clinicle/report/composer.json
++++ b/user/clinicle/report/composer.json
+@@ -6,7 +6,7 @@
+ 		"clinicle/install":"~1.0",
+ 		"clinicle/base":"^1.5",
+ 		"clinicle/api":"^1.1",
+-		"itbz/fpdf": "1.7.2"
++		"setasign/fpdf": "^1.8"
+ 	},
+     "autoload": {
+         "classmap": ["lib"]
+diff --git a/user/clinicle/report/lib/ADD/Tool/PDF.php b/user/clinicle/report/lib/ADD/Tool/PDF.php
+index 90266c0..b4940ad 100644
+--- a/user/clinicle/report/lib/ADD/Tool/PDF.php
++++ b/user/clinicle/report/lib/ADD/Tool/PDF.php
+@@ -1,8 +1,6 @@
+ <?php
+ 
+-use fpdf\FPDF;
+-
+-class ADD_Tool_PDF extends FPDF {
++class ADD_Tool_PDF extends \FPDF {
+ 	private $_report = null;
+ 	function __construct($orient, $unit, $size,$report) {
+ 		$this->_report=$report;
+diff --git a/user/leicrespbru/lrbtools/composer.json b/user/leicrespbru/lrbtools/composer.json
+index 50e200c..279a2b6 100644
+--- a/user/leicrespbru/lrbtools/composer.json
++++ b/user/leicrespbru/lrbtools/composer.json
+@@ -3,7 +3,7 @@
+     "description": "LRB",
+     "require": {
+         "php": ">=5.3.3",
+-        "phpoffice/phpexcel": "1.8.1",
++        "phpoffice/phpspreadsheet": "^5.10",
+         "apache/log4php": "^2.3"
+     },
+     "autoload": {
+diff --git a/user/leicrespbru/lrbtools/lib/LRB/DataFile/Excel.php b/user/leicrespbru/lrbtools/lib/LRB/DataFile/Excel.php
+index 502939a..074c354 100644
+--- a/user/leicrespbru/lrbtools/lib/LRB/DataFile/Excel.php
++++ b/user/leicrespbru/lrbtools/lib/LRB/DataFile/Excel.php
+@@ -1,4 +1,7 @@
+ <?php
++use PhpOffice\PhpSpreadsheet\Cell\Coordinate;
++use PhpOffice\PhpSpreadsheet\IOFactory;
++
+ /**
+  * This is the derived DataFile class which loads Excel files.
+  * Each row is put into an associative array (based on the file header) and added to an array accessible through getDataItems().
+@@ -20,14 +23,14 @@ class LRB_DataFile_Excel extends LRB_DataFile_Base {
+ 
+ 		#used to allow \n line endings (PHP doesn't support this by default!)
+ 		#ini_set("auto_detect_line_endings", true);
+-		$excel = PHPExcel_IOFactory::load($this->getFileName());
++		$excel = IOFactory::load($this->getFileName());
+ 		$sheet = $excel->getActiveSheet();
+ 		$high = ord($sheet->getHighestDataColumn())-64;
+ 
+ 		$headings = array();
+ 		
+ 		for($c=0;$c<$high;$c++) {
+-			$cell = $sheet->getCellByColumnAndRow($c,1);
++			$cell = $sheet->getCell(Coordinate::stringFromColumnIndex($c + 1).'1');
+ 			$headings[]=$cell->getValue();
+ 		}
+ 		#if headings map data as assoc array using $headings
+@@ -38,7 +41,7 @@ class LRB_DataFile_Excel extends LRB_DataFile_Base {
+ 			foreach ($headings as $heading) {
+ 				if (strlen($heading)==0) { $c++; continue; }
+ 				if (isset($item[$heading])) throw new Exception("Column '$heading' appears multiple times in file (".$this->getFileName().")");	
+-				$value = $sheet->getCellByColumnAndRow($c,$r)->getValue();
++				$value = $sheet->getCell(Coordinate::stringFromColumnIndex($c + 1).$r)->getValue();
+ 				if (strlen($value)==0) $emptyCells++;
+ 				$item[$heading]="$value";
+ 				$c++;
