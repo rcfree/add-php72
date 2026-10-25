@@ -496,7 +496,7 @@ RELEASE HISTORY
 + SubmitValueInterface to allow non-submit fields to submit data
 * Initial rewrite of JS so that handler ADD.Define.[class] objects are used rather than large numbers of global functions. 
 ! fixed JS validation so all validation messages are shown
-! merged with minor changes on uhl-test system
+! merged with minor changes on test system
 ! re-added S number as required field in validation
 ! fixed bug with missing Field_Checkboxes variable
 ! removed deleted fields from EncounterRecord/Database observation output unless flag is set 
@@ -637,7 +637,7 @@ Fix: fully fixed report markup fields (previous revision did not work for drug r
 
 1.0.11 08/01/2014
 Provided link so patient can be enrolled if not added automatically by Domain_AutoEnrol component for some reason.
-Minor change to location of uhl-test site (now in /local/add_v1_0)
+Minor change to location of test site (now in /local/add_v1_0)
 Fixed caught error message display in Page module
 Resolved non-displaying fields produced in report markup fields. 
 Fixed issue with condition comparison (not treating values as numbers).

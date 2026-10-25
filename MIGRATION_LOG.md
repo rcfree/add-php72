@@ -199,8 +199,8 @@ bottom. Do not rewrite history; correct an entry with a follow-up note.
     `E_DEPRECATED`/`E_USER_DEPRECATED`.
   - Created VM runtime dirs (`/local/tmp`, `log`, `tmp`, `cache`, `search`) after the
     log4php config failed to `mkdir` under a root-owned `/local`.
-  - `ADD_PATH=/local/add ADD_PROFILE=uhl-test php vendor/bin/clinicle list` succeeds
-    on the VM and lists the expected commands.
+  - `ADD_PATH=/local/add ADD_PROFILE=<profile> php vendor/bin/clinicle list`
+    succeeds on the VM and lists the expected commands.
 - Composer reports one ambiguous class:
   `ADD_Component_DeleteSectionButton` exists identically in `clinicle/core` and
   `clinicle/touch`; the touch copy wins. Files are byte-identical, so this is currently
