@@ -1,8 +1,14 @@
-# ADD PHP 8.3 Migration Plan
+# ADD PHP 7.2 Migration Plan
 
 Status: local migration and web/CLI smoke complete. Remaining work is VPN-only
 capture, porting, and production-data validation.
-Last updated: 2026-10-23.
+Last updated: 2026-10-25.
+
+**Target revision:** production is Ubuntu 18.04 with PHP 7.2, reached by a single
+16.04 → 18.04 upgrade and the available 18.04 PHP security update. The local VM
+remains Ubuntu 24.04 and runs PHP 7.2 from `ondrej/php` for validation. Sections
+below that describe Ubuntu 24.04/PHP 8.3 are historical local-validation notes;
+the 7.2 target governs dependencies and deployment.
 
 This document records the decisions already made so the migration does not restart from
 first principles. Do not re-open a locked decision without new evidence.
@@ -14,13 +20,13 @@ for decisions, scope, and the runbook only; do not add progress entries here.
 
 | Area | Decision |
 |---|---|
-| Target OS | Ubuntu 24.04 VM on existing infrastructure |
-| Migration method | Fresh VM, not an in-place 16.04 → 24.04 upgrade. Keep the 16.04 host as rollback. |
-| Target PHP | PHP 8.3 (distro packages), not 8.2 |
+| Target OS | Ubuntu 18.04 production VM; local validation VM remains Ubuntu 24.04 |
+| Migration method | Single in-place Ubuntu 16.04 → 18.04 upgrade with rollback, then the available PHP 7.2 security update. Do not perform a 16.04 → 24.04 upgrade. |
+| Target PHP | PHP 7.2 (18.04 packages; local VM uses `ondrej/php`) |
 | Current runtime | PHP 5.6, Ubuntu 16.04 |
-| Database | MySQL 5.7.33, run as a Docker container (`mysql:5.7.33`) because Ubuntu 24.04 does not package 5.7. Data lives at `/srv/add-data/mysql`; preview dumps are imported. |
+| Database | MySQL 5.7 for staging parity; local validation uses Docker `mysql:5.7.33` at `/srv/add-data/mysql`. |
 | Data handling | No production data leaves the VPN. The local VM is a preview-data fixture; final validation runs in the VPN against the real/staging database after the code is ported. |
-| Web stack | Apache 2.4 + `libapache2-mod-php8.3`; docroot is the CI public directory |
+| Web stack | Apache 2.4 + `libapache2-mod-php7.2`; docroot is the CI public directory |
 | Web root | Keep `vendor/clinicle/web/public`; an optional `/local/add/public` symlink to it is allowed. Do not relocate CodeIgniter in this migration. |
 | Framework | CodeIgniter 2.1.3, embedded in `clinicle/web`; keep and patch, do not upgrade |
 | First-party ownership (current paths) | `modules/`, `vendor/clinicle/`, `vendor/leicrespbru/`; target is `user/` |
@@ -35,8 +41,8 @@ for decisions, scope, and the runbook only; do not add progress entries here.
 | TCPDF | Upgrade 6.2.26 -> 6.11.x; keep 6.x, do not jump to 7.x |
 | FPDF | Replace `itbz/fpdf` 1.7.2 with `setasign/fpdf` 1.9; adapt the one subclass |
 | Minify | Upgrade 1.3.61 -> 1.3.75 |
-| PHPExcel | Replace with PhpSpreadsheet 5.x in the two read-only adapters |
-| Symfony | Pin 2.8/3.0; verified working on PHP 8.3 with deprecation notices only |
+| PHPExcel | Replace with PhpSpreadsheet 1.19 in the two read-only adapters; 5.x requires PHP 8.2 |
+| Symfony | Pin 2.8/3.x; verified working on PHP 7.2 |
 | Guzzle | Pin 3.9; remote-monitor integration deferred |
 | log4php | Pin 2.3.0; one `each()` patch |
 | Pimple, UUID, RandomLib, json-schema | Keep pinned; smoke tests pass |
@@ -284,19 +290,20 @@ Do this before any PHP 8 code edits.
     packages. Then run the module-tree build from step 9a and compare `work/`, its
     aliases, and the web/view symlinks with the baseline.
 11. Boot the application on the old PHP 5.6 runtime if possible; otherwise treat this
-    as the first staging gate on PHP 8.3.
+    as the first staging gate on PHP 7.2.
 12. Commit the restructure as a single reviewable change with no PHP 8 edits mixed in.
 
-### Phase 2 - Ubuntu 24.04 VM and PHP 8.3
+### Phase 2 - Ubuntu 18.04 and PHP 7.2
 
-1. Provision the VM; install:
+1. On the production 18.04 host, install the distro PHP 7.2 packages. On the
+   local 24.04 validation VM, install the equivalent from `ondrej/php`:
    ```bash
-   libapache2-mod-php8.3 php8.3-cli php8.3-mysql php8.3-mbstring
-   php8.3-xml php8.3-zip php8.3-gd php8.3-curl php8.3-sybase php8.3-opcache
+   libapache2-mod-php7.2 php7.2-cli php7.2-mysql php7.2-mbstring
+   php7.2-xml php7.2-zip php7.2-gd php7.2-curl php7.2-sybase php7.2-opcache
    ```
-   `php8.3-sybase` provides `pdo_dblib`; install FreeTDS.
-1a. Install MySQL 5.7.33, matching production. Ubuntu 24.04 does not package 5.7,
-    so use the official container:
+   `php7.2-sybase` provides `pdo_dblib`; install FreeTDS.
+1a. Use MySQL 5.7 matching production. On 18.04 it is packaged; the local 24.04
+    validation VM can use the container:
     ```bash
     sudo apt-get install -y docker.io
     sudo mkdir -p /srv/add-data/mysql && sudo chown -R 999:999 /srv/add-data/mysql
@@ -313,14 +320,9 @@ Do this before any PHP 8 code edits.
     Create `add_data` and `add_user` with `utf8`/`utf8_general_ci`, create the
     application user, and import the full production dump. The MariaDB preview
     dumps can be used only for a schema smoke test.
-1b. Verify PHP extensions before configuring Apache. The Ubuntu 24.04 packages in
-    this build left `/etc/php/8.3/mods-available/*.ini` empty, so `php -m` showed no
-    `PDO`, `mysqli`, or `pdo_mysql`. If that happens, restore the templates:
+1b. Verify PHP 7.2 extensions before configuring Apache:
     ```bash
-    sudo find /usr/share/php8.3-* -name '*.ini' \
-      -exec cp -f {} /etc/php/8.3/mods-available/ \;
-    sudo systemctl restart apache2
-    php -m | grep -E 'PDO|pdo_mysql|mysqli|mysqlnd|pdo_dblib'
+    php7.2 -m | grep -E 'PDO|pdo_mysql|mysqli|mysqlnd|pdo_dblib|mbstring|gd|curl|zip'
     ```
 2. Configure Apache:
    - docroot: `vendor/clinicle/web/public` (installed artifact), or
@@ -393,11 +395,11 @@ Composer policy for this phase:
 - Compare minified CSS and JS strings against baseline. This removes the
   `CSS.php:528` `implode` failure.
 
-#### 3.5 PHPExcel 1.8.1 -> PhpSpreadsheet 5.x
+#### 3.5 PHPExcel 1.8.1 -> PhpSpreadsheet 1.19
 
 - Change `user/clinicle/datafile/composer.json` and
   `user/leicrespbru/lrbtools/composer.json` from `phpoffice/phpexcel` to
-  `phpoffice/phpspreadsheet: ^5.10`.
+  `phpoffice/phpspreadsheet: ~1.19.0` (latest PHP 7.2-compatible release).
 - Update:
   - `user/clinicle/datafile/src/ExcelDataFile.php`
   - `user/leicrespbru/lrbtools/lib/LRB/DataFile/Excel.php`
@@ -545,9 +547,9 @@ import production data into the local VM.
 | `user/clinicle/letter/lib/ADD/Tool/RTF.php` | `TemplateProcessor` |
 | `user/clinicle/report/composer.json` | `setasign/fpdf: ^1.8` |
 | `user/clinicle/report/lib/ADD/Tool/PDF.php` | Extend global `\FPDF` |
-| `user/clinicle/datafile/composer.json` | `phpoffice/phpspreadsheet: ^5.10` |
+| `user/clinicle/datafile/composer.json` | `phpoffice/phpspreadsheet: ~1.19.0` |
 | `user/clinicle/datafile/src/ExcelDataFile.php` | PhpSpreadsheet read adapter |
-| `user/leicrespbru/lrbtools/composer.json` | `phpoffice/phpspreadsheet: ^5.10` |
+| `user/leicrespbru/lrbtools/composer.json` | `phpoffice/phpspreadsheet: ~1.19.0` |
 | `user/leicrespbru/lrbtools/lib/LRB/DataFile/Excel.php` | PhpSpreadsheet read adapter |
 | `user/clinicle/core/src/Content/Render/HtmlElement.php` | Ternary parentheses |
 | `user/clinicle/core/lib/ADD/Content/Html.php` | Ternary parentheses |
@@ -571,7 +573,7 @@ import production data into the local VM.
 | Risk | Mitigation |
 |---|---|
 | Production data cannot leave the VPN | Local validation uses preview data; final validation and production-data golden outputs run in the VPN after porting. Never import production rows into the local VM. |
-| Target VM re-provisioning permission is unconfirmed | User will resolve. Fallbacks if a new VM is not allowed: containerized PHP 8.3, static PHP 8.3 FPM + `proxy_fcgi`, or a new host. Do not in-place upgrade 16.04. Local code migration is not blocked. |
+| Target VM re-provisioning permission is unconfirmed | User will resolve. Planned path is one in-place 16.04 → 18.04 upgrade, then PHP 7.2 security updates. Fallbacks: PHP 7.2 via PPA or containerized PHP 7.2 on the existing host. Do not upgrade to 24.04. |
 | MySQL 5.7.33 is end-of-life | Keep it staging-only and bound to `127.0.0.1`; plan a separate database upgrade after the PHP migration. |
 | Composer reports ambiguous `ADD_Component_DeleteSectionButton` in `clinicle/core` and `clinicle/touch` | Files are byte-identical; the touch copy wins. Remove one copy later or add an `exclude-from-classmap` rule. |
 | Removing the Composer installer changes how module code and web/view links reach `work/` | Capture the live `work/` layout and symlink targets; replicate with a build script; verify `ModuleSetup` output. `modules.ini` is not used. |
@@ -605,12 +607,12 @@ import production data into the local VM.
 ## 8. Audit commands
 
 ```bash
-# lint + PHPCompatibility on first-party code
-PHP_BIN=php8.3 tools/php82-audit.sh --first-party
+# target lint on the VM
+find user bin -name '*.php' -print0 | xargs -0 -r -n1 -P8 php7.2 -l
 
-# full tree, including third-party vendor
-PHP_BIN=php8.3 tools/php82-audit.sh
+# optional forward-looking PHP 8.3 audit on the host
+PHP_BIN=php8.3 tools/php82-audit.sh --first-party
 ```
 
-The audit writes `summary.md`, `syntax.tsv`, `removed-api.tsv`, `deprecations.tsv`,
-and `review.tsv` under `reports/php82-audit/` by default.
+The 8.3 audit writes `summary.md`, `syntax.tsv`, `removed-api.tsv`,
+`deprecations.tsv`, and `review.tsv` under `reports/php82-audit/` by default.

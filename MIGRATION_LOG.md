@@ -1,4 +1,4 @@
-# ADD PHP 8.3 Migration Log
+# ADD Migration Log
 
 Append-only execution log. Decisions and scope live in `MIGRATION_PLAN.md`; this file
 records what was actually done, where, and with what result. Add new entries at the
@@ -487,6 +487,26 @@ bottom. Do not rewrite history; correct an entry with a follow-up note.
 - Re-enrolling an already enrolled patient still reports the intentional
   “already added” message.
 
+### PHP 7.2 target revision
+
+- Production target is Ubuntu 18.04 with PHP 7.2; local Ubuntu 24.04 validation
+  uses PHP 7.2 from `ondrej/php`. Earlier PHP 8.3/24.04 sections are historical.
+- Installed on the VM: PHP 7.2.34, Composer 2.10.3 running under 7.2, extensions
+  `mysqli`, `pdo_mysql`, `pdo_dblib`, mbstring, xml, gd, curl, zip, intl, bcmath.
+- Root Composer now pins `config.platform.php` to `7.2.0`; the two PhpSpreadsheet
+  adapters require `~1.19.0` (latest PHP 7.2-compatible release).
+- Regenerated the lock with `--no-blocking` because PhpSpreadsheet 1.19 has known
+  advisories. `psr/simple-cache` resolved to 1.0.1; `composer/pcre` is gone.
+- Reinstalled vendor under PHP 7.2 and reapplied `patches/log4php-2.3.0-each.patch`.
+- Verified:
+  - `composer check-platform-reqs` succeeds on PHP 7.2;
+  - all first-party PHP files lint under PHP 7.2;
+  - `php7.2 vendor/bin/clinicle list` succeeds;
+  - PHP 7.2 built-in server: root and authenticated `/search` render;
+  - Apache 2.4 + mod_php7.2: root and `/search` render with the full search form.
+- Note: PHP 7.2/Ubuntu 18.04 and PhpSpreadsheet 1.19 are EOL; this target accepts
+  their known advisory risk for the constrained upgrade path.
+
 ### Next action
 
 - Local work is complete. Remaining work is VPN-only:
@@ -494,5 +514,6 @@ bottom. Do not rewrite history; correct an entry with a follow-up note.
   - add `system_version` (and the equivalent module version metadata) to the
     production profile;
   - port the code, run the production-data smoke matrix, and compare outputs;
-  - decide the deployment path if a fresh VM is not permitted.
+  - execute the single 16.04 → 18.04 upgrade with rollback, then install and
+    verify the available PHP 7.2 security update.
 - Keep the local VM on preview data; no production data outside the VPN.

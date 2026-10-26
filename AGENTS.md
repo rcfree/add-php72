@@ -14,11 +14,11 @@ Add new work to `MIGRATION_LOG.md`; keep the plan decision-focused.
 ## Project state
 
 - Legacy ADD application, originally PHP 5.6 / Ubuntu 16.04 / CodeIgniter 2.1.3.
-- Target: PHP 8.3 on Ubuntu 24.04, with MySQL 5.7.33 for staging parity.
+- Target: PHP 7.2 on Ubuntu 18.04, with MySQL 5.7 for staging parity. The local
+  VM remains Ubuntu 24.04 and runs PHP 7.2 from the `ondrej/php` PPA.
 - Phase 1 (restructure), Phase 3 (dependencies), and local Phase 4 work are
   complete.
-- Static audit: 0 syntax blockers.
-- CLI boot and local web smoke (including authenticated login) pass on the VM.
+- PHP 7.2 lint, Composer platform checks, CLI, and local web smoke pass.
 - Remaining work is VPN-only: live layout/config capture, porting, and
   production-data validation.
 
@@ -46,16 +46,17 @@ which `tools/build-module-tree.sh` builds.
 
 ## Host vs VM
 
-The host has no global `php` or `composer`. Use the local PHP 8.3 wrapper:
+The host has no global `php` or `composer`. The target runtime is PHP 7.2 on the
+VM; use the VM for Composer and smoke tests:
 
 ```bash
-/local/tools/php8.3 -v
-/local/tools/php8.3 /local/tools/composer.phar --version
+php7.2 -v
+php7.2 /usr/local/bin/composer --version
 ```
 
-The host PHP is intentionally minimal (no curl/mbstring/zip). Composer commands on
-the host therefore need `--ignore-platform-reqs`. The VM has the full extension
-set; prefer the VM for real installs and smoke tests.
+The host wrapper `/local/tools/php8.3` remains for forward-looking PHP 8 audits,
+not for target validation. The VM has the PHP 7.2 extension set installed from
+the `ondrej/php` PPA; production is Ubuntu 18.04 with its PHP 7.2 packages.
 
 VM access:
 
@@ -65,24 +66,27 @@ VM access:
 ssh -i /local/vm/add-php83/id_ed25519 -p 2222 rob@127.0.0.1
 ```
 
-The VM is QEMU/KVM, Ubuntu 24.04.5, 4 vCPU, 8 GB RAM, 60 GB system disk, 100 GB
-data disk. `/mnt/host_add` is a read-only 9p share of the host checkout.
-`/srv/add-data` is the data disk; `/local/reports` and `/media/uhl_data` point
-into it.
+The local VM is QEMU/KVM, Ubuntu 24.04.5, 4 vCPU, 8 GB RAM, 60 GB system disk,
+100 GB data disk. PHP 7.2 is installed alongside 8.3 from `ondrej/php`; this is
+only for local validation. `/mnt/host_add` is a read-only 9p share of the host
+checkout. `/srv/add-data` is the data disk; `/local/reports` and
+`/media/uhl_data` point into it.
 
 ## Composer rules
 
 - Never run a blanket `composer update`.
 - Path packages are under `user/*/*`; versions are pinned in the root
   `composer.json` `repositories[].options.versions` map.
+- Run Composer on the VM with `php7.2 /usr/local/bin/composer`; the root
+  `composer.json` pins `config.platform.php` to `7.2.0`.
 - Update only the target package(s), without `--with-dependencies` unless
   required, and inspect `composer.lock` for unexpected pinned-package movement.
 - The root lock intentionally has no Composer plugin. `clinicle/install` is a
   plain library; do not reintroduce the Composer installer.
 - On the host, add `--ignore-platform-reqs`. On the VM, do not.
-- The local Composer may block abandoned packages with security advisories. For a
-  controlled local update, use `--no-blocking`; do not make this the default for
-  production builds.
+- Composer blocks PhpSpreadsheet 1.19 security advisories. For this controlled
+  PHP 7.2 target, use `--no-blocking`; do not make this the default for
+  production builds without accepting the advisory risk.
 - After changing `user/clinicle/web` or running Composer install/update, rebuild
   symlinks:
 
@@ -109,26 +113,21 @@ They are not used by `tools/apply-patches.sh`; see `patches/README.md`.
 
 ## Audit and verification
 
-Static audit:
+Target lint on the VM (PHP 7.2):
 
 ```bash
 cd /local/add
-PHP_BIN=/local/tools/php8.3 JOBS=8 tools/php82-audit.sh --first-party
+find user bin -name '*.php' -print0 | xargs -0 -r -n1 -P8 php7.2 -l
 ```
 
-Expected: `syntax blockers: 0`.
-
-Full audit (includes third-party vendor):
-
-```bash
-PHP_BIN=/local/tools/php8.3 tools/php82-audit.sh
-```
+Expected: no parse errors. The `tools/php82-audit.sh` script remains available on
+the host for a forward-looking PHP 8.3 audit, but it is not the target audit.
 
 CLI on the VM:
 
 ```bash
 cd /local/add
-ADD_PATH=/local/add ADD_PROFILE=local php vendor/bin/clinicle list
+ADD_PATH=/local/add ADD_PROFILE=local php7.2 vendor/bin/clinicle list
 ```
 
 PHP built-in server (quick smoke only):
@@ -136,7 +135,7 @@ PHP built-in server (quick smoke only):
 ```bash
 cd /local/add/vendor/clinicle/web/public
 ADD_PATH=/local/add ADD_PROFILE=local \
-  php -S 127.0.0.1:8080 -t . /local/add/tools/php-builtin-router.php
+  php7.2 -S 127.0.0.1:8080 -t . /local/add/tools/php-builtin-router.php
 ```
 
 Apache is the authoritative SAPI because CI relies on `.htaccess`. A preview
@@ -157,7 +156,7 @@ listening on `127.0.0.1:8082`:
 </VirtualHost>
 ```
 
-`mod_rewrite` must be enabled. CI's `Log` class calls `chmod()` on
+`mod_rewrite` and `mod_php7.2` must be enabled. CI's `Log` class calls `chmod()` on
 `application/logs`; the preview Apache workers run as `rob` (via
 `APACHE_RUN_USER`/`APACHE_RUN_GROUP` in `/etc/apache2/envvars`) and the writable
 dirs are `rob:rob`:
@@ -187,7 +186,7 @@ Tunnel service name in the agent runtime: `add-php83-web`.
 
 Local URL: `http://127.0.0.1:8081/`.
 
-Legacy login behavior is unchanged and **outside the PHP 8.2 migration scope**:
+Legacy login behavior is unchanged and **outside the migration scope**:
 
 - `Auth::login` builds the login view data but redirects to `/` instead of
   rendering `auth/login.php`.
@@ -195,12 +194,12 @@ Legacy login behavior is unchanged and **outside the PHP 8.2 migration scope**:
 - `auth/login` therefore redirects to `/`.
 - `auth/login.php` already contains the normal header/footer, but the controller
   does not reach it.
-- Verified under Apache 2.4 + mod_php 8.3 with `AllowOverride All`: `/` returns
-  the 2,844-byte Home shell; `/auth/login` sends `Refresh: 0;url=/`. No PHP file
-  in `user/` or `vendor/` loads `auth/login.php`.
+- Verified under Apache 2.4 + mod_php 7.2 with `AllowOverride All`: `/` returns
+  the themed Home shell; `/auth/login` sends `Refresh: 0;url=/`. No PHP file in
+  `user/` or `vendor/` loads `auth/login.php`.
 
 The Apache rewrite is therefore not the missing piece. Do not “fix” that UX as
-part of the PHP 8.2 port. If local authentication is
+part of the PHP 7.2 port. If local authentication is
 needed, POST directly:
 
 ```bash
@@ -349,8 +348,9 @@ Do not reintroduce Mercurial or `.hg` metadata.
   or `/media/uhl_data` into the local host/VM.
 - Do not commit `config/`, dumps, logs, or patient data. They are gitignored; keep
   it that way.
-- The target VM may not be re-provisionable due to permissions. Do not perform an
-  in-place Ubuntu 16.04 → 24.04 upgrade. Fallbacks are recorded in the plan.
+- The target VM may not be re-provisionable due to permissions. The planned path
+  is a single in-place Ubuntu 16.04 → 18.04 upgrade with rollback, then PHP 7.2
+  security updates. Do not perform a 16.04 → 24.04 upgrade.
 - CodeIgniter stays at 2.1.3 and stays in `vendor/clinicle/web/public`; do not move
   the web root or upgrade CI as part of this migration.
 
@@ -368,12 +368,13 @@ Do not reintroduce Mercurial or `.hg` metadata.
 ```bash
 cd /local/add
 
-# 1. Static audit
-PHP_BIN=/local/tools/php8.3 JOBS=8 tools/php82-audit.sh --first-party
+# 1. PHP 7.2 syntax audit on VM
+ssh -i /local/vm/add-php83/id_ed25519 -p 2222 rob@127.0.0.1 \
+  'cd /local/add && find user bin -name "*.php" -print0 | xargs -0 -r -n1 -P8 php7.2 -l'
 
 # 2. CLI on VM
 ssh -i /local/vm/add-php83/id_ed25519 -p 2222 rob@127.0.0.1 \
-  'cd /local/add && ADD_PATH=/local/add ADD_PROFILE=local php vendor/bin/clinicle list'
+  'cd /local/add && ADD_PATH=/local/add ADD_PROFILE=local php7.2 vendor/bin/clinicle list'
 
 # 3. Legacy auth redirect (expected: Refresh to /)
 curl -sS -D - -o /dev/null http://127.0.0.1:8081/auth/login | grep -i Refresh:
@@ -385,6 +386,6 @@ curl -sS -c /tmp/c -b /tmp/c \
 curl -sS -b /tmp/c http://127.0.0.1:8081/index.php/auth/loggedin
 ```
 
-Expected: 0 audit blockers, CLI command list, and `{"logged_in":true}` after the
-direct POST. The unauthenticated root/blank-shell behavior is legacy, not a
-PHP 8.2 regression.
+Expected: no PHP 7.2 parse errors, CLI command list, and `{"logged_in":true}`
+after the direct POST. The unauthenticated root/blank-shell behavior is legacy,
+not a migration regression.
