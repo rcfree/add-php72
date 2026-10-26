@@ -507,6 +507,18 @@ bottom. Do not rewrite history; correct an entry with a follow-up note.
 - Note: PHP 7.2/Ubuntu 18.04 and PhpSpreadsheet 1.19 are EOL; this target accepts
   their known advisory risk for the constrained upgrade path.
 
+### DAC report on PHP 7.2
+
+- The DAC baseline report first failed because the runtime vendor copy still
+  contained the pre-fix report package; synced `user/clinicle/report` into both
+  `user/` and `vendor/` on the VM.
+- It then hit `A non well formed numeric value encountered` in
+  `ADD_ReportField_Obs::createReportElement()`: report field dimensions can be
+  numeric strings from settings. Cast width/height to float before layout
+  arithmetic.
+- Verified the exact URL under Apache + mod_php7.2 returns a valid 8-page PDF:
+  `/report?pid=6&name=baseline-report&id=40&module=dac&type=section`.
+
 ### Next action
 
 - Local work is complete. Remaining work is VPN-only:

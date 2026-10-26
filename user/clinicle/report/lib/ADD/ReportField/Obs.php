@@ -82,6 +82,8 @@ class ADD_ReportField_Obs extends ADD_ReportField {
 			}
 		}
 		list($width,$height) = $this->_field->createPdfElement($this,$page,$currentX,$currentY);
+		$width = (float) $width;
+		$height = (float) $height;
 	
 		return array($width, $height, $currentX+$width, $currentY+$height);
 	}
