@@ -30,7 +30,7 @@ Add new work to `MIGRATION_LOG.md`; keep the plan decision-focused.
   vendor/               # Composer output (ignored)
   work/                 # runtime module tree, built from user/ (ignored)
   modules/              # legacy installed tree; only modules/live may remain (ignored)
-  config/               # deployment-specific profiles (ignored)
+  config/               # deployment profiles; config/local is the tracked example
   tools/                # audit, module-tree build, patch application, seed scripts
   patches/              # tracked third-party patches
   composer.json         # path repositories under user/*/*
@@ -245,7 +245,8 @@ password hash and `last_changed`.
 
 ## Configuration traps
 
-Local profile: `config/local` (ignored by git).
+Local profile: `config/local`, tracked as a preview example. Other profiles under
+`config/` remain deployment-specific and ignored.
 
 Required root-level settings include:
 
@@ -346,8 +347,8 @@ Do not reintroduce Mercurial or `.hg` metadata.
 - Production data must not leave the VPN.
 - The local VM uses preview data only. Never import production rows, patient data,
   or `/media/uhl_data` into the local host/VM.
-- Do not commit `config/`, dumps, logs, or patient data. They are gitignored; keep
-  it that way.
+- Do not commit deployment configs other than the `config/local` preview example,
+  dumps, logs, or patient data. Other `config/` profiles are gitignored.
 - The target VM may not be re-provisionable due to permissions. The planned path
   is a single in-place Ubuntu 16.04 → 18.04 upgrade with rollback, then PHP 7.2
   security updates. Do not perform a 16.04 → 24.04 upgrade.
@@ -356,8 +357,9 @@ Do not reintroduce Mercurial or `.hg` metadata.
 
 ## Git
 
-- Root repo is the monorepo. `vendor/`, `work/`, `modules/`, `config/`, `reports/`,
-  logs, and temp data are ignored.
+- Root repo is the monorepo. `vendor/`, `work/`, `modules/`, deployment `config/`
+  profiles, `reports/`, logs, and temp data are ignored. `config/local` is the
+  tracked preview example.
 - `user/` is tracked. Commit dependency and code changes separately.
 - Rollback archive before the restructure:
   `/local/backups/add-pre-restructure-20261023.tgz`.

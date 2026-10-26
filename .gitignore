@@ -6,7 +6,8 @@
 /reports/
 
 # Deployment-specific configuration and secrets
-/config/
+/config/*
+!/config/local/
 /dict/
 
 # Runtime output
