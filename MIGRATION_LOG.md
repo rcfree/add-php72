@@ -519,6 +519,15 @@ bottom. Do not rewrite history; correct an entry with a follow-up note.
 - Verified the exact URL under Apache + mod_php7.2 returns a valid 8-page PDF:
   `/report?pid=6&name=baseline-report&id=40&module=dac&type=section`.
 
+### QoL questionnaire count on PHP 7.2
+
+- HADS and the other QoL radio fields called `count($this->getOptions())`;
+  `getOptions()` returns an options object, which PHP 5.6 tolerated but PHP 7.2
+  rejects with “count(): Parameter must be an array or Countable”.
+- Replaced the calls with `getOptions()->countOptions()` in
+  `HadsRadioButtons`, `RadioButtonsHoriz`, and `ExactproQuestion`.
+- Synced the corrected QoL package to `user/` and `vendor/` on the VM.
+
 ### Next action
 
 - Local work is complete. Remaining work is VPN-only:

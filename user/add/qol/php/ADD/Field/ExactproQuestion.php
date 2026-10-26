@@ -55,7 +55,7 @@ class ADD_Field_ExactproQuestion extends ADD_Field_List {
                     "no",);
                 if ($add->hasState('readOnly') || $this->getSetting('viewonly'))
                     $attrs['disabled'] = 'disabled';
-                if (count($this->getOptions()) == $ocount)
+                if ($this->getOptions()->countOptions() == $ocount)
                     $radioClass = $radioClass . " last";
 
                 $dayValue = $this->getDayValue($page,$day);

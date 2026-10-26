@@ -49,7 +49,7 @@ class ADD_Field_HadsRadioButtons extends ADD_Field_List {
 				"autocomplete"=>"no",
 			);
 			if ($add->hasState('readOnly') || $this->getSetting('viewonly')) $attrs['disabled']='disabled';
-			if (count($this->getOptions())==$ocount) $radioClass=$radioClass." last";
+			if ($this->getOptions()->countOptions()==$ocount) $radioClass=$radioClass." last";
 			
 			if (strlen($this->getValue())>0 && $this->getValue() ==$value) $attrs['checked']="checked";
 			$html->addTextElement("span","{$value}&nbsp;");
