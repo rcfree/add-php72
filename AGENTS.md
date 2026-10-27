@@ -40,9 +40,11 @@ Add new work to `MIGRATION_LOG.md`; keep the plan decision-focused.
   AGENTS.md
 ```
 
-`user/<vendor>/<package>` is the source of truth. Composer mirrors these into
-`vendor/`. The app runtime loads module definitions from `work/<vendor>/<package>`,
-which `tools/build-module-tree.sh` builds.
+`user/<vendor>/<package>` is the single source of truth. Composer path packages
+are symlinked into `vendor/` (`options.symlink: true`), and the app runtime loads
+module definitions from `work/<vendor>/<package>`, which
+`tools/build-module-tree.sh` symlinks to `user/` by default. `--copy` is only for
+a standalone deployment artifact.
 
 ## Host vs VM
 

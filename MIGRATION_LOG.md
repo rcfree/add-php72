@@ -528,6 +528,20 @@ bottom. Do not rewrite history; correct an entry with a follow-up note.
   `HadsRadioButtons`, `RadioButtonsHoriz`, and `ExactproQuestion`.
 - Synced the corrected QoL package to `user/` and `vendor/` on the VM.
 
+### Single-source modules via symlinks
+
+- `user/<vendor>/<package>` is now the only module source.
+- Composer path repositories use `options.symlink: true`; after refreshing the
+  lock metadata and reinstalling, `vendor/<vendor>/<package>` points at `user/`
+  rather than duplicating it.
+- `tools/build-module-tree.sh` keeps `work/` as symlinks to `user/` by default
+  and now points each module’s web/view links directly at the source package.
+  `--copy` remains available for a standalone deployment.
+- Fixed the misleading copy-mode summary: it now counts module directories and
+  symlinks instead of symlinks only.
+- Verified under PHP 7.2: CLI command list still succeeds; root and authenticated
+  `/search` render after clearing the registry.
+
 ### Next action
 
 - Local work is complete. Remaining work is VPN-only:

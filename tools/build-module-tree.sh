@@ -58,21 +58,23 @@ while IFS=$'\t' read -r name src; do
     mkdir -p "$(dirname "$target")"
     if [ "$MODE" = "copy" ]; then
         rsync -a --exclude='.git' "$src/" "$target/"
+        link_src="$target"
     else
         ln -s "$src" "$target"
+        link_src="$src"
     fi
 
     if [ -d "$src/web" ]; then
         mkdir -p "$WEB/module/$(dirname "$name")"
-        ln -sfn "$target/web" "$WEB/module/$name"
+        ln -sfn "$link_src/web" "$WEB/module/$name"
     fi
     if [ -d "$src/views" ]; then
         mkdir -p "$WEB/application/views/module/$(dirname "$name")"
-        ln -sfn "$target/views" "$WEB/application/views/module/$name"
+        ln -sfn "$link_src/views" "$WEB/application/views/module/$name"
     fi
 done < /tmp/add-modules.$$
 
 rm -f /tmp/add-modules.$$
 
-echo "Built $MODE module tree under $WORK"
-find "$WORK" -mindepth 2 -maxdepth 2 -type l | wc -l | xargs echo "modules:"
+module_count=$(find "$WORK" -mindepth 2 -maxdepth 2 \( -type l -o -type d \) | wc -l | tr -d ' ')
+echo "Built $MODE module tree under $WORK ($module_count modules)"

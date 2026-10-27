@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6180c035d73d895fd7c4ddcc9d19d7c6",
+    "content-hash": "8afe42586dfbc495bcf498bc50f1e267",
     "packages": [
         {
             "name": "add/advcopd",
@@ -12,7 +12,7 @@
             "dist": {
                 "type": "path",
                 "url": "user/add/advcopd",
-                "reference": "9b156f75ebedf5607f8b27826b81649599fb8dde"
+                "reference": "1451bcc8bfe132f586f66c19d6b4d87f71f79923"
             },
             "require": {
                 "add/concept": "~1.0",
@@ -29,7 +29,7 @@
             },
             "description": "Advanced COPD module (part of ADD)",
             "transport-options": {
-                "symlink": false,
+                "symlink": true,
                 "relative": true
             }
         },
@@ -39,7 +39,7 @@
             "dist": {
                 "type": "path",
                 "url": "user/add/advcopd_fup",
-                "reference": "9b1a02bd36a7c74c2c8cad02012aa759f499688c"
+                "reference": "4a25713294d23f6cf820e436be8b7cb558724b20"
             },
             "require": {
                 "add/advcopd": "~2.2",
@@ -49,7 +49,7 @@
             "type": "clinicle-module",
             "description": "Advanced COPD followup module (part of ADD)",
             "transport-options": {
-                "symlink": false,
+                "symlink": true,
                 "relative": true
             }
         },
@@ -59,7 +59,7 @@
             "dist": {
                 "type": "path",
                 "url": "user/add/advcopd_report",
-                "reference": "42e61f8545ee9cffff362e7538235d896e09a796"
+                "reference": "3bfe05e1174da3114e0044bde5aa3937a19d272f"
             },
             "require": {
                 "add/advcopd": "~2.2",
@@ -69,7 +69,7 @@
             "type": "clinicle-module",
             "description": "Advanced COPD report module (part of ADD)",
             "transport-options": {
-                "symlink": false,
+                "symlink": true,
                 "relative": true
             }
         },
@@ -79,7 +79,7 @@
             "dist": {
                 "type": "path",
                 "url": "user/add/cap",
-                "reference": "ee72cd36e16ea3617f915ec6d0ca5b81688f6040"
+                "reference": "77c995d41d0bc3e07e16a281562ba5bfbac2be3c"
             },
             "require": {
                 "add/patient": "~1.0",
@@ -89,7 +89,7 @@
             "type": "clinicle-module",
             "description": "Community acquired pneumonia module (part of ADD)",
             "transport-options": {
-                "symlink": false,
+                "symlink": true,
                 "relative": true
             }
         },
@@ -99,7 +99,7 @@
             "dist": {
                 "type": "path",
                 "url": "user/add/concept",
-                "reference": "296ba7058b6a063e34b88035574895cf5695fa16"
+                "reference": "10ab8480125190cc4fda9717664fdc3c2eda9164"
             },
             "require": {
                 "clinicle/ajax": "~1.0",
@@ -113,7 +113,7 @@
             },
             "description": "Common concepts module (part of ADD)",
             "transport-options": {
-                "symlink": false,
+                "symlink": true,
                 "relative": true
             }
         },
@@ -123,7 +123,7 @@
             "dist": {
                 "type": "path",
                 "url": "user/add/dac",
-                "reference": "107c5c7d2fd39ebfc0d0e3b622f154020b59c1d7"
+                "reference": "609dccd7097480838e7912128d05cea26d1f79fb"
             },
             "require": {
                 "add/concept": "^1.0",
@@ -136,7 +136,7 @@
             "type": "clinicle-module",
             "description": "Difficult Asthma Clinic module (part of ADD)",
             "transport-options": {
-                "symlink": false,
+                "symlink": true,
                 "relative": true
             }
         },
@@ -146,7 +146,7 @@
             "dist": {
                 "type": "path",
                 "url": "user/add/dac_mdt",
-                "reference": "118096e8030f0bfa2ce5fabecdb25973c7beaad3"
+                "reference": "cc6016f66ed19be3fc1af82e5f81e67943e41289"
             },
             "require": {
                 "add/dac": "~2.0",
@@ -157,7 +157,7 @@
             "type": "clinicle-module",
             "description": "DAC MDT module (part of ADD)",
             "transport-options": {
-                "symlink": false,
+                "symlink": true,
                 "relative": true
             }
         },
@@ -167,7 +167,7 @@
             "dist": {
                 "type": "path",
                 "url": "user/add/eos",
-                "reference": "a46215f9f17128d09077738f849c4c337b9ba301"
+                "reference": "256be90ec873986a36e16b94d1e40d8ef09b9017"
             },
             "require": {
                 "add/concept": "~1.0",
@@ -181,7 +181,7 @@
             "type": "clinicle-module",
             "description": "Hyper-eosinophilic module (part of ADD)",
             "transport-options": {
-                "symlink": false,
+                "symlink": true,
                 "relative": true
             }
         },
@@ -191,7 +191,7 @@
             "dist": {
                 "type": "path",
                 "url": "user/add/grouping",
-                "reference": "e25f037baa6b1a85c5f6ef1b947ebb559d02f249"
+                "reference": "92843a1c999ad4c2d9c439b4a59ae379f465098f"
             },
             "require": {
                 "clinicle/core": "~2.4",
@@ -205,7 +205,7 @@
             },
             "description": "Grouping module (part of ADD)",
             "transport-options": {
-                "symlink": false,
+                "symlink": true,
                 "relative": true
             }
         },
@@ -215,7 +215,7 @@
             "dist": {
                 "type": "path",
                 "url": "user/add/history",
-                "reference": "94cec38d03e22e496f2147b82df73fcc4c3a4ca5"
+                "reference": "0dce8389c873a34acea5661f5faf9ea7828ba83d"
             },
             "require": {
                 "add/patient": "~1.0",
@@ -230,7 +230,7 @@
             },
             "description": "Medical history module (part of ADD)",
             "transport-options": {
-                "symlink": false,
+                "symlink": true,
                 "relative": true
             }
         },
@@ -240,7 +240,7 @@
             "dist": {
                 "type": "path",
                 "url": "user/add/history_ext",
-                "reference": "54739f533ecf29f13a617247b8556d05a3d5dc0b"
+                "reference": "67c040af1658dc17f8a06d42c8fb25df715ded08"
             },
             "require": {
                 "add/history": "~2.0",
@@ -256,7 +256,7 @@
             },
             "description": "Medical history extension module (part of ADD)",
             "transport-options": {
-                "symlink": false,
+                "symlink": true,
                 "relative": true
             }
         },
@@ -266,7 +266,7 @@
             "dist": {
                 "type": "path",
                 "url": "user/add/history_status",
-                "reference": "23034c3a558e7b71533e74e690ec59701709a137"
+                "reference": "ad7b7d4bc4d2b1161c7a8cc0669175e374b9677c"
             },
             "require": {
                 "add/concept": "~1.0",
@@ -279,7 +279,7 @@
             "type": "clinicle-module",
             "description": "Medical history status module (part of ADD)",
             "transport-options": {
-                "symlink": false,
+                "symlink": true,
                 "relative": true
             }
         },
@@ -289,7 +289,7 @@
             "dist": {
                 "type": "path",
                 "url": "user/add/ild",
-                "reference": "0e5edcd49044b90f51c97bb373de3ba9ec5cf349"
+                "reference": "f99036d2db976f6138bf051343356c910dead18a"
             },
             "require": {
                 "add/patient": "~1.0",
@@ -306,7 +306,7 @@
             },
             "description": "ADD ILD module",
             "transport-options": {
-                "symlink": false,
+                "symlink": true,
                 "relative": true
             }
         },
@@ -316,7 +316,7 @@
             "dist": {
                 "type": "path",
                 "url": "user/add/inv",
-                "reference": "9a09433354225f0c751dab8ad56c7471893b9897"
+                "reference": "ff7b6428b7ebd9e29e7c14668f96fd58defa3024"
             },
             "require": {
                 "clinicle/client": "^1.9",
@@ -331,7 +331,7 @@
             },
             "description": "Investigations module (part of ADD)",
             "transport-options": {
-                "symlink": false,
+                "symlink": true,
                 "relative": true
             }
         },
@@ -341,7 +341,7 @@
             "dist": {
                 "type": "path",
                 "url": "user/add/inv_fungi",
-                "reference": "23fda993cc523cb586b9ce1db7fe82866f944f53"
+                "reference": "6d08bb34fe4f88d210d476042387cdc9346fd2ca"
             },
             "require": {
                 "add/inv": "^2.2",
@@ -351,7 +351,7 @@
             "type": "clinicle-module",
             "description": "Fungi entry investigations module (part of ADD)",
             "transport-options": {
-                "symlink": false,
+                "symlink": true,
                 "relative": true
             }
         },
@@ -361,7 +361,7 @@
             "dist": {
                 "type": "path",
                 "url": "user/add/inv_ige",
-                "reference": "8a747f7a8fb1405698febb22f0b3bf575005498b"
+                "reference": "4472e5e9c2be7a4ab2d8db501d419943038299a5"
             },
             "require": {
                 "add/inv": "~2.0",
@@ -377,7 +377,7 @@
             },
             "description": "Investigations IgE module (part of ADD)",
             "transport-options": {
-                "symlink": false,
+                "symlink": true,
                 "relative": true
             }
         },
@@ -387,7 +387,7 @@
             "dist": {
                 "type": "path",
                 "url": "user/add/med",
-                "reference": "a4ffb9bbb7436574ebef04dbd70ca53418f2fcf6"
+                "reference": "c8d6ad94fcfbbef1f6a1185d20d20df5017185d0"
             },
             "require": {
                 "clinicle/client": "~1.9",
@@ -408,7 +408,7 @@
             },
             "description": "Medication module (part of ADD)",
             "transport-options": {
-                "symlink": false,
+                "symlink": true,
                 "relative": true
             }
         },
@@ -418,7 +418,7 @@
             "dist": {
                 "type": "path",
                 "url": "user/add/med_report",
-                "reference": "0b8eda26ae4429bc5ec86011c7e2be2cdb801ef5"
+                "reference": "08f9cd0e71b940317ee8be27b3d728cc788734e0"
             },
             "require": {
                 "add/med": "~1.0",
@@ -429,7 +429,7 @@
             "type": "clinicle-module",
             "description": "Medication report module (part of ADD)",
             "transport-options": {
-                "symlink": false,
+                "symlink": true,
                 "relative": true
             }
         },
@@ -439,7 +439,7 @@
             "dist": {
                 "type": "path",
                 "url": "user/add/paasth",
-                "reference": "e7427540aae488eb63c4e579ef59f12706a5ae13"
+                "reference": "538b32789ccf9965507a4a5778e53cc2ff49f148"
             },
             "require": {
                 "add/concept": "^1.0",
@@ -457,7 +457,7 @@
             },
             "description": "Paediatric asthma module (part of ADD)",
             "transport-options": {
-                "symlink": false,
+                "symlink": true,
                 "relative": true
             }
         },
@@ -467,7 +467,7 @@
             "dist": {
                 "type": "path",
                 "url": "user/add/path",
-                "reference": "a3d1736588d97d136b178dc2caba35920022ef0e"
+                "reference": "f703d91e2014846cc3fc25e74e44d0c753f29732"
             },
             "require": {
                 "clinicle/base": "^1.6",
@@ -485,7 +485,7 @@
             },
             "description": "Pathology module (part of ADD)",
             "transport-options": {
-                "symlink": false,
+                "symlink": true,
                 "relative": true
             }
         },
@@ -495,7 +495,7 @@
             "dist": {
                 "type": "path",
                 "url": "user/add/pr",
-                "reference": "97e5d178e61c5b9b8cdf4ea395cd56d414c2bb4a"
+                "reference": "10a210974b8ae69d406ea810b43ae1ec7a385690"
             },
             "require": {
                 "add/concept": "~1.6",
@@ -515,7 +515,7 @@
             },
             "description": "ADD PR module",
             "transport-options": {
-                "symlink": false,
+                "symlink": true,
                 "relative": true
             }
         },
@@ -525,7 +525,7 @@
             "dist": {
                 "type": "path",
                 "url": "user/add/pr_dashboard",
-                "reference": "d384dc475f0619c041c31d64b3315211e638b498"
+                "reference": "473a699d3762c9cba8fbc2c4da05f2c8de5e8725"
             },
             "require": {
                 "add/pr": "^1.4",
@@ -539,7 +539,7 @@
             },
             "description": "ADD PR dashboard module",
             "transport-options": {
-                "symlink": false,
+                "symlink": true,
                 "relative": true
             }
         },
@@ -549,7 +549,7 @@
             "dist": {
                 "type": "path",
                 "url": "user/add/qol",
-                "reference": "9c2d070fce05a8507149a95a05db9394f98fd8b2"
+                "reference": "393a9f5f97cbf802853a0aa31cb07084f36ca73f"
             },
             "require": {
                 "clinicle/core": "~2.12",
@@ -567,7 +567,7 @@
             },
             "description": "Quality of life module (part of ADD)",
             "transport-options": {
-                "symlink": false,
+                "symlink": true,
                 "relative": true
             }
         },
@@ -577,7 +577,7 @@
             "dist": {
                 "type": "path",
                 "url": "user/add/referral",
-                "reference": "100212e19748e49193aa48b0baebeb5cf316ebe2"
+                "reference": "8a30c357a11b983d12d78ab9098c42c9a6bfce1b"
             },
             "require": {
                 "clinicle/client": "~1.9",
@@ -591,7 +591,7 @@
             },
             "description": "ADD referral form/management module",
             "transport-options": {
-                "symlink": false,
+                "symlink": true,
                 "relative": true
             }
         },
@@ -601,7 +601,7 @@
             "dist": {
                 "type": "path",
                 "url": "user/add/research",
-                "reference": "6884130707e037ffba31b283ad7724ea4c2205dd"
+                "reference": "e254bd3edf025aa3e40c7066d397acca3391098c"
             },
             "require": {
                 "add/patient": "~1.1",
@@ -621,7 +621,7 @@
             },
             "description": "Research module (part of ADD)",
             "transport-options": {
-                "symlink": false,
+                "symlink": true,
                 "relative": true
             }
         },
@@ -631,7 +631,7 @@
             "dist": {
                 "type": "path",
                 "url": "user/add/research_action",
-                "reference": "4c09238aa90ff0e4fefeb7e330e04644faca8858"
+                "reference": "04d9e1a968d9038c3beeaae8b20d3ef00f2e6666"
             },
             "require": {
                 "clinicle/core": "~2.3",
@@ -640,7 +640,7 @@
             "type": "clinicle-module",
             "description": "Research action module (part of ADD)",
             "transport-options": {
-                "symlink": false,
+                "symlink": true,
                 "relative": true
             }
         },
@@ -650,7 +650,7 @@
             "dist": {
                 "type": "path",
                 "url": "user/add/research_api",
-                "reference": "b8ad6441efd2f54eaac72bd025b3413d5b67dbdc"
+                "reference": "49476bfd2c7c3aa2aab7dbec324e27404b680e8d"
             },
             "require": {
                 "add/research": "~3.0",
@@ -673,7 +673,7 @@
             },
             "description": "Research API module",
             "transport-options": {
-                "symlink": false,
+                "symlink": true,
                 "relative": true
             }
         },
@@ -683,7 +683,7 @@
             "dist": {
                 "type": "path",
                 "url": "user/add/research_bronch",
-                "reference": "93e9e41bf589d9b6d0a9dab8091c4a2609e0f081"
+                "reference": "5f5a8ce8bb50ce92791626812d3d575a2dc390d2"
             },
             "require": {
                 "add/research": "~3.0",
@@ -693,7 +693,7 @@
             "type": "clinicle-module",
             "description": "Research bronchoscopy module (part of ADD)",
             "transport-options": {
-                "symlink": false,
+                "symlink": true,
                 "relative": true
             }
         },
@@ -703,7 +703,7 @@
             "dist": {
                 "type": "path",
                 "url": "user/add/research_search",
-                "reference": "9fc06fbd21e923cf5c9b6a773df590a1de3b3a08"
+                "reference": "1c4159d4850f27c849d2de441f6788313bbc52e3"
             },
             "require": {
                 "add/research": "^3.0",
@@ -718,7 +718,7 @@
             },
             "description": "Research search module (part of ADD)",
             "transport-options": {
-                "symlink": false,
+                "symlink": true,
                 "relative": true
             }
         },
@@ -728,7 +728,7 @@
             "dist": {
                 "type": "path",
                 "url": "user/add/research_studies",
-                "reference": "8cb462ee0684bd2849599e50319601463a278be5"
+                "reference": "d8af017cab99163f8893d33256038fda0e107ce3"
             },
             "require": {
                 "add/research": "~3.0",
@@ -745,7 +745,7 @@
             },
             "description": "Research studies module (part of ADD)",
             "transport-options": {
-                "symlink": false,
+                "symlink": true,
                 "relative": true
             }
         },
@@ -755,7 +755,7 @@
             "dist": {
                 "type": "path",
                 "url": "user/add/resphy",
-                "reference": "e9dde50de11fa8b88f7e3ba5d894d3a7a40f2ae1"
+                "reference": "b9d44286203a6f322360097a8daedbaf8e13cc20"
             },
             "require": {
                 "add/concept": "~1.0",
@@ -776,7 +776,7 @@
             },
             "description": "Respiratory physiology module (part of ADD)",
             "transport-options": {
-                "symlink": false,
+                "symlink": true,
                 "relative": true
             }
         },
@@ -786,7 +786,7 @@
             "dist": {
                 "type": "path",
                 "url": "user/add/resphy_import",
-                "reference": "612aec4ad563f43999b2791638426c835cd282c3"
+                "reference": "7fbde062d4ccf82900c73101787d8e6aae859cd5"
             },
             "require": {
                 "add/referral": "^1.3",
@@ -805,7 +805,7 @@
             },
             "description": "Respiratory physiology import module (part of ADD)",
             "transport-options": {
-                "symlink": false,
+                "symlink": true,
                 "relative": true
             }
         },
@@ -815,7 +815,7 @@
             "dist": {
                 "type": "path",
                 "url": "user/add/tag",
-                "reference": "2b4b2d8fbbf568ae3b9bb15731eb7142aaf323a8"
+                "reference": "17d5341ffcf5d29e6597da631ab5a17d2b47dbde"
             },
             "require": {
                 "clinicle/core": "~2.7",
@@ -829,7 +829,7 @@
             },
             "description": "Tag module (part of ADD)",
             "transport-options": {
-                "symlink": false,
+                "symlink": true,
                 "relative": true
             }
         },
@@ -839,7 +839,7 @@
             "dist": {
                 "type": "path",
                 "url": "user/add/theme",
-                "reference": "bb69fe348c6e43940830f115fd87f5954c6ae9c7"
+                "reference": "13e49638c849eb71a843d5e4867bd6b9f3bdae05"
             },
             "require": {
                 "clinicle/core": "~2.8",
@@ -848,7 +848,7 @@
             "type": "clinicle-module",
             "description": "ADD-specific theme module",
             "transport-options": {
-                "symlink": false,
+                "symlink": true,
                 "relative": true
             }
         },
@@ -900,7 +900,7 @@
             "dist": {
                 "type": "path",
                 "url": "user/cdbrkr/conditions",
-                "reference": "8cdd09b21246c2ab5f59df7c9e11a2966cdc0dac"
+                "reference": "a5be870171ad383ea6fe73efea77265fc1b3d4e1"
             },
             "require": {
                 "cdbrkr/logic": "~1.1",
@@ -915,7 +915,7 @@
             },
             "description": "Codebreaker conditions data module",
             "transport-options": {
-                "symlink": false,
+                "symlink": true,
                 "relative": true
             }
         },
@@ -925,7 +925,7 @@
             "dist": {
                 "type": "path",
                 "url": "user/cdbrkr/logic",
-                "reference": "b76e3f48eb9179779f5a1804e4020273f4902b50"
+                "reference": "c19e309d13b3a739fe86068171f378f094c4be86"
             },
             "require": {
                 "clinicle/base": "~1.0",
@@ -940,7 +940,7 @@
             },
             "description": "Codebreaker core logic",
             "transport-options": {
-                "symlink": false,
+                "symlink": true,
                 "relative": true
             }
         },
@@ -950,7 +950,7 @@
             "dist": {
                 "type": "path",
                 "url": "user/clinicle/ajax",
-                "reference": "3b8941dffb2435eb51ef62bb966785bc9a56cd1b"
+                "reference": "4ff479cb0dff682aaed5b295536c03949a5409ce"
             },
             "require": {
                 "clinicle/install": "^1.0"
@@ -963,7 +963,7 @@
             },
             "description": "ClinicLE AJAX module",
             "transport-options": {
-                "symlink": false,
+                "symlink": true,
                 "relative": true
             }
         },
@@ -973,7 +973,7 @@
             "dist": {
                 "type": "path",
                 "url": "user/clinicle/api",
-                "reference": "fc0c7476780e7fa00a8975cacb6a86ec88900e1c"
+                "reference": "5aa04209d55ea7017c3441d94c36a47852d57001"
             },
             "require": {
                 "clinicle/install": "~1.0"
@@ -986,7 +986,7 @@
             },
             "description": "ClinicLE API module",
             "transport-options": {
-                "symlink": false,
+                "symlink": true,
                 "relative": true
             }
         },
@@ -996,7 +996,7 @@
             "dist": {
                 "type": "path",
                 "url": "user/clinicle/base",
-                "reference": "4ecfc34456ce12779196a5c63db514213cabfdbc"
+                "reference": "02243f7386dea5dde38fc990b50feb1b0fdcd6e2"
             },
             "require": {
                 "clinicle/ajax": "^1.1",
@@ -1013,7 +1013,7 @@
             "type": "library",
             "description": "ClinicLE base",
             "transport-options": {
-                "symlink": false,
+                "symlink": true,
                 "relative": true
             }
         },
@@ -1023,7 +1023,7 @@
             "dist": {
                 "type": "path",
                 "url": "user/clinicle/client",
-                "reference": "54ce883234dc75bec5212e98d1f5fa2449b7d503"
+                "reference": "751e8c68cfb3d7f1a76fb4dcd77bcf1b2104e6f0"
             },
             "require": {
                 "add/concept": "~1.3",
@@ -1044,7 +1044,7 @@
             },
             "description": "ClinicLE client module",
             "transport-options": {
-                "symlink": false,
+                "symlink": true,
                 "relative": true
             }
         },
@@ -1054,7 +1054,7 @@
             "dist": {
                 "type": "path",
                 "url": "user/clinicle/common",
-                "reference": "7e9b4ebc4c804051fe9acc68613656909f8f36d2"
+                "reference": "af5cc4f3f45c6e03bcadac658100492429fc6a27"
             },
             "require-dev": {
                 "phpunit/phpunit": "~4.1"
@@ -1073,7 +1073,7 @@
             ],
             "description": "ClinicLE common classes",
             "transport-options": {
-                "symlink": false,
+                "symlink": true,
                 "relative": true
             }
         },
@@ -1083,7 +1083,7 @@
             "dist": {
                 "type": "path",
                 "url": "user/clinicle/core",
-                "reference": "7037600864ee817d986de2538b2f4c93865fc279"
+                "reference": "20940e67ba3cc1b7a86f3d30c5426f8dc9496686"
             },
             "require": {
                 "apache/log4php": "^2.1",
@@ -1120,7 +1120,7 @@
             },
             "description": "ClinicLE core",
             "transport-options": {
-                "symlink": false,
+                "symlink": true,
                 "relative": true
             }
         },
@@ -1130,7 +1130,7 @@
             "dist": {
                 "type": "path",
                 "url": "user/clinicle/datafile",
-                "reference": "312f47af516d7b624f70cc0853b2d8cf0fd345f8"
+                "reference": "a0c36b1a651bf868f34a796a519835b6aca64268"
             },
             "require": {
                 "clinicle/common": "^1.0",
@@ -1150,7 +1150,7 @@
             },
             "description": "Library which provides support for loading XLSX and CSV files a row at a time or in one go",
             "transport-options": {
-                "symlink": false,
+                "symlink": true,
                 "relative": true
             }
         },
@@ -1160,7 +1160,7 @@
             "dist": {
                 "type": "path",
                 "url": "user/clinicle/dataframe",
-                "reference": "8b6ef68354be1c3ae8e69055f9b5028d820a76dc"
+                "reference": "d3cfe2e9222b11b0845a4d35b7f9f460e17f1fa1"
             },
             "type": "library",
             "autoload": {
@@ -1170,7 +1170,7 @@
             },
             "description": "ClinicLE dataframe",
             "transport-options": {
-                "symlink": false,
+                "symlink": true,
                 "relative": true
             }
         },
@@ -1180,7 +1180,7 @@
             "dist": {
                 "type": "path",
                 "url": "user/clinicle/download",
-                "reference": "ef754fdda71dbe11d440dae481ed6930368c7469"
+                "reference": "ab81bee4709ca632d3996536c4fbd1a0dc784ad1"
             },
             "require": {
                 "clinicle/core": "~2.11"
@@ -1193,7 +1193,7 @@
             },
             "description": "ClinicLE file download handling",
             "transport-options": {
-                "symlink": false,
+                "symlink": true,
                 "relative": true
             }
         },
@@ -1203,7 +1203,7 @@
             "dist": {
                 "type": "path",
                 "url": "user/clinicle/email",
-                "reference": "f57149b3283657199e5bc320cf64d40d64591b23"
+                "reference": "8110a1205d4a4cebda826383c0a788a89e4137f5"
             },
             "require-dev": {
                 "phpunit/phpunit": "~4.0"
@@ -1222,7 +1222,7 @@
             ],
             "description": "ClinicLE email service",
             "transport-options": {
-                "symlink": false,
+                "symlink": true,
                 "relative": true
             }
         },
@@ -1232,7 +1232,7 @@
             "dist": {
                 "type": "path",
                 "url": "user/clinicle/episode",
-                "reference": "deee389011f5b89ab2006cd86074f75bd850eec1"
+                "reference": "0438a48fd888e6c6d71c681d716d25fb3c86d20b"
             },
             "require": {
                 "clinicle/core": "^2.11",
@@ -1250,7 +1250,7 @@
             },
             "description": "ClinicLE episode section support",
             "transport-options": {
-                "symlink": false,
+                "symlink": true,
                 "relative": true
             }
         },
@@ -1260,7 +1260,7 @@
             "dist": {
                 "type": "path",
                 "url": "user/clinicle/export",
-                "reference": "e7045e16595fe3f80155c9b51f870f1c334346bd"
+                "reference": "f3c5383d7b9bb2e36f6d3f6556e5bacb4ccd44ad"
             },
             "require": {
                 "clinicle/install": "~1.0"
@@ -1273,7 +1273,7 @@
             },
             "description": "ClinicLE export module",
             "transport-options": {
-                "symlink": false,
+                "symlink": true,
                 "relative": true
             }
         },
@@ -1283,7 +1283,7 @@
             "dist": {
                 "type": "path",
                 "url": "user/clinicle/icd10",
-                "reference": "43d95469cbaaffd0353d110ccdfe6bc1f1ac978b"
+                "reference": "92caa19dfbec6414c02d3433499f2f357f7b9ec3"
             },
             "require": {
                 "clinicle/base": "~1.0"
@@ -1296,7 +1296,7 @@
             },
             "description": "ICD10 module",
             "transport-options": {
-                "symlink": false,
+                "symlink": true,
                 "relative": true
             }
         },
@@ -1306,7 +1306,7 @@
             "dist": {
                 "type": "path",
                 "url": "user/clinicle/import",
-                "reference": "4bfebe75f13c7f4da806cb432ab80e60580aac82"
+                "reference": "ef2ee54cb67351d7a72bc8f1f95fda49a0bdbfb2"
             },
             "require": {
                 "clinicle/install": "~1.0"
@@ -1319,7 +1319,7 @@
             },
             "description": "ClinicLE import module",
             "transport-options": {
-                "symlink": false,
+                "symlink": true,
                 "relative": true
             }
         },
@@ -1329,7 +1329,7 @@
             "dist": {
                 "type": "path",
                 "url": "user/clinicle/install",
-                "reference": "7aa8bd79b8fd2d2911edf21a97375755cee842fb"
+                "reference": "35685a6328b98a61bfece462df9d2ac5fbc4c37e"
             },
             "require": {
                 "clinicle/common": "~1.0",
@@ -1349,7 +1349,7 @@
                 "MIT"
             ],
             "transport-options": {
-                "symlink": false,
+                "symlink": true,
                 "relative": true
             }
         },
@@ -1359,7 +1359,7 @@
             "dist": {
                 "type": "path",
                 "url": "user/clinicle/letter",
-                "reference": "a26c68712722205eae7d31c7fab5ad0f89c7cb02"
+                "reference": "9399d2afb0c1cadf9b0f908a17b933b032c8c679"
             },
             "require": {
                 "clinicle/install": "~1.0",
@@ -1373,7 +1373,7 @@
             },
             "description": "ClinicLE letter module",
             "transport-options": {
-                "symlink": false,
+                "symlink": true,
                 "relative": true
             }
         },
@@ -1383,7 +1383,7 @@
             "dist": {
                 "type": "path",
                 "url": "user/clinicle/manage",
-                "reference": "f3837ef01b3fc983e637ff918bfa063cad7012ff"
+                "reference": "58453bdbb331eaa17ca314fcdcf1db6d051526db"
             },
             "require": {
                 "clinicle/core": "^2.13",
@@ -1401,7 +1401,7 @@
             },
             "description": "ClinicLE manage",
             "transport-options": {
-                "symlink": false,
+                "symlink": true,
                 "relative": true
             }
         },
@@ -1411,7 +1411,7 @@
             "dist": {
                 "type": "path",
                 "url": "user/clinicle/migrate",
-                "reference": "52ec8fea99592179b4141dd0cb15a528ab04a270"
+                "reference": "fee04c4c4a7621770384ce77a7fccc71903f292e"
             },
             "require": {
                 "clinicle/common": "^1.2"
@@ -1438,7 +1438,7 @@
             ],
             "description": "Description of project clinicle-migrate.",
             "transport-options": {
-                "symlink": false,
+                "symlink": true,
                 "relative": true
             }
         },
@@ -1448,7 +1448,7 @@
             "dist": {
                 "type": "path",
                 "url": "user/clinicle/monitor",
-                "reference": "ba6bb49a82012e06c7d3adc14e1b7798e57a0954"
+                "reference": "a8ba7e9bed17e86e7bbbb1b0e1385242d2151e1e"
             },
             "require": {
                 "apache/log4php": "^2.1",
@@ -1474,7 +1474,7 @@
             ],
             "description": "ClinicLE monitor wrapper",
             "transport-options": {
-                "symlink": false,
+                "symlink": true,
                 "relative": true
             }
         },
@@ -1484,7 +1484,7 @@
             "dist": {
                 "type": "path",
                 "url": "user/clinicle/options",
-                "reference": "1a7f04bfedf3f99e4b381c11de950bcd0c20e65e"
+                "reference": "4e5aeff9fefab3105bf975f13a1b26ecdc47090a"
             },
             "require": {
                 "clinicle/core": "^2.11",
@@ -1498,7 +1498,7 @@
             },
             "description": "ClinicLE options module",
             "transport-options": {
-                "symlink": false,
+                "symlink": true,
                 "relative": true
             }
         },
@@ -1508,7 +1508,7 @@
             "dist": {
                 "type": "path",
                 "url": "user/clinicle/patient",
-                "reference": "0f48af2aafa2bdc1bacbd893732f7d6537279777"
+                "reference": "359380071d919199ceace99e602188c380517b0b"
             },
             "require": {
                 "clinicle/ajax": "~1.0",
@@ -1531,7 +1531,7 @@
             },
             "description": "ClinicLE patient module",
             "transport-options": {
-                "symlink": false,
+                "symlink": true,
                 "relative": true
             }
         },
@@ -1541,7 +1541,7 @@
             "dist": {
                 "type": "path",
                 "url": "user/clinicle/query",
-                "reference": "e36b5774e5521c8c1dac38c057b91b9ac2b4a52e"
+                "reference": "09e95903fe61fbae50c1e47b4f14b9a3b65b0493"
             },
             "require": {
                 "clinicle/core": "~2.3",
@@ -1555,7 +1555,7 @@
             },
             "description": "ClinicLE query module",
             "transport-options": {
-                "symlink": false,
+                "symlink": true,
                 "relative": true
             }
         },
@@ -1565,7 +1565,7 @@
             "dist": {
                 "type": "path",
                 "url": "user/clinicle/record",
-                "reference": "75372ee2909bd63a9dfe3f40ae275626c9c92638"
+                "reference": "f7a8f4e8965b51192ff12aa27fd5de79da2d1508"
             },
             "require": {
                 "clinicle/client": "~1.0",
@@ -1581,7 +1581,7 @@
             },
             "description": "ClinicLE user record handling",
             "transport-options": {
-                "symlink": false,
+                "symlink": true,
                 "relative": true
             }
         },
@@ -1591,7 +1591,7 @@
             "dist": {
                 "type": "path",
                 "url": "user/clinicle/remote",
-                "reference": "80b74842830c549a680c445067e8278f6a392961"
+                "reference": "42d61f5775ef958beccc8e9e134e28da76977c29"
             },
             "require": {
                 "clinicle/common": "~1.0",
@@ -1614,7 +1614,7 @@
             ],
             "description": "ClinicLE remote access",
             "transport-options": {
-                "symlink": false,
+                "symlink": true,
                 "relative": true
             }
         },
@@ -1624,7 +1624,7 @@
             "dist": {
                 "type": "path",
                 "url": "user/clinicle/report",
-                "reference": "98ab804847ecb61f566b776c7d9551952e13def1"
+                "reference": "7b32747934862712dd6bb5022104135b20c98810"
             },
             "require": {
                 "clinicle/api": "^1.1",
@@ -1640,7 +1640,7 @@
             },
             "description": "ClinicLE report module",
             "transport-options": {
-                "symlink": false,
+                "symlink": true,
                 "relative": true
             }
         },
@@ -1650,7 +1650,7 @@
             "dist": {
                 "type": "path",
                 "url": "user/clinicle/report_ext",
-                "reference": "38d013b9b6e7e615409d641782154a0ee351edc2"
+                "reference": "4adc06a288c732443f964abe11c28bc3168cce8a"
             },
             "require": {
                 "clinicle/core": "~2.3",
@@ -1664,7 +1664,7 @@
             },
             "description": "ClinicLE extended text-file based reports",
             "transport-options": {
-                "symlink": false,
+                "symlink": true,
                 "relative": true
             }
         },
@@ -1674,7 +1674,7 @@
             "dist": {
                 "type": "path",
                 "url": "user/clinicle/risk-score",
-                "reference": "f5fb1a9769f5e2ebb91ab6e2bb80d384a1cb84fa"
+                "reference": "824fd59a5a856b3ab10ade5f82718241d05e72be"
             },
             "require-dev": {
                 "phpunit/phpunit": "~4.1"
@@ -1693,7 +1693,7 @@
             ],
             "description": "ClinicLE risk score calculation module",
             "transport-options": {
-                "symlink": false,
+                "symlink": true,
                 "relative": true
             }
         },
@@ -1703,7 +1703,7 @@
             "dist": {
                 "type": "path",
                 "url": "user/clinicle/search",
-                "reference": "e57ccc910f862bd8238e89d49fa5b62a99d94915"
+                "reference": "b614c64e2bae8190157aff8d3e66bb15b6ddf139"
             },
             "require": {
                 "clinicle/client": "^1.11",
@@ -1733,7 +1733,7 @@
             ],
             "description": "ClinicLE search module",
             "transport-options": {
-                "symlink": false,
+                "symlink": true,
                 "relative": true
             }
         },
@@ -1743,7 +1743,7 @@
             "dist": {
                 "type": "path",
                 "url": "user/clinicle/setup",
-                "reference": "f3c98404b1f8781fae3ed330846901ad92e6a123"
+                "reference": "8ab3f5de5dabcb2fc5a77ddb0d4148a329851c49"
             },
             "require": {
                 "clinicle/core": "^2.11",
@@ -1758,7 +1758,7 @@
             },
             "description": "ClinicLE setup and migration",
             "transport-options": {
-                "symlink": false,
+                "symlink": true,
                 "relative": true
             }
         },
@@ -1768,7 +1768,7 @@
             "dist": {
                 "type": "path",
                 "url": "user/clinicle/touch",
-                "reference": "71cd9715d487ebfe6ba753ca1ddf873889439108"
+                "reference": "454009ec8055fda278f5dac5fb7eebb0b1af8f3e"
             },
             "require": {
                 "clinicle/base": "~1.0"
@@ -1781,7 +1781,7 @@
             },
             "description": "Touch interface module",
             "transport-options": {
-                "symlink": false,
+                "symlink": true,
                 "relative": true
             }
         },
@@ -1791,7 +1791,7 @@
             "dist": {
                 "type": "path",
                 "url": "user/clinicle/web",
-                "reference": "27f974de7bf0f11ca806903f4eee92661bf95de4"
+                "reference": "7aec2fc13ccf991415c1839f572c1fed055c73cf"
             },
             "require": {
                 "php": ">=5.3.3",
@@ -1800,7 +1800,7 @@
             "type": "library",
             "description": "ClinicLE web",
             "transport-options": {
-                "symlink": false,
+                "symlink": true,
                 "relative": true
             }
         },
@@ -1810,7 +1810,7 @@
             "dist": {
                 "type": "path",
                 "url": "user/copd/main",
-                "reference": "a0e11d2e739c459d9a8992a1255bdfedf257951e"
+                "reference": "111eed954ec5677d3c766d0326048183ff7aba1b"
             },
             "require": {
                 "add/paasth": "^0.1",
@@ -1824,7 +1824,7 @@
             },
             "description": "ADD COPD main module",
             "transport-options": {
-                "symlink": false,
+                "symlink": true,
                 "relative": true
             }
         },
@@ -1834,7 +1834,7 @@
             "dist": {
                 "type": "path",
                 "url": "user/ember/asthcopd",
-                "reference": "7548d06f261fd557fdade003115a5f7cc4298db4"
+                "reference": "516161b84e825274a18479261cdaa97ae9559899"
             },
             "require": {
                 "add/concept": "~1.0",
@@ -1861,7 +1861,7 @@
             "type": "clinicle-module",
             "description": "Asthma/COPD exacerbation module (part of EMBER)",
             "transport-options": {
-                "symlink": false,
+                "symlink": true,
                 "relative": true
             }
         },
@@ -1871,7 +1871,7 @@
             "dist": {
                 "type": "path",
                 "url": "user/ember/blness",
-                "reference": "1207d69310ef391420b335fc772119ab8a75e738"
+                "reference": "67100bfae0f8cc4d0d0f61146dae7a8cb8a9a2d9"
             },
             "require": {
                 "add/concept": "~1.1",
@@ -1898,7 +1898,7 @@
             },
             "description": "EMBER breathlessness module",
             "transport-options": {
-                "symlink": false,
+                "symlink": true,
                 "relative": true
             }
         },
@@ -1908,7 +1908,7 @@
             "dist": {
                 "type": "path",
                 "url": "user/ember/hfail",
-                "reference": "deb1fba485b20c27140d31e0c120383722a484d3"
+                "reference": "48f1d118f3b2b72957226a6687dd85f7a886c836"
             },
             "require": {
                 "add/concept": "^1.0",
@@ -1923,7 +1923,7 @@
             },
             "description": "EMBER heart-failure module",
             "transport-options": {
-                "symlink": false,
+                "symlink": true,
                 "relative": true
             }
         },
@@ -1933,7 +1933,7 @@
             "dist": {
                 "type": "path",
                 "url": "user/ember/pneumonia",
-                "reference": "4c557b3ccc9bc81c33451a48f0311888ac780fbb"
+                "reference": "798d4bb574d1d434d28640279fb771ce286b47df"
             },
             "require": {
                 "add/concept": "^1.6",
@@ -1946,7 +1946,7 @@
             "type": "clinicle-module",
             "description": "Pneumonia module (part of EMBER)",
             "transport-options": {
-                "symlink": false,
+                "symlink": true,
                 "relative": true
             }
         },
@@ -2309,7 +2309,7 @@
             "dist": {
                 "type": "path",
                 "url": "user/leicrespbru/lrbtools",
-                "reference": "7b22b23743554391d74654689d8610bf3fbb9b98"
+                "reference": "b13882a6eb83a4389abeeef0a51dac0351c1f32d"
             },
             "require": {
                 "apache/log4php": "^2.3",
@@ -2324,7 +2324,7 @@
             },
             "description": "LRB",
             "transport-options": {
-                "symlink": false,
+                "symlink": true,
                 "relative": true
             }
         },

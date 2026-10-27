@@ -60,7 +60,7 @@
             "type": "path",
             "url": "user/*/*",
             "options": {
-                "symlink": false,
+                "symlink": true,
                 "versions": {
                     "add/advcopd": "2.7.0",
                     "add/advcopd_fup": "1.0.1",
