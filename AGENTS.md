@@ -320,7 +320,8 @@ Do not reintroduce Mercurial or `.hg` metadata.
 - CLI command runners ignore deprecations.
 - First-party nested ternaries are parenthesised.
 - `ADD_Page::submitForm()` treats `beforeSubmit()` as optional; it may return
-  `null`, so do not call `count()` without a guard.
+  `null` or another non-array value. Guard with `is_array($msgs)` before
+  `count()`.
 - `System\Application` and `LegacyRequestHandler` treat `getErrors()` as
   optional; it may return `null`.
 - `ADD_Database_Record` count queries return integers; compare them directly,

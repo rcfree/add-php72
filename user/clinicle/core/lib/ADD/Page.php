@@ -426,7 +426,7 @@ class ADD_Page {
 		}
 		foreach ($this->getComponents() as $comp) {
 			$msgs = $comp -> beforeSubmit($values);
-			if ($msgs && count($msgs) > 0) {
+			if (is_array($msgs) && count($msgs) > 0) {
 				foreach ($msgs as $msg) { $this -> addError($msg);
 				}
 				return;

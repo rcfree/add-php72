@@ -542,6 +542,16 @@ bottom. Do not rewrite history; correct an entry with a follow-up note.
 - Verified under PHP 7.2: CLI command list still succeeds; root and authenticated
   `/search` render after clearing the registry.
 
+### Medication modal count on PHP 7.2
+
+- Reproduced the exact `client/modal-submit` payload for
+  `med:presdrugitem`. The stack pointed to `ADD_Page::submitForm()` line 429:
+  a component’s `beforeSubmit()` returned a non-array truthy value, and
+  `$msgs && count($msgs)` still called `count()`.
+- Changed the guard to `is_array($msgs) && count($msgs) > 0`.
+- Verified the same POST now returns:
+  `{"data":{"id":"13","type":"med-general-drug"},"message_text":"Prescription drug item successfully added"}`.
+
 ### Next action
 
 - Local work is complete. Remaining work is VPN-only:
