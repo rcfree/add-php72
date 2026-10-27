@@ -19,7 +19,7 @@ class FormFieldCell extends AbstractCell
         $this->parentField = $parentField;
     }
     function getCell() {
-        if (count($this->childFields) > 0) {
+        if (is_array($this->childFields) && count($this->childFields) > 0) {
             $subResults = array();
             $joinChar = $this->parentField->getSetting('join_char') ? :
                 " ";

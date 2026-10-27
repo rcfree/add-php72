@@ -228,7 +228,7 @@ class ADD_Field_EncounterGrid extends ADD_Field_Grid {
      */
     public function generateCellContent($childFields, $colField)
     {
-        if (count($childFields) > 0) {
+        if (is_array($childFields) && count($childFields) > 0) {
             $subResults = array();
             $joinChar = $colField->getSetting('join_char') ? $colField->getSetting('join_char') : " ";
 

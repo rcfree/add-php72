@@ -53,7 +53,8 @@ class ComponentRequestHandler extends AbstractRequestHandler
             return;
         }
 
-        if (count(CLE::web()->getErrors()) > 1) {
+        $errors = CLE::web()->getErrors();
+        if (is_array($errors) && count($errors) > 1) {
             $db->rollback();
         }
 

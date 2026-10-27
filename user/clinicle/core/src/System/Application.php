@@ -146,7 +146,7 @@ class Application {
             if ($method == "POST") {
                 $result = $currPage->submitForm($values);
                 $errors = $currPage->getErrors();
-                if (!$errors || count($errors) == 0) {
+                if (empty($errors)) {
                     $db->commitTxn();
 
                     $db->beginTxn();

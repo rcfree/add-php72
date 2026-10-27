@@ -552,6 +552,19 @@ bottom. Do not rewrite history; correct an entry with a follow-up note.
 - Verified the same POST now returns:
   `{"data":{"id":"13","type":"med-general-drug"},"message_text":"Prescription drug item successfully added"}`.
 
+### Count() audit
+
+- Audited 720 first-party `count()` calls, focusing on optional/nullable returns.
+- Guarded additional runtime paths:
+  - `System\Application` and `LegacyRequestHandler` now use `empty($errors)`
+    instead of counting a possibly non-array error result;
+  - `ComponentRequestHandler` counts web errors only when it is an array;
+  - `FormFieldCell` and `EncounterGrid` guard nullable child-field collections.
+- Previously fixed: `ADD_Page::submitForm`, record-lock scalar counts, report
+  fields, QoL option objects, search args, and dictionary child fields.
+- Remaining `count()` calls are predominantly arrays/array literals or debug
+  command paths; no further known modal/runtime failures.
+
 ### Next action
 
 - Local work is complete. Remaining work is VPN-only:
