@@ -565,6 +565,18 @@ bottom. Do not rewrite history; correct an entry with a follow-up note.
 - Remaining `count()` calls are predominantly arrays/array literals or debug
   command paths; no further known modal/runtime failures.
 
+### BCKQ summary score
+
+- Saving BCKQ failed with
+  `Observation field 'bckq_score' is not defined in encounter type`.
+- `qol-bckq.score` has `summary_obs=bckq_score`, but the target
+  `advcopd-annual-qol` form had no `bckq_score` field.
+- Added the missing display field to
+  `user/add/advcopd/form/annual-qol.csv` and ran
+  `clinicle install add/advcopd`; the field now exists as observation field
+  `4529` in `advcopd-annual-qol`.
+- Testbed deployment needs the same form install after pulling.
+
 ### Next action
 
 - Local work is complete. Remaining work is VPN-only:
